@@ -293,12 +293,12 @@ Convertir $61_{(10}$ a base $3$
 
 <section data-transition="slide-in fade-out">
 <h2>Humor para nerds</h2>
-<img class="stretch" src="img/finger-1.png" >
+<img class="plainstretch" src="img/finger-1.png" >
 </section>
 
 <section data-transition="slide-out fade-in">
 <h2>Humor para nerds</h2>
-<img class="stretch" src="img/finger-2.png">
+<img class="plainstretch" src="img/finger-2.png">
 </section>
 
 <section data-background="#3c53b5" data-background-transition="zoom">
