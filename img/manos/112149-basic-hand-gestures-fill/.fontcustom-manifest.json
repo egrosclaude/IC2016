@@ -1,0 +1,168 @@
+{
+  "checksum": {
+    "previous": "5c57bc00f8381087900872bffab1faf547e7c99c9fc6e8b4b2e9e6b38cf19fd6",
+    "current": "5c57bc00f8381087900872bffab1faf547e7c99c9fc6e8b4b2e9e6b38cf19fd6"
+  },
+  "fonts": [
+    "/var/www/static/flaticon/zip_packs/112149-basic-hand-gestures-fill/font/Flaticon.ttf",
+    "/var/www/static/flaticon/zip_packs/112149-basic-hand-gestures-fill/font/Flaticon.svg",
+    "/var/www/static/flaticon/zip_packs/112149-basic-hand-gestures-fill/font/Flaticon.woff",
+    "/var/www/static/flaticon/zip_packs/112149-basic-hand-gestures-fill/font/Flaticon.eot"
+  ],
+  "glyphs": {
+    "clap-hands": {
+      "codepoint": 61696,
+      "source": "/var/www/static/flaticon/zip_packs/112149-basic-hand-gestures-fill/svg/clap-hands.svg"
+    },
+    "diagonal-swipe": {
+      "codepoint": 61697,
+      "source": "/var/www/static/flaticon/zip_packs/112149-basic-hand-gestures-fill/svg/diagonal-swipe.svg"
+    },
+    "dislike": {
+      "codepoint": 61698,
+      "source": "/var/www/static/flaticon/zip_packs/112149-basic-hand-gestures-fill/svg/dislike.svg"
+    },
+    "draw": {
+      "codepoint": 61699,
+      "source": "/var/www/static/flaticon/zip_packs/112149-basic-hand-gestures-fill/svg/draw.svg"
+    },
+    "fist": {
+      "codepoint": 61700,
+      "source": "/var/www/static/flaticon/zip_packs/112149-basic-hand-gestures-fill/svg/fist.svg"
+    },
+    "frame": {
+      "codepoint": 61701,
+      "source": "/var/www/static/flaticon/zip_packs/112149-basic-hand-gestures-fill/svg/frame.svg"
+    },
+    "hand": {
+      "codepoint": 61702,
+      "source": "/var/www/static/flaticon/zip_packs/112149-basic-hand-gestures-fill/svg/hand.svg"
+    },
+    "hold": {
+      "codepoint": 61703,
+      "source": "/var/www/static/flaticon/zip_packs/112149-basic-hand-gestures-fill/svg/hold.svg"
+    },
+    "like": {
+      "codepoint": 61704,
+      "source": "/var/www/static/flaticon/zip_packs/112149-basic-hand-gestures-fill/svg/like.svg"
+    },
+    "peace-sign": {
+      "codepoint": 61705,
+      "source": "/var/www/static/flaticon/zip_packs/112149-basic-hand-gestures-fill/svg/peace-sign.svg"
+    },
+    "pointing-rith": {
+      "codepoint": 61706,
+      "source": "/var/www/static/flaticon/zip_packs/112149-basic-hand-gestures-fill/svg/pointing-rith.svg"
+    },
+    "press-button": {
+      "codepoint": 61707,
+      "source": "/var/www/static/flaticon/zip_packs/112149-basic-hand-gestures-fill/svg/press-button.svg"
+    },
+    "push-button": {
+      "codepoint": 61708,
+      "source": "/var/www/static/flaticon/zip_packs/112149-basic-hand-gestures-fill/svg/push-button.svg"
+    },
+    "rock-gesture": {
+      "codepoint": 61709,
+      "source": "/var/www/static/flaticon/zip_packs/112149-basic-hand-gestures-fill/svg/rock-gesture.svg"
+    },
+    "rotate": {
+      "codepoint": 61710,
+      "source": "/var/www/static/flaticon/zip_packs/112149-basic-hand-gestures-fill/svg/rotate.svg"
+    },
+    "rotate-1": {
+      "codepoint": 61711,
+      "source": "/var/www/static/flaticon/zip_packs/112149-basic-hand-gestures-fill/svg/rotate-1.svg"
+    },
+    "rotate-2": {
+      "codepoint": 61712,
+      "source": "/var/www/static/flaticon/zip_packs/112149-basic-hand-gestures-fill/svg/rotate-2.svg"
+    },
+    "rotate-3": {
+      "codepoint": 61713,
+      "source": "/var/www/static/flaticon/zip_packs/112149-basic-hand-gestures-fill/svg/rotate-3.svg"
+    },
+    "shake-hands": {
+      "codepoint": 61714,
+      "source": "/var/www/static/flaticon/zip_packs/112149-basic-hand-gestures-fill/svg/shake-hands.svg"
+    },
+    "swipe-down": {
+      "codepoint": 61715,
+      "source": "/var/www/static/flaticon/zip_packs/112149-basic-hand-gestures-fill/svg/swipe-down.svg"
+    },
+    "swipe-to-right": {
+      "codepoint": 61716,
+      "source": "/var/www/static/flaticon/zip_packs/112149-basic-hand-gestures-fill/svg/swipe-to-right.svg"
+    },
+    "swipe-to-right-1": {
+      "codepoint": 61717,
+      "source": "/var/www/static/flaticon/zip_packs/112149-basic-hand-gestures-fill/svg/swipe-to-right-1.svg"
+    },
+    "swipe-to-right-2": {
+      "codepoint": 61718,
+      "source": "/var/www/static/flaticon/zip_packs/112149-basic-hand-gestures-fill/svg/swipe-to-right-2.svg"
+    },
+    "swipe-up": {
+      "codepoint": 61719,
+      "source": "/var/www/static/flaticon/zip_packs/112149-basic-hand-gestures-fill/svg/swipe-up.svg"
+    },
+    "tap-button": {
+      "codepoint": 61720,
+      "source": "/var/www/static/flaticon/zip_packs/112149-basic-hand-gestures-fill/svg/tap-button.svg"
+    },
+    "tap-button-1": {
+      "codepoint": 61721,
+      "source": "/var/www/static/flaticon/zip_packs/112149-basic-hand-gestures-fill/svg/tap-button-1.svg"
+    },
+    "wave": {
+      "codepoint": 61722,
+      "source": "/var/www/static/flaticon/zip_packs/112149-basic-hand-gestures-fill/svg/wave.svg"
+    },
+    "zoom": {
+      "codepoint": 61723,
+      "source": "/var/www/static/flaticon/zip_packs/112149-basic-hand-gestures-fill/svg/zoom.svg"
+    },
+    "zoom-in": {
+      "codepoint": 61724,
+      "source": "/var/www/static/flaticon/zip_packs/112149-basic-hand-gestures-fill/svg/zoom-in.svg"
+    },
+    "zoom-in-1": {
+      "codepoint": 61725,
+      "source": "/var/www/static/flaticon/zip_packs/112149-basic-hand-gestures-fill/svg/zoom-in-1.svg"
+    }
+  },
+  "options": {
+    "autowidth": false,
+    "config": false,
+    "css_selector": ".flaticon-{{glyph}}",
+    "debug": false,
+    "font_ascent": 448,
+    "font_descent": 64,
+    "font_design_size": 16,
+    "font_em": 512,
+    "font_name": "Flaticon",
+    "force": true,
+    "input": {
+      "templates": "/var/www/static/flaticon/zip_packs/112149-basic-hand-gestures-fill/svg",
+      "vectors": "/var/www/static/flaticon/zip_packs/112149-basic-hand-gestures-fill/svg"
+    },
+    "no_hash": true,
+    "output": {
+      "css": "/var/www/static/flaticon/zip_packs/112149-basic-hand-gestures-fill/font",
+      "fonts": "/var/www/static/flaticon/zip_packs/112149-basic-hand-gestures-fill/font",
+      "preview": "/var/www/static/flaticon/zip_packs/112149-basic-hand-gestures-fill/font"
+    },
+    "preprocessor_path": null,
+    "quiet": true,
+    "templates": [
+      "../../../../../sites/flaticon/libraries/webfont/templates/flaticon.html",
+      "../../../../../sites/flaticon/libraries/webfont/templates/_flaticon.scss",
+      "../../../../../sites/flaticon/libraries/webfont/templates/flaticon.css"
+    ]
+  },
+  "templates": [
+    "/var/www/static/flaticon/zip_packs/112149-basic-hand-gestures-fill/font/flaticon.html",
+    "/var/www/static/flaticon/zip_packs/112149-basic-hand-gestures-fill/font/_flaticon.scss",
+    "/var/www/static/flaticon/zip_packs/112149-basic-hand-gestures-fill/font/flaticon.css"
+  ]
+}

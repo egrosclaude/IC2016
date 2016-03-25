@@ -1,0 +1,565 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>Introducción a la Computación 2016</title>
+
+		<meta name="description" content="Sistemas de Numeración">
+		<meta name="author" content="Eduardo Grosclaude">
+
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/ic.css" id="theme">
+
+		<!-- Code syntax highlighting -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+
+	<body>
+
+		<div class="reveal">
+
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+
+
+<!------------------------------------------------------------------>
+
+				
+<section data-markdown> 
+ <script type="text/template">
+##Unidad I 
+###Representación de la Información 
+
+1. Sistemas de Numeración <!-- .element: class="post_it" -->
+1. Unidades de Información
+1. Representación Digital de Datos 
+ </script>
+</section>
+
+
+<section data-markdown>
+##Sistemas de Numeración
+</section>
+
+
+
+
+ 
+<section>
+
+	<section data-markdown>
+##Contando objetos con dígitos
+- Nuestros dígitos habituales son 0, 1, 2, 3, 4, 5, 6, 7, 8, 9
+- Son diez dígitos
+- Nuestra **base** habitual es 10
+- El mecanismo para contar es completamente general: &#8681;
+	</section>
+
+<section>
+<h2>Contar en base 10</h2>
+<ul>
+<li class="fragment">1,</li>
+<li class="fragment">2,</li>
+<li class="fragment">3,</li>
+<li class="fragment">...,</li>
+<li class="fragment">9  ¡Se agotó la secuencia!</li>
+</ul>
+</section>
+
+<section>
+<h2>Se agotó la secuencia 1 vez</h2>
+<ul>
+<li class="fragment">10,</li>
+<li class="fragment">11,</li>
+<li class="fragment">12,</li>
+<li class="fragment">...,</li>
+<li class="fragment">19 ¡Otra vez!</li>
+</ul>
+</section>
+
+<section>
+<h2>Se agotó la secuencia dos veces</h2>
+<ul>
+<li class="fragment">20,</li>
+<li class="fragment">21,</li>
+<li class="fragment">22,</li>
+<li class="fragment">...,</li>
+<li class="fragment">29</li>	
+</ul>
+</section>
+
+
+<section>
+<h2>Se agotó la secuencia nueve veces</h2>
+<ul>
+<li class="fragment">90,</li>
+<li class="fragment">91,</li>
+<li class="fragment">92,</li>
+<li class="fragment">...,</li>
+<li class="fragment">99</li>	
+</ul>
+</section>
+
+</section>
+
+
+
+<section data-markdown>
+##Sistema posicional
+- Vamos asignando a cada objeto los dígitos disponibles en el sistema
+- Al acabarse los dígitos, volvemos a 0
+- Pero anotamos que se agotó la secuencia con un 1 a la izquierda
+</section>
+ 
+<section>
+<h2>Sistema posicional</h2>
+<ul>
+<li>Cada vez que se agota la secuencia incrementamos la posición de la izquierda</li>
+<li>Al agotarse la secuencia a la izquierda:</li>
+<ul>
+<li>Usamos una posición más a la izquierda</li>
+<li>y volvemos a empezar con 0 en todas las demás posiciones</li>
+</ul>
+</ul>
+<p>
+<span class="post_it">&nbsp;El mecanismo no depende de cuál sea la base&nbsp;</span>
+</p>
+</section>
+
+
+
+<section data-background="#3c53b5" data-background-transition="zoom">
+<h1>Preguntas</h1>
+<ol>
+<li class="fragment">¿Cómo se escribe <b>la base</b>, en un sistema de base 10?</li>
+<li class="fragment">¿Cómo se escribe <b>la base al cuadrado</b>, en un sistema de base 10?</li>
+<li class="fragment">¿Y al cubo?</li>
+<li class="fragment">¿Y a la cuarta?</li>
+<li class="fragment">¿Y lo mismo, pero en otras bases?</li>
+</ol>
+</section>
+
+<section>
+<section data-markdown>
+##¿Cómo contar en base 5?
+- Tengo cinco dígitos
+- Los dígitos son 0, 1, 2, 3, 4
+- ¿Cómo se escriben los números en base 5?
+- ¿Cómo se escribe **5** en base 5?
+</section>
+
+
+<section>
+<h2>Contemos en base 5</h2>
+<ul>
+<li class="fragment">1,</li>
+<li class="fragment">2,</li>
+<li class="fragment">...,</li>
+<li class="fragment">4 ¡Se agotó la secuencia!</li>	
+</ul>
+</section>
+
+<section>
+<h2>Se agotó la secuencia una vez</h2>
+<ul>
+<li class="fragment">10,</li>
+<li class="fragment">11,</li>
+<li class="fragment">12,</li>
+<li class="fragment">13,</li>
+<li class="fragment">14 ¡Se agotó la secuencia!</li>	
+</ul>
+</section>
+
+<section>
+<h2>Se agotó la secuencia dos veces</h2>
+<ul>
+<li class="fragment">20,</li>
+<li class="fragment">21,</li>
+<li class="fragment">22,</li>
+<li class="fragment">23,</li>
+<li class="fragment">24</li>	
+</ul>
+</section>
+
+<section>
+<h2>Se agotó la secuencia cuatro veces</h2>
+<ul>
+<li class="fragment">40,</li>
+<li class="fragment">41,</li>
+<li class="fragment">42,</li>
+<li class="fragment">43,</li>
+<li class="fragment">44</li>	
+</ul>
+</section>
+
+<section>
+<h2>¿Cuánto valen estos números en base 5?</h2>
+<ul>
+<li class="fragment">100,</li>
+<li class="fragment">101,</li>
+<li class="fragment">102,</li>
+<li class="fragment">103,</li>
+<li class="fragment">104</li>	
+</ul>
+</section>
+
+
+</section>
+
+
+<section data-markdown>
+##¿Y en base 2?
+- Tengo dos dígitos
+- Los dígitos son 0, 1
+- ¿Cómo se escriben los números en base 2?
+- ¿Cómo se escribe **2** en base 2?
+</section>
+
+
+<section>
+<h2>¿Y en base 16?</h2>
+<ul>
+<li>Tengo dieciséis dígitos</li>
+<li>Los dígitos son 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, ...
+<span class="fragment"> A, B, C, D, E, F</span></li>
+<li>¿Cómo se escribe <b>16</b> en base 16?</li>
+
+</ul>
+</section>
+
+<section>
+<h2>Especificando la base</h2>
+<ul>
+<li>Para evitar ambigüedades especificamos la base en forma suscripta</li> 
+<ul>
+<li>"Los $101_{(10}$ Dálmatas"</li>
+<li>"Los $101_{(2}$  Dálmatas"</li>
+</ul>
+</ul>
+</section>
+ 
+
+<section data-background="#3cb5c5" data-background-transition="zoom">
+<h1>¿Preguntas?</h1>
+</section>
+
+
+
+<section data-background="#3c53b5" data-background-transition="zoom">
+<h1>¡Preguntas!</h1>
+<ol>
+<li class="fragment">Dado un sistema posicional de base $b$, ¿cómo se escribe $b$ en ese sistema?</li>
+<li class="fragment">¿Y $b + 1$?</li>
+
+<li class="fragment">¿Y $b^2$?</li>
+<li class="fragment">¿Cómo se escribe 26 en base 5?
+<li class="fragment">¿Cómo se escribe 17 en base 16, en base 5, en base 2, en base 10?
+<li class="fragment">¿A qué número me refiero cuando escribo 101?
+</ol>
+</section>
+
+
+
+<section id="potencias">
+<h2>Expresión general</h2>
+Todo número $n$ se escribe en base $b$ como
+<p>
+$n = x_k * b^k + \ldots + x_{2} * b^{2} + x_1 * b^1 +x_0 * b^0$
+</p><p>
+Con $0 \le x_i \lt b$
+</p>
+<p class="post_it">
+$2016 = 2 * 1000 + 0 * 100 + 1 * 10 + 6 * 1$
+</p>
+</section>
+
+
+
+<section>
+<h2>Conversión de base</h2>
+<ul>
+<li>De decimal a base $b$</li>
+<li>De base $b$ a decimal</li>
+<li>De base $b_1$ a $b_2$</li>
+</ul>
+</section>
+
+<section>
+<h2>De decimal a base $b$</h2>
+Convertir $61_{(10}$ a base $3$
+<table>
+<tr><td>Número</td><td>Número/3</td><td>Resto</td></tr>
+<tr><td class="fragment">61</td><td class="fragment">20</td><td class="fragment post_it">1</td></tr>
+
+<tr><td class="fragment">20</td><td class="fragment">6</td><td class="fragment post_it">2</td></tr>
+<tr><td class="fragment">6</td><td class="fragment post_it">2</td><td class="fragment post_it">0</td></tr>
+<tr></tr>
+</table>
+<p>
+<span class="fragment">$61_{(10} = 2 * 3^3 + 0 * 3^2 + 2 * 3 + 1$ </span>
+</p>
+<span class="fragment">$61_{(10} = 2021_{(3}$ </span>
+</section>
+
+<section>
+<h2>De base $b$ a decimal</h2>
+<p>
+<span class="fragment">$2021_{(3} =\ ?$ </span>
+</p>
+<span class="fragment">Aplicamos la <a href="#/potencias" target="_blank">Expresión general</a></span>
+
+<p>
+<span class="fragment">$2 * 3^3 + 0 * 3^2 + 2 * 3 + 1  =  61_{(10}$ </span>
+</p>
+</section>
+
+<section data-background="#3c53b5" data-background-transition="zoom">
+<h1>¿Más preguntas?</h1>
+</section>
+
+<section data-transition="slide-in fade-out">
+<h2>Humor para nerds</h2>
+<img class="stretch" src="finger-1.png" >
+</section>
+
+<section data-transition="slide-out fade-in">
+<h2>Humor para nerds</h2>
+<img class="stretch" src="finger-2.png">
+</section>
+
+<section data-background="#3c53b5" data-background-transition="zoom">
+<h1>¡Más preguntas!</h1>
+<ol>
+<li class="fragment">Si contáramos en base 2 con los dedos (dedo estirado = 1, dedo recogido = 0), ¿hasta qué número podríamos contar con una mano? ¿Y con las dos?</li>
+<li class="fragment">¿Cómo sería un sistema posicional en base 6 con ambas manos? La derecha contando las unidades y la izquierda las "seisenas"...</li>
+<li class="fragment">¿Hasta cuánto podríamos contar con este sistema?</li>
+</ol>
+</section>
+
+<section data-background="#3c53b5" data-background-transition="zoom">
+<h1>Y más preguntas</h1>
+<p>
+El número $28_{(x}$ está en una base desconocida. 
+Esa base, ¿puede ser...
+</p>
+<ul>
+<li class="fragment">...2?</li>
+<li class="fragment">...8?</li>
+<li class="fragment">...10?</li>
+<li class="fragment">...16?</li>
+</ul>
+</section>
+
+
+<section>
+<h2>Conversión de base $b_1$ a base $b_2$</h2>
+<ul>
+	<li>Caso general</li>
+	<ul>
+		<li>De base $b_1$ a decimal, y de decimal a base $b_2$</li>
+	</ul>
+	<li>Casos especiales</li>
+	<ul>
+		<li>Binario (base 2) &#11012 hexadecimal (base 16)</li>
+		<li>Binario &#11012 octal (base 8)</li>
+	</ul>
+</ul>
+</section>
+
+<section data-transition="slide-in fade-out" data-transition-speed="slow">
+<h2>Equivalencias</h2>
+<img class="stretch" src="equivalencias.png">
+</section>
+
+<section data-transition="fade-in fade-out" data-transition-speed="slow">
+<h2>Equivalencias</h2>
+<img class="stretch" src="equivalencias-octal.png">
+</section>
+
+<section data-transition="fade-in slide-out" data-transition-speed="slow">
+<h2>Equivalencias</h2>
+<img class="stretch" src="equivalencias-hexa.png">
+</section>
+
+<section>
+<h2>Binario a hexadecimal</h2>
+<ul>
+<li class="post_it">Cada cuatro dígitos binarios representan un dígito hexadecimal</li>
+<ul>
+<li>Agrupo los dígitos binarios de a cuatro y reemplazo cada grupo por el dígito hexadecimal equivalente:</li>
+<ul>
+$11100010_{(2} = E2_{(16}$
+</ul>
+<li>Si es necesario, para obtener grupos de cuatro dígitos, completo con ceros a la izquierda:
+<ul>
+$100010_{(2} = 00100010_{(2} = 22_{(16}$
+</ul>
+</ul>
+<li>Hexadecimal a binario: procedimiento inverso</li>
+</ul>
+</section>
+
+<section>
+<h2>Binario a octal</h2>
+<ul>
+<li class="post_it">Cada <b>tres</b> dígitos binarios representan un dígito octal</li>
+<ul>
+<li>Agrupo los dígitos binarios de a tres y reemplazo cada grupo por el dígito octal equivalente:</li>
+<ul>
+$100010_{(2} = 42_{(8}$
+</ul>
+<li>Si es necesario, para obtener grupos de tres dígitos, completo con ceros a la izquierda:
+<ul>
+$1100010_{(2} = 001100010_{(2} = 142_{(8}$
+</ul>
+</ul>
+<li>Octal a binario: procedimiento inverso</li>
+</ul>
+</section>
+
+
+<section data-markdown>
+##Resumen conversión de base
+1. Decimal a base $b$
+ * División iterativa por la base (último cociente y restos)
+2. Base $b$ a decimal
+ * Calcular la suma de potencias de la base
+3. Binario &#11012 hexa
+ * Agrupar los dígitos binarios de a 4
+4. Binario &#11012 octal
+ * Agrupar los dígitos binarios de a 3
+
+</section>
+
+<section data-background="#3c53b5" data-background-transition="zoom">
+<h1>Y más preguntas</h1>
+<ol>
+<li>$AF3_{(16} = X_{(10}$ <span class="fragment"> $= 2803_{(10}$</li>
+<li>$AF3_{(16} = X_{(2}$ <span class="fragment"> $= 101011110011_{(2}$</li>
+<li>$36_{(8} = X_{(10}$ <span class="fragment"> $= 30_{(10}$</li>
+<li>$36_{(8} = X_{(2}$ <span class="fragment"> $= 011110_{(2}$</li>
+<li>$101001101_{(2} = X_{(8}$<span class="fragment"> $= 515_{(8}$</li>
+<li>$101001101_{(2} = X_{(10}$<span class="fragment"> $= 333_{(10}$</li>
+<li>$101001101_{(2} = X_{(16}$<span class="fragment"> $= 14D_{(16}$</li>
+</ol>
+</section>
+
+<!------------------------------------------------------------------>
+
+			</div>
+
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.js"></script>
+
+		<script>
+
+			// Full list of configuration options available at:
+			// https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+				previewLinks: true,
+                theme: 'serif',
+				transition: 'slide', // none/fade/slide/convex/concave/zoom
+
+
+				menu: { // Menu works best with font-awesome installed: sudo apt-get install fonts-font-awesome
+					themes: false,
+					transitions: false,
+					markers: true,
+					hideMissingTitles: true,
+					custom: [
+//				            { title: 'Plugins', icon: '<i class="fa fa-external-link"></i>', src: 'toc.html' },
+				            { title: 'About', icon: '<i class="fa fa-info"></i>', content: '<p>Presentación de la materia</p>' }
+				        ]
+				},
+				anything: [ 
+					{className: "rand",  defaults: {min: 0, max: 9}, initialize: (function(container, options){ container.innerHTML = Math.trunc( options.min + Math.random()*(options.max-options.min + 1) ); }) },
+					{className: "plot",  defaults: {width:500, height: 500, grid:true}, initialize: (function(container, options){ options.target = "#"+container.id; functionPlot(options) }) },
+					{className: "chart",  initialize: (function(container, options){ container.chart = new Chart(container.getContext("2d"), options);  }) },
+					{className: "animate",  initialize: (function(container, options){ 
+						Reveal.addEventListener( 'fragmentshown', function( event ) {
+							if (typeof event.fragment.beginElement === "function" ) { 
+								event.fragment.beginElement(); 	
+							}
+						});
+						Reveal.addEventListener( 'fragmenthidden', function( event ) {
+							if (event.fragment.hasAttribute('data-reverse') ) { 
+								var reverse = event.fragment.parentElement.querySelector('[id=\"' + event.fragment.getAttribute('data-reverse') + '\"]');
+								if ( reverse && typeof reverse.beginElement === "function" ) { 
+									reverse.beginElement(); 	
+								}										 	
+							}
+						});
+						if ( container.getAttribute("data-svg-src") ) { 
+							var xhr = new XMLHttpRequest(); 
+							xhr.onload = function() { 
+								if (xhr.readyState === 4) { 
+									var svg = container.querySelector('svg');
+										container.removeChild( svg );
+									container.innerHTML = xhr.responseText + container.innerHTML;
+									if ( svg ) {
+										container.querySelector('svg').innerHTML = container.querySelector('svg').innerHTML + svg.innerHTML;
+									}
+								} 
+								else { 
+									console.warn( "Failed to get file. ReadyState: " + xhr.readyState + ", Status: " + xhr.status); 
+								}
+							}; 
+							xhr.open( 'GET', container.getAttribute("data-svg-src"), true ); 
+							xhr.send();
+						}
+					}) },
+					{className: "anything",  initialize: (function(container, options){ if (options && options.initialize) { options.initialize(container)} }) }
+				],
+
+
+				math: {
+					//mathjax: 'https://cdn.mathjax.org/mathjax/latest/MathJax.js',
+					mathjax: '../MathJax-master/MathJax.js',
+					config: 'TeX-AMS_HTML-full'
+				},
+
+
+				// Optional reveal.js plugins
+				dependencies: [
+					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: 'plugin/zoom-js/zoom.js', async: true },
+					{ src: 'plugin/notes/notes.js', async: true },
+					{ src: 'plugin/anything/anything.js' },
+					{ src: 'bower_components/reveal.js-menu/menu.js' },
+					{ src: 'bower_components/reveal.js-plugins/mathsvg/math.js', async: true }
+				]
+			});
+
+		</script>
+
+	</body>
+</html>

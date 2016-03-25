@@ -1,0 +1,958 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>Introducción a la Computación 2016</title>
+
+		<meta name="description" content="Sistemas de Numeración">
+		<meta name="author" content="Eduardo Grosclaude">
+
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/ic.css" id="theme">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+
+		<!-- Code syntax highlighting -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+
+	<body>
+
+		<div class="reveal">
+
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+
+
+<!------------------------------------------------------------------>
+
+<section data-markdown> 
+ <script type="text/template">
+##Unidad I 
+###Representación de la Información 
+
+1. Sistemas de Numeración 
+1. Unidades de Información
+1. Representación Digital de Datos <!-- .element: class="post_it" -->
+ 1. Datos Numéricos
+ 1. Texto
+ 1. Multimedia
+ </script>
+</section>
+
+
+<section data-markdown>
+##Representación 
+##de datos numéricos
+</section>
+
+<section data-markdown>
+##Vimos hasta ahora
+* Sistemas de numeración decimal, hexadecimal, octal, binario
+* Simplificaciones
+  * Siempre hemos representado **enteros**
+  * Siempre **no negativos**
+  * Suponíamos **infinitos dígitos**
+* Pero las computadoras adoptan algún **sistema de representación** con alguna cantidad fija de bits
+</section>
+
+<section data-markdown>
+##Rango de representación (RR)
+* Intervalo de números representables
+* Depende:
+ * De la forma como funciona el sistema de representación 
+ * De la cantidad de dígitos del sistema de representación
+* Notación $[a, b]$
+</section>
+
+<section>
+<h2>Representación sin signo</h2>
+<ul>
+   <li>Sólo puede expresar números <b>no negativos</b></li>
+   <li>Con $n$ bits, tengo $2^n$ posibilidades</li>
+	<ul>
+	   <li>Dos para el primer bit; por cada una de éstas, dos para el segundo; por cada una...($2 \times 2 \times 2 ... = 2^n$)</li>
+	</ul>
+   <li> &#8680; Rango de representación <span class="post_it">$[0, 2^n-1]$</span></li>
+	<ul>
+	   <li>Con 8 bits: $[0, 2^8-1] = [0, 255]$</li>
+	   <li>Con 16 bits: $[0, 2^{16}-1] = [0, 65.535]$</li>
+	   <li>Con 32 bits: $[0, 2^{32}-1] = [0, 4.294.967.295]$</li>
+	</ul>
+</ul>
+</section>
+
+<section>
+<h2>Representación con signo</h2>
+<ul>
+<li>Permite representar <b>negativos y no negativos</b></li>
+<li><strong>Varias técnicas</strong></li>
+	<ul>
+		<li>Signo-magnitud (<strong>S-M</strong>)</li>
+		<li>Complemento a 2 (<strong>C2</strong>)</li>
+		<li>En exceso a $2^n-1$</li>
+	</ul>
+</ul>
+</section>
+
+<section data-background="#3c53b5" data-background-transition="zoom">
+<h2>Preguntas</h2>
+<ol>
+	<li class="fragment">¿Cuáles son los límites del rango de representación de un sistema de representación numérica?</li>
+	<li class="fragment">Un número escrito en un sistema de representación <b>con signo</b>, ¿es siempre negativo?</li>
+	<li class="fragment">¿Para qué querríamos escribir un número positivo en un sistema de representación con signo?</li>
+</ol>
+</section>
+
+
+<section>
+<h2>Sistema de Signo-magnitud</h2>
+<ul>
+   <li>El primer bit a la izquierda representa el signo</li>
+	<ul>
+	<li>0 &#8680; positivo</li>
+	<li>1 &#8680; negativo</li>
+	</ul>
+   <li>Los restantes bits, el valor absoluto o magnitud</li>
+</ul>
+</section>
+
+<section>
+<h2>Signo-Magnitud en 8 bits</h2>
+<ul>
+	<li>$7_{(10} = 00000111_{(2}$</li>
+	<li>$-7_{(10} = 10000111_{(2}$</li>
+	<li>RR:<span class="fragment"> $[-127, 127]$</span></li>
+</ul>
+</section>
+
+<section>
+<h2>RR de Signo-Magnitud con n bits</h2>
+<ul>
+   <li>Hay $n$ bits pero uno es para el signo</li>
+	<p class="post_it">
+   		&#8680; El valor absoluto se expresa en $n-1$ bits
+	</p>
+   <li>Rango de representación</li>
+	<ul>
+	<ul>
+	<li>Como el RR Sin Signo en $n-1$ bits es $[0, 2^{n-1}-1]$...</li>
+	<li>...el RR de Signo-Magnitud en $n$ bits es
+	<span class="post_it">$[-(2^{n-1}-1), 2^{n-1}-1]$</span></li>
+	</ul>
+</ul>
+</section>
+
+<section data-background="#3c53b5" data-background-transition="zoom">
+<h2>Preguntas</h2>
+<p>
+Signo-Magnitud en 8 bits
+</p>
+<ol>
+<li>$9_{(10} = X_{(2} =$ <span class="fragment"> $00001001$</span></li>
+<li>$-9_{(10} = X_{(2} =$ <span class="fragment"> $10001001$</span></li>
+<li>$50_{(10} = X_{(2} =$ <span class="fragment"> $00110010$</span></li>
+<li>$-50_{(10} = X_{(2} =$ <span class="fragment"> $10110010$</span></li>
+<li>$-128_{(10} = X_{(2} =$ <span class="fragment">Imposible</span></li>
+<li>$10000000_{(2} = X_{(10} =$ <span class="fragment">¿Y $00000000_{(2}$?</span></li>
+</ol>
+</section>
+
+<section data-background="#b53c53" data-background-transition="zoom">
+<img src="img/sm.jpg" class="stretch">
+</section>
+
+
+<section>
+<h2>Sistema de Complemento a 2</h2>
+<ul>
+<li>Complemento a 2 corrige los problemas de Signo-magnitud</li>
+	<ul>
+	<li>Signo-magnitud no utiliza eficientemente el espacio de representación</li>
+	<li>No es conveniente para la aritmética</li>
+	</ul>
+<li>La forma de representación en $C2$ es diferente</li>
+</ul>
+</section>
+
+<section>
+<h2>Operación de complemento a 2</h2>
+<ul>
+	<li>Devuelve el opuesto <i>("el negativo")</i> de un número</li>
+	<ul>
+	<li>Si $a > 0, -a < 0$
+	<li>Si $a < 0, -a > 0$
+	</ul>
+<div class="post_it">
+	<li>Procedimiento</li>
+	<ol>
+	<li>Se invierten todos los bits</li>
+	<li>Se suma 1</li>
+	</ol>
+</div>
+	<li>Ejemplo: $111010$ &#8680; $000110$</li>
+	<ul>
+		<li>¿Son opuestos?</li>
+	</ul>
+</ul>
+</section>
+
+<section>
+<h2>Complemento a 2 en 8 bits</h2>
+<table>
+<tr><th>Procedimiento</th><th>Ejemplo</th></tr>
+<tr><td><li>Positivos o cero</li></td>			<td align="right">$17_{(10}$</td></tr>
+<tr><td>&nbsp;&nbsp;Se representan como en S-M</td>	<td align="right">$00010001_{(2}$</td></tr>
+
+<tr><td><li>Negativos</li></td>			<td align="right">$-17_{(10}$</td></tr>
+<tr><td>&nbsp;&nbsp;1. Se expresa su valor absoluto</td><td align="right">$00010001_{(2}$</td></tr>
+<tr><td>&nbsp;&nbsp;2. Se invierten todos los bits</td><td align="right">$11101110_{(2}$</td></tr>
+<tr><td>&nbsp;&nbsp;3. Se suma 1</td>		<td align="right">$11101111_{(2}$</td></tr>
+</table>
+</section>
+
+<section>
+<h2>C2 en 8 bits &rarr; decimal</h2>
+<ul>
+	<li>Lo primero es determinar el signo</li>
+	<li>$00010001$ es positivo</li>
+	<ul>
+	<li>$00010001_{(2} = 17_{(10}$</li>
+	</ul>
+	<li>$11101111$ es negativo</li>
+	<ol>
+		<li>Invirtiendo, $1101111_{(2} = 0010000_{(2}$</li>
+		<li>$0010000_{(2} + 00000001_{(2} = 0010001_{(2} = 17_{(10}$</li>
+		<li>$-1 \times 17 = -17$</li>
+	</ol>
+</ul>
+</section>
+
+    
+<section data-background="#3c53b5" data-background-transition="zoom">
+<h2>Preguntas</h2>
+<p>
+Complemento a 2 en 8 bits
+</p>
+   <ol>
+	<li>$9_{(10} =$ <span class="fragment">$00001001_{(2}$</span></li>
+	<li>$-9_{(10} =$ <span class="fragment">$11110111_{(2}$</span></li>
+	<li>$50_{(10} =$ <span class="fragment">$00110010_{(2}$</span></li>
+	<li>$-50_{(10} =$ <span class="fragment">$11001110_{(2}$</span></li>
+	<li>$-128_{(10} =$ <span class="fragment">$10000000_{(2}$</span></li>
+   </ol>
+</section>
+
+    
+<section>
+<h2>RR de C2 con $n$ bits</h2>
+<ul>
+<li>$-128 = -2^{n-1}$ &#8680; ¡era imposible en S-M!
+<li>RR S-M $n$ bits: $[-(2^{n-1}-1), 2^{n-1}-1]$
+<li>RR C2 n bits: $[-(2^{n-1}), 2^{n-1}-1]$
+<li><span class="post_it">El RR de C2 tiene un valor más que el de S-M</span>
+</ul>
+</section>
+   
+<section>
+<h2>Ventajas de C2 sobre S-M</h2>
+<ul>
+    	<li>Un valor más en el RR</li>
+	<li>El <strong>cero</strong> tiene una única representación</li>
+	<li>Las cuentas se hacen bit a bit</li>
+	<li>Mecanismo de cálculo eficiente </li>
+	<li>Fácil implementación computacional</li>
+</ul>
+</section>
+
+<section>
+<h2>Rangos de Representación</h2>
+<img src="img/sistemas.png" class="stretch">
+</section>
+
+<section>
+<h2>Aritmética en C2</h2>
+<ul>
+    <li><strong>$A + B$</strong></li>
+	<ul>
+		<li>Las cuentas se hacen bit a bit
+	</ul>
+	<li><strong>$A - B$</strong></li>
+	<ul>
+		<li>$A - B = A + (-B)$</li>
+		<li>Se complementa $B$ y se suman bit a bit </li>
+	</ul>
+</ul>
+</section>
+
+<section>
+<h2>Aritmética en C2</h2>
+<ul>
+<li>Sumar $9 + 8$ en C2, 8 bits</li>
+<ul class="post_it">
+$\frac{00001001\\+\\00001000}{00010001}$
+</ul>
+</ul>
+</section>
+
+<section>
+<h2>Aritmética en C2</h2>
+<ul>
+<li>Restar $9 - 8$ en C2, 8 bits</li>
+	<ul>
+	<li>$9 - 8 = 9 + (-8)$</li>
+	<li>Complementamos a 2 el positivo 8</li>
+	<li>$-8 = C2(00001000) = 11111000$</li>
+	</ul>
+	<li>Hacemos la suma</li>
+	<ul class="post_it">
+		$\frac{00001001\\+\\11111000}{00000001}$
+	</ul>
+</ul>
+</section>
+
+<section data-background="#3c53b5" data-background-transition="zoom">
+<h2>Preguntas</h2>
+<ol>
+	<li class="fragment">El complemento a 2 de un número, es decir, $C2(x)$, ¿es siempre un número negativo?</li>
+	<li class="fragment">¿Quién es $C2(0)$?</li>
+	<li class="fragment">¿Cuánto vale $C2(C2(x))$? Es decir, ¿qué pasa si complemento a 2 el complemento a 2 de $x$?</li>
+	<li class="fragment">¿Cuánto vale $x + C2(x)$? Es decir, ¿qué pasa si sumo a $x$ su propio complemento a 2?</li>
+	<li class="fragment">¿Cómo puedo verificar si calculé correctamente un complemento a 2?</li>
+</ol>
+</section>
+
+<section data-background="#3c53b5" data-background-transition="zoom">
+<h2>Desafío</h2>
+<ul>
+	<li class="fragment">Adoptemos la notación $x = (x_{n-1}, ... , x_1, x_0)$ para un número en $C^n_2$, es decir, en complemento a 2 sobre $n$ bits</li>
+	<li class="fragment">Con la notación anterior, comprobar que $x = $ $-1 \times x_{n-1} \times 2^{n-1} + x_{n-2} \times 2^{n-2} +$ $...$ $+ x_1 \times 2 + x_0 =$ $-x_{n-1} \times 2^{n-1}+ \sum_{i=0}^{n-2}({x_i \times 2^i})$</li>
+	<li class="fragment">Con la misma notación, pero si $x$ está en Signo-magnitud, ¿cuál es la expresión de $x$ como función de los dígitos binarios $x_i$?</li>
+</ul>
+</section>
+
+<section>
+<h2>Overflow o desbordamiento en C2</h2>
+    <ul>		
+	<li>Cuando el resultado de una operación excede la cantidad de dígitos del sistema, el resultado es inválido</li>
+    	<li>Puede ocurrir tanto al sumar dos números positivos como dos negativos</li>
+	<li>Condición sobre los dos últimos bits de <strong>carry</strong> o acarreo</li>
+    <ul>		
+	<li>Diferentes &#8680; hay <i>overflow</i></li>
+	<li>Iguales &#8680; no hay <i>overflow</i></li>
+    </ul>
+    </ul>
+</section>
+
+
+
+
+
+<section data-menu-title="Caso sin overflow">
+	<section data-transition="none">
+	<h2>Bits de acarreo o <i>carry</i></h2>
+	<img src="img/no-of0.png" class="plainstretch">
+	</section>
+	<section data-transition="none">
+	<h2>Bits de acarreo o <i>carry</i></h2>
+	<img src="img/no-of1.png" class="plainstretch">
+	</section>
+	<section data-transition="none">
+	<h2>Bits de acarreo o <i>carry</i></h2>
+	<img src="img/no-of2.png" class="plainstretch">
+	</section>
+	<section data-transition="none">
+	<h2>Bits de acarreo o <i>carry</i></h2>
+	<img src="img/no-of3.png" class="plainstretch">
+	</section>
+	<section data-transition="none">
+	<h2>Bits de acarreo o <i>carry</i></h2>
+	<img src="img/no-of4.png" class="plainstretch">
+	</section>
+	<section data-transition="none">
+	<h2>Bits de acarreo o <i>carry</i></h2>
+	<img src="img/no-of5.png" class="plainstretch">
+	</section>
+	<section data-transition="none">
+	<h2>Bits de acarreo o <i>carry</i></h2>
+	<img src="img/no-of6.png" class="plainstretch">
+	</section>
+	<section data-transition="none">
+	<h2>Bits de acarreo o <i>carry</i></h2>
+	<img src="img/no-of7.png" class="plainstretch">
+	</section>
+	<section data-transition="none">
+	<h2>Bits de acarreo o <i>carry</i></h2>
+	<img src="img/no-of8.png" class="plainstretch">
+	</section>
+</section>
+
+<section data-menu-title="Caso con overflow">
+	<section data-transition="none">
+	<h2>Bits de acarreo o <i>carry</i></h2>
+	<img src="img/si-of0.png" class="plainstretch">
+	</section>
+	<section data-transition="none">
+	<h2>Bits de acarreo o <i>carry</i></h2>
+	<img src="img/si-of1.png" class="plainstretch">
+	</section>
+	<section data-transition="none">
+	<h2>Bits de acarreo o <i>carry</i></h2>
+	<img src="img/si-of2.png" class="plainstretch">
+	</section>
+	<section data-transition="none">
+	<h2>Bits de acarreo o <i>carry</i></h2>
+	<img src="img/si-of3.png" class="plainstretch">
+	</section>
+	<section data-transition="none">
+	<h2>Bits de acarreo o <i>carry</i></h2>
+	<img src="img/si-of4.png" class="plainstretch">
+	</section>
+	<section data-transition="none">
+	<h2>Bits de acarreo o <i>carry</i></h2>
+	<img src="img/si-of5.png" class="plainstretch">
+	</section>
+	<section data-transition="none">
+	<h2>Bits de acarreo o <i>carry</i></h2>
+	<img src="img/si-of6.png" class="plainstretch">
+	</section>
+	<section data-transition="none">
+	<h2>Bits de acarreo o <i>carry</i></h2>
+	<img src="img/si-of7.png" class="plainstretch">
+	</section>
+	<section data-transition="none">
+	<h2>Bits de acarreo o <i>carry</i></h2>
+	<img src="img/si-of8.png" class="plainstretch">
+	</section>
+</section>
+
+
+<section data-background="#3c53b5" data-background-transition="zoom">
+<h2>Preguntas</h2>
+<ol>
+	<li class="fragment">¿Qué condición sobre los bits de carry permite asegurar que <b>no</b> habrá <i>overflow</i>?</li>
+	<li class="fragment">¿Para qué sistemas de representación numérica usamos la condición de detección de <i>overflow</i>?</li>
+	<li class="fragment">¿Puede existir <i>overflow</i> al sumar dos números de diferente signo?</li>
+	<li class="fragment">¿Qué condición sobre los bits <b>de signo</b> de los operandos permite asegurar que <b>no</b> habrá <i>overflow</i>?</li>
+	<li class="fragment">¿Puede haber casos de <i>overflow</i> al sumar dos números negativos?</li>
+	<li class="fragment">¿Puede haber casos de <i>overflow</i> al restar dos números?</li>
+</ol>
+</section>
+
+
+<section>
+<h2>Extensión de signo en C2</h2>
+    <ul>		
+	<li>Dos operandos en C2 deben tener la misma cantidad de bits</li>
+    	<li>Si uno fuera más corto que el otro, se necesita extenderlo por la izquierda</li>
+    <ul>		
+	<li>Positivo &#8680; se completa con ceros</li>
+	<li>Negativo &#8680; se completa con unos</li>
+    </ul>
+    </ul>
+</section>
+
+<section>
+<h2>Extensión de signo en C2</h2>
+    <ul>		
+	<li>$A + B = 00101011_{(2} + 00101_{(2}$</li>
+	<li>A está en $C^8_2$ y B en $C^5_2$</li>
+    <ul>		
+    	<li>Se completa B (positivo) como $00000101_{(2}$</li>
+    </ul>
+	<li>$A + B = 1010_{(2} + 0110100_{(2}$</li>
+	<li>A está en $C^4_2$ y B en $C^7_2$</li>
+    <ul>		
+	<li>Se completa A (negativo) como $1111010_{(2}$</li>
+    </ul>
+    </ul>
+</section>
+
+<section>
+<h2>Notación en exceso o <i>Bias</i></h2>
+<ul>
+<li>Utiliza un sistema sin signo en $n$ bits</li>
+<li>Representa un intervalo $[a, b]$ de $2^n$ enteros</li>
+<ul>
+	<li>Este intervalo contiene $b - a + 1$ enteros</li>
+	<li>Para $[-5, 10]$ es $10 - (-5) + 1 = 16$ &#8680;  necesitamos 4 bits</li>
+	<li>Para $[-128, 127]$ es $127 - (-128) + 1$ $= 256$ &#8680;  necesitamos 8 bits</li>
+</ul>
+<li>Asigna los binarios en orden</li>
+$a$ &#8680; $0000$, $a + 1$ &#8680; $0001$, ..., $b$ &#8680; $1111$ 
+</section>
+
+<section>
+<section data-transition="fade">
+<img src="img/bias-0.png" class="plainstretch">
+</section>
+
+<section data-transition="fade">
+<img src="img/bias-0a.png" class="plainstretch">
+</section>
+
+<section data-transition="fade">
+<img src="img/bias-0b.png" class="plainstretch">
+</section>
+
+<section data-transition="fade">
+<img src="img/bias-1.png" class="plainstretch">
+</section>
+
+<section data-transition="fade">
+<img src="img/bias-2.png" class="plainstretch">
+</section>
+</section>
+
+<section>
+<h3>Exceso para $[-5, 10]$, $n = 4$</h3>
+<table>
+<tr><td>-5</td><td>&#8680;</td><td>0000</td>  <td>&nbsp;</td>  <td>&nbsp;</td>    <td>3</td><td>&#8680;</td><td>1000</td></tr>
+<tr><td>-4</td><td>&#8680;</td><td>0001</td>  <td>&nbsp;</td>  <td>&nbsp;</td>    <td>4</td><td>&#8680;</td><td>1001</td></tr>
+<tr><td>-3</td><td>&#8680;</td><td>0010</td>  <td>&nbsp;</td>  <td>&nbsp;</td>    <td>5</td><td>&#8680;</td><td>1010</td></tr>
+<tr><td>-2</td><td>&#8680;</td><td>0011</td>  <td>&nbsp;</td>  <td>&nbsp;</td>    <td>6</td><td>&#8680;</td><td>1011</td></tr>
+<tr><td>-1</td><td>&#8680;</td><td>0100</td>  <td>&nbsp;</td>  <td>&nbsp;</td>    <td>7</td><td>&#8680;</td><td>1100</td></tr>
+<tr><td> 0</td><td>&#8680;</td><td>0101</td>  <td>&nbsp;</td>  <td>&nbsp;</td>    <td>8</td><td>&#8680;</td><td>1101</td></tr>
+<tr><td>1</td><td>&#8680;</td><td>0110</td>  <td>&nbsp;</td>   <td>&nbsp;</td>    <td>9</td><td>&#8680;</td><td>1110</td></tr>
+<tr><td>2</td><td>&#8680;</td><td>0111</td>  <td>&nbsp;</td>   <td>&nbsp;</td>    <td>10</td><td>&#8680;</td><td>1111</td></tr>
+</table>
+</section>
+
+
+
+<section>
+<h2>Notación en exceso o <i>Bias</i></h2>
+<ul>
+<li>El valor representado es el valor sin signo del binario, más el límite inferior del intervalo</li>
+<li>Se puede representar un intervalo simétrico o no</li>
+<li>Dados A y B es fácil compararlos
+<ul>
+	<li>Es decir, determinar si A > B o B > A</li>
+	<li>Al contrario que en C2</li>
+</ul>
+<li>La aritmética, sin embargo, es dificultosa</li>
+<li>Usado en representación en punto flotante</li>
+</ul>
+</section>
+
+<section data-background="#3c53b5" data-background-transition="zoom">
+<h2>Preguntas</h2>
+<div align="center">Sobre Notación en Exceso</div>
+<ol>
+	<li class="fragment">Dado un valor decimal a representar, ¿cómo calculamos el binario?</li>
+	<li class="fragment">Dado un binario, ¿cómo calculamos el valor decimal representado?</li>
+	<li class="fragment">El sistema en exceso ¿destina un bit para representar el signo?</li>
+	<li class="fragment">¿Se puede representar un intervalo que no contenga el cero?</li>
+	<li class="fragment">¿Cómo se comparan dos números en exceso para saber cuál es el mayor?</li>
+</ol>
+</section>
+	
+
+
+<section data-markdown data-background="#3cb5c5" data-background-transition="zoom">
+##Representación de datos numéricos
+* Enteros
+ * Signo-Magnitud
+ * Complemento a 2
+ * Exceso a $2^{n-1}$
+* Fraccionarios
+ * Punto fijo
+ * Punto flotante
+</section>
+
+<section class="preguntas">
+<h2>Coma o punto fraccionario</h2>
+<ul>
+<li>En los enteros, está a la derecha de los dígitos y no se escribe</li>
+<li>Marca el lugar donde los exponentes de la base se hacen negativos</li>
+</ul>
+<div class="post_it" align="center">$3.14 = 3 \times 10^0 + 1 \times  10^{-1} + 4 \times  10^{-2}$</div>
+</section>
+
+
+
+<section>
+<h2>Fraccionario en base 2 &rarr; decimal</h2>
+<p>$11.101_{(2}  = $</p>
+<p>$1 \times 2^1 + 1 \times 2^0 +$ <span class="fragment"> $1 \times 2^{-1} + 0 \times 2^{-2} + 1 \times 2^{-3} =$</span></p>
+<p class="fragment">$2 + 1 + 0.5 + 0 + 0.125 = $</p>
+<p class="fragment">$3.625$</p>
+</section>
+    
+<section data-markdown>
+## Decimal fraccionario &rarr; base 2
+* Se separan la parte entera (PE) y la parte fraccionaria (PF)
+* Se convierte la PE a base 2 separadamente
+* La PF se multiplica por 2 y se toma la PE del resultado
+ * Este dígito binario se agrega al resultado
+* Se repite el paso anterior hasta llegar a 0, o hasta lograr la precisión deseada
+</section>
+
+<section>
+<h2>Decimal fraccionario &rarr; base 2</h2>
+<ul>
+<li>$3.625 = 3 + 0.625 = PE + PF$</li>
+<li>$PE = 3_{(10} = 11_{(2}$</li>
+<li>$PF = 0.625_{(10} = ?_{(2}$</li>
+</ul>
+</section>
+
+
+<section>
+<h2>Decimal fraccionario &rarr; base 2, PF</h2>
+<ul>
+<li>$PF \times 2 = 0.625 \times 2 = 1.25$ <span class="fragment">&#8680; $1$</span></li>
+<li>$PF' \times 2 = 0.25 \times 2 = 0.5$ <span class="fragment">&#8680; $0$</span></li>
+<li>$PF'' \times 2 = 0.5 \times 2 = 1.0$ <span class="fragment">&#8680; $1$</span></li>
+<li>$PF''' \times 2 = 0.0 \times 2 = 0.0$ <span class="fragment">&#8680; Fin</span></li>
+<li class="fragment">$PF = 0.625$ <span class="fragment">&#8680; $0.101$</span></li>
+<li class="fragment">$3.625 = 3 + 0.625 = 11 + 0.101 = 11.101$</li>
+</ul>
+</section>
+
+
+<section data-markdown>
+##Representación de punto fijo
+* PE y PF tienen un *ancho* determinado
+	* "Punto fijo en $n$ dígitos binarios con $k$ fraccionarios"
+* El punto no se almacena pero se asume
+	* $00011101 = 00011.101 = 3.625$
+	* El software opera con enteros de $n$ dígitos
+	* Sólo imprime el punto del resultado final
+</section>
+
+<section data-markdown>
+##Operaciones en punto fijo
+* Se ignora el punto y se tratan los números como en C2
+* Los puntos fraccionarios se encolumnan automáticamente
+* El resultado debe conservar el *ancho* de PE y PF
+</section>
+
+<section data-markdown>
+##Punto fijo con signo
+* Decimal fraccionario con signo &rarr; binario
+ * Positivo
+   * Se expresan la PE y PF en binario
+   * $2.25 = 00010.010$
+ * Negativo
+   * Se expresa su valor absoluto como en el caso positivo y se complementa
+   * $-2.25 = C2(00010.010) = $ $C2(00010010) =$ $ 11101110 = 11101.110$
+   * $00010.010 + 11101.110 = 00000.000$
+</section>
+
+<section data-markdown>
+##Punto fijo con signo
+* Binario fraccionario con signo &rarr; decimal
+ * Positivo
+	- Se aplica la expresión general con exponentes negativos
+	- O bien, se trata como entero y se divide por $2^k$
+ * Negativo
+	- Se complementa y se trata como en el caso positivo
+	- Se restituye el signo $-$
+</section>
+<!---------
+<section data-background="#3c53b5" data-background-transition="zoom">
+<h2>Preguntas</h2>
+<div align="center">Convertir a punto fijo con 4 </div>
+<ol>
+<li>$0.5 = $<span class="fragment">$$</span></li>
+<li>$2.5 = $<span class="fragment">$$</span></li>
+<li>$0.8 = $<span class="fragment">$$</span></li>
+</ol>
+<div align="center">De punto fijo a decimal</div>
+<li>$ = $<span class="fragment">$$</li>
+<li>$ = $<span class="fragment">$$</li>
+<li>$ = $<span class="fragment">$$</li>
+<ol>
+</section>
+---------->
+
+<section data-markdown>
+##Representación de punto fijo
+* Adecuada para problemas con datos de magnitudes y precisiones similares
+* Aplicada en matemática financiera, juegos u otros usos
+* No adecuada para todas las magnitudes o precisiones
+</section>
+    
+<!-- ------------------------------------------------------------------
+    
+    <div class="step" data-x="3000" data-y="0" data-z="-1500">
+    <q><strong>Variables diferentes</strong></q>
+    <ol>	
+        <li>"Tiempo en que la luz recorre una millonésima de milímetro"
+    	<li><i>t = e / v</i>
+		<li><i>e</i> = 0.000000001 m
+		<li><i>v</i> = 300000000 m/s
+	</ol>
+    </div>
+    
+    
+    <div class="step" data-x="4000" data-y="0" data-z="-1500">
+    <q><strong>Notación científica</strong></q>
+    <ol>	
+		<li><i>e</i> = 0.000000001 m = 1 * 10<sup>-9</sup> m
+		<li><i>v</i> = 300000000 m/s = 3 * 10<sup>8</sup> m/s
+		<li><i>t = e / v</i> = (1 * 10<sup>-9</sup>) / (3 * 10<sup>8</sup>) s		
+		<li><i>t</i> = 1 / 3 * 10<sup>-9-8</sup> s
+		<li><i>t</i> = 0.333 * 10<sup>-17</sup> s
+	    </ol>
+    </div>
+
+    <div class="step" data-x="5000" data-y="0" data-z="-1500">
+    <q><strong>Notación científica</strong></q>
+    <ol>	
+		<li>Coeficiente = 0.333
+		<li>Exponente = -17
+		<li>Normalizada: 1 <= coeficiente < base
+		<li>0.333 * 10<sup>-17</sup> = 3.33 * 10<sup>-18</sup> s
+	</ol>
+    </div>
+
+
+    <div class="step" data-x="6000" data-y="0" data-z="-1500">
+    <q><strong>Representación en punto flotante</strong></q>
+    <ol>	
+		<li>1 bit de <strong>signo</strong>
+		<li>8 bits para el <strong>exponente</strong>
+		<li>23 bits para la <strong>mantisa</strong>
+		<li><i>IEEE 754 single precision</i>
+	    </ol>
+    </div>
+
+    <div id="ieee754" class="step centered" data-x="6000" data-y="0" data-z="-2500">
+    <q><strong>IEEE 754 single precision</strong></q>
+    <ol>	
+	    </ol>
+    </div>
+
+
+
+    <div class="step transp" data-x="7000" data-y="0" data-z="-1500">
+    <q><strong>Decimal a punto flotante</strong></q>
+    <ol>	
+		<li>1. Escribir el valor absoluto en base 2
+		<li>2. Pasarlo a notación científica en base 2, normalizada
+		<li>3. <strong>Ajustar</strong> el exponente y guardar el signo
+		<li>4. Guardar el coeficiente <strong>sin parte entera</strong> en la mantisa
+	    </ol>
+    </div>
+
+    <div class="step transp" data-x="8000" data-y="500" data-z="0">
+    <q><strong>2. Normalizar not. científica</strong></q>
+    <ol>	
+		<li>Desplazo el punto fraccionario hasta dejar un 1 en la parte entera
+		<li>Compenso la multiplicación o división por 2<sup>algo</sup> que hice
+		<li>101.11 = 1.0111 * 2<sup>2</sup>
+		<li>0.0011111 = 1.1111 * 2<sup>-3</sup>
+    </ol>
+    </div>
+	
+    <div class="step transp" data-x="9000" data-y="1200" data-z="2000">
+    <q><strong>3. Ajustar el exponente</strong></q>
+    <ol>	
+		<li>El exponente puede ser positivo o negativo
+		<li>Representación <strong>en exceso a 127</strong>
+		<li>Se le suma 127 para obtener un número no negativo 
+    </ol>
+    </div>
+
+    <div id="exceso127" class="wide step centered" data-x="8800" data-y="1300" data-z="500">
+    <q><strong>Representación en exceso a 127</strong></q>
+    <ol>	
+    </ol>
+    </div>
+
+	
+    <div class="step transp" data-x="9000" data-y="1200" data-z="2000">
+    <q><strong>3. Ajustar el exponente</strong></q>
+    <ol>	
+		<li>El exponente puede ser positivo o negativo
+		<li>Representación <strong>en exceso a 127</strong>
+		<li>Se le suma 127 para obtener un número no negativo 
+    </ol>
+    </div>
+
+
+    <div class="step transp" data-x="9500" data-y="1500" data-z="3000">
+    <q><strong>4. Guardar la mantisa</strong></q>
+    <ol>	
+		<li>El primer dígito del coeficiente es siempre 1
+		<li><strong>&#8680;</strong> no hace falta almacenarlo
+		<li>Se guarda <strong>coeficiente - 1</strong> completando con ceros
+    </ol>
+    </div>
+    
+    <div class="step" data-x="9500" data-y="2500" data-z="3000">
+    <q><strong>Ejemplo: n = -5.5</strong></q>
+    <ol>	
+		<li>|n| = 5.5<sub>(10</sub> = 101.1<sub>(2</sub>
+		<li>101.1 = 1.011 * 2<sup>2</sup>
+		<li>s = 1
+		<li>e = 2 + 127 = 129
+		<li>1.011 - 1 = .011 <strong>&#8680;</strong> m = 011000...
+    </ol>
+    </div>
+    
+    <div id="ejemplofp" class="wide step centered" data-x="10500" data-y="2500" data-z="3000">
+    <q><strong>Ejemplo: n = -5.5</strong></q>
+    	<br/>
+		s = 1, e = 129, m = 011000...
+    </div>
+    
+    
+    <div id="pfadec" class="wide step centered" data-x="12000" data-y="0" data-z="3000">
+    <q><strong>Punto Flotante a decimal</strong></q>
+    <ol>	
+    	<br/>
+		<strong>n = (-1)<sup>s</sup> * 2<sup>(e-127)</sup> * (1 + m) </strong>
+    </ol>
+    </div>
+    
+    <div id="resumen" class="wide step centered" data-x="8400" data-y="5000" data-z="500">
+    <q><strong>Resumen</strong></q>
+    <ol>	
+    </ol>
+    </div>
+
+-->	
+<!------------------------------------------------------------------>
+
+	</div>
+</div>
+
+	<script src="lib/js/head.min.js"></script>
+	<script src="js/reveal.js"></script>
+
+	<script>
+
+		Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+				previewLinks: true,
+				theme: 'serif',
+				transition: 'slide', // none/fade/slide/convex/concave/zoom
+
+
+				menu: { // Menu works best with font-awesome installed: sudo apt-get install fonts-font-awesome
+					themes: false,
+					transitions: false,
+					markers: true,
+					hideMissingTitles: true,
+					custom: [
+//				            { title: 'Plugins', icon: '<i class="fa fa-external-link"></i>', src: 'toc.html' },
+						{ title: 'About', icon: '<i class="fa fa-info"></i>', content: '<p>Introducción a la Computación</p>' }
+					]
+				},
+				anything: [ 
+					{className: "rand",  defaults: {min: 0, max: 9}, 
+						initialize: (function(container, options){ container.innerHTML = Math.trunc( options.min + Math.random()*(options.max-options.min + 1) ); }) },
+					{className: "plot",  defaults: {width:500, height: 500, grid:true}, initialize: (function(container, options){ options.target = "#"+container.id; functionPlot(options) }) },
+					{className: "chart",  initialize: (function(container, options){ container.chart = new Chart(container.getContext("2d"), options);  }) },
+					{className: "animate",  initialize: (function(container, options){ 
+						Reveal.addEventListener( 'fragmentshown', function( event ) {
+							if (typeof event.fragment.beginElement === "function" ) { 
+								event.fragment.beginElement(); 	
+							}
+						});
+						Reveal.addEventListener( 'fragmenthidden', function( event ) {
+							if (event.fragment.hasAttribute('data-reverse') ) { 
+								var reverse = event.fragment.parentElement.querySelector('[id=\"' + event.fragment.getAttribute('data-reverse') + '\"]');
+								if ( reverse && typeof reverse.beginElement === "function" ) { 
+									reverse.beginElement(); 	
+								}										 	
+							}
+						});
+						if ( container.getAttribute("data-svg-src") ) { 
+							var xhr = new XMLHttpRequest(); 
+							xhr.onload = function() { 
+								if (xhr.readyState === 4) { 
+									var svg = container.querySelector('svg');
+									container.removeChild( svg );
+									container.innerHTML = xhr.responseText + container.innerHTML;
+									if ( svg ) {
+										container.querySelector('svg').innerHTML = container.querySelector('svg').innerHTML + svg.innerHTML;
+									}
+								} 
+								else { 
+									console.warn( "Failed to get file. ReadyState: " + xhr.readyState + ", Status: " + xhr.status); 
+								}
+							}; 
+							xhr.open( 'GET', container.getAttribute("data-svg-src"), true ); 
+							xhr.send();
+						}
+					}) },
+					{className: "anything",  initialize: (function(container, options){ if (options && options.initialize) { options.initialize(container)} }) }
+				],
+
+
+				// -------- Math plugin ----------
+				math: {
+					mathjax: 'https://cdn.mathjax.org/mathjax/latest/MathJax.js',
+					//mathjax: '../MathJax-master/MathJax.js',
+					config: 'TeX-AMS_HTML-full'
+				},
+
+
+				// -------- Chalkboard -----------
+				chalkboard: { 
+					// optionally load pre-recorded chalkboard drawing from file
+					// src: "chalkboard.json",
+					//readOnly: undefined, 
+					toggleChalkboardButton: { left: "80px" },
+					toggleNotesButton: { left: "130px" },
+					//transition: 800,
+					//theme: "whiteboard",
+					// configuration options for notes canvas and chalkboard
+					//color: [ 'rgba(0,0,255,1)', 'rgba(255,255,255,0.5)' ],
+					//background: [ 'rgba(127,127,127,.1)' , 'reveal.js-plugins/chalkboard/img/blackboard.png' ],
+					//pen:  [ 'reveal.js-plugins/chalkboard/img/boardmarker.png', 'reveal.js-plugins/chalkboard/img/chalk.png' ],
+				},
+				keyboard: {
+					67: function() { RevealChalkboard.toggleNotesCanvas() },    // toggle notes canvas when 'c' is pressed
+					66: function() { RevealChalkboard.toggleChalkboard() }, // toggle chalkboard when 'b' is pressed
+					46: function() { RevealChalkboard.clear() },    // clear chalkboard when 'DEL' is pressed
+					 8: function() { RevealChalkboard.reset() },    // reset chalkboard data on current slide when 'BACKSPACE' is pressed
+					68: function() { RevealChalkboard.download() }, // downlad recorded chalkboard drawing when 'd' is pressed
+				},
+
+
+				// -------- Dependencies ---------
+				dependencies: [
+					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: 'plugin/zoom-js/zoom.js', async: true },
+					{ src: 'plugin/notes/notes.js', async: true },
+					{ src: 'plugin/anything/anything.js' },
+					{ src: 'reveal.js-plugins/chalkboard/chalkboard.js' },
+					{ src: 'bower_components/reveal.js-menu/menu.js' },
+					{ src: 'bower_components/reveal.js-plugins/mathsvg/math.js', async: true }
+				]
+			});
+
+		</script>
+
+	</body>
+</html>

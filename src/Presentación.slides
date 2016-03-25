@@ -1,0 +1,257 @@
+
+				
+<section data-markdown>
+##Introducción 
+##a la Computación 
+##2016
+### Eduardo Grosclaude
+</section>
+
+
+<section 
+	data-background="img/logounc.png"  
+	data-background-size="50%" 
+	data-background-transition="slide"
+	class="transparent_bg">
+<h2>Universidad Nacional</h2>
+<h2>del Comahue</h2>
+<a href="http://www.uncoma.edu.ar">http://www.uncoma.edu.ar</a>
+</section>
+
+<section>
+<h3>Facultades</h3>
+Ciencias Agrarias, Ciencias y Tecnologías de los Alimentos, Ciencias del Ambiente y de la Salud, Ciencias de la Educación, Derecho y Ciencias Sociales, Economía y Administración, Humanidades, <span class="fragment highlight-blue"><b>Informática</b></span>, Ingeniería, Lenguas, Turismo, Ciencias Médicas
+</section>
+
+
+<section 
+	data-background="img/logofai.png"  
+	data-background-size="60%" 
+	data-background-transition="slide"
+	class="transparent_bg">
+<h2>Facultad de Informática</h2>
+<a href="http://faiweb.uncoma.edu.ar">http://faiweb.uncoma.edu.ar</a>
+</section>
+
+
+<section>
+<h2>Carreras dictadas por la FI</h2>
+<ul>
+<span class="fragment"><li>Profesorado en Informática</li></span>
+<span class="fragment">
+<li>Licenciaturas</li>
+<ul>
+	<li>en Cs. de la Computación</li>
+	<li>en Sistemas de Información</li>
+	<li>en Informática <span class="fragment"><span class="post_it">(en preparación)</span></span></li>
+</ul>
+</span>
+<span class="fragment">
+<li>Tecnicaturas Universitarias</li>
+<ul>
+<li>en Administración de Sistemas y Software Libre</li>
+<li>en Desarrollo Web</li>
+</ul>
+</span>
+</ul>
+</section>
+
+
+<section>
+<h2>Departamentos de la FI</h2>
+<ul>
+<span class="fragment">
+<li>Teoría de la Computación</li>
+</span>
+<span class="fragment">
+<li>Programación</li>
+</span>
+<span class="fragment">
+<li>Ingeniería de Sistemas</li>
+</span>
+<span class="fragment">
+<li>Computación Aplicada</li>
+</span>
+<span class="fragment">
+<li>Ingeniería de Computadoras</li>
+</span>
+<span class="fragment">
+<div class="post_it">
+&#8680; Áreas
+  	<ul>
+		<li>Arquitectura de Computadoras</li>
+		<li>Sistemas Operativos</li>
+		<li>Redes</li>
+	</ul>
+</div>
+
+</ul>
+</section>
+    
+
+<section data-markdown>
+##Ingeniería de Computadoras
+Algunas materias que dicta
+- Introducción a la Computación
+- Arquitectura y Organización de Computadoras
+- Sistemas Operativos
+- Seguridad Informática
+- Redes de Computadoras 
+- Sistemas Paralelos
+</section>
+
+
+<section>
+<h2>Roles de los licenciados</h2>
+<div style="font-style: italic;" class="post_it">"Planificar, dirigir, auditar, proyectos<br> de desarrollo de software de cualquier escala"</div>
+<ul>
+<li>Análisis y diseño de sistemas</li>
+<li>Programación de aplicaciones</li>
+<li>Administración de sistemas, de servidores, de redes</li>
+<li>Y muchísimas cosas más</li>
+</ul>
+</ul>
+</section>
+
+<section data-background="#3c53b5" data-background-transition="zoom">
+<h1>¿Preguntas?</h1>
+</section>
+
+
+<section data-markdown>
+#Introducción a la Computación 2016
+</section>
+
+<section data-markdown>
+##Equipo de Cátedra
+* Eduardo Grosclaude: oso@fi.uncoma.edu.ar
+* Guillermo Torres: guillermo.torres@fi.uncoma.edu.ar
+* Rodrigo Cañibano: rcanibano@fi.uncoma.edu.ar
+</section>
+
+<section>
+<h2>Qué contiene esta materia</h2>
+<ol>
+<li>Representación de la información</li>
+<small>Sistemas de Numeración, Unidades de Información, Representación Digital de Datos</small>
+<li>Organización de las Computadoras</li>
+<small>Componentes y Arquitectura de una computadora, CPU, Memoria, Dispositivos, Ejecución de Programas</small>
+<li>Software</li>
+<small>Sistemas Operativos, Lenguajes de Programación</small> 
+<li>Redes</li>
+</ol>				
+</section>
+
+<section data-markdown>
+##PEDCO 
+* Plataforma web educativa de la UNC
+* http://pedco.fi.uncoma.edu.ar
+* Material, prácticos, apuntes, novedades, foros
+* Obtener una cuenta de usuario
+</section>
+
+
+<section data-markdown>
+##Metodología
+* Clases teóricas y prácticas
+* Dos exámenes parciales con sus recuperatorios
+ * 60% &#8680; Aprobado
+ * 70% &#8680; Promocionado
+</section>
+
+
+
+<section>
+<h2>Acreditación</h2>
+<ul>
+<li>Cursado de una materia</li>
+	<span class="fragment"><ul><li>Aprobación de los exámenes parciales</li></ul></span>
+<li>Aprobación de la materia</li>
+	<span class="fragment"><ul>
+	<li>Cursada con promoción</li>
+	<li>Cursada y aprobar examen final</li>
+	<li>Rendir examen libre</li>
+	</ul></span>
+</ul>
+</section>
+
+<!--
+			<section>
+				<h3>Acreditación</h3>
+
+						<object class="stretch" data="diagrama.svg" width="100%" height="100%" type="image/svg+xml" preload>
+						</object>
+			</section>
+-->
+<!--					
+			<svg>
+						<circle opacity="0" cx="75" cy="145" r="10" style="stroke-width:2;stroke:#000000" fill="#ff0000">
+
+							<animate class="fragment" data-reverse="reverse0" begin="indefinite" attributeName="opacity" from="0" to="1" dur="0.1s" fill="freeze" repeatCount="1" />     
+
+							<animate id="reverse0" begin="indefinite" attributeName="opacity" to="0" from="1" dur="0.1s" fill="freeze" repeatCount="1" />     
+
+							<animateTransform class="fragment" data-reverse="reverse1" attributeName="transform" begin="indefinite" dur="1.15s" 
+																										type="translate" from="0 0" to="115 0" fill="freeze" />
+
+							<animateTransform id="reverse1" attributeName="transform" begin="indefinite" dur="0.01s" 
+																										type="translate" from="115 0" to="0 0" fill="freeze" />
+
+							<animateTransform id="step2" class="fragment" data-reverse="reverse2" attributeName="transform" begin="indefinite" dur="1.35s" 
+																										type="translate" from="115 0" to="250 0" fill="freeze" />
+
+							<animateTransform id="step2b" attributeName="transform" begin="step2.end" dur="0.8s" 
+																										type="translate" from="250 0" to="250 -80" fill="freeze" />
+
+							<animateTransform attributeName="transform" begin="step2b.end" dur="1.65s" type="translate" from="250 -80" to="415 -80" fill="freeze" />
+
+							<animateTransform id="reverse2" attributeName="transform" begin="indefinite" dur="0.01s" 
+																										type="translate" from="415 -80" to="115 0" fill="freeze" />
+
+							<animateTransform id="step3" class="fragment" data-reverse="reverse3" attributeName="transform" begin="indefinite" dur="1.6s" 
+																										type="translate" from="415 -80" to="575 -80" fill="freeze" />
+
+							<animateTransform id="step3b" attributeName="transform" begin="step3.end" dur="0.8s" 
+																										type="translate" from="575 -80" to="575 0" fill="freeze" />
+							<animateTransform attributeName="transform" begin="step3b.end" dur="0.9s" type="translate" from="575 0" to="665 0" fill="freeze" />
+
+							<animateTransform id="reverse3" attributeName="transform" begin="indefinite" dur="0.01s" 
+																										type="translate" from="665 0" to="415 -80" fill="freeze" />
+
+							<animate class="fragment" data-reverse="reverse4" begin="indefinite" attributeName="opacity" from="1" to="0" dur="0.1s" fill="freeze" repeatCount="1" />     
+							<animate id="reverse4" begin="indefinite" attributeName="opacity" to="1" from="0" dur="0.01s" fill="freeze" repeatCount="1" />     
+
+						</circle>
+					</svg>
+				</div>
+-->			
+
+ 
+<section data-transition="slide" >
+<h2>Horarios</h2>
+<ul><li>Módulo I</li>
+<ul>
+<li>Martes 12:00 a 14:00 Aula 16</li>
+<li>Viernes 12:00 a 14:00 Aula 105</li>
+</ul>
+<li>Módulo II</li>
+<ul>
+<li>Viernes 13:00 a 15:00 Aula 19</li>
+<li>Viernes 18:00 a 20:00 Aula 101</li>
+</ul>
+</ul>
+</section>
+
+ 
+<section 
+	data-transition="none" 
+	data-background="https://dl.dropboxusercontent.com/u/85477257/faiweb/fai/MapaAulas.png" 
+	data-background-transition="fade" 
+	data-background-size="90%">
+</section>
+
+
+<section data-background="#3c53b5" data-background-transition="zoom">
+<h1>¿Más preguntas?</h1>
+</section>
+

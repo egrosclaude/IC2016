@@ -1,0 +1,340 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>Introducción a la Computación 2016</title>
+
+		<meta name="description" content="Sistemas de Numeración">
+		<meta name="author" content="Eduardo Grosclaude">
+
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/ic.css" id="theme">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+
+		<!-- Code syntax highlighting -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+
+	<body>
+
+		<div class="reveal">
+
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+
+
+<!------------------------------------------------------------------>
+
+				
+<section data-markdown> 
+ <script type="text/template">
+##Unidad I 
+###Representación de la Información 
+
+1. Sistemas de Numeración 
+1. Unidades de Información<!-- .element: class="post_it" -->
+1. Representación Digital de Datos 
+ </script>
+</section>
+
+
+<section data-markdown>
+##Unidades de Información
+</section>
+
+
+
+
+<section data-markdown>
+##*Bit* (*binary digit*)
+- La mínima unidad de información
+ * Teoría de la Información, Claude Shannon, 1948
+ * Un **bit** es la respuesta a la pregunta más simple posible
+   * Dos valores posibles
+   * Representados por V/F, Sí/No, 1/0, etc.
+- Abreviado **b**
+- Equivalente a un dígito binario
+</section>
+
+<section>
+	<!--
+	<section  data-background="img/Beacons.gif" data-menu-title="El viaje de un bit">
+	</section>
+	->>
+	<!--
+	<section data-background="black">
+	<video id="beacons" width="800" height="400" class="stretch" preload controls>
+		<source data-src="/home/oso/Dropbox/Public/Charla Arquitectura de Computadoras/Beacons.webm" type='video/webm; codecs="vp8, vorbis"' />
+	</section>
+	-->
+	
+	<section data-background="black" data-menu-title="El viaje de un bit (Youtube)">
+	<iframe data-autoplay width="100%" height="100%" class="stretch" 
+		src="https://www.youtube.com/embed/sIhnYFRu4ao?wmode=opaque&rel=0" frameborder="0" allowfullscreen>
+	</iframe>    
+	</section>
+</section>
+
+
+<section data-markdown>
+##*Byte* (*binary term*)
+- Conjunto de 8 bits
+* Con un **byte** puedo representar:
+  - Números del 0 al 255
+  - Caracteres como letras u otros símbolos
+  - 256 posibilidades diferentes
+- Abreviado **B**
+</section>
+
+<section>
+<h2>Representando datos con bytes</h2>
+<table>
+<tr><td>00110000</td><td>0</td></tr>
+<tr><td>00110001</td><td>1</td></tr>
+<tr><td>00110010</td><td>2</td></tr>
+<tr><td colspan="2" align="center">...</td></tr>
+<tr><td>01000001</td><td>A</td></tr>
+<tr><td>01000010</td><td>B</td></tr>
+<tr><td>01000011</td><td>C</td></tr>
+<tr><td colspan="2" align="center">...</td></tr>
+</table>
+</section>
+
+<section>
+<h2>Representando datos con bytes</h2>
+<table>
+<tr><td>I</td><td>01001001</td></tr>
+<tr><td>C</td><td>01000011</td></tr>
+<tr><td> </td><td>00100000</td></tr>
+<tr><td>2</td><td>00110010</td></tr>
+<tr><td>0</td><td>00110000</td></tr>
+<tr><td>1</td><td>00110001</td></tr>
+<tr><td>6</td><td>00110110</td></tr>
+</table>
+</section>
+
+<section data-markdown>
+##Múltiplos del bit y del byte
+* Sistema Internacional
+ * Unidades son potencias de 10
+ * Prefijos **kilo, mega, giga, tera...**
+* Sistema de Prefijos Binarios
+ * Unidades son potencias de 2
+ * Prefijos **kibi, mebi, gibi, tebi...**
+</section>
+
+
+<section>
+<h3>Sistema Internacional</h3>
+<table>
+<tr><td>Kilobyte</td><td>1.000 bytes</td><td>$10^3$ bytes</td><td>kB</td></tr>
+<tr><td>Megabyte</td><td>1.000.000 bytes</td><td>$10^6$ bytes</td><td>MB</td></tr>
+<tr><td>Gigabyte</td><td>1.000.000.000 bytes</td><td>$10^9$ bytes</td><td>GB</td></tr>
+<tr><td>Terabyte</td><td>1.000.000.000.000 bytes</td><td>$10^{12}$ bytes</td><td>TB</td></tr>
+<tr><td>Petabyte</td><td></td><td>$10^{15}$ bytes</td><td>PB</td></tr>
+<tr><td>Exabyte</td><td></td><td>$10^{18}$ bytes</td><td>EB</td></tr>
+<tr><td>Zettabyte</td><td></td><td>$10^{21}$ bytes</td><td>ZB</td></tr>
+<tr><td>Yottabyte</td><td></td><td>$10^{24}$ bytes</td><td>YB</td></tr>
+</table>
+</section>
+
+<section>
+<h3>Prefijos Binarios</h3>
+<table>
+<tr><td>Kibibyte</td><td>1.024 bytes</td><td>$2^{10}$ bytes</td><td>KiB</td></tr>
+<tr><td>Mebibyte</td><td>1.048.576 bytes</td><td>$2^{20}$ bytes</td><td>MiB</td></tr>
+<tr><td>Gibibyte</td><td>1.073.741.824 bytes</td><td>$2^{30}$ bytes</td><td>GiB</td></tr>
+<tr><td>Tebibyte</td><td>1.099.511.627.776 bytes</td><td>$2^{40}$ bytes</td><td>TiB</td></tr>
+<tr><td>Pebibyte</td><td></td><td>$2^{50}$ bytes</td><td>PiB</td></tr>
+<tr><td>Exbibyte</td><td></td><td>$2^{60}$ bytes</td><td>EiB</td></tr>
+<tr><td>Zebibyte</td><td></td><td>$2^{70}$ bytes</td><td>ZiB</td></tr>
+<tr><td>Yobibyte</td><td></td><td>$2^{80}$ bytes</td><td>YiB</td></tr>
+</table>
+</section>
+
+<section>
+<h2>Los prefijos, comparados</h2>
+<table>
+<tr><td>k &rarr;</td><td>$1000$</td><td>$1024$</td><td>&larr; Ki</td></tr>
+<tr><td>M &rarr;</td><td>$1000^2$</td><td>$1024^2$</td><td>&larr; Mi</td></tr>
+<tr><td>G &rarr;</td><td>$1000^3$</td><td>$1024^3$</td><td>&larr; Gi</td></tr>
+<tr><td>T &rarr;</td><td>$1000^4$</td><td>$1024^4$</td><td>&larr; Ti</td></tr>
+<tr><td colspan="4" align="center">...</td></tr>
+</table>
+</section>
+
+
+<section>
+<h2>Cantidad de información</h2>
+<table>
+<tr><td>Un carácter</td><td>1 B = 8 b</td></tr>
+<tr><td>Un SMS, un tweet</td><td>140 B, 160 B</td></tr>
+<tr><td>Una foto de 10 megapíxeles</td><td>5 MB</td></tr>
+<tr><td>Una canción</td><td>3 a 10 MB</td></tr>
+<tr><td>Una película de 1h 30m </td><td>750 MB a 4 GB</td></tr>
+<tr><td>Un pendrive, una tarjeta micro-SD</td><td>16 GiB</td></tr>
+<tr><td>Un disco rígido</td><td>1 TiB</td></tr>
+</table>
+</section>
+
+<section>
+<h3>Un disco rígido de 5 MB... en 1956</h3>
+<img src="img/5MBharddisk.jpg" class="stretch">
+</section>
+
+<section data-markdown data-background="#3c53b5" data-background-transition="zoom">
+#Preguntas
+* ¿A cuántos KiB equivalen 512 B, 2048 B, 5 MiB?
+* ¿A cuántos discos rígidos de 1956 equivale un celular de 4 GiB de memoria?
+* ¿Cuántas canciones de, en promedio, 4 MB, caben en un pendrive?
+* Si un pixel se pudiera representar en 1 bit, ¿cuánto espacio ocuparía una foto de 1024 x 1000 pixels?
+* Si tengo una conexión de 3 Mb/s, ¿cuánto tiempo tardará la transferencia de un archivo de 10 MB?
+</section>
+
+<section>
+<h2>Humor para nerds</h3>
+<img src="img/terapeuta.jpg" class="stretch">
+</section>
+
+<!------------------------------------------------------------------>
+
+	</div>
+</div>
+
+	<script src="lib/js/head.min.js"></script>
+	<script src="js/reveal.js"></script>
+
+	<script>
+
+		Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+				previewLinks: true,
+				theme: 'serif',
+				transition: 'slide', // none/fade/slide/convex/concave/zoom
+
+
+				menu: { // Menu works best with font-awesome installed: sudo apt-get install fonts-font-awesome
+					themes: false,
+					transitions: false,
+					markers: true,
+					hideMissingTitles: true,
+					custom: [
+//				            { title: 'Plugins', icon: '<i class="fa fa-external-link"></i>', src: 'toc.html' },
+						{ title: 'About', icon: '<i class="fa fa-info"></i>', content: '<p>Introducción a la Computación</p>' }
+					]
+				},
+				anything: [ 
+					{className: "rand",  defaults: {min: 0, max: 9}, 
+						initialize: (function(container, options){ container.innerHTML = Math.trunc( options.min + Math.random()*(options.max-options.min + 1) ); }) },
+					{className: "plot",  defaults: {width:500, height: 500, grid:true}, initialize: (function(container, options){ options.target = "#"+container.id; functionPlot(options) }) },
+					{className: "chart",  initialize: (function(container, options){ container.chart = new Chart(container.getContext("2d"), options);  }) },
+					{className: "animate",  initialize: (function(container, options){ 
+						Reveal.addEventListener( 'fragmentshown', function( event ) {
+							if (typeof event.fragment.beginElement === "function" ) { 
+								event.fragment.beginElement(); 	
+							}
+						});
+						Reveal.addEventListener( 'fragmenthidden', function( event ) {
+							if (event.fragment.hasAttribute('data-reverse') ) { 
+								var reverse = event.fragment.parentElement.querySelector('[id=\"' + event.fragment.getAttribute('data-reverse') + '\"]');
+								if ( reverse && typeof reverse.beginElement === "function" ) { 
+									reverse.beginElement(); 	
+								}										 	
+							}
+						});
+						if ( container.getAttribute("data-svg-src") ) { 
+							var xhr = new XMLHttpRequest(); 
+							xhr.onload = function() { 
+								if (xhr.readyState === 4) { 
+									var svg = container.querySelector('svg');
+									container.removeChild( svg );
+									container.innerHTML = xhr.responseText + container.innerHTML;
+									if ( svg ) {
+										container.querySelector('svg').innerHTML = container.querySelector('svg').innerHTML + svg.innerHTML;
+									}
+								} 
+								else { 
+									console.warn( "Failed to get file. ReadyState: " + xhr.readyState + ", Status: " + xhr.status); 
+								}
+							}; 
+							xhr.open( 'GET', container.getAttribute("data-svg-src"), true ); 
+							xhr.send();
+						}
+					}) },
+					{className: "anything",  initialize: (function(container, options){ if (options && options.initialize) { options.initialize(container)} }) }
+				],
+
+
+				// -------- Math plugin ----------
+				math: {
+					mathjax: 'https://cdn.mathjax.org/mathjax/latest/MathJax.js',
+					//mathjax: '../MathJax-master/MathJax.js',
+					config: 'TeX-AMS_HTML-full'
+				},
+
+
+				// -------- Chalkboard -----------
+				chalkboard: { 
+					// optionally load pre-recorded chalkboard drawing from file
+					// src: "chalkboard.json",
+					//readOnly: undefined, 
+					toggleChalkboardButton: { left: "80px" },
+					toggleNotesButton: { left: "130px" },
+					//transition: 800,
+					//theme: "whiteboard",
+					// configuration options for notes canvas and chalkboard
+					//color: [ 'rgba(0,0,255,1)', 'rgba(255,255,255,0.5)' ],
+					//background: [ 'rgba(127,127,127,.1)' , 'reveal.js-plugins/chalkboard/img/blackboard.png' ],
+					//pen:  [ 'reveal.js-plugins/chalkboard/img/boardmarker.png', 'reveal.js-plugins/chalkboard/img/chalk.png' ],
+				},
+				keyboard: {
+					67: function() { RevealChalkboard.toggleNotesCanvas() },    // toggle notes canvas when 'c' is pressed
+					66: function() { RevealChalkboard.toggleChalkboard() }, // toggle chalkboard when 'b' is pressed
+					46: function() { RevealChalkboard.clear() },    // clear chalkboard when 'DEL' is pressed
+					 8: function() { RevealChalkboard.reset() },    // reset chalkboard data on current slide when 'BACKSPACE' is pressed
+					68: function() { RevealChalkboard.download() }, // downlad recorded chalkboard drawing when 'd' is pressed
+				},
+
+
+				// -------- Dependencies ---------
+				dependencies: [
+					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: 'plugin/zoom-js/zoom.js', async: true },
+					{ src: 'plugin/notes/notes.js', async: true },
+					{ src: 'plugin/anything/anything.js' },
+					{ src: 'reveal.js-plugins/chalkboard/chalkboard.js' },
+					{ src: 'bower_components/reveal.js-menu/menu.js' },
+					{ src: 'bower_components/reveal.js-plugins/mathsvg/math.js', async: true }
+				]
+			});
+
+		</script>
+
+	</body>
+</html>
