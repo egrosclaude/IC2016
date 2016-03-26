@@ -802,7 +802,8 @@ https://es.wikipedia.org/wiki/IEEE_coma_flotante
     <ol>	
 	<li>Separar el signo y escribir el valor absoluto en base 2</li>
 	    <ul>	
-	<li class="fragment"><span class="post_it">$s = 1$</span><span class="fragment">; $|n| = 5.5_{(10} = 101.1_{(2}$</span></li>
+	<li class="fragment"><span class="post_it">$s = 1$</li>
+	<li class="fragment">$|n| = 5.5_{(10} = 101.1_{(2}$</li>
 		</ul>
 	<li>Convertirlo a notación científica en base 2 <b>normalizada</b></li>
 	    <ul>	
