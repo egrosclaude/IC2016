@@ -874,10 +874,10 @@ https://es.wikipedia.org/wiki/IEEE_coma_flotante
 <section>
 <h2>Referencias</h2>
 <ul>
-<li><a href="http://pedco.fi.uncoma.edu.ar/mod/resource/view.php?id=145680">Apunte de Cátedra: Representación de Datos Numéricos</a></li>
-<li><a href="https://es.wikipedia.org/wiki/Complemento_a_dos">Wikipedia: Complemento a dos</a></li>
-<li><a href="https://es.wikipedia.org/wiki/Representaci%C3%B3n_de_n%C3%BAmeros_con_signo">Wikipedia: Representación de números con signo</li>
-<li><a href="http://perso.ens-lyon.fr/jean-michel.muller/goldberg.pdf">What Every Computer Scientist Should Know About Floating-Point Arithmetic</a>, David Goldberg, Xerox PARC, 1991</li>
+<li><a href="http://pedco.fi.uncoma.edu.ar/mod/resource/view.php?id=145680" target="_blank">Apunte de Cátedra: Representación de Datos Numéricos</a></li>
+<li><a href="https://es.wikipedia.org/wiki/Complemento_a_dos" target="_blank">Wikipedia: Complemento a dos</a></li>
+<li><a href="https://es.wikipedia.org/wiki/Representaci%C3%B3n_de_n%C3%BAmeros_con_signo" target="_blank">Wikipedia: Representación de números con signo</li>
+<li><a href="http://perso.ens-lyon.fr/jean-michel.muller/goldberg.pdf" target="_blank">What Every Computer Scientist Should Know About Floating-Point Arithmetic</a>, David Goldberg, Xerox PARC, 1991</li>
 </ul>
 </section>
 
