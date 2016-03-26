@@ -75,6 +75,17 @@
 * Pero las computadoras adoptan algún **sistema de representación** con alguna cantidad fija de bits
 </section>
 
+<section data-markdown data-background="#3cb5c5" data-background-transition="zoom">
+##Representación de datos numéricos
+* Enteros
+ * Signo-Magnitud
+ * Complemento a 2 
+ * Exceso a $2^{n-1}$
+* Fraccionarios
+ * Punto fijo
+ * Punto flotante
+</section>
+
 <section data-markdown>
 ##Rango de representación (RR)
 * Intervalo de números representables
@@ -571,9 +582,9 @@ $a$ &#8680; $0000$, $a + 1$ &#8680; $0001$, ..., $b$ &#8680; $1111$
 <section data-markdown data-background="#3cb5c5" data-background-transition="zoom">
 ##Representación de datos numéricos
 * Enteros
- * Signo-Magnitud
- * Complemento a 2
- * Exceso a $2^{n-1}$
+ * Signo-Magnitud  &#10004;
+ * Complemento a 2  &#10004;
+ * Exceso a $2^{n-1}$  &#10004;
 * Fraccionarios
  * Punto fijo
  * Punto flotante
@@ -598,7 +609,16 @@ $a$ &#8680; $0000$, $a + 1$ &#8680; $0001$, ..., $b$ &#8680; $1111$
 <p class="fragment">$3.625$</p>
 </section>
     
-<section data-markdown>
+<section>
+<h2>Fraccionario en base 2 &rarr; decimal</h2>
+<h3>Otra manera</h3>
+<p>Notar que $11.101_{(2} =$<span class="fragment"> $ 11101_{(2} / 8$:</span></p>
+<p>$1 \times 2^1 + 1 \times 2^0 + 1 \times 2^{-1} + 0 \times 2^{-2} + 1 \times 2^{-3} = $</p>
+<p class="fragment">$\frac{1 \times 2^4 + 1 \times 2^3 + 1 \times 2^2 + 0 \times 2^1 + 1 \times 2^0}{2^3} = $ $\frac{16 + 8 + 4 + 0 + 1}{8} = $</p>
+<p class="fragment">$29 / 8 = 3.625$</p>
+</section>
+    
+<section data-markdown id="decfrac">
 ## Decimal fraccionario &rarr; base 2
 * Se separan la parte entera (PE) y la parte fraccionaria (PF)
 * Se convierte la PE a base 2 separadamente
@@ -611,8 +631,8 @@ $a$ &#8680; $0000$, $a + 1$ &#8680; $0001$, ..., $b$ &#8680; $1111$
 <h2>Decimal fraccionario &rarr; base 2</h2>
 <ul>
 <li>$3.625 = 3 + 0.625 = PE + PF$</li>
-<li>$PE = 3_{(10} = 11_{(2}$</li>
-<li>$PF = 0.625_{(10} = ?_{(2}$</li>
+<li class="fragment">$PE = 3_{(10} = 11_{(2}$</li>
+<li class="fragment">$PF = 0.625_{(10}$ <span class="fragment">$= ?_{(2}$</span></li>
 </ul>
 </section>
 
@@ -620,28 +640,29 @@ $a$ &#8680; $0000$, $a + 1$ &#8680; $0001$, ..., $b$ &#8680; $1111$
 <section>
 <h2>Decimal fraccionario &rarr; base 2, PF</h2>
 <ul>
-<li>$PF \times 2 = 0.625 \times 2 = 1.25$ <span class="fragment">&#8680; $1$</span></li>
-<li>$PF' \times 2 = 0.25 \times 2 = 0.5$ <span class="fragment">&#8680; $0$</span></li>
-<li>$PF'' \times 2 = 0.5 \times 2 = 1.0$ <span class="fragment">&#8680; $1$</span></li>
-<li>$PF''' \times 2 = 0.0 \times 2 = 0.0$ <span class="fragment">&#8680; Fin</span></li>
-<li class="fragment">$PF = 0.625$ <span class="fragment">&#8680; $0.101$</span></li>
-<li class="fragment">$3.625 = 3 + 0.625 = 11 + 0.101 = 11.101$</li>
+<li>$PF \times 2 = 0.625 \times 2 = 1.25$ <span class="fragment">&#8680; <span class="post_it">$0.25$</span>$ + 1$</span></li>
+<li class="fragment">$PF' \times 2 =$ <span class="post_it">$0.25$</span> $\times 2 = 0.5$ <span class="fragment">&#8680; $0.5 + 0$</span></li>
+<li class="fragment">$PF'' \times 2 = 0.5 \times 2 = 1.0$ <span class="fragment">&#8680; $0.0 + 1$</span></li>
+<li class="fragment">$PF''' \times 2 = 0.0 \times 2 = 0.0$ <span class="fragment">&#8680; Fin</span></li>
+<li class="fragment">$PF = 0.625$ <span class="fragment">&#8680; $0.101_{(2}$</span></li>
+<li class="fragment">$3.625 = 3 + 0.625 = 11_{(2} + 0.101_{(2} = 11.101_{(2}$</li>
 </ul>
 </section>
 
 
 <section data-markdown>
 ##Representación de punto fijo
-* PE y PF tienen un *ancho* determinado
+* PE y PF son campos de un *ancho* determinado
 	* "Punto fijo en $n$ dígitos binarios con $k$ fraccionarios"
 * El punto no se almacena pero se asume
-	* $00011101 = 00011.101 = 3.625$
+	* $00011101 \equiv 00011.101_{(2} = 3.625$
 	* El software opera con enteros de $n$ dígitos
 	* Sólo imprime el punto del resultado final
 </section>
 
 <section data-markdown>
 ##Operaciones en punto fijo
+* Los operandos tienen el mismo tamaño de PE y PF
 * Se ignora el punto y se tratan los números como en C2
 * Los puntos fraccionarios se encolumnan automáticamente
 * El resultado debe conservar el *ancho* de PE y PF
@@ -649,19 +670,18 @@ $a$ &#8680; $0000$, $a + 1$ &#8680; $0001$, ..., $b$ &#8680; $1111$
 
 <section data-markdown>
 ##Punto fijo con signo
-* Decimal fraccionario con signo &rarr; binario
- * Positivo
-   * Se expresan la PE y PF en binario
-   * $2.25 = 00010.010$
- * Negativo
-   * Se expresa su valor absoluto como en el caso positivo y se complementa
-   * $-2.25 = C2(00010.010) = $ $C2(00010010) =$ $ 11101110 = 11101.110$
-   * $00010.010 + 11101.110 = 00000.000$
+###Decimal fraccionario &rarr; binario
+* Caso positivo
+  * Se expresan la PE y PF en binario
+  * $2.25 = 00010.010$
+* Caso negativo
+   * Se expresa su valor absoluto como en el caso positivo y se complementa, ignorando la posición del punto
+   * $-2.25 = C2(00010.010) = 11101.110$ 
 </section>
 
 <section data-markdown>
 ##Punto fijo con signo
-* Binario fraccionario con signo &rarr; decimal
+###Binario fraccionario &rarr; decimal
  * Positivo
 	- Se aplica la expresión general con exponentes negativos
 	- O bien, se trata como entero y se divide por $2^k$
@@ -692,148 +712,223 @@ $a$ &#8680; $0000$, $a + 1$ &#8680; $0001$, ..., $b$ &#8680; $1111$
 * Aplicada en matemática financiera, juegos u otros usos
 * No adecuada para todas las magnitudes o precisiones
 </section>
+   
+<!-- 
+https://es.wikipedia.org/wiki/IEEE_coma_flotante
+-->
     
-<!-- ------------------------------------------------------------------
+<section>
+<h2>Variables muy diferentes</h2>
+<ul>	
+<li>"Tiempo en que la luz recorre una millonésima de milímetro"</li>
+<ul>	
+	<li>$t = e / v$</li>
+	<li>$e = 1\ nm = 0,0000000701\ m$</li>
+	<li>$v = 300.000\ km/s = 300.000.000\ m/s$</li>
+</ul>
+</ul>
+</section>
     
-    <div class="step" data-x="3000" data-y="0" data-z="-1500">
-    <q><strong>Variables diferentes</strong></q>
+<section>
+<h2>Notación científica</h2>
+<ul>	
+<li>$e = 0.000000001\ m$ <span class="fragment">$ = 1 \times 10^{-9}\ m$</span></li>
+<li>$v = 300000000\ m/s$ <span class="fragment">$ = 3 \times 10^8\ m/s$</span></li>
+<li>$t = e/v = 0.00000000000000000333\ s$</li>
+<li class="fragment">$t = e / v = (1 \times 10^{-9}\ m) / (3 \times 10^8\ m/s)$</li>
+<li class="fragment">$t = e / v = \frac{(1 \times 10^{-9}\ m)}{(3 \times 10^8\ m/s)}$ <span class="fragment"> $ = \frac{1}{3} \times \frac{10^{-9}\ m}{10^8\ m/s}$</span></li>
+<li class="fragment">$t = 1 / 3 \times 10^{-9-8}\ s \Longrightarrow t = 0.333 \times 10^{-17}\ s$</li>
+</ul>
+</section>
+
+<section>
+<h2>Notación científica</h2>
+<ul>	
+	<li>$t = 0.333 \times 10^{-17}\ s$</li>
+	<ul>
+		<li>Coeficiente = $0.333$</li>
+		<li>Exponente = $-17$</li>
+	</ul>
+	<li class="fragment">Normalización</li>
+	<ul class="fragment">
+		<li>$1 <= coeficiente < base$</li>
+		<li>$0.333 \times 10^{-17} = 3.33 * 10^{-18}$</li>
+	</ul>
+</ul>
+</section>
+
+
+<section>
+<h2>Representación en punto flotante</h2>
+<ul>	
+	<li>Formato <i>IEEE 754 single precision</i>, 32 bits</li>
+	<ul>
+		<li>1 bit de <strong>signo</strong></li>
+		<li>8 bits para el <strong>exponente</strong></li>
+		<li>23 bits para la <strong>mantisa</strong></li>
+	</ul>
+</ul>
+</section>
+
+
+<section>
+<h2>Formato <i>IEEE 754 single precision</i></h2>
+<img class="plainstretch" src="img/ieee754.png">
+</section>
+
+
+<section> 
+  <section data-transition="convex" data-transition-speed="slow">
+  <h2>Decimal a punto flotante</h2>
+  <ol>	
+	<li>Separar el signo y escribir el valor absoluto en base 2</li>
+	<li>Convertirlo a notación científica en base 2 <b>normalizada</b></li>
+	<li><b>Ajustar</b> el exponente</li>
+	<li>Guardar el coeficiente <b>sin parte entera</b> en la mantisa</li>
+  </ol>
+  </section>
+
+  <section data-transition="convex" data-transition-speed="slow">
+  <h2>Decimal a punto flotante</h2>
+  <h3>1. Escribir el valor absoluto en base 2</h3>
+  <ul>
+	<li>Lo vimos al convertir un <a href="#decfrac" target="_blank">decimal fraccionario a base 2</a></li>
+	<li>Separo y guardo el signo</li>
+  </ul>
+  </section>
+
+  <section data-transition="convex" data-transition-speed="slow">
+  <h2>Decimal a punto flotante</h2>
+  <h3>2. Convertir a notación científica base 2</h3>
+  <ul>
+	 <li>Desplazo el punto fraccionario hasta dejar un 1 en la parte entera</li>
+	 <li>Compenso la multiplicación o división por $2^k$ que hice</li>
+	 <ul>
+		 <li>$101.11 = 1.0111 \times 2^2$</li>
+		 <li>$0.0011111 = 1.1111 \times 2^{-3}$</li>
+	 </ul>
+	<li>Obtuve coeficiente y exponente</li>
+  </section>
+
+  <section data-transition="convex" data-transition-speed="slow">
+  <h2>Decimal a punto flotante</h2>
+   <h3>3. Ajuste del exponente</h3>
+    <ul>	
+	<li>El exponente puede ser positivo o negativo</li>
+	<li>Se representa <strong>en exceso a 127</strong></li>
+	<li>&rarr; Se le suma 127 para obtener un número no negativo </li>
+    </ul>
+</section>
+
+  <section data-transition="convex" data-transition-speed="slow">
+  <h2>Decimal a punto flotante</h2>
+    <h3>4. Guardar la mantisa</h3>
+    <ul>	
+	<li>El primer dígito del coeficiente es siempre 1</li>
+	<li>&rarr; no hace falta almacenarlo</li>
+	<li>Se guarda $coeficiente - 1$,  completando con ceros</li>
+    </ul>
+</section>
+</section>
+
+<!--
+<section>
+<h2>Ejemplo de Punto Flotante</h2>
+    <div align="center" class="post_it">$n = -5.5$</div>
     <ol>	
-        <li>"Tiempo en que la luz recorre una millonésima de milímetro"
-    	<li><i>t = e / v</i>
-		<li><i>e</i> = 0.000000001 m
-		<li><i>v</i> = 300000000 m/s
-	</ol>
-    </div>
-    
-    
-    <div class="step" data-x="4000" data-y="0" data-z="-1500">
-    <q><strong>Notación científica</strong></q>
-    <ol>	
-		<li><i>e</i> = 0.000000001 m = 1 * 10<sup>-9</sup> m
-		<li><i>v</i> = 300000000 m/s = 3 * 10<sup>8</sup> m/s
-		<li><i>t = e / v</i> = (1 * 10<sup>-9</sup>) / (3 * 10<sup>8</sup>) s		
-		<li><i>t</i> = 1 / 3 * 10<sup>-9-8</sup> s
-		<li><i>t</i> = 0.333 * 10<sup>-17</sup> s
-	    </ol>
-    </div>
-
-    <div class="step" data-x="5000" data-y="0" data-z="-1500">
-    <q><strong>Notación científica</strong></q>
-    <ol>	
-		<li>Coeficiente = 0.333
-		<li>Exponente = -17
-		<li>Normalizada: 1 <= coeficiente < base
-		<li>0.333 * 10<sup>-17</sup> = 3.33 * 10<sup>-18</sup> s
-	</ol>
-    </div>
-
-
-    <div class="step" data-x="6000" data-y="0" data-z="-1500">
-    <q><strong>Representación en punto flotante</strong></q>
-    <ol>	
-		<li>1 bit de <strong>signo</strong>
-		<li>8 bits para el <strong>exponente</strong>
-		<li>23 bits para la <strong>mantisa</strong>
-		<li><i>IEEE 754 single precision</i>
-	    </ol>
-    </div>
-
-    <div id="ieee754" class="step centered" data-x="6000" data-y="0" data-z="-2500">
-    <q><strong>IEEE 754 single precision</strong></q>
-    <ol>	
-	    </ol>
-    </div>
-
-
-
-    <div class="step transp" data-x="7000" data-y="0" data-z="-1500">
-    <q><strong>Decimal a punto flotante</strong></q>
-    <ol>	
-		<li>1. Escribir el valor absoluto en base 2
-		<li>2. Pasarlo a notación científica en base 2, normalizada
-		<li>3. <strong>Ajustar</strong> el exponente y guardar el signo
-		<li>4. Guardar el coeficiente <strong>sin parte entera</strong> en la mantisa
-	    </ol>
-    </div>
-
-    <div class="step transp" data-x="8000" data-y="500" data-z="0">
-    <q><strong>2. Normalizar not. científica</strong></q>
-    <ol>	
-		<li>Desplazo el punto fraccionario hasta dejar un 1 en la parte entera
-		<li>Compenso la multiplicación o división por 2<sup>algo</sup> que hice
-		<li>101.11 = 1.0111 * 2<sup>2</sup>
-		<li>0.0011111 = 1.1111 * 2<sup>-3</sup>
+	<li class="fragment"><span class="post_it">$s = 1$</span><span class="fragment">; $|n| = 5.5_{(10} = 101.1_{(2}$</span></li>
+	<li class="fragment">$101.1 = 1.011 \times  2^2$</li>
+	<li class="fragment post_it">$e = 2 + 127 = 129$</li>
+	<li class="fragment">$1.011 - 1 = .011$ <span class="fragment post_it">&rarr; $m = 011000...$</span></li>
     </ol>
-    </div>
-	
-    <div class="step transp" data-x="9000" data-y="1200" data-z="2000">
-    <q><strong>3. Ajustar el exponente</strong></q>
-    <ol>	
-		<li>El exponente puede ser positivo o negativo
-		<li>Representación <strong>en exceso a 127</strong>
-		<li>Se le suma 127 para obtener un número no negativo 
-    </ol>
-    </div>
+</section>
+--> 
 
-    <div id="exceso127" class="wide step centered" data-x="8800" data-y="1300" data-z="500">
-    <q><strong>Representación en exceso a 127</strong></q>
+<section id="experimento">
+<h2>Ejemplo Punto Flotante $n = -5.5$</h2>
     <ol>	
+	<li>Separar el signo y escribir el valor absoluto en base 2</li>
+	    <ul>	
+	<li class="fragment"><span class="post_it">$s = 1$</span><span class="fragment">; $|n| = 5.5_{(10} = 101.1_{(2}$</span></li>
+		</ul>
+	<li>Convertirlo a notación científica en base 2 <b>normalizada</b></li>
+	    <ul>	
+	<li class="fragment">$101.1 = 1.011 \times  2^2$</li>
+		</ul>
+	<li><b>Ajustar</b> el exponente</li>
+	    <ul>	
+	<li class="fragment post_it">$e = 2 + 127 = 129$</li>
+		</ul>
+	<li>Guardar el coeficiente <b>sin parte entera</b> en la mantisa</li>
+	    <ul>	
+	<li class="fragment">$1.011 - 1 = .011$ <span class="fragment post_it">&rarr; $m = 011000...$</span></li>
+		</ul>
     </ol>
-    </div>
+</section>
+<section>
+<h2>Ejemplo de Punto Flotante</h2>
+	<div align="center" class="post_it">$n = -5.5$</div>
+	<div align="center"> s = 1, e = 129, m = 011000... </div>
+	<img class="plainstretch" src="img/ejemploFP.png">
+</section>
 
-	
-    <div class="step transp" data-x="9000" data-y="1200" data-z="2000">
-    <q><strong>3. Ajustar el exponente</strong></q>
-    <ol>	
-		<li>El exponente puede ser positivo o negativo
-		<li>Representación <strong>en exceso a 127</strong>
-		<li>Se le suma 127 para obtener un número no negativo 
-    </ol>
-    </div>
-
-
-    <div class="step transp" data-x="9500" data-y="1500" data-z="3000">
-    <q><strong>4. Guardar la mantisa</strong></q>
-    <ol>	
-		<li>El primer dígito del coeficiente es siempre 1
-		<li><strong>&#8680;</strong> no hace falta almacenarlo
-		<li>Se guarda <strong>coeficiente - 1</strong> completando con ceros
-    </ol>
-    </div>
-    
-    <div class="step" data-x="9500" data-y="2500" data-z="3000">
-    <q><strong>Ejemplo: n = -5.5</strong></q>
-    <ol>	
-		<li>|n| = 5.5<sub>(10</sub> = 101.1<sub>(2</sub>
-		<li>101.1 = 1.011 * 2<sup>2</sup>
-		<li>s = 1
-		<li>e = 2 + 127 = 129
-		<li>1.011 - 1 = .011 <strong>&#8680;</strong> m = 011000...
-    </ol>
-    </div>
-    
-    <div id="ejemplofp" class="wide step centered" data-x="10500" data-y="2500" data-z="3000">
-    <q><strong>Ejemplo: n = -5.5</strong></q>
-    	<br/>
-		s = 1, e = 129, m = 011000...
-    </div>
+<section>
+<h2>Resultado en hexadecimal</h2>
+	<img class="plainstretch" src="img/ejemploFPhexa.png">
+</section>
     
     
-    <div id="pfadec" class="wide step centered" data-x="12000" data-y="0" data-z="3000">
-    <q><strong>Punto Flotante a decimal</strong></q>
-    <ol>	
-    	<br/>
-		<strong>n = (-1)<sup>s</sup> * 2<sup>(e-127)</sup> * (1 + m) </strong>
-    </ol>
-    </div>
-    
-    <div id="resumen" class="wide step centered" data-x="8400" data-y="5000" data-z="500">
-    <q><strong>Resumen</strong></q>
-    <ol>	
-    </ol>
-    </div>
+<section>
+<h2>Punto Flotante &rarr; decimal</h2>
+<div class="post_it" align="center">$n = (-1)^s \times 2^{(e-127)} \times (1.m)$</div>
+<ul>	
+	<li class="fragment">$s = 1   \Longrightarrow       (-1)^s = -1$</li>
+	<li class="fragment">$e = 129      \Longrightarrow                   2^{(e-127)} = 2^2$</li>
+	<li class="fragment">$m = 011000...      \Longrightarrow            1.m = 1.011000...$</li>
+</ul>
+</section>
 
--->	
+<section>
+<h2>Punto flotante, casos especiales</h2>
+
+<table>
+<tr><th>Clase de números</th><th>Exponente</th><th>Mantisa</th><th>Signo</th></tr>
+<tr><td>Ceros</td><td align="center">$0$</td><td align="center">$0$</td><td>$+/-$</td></tr>
+<tr><td>Desnormalizados</td><td align="center">$0$</td><td align="center">$\neq 0$</td><td>$+/-$</td></tr>
+<tr><td>Normalizados</td><td align="center">$\neq 0$</td><td align="center">Cualquiera</td><td>$+/-$</td></tr>
+<tr><td>Infinito</td><td align="center">$1...1$</td><td align="center">$0$</td><td>$+/-$</td></tr>
+<tr><td>NaN (Not a Number)</td><td align="center">$1...1$</td><td align="center">$\neq 0$</td><td>$+/-$</td></tr>
+</table>
+</section>
+
+<section data-background="#3cb5c5" data-background-transition="zoom">
+<h2>Representación de datos numéricos</h2>
+<ul>
+	<li class="fragment">Enteros</li>
+	<ul>
+		<li class="fragment">Signo-Magnitud &#10004;</li>
+		<li class="fragment">Complemento a 2 &#10004;</li>
+		<li class="fragment">Exceso a $2^{n-1}$ &#10004; </li>
+	</ul>
+	<li class="fragment">Fraccionarios</li>
+	<ul>
+		<li class="fragment">Punto fijo &#10004;</li>
+		<li class="fragment">Punto flotante &#10004;</li>
+	</ul>
+</ul>
+</section>
+
+<section>
+<h2>Referencias</h2>
+<ul>
+<li><a href="http://pedco.fi.uncoma.edu.ar/mod/resource/view.php?id=145680">Apunte de Cátedra: Representación de Datos Numéricos</a></li>
+<li><a href="https://es.wikipedia.org/wiki/Complemento_a_dos">Wikipedia: Complemento a dos</a></li>
+<li><a href="https://es.wikipedia.org/wiki/Representaci%C3%B3n_de_n%C3%BAmeros_con_signo">Wikipedia: Representación de números con signo</li>
+<li><a href="http://perso.ens-lyon.fr/jean-michel.muller/goldberg.pdf">What Every Computer Scientist Should Know About Floating-Point Arithmetic</a>, David Goldberg, Xerox PARC, 1991</li>
+</ul>
+</section>
+
+
 <!------------------------------------------------------------------>
 
 	</div>
