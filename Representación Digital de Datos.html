@@ -656,8 +656,8 @@ $a$ &#8680; $0000$, $a + 1$ &#8680; $0001$, ..., $b$ &#8680; $1111$
 
 <section data-markdown>
 ##Representación de punto fijo
-* PE y PF son campos de un *ancho* determinado
-	* "Punto fijo en $n$ dígitos binarios con $k$ fraccionarios"
+* Parte entera y fraccionaria son campos de un *ancho* determinado
+	* $PF(n,k) = $"Punto fijo en $n$ dígitos binarios con $k$ fraccionarios"
 * El punto no se almacena pero se asume
 	* $00011101 \equiv 00011.101_{(2} = 3.625$
 	* El software opera con enteros de $n$ dígitos
@@ -693,28 +693,34 @@ $a$ &#8680; $0000$, $a + 1$ &#8680; $0001$, ..., $b$ &#8680; $1111$
 	- Se complementa y se trata como en el caso positivo
 	- Se restituye el signo $-$
 </section>
-<!---------
+
+
 <section data-background="#3c53b5" data-background-transition="zoom">
 <h2>Preguntas</h2>
-<div align="center">Convertir a punto fijo con 4 </div>
 <ol>
-<li>$0.5 = $<span class="fragment">$$</span></li>
-<li>$2.5 = $<span class="fragment">$$</span></li>
-<li>$0.8 = $<span class="fragment">$$</span></li>
+<li>¿A qué número decimal corresponde...</li>
+	<ol>
+	<li>$0011.0000$?</li>
+	<li>$0001.1000$?</li>
+	<li>$0000.1100$?</li>
+	</ol>
+<li>Representación en $PF(8,4)$ de:</li>
+	<ol>
+	<li>$0.5$</li>
+	<li>$-7.5$</li>
+	</ol>
+<li>¿Cuál es el RR de $PF(8,1)$? ¿Y de $PF(8,k)$?</li>
 </ol>
-<div align="center">De punto fijo a decimal</div>
-<li>$ = $<span class="fragment">$$</li>
-<li>$ = $<span class="fragment">$$</li>
-<li>$ = $<span class="fragment">$$</li>
-<ol>
 </section>
----------->
 
 <section data-markdown>
 ##Representación de punto fijo
 * Adecuada para problemas con datos de magnitudes y precisiones similares
-* Aplicada en matemática financiera, juegos u otros usos
-* No adecuada para todas las magnitudes o precisiones
+* Aplicada en
+   * Sistemas **de tiempo real** 
+   * Sistemas donde es importante la velocidad de cómputo, como juegos
+   * Sistemas **embebidos** con procesadores de recursos limitados
+   * Matemática financiera
 </section>
    
 <!-- 
@@ -727,7 +733,7 @@ https://es.wikipedia.org/wiki/IEEE_coma_flotante
 <li>"Tiempo en que la luz recorre una millonésima de milímetro"</li>
 <ul>	
 	<li>$t = e / v$</li>
-	<li>$e = 1\ nm = 0,0000000701\ m$</li>
+	<li>$e = 1\ nm = 0,000000001\ m$</li>
 	<li>$v = 300.000\ km/s = 300.000.000\ m/s$</li>
 </ul>
 </ul>
@@ -893,13 +899,36 @@ https://es.wikipedia.org/wiki/IEEE_coma_flotante
     
 <section>
 <h2>Punto Flotante &rarr; decimal</h2>
-<div class="post_it" align="center">$n = (-1)^s \times 2^{(e-127)} \times (1 + m)$</div>
 <ul>	
+	<li>Usando $s$, $e$ y $m$:</li>
+<div class="post_it" align="center">$n = (-1)^s \times 2^{(e-127)} \times (1 + m)$</div>
 	<li class="fragment">$s = 1   \Longrightarrow       (-1)^s = -1$</li>
 	<li class="fragment">$e = 129      \Longrightarrow                   2^{(e-127)} = 2^2$</li>
 	<li class="fragment">$m = 011000...      \Longrightarrow            1.m = 1.011000...$</li>
+	<li class="fragment">Resulta $n = (-1) \times 2^2 \times 1.011000..._{(2} =$ $(-1) \times 101.1000..._{(2} =$ $(-1) \times 5.5 = -5.5$</li>
 </ul>
 </section>
+
+<section>
+<h2>Error de aproximación</h2>
+<pre><code>
+  $ python
+  Python 2.7.9 (default, Mar  1 2015, 12:57:24) 
+  [GCC 4.9.2] on linux2
+  Type "help", "copyright", "credits" or "license" for more information.
+  >>> a = 0.1
+  >>> b = 0.2
+  >>> c = a + b
+  >>> c == a + b
+  True
+  >>> c == 0.3
+  False
+  >>> c
+  0.30000000000000004
+
+</code></pre>
+</section>
+
 
 <section>
 <h2>Punto flotante, casos especiales</h2>

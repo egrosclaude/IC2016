@@ -202,6 +202,7 @@ sr0                 11:0    1 583.9M  0 rom
 -->
 
 <section data-background="black">
+<h2>Audacity, un editor de audio</h2>
 <video id="audacity" width="100%" height="100%" class="stretch" preload controls>
 <source data-src="img/audacity.mp4" type='video/mp4'/>
 </section>
