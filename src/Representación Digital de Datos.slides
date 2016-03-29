@@ -750,7 +750,7 @@ https://es.wikipedia.org/wiki/IEEE_coma_flotante
   <ol>	
 	<li>Separar el signo y escribir el valor absoluto en base 2</li>
 	<li>Convertirlo a notación científica en base 2 <b>normalizada</b></li>
-	<li><b>Ajustar</b> el exponente</li>
+	<li>Expresar el exponente en notación <b>en exceso</b></li>
 	<li>Guardar el coeficiente <b>sin parte entera</b> en la mantisa</li>
   </ol>
   </section>
@@ -779,7 +779,7 @@ https://es.wikipedia.org/wiki/IEEE_coma_flotante
 
   <section data-transition="convex" data-transition-speed="slow">
   <h2>Decimal a punto flotante</h2>
-   <h3>3. Ajuste del exponente</h3>
+   <h3>3. Expresar el exponente</h3>
     <ul>	
 	<li>El exponente puede ser positivo o negativo</li>
 	<li>Se representa <strong>en exceso a 127</strong></li>
@@ -823,7 +823,7 @@ https://es.wikipedia.org/wiki/IEEE_coma_flotante
 	    <ul>	
 	<li class="fragment">$101.1 = 1.011 \times  2^2$</li>
 		</ul>
-	<li><b>Ajustar</b> el exponente</li>
+	<li>Expresar el exponente en notación <b>en exceso</b></li>
 	    <ul>	
 	<li class="fragment post_it">$e = 2 + 127 = 129$</li>
 		</ul>
