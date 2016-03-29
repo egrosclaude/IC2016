@@ -49,28 +49,7 @@
 
 <!------------------------------------------------------------------>
 
-<section data-markdown> 
- <script type="text/template">
-##Unidad I 
-###Representación de la Información 
-1. Sistemas de Numeración 
-1. Unidades de Información
-1. Representación Digital de Datos 
- 1. Datos Numéricos
- 1. Texto <!-- .element: class="post_it" -->
- 1. Multimedia <!-- .element: class="post_it" -->
- </script>
-</section>
-
-
-<section data-markdown data-background="#00CCFF">
-##Representación 
-##de texto y multimedia
-</section>
-
-
-<!--- Tabla ASCII -->
-<section><h2>Tabla de códigos ASCII</h2>
+<section><h2>Tabla ASCII</h2>
 <table style="border-collapse: collapse; border:1px; width: 100%; font-size: 22px; ">
 <tr>
 <td align="right" style="background-color: #EEEEEE;">32</td><td align="center" style="background-color: #EEEEEE;"> </td> <td align="right" style="background-color: #EEEEEE;">44</td><td align="center" style="background-color: #EEEEEE;">,</td> <td align="right" style="background-color: #00EEFF;">56</td><td align="center" style="background-color: #00EEFF;">8</td> <td align="right" style="background-color: #EEFF00;">68</td><td align="center" style="background-color: #EEFF00;">D</td> <td align="right" style="background-color: #EEFF00;">80</td><td align="center" style="background-color: #EEFF00;">P</td> <td align="right" style="background-color: #EEEEEE;">92</td><td align="center" style="background-color: #EEEEEE;">\</td> <td align="right" style="background-color: #FFCC00;">104</td><td align="center" style="background-color: #FFCC00;">h</td> <td align="right" style="background-color: #FFCC00;">116</td><td align="center" style="background-color: #FFCC00;">t</td> </tr>
@@ -106,159 +85,11 @@
 <td align="right" style="background-color: #EEEEEE;">42</td><td align="center" style="background-color: #EEEEEE;">*</td> <td align="right" style="background-color: #00EEFF;">54</td><td align="center" style="background-color: #00EEFF;">6</td> <td align="right" style="background-color: #EEFF00;">66</td><td align="center" style="background-color: #EEFF00;">B</td> <td align="right" style="background-color: #EEFF00;">78</td><td align="center" style="background-color: #EEFF00;">N</td> <td align="right" style="background-color: #EEFF00;">90</td><td align="center" style="background-color: #EEFF00;">Z</td> <td align="right" style="background-color: #FFCC00;">102</td><td align="center" style="background-color: #FFCC00;">f</td> <td align="right" style="background-color: #FFCC00;">114</td><td align="center" style="background-color: #FFCC00;">r</td> <td align="right" style="background-color: #EEEEEE;">126</td><td align="center" style="background-color: #EEEEEE;">~</td> </tr>
 
 <tr>
-<td align="right" style="background-color: #EEEEEE;">43</td><td align="center" style="background-color: #EEEEEE;">+</td> <td align="right" style="background-color: #00EEFF;">55</td><td align="center" style="background-color: #00EEFF;">7</td> <td align="right" style="background-color: #EEFF00;">67</td><td align="center" style="background-color: #EEFF00;">C</td> <td align="right" style="background-color: #EEFF00;">79</td><td align="center" style="background-color: #EEFF00;">O</td> <td align="right" style="background-color: #EEEEEE;">91</td><td align="center" style="background-color: #EEEEEE;">[</td> <td align="right" style="background-color: #FFCC00;">103</td><td align="center" style="background-color: #FFCC00;">g</td> <td align="right" style="background-color: #FFCC00;">115</td><td align="center" style="background-color: #FFCC00;">s</td> <td align="right" style="background-color: #EEEEEE;">127</td><td align="center" style="background-color: #EEEEEE;"</td> </tr>
+<td align="right" style="background-color: #EEEEEE;">43</td><td align="center" style="background-color: #EEEEEE;">+</td> <td align="right" style="background-color: #00EEFF;">55</td><td align="center" style="background-color: #00EEFF;">7</td> <td align="right" style="background-color: #EEFF00;">67</td><td align="center" style="background-color: #EEFF00;">C</td> <td align="right" style="background-color: #EEFF00;">79</td><td align="center" style="background-color: #EEFF00;">O</td> <td align="right" style="background-color: #EEEEEE;">91</td><td align="center" style="background-color: #EEEEEE;">[</td> <td align="right" style="background-color: #FFCC00;">103</td><td align="center" style="background-color: #FFCC00;">g</td> <td align="right" style="background-color: #FFCC00;">115</td><td align="center" style="background-color: #FFCC00;">s</td> <td align="right" style="background-color: #EEEEEE;">127</td><td align="center" style="background-color: #EEEEEE;"></td> </tr>
 
 
 </table>
 </section>
-
-
-<section>
-<h2>Códigos de caracteres</h2>
-<ul>
-<li><a href="https://es.wikipedia.org/wiki/ASCII">ASCII</a></li>
-<li><a href="https://es.wikipedia.org/wiki/Unicode">Unicode</a></li>
-<li>UTF-8</li>
-<ul>
-<li>Codificación de símbolos con longitud de representación variable</li>
-</ul>
-<li>ISO 8859-1</li>
-<ul>
-<li>Símbolos con longitud de representación de un byte</li>
-</ul>
-</ul>
-</section>
-
-
-<section data-transition="slide-in fade-out">
-<h2>Representando datos con bytes</h2>
-<table>
-<tr><td>00110000</td><td>0</td></tr>
-<tr><td>00110001</td><td>1</td></tr>
-<tr><td>00110010</td><td>2</td></tr>
-<tr><td colspan="2" align="center">...</td></tr>
-<tr><td>01000001</td><td>A</td></tr>
-<tr><td>01000010</td><td>B</td></tr>
-<tr><td>01000011</td><td>C</td></tr>
-<tr><td colspan="2" align="center">...</td></tr>
-</table>
-</section>
-
-<section data-transition="slide-out fade-in">
-<h2>Representando datos con bytes</h2>
-<table>
-<tr><td>00110000</td><td>060</td><td>48</td><td>30</td><td>0</td></tr>
-<tr><td>00110001</td><td>061</td><td>49</td><td>31</td><td>1</td></tr>
-<tr><td>00110010</td><td>062</td><td>50</td><td>32</td><td>2</td></tr>
-<tr><td colspan="5" align="center">...</td></tr>
-<tr><td>01000001</td><td>101</td><td>65</td><td>41</td><td>A</td></tr>
-<tr><td>01000010</td><td>102</td><td>66</td><td>42</td><td>B</td></tr>
-<tr><td>01000011</td><td>103</td><td>67</td><td>43</td><td>C</td></tr>
-<tr><td colspan="5" align="center">...</td></tr>
-</table>
-</section>
-
-<section data-transition="slide-in fade-out">
-<h2>Este mismo archivo de texto</h2>
-<h3>Vista en caracteres</h3>
-<pre class="stretch"><code>
-$ head -7 Texto\ y\ Multimedia.html 
-&lt;!doctype html>
-&lt;html lang="en">
-
-	&lt;head>
-		<meta charset="utf-8">
-
-		<title>Introducción a la Computación 2016</title>
-
-</code></pre>
-</section>
-
-
-<section data-transition="fade-out fade-in">
-<h2>Este mismo archivo de texto</h2>
-<h3>Vista en octal</h3>
-<pre class="stretch"><code>
-$ hexdump -bc Texto\ y\ Multimedia.html | head -16
-074 041 144 157 143 164 171 160 145 040 150 164 155 154 076 012
-  <   !   d   o   c   t   y   p   e       h   t   m   l   >  \n
-074 150 164 155 154 040 154 141 156 147 075 042 145 156 042 076
-  <   h   t   m   l       l   a   n   g   =   "   e   n   "   >
-012 012 011 074 150 145 141 144 076 012 011 011 074 155 145 164
- \n  \n  \t   <   h   e   a   d   >  \n  \t  \t   <   m   e   t
-141 040 143 150 141 162 163 145 164 075 042 165 164 146 055 070
-  a       c   h   a   r   s   e   t   =   "   u   t   f   -   8
-042 076 012 012 011 011 074 164 151 164 154 145 076 111 156 164
-  "   >  \n  \n  \t  \t   <   t   i   t   l   e   >   I   n   t
-162 157 144 165 143 143 151 303 263 156 040 141 040 154 141 040
-  r   o   d   u   c   c   i   �   �   n       a       l   a    
-103 157 155 160 165 164 141 143 151 303 263 156 040 062 060 061
-  C   o   m   p   u   t   a   c   i   �   �   n       2   0   1
-066 074 057 164 151 164 154 145 076 012 012 011 011 074 155 145
-  6   <   /   t   i   t   l   e   >  \n  \n  \t  \t   <   m   e
-</code></pre>
-</section>
-
-<section data-transition="fade-in slide-out">
-<h2>Este mismo archivo de texto</h2>
-<h3>Vista en hexadecimal</h3>
-<pre class="stretch"><code>
-$ hexdump -C Texto\ y\ Multimedia.html | head -8
-3c 21 64 6f 63 74 79 70  65 20 68 74 6d 6c 3e 0a  &lt;!doctype html>.
-3c 68 74 6d 6c 20 6c 61  6e 67 3d 22 65 6e 22 3e  &lt;html lang="en">
-0a 0a 09 3c 68 65 61 64  3e 0a 09 09 3c 6d 65 74  ...&lt;head>...&lt;met
-61 20 63 68 61 72 73 65  74 3d 22 75 74 66 2d 38  a charset="utf-8
-22 3e 0a 0a 09 09 3c 74  69 74 6c 65 3e 49 6e 74  ">....&lt;title>Int
-72 6f 64 75 63 63 69 c3  b3 6e 20 61 20 6c 61 20  roducci..n a la 
-43 6f 6d 70 75 74 61 63  69 c3 b3 6e 20 32 30 31  Computaci..n 201
-36 3c 2f 74 69 74 6c 65  3e 0a 0a 09 09 3c 6d 65  6&lt;/title>....&lt;me
-</code></pre>
-</section>
-
-
-<!--
-[458232.538941] usb-storage 3-2:1.0: USB Mass Storage device detected
-[458232.539179] scsi8 : usb-storage 3-2:1.0
-[458233.536143] scsi 8:0:0:0: Direct-Access     Kingston DataTraveler 2.0 1.00 PQ: 0 ANSI: 2
-[458233.536777] sd 8:0:0:0: Attached scsi generic sg2 type 0
-[458233.537215] sd 8:0:0:0: [sdb] 15654848 512-byte logical blocks: (8.01 GB/7.46 GiB)
-
-betsyrc ~ # dd if=/dev/sdb1 of=/dev/null bs=1024 
-7827088+1 records in
-7827088+1 records out
-8014938624 bytes (8.0 GB) copied, 335.609 s, 23.9 MB/s
-
-
-betsyrc ~ # lsblk
-NAME               MAJ:MIN RM   SIZE RO TYPE MOUNTPOINT
-sda                  8:0    0 931.5G  0 disk 
-├─sda1               8:1    0   100M  0 part 
-├─sda2               8:2    0 454.9G  0 part 
-│ ├─vg0-lvdownload 254:2    0 360.9G  0 lvm  /home/oso/Downloads
-│ ├─vg0-lvownCloud 254:3    0    40G  0 lvm  /home/oso/ownCloud
-│ ├─vg0-lvDropbox  254:4    0     4G  0 lvm  /home/oso/Dropbox
-│ └─vg0-lvmega     254:5    0    50G  0 lvm  /home/oso/MEGA
-├─sda3               8:3    0  23.8G  0 part 
-│ ├─vmstore-vm01   254:0    0    10G  0 lvm  
-│ └─vmstore-vm02   254:1    0  13.8G  0 lvm  
-├─sda4               8:4    0     1K  0 part 
-├─sda5               8:5    0  98.3G  0 part /
-├─sda6               8:6    0   5.9G  0 part [SWAP]
-├─sda7               8:7    0 250.9G  0 part /media/oso/HOME
-└─sda8               8:8    0  97.7G  0 part 
-sdb                  8:16   1   7.5G  0 disk 
-└─sdb1               8:17   1   7.5G  0 part /media/oso/SILVIA
-sr0                 11:0    1 583.9M  0 rom  
-
--->
-
-<section data-background="black">
-<h2>Audacity, un editor de audio</h2>
-<video id="audacity" width="100%" height="100%" class="stretch" preload controls>
-<source data-src="img/audacity.mp4" type='video/mp4'/>
-</section>
-
-
 <!------------------------------------------------------------------>
 
 	</div>

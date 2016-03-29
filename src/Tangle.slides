@@ -1,0 +1,33 @@
+    <!-- Tangle
+    <script type="text/javascript" src="Tangle.js"></script>
+
+    <!-- TangleKit -->
+    <link rel="stylesheet" href="TangleKit/TangleKit.css" type="text/css">
+    <script type="text/javascript" src="TangleKit/mootools.js"></script>
+    <script type="text/javascript" src="TangleKit/sprintf.js"></script>
+    <script type="text/javascript" src="TangleKit/BVTouchable.js"></script>
+    <script type="text/javascript" src="TangleKit/TangleKit.js"></script>
+-->
+<section>
+<h2>Prueba de Tangle</h2>
+<ul>
+	<li id="calorieCalculator">When you eat <span class="TKAdjustableNumber" data-var="cookies"> cookies</span>, you consume <b data-var="calories"> calories</b>.</li>
+	<li>That's <span data-var="dailyPercent">%</span> of your recommended daily calories.</p></li>
+</ul>
+<script type="text/javascript">
+	var rootElement = document.getElementById("calorieCalculator");
+	var model = {
+		initialize: function() { 
+			this.cookies = 3;
+			this.calsXCookie = 50;
+			this.D = 2100;
+		},
+		update: function() {
+			this.calories = this.cookies * this.calsXCookie;
+			this.dailyPercent = 100 * this.calories / this.D;
+		}
+	};
+	var tangle=new Tangle(rootElement, model);
+</script>
+</ul>
+</section>

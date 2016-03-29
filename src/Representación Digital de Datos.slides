@@ -833,6 +833,7 @@ https://es.wikipedia.org/wiki/IEEE_coma_flotante
 		</ul>
     </ol>
 </section>
+
 <section>
 <h2>Ejemplo de Punto Flotante</h2>
 	<div align="center" class="post_it">$n = -5.5$</div>
@@ -876,6 +877,20 @@ https://es.wikipedia.org/wiki/IEEE_coma_flotante
   0.30000000000000004
 
 </code></pre>
+</section>
+
+<section>
+<h2>Cálculo de punto flotante</h2>
+<span id="ieee754Calc">
+<table>
+<tr><td>Decimal</td><td class="TKNumberField" data-var="decimal"></td></tr>
+<tr><td>Signo</td><td data-var="sign"></td></tr>
+<tr><td>Exponente</td><td data-var="exponent"></td></tr>
+<tr><td>Mantisa</td><td data-var="mantissa"></td></tr>
+<tr><td>Hexa</td><td data-var="hexa"></td></tr>
+</table>        
+    <p class="post_it" data-var="math" style="text-align: center;" id="texFormula">$ $</p>  
+</span>
 </section>
 
 

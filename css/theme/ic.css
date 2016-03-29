@@ -246,6 +246,17 @@ body {
 /*********************************************
  * OSO
  *********************************************/
+/* Tangle */
+.TKNumberField {
+  background: rgba(255, 255, 10, 0.9);  
+}
+
+.TKNumberFieldInput {
+  font-size: 38px;
+  background: rgba(255, 255, 10, 0.9);  
+}
+
+
 /*.reveal .slide-background {
   max-height: 90%; max-width:90%;
 }*/
