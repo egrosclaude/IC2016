@@ -16,7 +16,10 @@
 
 		<link rel="stylesheet" href="css/reveal.css">
 		<link rel="stylesheet" href="css/theme/ic.css" id="theme">
-		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css"> 
+<!--		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">  -->
+<!--		<link rel="stylesheet" href="../font-awesome-4.5.0/css/font-awesome.min.css">  -->
+<!--		<link rel="stylesheet" href="font-awesome-4.5.0/css/font-awesome.css">  -->
 
 <!--		<link rel="icon" type="image/png" href="img/favicon-16x16.png" sizes="16x16">
 		<link rel="icon" type="image/png" href="img/favicon-32x32.png" sizes="32x32"> -->
@@ -340,8 +343,8 @@ sr0                 11:0    1 583.9M  0 rom
 
 				// -------- Math plugin ----------
 				math: {
-					mathjax: 'https://cdn.mathjax.org/mathjax/latest/MathJax.js',
-					//mathjax: '../MathJax-master/MathJax.js',
+				// 	mathjax: 'https://cdn.mathjax.org/mathjax/latest/MathJax.js',
+					mathjax: '../MathJax-master/MathJax.js',
 					config: 'TeX-AMS_HTML-full'
 				},
 
@@ -381,6 +384,7 @@ sr0                 11:0    1 583.9M  0 rom
 					{ src: 'reveal.js-plugins/chalkboard/chalkboard.js' },
 					{ src: 'bower_components/reveal.js-menu/menu.js' },
 					{ src: 'bower_components/reveal.js-plugins/mathsvg/math.js', async: true }
+					//{ src: 'reveal.js-plugins/mathsvg/math.js' },
 				]
 			});
 

@@ -71,17 +71,16 @@
 	}
 	return s;
     }
+
     function setupIEEE754() {
 	var rootElement = document.getElementById("ieee754Calc");
 	var model = {
 		initialize: function() { 
 			this.decimal = 0;
-
 			this.sign = 0;
 			this.exponent = 0;
 			this.mantissa = 0;
 			this.hexa = "00000000";
-			this.mathfield = MathJax.Hub.getAllJax("texFormula")[0];
 		},
 		update: function() {
 			var e = this.decimal;
@@ -91,16 +90,20 @@
 			this.sign = f[0];
 			this.exponent = f.slice(1,9).join("");
 			this.mantissa = f.slice(9,32).join("");
-			if (n === 0 || (n !== n) || (n === Infinity) || (n === -Infinity)) {
-			    return;
+			var mstr;
+			if (n === 0) {
+			    	return;
+			} else if (n !== n) {
+				mstr = "NaN";
+			} else if (n === Infinity) {
+				mstr = "\\infty";
+			} else if (n === -Infinity) {
+				mstr = "- \\infty";
+			} else {
+				mstr = mathString(e, this.sign, this.exponent, this.mantissa);
 			}
-			
-			var mstr = mathString(e, this.sign, this.exponent, this.mantissa);
-			//MathJax.HTML.addText(this.math, mstr);
-        		//MathJax.Hub.Typeset(this.math);
-			MathJax.Hub.Queue(["Text",this.mathfield,mstr]);
-			//this.math = this.mathfield;
-
+			var mathfield = MathJax.Hub.getAllJax("ieee754Formula")[0];
+			MathJax.Hub.Queue(["Text",mathfield,mstr]);
 		}
 	};
 	var tangle=new Tangle(rootElement, model);

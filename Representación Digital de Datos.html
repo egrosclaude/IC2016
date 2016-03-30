@@ -16,7 +16,10 @@
 
 		<link rel="stylesheet" href="css/reveal.css">
 		<link rel="stylesheet" href="css/theme/ic.css" id="theme">
-		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css"> 
+<!--		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">  -->
+<!--		<link rel="stylesheet" href="../font-awesome-4.5.0/css/font-awesome.min.css">  -->
+<!--		<link rel="stylesheet" href="font-awesome-4.5.0/css/font-awesome.css">  -->
 
 <!--		<link rel="icon" type="image/png" href="img/favicon-16x16.png" sizes="16x16">
 		<link rel="icon" type="image/png" href="img/favicon-32x32.png" sizes="32x32"> -->
@@ -944,7 +947,7 @@ https://es.wikipedia.org/wiki/IEEE_coma_flotante
 <tr><td>Mantisa</td><td data-var="mantissa"></td></tr>
 <tr><td>Hexa</td><td data-var="hexa"></td></tr>
 </table>        
-    <p class="post_it" data-var="math" style="text-align: center;" id="texFormula">$ $</p>  
+    <p class="post_it" data-var="math" style="text-align: center;" id="ieee754Formula">$ $</p>  
 </span>
 </section>
 
@@ -965,6 +968,7 @@ https://es.wikipedia.org/wiki/IEEE_coma_flotante
 <section data-background="#3c53b5" data-background-transition="zoom">
 <h2>Preguntas</h2>
 <ul>
+	<li>¿Cuál es el RR de IEEE754, precisión simple?</li>
 	<li>Usando el calculador de IEEE754 contenido en este material, o cualquier otro:</li>
 	<ol>
 		<li class="fragment">¿Qué pasa con el resultado a medida que agregamos <b>muchos</b> decimales?</li>
@@ -977,11 +981,11 @@ https://es.wikipedia.org/wiki/IEEE_coma_flotante
 <section data-background="#3cb5c5" data-background-transition="zoom">
 <h2>Representación de datos numéricos</h2>
 <ul>
-	<li class="fragment">Enteros</li>
+	<li>Enteros</li>
 	<ul>
-		<li class="fragment">Signo-Magnitud &#10004;</li>
-		<li class="fragment">Complemento a 2 &#10004;</li>
-		<li class="fragment">Exceso a $2^{n-1}$ &#10004; </li>
+		<li>Signo-Magnitud &#10004;</li>
+		<li>Complemento a 2 &#10004;</li>
+		<li>Exceso a $2^{n-1}$ &#10004; </li>
 	</ul>
 	<li class="fragment">Fraccionarios</li>
 	<ul>
@@ -1083,8 +1087,8 @@ https://es.wikipedia.org/wiki/IEEE_coma_flotante
 
 				// -------- Math plugin ----------
 				math: {
-					mathjax: 'https://cdn.mathjax.org/mathjax/latest/MathJax.js',
-					//mathjax: '../MathJax-master/MathJax.js',
+				// 	mathjax: 'https://cdn.mathjax.org/mathjax/latest/MathJax.js',
+					mathjax: '../MathJax-master/MathJax.js',
 					config: 'TeX-AMS_HTML-full'
 				},
 
@@ -1124,6 +1128,7 @@ https://es.wikipedia.org/wiki/IEEE_coma_flotante
 					{ src: 'reveal.js-plugins/chalkboard/chalkboard.js' },
 					{ src: 'bower_components/reveal.js-menu/menu.js' },
 					{ src: 'bower_components/reveal.js-plugins/mathsvg/math.js', async: true }
+					//{ src: 'reveal.js-plugins/mathsvg/math.js' },
 				]
 			});
 

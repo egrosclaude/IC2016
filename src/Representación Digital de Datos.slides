@@ -893,7 +893,7 @@ https://es.wikipedia.org/wiki/IEEE_coma_flotante
 <tr><td>Mantisa</td><td data-var="mantissa"></td></tr>
 <tr><td>Hexa</td><td data-var="hexa"></td></tr>
 </table>        
-    <p class="post_it" data-var="math" style="text-align: center;" id="texFormula">$ $</p>  
+    <p class="post_it" data-var="math" style="text-align: center;" id="ieee754Formula">$ $</p>  
 </span>
 </section>
 
@@ -914,6 +914,7 @@ https://es.wikipedia.org/wiki/IEEE_coma_flotante
 <section data-background="#3c53b5" data-background-transition="zoom">
 <h2>Preguntas</h2>
 <ul>
+	<li>¿Cuál es el RR de IEEE754, precisión simple?</li>
 	<li>Usando el calculador de IEEE754 contenido en este material, o cualquier otro:</li>
 	<ol>
 		<li class="fragment">¿Qué pasa con el resultado a medida que agregamos <b>muchos</b> decimales?</li>
@@ -926,11 +927,11 @@ https://es.wikipedia.org/wiki/IEEE_coma_flotante
 <section data-background="#3cb5c5" data-background-transition="zoom">
 <h2>Representación de datos numéricos</h2>
 <ul>
-	<li class="fragment">Enteros</li>
+	<li>Enteros</li>
 	<ul>
-		<li class="fragment">Signo-Magnitud &#10004;</li>
-		<li class="fragment">Complemento a 2 &#10004;</li>
-		<li class="fragment">Exceso a $2^{n-1}$ &#10004; </li>
+		<li>Signo-Magnitud &#10004;</li>
+		<li>Complemento a 2 &#10004;</li>
+		<li>Exceso a $2^{n-1}$ &#10004; </li>
 	</ul>
 	<li class="fragment">Fraccionarios</li>
 	<ul>

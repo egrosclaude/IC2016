@@ -79,8 +79,8 @@
 
 				// -------- Math plugin ----------
 				math: {
-					mathjax: 'https://cdn.mathjax.org/mathjax/latest/MathJax.js',
-					//mathjax: '../MathJax-master/MathJax.js',
+				// 	mathjax: 'https://cdn.mathjax.org/mathjax/latest/MathJax.js',
+					mathjax: '../MathJax-master/MathJax.js',
 					config: 'TeX-AMS_HTML-full'
 				},
 
@@ -120,6 +120,7 @@
 					{ src: 'reveal.js-plugins/chalkboard/chalkboard.js' },
 					{ src: 'bower_components/reveal.js-menu/menu.js' },
 					{ src: 'bower_components/reveal.js-plugins/mathsvg/math.js', async: true }
+					//{ src: 'reveal.js-plugins/mathsvg/math.js' },
 				]
 			});
 
