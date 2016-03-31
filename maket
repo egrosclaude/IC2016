@@ -1,0 +1,2 @@
+./paleta.pl > paleta01.svg
+cat texto1 paleta01.svg texto2 > paleta01.html

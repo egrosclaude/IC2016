@@ -4,8 +4,8 @@
 use strict;
 use warnings;
 
-use GD::Simple;
-GD::Simple->class('GD::SVG');
+use GD::SVG;
+#GD::Simple->class('GD::SVG');
 
 my $BIT_WIDTH = 8;
 my $BIT_HEIGHT = 8;
@@ -48,8 +48,8 @@ sub memory {
 	}
 }
 
-my $img = GD::Simple->new(400,110);
-$img->font('Lato',$BIT_HEIGHT);
+my $img = GD::SVG->new(400,110);
+print STDERR $img->font('Lato',$BIT_HEIGHT);
 octet($img, 8, 10, "PC");
 octet($img, 8 + $COL_WIDTH, 10, "IR");
 octet($img, 8 + 2 * $COL_WIDTH, 10, " A");

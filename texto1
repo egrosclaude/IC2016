@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>Introducción a la Computación 2016</title>
+
+		<meta name="description" content="Introducción a la Computación">
+		<meta name="author" content="Eduardo Grosclaude">
+
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/ic.css" id="theme">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css"> 
+<!--		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">  -->
+<!--		<link rel="stylesheet" href="../font-awesome-4.5.0/css/font-awesome.min.css">  -->
+<!--		<link rel="stylesheet" href="font-awesome-4.5.0/css/font-awesome.css">  -->
+
+<!--		<link rel="icon" type="image/png" href="img/favicon-16x16.png" sizes="16x16">
+		<link rel="icon" type="image/png" href="img/favicon-32x32.png" sizes="32x32"> -->
+		<link rel="icon" type="image/png" href="img/favicon-96x96.png" sizes="96x96">
+		<meta name="theme-color" content="#ffffff">
+		<!-- Code syntax highlighting -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+
+	<body onload="setupIEEE754();">
+
+		<div class="reveal">
+
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+
+
+<!------------------------------------------------------------------>
+
+<section>
+<h1>Animated SVG</h1>
+<div class="animate" data-svg-src="BPMN.svg">
+<svg>
+	<circle opacity="0" cx="75" cy="145" r="10" style="stroke-width:2;stroke:#000000" fill="#ff0000">
+		<animate class="fragment" data-reverse="reverse0" begin="indefinite" attributeName="opacity" from="0" to="1" dur="0.1s" fill="freeze" repeatCount="1" />     
+		<animate id="reverse0" begin="indefinite" attributeName="opacity" to="0" from="1" dur="0.1s" fill="freeze" repeatCount="1" />     
+		<animateTransform class="fragment" data-reverse="reverse1" attributeName="transform" begin="indefinite" dur="1.15s" type="translate" from="0 0" to="115 0" fill="freeze" />
+		<animateTransform id="reverse1" attributeName="transform" begin="indefinite" dur="0.01s" type="translate" from="115 0" to="0 0" fill="freeze" />
+		<animateTransform id="step2" class="fragment" data-reverse="reverse2" attributeName="transform" begin="indefinite" dur="1.35s" type="translate" from="115 0" to="250 0" fill="freeze" />
+		<animateTransform id="step2b" attributeName="transform" begin="step2.end" dur="0.8s" type="translate" from="250 0" to="250 -80" fill="freeze" />
+		<animateTransform attributeName="transform" begin="step2b.end" dur="1.65s" type="translate" from="250 -80" to="415 -80" fill="freeze" />
+		<animateTransform id="reverse2" attributeName="transform" begin="indefinite" dur="0.01s" type="translate" from="415 -80" to="115 0" fill="freeze" />
+		<animateTransform id="step3" class="fragment" data-reverse="reverse3" attributeName="transform" begin="indefinite" dur="1.6s" type="translate" from="415 -80" to="575 -80" fill="freeze" />
+		<animateTransform id="step3b" attributeName="transform" begin="step3.end" dur="0.8s" type="translate" from="575 -80" to="575 0" fill="freeze" />
+		<animateTransform attributeName="transform" begin="step3b.end" dur="0.9s" type="translate" from="575 0" to="665 0" fill="freeze" />
+		<animateTransform id="reverse3" attributeName="transform" begin="indefinite" dur="0.01s" type="translate" from="665 0" to="415 -80" fill="freeze" />
+		<animate class="fragment" data-reverse="reverse4" begin="indefinite" attributeName="opacity" from="1" to="0" dur="0.1s" fill="freeze" repeatCount="1" />     
+		<animate id="reverse4" begin="indefinite" attributeName="opacity" to="1" from="0" dur="0.01s" fill="freeze" repeatCount="1" />     
+	</circle>
+</svg>
+</div>
+</section>
+
+
+<section>
+<h1>Static SVG</h1>
+<div class="animate" data-svg-src="paleta01.svg">
