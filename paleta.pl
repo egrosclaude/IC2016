@@ -6,7 +6,7 @@ use warnings;
 use SVG;
 
 my $IMG_WIDTH = 240;
-my $IMG_HEIGHT = 120;
+my $IMG_HEIGHT = 240;
 
 my $BIT_WIDTH = 38;
 my $BIT_HEIGHT = 38;
@@ -21,23 +21,14 @@ my $colors = {
 	black => 'rgb(0,0,0)',
 };
 
-
 sub textbox {
 	my ($s, $id, $x, $y, $tx, $ty, $color, $text, $ttx, $tty) = @_;
 
-	my $group = $s->g(
-		id => "g$id",
-		style => {
-			stroke => $colors->{gray},
-			fill => $color,
-		},
-		transform =>"translate($tx,$ty)");
-	$group->rect(
-		x=>$x, y=>$y, 
-		width=>$BIT_WIDTH, height=>$BIT_HEIGHT,
-		id=>"b$id");
+	my $group = $s->g( id => "g$id", transform =>"translate($tx,$ty)");
+	my $rect  = $group->rect( 
+		id=>"b$id", x=>$x, y=>$y, width=>$BIT_WIDTH, height=>$BIT_HEIGHT, 
+		style=>{ stroke=>$colors->{gray}, fill=>$color });
 	my $fontsize = 28;
-	my $ry = $fontsize + ($BIT_HEIGHT - $fontsize)/2;
 	$group->text(
 		x=>($x + $BIT_WIDTH)/2, 
 		y=>($y + $BIT_HEIGHT)/2 + 3,
@@ -50,6 +41,8 @@ sub textbox {
 			font=>'Lato',
 			'font-size'=>$fontsize},
 		)->cdata($text);
+
+	# Move below
 	my $an = sprintf "%d,%d; %d,%d;", $tx, $ty, $ttx, $tty;
 	$group->animateTransform(
 		id=>"step$id",
@@ -61,19 +54,20 @@ sub textbox {
 		begin=>'indefinite',
 		restart=>'click',
 		calcMode=>'linear',
-		dur=>'.5s',
+		dur=>'0.5s', # Didn't work in Firefox!
 		repeatCount=>1,
 		fill=>'freeze');
-	$group->animateTransform(
-		id=>"rstep$id",
-		attributeName=>'transform',
-		type=>'translate',
-		begin=>'indefinite',
-		from=>"$ttx, $tty",
-		to=>"$tx, $ty",
-		dur=>'0.01s',
-		repeatCount=>1,
-		fill=>'freeze');
+
+	$rect->animate( attributeName=>'fill-opacity', begin=>"step$id.end", from=>1, to=>0, dur=>'2s', fill=>'freeze');
+	$rect->animate( attributeName=>'stroke-opacity', begin=>"step$id.end", from=>1, to=>0, dur=>'2s', fill=>'freeze');
+#---------------------------------------------------
+
+	# Reverse mov
+	$group->animateTransform( id=>"rstep$id", attributeName=>'transform', type=>'translate', begin=>'indefinite', from=>"$ttx, $tty",
+		to=>"$tx, $ty", dur=>'0.01s', repeatCount=>1, fill=>'freeze');
+	$rect->animate( attributeName=>'fill-opacity', begin=>"rstep$id.end", from=>0, to=>1, dur=>'1s', fill=>'freeze');
+	$rect->animate( attributeName=>'stroke-opacity', begin=>"rstep$id.end", from=>0, to=>1, dur=>'1s', fill=>'freeze');
+
 }
 
 my @clist = (qw/

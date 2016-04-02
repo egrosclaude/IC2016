@@ -1,0 +1,21 @@
+#!/usr/bin/perl -n
+
+print;
+if(/<!-- INCLUDE (.*) -->/) {
+	open INCLUDE, "<$1" or die "no se pudo abrir $1";
+	while($line = <INCLUDE>) {
+	   print $line;
+	}
+}
+if(/<!-- INJECT (.*) -->/) {
+	open INJECT, "$1|" or die "no se pudo abrir $1";
+	while($line = <INJECT>) {
+	   print $line;
+	}
+}
+if(/<!-- PROCESS (.*) -->/) {
+	open PROCESS, "./macro < '$1'|" or die "No pude $1";
+	while($line = <PROCESS>) {
+	   print $line;
+	}
+}

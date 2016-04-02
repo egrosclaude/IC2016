@@ -1,3 +1,4 @@
+<!-- INCLUDE reveal.header -->
 				
 <section data-markdown> 
  <script type="text/template">
@@ -417,3 +418,5 @@ $1100010_{(2} = 001100010_{(2} = 142_{(8}$
 <li>$101001101_{(2} = X_{(16}$<span class="fragment"> $= 14D_{(16}$</li>
 </ol>
 </section>
+
+<!-- INCLUDE reveal.trailer -->

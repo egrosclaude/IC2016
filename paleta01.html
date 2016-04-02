@@ -52,186 +52,287 @@
 
 <!------------------------------------------------------------------>
 
-<section>
-<h1>Animated SVG</h1>
-<div class="animate" data-svg-src="BPMN.svg">
-<svg>
-	<circle opacity="0" cx="75" cy="145" r="10" style="stroke-width:2;stroke:#000000" fill="#ff0000">
-		<animate class="fragment" data-reverse="reverse0" begin="indefinite" attributeName="opacity" from="0" to="1" dur="0.1s" fill="freeze" repeatCount="1" />     
-		<animate id="reverse0" begin="indefinite" attributeName="opacity" to="0" from="1" dur="0.1s" fill="freeze" repeatCount="1" />     
-		<animateTransform class="fragment" data-reverse="reverse1" attributeName="transform" begin="indefinite" dur="1.15s" type="translate" from="0 0" to="115 0" fill="freeze" />
-		<animateTransform id="reverse1" attributeName="transform" begin="indefinite" dur="0.01s" type="translate" from="115 0" to="0 0" fill="freeze" />
-		<animateTransform id="step2" class="fragment" data-reverse="reverse2" attributeName="transform" begin="indefinite" dur="1.35s" type="translate" from="115 0" to="250 0" fill="freeze" />
-		<animateTransform id="step2b" attributeName="transform" begin="step2.end" dur="0.8s" type="translate" from="250 0" to="250 -80" fill="freeze" />
-		<animateTransform attributeName="transform" begin="step2b.end" dur="1.65s" type="translate" from="250 -80" to="415 -80" fill="freeze" />
-		<animateTransform id="reverse2" attributeName="transform" begin="indefinite" dur="0.01s" type="translate" from="415 -80" to="115 0" fill="freeze" />
-		<animateTransform id="step3" class="fragment" data-reverse="reverse3" attributeName="transform" begin="indefinite" dur="1.6s" type="translate" from="415 -80" to="575 -80" fill="freeze" />
-		<animateTransform id="step3b" attributeName="transform" begin="step3.end" dur="0.8s" type="translate" from="575 -80" to="575 0" fill="freeze" />
-		<animateTransform attributeName="transform" begin="step3b.end" dur="0.9s" type="translate" from="575 0" to="665 0" fill="freeze" />
-		<animateTransform id="reverse3" attributeName="transform" begin="indefinite" dur="0.01s" type="translate" from="665 0" to="415 -80" fill="freeze" />
-		<animate class="fragment" data-reverse="reverse4" begin="indefinite" attributeName="opacity" from="1" to="0" dur="0.1s" fill="freeze" repeatCount="1" />     
-		<animate id="reverse4" begin="indefinite" attributeName="opacity" to="1" from="0" dur="0.01s" fill="freeze" repeatCount="1" />     
-	</circle>
-</svg>
-</div>
-</section>
-
 
 <section>
-<h1>Static SVG</h1>
-<div class="animate" data-svg-src="paleta01.svg">
+<h1>Paleta SVG</h1>
+<div class="animate stretch">
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.0//EN" "http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd">
-<svg height="120" width="240" xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<svg height="240" width="240" xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
 	<g id="s">
-		<g id="g0" style="fill: rgb(207,231,245); stroke: rgb(153,153,153)" transform="translate(0,0)">
-			<rect height="38" id="b0" width="38" x="0" y="0" />
+		<g id="g0" transform="translate(0,0)">
+			<rect height="38" id="b0" style="fill: rgb(207,231,245); stroke: rgb(153,153,153)" width="38" x="0" y="0">
+				<animate attributeName="fill-opacity" begin="step0.end" dur="2s" fill="freeze" from="1" to="0" />
+				<animate attributeName="stroke-opacity" begin="step0.end" dur="2s" fill="freeze" from="1" to="0" />
+				<animate attributeName="fill-opacity" begin="rstep0.end" dur="1s" fill="freeze" from="0" to="1" />
+				<animate attributeName="stroke-opacity" begin="rstep0.end" dur="1s" fill="freeze" from="0" to="1" />
+			</rect>
 			<text alignment-baseline="middle" id="t0" style="fill: rgb(0,0,0); font: Lato; font-size: 28; stroke: rgb(0,0,0)" text-anchor="middle" type="span" x="19" y="22">10</text>
-			<animateTransform attributeName="transform" begin="indefinite" calcMode="linear" class="fragment" data-reverse="rstep0" dur=".5s" fill="freeze" id="step0" repeatCount="1" restart="click" type="translate" values="0,0; 0,250;" />
+			<animateTransform attributeName="transform" begin="indefinite" calcMode="linear" class="fragment" data-reverse="rstep0" dur="0.5s" fill="freeze" id="step0" repeatCount="1" restart="click" type="translate" values="0,0; 0,250;" />
 			<animateTransform attributeName="transform" begin="indefinite" dur="0.01s" fill="freeze" from="0, 250" id="rstep0" repeatCount="1" to="0, 0" type="translate" />
 		</g>
-		<g id="g1" style="fill: rgb(207,231,245); stroke: rgb(153,153,153)" transform="translate(38,0)">
-			<rect height="38" id="b1" width="38" x="0" y="0" />
+		<g id="g1" transform="translate(38,0)">
+			<rect height="38" id="b1" style="fill: rgb(207,231,245); stroke: rgb(153,153,153)" width="38" x="0" y="0">
+				<animate attributeName="fill-opacity" begin="step1.end" dur="2s" fill="freeze" from="1" to="0" />
+				<animate attributeName="stroke-opacity" begin="step1.end" dur="2s" fill="freeze" from="1" to="0" />
+				<animate attributeName="fill-opacity" begin="rstep1.end" dur="1s" fill="freeze" from="0" to="1" />
+				<animate attributeName="stroke-opacity" begin="rstep1.end" dur="1s" fill="freeze" from="0" to="1" />
+			</rect>
 			<text alignment-baseline="middle" id="t1" style="fill: rgb(0,0,0); font: Lato; font-size: 28; stroke: rgb(0,0,0)" text-anchor="middle" type="span" x="19" y="22">10</text>
-			<animateTransform attributeName="transform" begin="indefinite" calcMode="linear" class="fragment" data-reverse="rstep1" dur=".5s" fill="freeze" id="step1" repeatCount="1" restart="click" type="translate" values="38,0; 38,250;" />
+			<animateTransform attributeName="transform" begin="indefinite" calcMode="linear" class="fragment" data-reverse="rstep1" dur="0.5s" fill="freeze" id="step1" repeatCount="1" restart="click" type="translate" values="38,0; 38,250;" />
 			<animateTransform attributeName="transform" begin="indefinite" dur="0.01s" fill="freeze" from="38, 250" id="rstep1" repeatCount="1" to="38, 0" type="translate" />
 		</g>
-		<g id="g2" style="fill: rgb(0,107,107); stroke: rgb(153,153,153)" transform="translate(76,0)">
-			<rect height="38" id="b2" width="38" x="0" y="0" />
+		<g id="g2" transform="translate(76,0)">
+			<rect height="38" id="b2" style="fill: rgb(0,107,107); stroke: rgb(153,153,153)" width="38" x="0" y="0">
+				<animate attributeName="fill-opacity" begin="step2.end" dur="2s" fill="freeze" from="1" to="0" />
+				<animate attributeName="stroke-opacity" begin="step2.end" dur="2s" fill="freeze" from="1" to="0" />
+				<animate attributeName="fill-opacity" begin="rstep2.end" dur="1s" fill="freeze" from="0" to="1" />
+				<animate attributeName="stroke-opacity" begin="rstep2.end" dur="1s" fill="freeze" from="0" to="1" />
+			</rect>
 			<text alignment-baseline="middle" id="t2" style="fill: rgb(0,0,0); font: Lato; font-size: 28; stroke: rgb(0,0,0)" text-anchor="middle" type="span" x="19" y="22">11</text>
-			<animateTransform attributeName="transform" begin="indefinite" calcMode="linear" class="fragment" data-reverse="rstep2" dur=".5s" fill="freeze" id="step2" repeatCount="1" restart="click" type="translate" values="76,0; 76,250;" />
+			<animateTransform attributeName="transform" begin="indefinite" calcMode="linear" class="fragment" data-reverse="rstep2" dur="0.5s" fill="freeze" id="step2" repeatCount="1" restart="click" type="translate" values="76,0; 76,250;" />
 			<animateTransform attributeName="transform" begin="indefinite" dur="0.01s" fill="freeze" from="76, 250" id="rstep2" repeatCount="1" to="76, 0" type="translate" />
 		</g>
-		<g id="g3" style="fill: rgb(207,231,245); stroke: rgb(153,153,153)" transform="translate(114,0)">
-			<rect height="38" id="b3" width="38" x="0" y="0" />
+		<g id="g3" transform="translate(114,0)">
+			<rect height="38" id="b3" style="fill: rgb(207,231,245); stroke: rgb(153,153,153)" width="38" x="0" y="0">
+				<animate attributeName="fill-opacity" begin="step3.end" dur="2s" fill="freeze" from="1" to="0" />
+				<animate attributeName="stroke-opacity" begin="step3.end" dur="2s" fill="freeze" from="1" to="0" />
+				<animate attributeName="fill-opacity" begin="rstep3.end" dur="1s" fill="freeze" from="0" to="1" />
+				<animate attributeName="stroke-opacity" begin="rstep3.end" dur="1s" fill="freeze" from="0" to="1" />
+			</rect>
 			<text alignment-baseline="middle" id="t3" style="fill: rgb(0,0,0); font: Lato; font-size: 28; stroke: rgb(0,0,0)" text-anchor="middle" type="span" x="19" y="22">10</text>
-			<animateTransform attributeName="transform" begin="indefinite" calcMode="linear" class="fragment" data-reverse="rstep3" dur=".5s" fill="freeze" id="step3" repeatCount="1" restart="click" type="translate" values="114,0; 114,250;" />
+			<animateTransform attributeName="transform" begin="indefinite" calcMode="linear" class="fragment" data-reverse="rstep3" dur="0.5s" fill="freeze" id="step3" repeatCount="1" restart="click" type="translate" values="114,0; 114,250;" />
 			<animateTransform attributeName="transform" begin="indefinite" dur="0.01s" fill="freeze" from="114, 250" id="rstep3" repeatCount="1" to="114, 0" type="translate" />
 		</g>
-		<g id="g4" style="fill: rgb(207,231,245); stroke: rgb(153,153,153)" transform="translate(152,0)">
-			<rect height="38" id="b4" width="38" x="0" y="0" />
+		<g id="g4" transform="translate(152,0)">
+			<rect height="38" id="b4" style="fill: rgb(207,231,245); stroke: rgb(153,153,153)" width="38" x="0" y="0">
+				<animate attributeName="fill-opacity" begin="step4.end" dur="2s" fill="freeze" from="1" to="0" />
+				<animate attributeName="stroke-opacity" begin="step4.end" dur="2s" fill="freeze" from="1" to="0" />
+				<animate attributeName="fill-opacity" begin="rstep4.end" dur="1s" fill="freeze" from="0" to="1" />
+				<animate attributeName="stroke-opacity" begin="rstep4.end" dur="1s" fill="freeze" from="0" to="1" />
+			</rect>
 			<text alignment-baseline="middle" id="t4" style="fill: rgb(0,0,0); font: Lato; font-size: 28; stroke: rgb(0,0,0)" text-anchor="middle" type="span" x="19" y="22">10</text>
-			<animateTransform attributeName="transform" begin="indefinite" calcMode="linear" class="fragment" data-reverse="rstep4" dur=".5s" fill="freeze" id="step4" repeatCount="1" restart="click" type="translate" values="152,0; 152,250;" />
+			<animateTransform attributeName="transform" begin="indefinite" calcMode="linear" class="fragment" data-reverse="rstep4" dur="0.5s" fill="freeze" id="step4" repeatCount="1" restart="click" type="translate" values="152,0; 152,250;" />
 			<animateTransform attributeName="transform" begin="indefinite" dur="0.01s" fill="freeze" from="152, 250" id="rstep4" repeatCount="1" to="152, 0" type="translate" />
 		</g>
-		<g id="g5" style="fill: rgb(207,231,245); stroke: rgb(153,153,153)" transform="translate(0,38)">
-			<rect height="38" id="b5" width="38" x="0" y="0" />
+		<g id="g5" transform="translate(0,38)">
+			<rect height="38" id="b5" style="fill: rgb(207,231,245); stroke: rgb(153,153,153)" width="38" x="0" y="0">
+				<animate attributeName="fill-opacity" begin="step5.end" dur="2s" fill="freeze" from="1" to="0" />
+				<animate attributeName="stroke-opacity" begin="step5.end" dur="2s" fill="freeze" from="1" to="0" />
+				<animate attributeName="fill-opacity" begin="rstep5.end" dur="1s" fill="freeze" from="0" to="1" />
+				<animate attributeName="stroke-opacity" begin="rstep5.end" dur="1s" fill="freeze" from="0" to="1" />
+			</rect>
 			<text alignment-baseline="middle" id="t5" style="fill: rgb(0,0,0); font: Lato; font-size: 28; stroke: rgb(0,0,0)" text-anchor="middle" type="span" x="19" y="22">10</text>
-			<animateTransform attributeName="transform" begin="indefinite" calcMode="linear" class="fragment" data-reverse="rstep5" dur=".5s" fill="freeze" id="step5" repeatCount="1" restart="click" type="translate" values="0,38; 190,250;" />
+			<animateTransform attributeName="transform" begin="indefinite" calcMode="linear" class="fragment" data-reverse="rstep5" dur="0.5s" fill="freeze" id="step5" repeatCount="1" restart="click" type="translate" values="0,38; 190,250;" />
 			<animateTransform attributeName="transform" begin="indefinite" dur="0.01s" fill="freeze" from="190, 250" id="rstep5" repeatCount="1" to="0, 38" type="translate" />
 		</g>
-		<g id="g6" style="fill: rgb(0,107,107); stroke: rgb(153,153,153)" transform="translate(38,38)">
-			<rect height="38" id="b6" width="38" x="0" y="0" />
+		<g id="g6" transform="translate(38,38)">
+			<rect height="38" id="b6" style="fill: rgb(0,107,107); stroke: rgb(153,153,153)" width="38" x="0" y="0">
+				<animate attributeName="fill-opacity" begin="step6.end" dur="2s" fill="freeze" from="1" to="0" />
+				<animate attributeName="stroke-opacity" begin="step6.end" dur="2s" fill="freeze" from="1" to="0" />
+				<animate attributeName="fill-opacity" begin="rstep6.end" dur="1s" fill="freeze" from="0" to="1" />
+				<animate attributeName="stroke-opacity" begin="rstep6.end" dur="1s" fill="freeze" from="0" to="1" />
+			</rect>
 			<text alignment-baseline="middle" id="t6" style="fill: rgb(0,0,0); font: Lato; font-size: 28; stroke: rgb(0,0,0)" text-anchor="middle" type="span" x="19" y="22">11</text>
-			<animateTransform attributeName="transform" begin="indefinite" calcMode="linear" class="fragment" data-reverse="rstep6" dur=".5s" fill="freeze" id="step6" repeatCount="1" restart="click" type="translate" values="38,38; 228,250;" />
+			<animateTransform attributeName="transform" begin="indefinite" calcMode="linear" class="fragment" data-reverse="rstep6" dur="0.5s" fill="freeze" id="step6" repeatCount="1" restart="click" type="translate" values="38,38; 228,250;" />
 			<animateTransform attributeName="transform" begin="indefinite" dur="0.01s" fill="freeze" from="228, 250" id="rstep6" repeatCount="1" to="38, 38" type="translate" />
 		</g>
-		<g id="g7" style="fill: rgb(0,107,107); stroke: rgb(153,153,153)" transform="translate(76,38)">
-			<rect height="38" id="b7" width="38" x="0" y="0" />
+		<g id="g7" transform="translate(76,38)">
+			<rect height="38" id="b7" style="fill: rgb(0,107,107); stroke: rgb(153,153,153)" width="38" x="0" y="0">
+				<animate attributeName="fill-opacity" begin="step7.end" dur="2s" fill="freeze" from="1" to="0" />
+				<animate attributeName="stroke-opacity" begin="step7.end" dur="2s" fill="freeze" from="1" to="0" />
+				<animate attributeName="fill-opacity" begin="rstep7.end" dur="1s" fill="freeze" from="0" to="1" />
+				<animate attributeName="stroke-opacity" begin="rstep7.end" dur="1s" fill="freeze" from="0" to="1" />
+			</rect>
 			<text alignment-baseline="middle" id="t7" style="fill: rgb(0,0,0); font: Lato; font-size: 28; stroke: rgb(0,0,0)" text-anchor="middle" type="span" x="19" y="22">11</text>
-			<animateTransform attributeName="transform" begin="indefinite" calcMode="linear" class="fragment" data-reverse="rstep7" dur=".5s" fill="freeze" id="step7" repeatCount="1" restart="click" type="translate" values="76,38; 266,250;" />
+			<animateTransform attributeName="transform" begin="indefinite" calcMode="linear" class="fragment" data-reverse="rstep7" dur="0.5s" fill="freeze" id="step7" repeatCount="1" restart="click" type="translate" values="76,38; 266,250;" />
 			<animateTransform attributeName="transform" begin="indefinite" dur="0.01s" fill="freeze" from="266, 250" id="rstep7" repeatCount="1" to="76, 38" type="translate" />
 		</g>
-		<g id="g8" style="fill: rgb(0,107,107); stroke: rgb(153,153,153)" transform="translate(114,38)">
-			<rect height="38" id="b8" width="38" x="0" y="0" />
+		<g id="g8" transform="translate(114,38)">
+			<rect height="38" id="b8" style="fill: rgb(0,107,107); stroke: rgb(153,153,153)" width="38" x="0" y="0">
+				<animate attributeName="fill-opacity" begin="step8.end" dur="2s" fill="freeze" from="1" to="0" />
+				<animate attributeName="stroke-opacity" begin="step8.end" dur="2s" fill="freeze" from="1" to="0" />
+				<animate attributeName="fill-opacity" begin="rstep8.end" dur="1s" fill="freeze" from="0" to="1" />
+				<animate attributeName="stroke-opacity" begin="rstep8.end" dur="1s" fill="freeze" from="0" to="1" />
+			</rect>
 			<text alignment-baseline="middle" id="t8" style="fill: rgb(0,0,0); font: Lato; font-size: 28; stroke: rgb(0,0,0)" text-anchor="middle" type="span" x="19" y="22">11</text>
-			<animateTransform attributeName="transform" begin="indefinite" calcMode="linear" class="fragment" data-reverse="rstep8" dur=".5s" fill="freeze" id="step8" repeatCount="1" restart="click" type="translate" values="114,38; 304,250;" />
+			<animateTransform attributeName="transform" begin="indefinite" calcMode="linear" class="fragment" data-reverse="rstep8" dur="0.5s" fill="freeze" id="step8" repeatCount="1" restart="click" type="translate" values="114,38; 304,250;" />
 			<animateTransform attributeName="transform" begin="indefinite" dur="0.01s" fill="freeze" from="304, 250" id="rstep8" repeatCount="1" to="114, 38" type="translate" />
 		</g>
-		<g id="g9" style="fill: rgb(0,107,107); stroke: rgb(153,153,153)" transform="translate(152,38)">
-			<rect height="38" id="b9" width="38" x="0" y="0" />
+		<g id="g9" transform="translate(152,38)">
+			<rect height="38" id="b9" style="fill: rgb(0,107,107); stroke: rgb(153,153,153)" width="38" x="0" y="0">
+				<animate attributeName="fill-opacity" begin="step9.end" dur="2s" fill="freeze" from="1" to="0" />
+				<animate attributeName="stroke-opacity" begin="step9.end" dur="2s" fill="freeze" from="1" to="0" />
+				<animate attributeName="fill-opacity" begin="rstep9.end" dur="1s" fill="freeze" from="0" to="1" />
+				<animate attributeName="stroke-opacity" begin="rstep9.end" dur="1s" fill="freeze" from="0" to="1" />
+			</rect>
 			<text alignment-baseline="middle" id="t9" style="fill: rgb(0,0,0); font: Lato; font-size: 28; stroke: rgb(0,0,0)" text-anchor="middle" type="span" x="19" y="22">11</text>
-			<animateTransform attributeName="transform" begin="indefinite" calcMode="linear" class="fragment" data-reverse="rstep9" dur=".5s" fill="freeze" id="step9" repeatCount="1" restart="click" type="translate" values="152,38; 342,250;" />
+			<animateTransform attributeName="transform" begin="indefinite" calcMode="linear" class="fragment" data-reverse="rstep9" dur="0.5s" fill="freeze" id="step9" repeatCount="1" restart="click" type="translate" values="152,38; 342,250;" />
 			<animateTransform attributeName="transform" begin="indefinite" dur="0.01s" fill="freeze" from="342, 250" id="rstep9" repeatCount="1" to="152, 38" type="translate" />
 		</g>
-		<g id="g10" style="fill: rgb(207,231,245); stroke: rgb(153,153,153)" transform="translate(0,76)">
-			<rect height="38" id="b10" width="38" x="0" y="0" />
+		<g id="g10" transform="translate(0,76)">
+			<rect height="38" id="b10" style="fill: rgb(207,231,245); stroke: rgb(153,153,153)" width="38" x="0" y="0">
+				<animate attributeName="fill-opacity" begin="step10.end" dur="2s" fill="freeze" from="1" to="0" />
+				<animate attributeName="stroke-opacity" begin="step10.end" dur="2s" fill="freeze" from="1" to="0" />
+				<animate attributeName="fill-opacity" begin="rstep10.end" dur="1s" fill="freeze" from="0" to="1" />
+				<animate attributeName="stroke-opacity" begin="rstep10.end" dur="1s" fill="freeze" from="0" to="1" />
+			</rect>
 			<text alignment-baseline="middle" id="t10" style="fill: rgb(0,0,0); font: Lato; font-size: 28; stroke: rgb(0,0,0)" text-anchor="middle" type="span" x="19" y="22">10</text>
-			<animateTransform attributeName="transform" begin="indefinite" calcMode="linear" class="fragment" data-reverse="rstep10" dur=".5s" fill="freeze" id="step10" repeatCount="1" restart="click" type="translate" values="0,76; 380,250;" />
+			<animateTransform attributeName="transform" begin="indefinite" calcMode="linear" class="fragment" data-reverse="rstep10" dur="0.5s" fill="freeze" id="step10" repeatCount="1" restart="click" type="translate" values="0,76; 380,250;" />
 			<animateTransform attributeName="transform" begin="indefinite" dur="0.01s" fill="freeze" from="380, 250" id="rstep10" repeatCount="1" to="0, 76" type="translate" />
 		</g>
-		<g id="g11" style="fill: rgb(207,231,245); stroke: rgb(153,153,153)" transform="translate(38,76)">
-			<rect height="38" id="b11" width="38" x="0" y="0" />
+		<g id="g11" transform="translate(38,76)">
+			<rect height="38" id="b11" style="fill: rgb(207,231,245); stroke: rgb(153,153,153)" width="38" x="0" y="0">
+				<animate attributeName="fill-opacity" begin="step11.end" dur="2s" fill="freeze" from="1" to="0" />
+				<animate attributeName="stroke-opacity" begin="step11.end" dur="2s" fill="freeze" from="1" to="0" />
+				<animate attributeName="fill-opacity" begin="rstep11.end" dur="1s" fill="freeze" from="0" to="1" />
+				<animate attributeName="stroke-opacity" begin="rstep11.end" dur="1s" fill="freeze" from="0" to="1" />
+			</rect>
 			<text alignment-baseline="middle" id="t11" style="fill: rgb(0,0,0); font: Lato; font-size: 28; stroke: rgb(0,0,0)" text-anchor="middle" type="span" x="19" y="22">10</text>
-			<animateTransform attributeName="transform" begin="indefinite" calcMode="linear" class="fragment" data-reverse="rstep11" dur=".5s" fill="freeze" id="step11" repeatCount="1" restart="click" type="translate" values="38,76; 418,250;" />
+			<animateTransform attributeName="transform" begin="indefinite" calcMode="linear" class="fragment" data-reverse="rstep11" dur="0.5s" fill="freeze" id="step11" repeatCount="1" restart="click" type="translate" values="38,76; 418,250;" />
 			<animateTransform attributeName="transform" begin="indefinite" dur="0.01s" fill="freeze" from="418, 250" id="rstep11" repeatCount="1" to="38, 76" type="translate" />
 		</g>
-		<g id="g12" style="fill: rgb(0,107,107); stroke: rgb(153,153,153)" transform="translate(76,76)">
-			<rect height="38" id="b12" width="38" x="0" y="0" />
+		<g id="g12" transform="translate(76,76)">
+			<rect height="38" id="b12" style="fill: rgb(0,107,107); stroke: rgb(153,153,153)" width="38" x="0" y="0">
+				<animate attributeName="fill-opacity" begin="step12.end" dur="2s" fill="freeze" from="1" to="0" />
+				<animate attributeName="stroke-opacity" begin="step12.end" dur="2s" fill="freeze" from="1" to="0" />
+				<animate attributeName="fill-opacity" begin="rstep12.end" dur="1s" fill="freeze" from="0" to="1" />
+				<animate attributeName="stroke-opacity" begin="rstep12.end" dur="1s" fill="freeze" from="0" to="1" />
+			</rect>
 			<text alignment-baseline="middle" id="t12" style="fill: rgb(0,0,0); font: Lato; font-size: 28; stroke: rgb(0,0,0)" text-anchor="middle" type="span" x="19" y="22">11</text>
-			<animateTransform attributeName="transform" begin="indefinite" calcMode="linear" class="fragment" data-reverse="rstep12" dur=".5s" fill="freeze" id="step12" repeatCount="1" restart="click" type="translate" values="76,76; 456,250;" />
+			<animateTransform attributeName="transform" begin="indefinite" calcMode="linear" class="fragment" data-reverse="rstep12" dur="0.5s" fill="freeze" id="step12" repeatCount="1" restart="click" type="translate" values="76,76; 456,250;" />
 			<animateTransform attributeName="transform" begin="indefinite" dur="0.01s" fill="freeze" from="456, 250" id="rstep12" repeatCount="1" to="76, 76" type="translate" />
 		</g>
-		<g id="g13" style="fill: rgb(207,231,245); stroke: rgb(153,153,153)" transform="translate(114,76)">
-			<rect height="38" id="b13" width="38" x="0" y="0" />
+		<g id="g13" transform="translate(114,76)">
+			<rect height="38" id="b13" style="fill: rgb(207,231,245); stroke: rgb(153,153,153)" width="38" x="0" y="0">
+				<animate attributeName="fill-opacity" begin="step13.end" dur="2s" fill="freeze" from="1" to="0" />
+				<animate attributeName="stroke-opacity" begin="step13.end" dur="2s" fill="freeze" from="1" to="0" />
+				<animate attributeName="fill-opacity" begin="rstep13.end" dur="1s" fill="freeze" from="0" to="1" />
+				<animate attributeName="stroke-opacity" begin="rstep13.end" dur="1s" fill="freeze" from="0" to="1" />
+			</rect>
 			<text alignment-baseline="middle" id="t13" style="fill: rgb(0,0,0); font: Lato; font-size: 28; stroke: rgb(0,0,0)" text-anchor="middle" type="span" x="19" y="22">10</text>
-			<animateTransform attributeName="transform" begin="indefinite" calcMode="linear" class="fragment" data-reverse="rstep13" dur=".5s" fill="freeze" id="step13" repeatCount="1" restart="click" type="translate" values="114,76; 494,250;" />
+			<animateTransform attributeName="transform" begin="indefinite" calcMode="linear" class="fragment" data-reverse="rstep13" dur="0.5s" fill="freeze" id="step13" repeatCount="1" restart="click" type="translate" values="114,76; 494,250;" />
 			<animateTransform attributeName="transform" begin="indefinite" dur="0.01s" fill="freeze" from="494, 250" id="rstep13" repeatCount="1" to="114, 76" type="translate" />
 		</g>
-		<g id="g14" style="fill: rgb(207,231,245); stroke: rgb(153,153,153)" transform="translate(152,76)">
-			<rect height="38" id="b14" width="38" x="0" y="0" />
+		<g id="g14" transform="translate(152,76)">
+			<rect height="38" id="b14" style="fill: rgb(207,231,245); stroke: rgb(153,153,153)" width="38" x="0" y="0">
+				<animate attributeName="fill-opacity" begin="step14.end" dur="2s" fill="freeze" from="1" to="0" />
+				<animate attributeName="stroke-opacity" begin="step14.end" dur="2s" fill="freeze" from="1" to="0" />
+				<animate attributeName="fill-opacity" begin="rstep14.end" dur="1s" fill="freeze" from="0" to="1" />
+				<animate attributeName="stroke-opacity" begin="rstep14.end" dur="1s" fill="freeze" from="0" to="1" />
+			</rect>
 			<text alignment-baseline="middle" id="t14" style="fill: rgb(0,0,0); font: Lato; font-size: 28; stroke: rgb(0,0,0)" text-anchor="middle" type="span" x="19" y="22">10</text>
-			<animateTransform attributeName="transform" begin="indefinite" calcMode="linear" class="fragment" data-reverse="rstep14" dur=".5s" fill="freeze" id="step14" repeatCount="1" restart="click" type="translate" values="152,76; 532,250;" />
+			<animateTransform attributeName="transform" begin="indefinite" calcMode="linear" class="fragment" data-reverse="rstep14" dur="0.5s" fill="freeze" id="step14" repeatCount="1" restart="click" type="translate" values="152,76; 532,250;" />
 			<animateTransform attributeName="transform" begin="indefinite" dur="0.01s" fill="freeze" from="532, 250" id="rstep14" repeatCount="1" to="152, 76" type="translate" />
 		</g>
-		<g id="g15" style="fill: rgb(255,255,255); stroke: rgb(153,153,153)" transform="translate(0,114)">
-			<rect height="38" id="b15" width="38" x="0" y="0" />
+		<g id="g15" transform="translate(0,114)">
+			<rect height="38" id="b15" style="fill: rgb(255,255,255); stroke: rgb(153,153,153)" width="38" x="0" y="0">
+				<animate attributeName="fill-opacity" begin="step15.end" dur="2s" fill="freeze" from="1" to="0" />
+				<animate attributeName="stroke-opacity" begin="step15.end" dur="2s" fill="freeze" from="1" to="0" />
+				<animate attributeName="fill-opacity" begin="rstep15.end" dur="1s" fill="freeze" from="0" to="1" />
+				<animate attributeName="stroke-opacity" begin="rstep15.end" dur="1s" fill="freeze" from="0" to="1" />
+			</rect>
 			<text alignment-baseline="middle" id="t15" style="fill: rgb(0,0,0); font: Lato; font-size: 28; stroke: rgb(0,0,0)" text-anchor="middle" type="span" x="19" y="22">00</text>
-			<animateTransform attributeName="transform" begin="indefinite" calcMode="linear" class="fragment" data-reverse="rstep15" dur=".5s" fill="freeze" id="step15" repeatCount="1" restart="click" type="translate" values="0,114; 570,250;" />
+			<animateTransform attributeName="transform" begin="indefinite" calcMode="linear" class="fragment" data-reverse="rstep15" dur="0.5s" fill="freeze" id="step15" repeatCount="1" restart="click" type="translate" values="0,114; 570,250;" />
 			<animateTransform attributeName="transform" begin="indefinite" dur="0.01s" fill="freeze" from="570, 250" id="rstep15" repeatCount="1" to="0, 114" type="translate" />
 		</g>
-		<g id="g16" style="fill: rgb(207,231,245); stroke: rgb(153,153,153)" transform="translate(38,114)">
-			<rect height="38" id="b16" width="38" x="0" y="0" />
+		<g id="g16" transform="translate(38,114)">
+			<rect height="38" id="b16" style="fill: rgb(207,231,245); stroke: rgb(153,153,153)" width="38" x="0" y="0">
+				<animate attributeName="fill-opacity" begin="step16.end" dur="2s" fill="freeze" from="1" to="0" />
+				<animate attributeName="stroke-opacity" begin="step16.end" dur="2s" fill="freeze" from="1" to="0" />
+				<animate attributeName="fill-opacity" begin="rstep16.end" dur="1s" fill="freeze" from="0" to="1" />
+				<animate attributeName="stroke-opacity" begin="rstep16.end" dur="1s" fill="freeze" from="0" to="1" />
+			</rect>
 			<text alignment-baseline="middle" id="t16" style="fill: rgb(0,0,0); font: Lato; font-size: 28; stroke: rgb(0,0,0)" text-anchor="middle" type="span" x="19" y="22">10</text>
-			<animateTransform attributeName="transform" begin="indefinite" calcMode="linear" class="fragment" data-reverse="rstep16" dur=".5s" fill="freeze" id="step16" repeatCount="1" restart="click" type="translate" values="38,114; 608,250;" />
+			<animateTransform attributeName="transform" begin="indefinite" calcMode="linear" class="fragment" data-reverse="rstep16" dur="0.5s" fill="freeze" id="step16" repeatCount="1" restart="click" type="translate" values="38,114; 608,250;" />
 			<animateTransform attributeName="transform" begin="indefinite" dur="0.01s" fill="freeze" from="608, 250" id="rstep16" repeatCount="1" to="38, 114" type="translate" />
 		</g>
-		<g id="g17" style="fill: rgb(207,231,245); stroke: rgb(153,153,153)" transform="translate(76,114)">
-			<rect height="38" id="b17" width="38" x="0" y="0" />
+		<g id="g17" transform="translate(76,114)">
+			<rect height="38" id="b17" style="fill: rgb(207,231,245); stroke: rgb(153,153,153)" width="38" x="0" y="0">
+				<animate attributeName="fill-opacity" begin="step17.end" dur="2s" fill="freeze" from="1" to="0" />
+				<animate attributeName="stroke-opacity" begin="step17.end" dur="2s" fill="freeze" from="1" to="0" />
+				<animate attributeName="fill-opacity" begin="rstep17.end" dur="1s" fill="freeze" from="0" to="1" />
+				<animate attributeName="stroke-opacity" begin="rstep17.end" dur="1s" fill="freeze" from="0" to="1" />
+			</rect>
 			<text alignment-baseline="middle" id="t17" style="fill: rgb(0,0,0); font: Lato; font-size: 28; stroke: rgb(0,0,0)" text-anchor="middle" type="span" x="19" y="22">10</text>
-			<animateTransform attributeName="transform" begin="indefinite" calcMode="linear" class="fragment" data-reverse="rstep17" dur=".5s" fill="freeze" id="step17" repeatCount="1" restart="click" type="translate" values="76,114; 646,250;" />
+			<animateTransform attributeName="transform" begin="indefinite" calcMode="linear" class="fragment" data-reverse="rstep17" dur="0.5s" fill="freeze" id="step17" repeatCount="1" restart="click" type="translate" values="76,114; 646,250;" />
 			<animateTransform attributeName="transform" begin="indefinite" dur="0.01s" fill="freeze" from="646, 250" id="rstep17" repeatCount="1" to="76, 114" type="translate" />
 		</g>
-		<g id="g18" style="fill: rgb(128,0,128); stroke: rgb(153,153,153)" transform="translate(114,114)">
-			<rect height="38" id="b18" width="38" x="0" y="0" />
+		<g id="g18" transform="translate(114,114)">
+			<rect height="38" id="b18" style="fill: rgb(128,0,128); stroke: rgb(153,153,153)" width="38" x="0" y="0">
+				<animate attributeName="fill-opacity" begin="step18.end" dur="2s" fill="freeze" from="1" to="0" />
+				<animate attributeName="stroke-opacity" begin="step18.end" dur="2s" fill="freeze" from="1" to="0" />
+				<animate attributeName="fill-opacity" begin="rstep18.end" dur="1s" fill="freeze" from="0" to="1" />
+				<animate attributeName="stroke-opacity" begin="rstep18.end" dur="1s" fill="freeze" from="0" to="1" />
+			</rect>
 			<text alignment-baseline="middle" id="t18" style="fill: rgb(0,0,0); font: Lato; font-size: 28; stroke: rgb(0,0,0)" text-anchor="middle" type="span" x="19" y="22">01</text>
-			<animateTransform attributeName="transform" begin="indefinite" calcMode="linear" class="fragment" data-reverse="rstep18" dur=".5s" fill="freeze" id="step18" repeatCount="1" restart="click" type="translate" values="114,114; 684,250;" />
+			<animateTransform attributeName="transform" begin="indefinite" calcMode="linear" class="fragment" data-reverse="rstep18" dur="0.5s" fill="freeze" id="step18" repeatCount="1" restart="click" type="translate" values="114,114; 684,250;" />
 			<animateTransform attributeName="transform" begin="indefinite" dur="0.01s" fill="freeze" from="684, 250" id="rstep18" repeatCount="1" to="114, 114" type="translate" />
 		</g>
-		<g id="g19" style="fill: rgb(207,231,245); stroke: rgb(153,153,153)" transform="translate(152,114)">
-			<rect height="38" id="b19" width="38" x="0" y="0" />
+		<g id="g19" transform="translate(152,114)">
+			<rect height="38" id="b19" style="fill: rgb(207,231,245); stroke: rgb(153,153,153)" width="38" x="0" y="0">
+				<animate attributeName="fill-opacity" begin="step19.end" dur="2s" fill="freeze" from="1" to="0" />
+				<animate attributeName="stroke-opacity" begin="step19.end" dur="2s" fill="freeze" from="1" to="0" />
+				<animate attributeName="fill-opacity" begin="rstep19.end" dur="1s" fill="freeze" from="0" to="1" />
+				<animate attributeName="stroke-opacity" begin="rstep19.end" dur="1s" fill="freeze" from="0" to="1" />
+			</rect>
 			<text alignment-baseline="middle" id="t19" style="fill: rgb(0,0,0); font: Lato; font-size: 28; stroke: rgb(0,0,0)" text-anchor="middle" type="span" x="19" y="22">10</text>
-			<animateTransform attributeName="transform" begin="indefinite" calcMode="linear" class="fragment" data-reverse="rstep19" dur=".5s" fill="freeze" id="step19" repeatCount="1" restart="click" type="translate" values="152,114; 722,250;" />
+			<animateTransform attributeName="transform" begin="indefinite" calcMode="linear" class="fragment" data-reverse="rstep19" dur="0.5s" fill="freeze" id="step19" repeatCount="1" restart="click" type="translate" values="152,114; 722,250;" />
 			<animateTransform attributeName="transform" begin="indefinite" dur="0.01s" fill="freeze" from="722, 250" id="rstep19" repeatCount="1" to="152, 114" type="translate" />
 		</g>
-		<g id="g20" style="fill: rgb(255,255,255); stroke: rgb(153,153,153)" transform="translate(0,152)">
-			<rect height="38" id="b20" width="38" x="0" y="0" />
+		<g id="g20" transform="translate(0,152)">
+			<rect height="38" id="b20" style="fill: rgb(255,255,255); stroke: rgb(153,153,153)" width="38" x="0" y="0">
+				<animate attributeName="fill-opacity" begin="step20.end" dur="2s" fill="freeze" from="1" to="0" />
+				<animate attributeName="stroke-opacity" begin="step20.end" dur="2s" fill="freeze" from="1" to="0" />
+				<animate attributeName="fill-opacity" begin="rstep20.end" dur="1s" fill="freeze" from="0" to="1" />
+				<animate attributeName="stroke-opacity" begin="rstep20.end" dur="1s" fill="freeze" from="0" to="1" />
+			</rect>
 			<text alignment-baseline="middle" id="t20" style="fill: rgb(0,0,0); font: Lato; font-size: 28; stroke: rgb(0,0,0)" text-anchor="middle" type="span" x="19" y="22">00</text>
-			<animateTransform attributeName="transform" begin="indefinite" calcMode="linear" class="fragment" data-reverse="rstep20" dur=".5s" fill="freeze" id="step20" repeatCount="1" restart="click" type="translate" values="0,152; 760,250;" />
+			<animateTransform attributeName="transform" begin="indefinite" calcMode="linear" class="fragment" data-reverse="rstep20" dur="0.5s" fill="freeze" id="step20" repeatCount="1" restart="click" type="translate" values="0,152; 760,250;" />
 			<animateTransform attributeName="transform" begin="indefinite" dur="0.01s" fill="freeze" from="760, 250" id="rstep20" repeatCount="1" to="0, 152" type="translate" />
 		</g>
-		<g id="g21" style="fill: rgb(255,255,255); stroke: rgb(153,153,153)" transform="translate(38,152)">
-			<rect height="38" id="b21" width="38" x="0" y="0" />
+		<g id="g21" transform="translate(38,152)">
+			<rect height="38" id="b21" style="fill: rgb(255,255,255); stroke: rgb(153,153,153)" width="38" x="0" y="0">
+				<animate attributeName="fill-opacity" begin="step21.end" dur="2s" fill="freeze" from="1" to="0" />
+				<animate attributeName="stroke-opacity" begin="step21.end" dur="2s" fill="freeze" from="1" to="0" />
+				<animate attributeName="fill-opacity" begin="rstep21.end" dur="1s" fill="freeze" from="0" to="1" />
+				<animate attributeName="stroke-opacity" begin="rstep21.end" dur="1s" fill="freeze" from="0" to="1" />
+			</rect>
 			<text alignment-baseline="middle" id="t21" style="fill: rgb(0,0,0); font: Lato; font-size: 28; stroke: rgb(0,0,0)" text-anchor="middle" type="span" x="19" y="22">00</text>
-			<animateTransform attributeName="transform" begin="indefinite" calcMode="linear" class="fragment" data-reverse="rstep21" dur=".5s" fill="freeze" id="step21" repeatCount="1" restart="click" type="translate" values="38,152; 798,250;" />
+			<animateTransform attributeName="transform" begin="indefinite" calcMode="linear" class="fragment" data-reverse="rstep21" dur="0.5s" fill="freeze" id="step21" repeatCount="1" restart="click" type="translate" values="38,152; 798,250;" />
 			<animateTransform attributeName="transform" begin="indefinite" dur="0.01s" fill="freeze" from="798, 250" id="rstep21" repeatCount="1" to="38, 152" type="translate" />
 		</g>
-		<g id="g22" style="fill: rgb(207,231,245); stroke: rgb(153,153,153)" transform="translate(76,152)">
-			<rect height="38" id="b22" width="38" x="0" y="0" />
+		<g id="g22" transform="translate(76,152)">
+			<rect height="38" id="b22" style="fill: rgb(207,231,245); stroke: rgb(153,153,153)" width="38" x="0" y="0">
+				<animate attributeName="fill-opacity" begin="step22.end" dur="2s" fill="freeze" from="1" to="0" />
+				<animate attributeName="stroke-opacity" begin="step22.end" dur="2s" fill="freeze" from="1" to="0" />
+				<animate attributeName="fill-opacity" begin="rstep22.end" dur="1s" fill="freeze" from="0" to="1" />
+				<animate attributeName="stroke-opacity" begin="rstep22.end" dur="1s" fill="freeze" from="0" to="1" />
+			</rect>
 			<text alignment-baseline="middle" id="t22" style="fill: rgb(0,0,0); font: Lato; font-size: 28; stroke: rgb(0,0,0)" text-anchor="middle" type="span" x="19" y="22">10</text>
-			<animateTransform attributeName="transform" begin="indefinite" calcMode="linear" class="fragment" data-reverse="rstep22" dur=".5s" fill="freeze" id="step22" repeatCount="1" restart="click" type="translate" values="76,152; 836,250;" />
+			<animateTransform attributeName="transform" begin="indefinite" calcMode="linear" class="fragment" data-reverse="rstep22" dur="0.5s" fill="freeze" id="step22" repeatCount="1" restart="click" type="translate" values="76,152; 836,250;" />
 			<animateTransform attributeName="transform" begin="indefinite" dur="0.01s" fill="freeze" from="836, 250" id="rstep22" repeatCount="1" to="76, 152" type="translate" />
 		</g>
-		<g id="g23" style="fill: rgb(207,231,245); stroke: rgb(153,153,153)" transform="translate(114,152)">
-			<rect height="38" id="b23" width="38" x="0" y="0" />
+		<g id="g23" transform="translate(114,152)">
+			<rect height="38" id="b23" style="fill: rgb(207,231,245); stroke: rgb(153,153,153)" width="38" x="0" y="0">
+				<animate attributeName="fill-opacity" begin="step23.end" dur="2s" fill="freeze" from="1" to="0" />
+				<animate attributeName="stroke-opacity" begin="step23.end" dur="2s" fill="freeze" from="1" to="0" />
+				<animate attributeName="fill-opacity" begin="rstep23.end" dur="1s" fill="freeze" from="0" to="1" />
+				<animate attributeName="stroke-opacity" begin="rstep23.end" dur="1s" fill="freeze" from="0" to="1" />
+			</rect>
 			<text alignment-baseline="middle" id="t23" style="fill: rgb(0,0,0); font: Lato; font-size: 28; stroke: rgb(0,0,0)" text-anchor="middle" type="span" x="19" y="22">10</text>
-			<animateTransform attributeName="transform" begin="indefinite" calcMode="linear" class="fragment" data-reverse="rstep23" dur=".5s" fill="freeze" id="step23" repeatCount="1" restart="click" type="translate" values="114,152; 874,250;" />
+			<animateTransform attributeName="transform" begin="indefinite" calcMode="linear" class="fragment" data-reverse="rstep23" dur="0.5s" fill="freeze" id="step23" repeatCount="1" restart="click" type="translate" values="114,152; 874,250;" />
 			<animateTransform attributeName="transform" begin="indefinite" dur="0.01s" fill="freeze" from="874, 250" id="rstep23" repeatCount="1" to="114, 152" type="translate" />
 		</g>
-		<g id="g24" style="fill: rgb(207,231,245); stroke: rgb(153,153,153)" transform="translate(152,152)">
-			<rect height="38" id="b24" width="38" x="0" y="0" />
+		<g id="g24" transform="translate(152,152)">
+			<rect height="38" id="b24" style="fill: rgb(207,231,245); stroke: rgb(153,153,153)" width="38" x="0" y="0">
+				<animate attributeName="fill-opacity" begin="step24.end" dur="2s" fill="freeze" from="1" to="0" />
+				<animate attributeName="stroke-opacity" begin="step24.end" dur="2s" fill="freeze" from="1" to="0" />
+				<animate attributeName="fill-opacity" begin="rstep24.end" dur="1s" fill="freeze" from="0" to="1" />
+				<animate attributeName="stroke-opacity" begin="rstep24.end" dur="1s" fill="freeze" from="0" to="1" />
+			</rect>
 			<text alignment-baseline="middle" id="t24" style="fill: rgb(0,0,0); font: Lato; font-size: 28; stroke: rgb(0,0,0)" text-anchor="middle" type="span" x="19" y="22">10</text>
-			<animateTransform attributeName="transform" begin="indefinite" calcMode="linear" class="fragment" data-reverse="rstep24" dur=".5s" fill="freeze" id="step24" repeatCount="1" restart="click" type="translate" values="152,152; 912,250;" />
+			<animateTransform attributeName="transform" begin="indefinite" calcMode="linear" class="fragment" data-reverse="rstep24" dur="0.5s" fill="freeze" id="step24" repeatCount="1" restart="click" type="translate" values="152,152; 912,250;" />
 			<animateTransform attributeName="transform" begin="indefinite" dur="0.01s" fill="freeze" from="912, 250" id="rstep24" repeatCount="1" to="152, 152" type="translate" />
 		</g>
 	</g>
@@ -240,8 +341,7 @@
 	by Ronan Oger
 	Info: http://www.roitsystems.com/
  -->
-</svg></svg>
-</div>
+</svg></div>
 </section>
 
 
