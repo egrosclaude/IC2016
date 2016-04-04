@@ -5,30 +5,62 @@
 </section>
 
 <section>
+<section>
 <h1>Animated SVG</h1>
 <div class="animate">
-<!-- INJECT ./paleta.pl -->
+<!-- INJECT ./paleta01.pl -->
 </div>
+<ul>
+<li class="fragment">¿Cómo transmitir el gráfico?</li>
+<li class="fragment">¿Qué información falta?</li>
+</ul>
+</section>
+
+<section>
+<h1>Animated SVG</h1>
+<div class="animate">
+<!-- INJECT ./paleta02.pl -->
+</div>
+</section>
 </section>
 
 <section>
 <h2>Dummy slide</h2>
 </section>
 
-			<section>
-				<h3>Line chart with CSV data and JSON configuration</h3>
-				<canvas class="stretch" data-chart="line">
+<section>
+<h3>Line chart with CSV data and JSON configuration</h3>
+<canvas class="stretch" data-chart="line">
 My first dataset,  65, 59, 80, 81, 56, 55, 40
 <!-- This is a comment -->
 My second dataset, 28, 48, 40, 19, 86, 27, 90
 <!-- 
 { 
 "data" : {
-	"labels" : ["Enero", "Febrero", "Marzo", "Avril", "Mayo", "Junio", "Julio"],
-	"datasets" : [{ "borderColor": "#0f0", "borderDash": ["5","10"] }, { "borderColor": "#0ff" } ]
-	}
+"labels" : ["Enero", "Febrero", "Marzo", "Avril", "Mayo", "Junio", "Julio"],
+"datasets" : [{ "borderColor": "#0f0", "borderDash": ["5","10"] }, { "borderColor": "#0ff" }]
+}
 }
 -->
-				</canvas>
-			</section>
+</canvas>
+</section>
+
+
+<section>
+<h3>Plot</h3>
+<div class="plot" id="myplot1" style="background-color:#fff; width:800px; height:400px; margin: 0 auto;">
+<!--
+{
+ "target":"#myplot1",
+ "height":400,
+ "width":"800",
+ "xAxis":{"domain":[-10,10]},
+ "yAxis":{"domain":[-5,5]},
+ "grid":true,
+ "data":[{"fn":"sin(x)","color":"darkred"}]
+}
+-->
+</div>
+</section>
+
 <!-- INCLUDE reveal.trailer -->

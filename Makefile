@@ -1,2 +1,5 @@
-texto: src/Texto\ y\ Multimedia.slides paleta.pl 
-	tt2 src/reveal-header "Texto y Multimedia.slides" src/reveal-trailer > "Texto y Multimedia.html"
+texto: src/Texto\ y\ Multimedia.slides 
+	./macro "src/Texto y Multimedia.slides" > "Texto y Multimedia.html"
+
+animate:
+	./macro src/animate.slides > animate.html
