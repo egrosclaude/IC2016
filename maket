@@ -1,4 +1,0 @@
-./paleta.pl > paleta01.svg
-
-#perl -MTemplate -e '$t=Template->new("[% INSERT texto1 %][% INSERT paleta01.svg %][% INSERT texto2 %]"); $t->process();'
-cat texto1 paleta01.svg texto2 > paleta01.html
