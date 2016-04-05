@@ -168,6 +168,11 @@ $ hexdump -C Texto\ y\ Multimedia.html | head -8
 </section>
 
 
+<section data-markdown data-background="#00CCFF">
+##Imagen digital
+</section>
+
+
 <section data-markdown>
 ##Imagen digital
 * Discretización
@@ -234,11 +239,49 @@ $ hexdump -C Texto\ y\ Multimedia.html | head -8
 	<li>RGB = Red, Green, Blue</li>
 	<li>Diferentes valores de <span class="post_it">(r,g,b)</span>, componen todos los colores</li>
 	<li>Se define un espacio de valores en [0,255] para cada coordenada</li>
-	<li>Azul: (0,0,255)</li>
-	<li>Amarillo: (255,255,0)</li>
+	<li>Azul: <span class="fragment">(0,0,255)</span></li>
+	<li>Amarillo: <span class="fragment">(255,255,0)</span></li>
 	<li>Blanco: <span class="fragment">(255,255,255)</span></li>
 	<li>Negro: <span class="fragment">(0,0,0)</span></li>
+	<li>Gris: <span class="fragment">($x$,$x$,$x$)</span></li>
 </ul>
+</section>
+
+<section>
+<h2>Composición de color</h2>
+<div class="tangle" id="colorCalc">
+        <!--
+        {
+                "initialize":"function (container){
+                        var rootElement = document.getElementById('colorCalc');
+                        var model = {
+                                initialize: function() {
+                                        this.r = 100;
+                                        this.g = 100;
+					this.b = 100;
+					this.rgb = '';
+                                },
+                                update: function() {
+					this.rgb = 'rgb(' + this.r + ',' + this.g + ',' + this.b + ')';
+					var cell = document.getElementById('colorCell');
+					cell.style.background = this.rgb;
+                                }
+                        };
+                        var tangle=new Tangle(rootElement, model);
+                }"
+        }
+        -->
+	<table>
+	<tr><td>
+		<table>
+		<tr><td>R:</td><td class="TKAdjustableNumber" data-var="r" data-min="0" data-max="255"></td></tr>
+		<tr><td>G:</td><td class="TKAdjustableNumber" data-var="g" data-min="0" data-max="255"></td></tr>
+		<tr><td>B:</td><td class="TKAdjustableNumber" data-var="b" data-min="0" data-max="255"></td></tr>
+		</table>
+	</td><td id="colorCell"></td></tr>
+	</table>
+        <p class="post_it" data-var="rgb" style="text-align: center;" id="colorFormula"></p>
+</div>
 </section>
 
 <section>
@@ -305,12 +348,22 @@ $ hexdump -C Texto\ y\ Multimedia.html | head -8
 <section>
 <h2>Un formato de imagen</h2>
 <img src="img/formato-grafico.svg" class="plain stretch">
-<p class="fragment">
-<img src="img/formato-grafico2.svg" class="plain stretch">
-</p>
-<p class="fragment">
-<img src="img/formato-grafico3.svg" class="plain stretch">
-</p>
+<p class="fragment"><img src="img/formato-grafico2.svg" class="plain stretch"></p>
+<p class="fragment"><img src="img/formato-grafico3.svg" class="plain stretch"></p>
+<p class="fragment post_it"><b>050502AEBF3...</b></p>
+</section>
+
+<section>
+<h2>Reconstruyendo una imagen</h2>
+	<h3 class="post_it">070401AEBF3...</h3>
+	<!--<p style="display: block; margin: 0 auto;">070401AEBF3...<p>-->
+	<p><img src="img/byn-0.svg" style="display: block; margin: 0 auto;" class="plain fragment"></p>
+	<p><img src="img/byn.svg" style="display: block; margin: 0 auto;" class="plain fragment"></p>
+</section>
+
+
+<section data-markdown data-background="#00CCFF">
+##Sonido digital
 </section>
 
 <section>
@@ -353,7 +406,7 @@ $ hexdump -C Texto\ y\ Multimedia.html | head -8
 </section>
 
 
-<section>
+<section data-transition="slide-in fade-out">
 <h2>Ondas sonoras</h2>
 <ul>
 	<li>Ondas fundamentales</li>
@@ -367,7 +420,7 @@ $ hexdump -C Texto\ y\ Multimedia.html | head -8
 </ul>
 </section>
 
-<section>
+<section data-transition="fade-in slide-out">
 <h2>Ondas sonoras</h2>
 <img src="img/ondas.png" class="stretch plain">
 </section>
@@ -379,9 +432,10 @@ $ hexdump -C Texto\ y\ Multimedia.html | head -8
 <li>Un micrófono convierte ondas sonoras en un flujo continuo de niveles eléctricos</li>
 <li>Digitalizar el sonido</li>
 <ul>
-	<li>Tomar una cantidad de muestras por segundo</li>
-	<li>Discretizar la amplitud</li>
+	<li>Tomar una cantidad de muestras por segundo &rarr; discretizar el tiempo</li>
+	<li>Registrar una cantidad de niveles &rarr; discretizar la amplitud</li>
 </ul>
+	<p><img src="img/grid.svg" style="display: block; margin: 0 auto;" class="plain fragment"></p>
 </section>
 
 

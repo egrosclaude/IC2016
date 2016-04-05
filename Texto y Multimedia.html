@@ -222,6 +222,11 @@ $ hexdump -C Texto\ y\ Multimedia.html | head -8
 </section>
 
 
+<section data-markdown data-background="#00CCFF">
+##Imagen digital
+</section>
+
+
 <section data-markdown>
 ##Imagen digital
 * Discretización
@@ -288,11 +293,49 @@ $ hexdump -C Texto\ y\ Multimedia.html | head -8
 	<li>RGB = Red, Green, Blue</li>
 	<li>Diferentes valores de <span class="post_it">(r,g,b)</span>, componen todos los colores</li>
 	<li>Se define un espacio de valores en [0,255] para cada coordenada</li>
-	<li>Azul: (0,0,255)</li>
-	<li>Amarillo: (255,255,0)</li>
+	<li>Azul: <span class="fragment">(0,0,255)</span></li>
+	<li>Amarillo: <span class="fragment">(255,255,0)</span></li>
 	<li>Blanco: <span class="fragment">(255,255,255)</span></li>
 	<li>Negro: <span class="fragment">(0,0,0)</span></li>
+	<li>Gris: <span class="fragment">($x$,$x$,$x$)</span></li>
 </ul>
+</section>
+
+<section>
+<h2>Composición de color</h2>
+<div class="tangle" id="colorCalc">
+        <!--
+        {
+                "initialize":"function (container){
+                        var rootElement = document.getElementById('colorCalc');
+                        var model = {
+                                initialize: function() {
+                                        this.r = 100;
+                                        this.g = 100;
+					this.b = 100;
+					this.rgb = '';
+                                },
+                                update: function() {
+					this.rgb = 'rgb(' + this.r + ',' + this.g + ',' + this.b + ')';
+					var cell = document.getElementById('colorCell');
+					cell.style.background = this.rgb;
+                                }
+                        };
+                        var tangle=new Tangle(rootElement, model);
+                }"
+        }
+        -->
+	<table>
+	<tr><td>
+		<table>
+		<tr><td>R:</td><td class="TKAdjustableNumber" data-var="r" data-min="0" data-max="255"></td></tr>
+		<tr><td>G:</td><td class="TKAdjustableNumber" data-var="g" data-min="0" data-max="255"></td></tr>
+		<tr><td>B:</td><td class="TKAdjustableNumber" data-var="b" data-min="0" data-max="255"></td></tr>
+		</table>
+	</td><td id="colorCell"></td></tr>
+	</table>
+        <p class="post_it" data-var="rgb" style="text-align: center;" id="colorFormula"></p>
+</div>
 </section>
 
 <section>
@@ -343,7 +386,7 @@ $ hexdump -C Texto\ y\ Multimedia.html | head -8
 <svg height="80" width="240" xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
 	<g id="s">
 		<g id="g0" transform="translate(0,0)">
-			<rect height="38" id="b0" style="fill: rgb(207,231,245); stroke: rgb(153,153,153)" width="38" x="0" y="0">
+			<rect height="38" id="b0" style="fill: rgb(207,251,245); stroke: rgb(153,153,153)" width="38" x="0" y="0">
 				<animate attributeName="fill-opacity" begin="step0.end" dur="2s" fill="freeze" from="1" to="0" />
 				<animate attributeName="stroke-opacity" begin="step0.end" dur="2s" fill="freeze" from="1" to="0" />
 				<animate attributeName="fill-opacity" begin="rstep0.end" dur="1s" fill="freeze" from="0" to="1" />
@@ -356,7 +399,7 @@ $ hexdump -C Texto\ y\ Multimedia.html | head -8
 			<animateTransform attributeName="transform" begin="indefinite" dur="0.01s" fill="freeze" from="0, 250" id="rstep0" repeatCount="1" to="0, 0" type="translate" />
 		</g>
 		<g id="g1" transform="translate(38,0)">
-			<rect height="38" id="b1" style="fill: rgb(207,231,245); stroke: rgb(153,153,153)" width="38" x="0" y="0">
+			<rect height="38" id="b1" style="fill: rgb(207,251,245); stroke: rgb(153,153,153)" width="38" x="0" y="0">
 				<animate attributeName="fill-opacity" begin="step1.end" dur="2s" fill="freeze" from="1" to="0" />
 				<animate attributeName="stroke-opacity" begin="step1.end" dur="2s" fill="freeze" from="1" to="0" />
 				<animate attributeName="fill-opacity" begin="rstep1.end" dur="1s" fill="freeze" from="0" to="1" />
@@ -382,7 +425,7 @@ $ hexdump -C Texto\ y\ Multimedia.html | head -8
 			<animateTransform attributeName="transform" begin="indefinite" dur="0.01s" fill="freeze" from="76, 250" id="rstep2" repeatCount="1" to="76, 0" type="translate" />
 		</g>
 		<g id="g3" transform="translate(114,0)">
-			<rect height="38" id="b3" style="fill: rgb(207,231,245); stroke: rgb(153,153,153)" width="38" x="0" y="0">
+			<rect height="38" id="b3" style="fill: rgb(207,251,245); stroke: rgb(153,153,153)" width="38" x="0" y="0">
 				<animate attributeName="fill-opacity" begin="step3.end" dur="2s" fill="freeze" from="1" to="0" />
 				<animate attributeName="stroke-opacity" begin="step3.end" dur="2s" fill="freeze" from="1" to="0" />
 				<animate attributeName="fill-opacity" begin="rstep3.end" dur="1s" fill="freeze" from="0" to="1" />
@@ -395,7 +438,7 @@ $ hexdump -C Texto\ y\ Multimedia.html | head -8
 			<animateTransform attributeName="transform" begin="indefinite" dur="0.01s" fill="freeze" from="114, 250" id="rstep3" repeatCount="1" to="114, 0" type="translate" />
 		</g>
 		<g id="g4" transform="translate(152,0)">
-			<rect height="38" id="b4" style="fill: rgb(207,231,245); stroke: rgb(153,153,153)" width="38" x="0" y="0">
+			<rect height="38" id="b4" style="fill: rgb(207,251,245); stroke: rgb(153,153,153)" width="38" x="0" y="0">
 				<animate attributeName="fill-opacity" begin="step4.end" dur="2s" fill="freeze" from="1" to="0" />
 				<animate attributeName="stroke-opacity" begin="step4.end" dur="2s" fill="freeze" from="1" to="0" />
 				<animate attributeName="fill-opacity" begin="rstep4.end" dur="1s" fill="freeze" from="0" to="1" />
@@ -408,7 +451,7 @@ $ hexdump -C Texto\ y\ Multimedia.html | head -8
 			<animateTransform attributeName="transform" begin="indefinite" dur="0.01s" fill="freeze" from="152, 250" id="rstep4" repeatCount="1" to="152, 0" type="translate" />
 		</g>
 		<g id="g5" transform="translate(0,38)">
-			<rect height="38" id="b5" style="fill: rgb(207,231,245); stroke: rgb(153,153,153)" width="38" x="0" y="0">
+			<rect height="38" id="b5" style="fill: rgb(207,251,245); stroke: rgb(153,153,153)" width="38" x="0" y="0">
 				<animate attributeName="fill-opacity" begin="step5.end" dur="2s" fill="freeze" from="1" to="0" />
 				<animate attributeName="stroke-opacity" begin="step5.end" dur="2s" fill="freeze" from="1" to="0" />
 				<animate attributeName="fill-opacity" begin="rstep5.end" dur="1s" fill="freeze" from="0" to="1" />
@@ -473,7 +516,7 @@ $ hexdump -C Texto\ y\ Multimedia.html | head -8
 			<animateTransform attributeName="transform" begin="indefinite" dur="0.01s" fill="freeze" from="342, 250" id="rstep9" repeatCount="1" to="152, 38" type="translate" />
 		</g>
 		<g id="g10" transform="translate(0,76)">
-			<rect height="38" id="b10" style="fill: rgb(207,231,245); stroke: rgb(153,153,153)" width="38" x="0" y="0">
+			<rect height="38" id="b10" style="fill: rgb(207,251,245); stroke: rgb(153,153,153)" width="38" x="0" y="0">
 				<animate attributeName="fill-opacity" begin="step10.end" dur="2s" fill="freeze" from="1" to="0" />
 				<animate attributeName="stroke-opacity" begin="step10.end" dur="2s" fill="freeze" from="1" to="0" />
 				<animate attributeName="fill-opacity" begin="rstep10.end" dur="1s" fill="freeze" from="0" to="1" />
@@ -486,7 +529,7 @@ $ hexdump -C Texto\ y\ Multimedia.html | head -8
 			<animateTransform attributeName="transform" begin="indefinite" dur="0.01s" fill="freeze" from="380, 250" id="rstep10" repeatCount="1" to="0, 76" type="translate" />
 		</g>
 		<g id="g11" transform="translate(38,76)">
-			<rect height="38" id="b11" style="fill: rgb(207,231,245); stroke: rgb(153,153,153)" width="38" x="0" y="0">
+			<rect height="38" id="b11" style="fill: rgb(207,251,245); stroke: rgb(153,153,153)" width="38" x="0" y="0">
 				<animate attributeName="fill-opacity" begin="step11.end" dur="2s" fill="freeze" from="1" to="0" />
 				<animate attributeName="stroke-opacity" begin="step11.end" dur="2s" fill="freeze" from="1" to="0" />
 				<animate attributeName="fill-opacity" begin="rstep11.end" dur="1s" fill="freeze" from="0" to="1" />
@@ -512,7 +555,7 @@ $ hexdump -C Texto\ y\ Multimedia.html | head -8
 			<animateTransform attributeName="transform" begin="indefinite" dur="0.01s" fill="freeze" from="456, 250" id="rstep12" repeatCount="1" to="76, 76" type="translate" />
 		</g>
 		<g id="g13" transform="translate(114,76)">
-			<rect height="38" id="b13" style="fill: rgb(207,231,245); stroke: rgb(153,153,153)" width="38" x="0" y="0">
+			<rect height="38" id="b13" style="fill: rgb(207,251,245); stroke: rgb(153,153,153)" width="38" x="0" y="0">
 				<animate attributeName="fill-opacity" begin="step13.end" dur="2s" fill="freeze" from="1" to="0" />
 				<animate attributeName="stroke-opacity" begin="step13.end" dur="2s" fill="freeze" from="1" to="0" />
 				<animate attributeName="fill-opacity" begin="rstep13.end" dur="1s" fill="freeze" from="0" to="1" />
@@ -525,7 +568,7 @@ $ hexdump -C Texto\ y\ Multimedia.html | head -8
 			<animateTransform attributeName="transform" begin="indefinite" dur="0.01s" fill="freeze" from="494, 250" id="rstep13" repeatCount="1" to="114, 76" type="translate" />
 		</g>
 		<g id="g14" transform="translate(152,76)">
-			<rect height="38" id="b14" style="fill: rgb(207,231,245); stroke: rgb(153,153,153)" width="38" x="0" y="0">
+			<rect height="38" id="b14" style="fill: rgb(207,251,245); stroke: rgb(153,153,153)" width="38" x="0" y="0">
 				<animate attributeName="fill-opacity" begin="step14.end" dur="2s" fill="freeze" from="1" to="0" />
 				<animate attributeName="stroke-opacity" begin="step14.end" dur="2s" fill="freeze" from="1" to="0" />
 				<animate attributeName="fill-opacity" begin="rstep14.end" dur="1s" fill="freeze" from="0" to="1" />
@@ -551,7 +594,7 @@ $ hexdump -C Texto\ y\ Multimedia.html | head -8
 			<animateTransform attributeName="transform" begin="indefinite" dur="0.01s" fill="freeze" from="570, 250" id="rstep15" repeatCount="1" to="0, 114" type="translate" />
 		</g>
 		<g id="g16" transform="translate(38,114)">
-			<rect height="38" id="b16" style="fill: rgb(207,231,245); stroke: rgb(153,153,153)" width="38" x="0" y="0">
+			<rect height="38" id="b16" style="fill: rgb(207,251,245); stroke: rgb(153,153,153)" width="38" x="0" y="0">
 				<animate attributeName="fill-opacity" begin="step16.end" dur="2s" fill="freeze" from="1" to="0" />
 				<animate attributeName="stroke-opacity" begin="step16.end" dur="2s" fill="freeze" from="1" to="0" />
 				<animate attributeName="fill-opacity" begin="rstep16.end" dur="1s" fill="freeze" from="0" to="1" />
@@ -564,7 +607,7 @@ $ hexdump -C Texto\ y\ Multimedia.html | head -8
 			<animateTransform attributeName="transform" begin="indefinite" dur="0.01s" fill="freeze" from="608, 250" id="rstep16" repeatCount="1" to="38, 114" type="translate" />
 		</g>
 		<g id="g17" transform="translate(76,114)">
-			<rect height="38" id="b17" style="fill: rgb(207,231,245); stroke: rgb(153,153,153)" width="38" x="0" y="0">
+			<rect height="38" id="b17" style="fill: rgb(207,251,245); stroke: rgb(153,153,153)" width="38" x="0" y="0">
 				<animate attributeName="fill-opacity" begin="step17.end" dur="2s" fill="freeze" from="1" to="0" />
 				<animate attributeName="stroke-opacity" begin="step17.end" dur="2s" fill="freeze" from="1" to="0" />
 				<animate attributeName="fill-opacity" begin="rstep17.end" dur="1s" fill="freeze" from="0" to="1" />
@@ -590,7 +633,7 @@ $ hexdump -C Texto\ y\ Multimedia.html | head -8
 			<animateTransform attributeName="transform" begin="indefinite" dur="0.01s" fill="freeze" from="684, 250" id="rstep18" repeatCount="1" to="114, 114" type="translate" />
 		</g>
 		<g id="g19" transform="translate(152,114)">
-			<rect height="38" id="b19" style="fill: rgb(207,231,245); stroke: rgb(153,153,153)" width="38" x="0" y="0">
+			<rect height="38" id="b19" style="fill: rgb(207,251,245); stroke: rgb(153,153,153)" width="38" x="0" y="0">
 				<animate attributeName="fill-opacity" begin="step19.end" dur="2s" fill="freeze" from="1" to="0" />
 				<animate attributeName="stroke-opacity" begin="step19.end" dur="2s" fill="freeze" from="1" to="0" />
 				<animate attributeName="fill-opacity" begin="rstep19.end" dur="1s" fill="freeze" from="0" to="1" />
@@ -629,7 +672,7 @@ $ hexdump -C Texto\ y\ Multimedia.html | head -8
 			<animateTransform attributeName="transform" begin="indefinite" dur="0.01s" fill="freeze" from="798, 250" id="rstep21" repeatCount="1" to="38, 152" type="translate" />
 		</g>
 		<g id="g22" transform="translate(76,152)">
-			<rect height="38" id="b22" style="fill: rgb(207,231,245); stroke: rgb(153,153,153)" width="38" x="0" y="0">
+			<rect height="38" id="b22" style="fill: rgb(207,251,245); stroke: rgb(153,153,153)" width="38" x="0" y="0">
 				<animate attributeName="fill-opacity" begin="step22.end" dur="2s" fill="freeze" from="1" to="0" />
 				<animate attributeName="stroke-opacity" begin="step22.end" dur="2s" fill="freeze" from="1" to="0" />
 				<animate attributeName="fill-opacity" begin="rstep22.end" dur="1s" fill="freeze" from="0" to="1" />
@@ -642,7 +685,7 @@ $ hexdump -C Texto\ y\ Multimedia.html | head -8
 			<animateTransform attributeName="transform" begin="indefinite" dur="0.01s" fill="freeze" from="836, 250" id="rstep22" repeatCount="1" to="76, 152" type="translate" />
 		</g>
 		<g id="g23" transform="translate(114,152)">
-			<rect height="38" id="b23" style="fill: rgb(207,231,245); stroke: rgb(153,153,153)" width="38" x="0" y="0">
+			<rect height="38" id="b23" style="fill: rgb(207,251,245); stroke: rgb(153,153,153)" width="38" x="0" y="0">
 				<animate attributeName="fill-opacity" begin="step23.end" dur="2s" fill="freeze" from="1" to="0" />
 				<animate attributeName="stroke-opacity" begin="step23.end" dur="2s" fill="freeze" from="1" to="0" />
 				<animate attributeName="fill-opacity" begin="rstep23.end" dur="1s" fill="freeze" from="0" to="1" />
@@ -655,7 +698,7 @@ $ hexdump -C Texto\ y\ Multimedia.html | head -8
 			<animateTransform attributeName="transform" begin="indefinite" dur="0.01s" fill="freeze" from="874, 250" id="rstep23" repeatCount="1" to="114, 152" type="translate" />
 		</g>
 		<g id="g24" transform="translate(152,152)">
-			<rect height="38" id="b24" style="fill: rgb(207,231,245); stroke: rgb(153,153,153)" width="38" x="0" y="0">
+			<rect height="38" id="b24" style="fill: rgb(207,251,245); stroke: rgb(153,153,153)" width="38" x="0" y="0">
 				<animate attributeName="fill-opacity" begin="step24.end" dur="2s" fill="freeze" from="1" to="0" />
 				<animate attributeName="stroke-opacity" begin="step24.end" dur="2s" fill="freeze" from="1" to="0" />
 				<animate attributeName="fill-opacity" begin="rstep24.end" dur="1s" fill="freeze" from="0" to="1" />
@@ -833,12 +876,22 @@ $ hexdump -C Texto\ y\ Multimedia.html | head -8
 <section>
 <h2>Un formato de imagen</h2>
 <img src="img/formato-grafico.svg" class="plain stretch">
-<p class="fragment">
-<img src="img/formato-grafico2.svg" class="plain stretch">
-</p>
-<p class="fragment">
-<img src="img/formato-grafico3.svg" class="plain stretch">
-</p>
+<p class="fragment"><img src="img/formato-grafico2.svg" class="plain stretch"></p>
+<p class="fragment"><img src="img/formato-grafico3.svg" class="plain stretch"></p>
+<p class="fragment post_it"><b>050502AEBF3...</b></p>
+</section>
+
+<section>
+<h2>Reconstruyendo una imagen</h2>
+	<h3 class="post_it">070401AEBF3...</h3>
+	<!--<p style="display: block; margin: 0 auto;">070401AEBF3...<p>-->
+	<p><img src="img/byn-0.svg" style="display: block; margin: 0 auto;" class="plain fragment"></p>
+	<p><img src="img/byn.svg" style="display: block; margin: 0 auto;" class="plain fragment"></p>
+</section>
+
+
+<section data-markdown data-background="#00CCFF">
+##Sonido digital
 </section>
 
 <section>
@@ -881,7 +934,7 @@ $ hexdump -C Texto\ y\ Multimedia.html | head -8
 </section>
 
 
-<section>
+<section data-transition="slide-in fade-out">
 <h2>Ondas sonoras</h2>
 <ul>
 	<li>Ondas fundamentales</li>
@@ -895,7 +948,7 @@ $ hexdump -C Texto\ y\ Multimedia.html | head -8
 </ul>
 </section>
 
-<section>
+<section data-transition="fade-in slide-out">
 <h2>Ondas sonoras</h2>
 <img src="img/ondas.png" class="stretch plain">
 </section>
@@ -907,9 +960,10 @@ $ hexdump -C Texto\ y\ Multimedia.html | head -8
 <li>Un micrófono convierte ondas sonoras en un flujo continuo de niveles eléctricos</li>
 <li>Digitalizar el sonido</li>
 <ul>
-	<li>Tomar una cantidad de muestras por segundo</li>
-	<li>Discretizar la amplitud</li>
+	<li>Tomar una cantidad de muestras por segundo &rarr; discretizar el tiempo</li>
+	<li>Registrar una cantidad de niveles &rarr; discretizar la amplitud</li>
 </ul>
+	<p><img src="img/grid.svg" style="display: block; margin: 0 auto;" class="plain fragment"></p>
 </section>
 
 
