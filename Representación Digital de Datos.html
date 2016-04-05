@@ -1143,14 +1143,14 @@ https://es.wikipedia.org/wiki/IEEE_coma_flotante
 			}) },
 			{className: "tangle", initialize: (function(container, options) { if(options && options.initialize) {options.initialize(container)} }) },
 			{className: "anything",  initialize: (function(container, options){ if (options && options.initialize) { options.initialize(container)} }) },
-			{className: "plot",  defaults: {width:800, height: 300, grid:true}, initialize: (function(container, options){ options.target = "#"+container.id; functionPlot(options) }) },
+			{className: "plot",  defaults: {width:800, height: 400, grid:true}, initialize: (function(container, options){ options.target = "#"+container.id; functionPlot(options) }) },
 		],
 
 
 		// -------- Math plugin ----------
 		math: {
-		//	 	mathjax: 'https://cdn.mathjax.org/mathjax/latest/MathJax.js',
-			mathjax: '../MathJax-master/MathJax.js',
+			 	mathjax: 'https://cdn.mathjax.org/mathjax/latest/MathJax.js',
+		//	mathjax: '../MathJax-master/MathJax.js',
 			config: 'TeX-AMS_HTML-full'
 		},
 

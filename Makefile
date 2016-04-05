@@ -1,3 +1,6 @@
+siste: src/Sistemas\ de\ Numeración.slides
+	./macro "src/Sistemas de Numeración.slides" > "Sistemas de Numeración.html" 
+
 repre: src/Representación\ Digital\ de\ Datos.slides
 	./macro "src/Representación Digital de Datos.slides" > "Representación Digital de Datos.html" 
 
