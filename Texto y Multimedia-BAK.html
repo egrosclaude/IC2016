@@ -43,24 +43,297 @@
 		<![endif]-->
 	</head>
 
-<!--	<body onload="setupSinCalc();"> -->
-<!--	<body onload="setupIEEE754();">  -->
-	<body>
-	  <div class="reveal">
-		<!-- Any section element inside of this container is displayed as a slide -->
-		<div class="slides">
+	<body onload="setupIEEE754();">
+
+		<div class="reveal">
+
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
 
 
 <!------------------------------------------------------------------>
 
+<section data-markdown> 
+ <script type="text/template">
+##Unidad I 
+###Representación de la Información 
+1. Sistemas de Numeración 
+1. Unidades de Información
+1. Representación Digital de Datos 
+ 1. Datos Numéricos
+ 1. Texto <!-- .element: class="post_it" -->
+ 1. Multimedia <!-- .element: class="post_it" -->
+ </script>
+</section>
+
+
+<section data-markdown data-background="#00CCFF">
+##Representación 
+##de texto y multimedia
+</section>
+
+
+<!--- Tabla ASCII -->
+<section><h2>Tabla de códigos ASCII</h2>
+<table style="border-collapse: collapse; border:1px; width: 100%; font-size: 22px; ">
+<tr>
+<td align="right" style="background-color: #EEEEEE;">32</td><td align="center" style="background-color: #EEEEEE;"> </td> <td align="right" style="background-color: #EEEEEE;">44</td><td align="center" style="background-color: #EEEEEE;">,</td> <td align="right" style="background-color: #00EEFF;">56</td><td align="center" style="background-color: #00EEFF;">8</td> <td align="right" style="background-color: #EEFF00;">68</td><td align="center" style="background-color: #EEFF00;">D</td> <td align="right" style="background-color: #EEFF00;">80</td><td align="center" style="background-color: #EEFF00;">P</td> <td align="right" style="background-color: #EEEEEE;">92</td><td align="center" style="background-color: #EEEEEE;">\</td> <td align="right" style="background-color: #FFCC00;">104</td><td align="center" style="background-color: #FFCC00;">h</td> <td align="right" style="background-color: #FFCC00;">116</td><td align="center" style="background-color: #FFCC00;">t</td> </tr>
+
+<tr>
+<td align="right" style="background-color: #EEEEEE;">33</td><td align="center" style="background-color: #EEEEEE;">!</td> <td align="right" style="background-color: #EEEEEE;">45</td><td align="center" style="background-color: #EEEEEE;">-</td> <td align="right" style="background-color: #00EEFF;">57</td><td align="center" style="background-color: #00EEFF;">9</td> <td align="right" style="background-color: #EEFF00;">69</td><td align="center" style="background-color: #EEFF00;">E</td> <td align="right" style="background-color: #EEFF00;">81</td><td align="center" style="background-color: #EEFF00;">Q</td> <td align="right" style="background-color: #EEEEEE;">93</td><td align="center" style="background-color: #EEEEEE;">]</td> <td align="right" style="background-color: #FFCC00;">105</td><td align="center" style="background-color: #FFCC00;">i</td> <td align="right" style="background-color: #FFCC00;">117</td><td align="center" style="background-color: #FFCC00;">u</td> </tr>
+
+<tr>
+<td align="right" style="background-color: #EEEEEE;">34</td><td align="center" style="background-color: #EEEEEE;">"</td> <td align="right" style="background-color: #EEEEEE;">46</td><td align="center" style="background-color: #EEEEEE;">.</td> <td align="right" style="background-color: #EEEEEE;">58</td><td align="center" style="background-color: #EEEEEE;">:</td> <td align="right" style="background-color: #EEFF00;">70</td><td align="center" style="background-color: #EEFF00;">F</td> <td align="right" style="background-color: #EEFF00;">82</td><td align="center" style="background-color: #EEFF00;">R</td> <td align="right" style="background-color: #EEEEEE;">94</td><td align="center" style="background-color: #EEEEEE;">^</td> <td align="right" style="background-color: #FFCC00;">106</td><td align="center" style="background-color: #FFCC00;">j</td> <td align="right" style="background-color: #FFCC00;">118</td><td align="center" style="background-color: #FFCC00;">v</td> </tr>
+
+<tr>
+<td align="right" style="background-color: #EEEEEE;">35</td><td align="center" style="background-color: #EEEEEE;">#</td> <td align="right" style="background-color: #EEEEEE;">47</td><td align="center" style="background-color: #EEEEEE;">/</td> <td align="right" style="background-color: #EEEEEE;">59</td><td align="center" style="background-color: #EEEEEE;">;</td> <td align="right" style="background-color: #EEFF00;">71</td><td align="center" style="background-color: #EEFF00;">G</td> <td align="right" style="background-color: #EEFF00;">83</td><td align="center" style="background-color: #EEFF00;">S</td> <td align="right" style="background-color: #EEEEEE;">95</td><td align="center" style="background-color: #EEEEEE;">_</td> <td align="right" style="background-color: #FFCC00;">107</td><td align="center" style="background-color: #FFCC00;">k</td> <td align="right" style="background-color: #FFCC00;">119</td><td align="center" style="background-color: #FFCC00;">w</td> </tr>
+
+<tr>
+<td align="right" style="background-color: #EEEEEE;">36</td><td align="center" style="background-color: #EEEEEE;">$</td> <td align="right" style="background-color: #00EEFF;">48</td><td align="center" style="background-color: #00EEFF;">0</td> <td align="right" style="background-color: #EEEEEE;">60</td><td align="center" style="background-color: #EEEEEE;"><</td> <td align="right" style="background-color: #EEFF00;">72</td><td align="center" style="background-color: #EEFF00;">H</td> <td align="right" style="background-color: #EEFF00;">84</td><td align="center" style="background-color: #EEFF00;">T</td> <td align="right" style="background-color: #EEEEEE;">96</td><td align="center" style="background-color: #EEEEEE;">`</td> <td align="right" style="background-color: #FFCC00;">108</td><td align="center" style="background-color: #FFCC00;">l</td> <td align="right" style="background-color: #FFCC00;">120</td><td align="center" style="background-color: #FFCC00;">x</td> </tr>
+
+<tr>
+<td align="right" style="background-color: #EEEEEE;">37</td><td align="center" style="background-color: #EEEEEE;">%</td> <td align="right" style="background-color: #00EEFF;">49</td><td align="center" style="background-color: #00EEFF;">1</td> <td align="right" style="background-color: #EEEEEE;">61</td><td align="center" style="background-color: #EEEEEE;">=</td> <td align="right" style="background-color: #EEFF00;">73</td><td align="center" style="background-color: #EEFF00;">I</td> <td align="right" style="background-color: #EEFF00;">85</td><td align="center" style="background-color: #EEFF00;">U</td> <td align="right" style="background-color: #FFCC00;">97</td><td align="center" style="background-color: #FFCC00;">a</td> <td align="right" style="background-color: #FFCC00;">109</td><td align="center" style="background-color: #FFCC00;">m</td> <td align="right" style="background-color: #FFCC00;">121</td><td align="center" style="background-color: #FFCC00;">y</td> </tr>
+
+<tr>
+<td align="right" style="background-color: #EEEEEE;">38</td><td align="center" style="background-color: #EEEEEE;">&</td> <td align="right" style="background-color: #00EEFF;">50</td><td align="center" style="background-color: #00EEFF;">2</td> <td align="right" style="background-color: #EEEEEE;">62</td><td align="center" style="background-color: #EEEEEE;">></td> <td align="right" style="background-color: #EEFF00;">74</td><td align="center" style="background-color: #EEFF00;">J</td> <td align="right" style="background-color: #EEFF00;">86</td><td align="center" style="background-color: #EEFF00;">V</td> <td align="right" style="background-color: #FFCC00;">98</td><td align="center" style="background-color: #FFCC00;">b</td> <td align="right" style="background-color: #FFCC00;">110</td><td align="center" style="background-color: #FFCC00;">n</td> <td align="right" style="background-color: #FFCC00;">122</td><td align="center" style="background-color: #FFCC00;">z</td> </tr>
+
+<tr>
+<td align="right" style="background-color: #EEEEEE;">39</td><td align="center" style="background-color: #EEEEEE;">'</td> <td align="right" style="background-color: #00EEFF;">51</td><td align="center" style="background-color: #00EEFF;">3</td> <td align="right" style="background-color: #EEEEEE;">63</td><td align="center" style="background-color: #EEEEEE;">?</td> <td align="right" style="background-color: #EEFF00;">75</td><td align="center" style="background-color: #EEFF00;">K</td> <td align="right" style="background-color: #EEFF00;">87</td><td align="center" style="background-color: #EEFF00;">W</td> <td align="right" style="background-color: #FFCC00;">99</td><td align="center" style="background-color: #FFCC00;">c</td> <td align="right" style="background-color: #FFCC00;">111</td><td align="center" style="background-color: #FFCC00;">o</td> <td align="right" style="background-color: #EEEEEE;">123</td><td align="center" style="background-color: #EEEEEE;">{</td> </tr>
+
+<tr>
+<td align="right" style="background-color: #EEEEEE;">40</td><td align="center" style="background-color: #EEEEEE;">(</td> <td align="right" style="background-color: #00EEFF;">52</td><td align="center" style="background-color: #00EEFF;">4</td> <td align="right" style="background-color: #EEEEEE;">64</td><td align="center" style="background-color: #EEEEEE;">@</td> <td align="right" style="background-color: #EEFF00;">76</td><td align="center" style="background-color: #EEFF00;">L</td> <td align="right" style="background-color: #EEFF00;">88</td><td align="center" style="background-color: #EEFF00;">X</td> <td align="right" style="background-color: #FFCC00;">100</td><td align="center" style="background-color: #FFCC00;">d</td> <td align="right" style="background-color: #FFCC00;">112</td><td align="center" style="background-color: #FFCC00;">p</td> <td align="right" style="background-color: #EEEEEE;">124</td><td align="center" style="background-color: #EEEEEE;">|</td> </tr>
+
+<tr>
+<td align="right" style="background-color: #EEEEEE;">41</td><td align="center" style="background-color: #EEEEEE;">)</td> <td align="right" style="background-color: #00EEFF;">53</td><td align="center" style="background-color: #00EEFF;">5</td> <td align="right" style="background-color: #EEFF00;">65</td><td align="center" style="background-color: #EEFF00;">A</td> <td align="right" style="background-color: #EEFF00;">77</td><td align="center" style="background-color: #EEFF00;">M</td> <td align="right" style="background-color: #EEFF00;">89</td><td align="center" style="background-color: #EEFF00;">Y</td> <td align="right" style="background-color: #FFCC00;">101</td><td align="center" style="background-color: #FFCC00;">e</td> <td align="right" style="background-color: #FFCC00;">113</td><td align="center" style="background-color: #FFCC00;">q</td> <td align="right" style="background-color: #EEEEEE;">125</td><td align="center" style="background-color: #EEEEEE;">}</td> </tr>
+
+<tr>
+<td align="right" style="background-color: #EEEEEE;">42</td><td align="center" style="background-color: #EEEEEE;">*</td> <td align="right" style="background-color: #00EEFF;">54</td><td align="center" style="background-color: #00EEFF;">6</td> <td align="right" style="background-color: #EEFF00;">66</td><td align="center" style="background-color: #EEFF00;">B</td> <td align="right" style="background-color: #EEFF00;">78</td><td align="center" style="background-color: #EEFF00;">N</td> <td align="right" style="background-color: #EEFF00;">90</td><td align="center" style="background-color: #EEFF00;">Z</td> <td align="right" style="background-color: #FFCC00;">102</td><td align="center" style="background-color: #FFCC00;">f</td> <td align="right" style="background-color: #FFCC00;">114</td><td align="center" style="background-color: #FFCC00;">r</td> <td align="right" style="background-color: #EEEEEE;">126</td><td align="center" style="background-color: #EEEEEE;">~</td> </tr>
+
+<tr>
+<td align="right" style="background-color: #EEEEEE;">43</td><td align="center" style="background-color: #EEEEEE;">+</td> <td align="right" style="background-color: #00EEFF;">55</td><td align="center" style="background-color: #00EEFF;">7</td> <td align="right" style="background-color: #EEFF00;">67</td><td align="center" style="background-color: #EEFF00;">C</td> <td align="right" style="background-color: #EEFF00;">79</td><td align="center" style="background-color: #EEFF00;">O</td> <td align="right" style="background-color: #EEEEEE;">91</td><td align="center" style="background-color: #EEEEEE;">[</td> <td align="right" style="background-color: #FFCC00;">103</td><td align="center" style="background-color: #FFCC00;">g</td> <td align="right" style="background-color: #FFCC00;">115</td><td align="center" style="background-color: #FFCC00;">s</td> <td align="right" style="background-color: #EEEEEE;">127</td><td align="center" style="background-color: #EEEEEE;"</td> </tr>
+
+
+</table>
+</section>
+
 
 <section>
-<h2>Dummy slide</h2>
+<h2>Códigos de caracteres</h2>
+<ul>
+<li><a href="https://es.wikipedia.org/wiki/ASCII">ASCII</a></li>
+<li><a href="https://es.wikipedia.org/wiki/Unicode">Unicode</a></li>
+<li>UTF-8</li>
+<ul>
+<li>Codificación de símbolos con longitud de representación variable</li>
+</ul>
+<li>ISO 8859-1</li>
+<ul>
+<li>Símbolos con longitud de representación de un byte</li>
+</ul>
+</ul>
+</section>
+
+
+<section data-transition="slide-in fade-out">
+<h2>Representando datos con bytes</h2>
+<table>
+<tr><td>00110000</td><td>0</td></tr>
+<tr><td>00110001</td><td>1</td></tr>
+<tr><td>00110010</td><td>2</td></tr>
+<tr><td colspan="2" align="center">...</td></tr>
+<tr><td>01000001</td><td>A</td></tr>
+<tr><td>01000010</td><td>B</td></tr>
+<tr><td>01000011</td><td>C</td></tr>
+<tr><td colspan="2" align="center">...</td></tr>
+</table>
+</section>
+
+<section data-transition="slide-out fade-in">
+<h2>Representando datos con bytes</h2>
+<table>
+<tr><td>00110000</td><td>060</td><td>48</td><td>30</td><td>0</td></tr>
+<tr><td>00110001</td><td>061</td><td>49</td><td>31</td><td>1</td></tr>
+<tr><td>00110010</td><td>062</td><td>50</td><td>32</td><td>2</td></tr>
+<tr><td colspan="5" align="center">...</td></tr>
+<tr><td>01000001</td><td>101</td><td>65</td><td>41</td><td>A</td></tr>
+<tr><td>01000010</td><td>102</td><td>66</td><td>42</td><td>B</td></tr>
+<tr><td>01000011</td><td>103</td><td>67</td><td>43</td><td>C</td></tr>
+<tr><td colspan="5" align="center">...</td></tr>
+</table>
+</section>
+
+<section data-transition="slide-in fade-out">
+<h2>Este mismo archivo de texto</h2>
+<h3>Vista en caracteres</h3>
+<pre class="stretch"><code>
+$ head -7 Texto\ y\ Multimedia.html 
+&lt;!doctype html>
+&lt;html lang="en">
+
+	&lt;head>
+		<meta charset="utf-8">
+
+		<title>Introducción a la Computación 2016</title>
+
+</code></pre>
+</section>
+
+
+<section data-transition="fade-out fade-in">
+<h2>Este mismo archivo de texto</h2>
+<h3>Vista en octal</h3>
+<pre class="stretch"><code>
+$ hexdump -bc Texto\ y\ Multimedia.html | head -16
+074 041 144 157 143 164 171 160 145 040 150 164 155 154 076 012
+  <   !   d   o   c   t   y   p   e       h   t   m   l   >  \n
+074 150 164 155 154 040 154 141 156 147 075 042 145 156 042 076
+  <   h   t   m   l       l   a   n   g   =   "   e   n   "   >
+012 012 011 074 150 145 141 144 076 012 011 011 074 155 145 164
+ \n  \n  \t   <   h   e   a   d   >  \n  \t  \t   <   m   e   t
+141 040 143 150 141 162 163 145 164 075 042 165 164 146 055 070
+  a       c   h   a   r   s   e   t   =   "   u   t   f   -   8
+042 076 012 012 011 011 074 164 151 164 154 145 076 111 156 164
+  "   >  \n  \n  \t  \t   <   t   i   t   l   e   >   I   n   t
+162 157 144 165 143 143 151 303 263 156 040 141 040 154 141 040
+  r   o   d   u   c   c   i   �   �   n       a       l   a    
+103 157 155 160 165 164 141 143 151 303 263 156 040 062 060 061
+  C   o   m   p   u   t   a   c   i   �   �   n       2   0   1
+066 074 057 164 151 164 154 145 076 012 012 011 011 074 155 145
+  6   <   /   t   i   t   l   e   >  \n  \n  \t  \t   <   m   e
+</code></pre>
+</section>
+
+<section data-transition="fade-in slide-out">
+<h2>Este mismo archivo de texto</h2>
+<h3>Vista en hexadecimal</h3>
+<pre class="stretch"><code>
+$ hexdump -C Texto\ y\ Multimedia.html | head -8
+3c 21 64 6f 63 74 79 70  65 20 68 74 6d 6c 3e 0a  &lt;!doctype html>.
+3c 68 74 6d 6c 20 6c 61  6e 67 3d 22 65 6e 22 3e  &lt;html lang="en">
+0a 0a 09 3c 68 65 61 64  3e 0a 09 09 3c 6d 65 74  ...&lt;head>...&lt;met
+61 20 63 68 61 72 73 65  74 3d 22 75 74 66 2d 38  a charset="utf-8
+22 3e 0a 0a 09 09 3c 74  69 74 6c 65 3e 49 6e 74  ">....&lt;title>Int
+72 6f 64 75 63 63 69 c3  b3 6e 20 61 20 6c 61 20  roducci..n a la 
+43 6f 6d 70 75 74 61 63  69 c3 b3 6e 20 32 30 31  Computaci..n 201
+36 3c 2f 74 69 74 6c 65  3e 0a 0a 09 09 3c 6d 65  6&lt;/title>....&lt;me
+</code></pre>
+</section>
+
+
+<section data-markdown>
+##Imagen digital
+* Discretización
+  - División de un espacio continuo en partes discretas
+  - Espacio analógico &rarr; digital
+* Discretizar una imagen
+  - Definir cantidad de puntos &rarr; ancho y alto 
+  - Definir una cantidad de colores &rarr; profundidad de color
+* Digitalizar 
+  - Representar una imagen por una sucesión de números
+  - Indicando dimensiones y color de cada punto
+</section>
+
+
+
+
+<section data-transition="fade-in slide-out">
+<h2>Tamaños reales, en pixels</h2>
+<table>
+<tr><td>8x6</td><td><img src="img/t08x06.png" class="plain"></td></tr>
+<tr><td>16x12</td><td><img src="img/t16x12.png" class="plain"></td></tr>
+<tr><td>24x18</td><td><img src="img/t24x18.png" class="plain"></td></tr>
+<tr><td>32x24</td><td><img src="img/t32x24.png" class="plain"></td></tr>
+<tr><td>40x30</td><td><img src="img/t40x30.png" class="plain"></td></tr>
+</table>
 </section>
 
 <section>
+	<section data-transition="slide-in fade-out">
+	<h2>Resolución 8x6</h2>
+	<img src="img/imagen-008x006.jpg" class="plainstretch">
+	</section>
+
+	<section data-transition="fade-in fade-out">
+	<h2>Resolución 16x12</h2>
+	<img src="img/imagen-016x012.jpg" class="plainstretch">
+	</section>
+
+	<section data-transition="fade-in fade-out">
+	<h2>Resolución 24x18</h2>
+	<img src="img/imagen-024x018.jpg" class="plainstretch">
+	</section>
+
+	<section data-transition="fade-in fade-out">
+	<h2>Resolución 32x24</h2>
+	<img src="img/imagen-032x024.jpg" class="plainstretch">
+	</section>
+
+	<section data-transition="fade-in fade-out">
+	<h2>Resolución 40x30</h2>
+	<img src="img/imagen-040x030.jpg" class="plainstretch">
+	</section>
+
+	<section data-transition="fade-in slide-out">
+	<h2>Resolución 720x540</h2>
+	<img src="img/imagen.jpg" class="plainstretch">
+	</section>
+</section>
+
+
+<section data-background="img/rgb.png" data-background-transition="zoom">
+<h2>Color</h2>
+<ul>
+	<li>RGB = Red, Green, Blue</li>
+	<li>Diferentes valores de <span class="post_it">(r,g,b)</span>, componen todos los colores</li>
+	<li>Se define un espacio de valores en [0,255] para cada coordenada</li>
+	<li>Azul: (0,0,255)</li>
+	<li>Amarillo: (255,255,0)</li>
+	<li>Blanco: <span class="fragment">(255,255,255)</span></li>
+	<li>Negro: <span class="fragment">(0,0,0)</span></li>
+</ul>
+</section>
+
 <section>
-<h1>Animated SVG</h1>
+<h2>Color RGB</h2>
+<img src="img/trucha0.png" class="plainstretch">
+</section>
+
+
+<section data-transition="convex">
+<h2>Paleta de colores</h2>
+<img src="img/paleta.svg" class="plain">
+<span class="fragment">
+<table>
+<tr><td>255,255,255</td><td>&rarr;</td><td>00</td></tr>
+<tr><td>128,0,128</td><td>&rarr;</td><td>01</td></tr>
+<tr><td>207,231,245</td><td>&rarr;</td><td>10</td></tr>
+<tr><td>  0,107,107</td><td>&rarr;</td><td>11</td></tr>
+</table>
+</span>
+</section>
+
+<section data-transition="fade">
+<h2>Paleta de colores</h2>
+<img src="img/paleta-00.svg" class="plain stretch">
+</section>
+
+<section data-transition="fade">
+<h2>Paleta de colores</h2>
+<img src="img/paleta-01.svg" class="plain stretch">
+</section>
+
+<section data-transition="fade">
+<h2>Paleta de colores</h2>
+<img src="img/paleta-10.svg" class="plain stretch">
+</section>
+
+<section data-transition="fade">
+<h2>Paleta de colores</h2>
+<img src="img/paleta-11.svg" class="plain stretch">
+</section>
+
+<section data-transition="slide-in none-out">
+<h2>Datos de la imagen</h2>
 <div class="animate">
 <!-- INJECT ./paleta01.pl -->
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
@@ -400,14 +673,14 @@
  -->
 </svg></div>
 <ul>
-<li class="fragment">¿Cómo transmitir el gráfico?</li>
-<li class="fragment">¿Qué información falta?</li>
+<li class="fragment">¿Cómo comunicar esta imagen a otro programa u otra computadora?</li>
+<li class="fragment">¿Qué falta especificar para poder reconstruir esta imagen?</li>
 </ul>
 </section>
 
-<section>
-<h1>Animated SVG</h1>
-<div class="animate">
+<section data-transition="slide-out none-in">
+<h2>Datos de la imagen</h2>
+<div class="animate stretch">
 <!-- INJECT ./paleta02.pl -->
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.0//EN" "http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd">
@@ -549,266 +822,172 @@
 	Info: http://www.roitsystems.com/
  -->
 </svg></div>
-</section>
-</section>
-
-<section>
-<h2>Dummy slide</h2>
-</section>
-
-<section>
-<h3>Plot</h3>
-<div class="plot" id="myplot1" style="background-color:#fff; width:800px; height:400px; margin: 0 auto;">
-<!--
-{
- "target":"#myplot1",
- "height":400,
- "width":"800",
- "xAxis":{"domain":[-10,10]},
- "yAxis":{"domain":[-5,5]},
- "grid":true,
- "data":[{"fn":"sin(x)","color":"darkred"}]
-}
--->
-</div>
+<ul>
+<li class="fragment">¿En cuántos bits se expresa la paleta? ¿Cuáles son el ancho y el alto?</li>
+<li class="fragment">Definir un formato con dimensiones y resolución de la imagen</li>
+</ul>
 </section>
 
 <section>
-<h2>Cálculo de punto flotante</h2>
-<div class="tangle" id="ieee754Calc">
-	<script type="text/javascript" src="ieee754.js"></script>
-	<!--
-	{
-		"initialize":"function(container) {
-			var rootElement = document.getElementById('ieee754Calc');
-			var model = {
-				initialize: function() { 
-					this.decimal = 0;
-					this.sign = 0;
-					this.exponent = 0;
-					this.mantissa = 0;
-					this.hexa = '00000000';
-				},
-				update: function() {
-					var e = this.decimal;
-					var n = parseFloat(e);
-					var f = packIEEE754(e, 8, 23);
-					this.hexa = hexaString(f);
-					this.sign = f[0];
-					this.exponent = f.slice(1,9).join('');
-					this.mantissa = f.slice(9,32).join('');
-					var mstr;
-					if (n === 0) {
-						return;
-					} else if (n !== n) {
-						mstr = 'NaN';
-					} else if (n === Infinity) {
-						mstr = '\\infty';
-					} else if (n === -Infinity) {
-						mstr = '- \\infty';
-					} else {
-						mstr = mathString(e, this.sign, this.exponent, this.mantissa);
-					}
-					var mathfield = MathJax.Hub.getAllJax('ieee754Formula')[0];
-					MathJax.Hub.Queue(['Text',mathfield,mstr]);
-				}
-			};
-			var tangle=new Tangle(rootElement, model);
-		  }"
-	}
-	-->
-	<table>
-		<tr><td>Decimal</td><td class="TKNumberField" data-var="decimal"></td></tr>
-		<tr><td>Signo</td><td data-var="sign"></td></tr>
-		<tr><td>Exponente</td><td data-var="exponent"></td></tr>
-		<tr><td>Mantisa</td><td data-var="mantissa"></td></tr>
-		<tr><td>Hexa</td><td data-var="hexa"></td></tr>
-	</table>        
-	<p class="post_it" data-var="math" style="text-align: center;" id="ieee754Formula">$ $</p>  
-</div>
+<h2>Un formato de imagen</h2>
+<img src="img/formato-grafico.svg" class="plain stretch">
+<p class="fragment">
+<img src="img/formato-grafico2.svg" class="plain stretch">
+</p>
+<p class="fragment">
+<img src="img/formato-grafico3.svg" class="plain stretch">
+</p>
 </section>
+
+<section data-background="black">
+<h2>Audacity, un editor de audio</h2>
+<video id="audacity" width="100%" height="100%" class="stretch" preload controls>
+<source data-src="img/audacity.mp4" type='video/mp4'/>
+</section>
+
 
 <section>
-<h2>Parametric Plot</h2>
-<span class="tangle" id="sinCalc">
-	<!--
-	{
-		"initialize":"function (container){
-			var rootElement = document.getElementById('sinCalc');
-			var model = {
-				initialize: function() { 
-					this.ampl = 1;
-					this.freq = 10;
-					this.math = '$ $';
-				},
-				update: function() {
-					var plotex = this.ampl + '*sin(' + this.freq + '*x)';
-					var options = { target : '#sinplot', data : [{ fn : plotex }] };
-					functionPlot(options);
-				}
-			};
-			var tangle=new Tangle(rootElement, model);
-		}"
-	}
-	-->
-	<table>
-	<tr><td>Frecuencia:</td><td class="TKAdjustableNumber" data-var="freq" data-min="0" data-max="1000"></td><td>Amplitud:</td><td class="TKAdjustableNumber" data-var="ampl" data-min="0" data-max="10"></td></tr>
-	</table>        
-	<p class="post_it" data-var="math" style="text-align: center;" id="sinFormula">$ $</p>  
-</span>
-<div class="plot" id="sinplot" style="background-color:#fff; width:800px; height:300px; margin:0 auto;">
-	<!--
-	{ "target":"#sinplot", "data":[{"fn":"sin(x)"}], "width":800, "height":300, }
-	-->
-</div>
+<h2>Un formato de audio</h2>
+<img src="img/formato-audio.svg" class="plain stretch">
+<p class="fragment">
+<img src="img/formato-audio2.svg" class="plain stretch">
+</p>
+<p class="fragment">
+<img src="img/formato-audio3.svg" class="plain stretch">
+</p>
 </section>
-
-
 
 <!-- INCLUDE reveal.trailer -->
 <!------------------------------------------------------------------>
 
-   </div>
+	</div>
 </div>
 
-<link rel="stylesheet" href="Tangle/TangleKit/TangleKit.css" type="text/css">
 <script type="text/javascript" src="Tangle/Tangle.js"></script>
 <script type="text/javascript" src="Tangle/TangleKit/mootools.js"></script>
 <script type="text/javascript" src="Tangle/TangleKit/sprintf.js"></script>
 <script type="text/javascript" src="Tangle/TangleKit/BVTouchable.js"></script>
 <script type="text/javascript" src="Tangle/TangleKit/TangleKit.js"></script>
+<script type="text/javascript" src="ieee754.js"></script>
 
-<script src="lib/js/head.min.js"></script>
-<script src="js/reveal.js"></script>
+	<script src="lib/js/head.min.js"></script>
+	<script src="js/reveal.js"></script>
 
-<script>
+	<script>
 
-	Reveal.initialize({
-		controls: true,
-		progress: true,
-		history: true,
-		center: true,
-		previewLinks: true,
-		theme: 'serif',
-		transition: 'slide', // none/fade/slide/convex/concave/zoom
+		Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+				previewLinks: true,
+				theme: 'serif',
+				transition: 'slide', // none/fade/slide/convex/concave/zoom
 
 
-		menu: { // Menu works best with font-awesome installed: sudo apt-get install fonts-font-awesome
-			themes: false,
-			transitions: false,
-			markers: true,
-			hideMissingTitles: true,
-			custom: [
-				// { title: 'Plugins', icon: '<i class="fa fa-external-link"></i>', src: 'toc.html' },
-				{ title: 'About', icon: '<i class="fa fa-info"></i>', content: '<p>Introducción a la Computación</p>' }
-			]
-		},
-		anything: [ 
-			{className: "tangle",
-				initialize: (function(container, options) {
-						if(options && options.initialize) {options.initialize(container)} 
-				})
-			},
-			{className: "rand",  
-				defaults: {min: 0, max: 9}, 
-				initialize: (function(container, options){ 
-					container.innerHTML = Math.trunc( options.min + Math.random()*(options.max-options.min + 1) ); 
-				}) 
-			},
-			{className: "plot",  
-				defaults: {width:500, height: 500, grid:true}, 
-				initialize: (function(container, options){ options.target = "#"+container.id; functionPlot(options) }) },
-			{className: "chart",  
-				initialize: (function(container, options){ container.chart = new Chart(container.getContext("2d"), options);  }) },
-			{className: "animate",  
-				initialize: (function(container, options){ 
-				Reveal.addEventListener( 'fragmentshown', function( event ) {
-					if (typeof event.fragment.beginElement === "function" ) { 
-						event.fragment.beginElement(); 	
-					}
-				});
-				Reveal.addEventListener( 'fragmenthidden', function( event ) {
-					if (event.fragment.hasAttribute('data-reverse') ) { 
-						var reverse = event.fragment.parentElement.querySelector('[id=\"' + event.fragment.getAttribute('data-reverse') + '\"]');
-						if ( reverse && typeof reverse.beginElement === "function" ) { 
-							reverse.beginElement(); 	
-						}										 	
-					}
-				});
-				if ( container.getAttribute("data-svg-src") ) { 
-					var xhr = new XMLHttpRequest(); 
-					xhr.onload = function() { 
-						if (xhr.readyState === 4) { 
-							var svg = container.querySelector('svg');
-							container.removeChild( svg );
-							container.innerHTML = xhr.responseText + container.innerHTML;
-							if ( svg ) {
-								container.querySelector('svg').innerHTML = container.querySelector('svg').innerHTML + svg.innerHTML;
+				menu: { // Menu works best with font-awesome installed: sudo apt-get install fonts-font-awesome
+					themes: false,
+					transitions: false,
+					markers: true,
+					hideMissingTitles: true,
+					custom: [
+//				            { title: 'Plugins', icon: '<i class="fa fa-external-link"></i>', src: 'toc.html' },
+						{ title: 'About', icon: '<i class="fa fa-info"></i>', content: '<p>Introducción a la Computación</p>' }
+					]
+				},
+				anything: [ 
+					{className: "rand",  defaults: {min: 0, max: 9}, 
+						initialize: (function(container, options){ container.innerHTML = Math.trunc( options.min + Math.random()*(options.max-options.min + 1) ); }) },
+					{className: "plot",  defaults: {width:500, height: 500, grid:true}, initialize: (function(container, options){ options.target = "#"+container.id; functionPlot(options) }) },
+					{className: "chart",  initialize: (function(container, options){ container.chart = new Chart(container.getContext("2d"), options);  }) },
+					{className: "animate",  initialize: (function(container, options){ 
+						Reveal.addEventListener( 'fragmentshown', function( event ) {
+							if (typeof event.fragment.beginElement === "function" ) { 
+								event.fragment.beginElement(); 	
 							}
-						} 
-						else { 
-							console.warn( "Failed to get file. ReadyState: " + xhr.readyState + ", Status: " + xhr.status); 
+						});
+						Reveal.addEventListener( 'fragmenthidden', function( event ) {
+							if (event.fragment.hasAttribute('data-reverse') ) { 
+								var reverse = event.fragment.parentElement.querySelector('[id=\"' + event.fragment.getAttribute('data-reverse') + '\"]');
+								if ( reverse && typeof reverse.beginElement === "function" ) { 
+									reverse.beginElement(); 	
+								}										 	
+							}
+						});
+						if ( container.getAttribute("data-svg-src") ) { 
+							var xhr = new XMLHttpRequest(); 
+							xhr.onload = function() { 
+								if (xhr.readyState === 4) { 
+									var svg = container.querySelector('svg');
+									container.removeChild( svg );
+									container.innerHTML = xhr.responseText + container.innerHTML;
+									if ( svg ) {
+										container.querySelector('svg').innerHTML = container.querySelector('svg').innerHTML + svg.innerHTML;
+									}
+								} 
+								else { 
+									console.warn( "Failed to get file. ReadyState: " + xhr.readyState + ", Status: " + xhr.status); 
+								}
+							}; 
+							xhr.open( 'GET', container.getAttribute("data-svg-src"), true ); 
+							xhr.send();
 						}
-					}; 
-					xhr.open( 'GET', container.getAttribute("data-svg-src"), true ); 
-					xhr.send();
-				}
-			}) },
-			{className: "anything",  initialize: (function(container, options){ if (options && options.initialize) { options.initialize(container)} }) }
-		],
+					}) },
+					{className: "anything",  initialize: (function(container, options){ if (options && options.initialize) { options.initialize(container)} }) }
+				],
 
 
-		// -------- Math plugin ----------
-		math: {
-		//	 	mathjax: 'https://cdn.mathjax.org/mathjax/latest/MathJax.js',
-			mathjax: '../MathJax-master/MathJax.js',
-			config: 'TeX-AMS_HTML-full'
-		},
+				// -------- Math plugin ----------
+				math: {
+				 	mathjax: 'https://cdn.mathjax.org/mathjax/latest/MathJax.js',
+				//	mathjax: '../MathJax-master/MathJax.js',
+					config: 'TeX-AMS_HTML-full'
+				},
 
 
-		// -------- Chalkboard -----------
-		chalkboard: { 
-			// optionally load pre-recorded chalkboard drawing from file
-			// src: "chalkboard.json",
-			//readOnly: undefined, 
-			toggleChalkboardButton: { left: "80px" },
-			toggleNotesButton: { left: "130px" },
-			//transition: 800,
-			//theme: "whiteboard",
-			// configuration options for notes canvas and chalkboard
-			//color: [ 'rgba(0,0,255,1)', 'rgba(255,255,255,0.5)' ],
-			//background: [ 'rgba(127,127,127,.1)' , 'reveal.js-plugins/chalkboard/img/blackboard.png' ],
-			//pen:  [ 'reveal.js-plugins/chalkboard/img/boardmarker.png', 'reveal.js-plugins/chalkboard/img/chalk.png' ],
-		},
-		keyboard: {
-			67: function() { RevealChalkboard.toggleNotesCanvas() },    // toggle notes canvas when 'c' is pressed
-			66: function() { RevealChalkboard.toggleChalkboard() }, // toggle chalkboard when 'b' is pressed
-			46: function() { RevealChalkboard.clear() },    // clear chalkboard when 'DEL' is pressed
-			 8: function() { RevealChalkboard.reset() },    // reset chalkboard data on current slide when 'BACKSPACE' is pressed
-			68: function() { RevealChalkboard.download() }, // downlad recorded chalkboard drawing when 'd' is pressed
-		},
+				// -------- Chalkboard -----------
+				chalkboard: { 
+					// optionally load pre-recorded chalkboard drawing from file
+					// src: "chalkboard.json",
+					//readOnly: undefined, 
+					toggleChalkboardButton: { left: "80px" },
+					toggleNotesButton: { left: "130px" },
+					//transition: 800,
+					//theme: "whiteboard",
+					// configuration options for notes canvas and chalkboard
+					//color: [ 'rgba(0,0,255,1)', 'rgba(255,255,255,0.5)' ],
+					//background: [ 'rgba(127,127,127,.1)' , 'reveal.js-plugins/chalkboard/img/blackboard.png' ],
+					//pen:  [ 'reveal.js-plugins/chalkboard/img/boardmarker.png', 'reveal.js-plugins/chalkboard/img/chalk.png' ],
+				},
+				keyboard: {
+					67: function() { RevealChalkboard.toggleNotesCanvas() },    // toggle notes canvas when 'c' is pressed
+					66: function() { RevealChalkboard.toggleChalkboard() }, // toggle chalkboard when 'b' is pressed
+					46: function() { RevealChalkboard.clear() },    // clear chalkboard when 'DEL' is pressed
+					 8: function() { RevealChalkboard.reset() },    // reset chalkboard data on current slide when 'BACKSPACE' is pressed
+					68: function() { RevealChalkboard.download() }, // downlad recorded chalkboard drawing when 'd' is pressed
+				},
 
 
-		// -------- Dependencies ---------
-		dependencies: [
-			{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
-			{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
-			{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
-			{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
-			{ src: 'plugin/zoom-js/zoom.js', async: true },
-			{ src: 'plugin/notes/notes.js', async: true },
-			{ src: 'reveal.js-plugins/function-plot/site/js/vendor/jquery-1.11.2.min.js' },
-			{ src: 'reveal.js-plugins/function-plot/site/js/vendor/d3.js' },
-			{ src: 'reveal.js-plugins/function-plot/dist/function-plot.js' },
-			{ src: 'plugin/anything/anything.js' },
-			{ src: 'reveal.js-plugins/chalkboard/chalkboard.js' },
-			{ src: 'bower_components/reveal.js-menu/menu.js' },
-			//{ src: 'bower_components/reveal.js-plugins/mathsvg/math.js', async: true }
-			{ src: 'reveal.js-plugins/mathsvg/math.js' },
-		]
-	});
+				// -------- Dependencies ---------
+				dependencies: [
+					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: 'plugin/zoom-js/zoom.js', async: true },
+					{ src: 'plugin/notes/notes.js', async: true },
+					{ src: 'reveal.js-plugins/function-plot/site/js/vendor/jquery-1.11.2.min.js' },
+					{ src: 'reveal.js-plugins/function-plot/site/js/vendor/d3.js' },
+					{ src: 'reveal.js-plugins/function-plot/dist/function-plot.js' },
+					{ src: 'plugin/anything/anything.js' },
+					{ src: 'reveal.js-plugins/chalkboard/chalkboard.js' },
+					{ src: 'bower_components/reveal.js-menu/menu.js' },
+					//{ src: 'bower_components/reveal.js-plugins/mathsvg/math.js', async: true }
+					{ src: 'reveal.js-plugins/mathsvg/math.js' },
+				]
+			});
 
-</script>
+		</script>
 
-</body>
+	</body>
 </html>

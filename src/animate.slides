@@ -29,24 +29,6 @@
 </section>
 
 <section>
-<h3>Line chart with CSV data and JSON configuration</h3>
-<canvas class="stretch" data-chart="line">
-My first dataset,  65, 59, 80, 81, 56, 55, 40
-<!-- This is a comment -->
-My second dataset, 28, 48, 40, 19, 86, 27, 90
-<!-- 
-{ 
-"data" : {
-"labels" : ["Enero", "Febrero", "Marzo", "Avril", "Mayo", "Junio", "Julio"],
-"datasets" : [{ "borderColor": "#0f0", "borderDash": ["5","10"] }, { "borderColor": "#0ff" }]
-}
-}
--->
-</canvas>
-</section>
-
-
-<section>
 <h3>Plot</h3>
 <div class="plot" id="myplot1" style="background-color:#fff; width:800px; height:400px; margin: 0 auto;">
 <!--
@@ -62,5 +44,97 @@ My second dataset, 28, 48, 40, 19, 86, 27, 90
 -->
 </div>
 </section>
+
+<section>
+<h2>Cálculo de punto flotante</h2>
+<div class="tangle" id="ieee754Calc">
+	<script type="text/javascript" src="ieee754.js"></script>
+	<!--
+	{
+		"initialize":"function(container) {
+			var rootElement = document.getElementById('ieee754Calc');
+			var model = {
+				initialize: function() { 
+					this.decimal = 0;
+					this.sign = 0;
+					this.exponent = 0;
+					this.mantissa = 0;
+					this.hexa = '00000000';
+				},
+				update: function() {
+					var e = this.decimal;
+					var n = parseFloat(e);
+					var f = packIEEE754(e, 8, 23);
+					this.hexa = hexaString(f);
+					this.sign = f[0];
+					this.exponent = f.slice(1,9).join('');
+					this.mantissa = f.slice(9,32).join('');
+					var mstr;
+					if (n === 0) {
+						return;
+					} else if (n !== n) {
+						mstr = 'NaN';
+					} else if (n === Infinity) {
+						mstr = '\\infty';
+					} else if (n === -Infinity) {
+						mstr = '- \\infty';
+					} else {
+						mstr = mathString(e, this.sign, this.exponent, this.mantissa);
+					}
+					var mathfield = MathJax.Hub.getAllJax('ieee754Formula')[0];
+					MathJax.Hub.Queue(['Text',mathfield,mstr]);
+				}
+			};
+			var tangle=new Tangle(rootElement, model);
+		  }"
+	}
+	-->
+	<table>
+		<tr><td>Decimal</td><td class="TKNumberField" data-var="decimal"></td></tr>
+		<tr><td>Signo</td><td data-var="sign"></td></tr>
+		<tr><td>Exponente</td><td data-var="exponent"></td></tr>
+		<tr><td>Mantisa</td><td data-var="mantissa"></td></tr>
+		<tr><td>Hexa</td><td data-var="hexa"></td></tr>
+	</table>        
+	<p class="post_it" data-var="math" style="text-align: center;" id="ieee754Formula">$ $</p>  
+</div>
+</section>
+
+<section>
+<h2>Parametric Plot</h2>
+<span class="tangle" id="sinCalc">
+	<!--
+	{
+		"initialize":"function (container){
+			var rootElement = document.getElementById('sinCalc');
+			var model = {
+				initialize: function() { 
+					this.ampl = 1;
+					this.freq = 10;
+					this.math = '$ $';
+				},
+				update: function() {
+					var plotex = this.ampl + '*sin(' + this.freq + '*x)';
+					var options = { target : '#sinplot', data : [{ fn : plotex }] };
+					functionPlot(options);
+				}
+			};
+			var tangle=new Tangle(rootElement, model);
+		}"
+	}
+	-->
+	<table>
+	<tr><td>Frecuencia:</td><td class="TKAdjustableNumber" data-var="freq" data-min="0" data-max="1000"></td><td>Amplitud:</td><td class="TKAdjustableNumber" data-var="ampl" data-min="0" data-max="10"></td></tr>
+	</table>        
+	<p class="post_it" data-var="math" style="text-align: center;" id="sinFormula">$ $</p>  
+</span>
+<div class="plot" id="sinplot" style="background-color:#fff; width:800px; height:300px; margin:0 auto;">
+	<!--
+	{ "target":"#sinplot", "data":[{"fn":"sin(x)"}], "width":800, "height":300, }
+	-->
+</div>
+</section>
+
+
 
 <!-- INCLUDE reveal.trailer -->

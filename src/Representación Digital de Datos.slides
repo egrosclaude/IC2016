@@ -1,3 +1,5 @@
+<!-- INCLUDE reveal.header -->
+
 <section data-markdown> 
  <script type="text/template">
 ##Unidad I 
@@ -883,6 +885,7 @@ https://es.wikipedia.org/wiki/IEEE_coma_flotante
  <img src="img/placa1.png" class="plainstretch">
 </section> 
 
+<!--
 <section>
 <h2>Cálculo de punto flotante</h2>
 <span id="ieee754Calc">
@@ -896,7 +899,65 @@ https://es.wikipedia.org/wiki/IEEE_coma_flotante
     <p class="post_it" data-var="math" style="text-align: center;" id="ieee754Formula">$ $</p>  
 </span>
 </section>
+-->
 
+ <section>
+ <h2>Cálculo de punto flotante</h2>
+ <div class="tangle" id="ieee754Calc">
+         <script type="text/javascript" src="ieee754.js"></script>
+         <!--
+         {
+                 "initialize":"function(container) {
+                         var rootElement = document.getElementById('ieee754Calc');
+                         var model = {
+                                 initialize: function() {
+                                         this.decimal = 0;
+                                         this.sign = 0;
+                                         this.exponent = 0;
+                                         this.mantissa = 0;
+                                         this.hexa = '00000000';
+                                 },
+                                 update: function() {
+                                         var e = this.decimal;
+                                         var n = parseFloat(e);
+                                         var f = packIEEE754(e, 8, 23);
+                                         this.hexa = hexaString(f);
+                                         this.sign = f[0];
+                                         this.exponent = f.slice(1,9).join('');
+                                         this.mantissa = f.slice(9,32).join('');
+                                         var mstr;
+                                         if (n === 0) {
+                                                 return;
+                                         } else if (n !== n) {
+                                                 mstr = 'NaN';
+                                         } else if (n === Infinity) {
+                                                 mstr = '\\infty';
+                                         } else if (n === -Infinity) {
+                                                 mstr = '- \\infty';
+                                         } else {
+                                                 mstr = mathString(e, this.sign, this.exponent, this.mantissa);
+                                         }
+                                         var mathfield = MathJax.Hub.getAllJax('ieee754Formula')[0];
+                                         MathJax.Hub.Queue(['Text',mathfield,mstr]);
+                                 }
+                         };
+                         var tangle=new Tangle(rootElement, model);
+                   }"
+         }
+         -->
+         <table>
+                 <tr><td>Decimal</td><td class="TKNumberField" data-var="decimal"></td></tr>
+                 <tr><td>Signo</td><td data-var="sign"></td></tr>
+                 <tr><td>Exponente</td><td data-var="exponent"></td></tr>
+                 <tr><td>Mantisa</td><td data-var="mantissa"></td></tr>
+                 <tr><td>Hexa</td><td data-var="hexa"></td></tr>
+         </table>
+         <p class="post_it" data-var="math" style="text-align: center;" id="ieee754Formula">$ $</p>
+ </div>
+ </section>
+ 
+
+ 
 
 <section>
 <h2>Punto flotante, casos especiales</h2>
@@ -951,4 +1012,4 @@ https://es.wikipedia.org/wiki/IEEE_coma_flotante
 </ul>
 </section>
 
-
+<!-- INCLUDE reveal.trailer -->

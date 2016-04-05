@@ -1,5 +1,4 @@
 <!-- INCLUDE reveal.header -->
-
 <section data-markdown> 
  <script type="text/template">
 ##Unidad I 
@@ -19,50 +18,6 @@
 ##de texto y multimedia
 </section>
 
-<section data-transition="slide-in fade-out">
-<h2>Representando datos con bytes</h2>
-<table>
-<tr><td>00110000</td><td>$0$</td></tr>
-<tr><td>00110001</td><td>$1$</td></tr>
-<tr><td>00110010</td><td>$2$</td></tr>
-<tr><td colspan="2" align="center">...</td></tr>
-<tr><td>01000001</td><td>$A$</td></tr>
-<tr><td>01000010</td><td>$B$</td></tr>
-<tr><td>01000011</td><td>$C$</td></tr>
-<tr><td colspan="2" align="center">...</td></tr>
-</table>
-</section>
-
-<section data-transition="slide-out fade-in">
-<h2>Representando datos con bytes</h2>
-<table>
-<tr><td>00110000</td><td>060</td><td>48</td><td>30</td><td>$0$</td></tr>
-<tr><td>00110001</td><td>061</td><td>49</td><td>31</td><td>$1$</td></tr>
-<tr><td>00110010</td><td>062</td><td>50</td><td>32</td><td>$2$</td></tr>
-<tr><td colspan="5" align="center">...</td></tr>
-<tr><td>01000001</td><td>101</td><td>65</td><td>41</td><td>$A$</td></tr>
-<tr><td>01000010</td><td>102</td><td>66</td><td>42</td><td>$B$</td></tr>
-<tr><td>01000011</td><td>103</td><td>67</td><td>43</td><td>$C$</td></tr>
-<tr><td colspan="5" align="center">...</td></tr>
-</table>
-</section>
-
-
-<section>
-<h2>Códigos de caracteres</h2>
-<ul>
-<li><a href="https://es.wikipedia.org/wiki/ASCII">ASCII</a></li>
-<li><a href="https://es.wikipedia.org/wiki/Unicode">Unicode</a></li>
-<li>UTF-8</li>
-<ul>
-<li>Codificación de símbolos con longitud de representación variable</li>
-</ul>
-<li>ISO 8859-1</li>
-<ul>
-<li>Símbolos con longitud de representación de un byte</li>
-</ul>
-</ul>
-</section>
 
 <!--- Tabla ASCII -->
 <section><h2>Tabla de códigos ASCII</h2>
@@ -103,12 +58,55 @@
 <tr>
 <td align="right" style="background-color: #EEEEEE;">43</td><td align="center" style="background-color: #EEEEEE;">+</td> <td align="right" style="background-color: #00EEFF;">55</td><td align="center" style="background-color: #00EEFF;">7</td> <td align="right" style="background-color: #EEFF00;">67</td><td align="center" style="background-color: #EEFF00;">C</td> <td align="right" style="background-color: #EEFF00;">79</td><td align="center" style="background-color: #EEFF00;">O</td> <td align="right" style="background-color: #EEEEEE;">91</td><td align="center" style="background-color: #EEEEEE;">[</td> <td align="right" style="background-color: #FFCC00;">103</td><td align="center" style="background-color: #FFCC00;">g</td> <td align="right" style="background-color: #FFCC00;">115</td><td align="center" style="background-color: #FFCC00;">s</td> <td align="right" style="background-color: #EEEEEE;">127</td><td align="center" style="background-color: #EEEEEE;"</td> </tr>
 
+
 </table>
 </section>
 
 
+<section>
+<h2>Códigos de caracteres</h2>
+<ul>
+<li><a href="https://es.wikipedia.org/wiki/ASCII">ASCII</a></li>
+<li><a href="https://es.wikipedia.org/wiki/Unicode">Unicode</a></li>
+<li>UTF-8</li>
+<ul>
+<li>Codificación de símbolos con longitud de representación variable</li>
+</ul>
+<li>ISO 8859-1</li>
+<ul>
+<li>Símbolos con longitud de representación de un byte</li>
+</ul>
+</ul>
+</section>
 
 
+<section data-transition="slide-in fade-out">
+<h2>Representando datos con bytes</h2>
+<table>
+<tr><td>00110000</td><td>0</td></tr>
+<tr><td>00110001</td><td>1</td></tr>
+<tr><td>00110010</td><td>2</td></tr>
+<tr><td colspan="2" align="center">...</td></tr>
+<tr><td>01000001</td><td>A</td></tr>
+<tr><td>01000010</td><td>B</td></tr>
+<tr><td>01000011</td><td>C</td></tr>
+<tr><td colspan="2" align="center">...</td></tr>
+</table>
+</section>
+
+<section data-transition="slide-out fade-in">
+<h2>Representando datos con bytes</h2>
+<table>
+<tr><td>00110000</td><td>060</td><td>48</td><td>30</td><td>0</td></tr>
+<tr><td>00110001</td><td>061</td><td>49</td><td>31</td><td>1</td></tr>
+<tr><td>00110010</td><td>062</td><td>50</td><td>32</td><td>2</td></tr>
+<tr><td colspan="5" align="center">...</td></tr>
+<tr><td>01000001</td><td>101</td><td>65</td><td>41</td><td>A</td></tr>
+<tr><td>01000010</td><td>102</td><td>66</td><td>42</td><td>B</td></tr>
+<tr><td>01000011</td><td>103</td><td>67</td><td>43</td><td>C</td></tr>
+<tr><td colspan="5" align="center">...</td></tr>
+</table>
+</section>
 
 <section data-transition="slide-in fade-out">
 <h2>Este mismo archivo de texto</h2>
@@ -297,8 +295,8 @@ $ hexdump -C Texto\ y\ Multimedia.html | head -8
 <!-- INJECT ./paleta02.pl -->
 </div>
 <ul>
-<li class="fragment">¿Cuáles son el ancho y el alto? ¿En cuántos bits se expresa la paleta?</li>
-<li class="fragment">Dimensiones y profundidad de color de la imagen</li>
+<li class="fragment">¿En cuántos bits se expresa la paleta? ¿Cuáles son el ancho y el alto?</li>
+<li class="fragment">Definir un formato con dimensiones y resolución de la imagen</li>
 </ul>
 </section>
 
@@ -313,101 +311,26 @@ $ hexdump -C Texto\ y\ Multimedia.html | head -8
 </p>
 </section>
 
-<section>
-<h2>Parámetros de onda</h2>
-<div class="tangle" id="sinCalc">
-        <!--
-        {
-                "initialize":"function (container){
-                        var rootElement = document.getElementById('sinCalc');
-                        var model = {
-                                initialize: function() {
-                                        this.ampl = 1;
-                                        this.freq = 4;
-					this.nSamples = 4;
-                                        this.math = '$ $';
-                                },
-                                update: function() {
-                                        var plotex = this.ampl + '*sin(' + this.freq + '*x)';
-                                        var options = { target : '#sinplot', data : [{ fn : plotex, nSamples : this.nSamples, graphType : 'scatter' }], width : 800, height : 400};
-                                        functionPlot(options);
-
-
-                                }
-                        };
-                        var tangle=new Tangle(rootElement, model);
-                }"
-        }
-        -->
-        <table>
-        <tr><td>Frecuencia:</td><td class="TKAdjustableNumber" data-var="freq" data-min="1" data-max="100"></td>
-	    <td>Amplitud:</td><td class="TKAdjustableNumber" data-var="ampl" data-min="1" data-max="3"></td>
-	    <td>Muestras:</td><td class="TKAdjustableNumber" data-var="nSamples" data-min="1" data-max="500"></td></tr>
-        </table>
-<!--        <p class="post_it" data-var="math" style="text-align: center;" id="sinFormula">$ $</p> -->
-</div>
-<div class="plot" id="sinplot" style="background-color:#000; width:800px; height:400px; margin:0 auto;"></div>
-<!--
-{ "target":"#sinplot", "data":[{"fn":"sin(x)", "nSamples":4, "graphType":"scatter"}], "width":800, "height":400, }
--->
-</section>
-
-
-<section>
-<h2>Ondas sonoras</h2>
-<ul>
-	<li>Ondas fundamentales</li>
-		<ul>
-		<li>Basta con dar amplitud y frecuencia</li>
-		</ul>
-	<li>Sonido en la naturaleza</li>
-		<ul>
-		<li>Muchas componentes</li>
-		</ul>
-</ul>
-</section>
-
-<section>
-<h2>Ondas sonoras</h2>
-<img src="img/ondas.png" class="stretch plain">
-</section>
-
-
-<section>
-<h2>Sonido</h2>
-<ul>
-<li>Un micrófono convierte ondas sonoras en un flujo continuo de niveles eléctricos</li>
-<li>Digitalizar el sonido</li>
-<ul>
-	<li>Tomar una cantidad de muestras por segundo</li>
-	<li>Discretizar la amplitud</li>
-</ul>
+<section data-background="black">
+<h2>Audacity, un editor de audio</h2>
+<video id="audacity" width="100%" height="100%" class="stretch" preload controls>
+<source data-src="img/audacity.mp4" type='video/mp4'/>
 </section>
 
 
 <section>
 <h2>Un formato de audio</h2>
 <img src="img/formato-audio.svg" class="plain stretch">
-<!--
 <p class="fragment">
 <img src="img/formato-audio2.svg" class="plain stretch">
 </p>
 <p class="fragment">
 <img src="img/formato-audio3.svg" class="plain stretch">
 </p>
--->
-<ul>
-	<li>Asumiremos amplitud entre 0 y 10</li>
-	<li>Ese espacio se representará sobre $n$ bits</li>
-</ul>
 </section>
 
-<!--
-<section data-background="black">
-<h2>Audacity, un editor de audio</h2>
-<video id="audacity" width="100%" height="100%" class="stretch" preload controls>
-<source data-src="img/audacity.mp4" type='video/mp4'/>
-</section>
--->
+
+<!-- INCLUDE plotslide.slide -->
+
 
 <!-- INCLUDE reveal.trailer -->
