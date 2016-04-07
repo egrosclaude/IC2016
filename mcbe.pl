@@ -49,7 +49,7 @@ sub memory {
 }
 
 my $img = GD::SVG->new(400,110);
-print STDERR $img->font('Lato',$BIT_HEIGHT);
+#print STDERR $img->font('Lato',$BIT_HEIGHT);
 octet($img, 8, 10, "PC");
 octet($img, 8 + $COL_WIDTH, 10, "IR");
 octet($img, 8 + 2 * $COL_WIDTH, 10, " A");
