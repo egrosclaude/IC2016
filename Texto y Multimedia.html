@@ -379,7 +379,7 @@ $ hexdump -C Texto\ y\ Multimedia.html | head -8
 
 <section data-transition="slide-in none-out">
 <h2>Datos de la imagen</h2>
-<div class="animate">
+<div class="animate stretch">
 <!-- INJECT ./paleta01.pl -->
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.0//EN" "http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd">
@@ -939,11 +939,12 @@ $ hexdump -C Texto\ y\ Multimedia.html | head -8
 <ul>
 	<li>Ondas fundamentales</li>
 		<ul>
-		<li>Basta con dar amplitud y frecuencia</li>
+		<li>Basta con dar amplitud y frecuencia para describirlas</li>
 		</ul>
 	<li>Sonido en la naturaleza</li>
 		<ul>
-		<li>Muchas componentes</li>
+		<li>Muchas componentes ("armónicos") de diferente amplitud y frecuencia</li>
+		<li>Definen el <b>timbre</b> del sonido</li>
 		</ul>
 </ul>
 </section>
@@ -963,9 +964,30 @@ $ hexdump -C Texto\ y\ Multimedia.html | head -8
 	<li>Tomar una cantidad de muestras por segundo &rarr; discretizar el tiempo</li>
 	<li>Registrar una cantidad de niveles &rarr; discretizar la amplitud</li>
 </ul>
-	<p><img src="img/grid.svg" style="display: block; margin: 0 auto;" class="plain fragment"></p>
+	<img src="img/grid.png" style="height: 180px;" class="plain fragment">
 </section>
 
+<!--
+<section data-transition="slide-in fade-out">
+<h2>Discretizar la amplitud</h2>
+	<img src="img/grid-0.png" class="plain stretch">
+</section>
+
+<section data-transition="fade-in fade-out">
+<h2>Discretizar la amplitud</h2>
+	<img src="img/grid-1.png" class="plain stretch">
+</section>
+
+<section data-transition="fade-in fade-out">
+<h2>Discretizar la amplitud</h2>
+	<img src="img/grid-2.png" class="plain stretch">
+</section>
+
+<section data-transition="fade-in slide-out">
+<h2>Discretizar la amplitud</h2>
+	<img src="img/grid-3.png" class="plain stretch">
+</section>
+-->
 
 <section>
 <h2>Un formato de audio</h2>
@@ -983,6 +1005,236 @@ $ hexdump -C Texto\ y\ Multimedia.html | head -8
 	<li>Ese espacio se representará sobre $n$ bits</li>
 </ul>
 </section>
+
+
+<section data-transition="fade">
+<h2>Digitalizando una señal de 3s</h2>
+<div style="text-align: center;">Digitalizar a <b>3 Hz con dos bits de resolución</b></div>
+<img src="img/sound-0.png" class="stretch">
+</section>
+
+
+<section data-transition="fade">
+<h2>Digitalizando una señal</h2>
+<div style="text-align: center;">Tenemos una duración total de 3 s</div>
+<img src="img/sound-1.png" class="stretch">
+</section>
+
+
+<section data-transition="fade">
+<h2>Digitalizando una señal</h2>
+<div style="text-align: center;">La señal tiene diez niveles de voltaje</div>
+<img src="img/sound-2.png" class="stretch">
+</section>
+
+<section data-transition="fade">
+<h2>Digitalizando una señal</h2>
+<div style="text-align: center;">Se nos piden 3 muestras/s (<b>3 Hz</b>)</div>
+<img src="img/sound-3.png" class="stretch">
+</section>
+
+<section data-transition="fade">
+<h2>Digitalizando una señal</h2>
+<div style="text-align: center;">Tomamos los valores de amplitud enteros más próximos</div>
+<img src="img/sound-4.png" class="stretch">
+</section>
+
+<section data-transition="fade">
+<h2>Digitalizando una señal</h2>
+<div style="text-align: center;">Pasamos a resolución de 2 bits</div>
+<img src="img/sound-5.png" class="stretch">
+</section>
+
+<section data-transition="fade">
+<h2>Digitalizando una señal</h2>
+<div style="text-align: center;" class="post_it">00 00 01 01 10 10 01 10 00</div>
+<img src="img/sound-5.png" class="stretch">
+</section>
+
+<section data-transition="fade-in slide-out">
+<h2>Digitalizando una señal</h2>
+<div style="text-align: center;" class="post_it">Datos del audio 00 00 01 01 10 10 01 10 00</div>
+<ul class="fragment">
+<li>Muestras/s = Hz = 3</li>
+<li>Bits/muestra = 2</li> 
+</ul>
+<span class="fragment">
+<img src="img/sound-final.png" class="plain stretch">
+<div style="text-align: center;" class="post_it">030205A60</div>
+</span>
+</section>
+
+<section>
+<h2>Reconstruyendo una señal</h2>
+<div style="text-align: center;" class="post_it">050315A8F4D</div>
+<ul>
+<li class="fragment">¿Cuántas muestras por segundo hay en estos datos?</li>
+<li class="fragment">¿Cuántos bits por muestra?</li> 
+<li class="fragment">¿Cuál es la duración de la señal en segundos?</li> 
+</ul>
+<span class="fragment">
+<img src="img/sound-reconst-1.png" class="plain stretch">
+</span>
+</section>
+
+<section>
+<h2>Reconstruyendo una señal</h2>
+<div style="text-align: center;" class="post_it">050315A8F4D</div>
+<ul>
+<li>Muestras/s = 5, bits/muestra = 3</li> 
+<li>3 b/muestra * 5 muestras/s = 15 b/s</li>
+<li>Tengo 28 bits de datos &rarr; hay 1.86s de señal</li> 
+</ul>
+<img src="img/sound-reconst.png" class="plain stretch">
+</section>
+
+<section>
+<h2>Reconstruyendo una señal</h2>
+<div style="text-align: center;" class="post_it">Datos del audio 00010101 10101000 11110100 1101</div>
+<ul>
+<li>Cada muestra son 3 bits &rarr; tengo 8 niveles discretos</li>
+<li>Muestras 000=0, 101=5, 011=3, 010=2, 100=4, etc.</li> 
+</ul>
+<img src="img/sound-reconst-3.png" class="plain stretch">
+</section>
+
+
+<section data-markdown data-background="#00CCFF">
+##Compresión de datos
+</section>
+
+<section>
+<h2>Compresión</h2>
+<ul>
+<li>Reducción del tamaño de los datos aplicando operaciones sobre los bits</li>
+<ul>
+<li>Ocupar menos espacio de almacenamiento</li>
+<li>Transferencia más rápida a través de la red</li>
+</ul>
+<li>Diferentes algoritmos</li>
+<ul>
+<li>Con pérdida</li>
+<li>Sin pérdida</li>
+</ul>
+</ul>
+</section>
+
+<section>
+<h2>Compresión sin pérdida</h2>
+<ul>
+<li>Los datos comprimidos tienen la misma cantidad de información, pero están organizados de forma diferente</li>
+<li>Existe un algoritmo inverso</li>
+<li>Los datos originales pueden recuperarse tal cual eran</li>
+<ul>
+<li>Compresor de archivos (Zip, PKZip, 7Zip, RAR)</li>
+<li>Compresión de páginas web (gzip)</li>
+</ul>
+</ul>
+</section>
+
+<section>
+<h2>Compresión con pérdida</h2>
+<ul>
+<li>Los datos comprimidos tienen menos información  que los originales</li>
+<li>No existe un algoritmo inverso</li>
+<li>Los datos originales no pueden ser recuperados a partir de los comprimidos</li>
+<li>Sin embargo los datos comprimidos siguen siendo útiles</li>
+<ul>
+<li>Reducción de resolución y/o de profundidad de color</li>
+<li>Filtrado de frecuencias (teléfono, CD)</li>
+<li>MP3, MP4</li>
+</ul>
+</ul>
+</section>
+
+<section data-transition=slide-in fade-out">
+<h2>Original, 720x540 pixels</h2>
+<img src="img/imagen.jpg" class="plain stretch">
+</section>
+
+<section data-transition=fade-out fade-in">
+<h2>Comprimido, 360x270 pixels</h2>
+<img src="img/imagen2.jpg" class="plain stretch">
+</section>
+
+<section data-transition=slide-out fade-in">
+<h2>Comprimido, 180x135 pixels</h2>
+<img src="img/imagen3.jpg" class="plain stretch">
+</section>
+
+
+<section>
+<h2>Tamaños en bytes</h2>
+<pre><code>
+ $ ls -l imagen*
+ -rw-r--r-- 1 oso oso 55834 Mar 23  2013 imagen.jpg
+ -rw-r--r-- 1 oso oso 18048 Apr  7 11:30 imagen2.jpg
+ -rw-r--r-- 1 oso oso  6042 Apr  7 11:46 imagen3.jpg
+
+</code></pre>
+<img src="img/3images.png" class="plain stretch">
+</section>
+
+
+
+
+
+<section data-transition=slide-in fade-out">
+<h2>Compresión con pérdida</h2>
+<img src="img/comprcp01.svg" class="plain stretch">
+</section>
+
+<section data-transition=slide-out fade-in">
+<h2>Compresión con pérdida</h2>
+<img src="img/comprcp02.svg" class="plain stretch">
+</section>
+
+<section data-transition=slide-out fade-in">
+<h2>Compresión con pérdida</h2>
+<img src="img/ccpdif01.svg" class="plain stretch fragment">
+<img src="img/ccpdif02.svg" class="plain stretch fragment">
+</section>
+
+<section>
+<h2>Compresión sin pérdida</h2>
+<ul>
+	<li>Técnicas de RLE (<i>Run-length-encoding</i>)</li>
+	<ul>
+		<li>Sustituir una sucesión de elementos repetidos por un coeficiente</li>
+	</ul>
+	<li>Códigos de Huffmann</li>
+	<ul>
+		<li>Sustituir los elementos más frecuentes por cadenas de bits más cortas</li>
+	</ul>
+</ul>
+</section>
+
+<section>
+<h2>Compresión sin pérdida</h2>
+<h3>Técnica RLE</h3>
+<img src="img/rle.svg" class="plain stretch">
+</section>
+
+<section>
+<h2>Bestiario</h2>
+<h4 class="fragment"><i>- Indique un caso de compresión con pérdida.</i></h4>
+<span class="fragment">
+<h4><i>- Cuando el archibo llega corrubto</i></h4> 
+<h4><i>y se pierde la informasión.</i></h4> 
+<img src="img/Facepalm-Girl.png" class="plain stretch">
+</span>
+</section>
+
+<section>
+<h2>Referencias</h2>
+<ul>
+<li><a href="http://pedco.uncoma.edu.ar/pluginfile.php/346011/mod_resource/content/1/IC-Codificacion_texto_audio_imagen.pdf">Apunte de cátedra: Codificación de datos</a></li>
+<li><a href="https://es.wikipedia.org/wiki/MP3">MP3</a></li>
+<li><a href="https://es.wikipedia.org/wiki/Portable_Network_Graphics">PNG</a></li>
+<li><a href="https://es.wikipedia.org/wiki/Conversi%C3%B3n_anal%C3%B3gica-digital">Conversión analógica-digital</a></li>
+</ul>
+</section>
+
 
 <!--
 <section data-background="black">
