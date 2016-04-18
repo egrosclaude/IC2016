@@ -7,6 +7,9 @@ repre: src/Representación\ Digital\ de\ Datos.slides
 texto: src/Texto\ y\ Multimedia.slides 
 	./macro "src/Texto y Multimedia.slides" > "Texto y Multimedia.html"
 
+arqui: src/Arquitectura.slides 
+	./macro "src/Arquitectura.slides" > "Arquitectura.html"
+
 animate:
 	./macro src/animate.slides > animate.html
 

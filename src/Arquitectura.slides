@@ -1,0 +1,629 @@
+<!--
+
+<section>
+</section>
+
+<section>
+<h2></h2>
+<ul>
+<li></li>
+</ul>
+</section>
+
+
+
+
+<section data-markdown data-background="#00CCFF">
+</section>
+-->
+
+<!-- INCLUDE reveal.header -->
+
+<section data-background="#00CCFF">
+<h2>Unidad II</h2>
+<h3>Organización de las Computadoras</h3>
+<ul>
+<li>Componentes de la arquitectura de Von Neumann</li>
+<li>Modelo Computacional Binario Elemental (MCBE)</li>
+<li>Lenguajes de bajo nivel</li>
+</ul>
+</section>
+
+<section>
+<h2>Componentes de una computadora simple</h2>
+<ul>
+<li><b>Memoria</b> principal</li>
+<li>Unidad Central de Procesamiento <b>(CPU)</b> </li>
+<li>Dispositivos de <b>Entrada y Salida (E/S)</b></li>
+<li>Interconectados mediante <b>buses</b></li>
+</ul>
+</section>
+
+<section>
+<h2>Memoria</h2>
+<ul>
+    <li>Conjunto de posiciones de un byte, numeradas de $0$ a $n-1$</li>
+    <li>El número de posición se denomina su <strong>dirección</strong></li>
+    <li>Pueden contener <strong>datos</strong> o <strong>instrucciones</strong></li>
+</ul>
+</section>
+
+<section>
+<h2>Central Processing Unit, CPU</h2>
+<ul>
+	<li>Circuito secuencial, complejo</li>
+	<li>Interpreta y ejecuta un conjunto de instrucciones</li>
+	<li>Capaz de ejecutar un programa compuesto por instrucciones almacenadas en la memoria</li>
+	<li>Contiene otras unidades funcionales</li>
+	<ul>
+		<li>Unidad de Control</li>
+		<li>Unidad Lógico-Aritmética</li>
+	</ul>
+</ul>
+</section>
+
+<section>
+<h2>Máquina de Von Neumann</h2>
+<ul>
+<li>Máquina de <b>programa almacenado</b></li>
+<li><b>Instrucciones y datos</b> se almacenan en una memoria común; se usan de forma diferente pero se acceden de la misma forma.</li>
+<li>La ejecución de un programa es secuencial (hacia direcciones ascendentes) salvo que aparezcan instrucciones de <b>transferencia de control</b></li>
+</ul>
+</section>
+
+<section data-transition="slide-in fade-out">
+<h2>Arquitectura de Von Neumann</h2>
+<img src="img/vn-0.svg" class="stretch plain">
+</section>
+
+<section data-transition="fade-in fade-out">
+<h2>Arquitectura de Von Neumann</h2>
+<img src="img/vn-1.svg" class="stretch plain">
+</section>
+
+<section data-transition="fade-in fade-out">
+<h2>Arquitectura de Von Neumann</h2>
+<img src="img/vn-2.svg" class="stretch plain">
+</section>
+
+<section data-transition="fade-in fade-out">
+<h2>Arquitectura de Von Neumann</h2>
+<img src="img/vn-3.svg" class="stretch plain">
+</section>
+
+<section data-transition="fade-in fade-out">
+<h2>Arquitectura de Von Neumann</h2>
+<img src="img/vn-4.svg" class="stretch plain">
+</section>
+
+<section data-transition="fade-in fade-out">
+<h2>Arquitectura de Von Neumann</h2>
+<img src="img/vn-5.svg" class="stretch plain">
+</section>
+
+
+<section data-background="#00CCFF" data-markdown>
+## Modelo Computacional Binario Elemental
+##(MCBE)
+</section>
+
+<section>
+<h2>MCBE</h2>
+<ul>
+<li>CPU con UC y ALU</li>
+<li>Memoria con 32 direcciones de 8 bits</li>
+<li>Tres registros de 8 bits</li>
+<ul>
+<li><b>PC</b>: Contador de programa, contiene la dirección de la próxima instrucción a ejecutar</li>
+<li><b>IR</b>: Registro de instrucción, contiene la instrucción que está siendo ejecutada</li>
+<li><b>Ac</b>: Acumulador, registro de propósito general</li>
+</ul>
+</ul>
+</section>
+
+<section>
+<h2>Esquema del MCBE</h2>
+<!-- <img src="img/vn-6.svg" class="stretch plain"> -->
+<img src="img/MCBE.svg" class="stretch plain"> 
+</section>
+
+
+
+
+
+<section>
+<h2>Memoria del MCBE</h2>
+<ul>
+<li>Consta de 32 posiciones de 8 bits</li>
+<li>Las direcciones 0 a 29 corresponden a la memoria principal</li>
+<li>Dirección 30</li>
+<ul>
+	<li>Sólo de lectura</li>
+	<li>Permite leer datos del dispositivo de entrada</li>
+</ul>
+<li>Dirección 31</li>
+<ul>
+	<li>Sólo de escritura</li>
+	<li>Permite escribir datos en el dispositivo de salida</li>
+</ul>
+</ul>
+</section>
+
+<section>
+<h2>CPU del MCBE</h2>
+<ul>
+<li>UC con registros IR y PC</li>
+<li>ALU con registro Ac (acumulador)</li>
+<li>Solamente ejecuta operaciones de suma y resta en complemento a 2 con 8 bits</li>
+<li>No ejecuta operaciones en Punto Flotante</li>
+</ul>
+</section>
+
+
+<section>
+<h3>Formato de instrucciones del MCBE</h3>
+<ul>
+<li>Tres bits para el <b>código de instrucción</b></li>
+<li>Cinco bits para el <b>argumento u operando</b></li>
+<li>Operandos</li>
+<ul>
+<li><b>Direcciones</b>: cinco bits sin signo <span class="fragment">(RR [0,31])</span></li>
+<li><b>Desplazamientos</b>: cinco bits en C2 <span class="fragment">(RR [-16,15])</span></li>
+</ul>
+</ul>
+</section>
+
+<section data-markdown>
+##Instrucciones del MCBE
+1. Instrucciones de transferencia de datos
+2. Instrucciones aritméticas
+3. Instrucciones de salto o transferencia de control
+4. Otras instrucciones
+</section>
+
+
+<section>
+<h2>Instrucciones de transferencia</h2>
+<table>
+<tr><th>Código</th><th>Operando</th><th>Descripción</th><th>PC</th></tr>
+<tr><td>010</td><td>Dirección</td><td><b>Mem &rarr; Ac</b>: Copia un byte desde la dirección de memoria al acumulador</td><td>Se incrementa en 1</td></tr>
+<tr><td>011</td><td>Dirección</td><td><b>Ac &rarr; Mem</b>: Copia el contenido del acumulador en esa dirección de memoria</td><td>Se incrementa en 1</td></tr>
+</table>
+</section>
+
+<section>
+<h2>Instrucciones aritméticas</h2>
+<table>
+<tr><th>Código</th><th>Operando</th><th>Descripción</th><th>PC</th></tr>
+<tr><td>100</td><td>Dirección</td><td><b>Suma</b>: El contenido de la dirección se suma al Ac, y el resultado se almacena en el Ac</td><td>Se incrementa en 1</td></tr>
+<tr><td>101</td><td>Dirección</td><td><b>Resta</b>: El contenido de la dirección se resta al Ac, y el resultado se almacena en el Ac</td><td>Se incrementa en 1</td></tr>
+</table>
+</section>
+
+
+<section>
+<h2>Instrucciones de salto</h2>
+<table>
+<tr><th>Código</th><th>Operando</th><th>Descripción</th><th>PC</th></tr>
+<tr><td>110</td><td>Desplazamiento</td><td><b>Salto incondicional</b></td><td>Se incrementa en <i>desplazamiento</i></td></tr>
+<tr><td>111</td><td>Desplazamiento</td><td><b>Salto condicional</b></td><td>Si $Ac == 0$, se incrementa en <i>desplazamiento</i>. Si $Ac <> 0$, se incrementa en 1</td></tr>
+</table>
+</section>
+
+
+<section>
+<h2>Otras instrucciones</h2>
+<table>
+<tr><th>Código</th><th>Operando</th><th>Descripción</th><th>PC</th></tr>
+<tr><td>001</td><td>Sin uso</td><td><b>Parada</b>: Detiene la máquina. Los registros y la memoria quedan con el último valor que recibieron</td><td>No varía</td></tr>
+<tr><td>000</td><td>Sin uso</td><td><b>No operación</b>: No tiene ningún efecto sobre Ac ni memoria</td><td>Se incrementa en 1</td></tr>
+</table>
+</section>
+
+<section>
+<h2>Ciclo de instrucción</h2>
+<ol>
+<li>Se carga en el IR la instrucción cuya dirección está en el PC</li>
+<li class="fragment">Se decodifica la instrucción, para lo cual:
+<ul>
+	<li>Los tres primeros bits del IR determinan de qué instrucción del ISA se trata</li>
+	<li>Los cinco bits restantes se utilizan como argumento de la instrucción</li>
+</ul>
+<li class="fragment">Se ejecuta la instrucción, con sus efectos sobre los registros o la memoria</li>
+<li class="fragment">Se pasa a la siguiente instrucción, dada por el valor que haya quedado en el PC</li>
+</ol>
+</section>
+
+
+<section>
+<h2>Un programa MCBE</h2>
+<table class="plaintable" style="font-size: 28px; ">
+<tr><th>Dirección</th><th>Contenido</th></tr>
+<tr><td>00000</td><td>01000110</td></tr>
+<tr><td>00001</td><td>10000111</td></tr>
+<tr><td>00010</td><td>01101000</td></tr>
+<tr><td>00011</td><td>01101000</td></tr>
+<tr><td>00100</td><td>        </td></tr>
+<tr><td>00101</td><td>        </td></tr>
+<tr><td>00110</td><td>00001100</td></tr>
+<tr><td>00111</td><td>00000001</td></tr>
+<tr><td>01000</td><td>        </td></tr>
+</table>
+</section>
+
+
+<section>
+<h2>Traza de ejecución</h2>
+
+<table style="width: 100%;"><tr><td>
+
+<table class="plaintable" style="font-size: 18px; ">
+<tr><th>Dirección</th><th>Contenido</th></tr>
+<tr><td>00000</td><td>01000110</td></tr>
+<tr><td>00001</td><td>10000111</td></tr>
+<tr><td>00010</td><td>01101000</td></tr>
+<tr><td>00011</td><td>01101000</td></tr>
+<tr><td>00100</td><td>        </td></tr>
+<tr><td>00101</td><td>        </td></tr>
+<tr><td class="fragment highlight-blue" data-fragment-index="3">00110</td><td class="fragment highlight-red" data-fragment-index="4">00001100</td></tr>
+<tr><td>00111</td><td>00000001</td></tr>
+<tr><td>01000</td><td style="color: red;"><span class="fragment" data-fragment-index="21">00001101</span></td></tr>
+</table>
+
+
+</td><td>
+
+<table class="plaintable" style="width: 100%; font-size: 18px; ">
+<tr><th colspan="2">Búsqueda</th><th colspan="2">Decodificación</th><th colspan="4">Ejecución</th></tr>
+<tr><td>PC</td><td>IR</td><td>Cod</td><td>Operando</td><td>Ac</td><td>Mem</td><td>Salida</td><td>PC</td></tr>
+<tr><td><span class="fragment" data-fragment-index="0">00000000</span></td><td><span class="fragment" data-fragment-index="1">01000110</span></td><td><span class="fragment"  data-fragment-index="2">010</span></td><td style="color: #1b91ff"><span class="fragment" data-fragment-index="3">00110</span></td><td style="color: red"><span class="fragment" data-fragment-index="4">00001100</span></td><td><span class="fragment" data-fragment-index="5">-</span></td><td><span class="fragment" data-fragment-index="6">-</span></td><td><span class="fragment" data-fragment-index="7">00000001</span></td></tr>
+<tr><td><span class="fragment" data-fragment-index="8">00000001</span></td><td><span class="fragment" data-fragment-index="9">10000111</span></td><td><span class="fragment" data-fragment-index="10">100</span></td><td><span class="fragment" data-fragment-index="11">00111</span></td><td><span class="fragment" data-fragment-index="12">00001101</span></td><td><span class="fragment" data-fragment-index="13">-</span></td><td><span class="fragment" data-fragment-index="14">-</span></td><td><span class="fragment" data-fragment-index="15">00000010</span></td></tr>
+<tr><td><span class="fragment" data-fragment-index="16">00000010</span></td><td><span class="fragment" data-fragment-index="17">01101000</span></td><td><span class="fragment" data-fragment-index="18">011</span></td><td><span class="fragment" data-fragment-index="19">01000</span></td><td><span class="fragment" data-fragment-index="20">00001101</span></td><td style="color: red;"><span class="fragment" data-fragment-index="21">8 &rarr; 00001101</span></td><td><span class="fragment">-</span></td><td><span class="fragment">00000011</span></td></tr>
+<tr><td><span class="fragment">00000011</span></td><td><span class="fragment">00100000</span></td><td><span class="fragment">001</span></td><td><span class="fragment">00000</span></td><td><span class="fragment">00001101</span></td><td><span class="fragment">-</span></td><td><span class="fragment">-</span></td><td><span class="fragment">00000011</span></td></tr>
+<tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+</section>
+</table>
+
+</td></tr></table>
+
+</section>
+
+
+<section>
+<h2>Bestiario</h2>
+<ul>
+<li class="fragment">El primer paso del ciclo de instrucción es cargar el IR en el PC.</li>
+<li class="fragment">Lo que hacen las instrucciones de salto es cambiar el efecto de las instrucciones en los registros del MCBE.</li>
+<li class="fragment">Las instrucciones de salto sirven como desplazamiento de instrucciones y cambian el orden de los registros.</li>
+<li class="fragment">La instrucción de salto incondicional es un desplazamiento sin signo, la de salto condicional es un desplazamiento con signo.</li>
+<li class="fragment">Las instrucciones de salto copian el contenido de la dirección en el acumulador.</li>
+</ul>
+</section>
+
+<section>
+<h2>Referencias</h2>
+</ul>
+<li><a href="https://es.wikipedia.org/wiki/Arquitectura_de_von_Neumann">Arquitectura de Von Neumann</a></li>
+</ul>
+</section>
+
+<!--
+    <li>Unidad de Control
+    <li>Unidad Lógico-Aritmética
+    <li>Memoria
+    <li>Unidad de Entrada/Salida
+	</div>
+
+	<div class="step" data-x="-500" data-y="-1500" data-z="-1500">
+    <q><strong>Otros componentes</strong></q>
+    <ol>
+    <li>Registros
+    <li>Bus de sistema y bus interno de la CPU
+	</div>
+	
+	<div class="wide step" data-x="0" data-y="-1500" data-z="-1500">
+    <q><strong>Memoria</strong></q>
+    <ol>
+    <li>Conjunto de posiciones
+    <li>Numeradas de 0 a n-1
+    <li>Cada una contiene un byte
+    <li>El número de posición se denomina su <strong>dirección</strong>
+    <li>Pueden contener <strong>datos</strong> o <strong>instrucciones</strong>
+	</div>
+	
+	<div id="memoria" class="wide step centered" data-x="500" data-y="-1500" data-z="-1500">
+    <q><strong>Memoria</strong></q>
+    <br/>
+    		<img onclick="zoom(this)" onmousemove="pan(this)" src="css/memoria.png"/>
+	</div>
+
+	<div class="step" data-x="1000" data-y="-1500" data-z="-1500">
+
+
+
+    <q><strong>CPU</strong></q>
+    <ol>
+    <li>Circuito secuencial, complejo
+    <li>Capaz de ejecutar un <strong>programa almacenado</strong> en la memoria
+    <li>Reconoce un conjunto de instrucciones
+    <li>Contiene otras unidades funcionales
+	</div>
+
+
+	<div class="step" data-x="1500" data-y="-1500" data-z="-1500">
+    <q><strong>Registros</strong></q>
+    <ol>
+    <li>Lugares de almacenamiento
+    <li>Para usos generales o específicos
+    <li>Funcionamiento similar a la memoria
+    <li>Pero mejor velocidad de acceso
+	</div>
+	
+	<div class="step" data-x="2000" data-y="-1500" data-z="-1500">
+    <q><strong>Unidad Lógico-Aritmética (ALU)</strong></q>
+    <ol>
+    <li>Capaz de ejecutar operaciones aritméticas y lógicas binarias
+    <li>Implementa el cómputo
+    <li>Dispone de un registro, el <strong>Acumulador</strong>
+	</div>
+	
+	<div class="step" data-x="2500" data-y="-1500" data-z="-1500">
+    <q><strong>Unidad de Control (UC)</strong></q>
+    <ol>
+    <li>Controla la secuencia de operaciones que realiza la máquina
+    <li>Realiza el <strong>ciclo de instrucción</strong>
+    <li>Dispone de dos registros, el <strong>PC</strong> (Program Counter) y el <strong>IR</strong> (Instruction Register)
+	</div>
+	
+
+	<div class="step" data-x="3000" data-y="-1500" data-z="-1500">
+    <q><strong>Unidad de Entrada/Salida (UES)</strong></q>
+    <ol>
+    <li>Conecta a la máquina con el resto del mundo
+    <li>Controla la comunicación hacia y desde otros dispositivos
+    <li>Permite ingresar datos y programas a la computadora
+    <li>Permite conocer y comunicar los resultados de los programas
+	</div>
+
+
+	<div class="step wide" data-x="3500" data-y="-1500" data-z="-1500">
+    <q><strong>Ciclo de instrucción</strong></q>
+    <ol>
+    <li>Leer la dirección dada por el PC cargando el IR (<i>fetch</i>)
+    <li>Interpretar de qué instrucción se trata y con qué datos trabajará (<i>decode</i>)
+    <li>Ejecutarla, posiblemente afectando memoria o registros (<i>execute</i>)
+    <li>Modificar el PC de acuerdo a la instrucción, pasando a la próxima
+	</div>
+
+	<div class="step" data-x="4000" data-y="-1500" data-z="-1500">
+    <q><strong>Decodificación</strong></q>
+    <ol>
+    <li>Separar los tres bits más altos del IR e interpretarlos como código de instrucción
+    <li>Separar los restantes cinco bits e interpretarlos como un argumento
+	</div>
+
+	<div class="wide centered step" data-x="4000" data-y="-1500" data-z="-1500">
+    <q><strong>Decodificación</strong></q>
+    <br/>
+    <img src="css/decodificacion.png"/>
+	</div>
+
+	<div class="step wide" data-x="4000" data-y="-1500" data-z="-1500">
+    <q><strong>Argumentos</strong></q>
+    <ol>
+    <li>Instrucciones de transferencia de control: un <strong>desplazamiento</strong>
+    <li>Demás instrucciones: una <strong>dirección</strong>
+    <br/>
+    <img src="css/LD4.png"/>
+	</div>
+
+
+	<div class="step wide" data-x="4000" data-y="-1500" data-z="-1500" data-rotate-y="50">
+    <q><strong>Instrucciones de transferencia de datos</strong></q>
+    <ol>
+    <li><strong>010</strong>: Carga el Acumulador con el contenido de una dirección
+    <li><strong>01000100</strong>: Carga el Acumulador con el contenido de la dirección 4
+    <br/>
+    <img src="css/LD4.png"/>
+	</div>
+
+
+	<div class="step wide" data-x="4000" data-y="-1500" data-z="-1500" data-rotate-y="50">
+    <q><strong>Instrucciones de transferencia de datos</strong></q>
+    <ol>
+    <li><strong>011</strong>: Almacena el contenido del Acumulador en una dirección
+    <li><strong>01100100</strong>: Almacena el contenido del Acumulador en la dirección 4
+    <br/>
+    <img src="css/ST4.png"/>
+	</div>
+	
+	<div class="step wide" data-x="4000" data-y="-1500" data-z="-1500" data-rotate-y="50">
+    <q><strong>Instrucciones de transferencia de datos</strong></q>
+    <ol>
+    <li>Posiciones mapeadas a E/S
+    <li>La dirección <strong>30</strong> está conectada a la UE/S
+    <li>Permite ingresar valores por teclado al Acumulador
+    <li>Es <strong>de sólo lectura</strong>
+	</div>
+
+	<div class="step wide" data-x="4000" data-y="-1500" data-z="-1500" data-rotate-y="50">
+    <q><strong>Instrucciones de transferencia de datos</strong></q>
+    <ol>
+    <li>Posiciones mapeadas a E/S
+    <li>La dirección <strong>31</strong> está conectada a la UE/S
+    <li>Permite imprimir el valor del Acumulador en la pantalla
+    <li>Es <strong>de sólo escritura</strong>
+	</div>
+
+	<div class="step wide" data-x="4000" data-y="-1500" data-z="-1500" data-rotate-y="50">
+    <q><strong>Instrucciones de transferencia de datos</strong></q>
+    <ol>
+    <li>Posiciones mapeadas a E/S
+    <li>Leer un dato de la posición 30
+    <li>Escribir un dato en la posición 31
+    <br/>
+    <img src="css/LD30.png"/>
+    <img src="css/ST31.png"/>
+    
+	</div>
+
+
+
+	<div class="step wide" data-x="4000" data-y="-1500" data-z="-1500" data-rotate-y="150">
+    <q><strong>Instrucciones aritméticas</strong></q>
+    <ol>
+    <li><strong>100</strong>: Suma el contenido de una dirección al Acumulador
+    <li><strong>10001001</strong>: Suma el contenido de la dirección 9 al Acumulador
+    <br/>
+    <img src="css/ADD9.png"/>
+	</div>
+	
+	<div class="step wide" data-x="4000" data-y="-1500" data-z="-1500" data-rotate-y="150">
+    <q><strong>Instrucciones aritméticas</strong></q>
+    <ol>
+    <li><strong>101</strong>: Resta el contenido de una dirección al Acumulador
+    <li><strong>10101001</strong>: Resta el contenido de la dirección 9 al Acumulador
+    <br/>
+    <img src="css/SUB9.png"/>
+	</div>
+	
+	<div class="step wide" data-x="4000" data-y="-1500" data-z="-1500" data-rotate-y="250">
+    <q><strong>Instrucciones de transf. de control</strong></q>
+    <ol>
+    <li><strong>110</strong>: Suma algebraicamente el desplazamiento al PC
+    <li><strong>11001001</strong>: Suma 9 al PC ("salta adelante" 9 posiciones)
+    <br/>
+    <img src="css/JMP9.png"/>
+	</div>
+		
+	
+	<div class="step wide" data-x="4000" data-y="-1500" data-z="-1500" data-rotate-y="250">
+    <q><strong>Instrucciones de transf. de control</strong></q>
+    <ol>
+    <li><strong>110</strong>: Suma <strong>algebraicamente</strong> el desplazamiento al PC
+    <li><strong>11010111</strong>: Suma -9 al PC ("retrocede" 9 posiciones)
+    <br/>
+    <img src="css/JMP-9.png"/>
+	</div>
+		
+
+	<div class="step wide" data-x="4000" data-y="-1500" data-z="-1500" data-rotate-y="250">
+    <q><strong>Instrucciones de transf. de control</strong></q>
+    <ol>
+    <li><strong>111</strong>: Suma algebraicamente el desplazamiento al PC <strong>si A=0</strong>
+    <li><strong>11101001</strong>: Suma 9 al PC ("salta adelante" 9 posiciones) <strong>si A=0</strong>
+    <br/>
+    <img src="css/JZ9.png"/>
+	</div>
+	
+	
+	<div class="step wide" data-x="4000" data-y="-1500" data-z="-1500" data-rotate-y="300">
+    <q><strong>Instrucciones de control</strong></q>
+    <ol>
+    <li><strong>001</strong>: Detiene la máquina
+    <li><strong>000</strong>: No opera (no tiene ningún efecto sobre memoria ni registros)
+    <br/>
+    <img src="css/HLT.png"/>
+    <img src="css/NOP.png"/>
+	</div>
+	
+		
+	
+	<div id="instrucciones" class="zoomable step centered" data-x="4000" data-y="-1500" data-z="-1500">
+    <q><strong>Instrucciones</strong></q>
+    <br/>
+    		<img onclick="zoom(this)" onmousemove="pan(this)" src="css/instrucciones.png"/>
+	</div>
+	
+	<div class="step wide centered" data-x="8400" data-y="5000" data-z="500">
+    <q><strong>Mnemónicos</strong></q>
+    <br/>
+    <strong>LD</strong> <strong>&#8680;</strong> <i>Load</i> <strong>&#8680;</strong> Cargar 
+    <br/>
+    <strong>ST</strong> <strong>&#8680;</strong> <i>Store</i> <strong>&#8680;</strong> Almacenar
+    <br/>
+    <strong>ADD</strong> <strong>&#8680;</strong> <i>Add</i> <strong>&#8680;</strong> Sumar
+    <br/>
+   <strong>SUB</strong> <strong>&#8680;</strong> <i>Subtract</i> <strong>&#8680;</strong> Restar
+    <br/>
+    <strong>JMP</strong> <strong>&#8680;</strong> <i>Jump</i> <strong>&#8680;</strong> Saltar
+    <br/>
+    <strong>JZ</strong> <strong>&#8680;</strong> <i>Jump on Zero</i> <strong>&#8680;</strong> Saltar si A=0
+    <br/>
+    <strong>HLT</strong> <strong>&#8680;</strong> <i>Halt</i> <strong>&#8680;</strong> Detenerse
+    <br/>
+    <strong>NOP</strong> <strong>&#8680;</strong> <i>No Operation</i> <strong>&#8680;</strong> Sin acción
+    <br/>
+	</div>
+
+	<div class="step" data-x="8400" data-y="5000" data-z="500">
+    <q><strong>Rótulos o <i>labels</i></strong></q>
+	<br/>
+	<strong>LD DATO1</strong>
+	<br/>
+	<strong>ADD DATO2</strong>
+	<br/>
+	<strong>ST RESULT</strong>
+	<br/>
+	<strong>HLT</strong>
+	<br/>
+	<strong>DATO1: 5</strong>
+	<br/>
+	<strong>DATO2: 3</strong>
+	<br/>
+	<strong>RESULT: 0</strong>
+	<br/>
+	</div>
+	
+	
+	<div class="centered step" data-x="8400" data-y="5000" data-z="500">
+    <q><strong>Diagrama MCBE</strong></q>
+    <br/>
+    <img src="css/MCBE01.png"/>
+        <br/>
+	</div>
+	
+    
+    
+<div class="fadetoblack step" data-x="8400" data-y="5000" data-z="500">
+    </div>
+    
+<div class="fadetowhite step" data-x="8400" data-y="5000" data-z="500">
+    </div>
+    
+-->	
+
+<!--  -------------------------------- 
+	<div class="step" data-x="5000" data-y="-1500" data-z="-1500" data-rotate-y="30">
+    <q><strong>Motherboard 3</strong></q>
+    		<img onclick="zoom(this)" onmousemove="pan(this)" src="css/motherboard-callouts.jpg"/>
+	</div>
+
+	<div id="mother4" class="zoomable step" data-x="12500" data-y="-1500" data-z="-1500" data-rotate-y="40">
+    <q><strong>Motherboard 4</strong></q>
+    		<img onclick="zoom(this)" onmousemove="pan(this)" src="css/microat.jpg"/>
+	</div>
+
+	<div id="mother5" class="zoomable step" data-x="12500" data-y="-1500" data-z="-1500" data-rotate-y="40">
+    <q><strong>Motherboard 4</strong></q>
+    		<img onclick="zoom(this)" onmousemove="pan(this)" src="css/PacketFlow.png"/>
+	</div>
+
+		<div id="mother6" class="zoomable step" data-x="12500" data-y="-1500" data-z="-1500" data-rotate-y="40">
+    <q><strong>Motherboard 4</strong></q>
+    		<img onclick="zoom(this)" onmousemove="pan(this)" src="css/drawing.svg"/>
+	</div>
+ -------------------------------- -->
+
+<!--
+</div>
+
+<script src="js/impress.js"></script>
+<script src="js/zoom.js"></script>
+<script>impress().init();</script>
+
+
+</body>
+</html>
+-->
+<!-- INCLUDE reveal.trailer -->
