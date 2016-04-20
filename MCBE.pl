@@ -72,7 +72,7 @@ sub SVG::Element::labelledByte {
                 'text-anchor'=>'middle',
                 'alignment-baseline'=>'middle',
                 style=>{
-                        stroke=>$colors->{'gray'},
+                        #stroke=>$colors->{'gray'},
                         fill=>$colors->{'gray'},
                         'font-family' =>'Arial',
                         'font-size'=>$fontsize},

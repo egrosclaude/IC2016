@@ -1,22 +1,3 @@
-<!--
-
-<section>
-</section>
-
-<section>
-<h2></h2>
-<ul>
-<li></li>
-</ul>
-</section>
-
-
-
-
-<section data-markdown data-background="#00CCFF">
-</section>
--->
-
 <!-- INCLUDE reveal.header -->
 <!doctype html>
 <html lang="en">
@@ -81,6 +62,7 @@
 <li>Modelo Computacional Binario Elemental (MCBE)</li>
 <li>Lenguajes de bajo nivel</li>
 </ul>
+
 </section>
 
 <section>
@@ -91,28 +73,32 @@
 <li>Dispositivos de <b>Entrada y Salida (E/S)</b></li>
 <li>Interconectados mediante <b>buses</b></li>
 </ul>
+
 </section>
 
 <section>
 <h2>Memoria</h2>
 <ul>
+    <li>Normalmente implementada con circuitos <b>biestables</b></li>
     <li>Conjunto de posiciones de un byte, numeradas de $0$ a $n-1$</li>
-    <li>El número de posición se denomina su <strong>dirección</strong></li>
     <li>Pueden contener <strong>datos</strong> o <strong>instrucciones</strong></li>
+    <li>El número de posición se denomina su <strong>dirección</strong></li>
 </ul>
+<p class ="fragment" data-audio-src="audio/memoria.mp3">
 </section>
 
 <section>
 <h2>Central Processing Unit, CPU</h2>
 <ul>
-	<li>Circuito secuencial, complejo</li>
-	<li>Interpreta y ejecuta un conjunto de instrucciones</li>
-	<li>Capaz de ejecutar un programa compuesto por instrucciones almacenadas en la memoria</li>
+	<li>Circuito secuencial, contiene <b>registros</b></li>
+	<li>Interpreta y ejecuta un conjunto de instrucciones</b></li>
+	<li>Capaz de ejecutar un <b>programa</b> compuesto por instrucciones almacenadas en la memoria</li>
 	<li>Contiene otras unidades funcionales</li>
 	<ul>
-		<li>Unidad de Control</li>
-		<li>Unidad Lógico-Aritmética</li>
+		<li>Unidad de Control, realiza el <b>ciclo de instrucción</b></li>
+		<li>Unidad Lógico-Aritmética, implementa el <b>cómputo</b></li>
 	</ul>
+<p class ="fragment" data-audio-src="audio/cpu.mp3">
 </ul>
 </section>
 
@@ -161,19 +147,6 @@
 ##(MCBE)
 </section>
 
-<section>
-<h2>MCBE</h2>
-<ul>
-<li>CPU con UC y ALU</li>
-<li>Memoria con 32 direcciones de 8 bits</li>
-<li>Tres registros de 8 bits</li>
-<ul>
-<li><b>PC</b>: Contador de programa, contiene la dirección de la próxima instrucción a ejecutar</li>
-<li><b>IR</b>: Registro de instrucción, contiene la instrucción que está siendo ejecutada</li>
-<li><b>Ac</b>: Acumulador, registro de propósito general</li>
-</ul>
-</ul>
-</section>
 
 <section>
 <h2>Esquema del MCBE</h2>
@@ -190,15 +163,29 @@
 <ul>
 <li>Consta de 32 posiciones de 8 bits</li>
 <li>Las direcciones 0 a 29 corresponden a la memoria principal</li>
-<li>Dirección 30</li>
+<li class="fragment">Dirección 30</li>
 <ul>
 	<li>Sólo de lectura</li>
 	<li>Permite leer datos del dispositivo de entrada</li>
 </ul>
-<li>Dirección 31</li>
+<li class="fragment">Dirección 31</li>
 <ul>
 	<li>Sólo de escritura</li>
 	<li>Permite escribir datos en el dispositivo de salida</li>
+</ul>
+</ul>
+</section>
+
+<section>
+<h2>Registros</h2>
+<ul>
+<li>Lugares de almacenamiento para usos generales</li>
+<li>Funcionamiento similar al de la memoria pero mayor velocidad de acceso</li>
+<li>El MCBE cuenta con tres registros de 8 bits</li>
+<ul>
+<li><b>PC</b>: Contador de programa, contiene la dirección de la próxima instrucción a ejecutar</li>
+<li><b>IR</b>: Registro de instrucción, contiene la instrucción que está siendo ejecutada</li>
+<li><b>Ac</b>: Acumulador, registro de propósito general</li>
 </ul>
 </ul>
 </section>
@@ -221,18 +208,20 @@
 <li>Cinco bits para el <b>argumento u operando</b></li>
 <li>Operandos</li>
 <ul>
-<li><b>Direcciones</b>: cinco bits sin signo <span class="fragment">(RR [0,31])</span></li>
-<li><b>Desplazamientos</b>: cinco bits en C2 <span class="fragment">(RR [-16,15])</span></li>
+<li><b>Direcciones</b>: cinco bits sin signo <span class="fragment post_it"> &rarr; RR [0,31] </span></li>
+<li><b>Desplazamientos</b>: cinco bits en C2 <span class="fragment post_it"> &rarr; RR [-16,15] </span></li>
 </ul>
 </ul>
 </section>
 
-<section data-markdown>
-##Instrucciones del MCBE
-1. Instrucciones de transferencia de datos
-2. Instrucciones aritméticas
-3. Instrucciones de salto o transferencia de control
-4. Otras instrucciones
+<section>
+<h2>Instrucciones del MCBE</h2>
+<ol>
+<li class="fragment">Instrucciones de transferencia de datos</li>
+<li class="fragment">Instrucciones aritméticas</li>
+<li class="fragment">Instrucciones de salto o transferencia de control</li>
+<li class="fragment">Instrucciones de control</li>
+</ol>
 </section>
 
 
@@ -240,8 +229,8 @@
 <h2>Instrucciones de transferencia</h2>
 <table>
 <tr><th>Código</th><th>Operando</th><th>Descripción</th><th>PC</th></tr>
-<tr><td>010</td><td>Dirección</td><td><b>Mem &rarr; Ac</b>: Copia un byte desde la dirección de memoria al acumulador</td><td>Se incrementa en 1</td></tr>
-<tr><td>011</td><td>Dirección</td><td><b>Ac &rarr; Mem</b>: Copia el contenido del acumulador en esa dirección de memoria</td><td>Se incrementa en 1</td></tr>
+<tr class="fragment"><td>010</td><td>Dirección</td><td><b>Mem &rarr; Ac</b>: Copia un byte desde la dirección de memoria al acumulador</td><td>Se incrementa en 1</td></tr>
+<tr class="fragment"><td>011</td><td>Dirección</td><td><b>Ac &rarr; Mem</b>: Copia el contenido del acumulador en esa dirección de memoria</td><td>Se incrementa en 1</td></tr>
 </table>
 </section>
 
@@ -249,8 +238,8 @@
 <h2>Instrucciones aritméticas</h2>
 <table>
 <tr><th>Código</th><th>Operando</th><th>Descripción</th><th>PC</th></tr>
-<tr><td>100</td><td>Dirección</td><td><b>Suma</b>: El contenido de la dirección se suma al Ac, y el resultado se almacena en el Ac</td><td>Se incrementa en 1</td></tr>
-<tr><td>101</td><td>Dirección</td><td><b>Resta</b>: El contenido de la dirección se resta al Ac, y el resultado se almacena en el Ac</td><td>Se incrementa en 1</td></tr>
+<tr class="fragment"><td>100</td><td>Dirección</td><td><b>Suma</b>: El contenido de la dirección se suma al Ac, y el resultado se almacena en el Ac</td><td>Se incrementa en 1</td></tr>
+<tr class="fragment"><td>101</td><td>Dirección</td><td><b>Resta</b>: El contenido de la dirección se resta al Ac, y el resultado se almacena en el Ac</td><td>Se incrementa en 1</td></tr>
 </table>
 </section>
 
@@ -259,8 +248,8 @@
 <h2>Instrucciones de salto</h2>
 <table>
 <tr><th>Código</th><th>Operando</th><th>Descripción</th><th>PC</th></tr>
-<tr><td>110</td><td>Desplazamiento</td><td><b>Salto incondicional</b></td><td>Se incrementa en <i>desplazamiento</i></td></tr>
-<tr><td>111</td><td>Desplazamiento</td><td><b>Salto condicional</b></td><td>Si $Ac == 0$, se incrementa en <i>desplazamiento</i>. Si $Ac <> 0$, se incrementa en 1</td></tr>
+<tr class="fragment"><td>110</td><td>Desplazamiento</td><td><b>Salto incondicional</b></td><td>Se incrementa en <i>desplazamiento</i></td></tr>
+<tr class="fragment"><td>111</td><td>Desplazamiento</td><td><b>Salto condicional</b></td><td>Si $Ac == 0$, se incrementa en <i>desplazamiento</i>. Si $Ac <> 0$, se incrementa en 1</td></tr>
 </table>
 </section>
 
@@ -270,20 +259,20 @@
 <table>
 <tr><th>Código</th><th>Operando</th><th>Descripción</th><th>PC</th></tr>
 <tr><td>001</td><td>Sin uso</td><td><b>Parada</b>: Detiene la máquina. Los registros y la memoria quedan con el último valor que recibieron</td><td>No varía</td></tr>
-<tr><td>000</td><td>Sin uso</td><td><b>No operación</b>: No tiene ningún efecto sobre Ac ni memoria</td><td>Se incrementa en 1</td></tr>
+<tr class="fragment"><td>000</td><td>Sin uso</td><td><b>No operación</b>: No tiene ningún efecto sobre Ac ni memoria</td><td>Se incrementa en 1</td></tr>
 </table>
 </section>
 
 <section>
 <h2>Ciclo de instrucción</h2>
 <ol>
-<li>Se carga en el IR la instrucción cuya dirección está en el PC</li>
-<li class="fragment">Se decodifica la instrucción, para lo cual:
+<li class="fragment">Se carga en el IR la instrucción cuya dirección está en el PC (<i>fetch</i>)</li>
+<li class="fragment">Se decodifica (<i>decode</i>) la instrucción, para lo cual:
 <ul>
-	<li>Los tres primeros bits del IR determinan de qué instrucción del ISA se trata</li>
+	<li>Los tres primeros bits del IR determinan de qué instrucción se trata</li>
 	<li>Los cinco bits restantes se utilizan como argumento de la instrucción</li>
 </ul>
-<li class="fragment">Se ejecuta la instrucción, con sus efectos sobre los registros o la memoria</li>
+<li class="fragment">Se ejecuta (<i>execute</i>)la instrucción, con sus efectos sobre los registros o la memoria</li>
 <li class="fragment">Se pasa a la siguiente instrucción, dada por el valor que haya quedado en el PC</li>
 </ol>
 </section>
@@ -293,14 +282,14 @@
 <h2>Un programa MCBE</h2>
 <table class="plaintable" style="font-size: 28px; ">
 <tr><th>Dirección</th><th>Contenido</th></tr>
-<tr><td>00000</td><td>01000110</td></tr>
-<tr><td>00001</td><td>10000111</td></tr>
-<tr><td>00010</td><td>01101000</td></tr>
-<tr><td>00011</td><td>00100000</td></tr>
+<tr><td>00000</td><td><span class="fragment" data-fragment-index="0">01000110</span></td></tr>
+<tr><td>00001</td><td><span class="fragment" data-fragment-index="1">10000111</span></td></tr>
+<tr><td>00010</td><td><span class="fragment" data-fragment-index="2">01101000</span></td></tr>
+<tr><td>00011</td><td><span class="fragment" data-fragment-index="3">00100000</span></td></tr>
 <tr><td>00100</td><td>        </td></tr>
 <tr><td>00101</td><td>        </td></tr>
-<tr><td>00110</td><td>00001100</td></tr>
-<tr><td>00111</td><td>00000001</td></tr>
+<tr><td>00110</td><td><span class="fragment" data-fragment-index="4">00001100</span></td></tr>
+<tr><td>00111</td><td><span class="fragment" data-fragment-index="4">00000001</span></td></tr>
 <tr><td>01000</td><td>        </td></tr>
 </table>
 </section>
@@ -308,7 +297,18 @@
 
 <section>
 <h2>Traza de ejecución</h2>
+<table class="plaintable" style="width: 100%; font-size: 18px; ">
+<tr><th colspan="2">Búsqueda</th><th colspan="2">Decodificación</th><th colspan="4">Ejecución</th></tr>
+<tr><td>PC</td><td>IR</td><td>Cod</td><td>Operando</td><td>Ac</td><td>Mem</td><td>Salida</td><td>PC</td></tr>
+<tr><td>&nbsp;</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td>&nbsp;</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td>&nbsp;</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td>&nbsp;</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+</table>
+</section>
 
+<section>
+<h2>Traza de ejecución</h2>
 <table style="width: 100%;"><tr><td>
 
 <table class="plaintable" style="font-size: 18px; ">
@@ -332,7 +332,7 @@
 <tr><td>PC</td><td>IR</td><td>Cod</td><td>Operando</td><td>Ac</td><td>Mem</td><td>Salida</td><td>PC</td></tr>
 <tr><td><span class="fragment" data-fragment-index="0">00000000</span></td><td><span class="fragment" data-fragment-index="1">01000110</span></td><td><span class="fragment"  data-fragment-index="2">010</span></td><td style="color: #1b91ff"><span class="fragment" data-fragment-index="3">00110</span></td><td style="color: red"><span class="fragment" data-fragment-index="4">00001100</span></td><td><span class="fragment" data-fragment-index="5">-</span></td><td><span class="fragment" data-fragment-index="6">-</span></td><td><span class="fragment" data-fragment-index="7">00000001</span></td></tr>
 <tr><td><span class="fragment" data-fragment-index="8">00000001</span></td><td><span class="fragment" data-fragment-index="9">10000111</span></td><td><span class="fragment" data-fragment-index="10">100</span></td><td><span class="fragment" data-fragment-index="11">00111</span></td><td><span class="fragment" data-fragment-index="12">00001101</span></td><td><span class="fragment" data-fragment-index="13">-</span></td><td><span class="fragment" data-fragment-index="14">-</span></td><td><span class="fragment" data-fragment-index="15">00000010</span></td></tr>
-<tr><td><span class="fragment" data-fragment-index="16">00000010</span></td><td><span class="fragment" data-fragment-index="17">01101000</span></td><td><span class="fragment" data-fragment-index="18">011</span></td><td><span class="fragment" data-fragment-index="19">01000</span></td><td><span class="fragment" data-fragment-index="20">00001101</span></td><td style="color: red;"><span class="fragment" data-fragment-index="21">8 &rarr; 00001101</span></td><td><span class="fragment">-</span></td><td><span class="fragment">00000011</span></td></tr>
+<tr><td><span class="fragment" data-fragment-index="16">00000010</span></td><td><span class="fragment" data-fragment-index="17">01101000</span></td><td><span class="fragment" data-fragment-index="18">011</span></td><td><span class="fragment" data-fragment-index="19">01000</span></td><td><span class="fragment" data-fragment-index="20">00001101</span></td><td style="color: red;"><span class="fragment" data-fragment-index="21">8 &larr; 00001101</span></td><td><span class="fragment">-</span></td><td><span class="fragment">00000011</span></td></tr>
 <tr><td><span class="fragment">00000011</span></td><td><span class="fragment">00100000</span></td><td><span class="fragment">001</span></td><td><span class="fragment">00000</span></td><td><span class="fragment">00001101</span></td><td><span class="fragment">-</span></td><td><span class="fragment">-</span></td><td><span class="fragment">00000011</span></td></tr>
 <tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
 </section>
@@ -356,8 +356,11 @@
 
 <section>
 <h2>Referencias</h2>
-</ul>
+<ul>
+<li><a href="http://pedco.uncoma.edu.ar/mod/resource/view.php?id=148556">Apunte de cátedra: Modelo Computacional</a></li>
 <li><a href="https://es.wikipedia.org/wiki/Arquitectura_de_von_Neumann">Arquitectura de Von Neumann</a></li>
+<li><a href="https://es.wikipedia.org/wiki/Unidad_central_de_procesamiento">Unidad Central de Procesamiento, CPU</a></li>
+<li><a href="https://es.wikipedia.org/wiki/Memoria_(inform%C3%A1tica)">Memoria</a></li>
 </ul>
 </section>
 
@@ -397,7 +400,7 @@
 
     <q><strong>CPU</strong></q>
     <ol>
-    <li>Circuito secuencial, complejo
+    <li>Circuito secuencial, contiene registros
     <li>Capaz de ejecutar un <strong>programa almacenado</strong> en la memoria
     <li>Reconoce un conjunto de instrucciones
     <li>Contiene otras unidades funcionales
