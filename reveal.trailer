@@ -111,7 +111,6 @@
         84: function() { Recorder.fetchTTS(); }     // press 't' to fetch TTS audio files
 		},
 
-
 		// -------- Dependencies ---------
 		dependencies: [
 			{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
