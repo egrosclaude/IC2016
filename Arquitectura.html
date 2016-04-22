@@ -67,7 +67,7 @@
 </aside>
 </section>
 
-<section data-background="#00CCFF" data-audio-src="audio/1- componentes de una computadora simple.mp3">
+<section data-background="#00CCFF" data-audio-src="audio/Arquitectura/1- componentes de una computadora simple.mp3">
 <h2>Unidad II</h2>
 <h3>Organización de las Computadoras</h3>
 <ul>
@@ -83,13 +83,13 @@
 
 
 
-<section data-audio-src="audio/2- Memoria principal.mp3">
+<section data-audio-src="audio/Arquitectura/2- Memoria principal.mp3">
 <h2>Componentes de una computadora simple</h2>
 <ul>
 <li><b>Memoria</b> principal</li>
-<li class="fragment" data-audio-src="audio/3- Cpu.mp3">Unidad Central de Procesamiento <b>(CPU)</b> </li>
-<li class="fragment" data-audio-src="audio/4- Dispositivos.mp3">Dispositivos de <b>Entrada y Salida (E/S)</b></li>
-<li class="fragment" data-audio-src="audio/Audio 5.mp3">Interconectados mediante <b>buses</b></li>
+<li class="fragment" data-audio-src="audio/Arquitectura/3- Cpu.mp3">Unidad Central de Procesamiento <b>(CPU)</b> </li>
+<li class="fragment" data-audio-src="audio/Arquitectura/4- Dispositivos.mp3">Dispositivos de <b>Entrada y Salida (E/S)</b></li>
+<li class="fragment" data-audio-src="audio/Arquitectura/Audio 5.mp3">Interconectados mediante <b>buses</b></li>
 </ul>
 <aside data-markdown class="notes">
 En primer lugar, una **memoria principal**, que es donde se almacenan todos los datos y las instrucciones de programa. Todo lo que puede hacer la computadora, lo hace únicamente con contenidos que estén en la memoria. Para poder procesar un dato, primero hay que hacerlo llegar a la memoria principal, no importa de dónde venga. Un conjunto de datos puede estar en disco, en un pendrive, o ser introducido por el teclado, pero sólo cuando llega a la memoria principal es que puede ser procesado por la CPU.
@@ -104,16 +104,16 @@ Todos estos componentes, y muchos otros que pueden estar o no presentes, dependi
 
 
 
-<section data-audio-src="audio/5- Memoria.mp3">
+<section data-audio-src="audio/Arquitectura/5- Memoria.mp3">
 <h2>Memoria</h2>
 <ul>
 	<li>Normalmente implementada con circuitos <b>biestables</b></li>
-	<span class ="fragment" data-audio-src="audio/6- M1.mp3">
+	<span class ="fragment" data-audio-src="audio/Arquitectura/6- M1.mp3">
 		<li>Los biestables almacenan un bit y están agrupados de a ocho, formando un byte</li>
 		<li>Un bloque de memoria es un conjunto de posiciones de un byte, numeradas de $0$ a $n-1$, típicamente millones</li>
 		<li>Pueden contener <strong>datos</strong> o <strong>instrucciones</strong></li>
 	</span>
-	<li class ="fragment" data-audio-src="audio/7- M2.mp3">El número de posición se denomina su <strong>dirección</strong></li>
+	<li class ="fragment" data-audio-src="audio/Arquitectura/7- M2.mp3">El número de posición se denomina su <strong>dirección</strong></li>
 </ul>
 <aside data-markdown class="notes">
 La memoria es un componente fundamental de la computadora. Está implementada con circuitos que pueden estar en uno de dos estados eléctricos, y por esto los llamamos **biestables**. 
@@ -129,15 +129,15 @@ Para poder utilizar la memoria es imprescindible conocer el número, o **direcci
 
 
 
-<section data-audio-src="audio/8- Cpu.mp3">
+<section data-audio-src="audio/Arquitectura/8- Cpu.mp3">
 <h2>Central Processing Unit, CPU</h2>
 <ul>
 	<li>Circuito <b>secuencial</b>, contiene <b>registros</b></li>
-	<span class ="fragment" data-audio-src="audio/9- cpu.mp3">
+	<span class ="fragment" data-audio-src="audio/Arquitectura/9- cpu.mp3">
 	<li>Interpreta y ejecuta un conjunto de instrucciones</b></li>
 	<li>Capaz de ejecutar un <b>programa</b> compuesto por instrucciones almacenadas en la memoria</li>
 	</span> 
-	<span class ="fragment" data-audio-src="audio/10- cpu.mp3">
+	<span class ="fragment" data-audio-src="audio/Arquitectura/10- cpu.mp3">
 	<li>Contiene otras unidades funcionales</li>
 	<ul>
 		<li>Unidad de Control, realiza el <b>ciclo de instrucción</b></li>
@@ -166,14 +166,14 @@ La CPU está constituida por varios circuitos componentes o unidades funcionales
 
 
 
-<section data-audio-src="audio/11- maquina de vonneuman.mp3">
+<section data-audio-src="audio/Arquitectura/11- maquina de vonneuman.mp3">
 <h2>Máquina de Von Neumann</h2>
 <ul>
 	<li>Máquina de <b>programa almacenado</b></li>
-	<span class="fragment" data-audio-src="audio/12- maq.mp3">
+	<span class="fragment" data-audio-src="audio/Arquitectura/12- maq.mp3">
 	<li><b>Instrucciones y datos</b> se almacenan en una memoria común; se usan de forma diferente pero se acceden de la misma forma.</li>
 	</span>
-	<span class="fragment" data-audio-src="audio/13- maq.mp3">
+	<span class="fragment" data-audio-src="audio/Arquitectura/13- maq.mp3">
 	<li>La ejecución de un programa es secuencial (hacia direcciones ascendentes) salvo que aparezcan instrucciones de <b>transferencia de control</b></li>
 	</span>
 </ul>
@@ -191,7 +191,7 @@ Estas máquinas ejecutan las instrucciones almacenadas en memoria secuencialment
 
 
 
-<section data-transition="slide-in fade-out" data-audio-src="audio/14-dele con el von.mp3">
+<section data-transition="slide-in fade-out" data-audio-src="audio/Arquitectura/14-dele con el von.mp3">
 <h2>Arquitectura de Von Neumann</h2>
 <img src="img/vn-0.svg" class="stretch plain">
 <aside data-markdown class="notes">
@@ -199,7 +199,7 @@ En una **máquina de Von Neumann**, entonces, aparecen dos componentes básicos 
 </aside>
 </section>
 
-<section data-transition="fade-in fade-out" data-audio-src="audio/15- unidad ed control.mp3">
+<section data-transition="fade-in fade-out" data-audio-src="audio/Arquitectura/15- unidad ed control.mp3">
 <h2>Arquitectura de Von Neumann</h2>
 
 <img src="img/vn-1.svg" class="stretch plain">
@@ -208,7 +208,7 @@ la primera conteniendo una **Unidad de Control, o UC**, para realizar el **ciclo
 </aside>
 </section>
 
-<section data-transition="fade-in fade-out" data-audio-src="audio/16- ALU.mp3">
+<section data-transition="fade-in fade-out" data-audio-src="audio/Arquitectura/16- ALU.mp3">
 <h2>Arquitectura de Von Neumann</h2>
 <img src="img/vn-2.svg" class="stretch plain">
 <aside data-markdown class="notes">
@@ -216,7 +216,7 @@ y una **Unidad Lógico-Aritmética, o ALU**, para el cómputo.
 </aside>
 </section>
 
-<section data-transition="fade-in fade-out" data-audio-src="audio/17- buses.mp3">
+<section data-transition="fade-in fade-out" data-audio-src="audio/Arquitectura/17- buses.mp3">
 <h2>Arquitectura de Von Neumann</h2>
 <img src="img/vn-3.svg" class="stretch plain">
 <aside data-markdown class="notes">
@@ -224,7 +224,7 @@ En la máquina existen diferentes clases de buses para interconectar los compone
 </aside>
 </section>
 
-<section data-transition="fade-in fade-out" data-audio-src="audio/18- buses de sistema.mp3">
+<section data-transition="fade-in fade-out" data-audio-src="audio/Arquitectura/18- buses de sistema.mp3">
 <h2>Arquitectura de Von Neumann</h2>
 <img src="img/vn-4.svg" class="stretch plain">
 <aside data-markdown class="notes">
@@ -232,7 +232,7 @@ En la máquina existen diferentes clases de buses para interconectar los compone
 </aside>
 </section>
 
-<section data-transition="fade-in fade-out" data-audio-src="audio/19- buses de sistema.mp3">
+<section data-transition="fade-in fade-out" data-audio-src="audio/Arquitectura/19- buses de sistema.mp3">
 <h2>Arquitectura de Von Neumann</h2>
 <img src="img/vn-5.svg" class="stretch plain">
 <aside data-markdown class="notes">
@@ -243,7 +243,7 @@ y otros **buses de Entrada/Salida** para comunicar todo el sistema con los dispo
 </section>
 
 
-<section data-background="#00CCFF" data-audio-src="audio/20- modelo computacional binario elemental watson.mp3">
+<section data-background="#00CCFF" data-audio-src="audio/Arquitectura/20- modelo computacional binario elemental watson.mp3">
 <h2>Modelo Computacional Binario Elemental</h2>
 <h2>(MCBE)</h2>
 <aside data-markdown class="notes">
@@ -252,7 +252,7 @@ Para comprender desde lo más básico cómo opera la computadora, recurrimos al 
 </section>
 
 
-<section data-transition="zoom-in slide-out" data-audio-src="audio/21- MCBE.mp3">
+<section data-transition="zoom-in slide-out" data-audio-src="audio/Arquitectura/21- MCBE.mp3">
 <h2>Esquema del MCBE</h2>
 <img src="img/MCBE.svg" class="stretch plain"> 
 <aside data-markdown class="notes">
@@ -268,19 +268,19 @@ El estado de la máquina en cada momento define cuál será el estado siguiente.
 
 
 
-<section data-transition="slide" data-audio-src="audio/22-Las 32 posiciones.mp3">
+<section data-transition="slide" data-audio-src="audio/Arquitectura/22-Las 32 posiciones.mp3">
 <h2>Memoria del MCBE</h2>
 <ul>
 <li>Consta de 32 posiciones de 8 bits</li>
 <li>Las direcciones 0 a 29 corresponden a la memoria principal</li>
-<span class="fragment" data-audio-src="audio/23-La posicion 30.mp3">
+<span class="fragment" data-audio-src="audio/Arquitectura/23-La posicion 30.mp3">
 	<li>Dirección 30</li>
 	<ul>
 		<li>Sólo de lectura</li>
 		<li>Permite leer datos del dispositivo de entrada</li>
 	</ul>
 </span>
-<span class="fragment" data-audio-src="audio/24-La posicion 31.mp3">
+<span class="fragment" data-audio-src="audio/Arquitectura/24-La posicion 31.mp3">
 	<li>Dirección 31</li>
 	<ul>
 		<li>Sólo de escritura</li>
@@ -298,16 +298,16 @@ La posición 31 es solamente de escritura. Al escribir un dato en la dirección 
 </section>
 
 
-<section data-audio-src="audio/25-Como hemos dicho.mp3">
+<section data-audio-src="audio/Arquitectura/25-Como hemos dicho.mp3">
 <h2>Registros</h2>
 <ul>
 <li>Lugares de almacenamiento para usos generales</li>
 <li>Funcionamiento similar al de la memoria pero mayor velocidad de acceso</li>
 <li>El MCBE cuenta con tres registros de 8 bits</li>
 <ul>
-<li class="fragment" data-audio-src="audio/26-Los registros del MCBE.mp3"><b>PC</b>: Contador de programa, contiene la dirección de la próxima instrucción a ejecutar</li>
-<li class="fragment" data-audio-src="audio/27-Antes de ejecutar.mp3"><b>IR</b>: Registro de instrucción, contiene la instrucción que está siendo ejecutada</li>
-<li class="fragment" data-audio-src="audio/28-El registro acumulador.mp3"><b>Ac</b>: Acumulador, registro de propósito general</li>
+<li class="fragment" data-audio-src="audio/Arquitectura/26-Los registros del MCBE.mp3"><b>PC</b>: Contador de programa, contiene la dirección de la próxima instrucción a ejecutar</li>
+<li class="fragment" data-audio-src="audio/Arquitectura/27-Antes de ejecutar.mp3"><b>IR</b>: Registro de instrucción, contiene la instrucción que está siendo ejecutada</li>
+<li class="fragment" data-audio-src="audio/Arquitectura/28-El registro acumulador.mp3"><b>Ac</b>: Acumulador, registro de propósito general</li>
 </ul>
 </ul>
 <aside data-markdown class="notes">
@@ -323,12 +323,12 @@ El registro **acumulador**, que pertenece a la ALU, es un registro que intervien
 
 
 
-<section data-audio-src="audio/29-Entonces la CPU del MCBE.mp3">
+<section data-audio-src="audio/Arquitectura/29-Entonces la CPU del MCBE.mp3">
 <h2>CPU del MCBE</h2>
 <ul>
 <li>UC con registros IR y PC</li>
 <li>ALU con registro Ac (acumulador)</li>
-<span class="fragment" data-audio-src="audio/30-Esta CPU va a ser.mp3">
+<span class="fragment" data-audio-src="audio/Arquitectura/30-Esta CPU va a ser.mp3">
 <li>Solamente ejecuta operaciones de suma y resta en complemento a 2 con 8 bits</li>
 <li>No ejecuta operaciones en Punto Flotante</li>
 </ul>
@@ -345,20 +345,20 @@ Esta CPU va a ser muy limitada y solamente va a ejecutar operaciones de suma y r
 
 
 
-<section data-audio-src="audio/31-Las instrucciones del MCBE.mp3">
+<section data-audio-src="audio/Arquitectura/31-Las instrucciones del MCBE.mp3">
 <h3>Formato de instrucciones del MCBE</h3>
 <ul>
 <li>Tres bits para el <b>código de instrucción</b></li>
-<span class="fragment" data-audio-src="audio/32-Los cinco bits restantes.mp3">
+<span class="fragment" data-audio-src="audio/Arquitectura/32-Los cinco bits restantes.mp3">
 <li>Cinco bits para el <b>argumento u operando</b></li>
 </span>
-<li class="fragment" data-audio-src="audio/33-Por otro lado los operandos.mp3">Operandos</li>
+<li class="fragment" data-audio-src="audio/Arquitectura/33-Por otro lado los operandos.mp3">Operandos</li>
 <ul>
-<li class="fragment" data-audio-src="audio/34-Cuando el operando es una direccion.mp3"><b>Direcciones</b>: cinco bits sin signo <span class="fragment post_it"> &rarr; RR [0,31] </span></li>
-<li class="fragment" data-audio-src="audio/35-Cuando es un desplazamiento.mp3"><b>Desplazamientos</b>: cinco bits en C2 <span class="fragment post_it"> &rarr; RR [-16,15] </span></li>
+<li class="fragment" data-audio-src="audio/Arquitectura/34-Cuando el operando es una direccion.mp3"><b>Direcciones</b>: cinco bits sin signo <span class="fragment post_it"> &rarr; RR [0,31] </span></li>
+<li class="fragment" data-audio-src="audio/Arquitectura/35-Cuando es un desplazamiento.mp3"><b>Desplazamientos</b>: cinco bits en C2 <span class="fragment post_it"> &rarr; RR [-16,15] </span></li>
 </ul>
-<span data-audio-src="audio/36-Notemos que con 5 bits.mp3"></span>
-<span data-audio-src="audio/37-Para los desplazamientos.mp3"></span>
+<span data-audio-src="audio/Arquitectura/36-Notemos que con 5 bits.mp3"></span>
+<span data-audio-src="audio/Arquitectura/37-Para los desplazamientos.mp3"></span>
 </ul>
 <aside data-markdown class="notes">
 Las instrucciones del MCBE se codifican en ocho bits y por lo tanto pueden ser almacenadas en un byte de la memoria, o en el registro IR. Cada instrucción se divide en dos partes: los tres bits de más a la izquierda se destinan a representar el código de instrucción. 
@@ -385,13 +385,13 @@ Para los desplazamientos, como estamos usando un sistema con signo, tenemos un r
 
 
 
-<section data-audio-src="audio/38-Las instrucciones del MCBE.mp3">
+<section data-audio-src="audio/Arquitectura/38-Las instrucciones del MCBE.mp3">
 <h2>Instrucciones del MCBE</h2>
 <ol>
 <li>Instrucciones de transferencia de datos</li>
-<li class="fragment" data-audio-src="audio/39-Las aritmeticas son las que operan.mp3">Instrucciones aritméticas</li>
-<li class="fragment" data-audio-src="audio/40-Las de salto o transferencia.mp3">Instrucciones de salto o transferencia de control</li>
-<li class="fragment" data-audio-src="audio/41-Y las de control.mp3">Instrucciones de control</li>
+<li class="fragment" data-audio-src="audio/Arquitectura/39-Las aritmeticas son las que operan.mp3">Instrucciones aritméticas</li>
+<li class="fragment" data-audio-src="audio/Arquitectura/40-Las de salto o transferencia.mp3">Instrucciones de salto o transferencia de control</li>
+<li class="fragment" data-audio-src="audio/Arquitectura/41-Y las de control.mp3">Instrucciones de control</li>
 </ol>
 <aside data-markdown class="notes">
 Las instrucciones del MCBE se dividen en cuatro grupos. 
@@ -411,12 +411,12 @@ Notemos que, como tenemos un campo de **tres bits** para definir el código de i
 
 
 
-<section data-audio-src="audio/42-Las instrucciones de transferencia de datos.mp3">
+<section data-audio-src="audio/Arquitectura/42-Las instrucciones de transferencia de datos.mp3">
 <h2>Instrucciones de transferencia</h2>
 <table>
 <tr><th>Código</th><th>Operando</th><th>Descripción</th><th>PC</th></tr>
 <tr><td>010</td><td>Dirección</td><td><b>Mem &rarr; Ac</b>: Copia un byte desde la dirección de memoria al acumulador</td><td>Se incrementa en 1</td></tr>
-<tr class="fragment" data-audio-src="audio/43-El codigo 011.mp3"><td>011</td><td>Dirección</td><td><b>Ac &rarr; Mem</b>: Copia el contenido del acumulador en esa dirección de memoria</td><td>Se incrementa en 1</td></tr>
+<tr class="fragment" data-audio-src="audio/Arquitectura/43-El codigo 011.mp3"><td>011</td><td>Dirección</td><td><b>Ac &rarr; Mem</b>: Copia el contenido del acumulador en esa dirección de memoria</td><td>Se incrementa en 1</td></tr>
 </table>
 <aside data-markdown class="notes">
 Las instrucciones de transferencia de datos son dos. El código 010 copia un byte de la memoria hacia el acumulador. Para esto se necesita la **dirección** de ese byte, y esa dirección es precisamente el argumento u operando de la instrucción, y por lo tanto esa dirección está codificada en los cinco bits de operando de la instrucción. 
@@ -428,12 +428,12 @@ En cualquiera de los dos casos, luego de ejecutarse la instrucción, el valor de
 El efecto sobre el estado de la máquina es exactamente lo que se describe aquí: cambia el valor del acumulador, en el caso de la instrucción 010, o el valor de una posición de memoria, en el caso del código 011, y el valor del PC se incrementa en 1. No ocurre ningún otro cambio en el estado de la máquina, ni en los registros ni en la memoria.
 </aside></section>
 
-<section data-audio-src="audio/44-Las instrucciones aritmeticas.mp3">
+<section data-audio-src="audio/Arquitectura/44-Las instrucciones aritmeticas.mp3">
 <h2>Instrucciones aritméticas</h2>
 <table>
 <tr><th>Código</th><th>Operando</th><th>Descripción</th><th>PC</th></tr>
 <tr><td>100</td><td>Dirección</td><td><b>Suma</b>: El contenido de la dirección se suma al Ac, y el resultado se almacena en el Ac</td><td>Se incrementa en 1</td></tr>
-<tr class="fragment" data-audio-src="audio/45-Si el codigo es 101.mp3"><td>101</td><td>Dirección</td><td><b>Resta</b>: El contenido de la dirección se resta al Ac, y el resultado se almacena en el Ac</td><td>Se incrementa en 1</td></tr>
+<tr class="fragment" data-audio-src="audio/Arquitectura/45-Si el codigo es 101.mp3"><td>101</td><td>Dirección</td><td><b>Resta</b>: El contenido de la dirección se resta al Ac, y el resultado se almacena en el Ac</td><td>Se incrementa en 1</td></tr>
 </table>
 <aside data-markdown class="notes">
 Las instrucciones aritméticas también son dos. Si el código es 100, la CPU va a buscar el valor contenido en la dirección dada por el operando, y lo suma al acumulador. Es decir, se suman el valor que tuviera anteriormente el acumulador, con el valor que proviene de esa posición de memoria. El resultado queda en el acumulador. El valor de la posición de memoria no varía. 
@@ -446,12 +446,12 @@ Si el código es 101, la operación es una resta, que como sabemos consiste en c
 
 
 
-<section data-audio-src="audio/46-Las dos instrucciones de salto.mp3">
+<section data-audio-src="audio/Arquitectura/46-Las dos instrucciones de salto.mp3">
 <h2>Instrucciones de salto</h2>
 <table>
 <tr><th>Código</th><th>Operando</th><th>Descripción</th><th>PC</th></tr>
 <tr><td>110</td><td>Desplazamiento</td><td><b>Salto incondicional</b></td><td>Se incrementa en <i>desplazamiento</i></td></tr>
-<tr class="fragment" data-audio-src="audio/47-El codigo 110.mp3"><td>111</td><td>Desplazamiento</td><td><b>Salto condicional</b></td><td>Si $Ac == 0$, se incrementa en <i>desplazamiento</i>. Si $Ac <> 0$, se incrementa en 1</td></tr>
+<tr class="fragment" data-audio-src="audio/Arquitectura/47-El codigo 110.mp3"><td>111</td><td>Desplazamiento</td><td><b>Salto condicional</b></td><td>Si $Ac == 0$, se incrementa en <i>desplazamiento</i>. Si $Ac <> 0$, se incrementa en 1</td></tr>
 </table>
 <aside data-markdown class="notes">
 Las dos instrucciones **de salto, o de transferencia de control**, tienen un efecto diferente. Funcionan modificando exclusivamente el valor del registro PC. En ambos casos, el operando es un valor con signo a cinco bits. En el caso del código 110, ese valor se suma algebraicamente al valor que tuviera hasta el momento el registro PC. Con lo cual el PC queda apuntando a alguna posición de memoria por delante o por detrás de donde estaba antes. Así, el ciclo de instrucción siguiente va a leer la instrucción ubicada en esa nueva dirección que ahora está contenida en el PC. 
@@ -463,12 +463,12 @@ El código 110 es una instrucción de salto **incondicional**, es decir, **siemp
 
 
 
-<section data-audio-src="audio/48-Hasta el momento.mp3">
+<section data-audio-src="audio/Arquitectura/48-Hasta el momento.mp3">
 <h2>Otras instrucciones</h2>
 <table>
 <tr><th>Código</th><th>Operando</th><th>Descripción</th><th>PC</th></tr>
 <tr><td>001</td><td>Sin uso</td><td><b>Parada</b>: Detiene la máquina. Los registros y la memoria quedan con el último valor que recibieron</td><td>No varía</td></tr>
-<tr class="fragment" data-audio-src="audio/49-La operacion 000.mp3"><td>000</td><td>Sin uso</td><td><b>No operación</b>: No tiene ningún efecto sobre Ac ni memoria</td><td>Se incrementa en 1</td></tr>
+<tr class="fragment" data-audio-src="audio/Arquitectura/49-La operacion 000.mp3"><td>000</td><td>Sin uso</td><td><b>No operación</b>: No tiene ningún efecto sobre Ac ni memoria</td><td>Se incrementa en 1</td></tr>
 </table>
 <aside data-markdown class="notes">
 Hasta el momento no hemos explicado cómo se detiene la máquina. El ciclo de instrucción continuamente va a ejecutar la instrucción siguiente, sin parar nunca. Para terminar la ejecución usamos la instrucción 001. El programa se detiene, y el estado final de la máquina queda con los valores que recibieron por última vez los registros y la memoria. El valor del PC no cambia.
@@ -480,17 +480,17 @@ La operación 000 no tiene ningún efecto sobre el estado del MCBE, salvo increm
 
 
 
-<section data-audio-src="audio/50-Ahora podemos definir.mp3">
+<section data-audio-src="audio/Arquitectura/50-Ahora podemos definir.mp3">
 <h2>Ciclo de instrucción</h2>
 <ol>
-<li class="fragment" data-audio-src="audio/51-Uno- copia en el registro IR.mp3">Se carga en el IR la instrucción cuya dirección está en el PC (<i>fetch</i>)</li>
-<li class="fragment" data-audio-src="audio/52-Dos- decodifica la instruccion.mp3">Se decodifica (<i>decode</i>) la instrucción, para lo cual:
+<li class="fragment" data-audio-src="audio/Arquitectura/51-Uno- copia en el registro IR.mp3">Se carga en el IR la instrucción cuya dirección está en el PC (<i>fetch</i>)</li>
+<li class="fragment" data-audio-src="audio/Arquitectura/52-Dos- decodifica la instruccion.mp3">Se decodifica (<i>decode</i>) la instrucción, para lo cual:
 <ul>
 	<li>Los tres primeros bits del IR determinan de qué instrucción se trata</li>
 	<li>Los cinco bits restantes se utilizan como argumento de la instrucción</li>
 </ul>
-<li class="fragment" data-audio-src="audio/53-Tres- se ejecuta la instruccion.mp3">Se ejecuta (<i>execute</i>)la instrucción, con sus efectos sobre los registros o la memoria</li>
-<li class="fragment" data-audio-src="audio/54-Cuatro- una vez ejecutada.mp3">Se pasa a la siguiente instrucción, dada por el valor que haya quedado en el PC</li>
+<li class="fragment" data-audio-src="audio/Arquitectura/53-Tres- se ejecuta la instruccion.mp3">Se ejecuta (<i>execute</i>)la instrucción, con sus efectos sobre los registros o la memoria</li>
+<li class="fragment" data-audio-src="audio/Arquitectura/54-Cuatro- una vez ejecutada.mp3">Se pasa a la siguiente instrucción, dada por el valor que haya quedado en el PC</li>
 </ol>
 <aside data-markdown class="notes">
 Ahora podemos definir con más rigurosidad lo que se entiende por **ciclo de instrucción**. El MCBE inicia su operación con todos los contenidos de la memoria y registros en 0, y se pone a ejecutar continuamente el ciclo de instrucción. Para esto repite continuamente las fases siguientes.
@@ -525,17 +525,17 @@ Cuatro: Una vez ejecutada la instrucción, se vuelve a repetir el ciclo, leyendo
 
 
 
-<section data-audio-src="audio/55-Como es entonces un programa.mp3">
+<section data-audio-src="audio/Arquitectura/55-Como es entonces un programa.mp3">
 <h2>Un programa MCBE</h2>
 <table class="plaintable" style="font-size: 28px; ">
 <tr><th>Dirección</th><th>Contenido</th></tr>
-<tr><td>00000</td><td><span class="fragment" data-fragment-index="0" data-audio-src="audio/56-En este programa en particular.mp3">01000110</span></td></tr>
-<tr><td>00001</td><td><span class="fragment" data-fragment-index="1" data-audio-src="audio/57-La segunda instruccion es.mp3">10000111</span></td></tr>
-<tr><td>00010</td><td><span class="fragment" data-fragment-index="2" data-audio-src="audio/58-La tercera instruccion es.mp3">01101000</span></td></tr>
-<tr><td>00011</td><td><span class="fragment" data-fragment-index="3" data-audio-src="audio/59-Y la cuarta instruccion.mp3">00100000</span></td></tr>
+<tr><td>00000</td><td><span class="fragment" data-fragment-index="0" data-audio-src="audio/Arquitectura/56-En este programa en particular.mp3">01000110</span></td></tr>
+<tr><td>00001</td><td><span class="fragment" data-fragment-index="1" data-audio-src="audio/Arquitectura/57-La segunda instruccion es.mp3">10000111</span></td></tr>
+<tr><td>00010</td><td><span class="fragment" data-fragment-index="2" data-audio-src="audio/Arquitectura/58-La tercera instruccion es.mp3">01101000</span></td></tr>
+<tr><td>00011</td><td><span class="fragment" data-fragment-index="3" data-audio-src="audio/Arquitectura/59-Y la cuarta instruccion.mp3">00100000</span></td></tr>
 <tr><td>00100</td><td>        </td></tr>
 <tr><td>00101</td><td>        </td></tr>
-<tr><td>00110</td><td><span class="fragment" data-fragment-index="4" data-audio-src="audio/60-Todas estas eran.mp3">00001100</span></td></tr>
+<tr><td>00110</td><td><span class="fragment" data-fragment-index="4" data-audio-src="audio/Arquitectura/60-Todas estas eran.mp3">00001100</span></td></tr>
 <tr><td>00111</td><td><span class="fragment" data-fragment-index="4">00000001</span></td></tr>
 <tr><td>01000</td><td>        </td></tr>
 </table>
@@ -556,7 +556,7 @@ En las restantes posiciones de memoria hay contenidos nulos, o sea, todos los bi
 </aside></section>
 
 
-<section data-audio-src="audio/61-Que es realmente lo que hace.mp3">
+<section data-audio-src="audio/Arquitectura/61-Que es realmente lo que hace.mp3">
 <h2>Traza de ejecución</h2>
 <table class="plaintable" style="width: 100%; font-size: 18px; ">
 <tr><th colspan="2">Búsqueda</th><th colspan="2">Decodificación</th><th colspan="4">Ejecución</th></tr>
@@ -578,7 +578,7 @@ En la traza solamente escribiremos los elementos del estado **que se modifiquen*
 
 
 
-<section data-audio-src="audio/61-Este programa en particular.mp3">
+<section data-audio-src="audio/Arquitectura/61-Este programa en particular.mp3">
 <h2>Traza de ejecución</h2>
 <table style="width: 100%;"><tr><td>
 
@@ -614,18 +614,30 @@ En la traza solamente escribiremos los elementos del estado **que se modifiquen*
 Este programa en particular presenta la traza que veremos a continuación. 
 
 Queda como ejercicio seguir la traza e interpretar qué está ocurriendo en cada momento con cada uno de los registros y las posiciones de memoria.
+
+### Ayuda
+
+- 000 No operación
+- 001 Parada
+- 010 Cargar Ac
+- 011 Escribir Mem
+- 100 Sumar al Ac
+- 101 Restar al Ac
+- 110 Salto 
+- 111 Salto cond
+
 </aside>
 </section>
 
 
-<section data-audio-src="audio/62-Proponemos como ejercicio.mp3">
+<section data-audio-src="audio/Arquitectura/62-Proponemos como ejercicio.mp3">
 <h2>Bestiario</h2>
 <ul>
-<li class="fragment" data-audio-src="audio/63-El primer paso del ciclo.mp3">El primer paso del ciclo de instrucción es cargar el IR en el PC.</li>
-<li class="fragment" data-audio-src="audio/64-Lo que hacen las instruc.mp3">Lo que hacen las instrucciones de salto es cambiar el efecto de las instrucciones en los registros del MCBE.</li>
-<li class="fragment" data-audio-src="audio/65-Las instrucciones de salto.mp3">Las instrucciones de salto sirven como desplazamiento de instrucciones y cambian el orden de los registros.</li>
-<li class="fragment" data-audio-src="audio/66-La instruccion de salto.mp3">La instrucción de salto incondicional es un desplazamiento sin signo, la de salto condicional es un desplazamiento con signo.</li>
-<li class="fragment" data-audio-src="audio/67-Las instrucciones de salto.mp3">Las instrucciones de salto copian el contenido de la dirección en el acumulador.</li>
+<li class="fragment" data-audio-src="audio/Arquitectura/63-El primer paso del ciclo.mp3">El primer paso del ciclo de instrucción es cargar el IR en el PC.</li>
+<li class="fragment" data-audio-src="audio/Arquitectura/64-Lo que hacen las instruc.mp3">Lo que hacen las instrucciones de salto es cambiar el efecto de las instrucciones en los registros del MCBE.</li>
+<li class="fragment" data-audio-src="audio/Arquitectura/65-Las instrucciones de salto.mp3">Las instrucciones de salto sirven como desplazamiento de instrucciones y cambian el orden de los registros.</li>
+<li class="fragment" data-audio-src="audio/Arquitectura/66-La instruccion de salto.mp3">La instrucción de salto incondicional es un desplazamiento sin signo, la de salto condicional es un desplazamiento con signo.</li>
+<li class="fragment" data-audio-src="audio/Arquitectura/67-Las instrucciones de salto.mp3">Las instrucciones de salto copian el contenido de la dirección en el acumulador.</li>
 </ul>
 <aside data-markdown class="notes">
 Proponemos como ejercicio **examinar **estas frases, a ver si descubrimos qué está mal en cada una de ellas.
