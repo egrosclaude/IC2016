@@ -650,14 +650,18 @@ Queda como ejercicio seguir la traza e interpretar qué está ocurriendo en cada
 Proponemos como ejercicio **examinar** las siguientes frases, tomadas de exámenes de la materia, a ver si descubrimos qué está mal en cada una de ellas.
 </aside></section>
 
-
-<section data-background="#00CCFF">
-<h2>Lenguajes de Bajo Nivel</h2>
-</section>
-
+<section>
+<h2>Referencias</h2>
+<ul>
+<li><a href="http://pedco.uncoma.edu.ar/mod/resource/view.php?id=148556">Apunte de cátedra: Modelo Computacional</a></li>
+<li><a href="https://es.wikipedia.org/wiki/Arquitectura_de_von_Neumann">Arquitectura de Von Neumann</a></li>
+<li><a href="https://es.wikipedia.org/wiki/Unidad_central_de_procesamiento">Unidad Central de Procesamiento, CPU</a></li>
+<li><a href="https://es.wikipedia.org/wiki/Memoria_(inform%C3%A1tica)">Memoria</a></li>
+</ul>
+<aside data-markdown class="notes"> </aside></section>
 
 <section>
-<h2>Lenguajes de bajo nivel</h2>
+<h2>Lenguaje Ensamblador </h2>
 <ul>
 <li>Lenguaje de máquina</li>
 	<ul>
@@ -665,7 +669,7 @@ Proponemos como ejercicio **examinar** las siguientes frases, tomadas de exámen
 	<li>Direcciones de los datos en cinco bits</li>
 	<li>Desplazamientos de saltos en forma numérica</li>
 	</ul>
-<li>Lenguaje ensamblador o <i>Assembler</i></li>
+<li>Lenguaje ensamblador</li>
 	<ul>
 	<li>Mnemónicos en lugar de códigos binarios</li>
 	<li>Rótulos o etiquetas como referencia de las direcciones</li>
@@ -673,46 +677,20 @@ Proponemos como ejercicio **examinar** las siguientes frases, tomadas de exámen
 	</ul>
 </ul>
 <aside data-markdown class="notes"> 
-Hemos visto un conjunto de instrucciones y convenciones sobre cómo se utilizan los datos en el MCBE, que es el llamado **lenguaje de máquina** del MCBE.  Por supuesto, escribir un programa para el MCBE y **depurarlo**, es decir, identificar y corregir sus errores, es una tarea muy dificultosa, porque los códigos de operación, las direcciones y los datos, fácilmente terminan confundiéndonos.  Para facilitar la programación, se ha definido un lenguaje alternativo llamado el **ensamblador** del MCBE. 
+Este conjunto de instrucciones y convenciones sobre cómo se utilizan los datos es el llamado **lenguaje de máquina** del MCBE. Cada CPU del mundo real tiene su propio lenguaje de máquina, y aunque mucho más poderosos y de instrucciones más complejas, se parecen bastante al lenguaje de máquina del MCBE.
 
+Por supuesto, escribir un programa para el MCBE y **depurarlo**, es decir, identificar y corregir sus errores, es una tarea muy dificultosa porque los códigos de operación, las direcciones y los datos, fácilmente terminan confundiéndonos.  Para facilitar la programación, se ha definido un lenguaje alternativo llamado el **ensamblador** del MCBE. Igual que ocurre con el lenguaje de máquina, cada CPU del mundo real tiene su propio lenguaje ensamblador, basado en los mismos principios que el que mostramos aquí. 
 
-En  el lenguaje ensamblador del MCBE: 
+En ensamblador del MCBE, 
 
-* En lugar de códigos de tres bits usamos unas abreviaturas un poco más significativas (*mnemónicos* de instrucciones).
-* En lugar de direcciones de cinco bits, usamos unos nombres simbólicos (*rótulos o etiquetas*) que hacen referencia a esas direcciones.
-* Para las instrucciones de salto, en lugar de desplazamientos, también usamos rótulos o etiquetas para marcar la instrucción del programa adonde deseamos saltar.
-
-Cada CPU del mundo real tiene su propio lenguaje de máquina, y aunque mucho más poderosos y de instrucciones más complejas, se parecen bastante, en líneas generales, al lenguaje de máquina del MCBE. Igual que ocurre con el lenguaje de máquina, cada CPU del mundo real tiene su propio lenguaje ensamblador, basado en los mismos principios que el que mostramos aquí. 
-
-El lenguaje de máquina de cualquier CPU, y su lenguaje ensamblador (o *Assembler*), son llamados en general **lenguajes de bajo nivel**. Otros lenguajes, los de alto nivel, ocultan al usuario los detalles de la arquitectura de las computadoras y le facilitan la programación de problemas de software complejos.
-</aside>
+* En lugar de códigos de tres bits usamos unas abreviaturas un poco más significativas.
+* En lugar de direcciones de cinco bits, usamos unos rótulos o etiquetas que hacen referencia a esas direcciones.
+* Para las instrucciones de salto, en lugar de desplazamientos, usamos rótulos o etiquetas para marcar la instrucción del programa adonde deseamos saltar.
+</aside></section>
 </section>
 
 <section>
-<h2>Lenguaje Ensamblador</h2>
-<table style="font-size: 30px;">
-<tr><th colspan="2">Mnemónico</th><th colspan="2">Instrucción</th></tr>
-<tr><td><b>LD</b></td><td>Load (cargar)</td><td>010</td><td>Mem &rarr; Ac</td></tr>
-<tr><td><b>ST</b></td><td>Store(almacenar)</td><td>011</td><td>Ac &rarr; Mem</td></tr>
-<tr><td><b>ADD</b></td><td>Add (sumar)</td><td>100</td><td>Ac &larr; Ac + Mem</td></tr>
-<tr><td><b>SUB</b></td><td>Subtract (restar)</td><td>101</td><td>Ac &larr; Ac - Mem</td></tr>
-<tr><td><b>JMP</b></td><td>Jump (saltar)</td><td>110</td><td>PC &larr; PC + despl</td></tr>
-<tr><td><b>JZ</b></td><td>Jump if Zero (saltar si cero)</td><td>111</td><td>Ac == 0 &rArr; PC &larr; PC + despl</td></tr>
-<tr><td><b>HLT</b></td><td>Halt (detener)</td><td>001</td><td>Parada</td></tr>
-<tr><td><b>NOP</b></td><td>No Operation</td><td>000</td><td>No operación</td></tr>
-</tr>
-</table>
-<aside data-markdown class="notes">
-Los **mnemónicos** o nombres simbólicos de las instrucciones se basan en los nombres en inglés de las operaciones correspondientes. Disponemos de los mnemónicos:
-* LD para la operación de cargar el Acumulador con un contenido de memoria, y ST para la operación inversa.
-* ADD para la operación de suma y SUB para la resta.
-* JMP y JZ para los saltos incondicional y condicional, respectivamente.
-* HLT para la instrucción de parada y NOP para la operación nula o no operación.
-</aside>
-</section>
-
-<section>
-<h2>Mnemónicos y rótulos</h2>
+<h2>Lenguajes de máquina y ensamblador</h2>
 
 <table>
 <tr><td>
@@ -748,27 +726,26 @@ Los **mnemónicos** o nombres simbólicos de las instrucciones se basan en los n
 
 </td></tr>
 </table>
-<aside data-markdown class="notes">
-Cuando escribimos un programa en el lenguaje **ensamblador** del MCBE, las instrucciones se corresponden una a una con las del programa en lenguaje de máquina.
-
-Cuando necesitamos hacer referencia a una dirección, como en las operaciones de transferencia o en las aritméticas, el ensamblador nos permite independizarnos del valor de esa dirección y simplemente indicar un nombre simbólico o rótulo para esa dirección. Sin embargo, para que el programa quede completo, ese nombre simbólico debe aparecer en algún lugar del programa, al principio de la instrucción, y separado por un carácter ":" del resto de la línea. 
-
-En este ejemplo, SIGUE, FIN, UNO y CANT son rótulos. El rótulo CANT, por ejemplo, nos permite referirnos en la primera instrucción, LD CANT, a un dato declarado más adelante con ese nombre. Del mismo modo, cuando la instrucción es de salto, podemos hacer referencia a la posición de memoria donde se hará el salto usando un rótulo, como en la quinta instrucción, JMP SIGUE. 
-
-Es importante recordar que, de todas maneras, en la traducción de ensamblador a lenguaje de máquina **para las instrucciones de salto**, el rótulo se sustituye por un **desplazamiento**, y no por una dirección.
-</aside>
 </section>
 
 
+
 <section>
-<h2>Referencias</h2>
-<ul>
-<li><a href="http://pedco.uncoma.edu.ar/mod/resource/view.php?id=148556">Apunte de cátedra: Modelo Computacional</a></li>
-<li><a href="https://es.wikipedia.org/wiki/Arquitectura_de_von_Neumann">Arquitectura de Von Neumann</a></li>
-<li><a href="https://es.wikipedia.org/wiki/Unidad_central_de_procesamiento">Unidad Central de Procesamiento, CPU</a></li>
-<li><a href="https://es.wikipedia.org/wiki/Memoria_(inform%C3%A1tica)">Memoria</a></li>
-</ul>
+<h2>Lenguaje Ensamblador</h2>
+<table style="font-size: 30px;">
+<tr><th colspan="2">Mnemónico</th><th colspan="2">Instrucción</th></tr>
+<tr><td><b>LD</b></td><td>Load (cargar)</td><td>010</td><td>Mem &rarr; Ac</td></tr>
+<tr><td><b>ST</b></td><td>Store(almacenar)</td><td>011</td><td>Ac &rarr; Mem</td></tr>
+<tr><td><b>ADD</b></td><td>Add (sumar)</td><td>100</td><td>Ac &larr; Ac + Mem</td></tr>
+<tr><td><b>SUB</b></td><td>Subtract (restar)</td><td>101</td><td>Ac &larr; Ac - Mem</td></tr>
+<tr><td><b>JMP</b></td><td>Jump (saltar)</td><td>110</td><td>PC &larr; PC + despl</td></tr>
+<tr><td><b>JZ</b></td><td>Jump if Zero (saltar si cero)</td><td>111</td><td>Ac == 0 &rArr; PC &larr; PC + despl</td></tr>
+<tr><td><b>HLT</b></td><td>Halt (detener)</td><td>001</td><td>Parada</td></tr>
+<tr><td><b>NOP</b></td><td>No Operation</td><td>000</td><td>No operación</td></tr>
+</tr>
+</table>
 <aside data-markdown class="notes"> </aside></section>
+</section>
 
 
 <!-- INCLUDE reveal.trailer -->
