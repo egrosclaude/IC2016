@@ -434,7 +434,7 @@ La operación 000 no tiene ningún efecto sobre el estado del MCBE, salvo increm
 	<li>Los tres primeros bits del IR determinan de qué instrucción se trata</li>
 	<li>Los cinco bits restantes se utilizan como argumento de la instrucción</li>
 </ul>
-<li class="fragment" data-audio-src="audio/Arquitectura/53-Tres- se ejecuta la instruccion.mp3">Se ejecuta (<i>execute</i>)la instrucción, con sus efectos sobre los registros o la memoria</li>
+<li class="fragment" data-audio-src="audio/Arquitectura/53-Tres- se ejecuta la instruccion.mp3">Se ejecuta (<i>execute</i>) la instrucción, con sus efectos sobre los registros o la memoria</li>
 <li class="fragment" data-audio-src="audio/Arquitectura/54-Cuatro- una vez ejecutada.mp3">Se pasa a la siguiente instrucción, dada por el valor que haya quedado en el PC</li>
 </ol>
 <aside data-markdown class="notes">
@@ -444,7 +444,7 @@ Uno: Copia en el registro IR la instrucción cuya dirección está en el PC. Com
 
 Dos: Decodifica la instrucción, lo que significa separar la instrucción en sus dos componentes, que son el código de operación, de tres bits, y el operando o argumento, de cinco bits. 
 
-Tres: Se ejecuta la instrucción, lo que significa que va a haber algún efecto sobre el estado de la máquina. Si es una instrucción de tansferencia de datos, cambiará el registro acumulador o alguna posición de memoria; si es una instrucción aritmética, cambiará el valor del registro acumulador; si es de transferencia de control, cambiará el valor del PC, etc.
+Tres: Se ejecuta la instrucción, lo que significa que va a haber algún efecto sobre el estado de la máquina. Si es una instrucción de transferencia de datos, cambiará el registro acumulador o alguna posición de memoria; si es una instrucción aritmética, cambiará el valor del registro acumulador; si es de transferencia de control, cambiará el valor del PC, etc.
 
 Cuatro: Una vez ejecutada la instrucción, se vuelve a repetir el ciclo, leyendo la siguiente instrucción que haya que ejecutar, que será aquella cuya dirección esté contenida en el PC.
 </aside>
@@ -647,7 +647,7 @@ Queda como ejercicio seguir la traza e interpretar qué está ocurriendo en cada
 <li class="fragment" data-audio-src="audio/Arquitectura/67-Las instrucciones de salto.mp3">Las instrucciones de salto copian el contenido de la dirección en el acumulador.</li>
 </ul>
 <aside data-markdown class="notes">
-Proponemos como ejercicio **examinar **estas frases, a ver si descubrimos qué está mal en cada una de ellas.
+Proponemos como ejercicio **examinar** las siguientes frases, tomadas de exámenes de la materia, a ver si descubrimos qué está mal en cada una de ellas.
 </aside></section>
 
 <section>
