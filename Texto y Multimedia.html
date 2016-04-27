@@ -18,12 +18,8 @@
 		<link rel="stylesheet" href="css/reveal.css">
 		<link rel="stylesheet" href="css/theme/ic.css" id="theme">
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css"> 
-<!--		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">  -->
-<!--		<link rel="stylesheet" href="../font-awesome-4.5.0/css/font-awesome.min.css">  -->
 <!--		<link rel="stylesheet" href="font-awesome-4.5.0/css/font-awesome.css">  -->
 
-<!--		<link rel="icon" type="image/png" href="img/favicon-16x16.png" sizes="16x16">
-		<link rel="icon" type="image/png" href="img/favicon-32x32.png" sizes="32x32"> -->
 		<link rel="icon" type="image/png" href="img/favicon-96x96.png" sizes="96x96">
 		<meta name="theme-color" content="#ffffff">
 		<!-- Code syntax highlighting -->
@@ -1106,16 +1102,16 @@ $ hexdump -C Texto\ y\ Multimedia.html | head -8
 <section>
 <h2>Compresión</h2>
 <ul>
-<li>Reducción del tamaño de los datos aplicando operaciones sobre los bits</li>
-<ul>
-<li>Ocupar menos espacio de almacenamiento</li>
-<li>Transferencia más rápida a través de la red</li>
-</ul>
-<li>Diferentes algoritmos</li>
-<ul>
-<li>Con pérdida</li>
-<li>Sin pérdida</li>
-</ul>
+	<li>Reducción del tamaño de los datos aplicando operaciones sobre los bits</li>
+		<ul>
+			<li>Ocupar menos espacio de almacenamiento</li>
+			<li>Transferencia más rápida a través de la red</li>
+		</ul>
+	<li>Diferentes algoritmos</li>
+		<ul>
+			<li>Con pérdida</li>
+			<li>Sin pérdida</li>
+		</ul>
 </ul>
 </section>
 
@@ -1279,7 +1275,8 @@ $ hexdump -C Texto\ y\ Multimedia.html | head -8
 			hideMissingTitles: true,
 			custom: [
 				// { title: 'Plugins', icon: '<i class="fa fa-external-link"></i>', src: 'toc.html' },
-				{ title: 'About', icon: '<i class="fa fa-info"></i>', content: '<p>Introducción a la Computación</p>' }
+				// { title: 'About', icon: '<i class="fa fa-info"></i>', content: '<p>Introducción a la Computación</p>' },
+				{ title: 'IC2016', icon: '<i class="fa fa-info"></i>', content: '<p>Introducción a la Computación</p> <ol> <li><a href="Presentación.html">Presentación</a></li> <li><a href="Sistemas de Numeración.html">Sistemas de Numeración</a></li> <li><a href="Unidades de Información.html">Unidades de Información</a></li> <li><a href="Representación Digital de Datos.html">Representación Digital de Datos</a></li> <li><a href="Texto y Multimedia.html">Texto y Multimedia</a></li> <li><a href="Arquitectura.html">Organización de las Computadoras</a></li> </ol>' }
 			]
 		},
 		anything: [ 
@@ -1344,7 +1341,7 @@ $ hexdump -C Texto\ y\ Multimedia.html | head -8
 			//theme: "whiteboard",
 			// configuration options for notes canvas and chalkboard
 			//color: [ 'rgba(0,0,255,1)', 'rgba(255,255,255,0.5)' ],
-			//background: [ 'rgba(127,127,127,.1)' , 'reveal.js-plugins/chalkboard/img/blackboard.png' ],
+			//background: [ 'rgba(127,127,127,.1)' , 'plugin/chalkboard/img/blackboard.png' ],
 			//pen:  [ 'reveal.js-plugins/chalkboard/img/boardmarker.png', 'reveal.js-plugins/chalkboard/img/chalk.png' ],
 		},
 		keyboard: {
@@ -1358,7 +1355,6 @@ $ hexdump -C Texto\ y\ Multimedia.html | head -8
         84: function() { Recorder.fetchTTS(); }     // press 't' to fetch TTS audio files
 		},
 
-
 		// -------- Dependencies ---------
 		dependencies: [
 			{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
@@ -1366,17 +1362,17 @@ $ hexdump -C Texto\ y\ Multimedia.html | head -8
 			{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
 			{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
 			{ src: 'plugin/zoom-js/zoom.js', async: true },
-			{ src: 'plugin/notes/notes.js', async: true },
-			{ src: 'reveal.js-plugins/function-plot/site/js/vendor/jquery-1.11.2.min.js' },
-			{ src: 'reveal.js-plugins/function-plot/site/js/vendor/d3.js' },
-			{ src: 'reveal.js-plugins/function-plot/dist/function-plot.js' },
+			// { src: 'plugin/notes/notes.js', async: true },
+			{ src: 'plugin/explain/explain.js', async: true },
+			{ src: 'plugin/function-plot/site/js/vendor/jquery-1.11.2.min.js' },
+			{ src: 'plugin/function-plot/site/js/vendor/d3.js' },
+			{ src: 'plugin/function-plot/dist/function-plot.js' },
 			{ src: 'plugin/anything/anything.js' },
-			{ src: 'reveal.js-plugins/chalkboard/chalkboard.js' },
-			{ src: 'bower_components/reveal.js-menu/menu.js' },
-			{ src: 'bower_components/reveal.js-plugins/mathsvg/math.js', async: true },
-			//{ src: 'reveal.js-plugins/mathsvg/math.js' },
-			{ src: 'reveal.js-plugins/audio-slideshow/slideshow-recorder.js', condition: function( ) { return !!document.body.classList; } },
-			{ src: 'reveal.js-plugins/audio-slideshow/audio-slideshow.js', condition: function( ) { return !!document.body.classList; } },
+			{ src: 'plugin/chalkboard/chalkboard.js' },
+			{ src: 'plugin/menu/menu.js' },
+			{ src: 'plugin/mathsvg/math.js', async: true },
+			{ src: 'plugin/audio-slideshow/slideshow-recorder.js', condition: function( ) { return !!document.body.classList; } },
+			{ src: 'plugin/audio-slideshow/audio-slideshow.js', condition: function( ) { return !!document.body.classList; } },
 			// ... 
 		]
 	});

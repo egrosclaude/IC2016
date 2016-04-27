@@ -1,0 +1,8 @@
+#!/bin/sh
+lista=$1
+cuerpo=$2
+asunto=$3
+
+for i in $(xz -dc $lista | cut -d ';' -f 3); do
+	cat $cuerpo | ./notify.py $i $asunto;
+done
