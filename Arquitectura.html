@@ -395,13 +395,10 @@ Para los desplazamientos, como estamos usando un sistema con signo, tenemos un r
 <aside data-markdown class="notes">
 Las instrucciones del MCBE se dividen en cuatro grupos. 
 
-Las instrucciones de transferencia de datos son las que leen o escriben datos en la memoria. 
-
-Las aritméticas son las que operan entre esos datos de la memoria y el valor presente en el registro acumulador. 
-
-Las de salto o transferencia de control, las que desvían, derivan o trasladan la ejecución a otra posición de memoria. 
-
-Y las de control, completan el funcionamiento de la máquina, por ejemplo controlando cuándo va a detenerse el programa.
+* Las instrucciones de transferencia de datos son las que leen o escriben datos en la memoria.  
+* Las aritméticas son las que operan entre esos datos de la memoria y el valor presente en el registro acumulador.  
+* Las de salto o transferencia de control, las que desvían, derivan o trasladan la ejecución a otra posición de memoria.  
+* Y las de control, completan el funcionamiento de la máquina, por ejemplo controlando cuándo va a detenerse el programa.
 
 Notemos que, como tenemos un campo de **tres bits** para definir el código de instrucción, no vamos a poder tener más que **ocho instrucciones**. Precisamente hay dos instrucciones en cada grupo de estos cuatro que hemos definido.
 </aside>
@@ -691,7 +688,7 @@ Queda como ejercicio seguir la traza e interpretar qué está ocurriendo en cada
 
 
 
-<section data-audio-src="audio/Arquitectura/62-Proponemos como ejercicio.mp3">
+<section class="preguntas" data-audio-src="audio/Arquitectura/62-Proponemos como ejercicio.mp3">
 <h2>Bestiario</h2>
 <ul>
 <li class="fragment" data-audio-src="audio/Arquitectura/63-El primer paso del ciclo.mp3">El primer paso del ciclo de instrucción es cargar el IR en el PC.</li>
@@ -712,18 +709,19 @@ Proponemos como ejercicio **examinar** las siguientes frases, tomadas de exámen
 
 <section>
 <h2>Lenguajes de bajo nivel</h2>
-<ul>
+<ul class="double">
 <li>Lenguaje de máquina</li>
 	<ul>
-	<li>Códigos binarios de instrucciones y datos</li>
-	<li>Direcciones de los datos en cinco bits</li>
-	<li>Desplazamientos de saltos en forma numérica</li>
+		<li>Códigos binarios de instrucciones y datos</li>
+		<li>Direcciones de los datos en cinco bits</li>
+		<li>Desplazamientos de saltos en forma numérica</li>
 	</ul>
+<br/>
 <li>Lenguaje ensamblador o <i>Assembler</i></li>
 	<ul>
-	<li>Mnemónicos en lugar de códigos binarios</li>
-	<li>Rótulos o etiquetas como referencia de las direcciones</li>
-	<li>Rótulos o etiquetas como referencia de los saltos</li>
+		<li>Mnemónicos en lugar de códigos binarios</li>
+		<li>Rótulos o etiquetas como referencia de las direcciones</li>
+		<li>Rótulos o etiquetas como referencia de los saltos</li>
 	</ul>
 </ul>
 <aside data-markdown class="notes"> 
@@ -809,6 +807,8 @@ Cuando necesitamos hacer referencia a una dirección, como en las operaciones de
 
 En este ejemplo, SIGUE, FIN, UNO y CANT son rótulos. El rótulo CANT, por ejemplo, nos permite referirnos en la primera instrucción, LD CANT, a un dato declarado más adelante con ese nombre. Del mismo modo, cuando la instrucción es de salto, podemos hacer referencia a la posición de memoria donde se hará el salto usando un rótulo, como en la quinta instrucción, JMP SIGUE. 
 
+Los rótulos IN y OUT vienen predefinidos en el lenguaje ensamblador de MCBE y corresponden a las posiciones de memoria 30 (para entrada) y 31 (para salida) respectivamente.
+ 
 Es importante recordar que, de todas maneras, en la traducción de ensamblador a lenguaje de máquina **para las instrucciones de salto**, el rótulo se sustituye por un **desplazamiento**, y no por una dirección.
 </aside>
 </section>
