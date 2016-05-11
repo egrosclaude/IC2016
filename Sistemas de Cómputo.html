@@ -1,0 +1,573 @@
+<!-- INCLUDE reveal.header -->
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>Introducción a la Computación 2016</title>
+
+		<meta name="description" content="Introducción a la Computación">
+		<meta name="author" content="Eduardo Grosclaude">
+
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/ic.css" id="theme">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css"> 
+<!--		<link rel="stylesheet" href="font-awesome-4.5.0/css/font-awesome.css">  -->
+
+		<link rel="icon" type="image/png" href="img/favicon-96x96.png" sizes="96x96">
+		<meta name="theme-color" content="#ffffff">
+		<!-- Code syntax highlighting -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+
+<!--	<body onload="setupSinCalc();"> -->
+<!--	<body onload="setupIEEE754();">  -->
+	<body>
+	  <div class="reveal">
+		<!-- Any section element inside of this container is displayed as a slide -->
+		<div class="slides">
+
+
+<!------------------------------------------------------------------>
+
+
+<section data-background="#00CCFF">
+<h2>Sistemas de Cómputo</h2>
+<aside data-markdown class="notes">
+Un sistema de cómputo es un conjunto de elementos electrónicos organizados para permitir el procesamiento de información. A lo largo del tiempo los sistemas de cómputo han evolucionado notablemente, y en este material vamos a ver las cosas más importantes que han ocurrido durante esta evolución.
+</aside>
+</section>
+
+
+<section>
+<h2>Evolución de los Sistemas de Cómputo</h2>
+<ul>
+	<li>Tendencias crecientes</li>
+	<ul>
+		<li>Velocidad de los procesadores</li>
+		<li>Capacidad de la memoria</li>
+		<li>Capacidad y velocidad de E/S</li>
+		<li>Integración de los componentes</li>
+	</ul>
+	<li>Crecimiento vs. balance</li>
+</ul>
+<aside data-markdown class="notes">
+Los sistemas de cómputo constituyen una industria, y como en toda industria, existe la competencia entre los fabricantes, que buscan obtener más mercado mejorando las características de sus productos. En ninguna otra industria como en la computación es tan notable el crecimiento de las capacidades de los sistemas de cómputo y, simultáneamente, la reducción de costos y tamaños físicos de los componentes.
+
+
+* Las sucesivas generaciones de sistemas de cómputo han ido creciendo en la velocidad de procesamiento y capacidad de memoria, así como en las capacidades de los discos y otras unidades de almacenamiento.
+* Al mismo tiempo, se ha reducido notablemente el tamaño del sistema como un todo. Esto último se ha logrado a través de sucesivos avances en la **integración** de los componentes. 
+* La mayor integración ha facilitado la **economía de escala**, manteniendo o reduciendo en general los costos de producción. 
+
+Sin embargo, los diferentes componentes se producen con mecanismos de fabricación diferentes y que avanzan cada uno a su ritmo, por lo cual no siempre más rápido o más pequeño es mejor, sino que lo más importante es que las partes del sistema funcionen en armonía. De lo contrario, pueden presentarse desbalances que impidan que el sistema funcione en forma óptima.
+</aside>
+</section>
+
+
+<section data-background="img/Pascaline.png" data-background-size="80%" data-background-transition="zoom" class="transparent_bg">
+<h2>Antecedentes históricos</h2>
+<ul>
+	<li>Desde A.C. hasta siglo XX </li>
+	<ul>
+		<li>El ábaco, el quipus, dispositivos de cálculo analógicos</li>
+		<li><a href="https://es.wikipedia.org/wiki/Mecanismo_de_Anticitera">El Mecanismo de Anticitera, 200 A.C.</a></li>
+		<li><a href="https://es.wikipedia.org/wiki/Pascalina">La Pascalina, 1642</a></li>
+		<li><a href="https://es.wikipedia.org/wiki/Máquina_diferencial">La máquina de Babbage, 1822</a></li>
+		<li><a href="https://es.wikipedia.org/wiki/Tabuladora">La máquina de Hollerith, 1890</a></li>
+	</ul>
+</ul>
+<aside data-markdown class="notes">
+En la antigüedad se crearon los que podríamos llamar sistemas de cómputo primitivos, aunque ingeniosos. Aquí citamos unos pocos ejemplos, como el ábaco chino; los quipus incas; los dispositivos de cálculo analógicos aparecidos en diferentes civilizaciones, como los que permitían calcular la torsión de los tensores de las catapultas romanas; el misterioso Mecanismo de Anticitera, un aparato astronómico encontrado entre los restos de un naufragio griego. 
+
+Más cerca de nuestros días, se crearon artefactos parecidos a las calculadoras y computadoras actuales, pero con la tecnología disponible en esos momentos, lo que lógicamente los hacían incómodos, o pobres en resultados, en comparación con las herramientas electrónicas de hoy. 
+</aside>
+</section>
+
+<section>
+<h2>El Mecanismo de Anticitera</h2>
+<img src="img/anticitera.png" class="plain stretch">
+</section>
+
+<section>
+<h2>La Pascalina</h2>
+<img src="img/Pascaline.png" class="plain stretch">
+</section>
+
+<section>
+<h2>La Tabuladora de Hollerith</h2>
+<img src="img/Hollerith_card.png" class="plain stretch">
+<aside data-markdown class="notes">
+Entre estos proto-sistemas de computación es especialmente notable, por varios motivos, la máquina de Hollerith. Herman Hollerith trabajaba para la Oficina de Inmigración de EEUU hacia fines del siglo XIX, en momentos en que se formó una gran corriente inmigratoria desde Europa. Los responsables del censo poblacional se encontraban con un gran problema.
+
+Mucho antes de Hollerith, un tapicero francés, Jacquard, había ideado un telar que se configuraba usando tarjetas perforadas, que creaban automáticamente el dibujo deseado. Inspirado en el telar de Jacquard, Hollerith creó un sistema de cómputo automático basado en tarjetas perforadas. Cada tarjeta representaba a un individuo. La tarjeta se dividía en campos que representaban los atributos o características del individuo (nacionalidad, fecha de nacimiento, sexo, estado civil, etc). Al llegar un individuo, el oficial de inmigración codificaba las respuestas a sus preguntas con una perforación en cierto lugar de cada campo.
+
+La Tabuladora de Hollerith era un dispositivo que contabilizaba perforaciones en esas tarjetas. Podía ser programada para contar la cantidad de individuos por nacionalidad, por edad, por sexo, etc., o por varios de estos atributos simultáneamente. De esa manera el censo nacional pudo lograrse en muchísimo menos tiempo que con los anteriores métodos manuales.
+
+La máquina de Hollerith es especialmente interesante porque sienta las bases del cálculo digital como se conocerá en los años siguientes (de hecho, hasta mucho después las tarjetas perforadas siguieron utilizándose como medio de entrada, para codificar programas y datos), porque demostró el poder del cómputo automático con una aplicación concreta e importante, y porque, tomando su invento como punto de partida, Hollerith formó una importante empresa de computación que tuvo gran influencia en el desarrollo de la tecnología del siglo XX. 
+</aside>
+</section>
+
+<section data-background="img/vacuum.png" data-background-size="80%" data-background-transition="zoom" class="transparent_bg">
+<h2>Primera Generación </h2>
+<ul>
+<li>Tubos de vacío, 1945-1955</li>
+	<ul>
+		<li>COLOSSUS, aplicado a criptografía de comunicaciones durante la Segunda Guerra Mundial</li>
+		<li><a href="https://es.wikipedia.org/wiki/ENIAC">ENIAC</a>, primer computador digital, de propósito general, propuesto para cómputos balísticos</li>
+		<ul>
+			<li>30 toneladas, 140 m², 18000 válvulas, 5000 sumas/s</li>
+			<li>Máquina decimal, de programa cableado</li>
+		</ul>
+	</ul>
+<li>IAS, primera computadora de programa almacenado, 1000 palabras de 40 bits</li>
+</ul>
+<aside data-markdown class="notes">
+Las primeras computadoras electrónicas usaban **bulbos, tubos de vacío, o válvulas**, como interruptores, implementando dispositivos que realizaban operaciones aritméticas y lógicas.
+
+Dado el momento histórico en el cual aparecieron, con frecuencia el objetivo con el cual se creaban estos equipos eran los usos militares. Las máquinas de esta generación eran grandes instalaciones que ocupaban una habitación, y sus miles de válvulas disipaban una gran cantidad de calor, que debía combatirse con sistemas de aire acondicionado.  
+
+El **ENIAC** es un claro representante de esta clase de máquinas. Pesaba 30 toneladas, y ocupaba un recinto de 140 m². Era capaz de ejecutar 5000 operaciones de suma por segundo. El ENIAC usaba 18000 válvulas de vacío: cada dos días, en promedio, una de ellas fallaba, y debía ser reemplazada con un procedimiento que llevaba quince minutos.
+
+El ENIAC no era una máquina de Von Neumann porque su programa no residía en memoria, sino que la computadora se programaba con un intricado sistema de interruptores manuales. Entre las máquinas de esta generación se encuentra la primera computadora de programa almacenado según el modelo de Von Neumann. Fue el IAS (siglas de **Institute for Advanced Study**), que usaba 1500 tubos de vacío y tenía 5 kB de memoria.
+</aside>
+</section>
+
+<section>
+<h2>El tubo de vacío</h2>
+<img src="img/vacuum.png" class="plain stretch">
+<aside data-markdown class="notes">
+El **tubo de vacío o válvula termoiónica** fue patentado por Edison y fue sucesivamente modificado para diferentes usos en electrónica hasta llegar a ser usado en las computadoras de la primera generación. Una de sus variedades, el **triodo**, tiene tres electrodos o terminales conectados al resto del circuito, llamados **cátodo, ánodo y rejilla o grilla de control**. En éstos, la corriente eléctrica se dirige siempre desde el cátodo al ánodo, pero únicamente circula cuando existe una determinada carga negativa en la grilla, que funciona como un interruptor. 
+
+De esta manera se puede controlar el flujo de corriente por un circuito y construir dispositivos que implementen funciones lógicas. Así, dos válvulas de este tipo, conectadas en serie, simulan una función lógica de conjunción o **AND**; dos válvulas conectadas en paralelo, simulan una disyunción u **OR**, etc. Con válvulas termoiónicas es posible además crear un dispositivo que mantenga permanentemente un cierto estado eléctrico, y que por lo tanto **puede almacenar un bit de información**.
+
+La grilla de las válvulas necesita alcanzar una alta temperatura para poder gobernar el flujo de electrones. De ahí que el consumo de electricidad fuera altísimo y su funcionamiento sumamente lento. Unido esto a una alta tasa de fallos, las válvulas fueron rápidamente abandonadas en favor de una tecnología más conveniente, el **transistor**.
+</aside>
+</section>
+
+<section data-transition="fade-out slide-in">
+<h2>Memoria de núcleos</h2>
+<h3>1960, 1Kib</h3>
+<img src="img/KL_CoreMemory.png" class="plain stretch">
+<aside data-markdown class="notes">
+Las primeras implementaciones de la memoria principal (memorias de núcleos o **core memories**) fueron realizadas con pequeños anillos metálicos atravesados por alambres. El flujo eléctrico que conducían estos alambres magnetizaba en forma estable los anillos, que almacenaban un bit de información cada uno. El sistema de memoria podía leer, más tarde, la **polaridad** magnética de cada anillo, y así se recuperaba el valor binario que había sido almacenado en ese bit.
+</aside>
+</section>
+
+<section data-transition="fade-in slide-out">
+<h2>Memoria Micro-SD</h2>
+<h3>2010, 32 GiB</h3>
+<img src="img/KL_CoreMemory-2.png" class="plain stretch">
+<aside data-markdown class="notes">
+La tecnología de las memorias ha evolucionado espectacularmente desde la creación de las primitivas memorias de núcleos. Hoy, cincuenta años después, existen memorias de bajo costo, menor tamaño, mayor velocidad y capacidad millones de veces superior. Una memoria Micro-SD de hoy, por ejemplo, puede alojar 32 GiB de información en una centésima parte del espacio ocupado por un 1 Kib de memoria de núcleos.
+</aside>
+</section>
+
+<section>
+<h2>ENIAC</h2>
+<img src="img/Eniac01.png" class="plain stretch">
+<aside data-markdown class="notes">
+Presentado en 1946, **ENIAC** es reconocido como el primer computador digital, completamente electrónico, de propósito general. Usaba números representados en base 10. Tenía una capacidad de memoria de 1000 bits donde podía almacenar unos veinte números decimales de diez dígitos. 
+
+El ENIAC fue propuesto para cómputos de trayectoria de proyectiles, aplicación en la que logró reducir el tiempo de cómputo de una tabla de datos, de 20 horas a 30 segundos. Sin embargo, la guerra terminó antes de que pudiera ser realmente aplicado, por lo que se lo destinó a otros usos. Por este hecho, llamó la atención sobre la capacidad de las computadoras de ser destinadas a propósitos generales, en lugar de las máquinas de programa cableado que existían hasta entonces y que eran preparadas específicamente para una única tarea.
+</aside>
+</section>
+
+<section data-background="black">
+<h2>Clementina</h2>
+	<iframe width="100%" height="100%" class="stretch" 
+		src="https://www.youtube.com/embed/JTzf5wEsSb8?wmode=opaque&rel=0" frameborder="0" allowfullscreen>
+	</iframe>  
+<aside data-markdown class="notes">
+¿Qué pasaba en nuestro país durante estas épocas? La actividad de la computación aquí no había comenzado. Recién a principios de los años 60 la universidad argentina decidió hacer una importante inversión, que fue la compra de una computadora de primera generación, bautizada aquí **Clementina**. El video adjunto cuenta interesantes detalles técnicos de la computadora, muestra cómo eran las personalidades involucradas por ese entonces en el proyecto científico y tecnológico argentino, y explica el contexto histórico en el que fue iniciado (y, lamentablemente, truncado) ese proyecto.
+</aside>
+</section>
+
+<section data-background="img/transistor-1.png" data-background-size="80%" data-background-transition="zoom" class="transparent_bg">
+<h2>Segunda Generación</h2>
+<ul>
+<li>Transistores, 1955 a 1965</li>
+	<ul>
+		<li>Componentes discretos</li>
+		<li>UCs y ALUs más complejas</li>
+		<li>Software de sistema acompañando al hardware</li>
+		<li>Lenguajes de Alto Nivel</li>
+		<li>Digital PDP-1, IBM 7094</li>
+	</ul>
+</ul>
+<aside data-markdown class="notes">
+En 1948 los físicos habían descubierto que combinando, en ciertas proporciones, elementos que eran vecinos en la Tabla Periódica, se creaban nuevos materiales con un desbalance de electrones; y que de esta manera se podía controlar el sentido de las corrientes eléctricas que atravesaban esos materiales. Así fue inventado un componente electrónico revolucionario, el **transistor**, que era básicamente un **triodo de estado sólido**, es decir, podía cumplir el mismo papel en un circuito que la válvula termoiónica de tres electrodos, pero era construido de una forma completamente diferente. 
+
+Esto significa que las mismas funciones lógicas de los interruptores, que en las computadoras de primera generación eran cumplidas por las válvulas termoiónicas, podían ser resueltas con dispositivos mucho más pequeños, de mucho menor consumo, con tiempos de reacción mucho menores y mucho más confiables. El impacto tecnológico y económico de este avance fue importantísimo y la computación "despegó". Fue posible aumentar la complejidad de las funciones, creando CPUs mucho más poderosas.  
+
+Decimos que esta segunda generación de computadoras fue construida con dispositivos **discretos**, es decir, separados, para distinguirla de la generación siguiente, donde esos dispositivos fueron **integrados**.
+</aside>
+</section>
+
+<section>
+<h2>El transistor</h2>
+<img src="img/transistor-1.png" class="plain stretch">
+<aside data-markdown class="notes">
+
+</aside>
+</section>
+
+<section>
+<h2>PDP-1</h2>
+<img src="img/PDP-1.png" class="plain stretch">
+</section>
+
+<section data-markdown >
+##Tercera Generación
+* Circuitos integrados, 1965 a 1970
+     * Integración en pequeña escala (SSI)
+     * Compuertas, celdas de memoria, interconexiones
+* IBM System/360, 1964
+* Minicomputadoras Digital PDP-8 (1965), PDP-11 (1970) 
+* [Intel 4004](https://es.wikipedia.org/wiki/Intel_4004), el primer microprocesador, 1971
+* Altair 8800, 1975, la primera computadora personal
+* [Cray-1](https://es.wikipedia.org/wiki/Cray-1), 1976
+* [IBM PC](https://es.wikipedia.org/wiki/IBM_PC), 1982, arquitectura abierta
+</section>
+
+<section>
+<h2>Circuitos Integrados</h2>
+<img src="img/Integrated-Circuit.jpg" class="plain stretch">
+</section>
+
+<section data-markdown>
+##Cuarta Generación y siguientes
+* Integración en gran escala, muy gran escala, ultra gran escala (LSI, VLSI, ULSI)
+* Ley de Moore
+    * La cantidad de transistores se duplica cada 18 meses (¡desde 1965!)
+* Velocidad de ejecución de CPUs vs. velocidad de acceso de la memoria
+* Velocidad de comunicaciones dentro de la CPU vs. reducción de tamaño 
+* Memorias cache, paralelismo, CPUs Multicore, GPUs
+</section>
+
+<section>
+<h2>Tiempo para acceder a un dato</h2>
+<table>
+<tr><th>Evento</th><th>Latencia</th><th>Escalado</th></tr>
+<tr><td>Un ciclo de CPU</td><td>0.3 ns</td><td class="fragment">1 s</td></tr>
+<tr><td>Acceso a memoria cache</td><td>13 ns</td><td class="fragment">40 s</td></tr>
+<tr><td>Acceso a memoria RAM</td><td>120 ns</td><td class="fragment">6 min</td></tr>
+<tr><td>Disco de estado sólido</td><td>150 &mu;s</td><td class="fragment">6 días</td></tr>
+<tr><td>Disco magnético</td><td>10 ms</td><td class="fragment">12 meses</td></tr>
+<tr><td>Internet de América a Europa</td><td>81 ms</td><td class="fragment">8 años</td></tr>
+<tr><td>Reboot</td><td>5 min</td><td class="fragment">32000 años</td></tr>
+</table>
+<aside data-markdown class="notes">
+Como sabemos, no podemos utilizar un dato si no lo hacemos llegar primero al procesador o CPU; y el tiempo que tarda en llegar a un registro de la CPU, para poder operar sobre él, depende de dónde esté localizado este dato. Es interesante comparar los diferentes tiempos de demora en el acceso a un dato, o **latencia**, según en qué componente del sistema de cómputo se encuentra. 
+
+En la tabla adjunta tomamos como referencia un **ciclo de CPU**, es decir, el cambio de estado más pequeño posible en el circuito secuencial que implementa el procesador de la computadora. Los procesadores actuales utilizan pulsos de reloj de alrededor de 3 GHz, es decir, el reloj del sistema genera alrededor de 3.000.000.000 de señales por segundo; lo que da un tiempo de ciclo de unos 0.3 ns. Una instrucción de CPU puede llevar uno o varios ciclos para completarse, según la microarquitectura de la CPU. Pero la CPU, para ejecutar esa instrucción, necesita tener a disposición los datos sobre los cuales operar. 
+ 
+¿Cuánto lleva entonces acceder a un dato, en términos de esta duración básica de un ciclo? Si el dato está en memoria RAM, llevará unos 120 ns (unos cuatrocientos ciclos). Si una instrucción de CPU puede completarse en unos pocos ciclos, pero debe esperar a que los datos atraviesen el sistema de memoria, habrá una espera improductiva para la CPU de más de 100 ciclos. Peor aún, si el dato está en el disco magnético, ¡o si debe llegar desde otro continente vía la Internet!
+
+Si la CPU tuviera que esperar por los demás componentes, su **utilización** se reduciría ridículamente, y la gran velocidad de procesamiento quedaría completamente desperdiciada. Por esto se establece una **jerarquía de memoria**, con lugares de almacenamiento de velocidades cada vez mayores a medida que nos acercamos a la CPU en el sistema de cómputo. Por ejemplo, un dato que se encuentre en **memoria cache** tendrá una latencia de acceso mucho menor y será preferible a tener que accederlo desde la memoria RAM.
+
+Para comprender mejor, desde nuestra perspectiva de humanos, la importancia relativa de los tiempos de respuesta de cada componente del sistema de computación, la tabla se **escala** al tiempo del ciclo de CPU. Es decir, los tiempos bajo la columna "Escalado" son aquellos que tardaría cada acceso **si un ciclo de CPU durara un segundo**. 
+
+Para completar la tabla, comparamos un ciclo de CPU con el proceso de **reboot** o reencendido de la computadora ("¿probó apagar y volver a encender el equipo?").
+</aside>
+</section>
+
+
+<section>
+<section data-transition="slide-in fade-out">
+<h2>Intel I7</h2>
+<img src="img/i7.jpg" class="plain stretch">
+</section>
+
+<section data-transition="fade-in fade-out">
+<h2>Intel I7</h2>
+<img src="img/i7-2-0.png" class="plain stretch">
+</section>
+
+<section data-transition="fade-in fade-out">
+<h2>Intel I7</h2>
+<img src="img/i7-2-1.png" class="plain stretch">
+</section>
+
+<section data-transition="fade-in fade-out">
+<h2>Intel I7</h2>
+<img src="img/i7-2-2.png" class="plain stretch">
+</section>
+
+<section data-transition="fade-in fade-out">
+<h2>Intel I7</h2>
+<img src="img/i7-2-3.png" class="plain stretch">
+</section>
+</section>
+
+
+
+
+<section>
+<h2>Memorias vs. CPU</h2>
+<canvas class="stretch" data-chart="bar">
+Volts (V), 1, 0.72, 0.6, 0.48
+Velocidad (MHz), 1, 1.5, 4, 8.01
+Densidad (Gb), 1, 2, 8, 32
+Transf. (GB/s), 1, 2, 4.65, 6.65
+SPECint CPU, 1, 1.35, 1.55, 1.75 
+n Cores, 1, 2, 4, 8
+<!-- 
+{ 
+ "data" : {
+  "labels" : ["DDR (2002)", "DDR2 (2004)", "DDR3 (2007)", "DDR4 (2013)"]
+ },
+ "options" : {"responsive" : "true" }
+}
+-->
+</canvas>
+<aside data-markdown class="notes">
+En el gráfico comparamos las capacidades de memorias y procesadores en cuatro momentos relativamente recientes en el tiempo, que son cuando aparecieron cuatro especificaciones de memoria distintas: DDR (2002), DDR2 (2004), DDR3 (2007) y DDR4 (2013). 
+
+#### Leyenda
+
+* Volts (V): voltaje de funcionamiento de las memorias
+* Velocidad (MHz): velocidad de reloj de las memorias
+* Densidad (Gb): capacidad de cada chip de memoria
+* Transf (GB/s): velocidad de transferencia de la memoria
+* SPECint CPU: valor del **benchmark** SPECint, que mide la capacidad de procesamiento de enteros, para procesadores comparables en cada año
+* nCores: cantidad de **cores** o unidades de procesamiento en un mismo chip
+
+Los datos están presentados como factores de escala de crecimiento, es decir, representan en qué medida cambió cada variable con respecto a 2002, que es el año en que apareció el primer estándar DDR. Por ejemplo, el factor de crecimiento de la densidad, o cantidad de Gb por chip de memoria, es 2 en 2004, porque en ese año aparecieron memorias DDR2 del doble de tamaño que las de DDR, y es 32 en 2013, porque en ese año su tamaño se multiplicó por 32 con respecto al valor del estándar DDR de 2002.
+
+Notemos que podemos hacer click en las barras de color de la leyenda, al pie del gráfico, para ocultar una variable y estudiar cómo se relacionan las demás. Por ejemplo, si ocultamos la variable de la **densidad**, las demás variables muestran más claramente las relaciones entre ellas.
+
+Al aparecer la primera computadora personal o **PC** en 1982, las memorias eran más rápidas que los procesadores. Sin embargo, en los últimos años los procesadores han evolucionado espectacularmente, y las tecnologías de memorias no han seguido la misma tendencia ascendente, convirtiendo a las memorias en un **cuello de botella**. Mientras los procesadores aumentaban su velocidad de procesamiento, las memorias se aceleraban en una proporción menor, lo que ocasionaba un desbalance cada vez mayor en los sistemas.
+
+Si bien la velocidad de procesamiento de los procesadores venía aumentando desde fines del siglo XX a razón de un 50% por año, a partir de 2002 se encuentra la limitación del sistema de memoria que obliga a los diseñadores de CPUs a tomar decisiones de diseño especiales, como la inclusión de múltiples unidades de procesamiento o **cores**. 
+
+La consecuencia es que la mayoría de las computadoras actuales son máquinas paralelas, y la programación de las aplicaciones debe hacerse considerando este hecho para aprovechar el sistema de cómputo adecuadamente.
+
+</aside>
+</section>
+
+<!--
+<section data-markdown>
+##Arquitectura
+</section>
+-->
+
+<section data-markdown>
+##Referencias
+* [Microarquitectura](https://es.wikipedia.org/wiki/Microarquitectura)
+* [Ley de Moore](https://es.wikipedia.org/wiki/Ley_de_Moore)
+* [Timeline of Computer History](http://www.computerhistory.org/timeline/computers)
+* [Más sobre Clementina](http://cda.gob.ar/serie/294/clementina)
+</section>
+
+<!-- INCLUDE reveal.trailer -->
+<!------------------------------------------------------------------>
+
+   </div>
+</div>
+
+<link rel="stylesheet" href="Tangle/TangleKit/TangleKit.css" type="text/css">
+<script type="text/javascript" src="Tangle/Tangle.js"></script>
+<script type="text/javascript" src="Tangle/TangleKit/mootools.js"></script>
+<script type="text/javascript" src="Tangle/TangleKit/sprintf.js"></script>
+<script type="text/javascript" src="Tangle/TangleKit/BVTouchable.js"></script>
+<script type="text/javascript" src="Tangle/TangleKit/TangleKit.js"></script>
+
+<script src="lib/js/head.min.js"></script>
+<script src="js/reveal.js"></script>
+
+<script>
+
+	Reveal.initialize({
+		controls: true,
+		progress: true,
+		history: true,
+		center: true,
+		previewLinks: true,
+		theme: 'serif',
+		transition: 'slide', // none/fade/slide/convex/concave/zoom
+
+		chart: {
+			defaults: { 
+				global: { 
+					title: { fontColor: "#222" }, 
+					legend: {
+						position: "bottom",
+						labels: { fontColor: "#000", size: "14px" },
+					},
+					tooltips: {
+						labels: { fontColor: "#022", size: "14px" },
+					},
+				}, 
+				scale: { 
+					scaleLabel: { fontColor: "#022" }, 
+					gridLines: { color: "#444", zeroLineColor: "#444" }, 
+					ticks: { fontColor: "#022" }, 
+				} 
+			},
+			line: { borderColor: [ 
+				"rgba(20,220,220,.8)" , 
+				"rgba(220,120,120,.8)", 
+				"rgba(20,120,220,.8)",
+				"rgba(220,20,120,.8)",
+				"rgba(20,20,220,.8)" ]
+			}, 
+			bar: { backgroundColor: [ 
+				"rgba(20,220,220,.8)" , 
+				"rgba(20,120,220,.8)",
+				"rgba(20,20,220,.8)",
+				"rgba(120,20,220,.8)",
+				"rgba(220,120,20,.8)", 
+				"rgba(220,20,20,.8)",
+			 ]
+			}, 
+			pie: { backgroundColor: [ 
+				["rgba(0,0,0,.8)" , 
+				"rgba(220,20,20,.8)", 
+				"rgba(20,220,20,.8)", 
+				"rgba(220,220,20,.8)", 
+				"rgba(20,20,220,.8)"] 
+			]},
+			radar: { borderColor: [ "rgba(20,220,220,.8)" , "rgba(220,120,120,.8)", "rgba(20,120,220,.8)" ]}, 
+		},
+		menu: { // Menu works best with font-awesome installed: sudo apt-get install fonts-font-awesome
+			themes: false,
+			transitions: false,
+			markers: true,
+			hideMissingTitles: true,
+			custom: [
+				// { title: 'Plugins', icon: '<i class="fa fa-external-link"></i>', src: 'toc.html' },
+				// { title: 'About', icon: '<i class="fa fa-info"></i>', content: '<p>Introducción a la Computación</p>' },
+				{ title: 'IC2016', icon: '<i class="fa fa-info"></i>', content: '\
+					<div class="menucontents"><b>Introducción a la Computación</b> \
+					<ol> <li><a href="Presentación.html">Presentación</a></li>\
+					<li><a href="Sistemas de Numeración.html">Sistemas de Numeración</a></li>\
+					<li><a href="Unidades de Información.html">Unidades de Información</a></li>\
+					<li><a href="Representación Digital de Datos.html">Representación Digital de Datos</a></li>\
+					<li><a href="Texto y Multimedia.html">Texto y Multimedia</a></li>\
+					<li><a href="Arquitectura.html">Organización de las Computadoras</a></li>\
+					</ol></div>' }
+			]
+		},
+		anything: [ 
+			{className: "rand",  defaults: {min: 0, max: 9}, initialize: (function(container, options){ container.innerHTML = Math.trunc( options.min + Math.random()*(options.max-options.min + 1) ); }) },
+			{className: "chart",  initialize: (function(container, options){ container.chart = new Chart(container.getContext("2d"), options);  }) },
+			{className: "animate",  
+				initialize: (function(container, options){ 
+				Reveal.addEventListener( 'fragmentshown', function( event ) {
+					if (typeof event.fragment.beginElement === "function" ) { 
+						event.fragment.beginElement(); 	
+					}
+				});
+				Reveal.addEventListener( 'fragmenthidden', function( event ) {
+					if (event.fragment.hasAttribute('data-reverse') ) { 
+						var reverse = event.fragment.parentElement.querySelector('[id=\"' + event.fragment.getAttribute('data-reverse') + '\"]');
+						if ( reverse && typeof reverse.beginElement === "function" ) { 
+							reverse.beginElement(); 	
+						}										 	
+					}
+				});
+				if ( container.getAttribute("data-svg-src") ) { 
+					var xhr = new XMLHttpRequest(); 
+					xhr.onload = function() { 
+						if (xhr.readyState === 4) { 
+							var svg = container.querySelector('svg');
+							container.removeChild( svg );
+							container.innerHTML = xhr.responseText + container.innerHTML;
+							if ( svg ) {
+								container.querySelector('svg').innerHTML = container.querySelector('svg').innerHTML + svg.innerHTML;
+							}
+						} 
+						else { 
+							console.warn( "Failed to get file. ReadyState: " + xhr.readyState + ", Status: " + xhr.status); 
+						}
+					}; 
+					xhr.open( 'GET', container.getAttribute("data-svg-src"), true ); 
+					xhr.send();
+				}
+			}) },
+			{className: "tangle", initialize: (function(container, options) { if(options && options.initialize) {options.initialize(container)} }) },
+			{className: "anything",  initialize: (function(container, options){ if (options && options.initialize) { options.initialize(container)} }) },
+			{className: "plot",  defaults: {width:800, height: 400, grid:true}, initialize: (function(container, options){ options.target = "#"+container.id; functionPlot(options) }) },
+		],
+
+
+		// -------- Math plugin ----------
+		math: {
+			 	mathjax: 'https://cdn.mathjax.org/mathjax/latest/MathJax.js',
+		//	mathjax: '../MathJax-master/MathJax.js',
+			config: 'TeX-AMS_HTML-full'
+		},
+
+
+		// -------- Chalkboard -----------
+		chalkboard: { 
+			// optionally load pre-recorded chalkboard drawing from file
+			// src: "chalkboard.json",
+			//readOnly: undefined, 
+			toggleChalkboardButton: { left: "80px" },
+			toggleNotesButton: { left: "130px" },
+			//transition: 800,
+			//theme: "whiteboard",
+			// configuration options for notes canvas and chalkboard
+			//color: [ 'rgba(0,0,255,1)', 'rgba(255,255,255,0.5)' ],
+			//background: [ 'rgba(127,127,127,.1)' , 'plugin/chalkboard/img/blackboard.png' ],
+			//pen:  [ 'reveal.js-plugins/chalkboard/img/boardmarker.png', 'reveal.js-plugins/chalkboard/img/chalk.png' ],
+		},
+		keyboard: {
+			67: function() { RevealChalkboard.toggleNotesCanvas() },    // toggle notes canvas when 'c' is pressed
+			66: function() { RevealChalkboard.toggleChalkboard() }, // toggle chalkboard when 'b' is pressed
+			46: function() { RevealChalkboard.clear() },    // clear chalkboard when 'DEL' is pressed
+			 8: function() { RevealChalkboard.reset() },    // reset chalkboard data on current slide when 'BACKSPACE' is pressed
+			68: function() { RevealChalkboard.download() }, // downlad recorded chalkboard drawing when 'd' is pressed
+        82: function() { Recorder.toggleRecording(); }, // press 'r' to start/stop recording
+        90: function() { Recorder.downloadZip(); },     // press 'z' to download zip containing audio files
+        84: function() { Recorder.fetchTTS(); }     // press 't' to fetch TTS audio files
+		},
+
+		// -------- Dependencies ---------
+		dependencies: [
+			{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+			{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+			{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+			{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+			{ src: 'plugin/zoom-js/zoom.js', async: true },
+			// { src: 'plugin/notes/notes.js', async: true },
+			{ src: 'plugin/explain/explain.js', async: true },
+			{ src: 'plugin/function-plot/site/js/vendor/jquery-1.11.2.min.js' },
+			{ src: 'plugin/function-plot/site/js/vendor/d3.js' },
+			{ src: 'plugin/function-plot/dist/function-plot.js' },
+			{ src: 'plugin/chart/Chart.min.js'},
+			{ src: 'plugin/chart/csv2chart.js'},
+			{ src: 'plugin/anything/anything.js' },
+			{ src: 'plugin/chalkboard/chalkboard.js' },
+			{ src: 'plugin/menu/menu.js' },
+			{ src: 'plugin/mathsvg/math.js', async: true },
+			{ src: 'plugin/audio-slideshow/slideshow-recorder.js', condition: function( ) { return !!document.body.classList; } },
+			{ src: 'plugin/audio-slideshow/audio-slideshow.js', condition: function( ) { return !!document.body.classList; } },
+			// ... 
+		]
+	});
+
+</script>
+
+</body>
+</html>

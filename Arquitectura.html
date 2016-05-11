@@ -741,7 +741,7 @@ El lenguaje de máquina de cualquier CPU, y su lenguaje ensamblador (o *Assemble
 <table style="font-size: 30px;">
 <tr><th colspan="2">Mnemónico</th><th colspan="2">Instrucción</th></tr>
 <tr><td><b>LD</b></td><td>Load (cargar)</td><td>010</td><td>Mem &rarr; Ac</td></tr>
-<tr><td><b>ST</b></td><td>Store(almacenar)</td><td>011</td><td>Ac &rarr; Mem</td></tr>
+<tr><td><b>ST</b></td><td>Store (almacenar)</td><td>011</td><td>Ac &rarr; Mem</td></tr>
 <tr><td><b>ADD</b></td><td>Add (sumar)</td><td>100</td><td>Ac &larr; Ac + Mem</td></tr>
 <tr><td><b>SUB</b></td><td>Subtract (restar)</td><td>101</td><td>Ac &larr; Ac - Mem</td></tr>
 <tr><td><b>JMP</b></td><td>Jump (saltar)</td><td>110</td><td>PC &larr; PC + despl</td></tr>
@@ -857,7 +857,15 @@ Es importante recordar que, de todas maneras, en la traducción de ensamblador a
 			custom: [
 				// { title: 'Plugins', icon: '<i class="fa fa-external-link"></i>', src: 'toc.html' },
 				// { title: 'About', icon: '<i class="fa fa-info"></i>', content: '<p>Introducción a la Computación</p>' },
-				{ title: 'IC2016', icon: '<i class="fa fa-info"></i>', content: '<p>Introducción a la Computación</p> <ol> <li><a href="Presentación.html">Presentación</a></li> <li><a href="Sistemas de Numeración.html">Sistemas de Numeración</a></li> <li><a href="Unidades de Información.html">Unidades de Información</a></li> <li><a href="Representación Digital de Datos.html">Representación Digital de Datos</a></li> <li><a href="Texto y Multimedia.html">Texto y Multimedia</a></li> <li><a href="Arquitectura.html">Organización de las Computadoras</a></li> </ol>' }
+				{ title: 'IC2016', icon: '<i class="fa fa-info"></i>', content: '\
+					<div class="menucontents"><b>Introducción a la Computación</b> \
+					<ol> <li><a href="Presentación.html">Presentación</a></li>\
+					<li><a href="Sistemas de Numeración.html">Sistemas de Numeración</a></li>\
+					<li><a href="Unidades de Información.html">Unidades de Información</a></li>\
+					<li><a href="Representación Digital de Datos.html">Representación Digital de Datos</a></li>\
+					<li><a href="Texto y Multimedia.html">Texto y Multimedia</a></li>\
+					<li><a href="Arquitectura.html">Organización de las Computadoras</a></li>\
+					</ol></div>' }
 			]
 		},
 		anything: [ 

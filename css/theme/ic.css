@@ -246,6 +246,10 @@ body {
 /*********************************************
  * OSO
  *********************************************/
+.menucontents a:link {
+	text-decoration: none;
+}
+	
 /* Tangle */
 .TKNumberField {
   background: rgba(255, 255, 10, 0.9);  

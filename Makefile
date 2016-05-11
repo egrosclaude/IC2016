@@ -1,4 +1,7 @@
-all: pres siste uni repre texto arqui
+all: comp pres siste uni repre texto arqui
+
+comp: src/Sistemas\ de\ Cómputo.slides
+	./macro "src/Sistemas de Cómputo.slides" > "Sistemas de Cómputo.html"
 
 pres: src/Presentación.slides
 	./macro "src/Presentación.slides" > "Presentación.html" 
@@ -24,6 +27,8 @@ animate:
 otro:
 	./macro src/OtroTexto.slides > OtroTexto.html
 
+chartexample:
+	./macro src/chartexample.slides > chartexample.html
 
 
 

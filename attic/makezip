@@ -1,0 +1,1 @@
+zip -r Slides-2016.zip *.html img/ bower_components/ css/ js/ lib/ plugin/ reveal.js-plugins/ Gruntfile.js package.json bower.json

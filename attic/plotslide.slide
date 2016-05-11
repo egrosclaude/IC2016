@@ -1,0 +1,35 @@
+<section>
+<h2>Parámetros de onda</h2>
+<div class="plot" id="sinplot" style="background-color:#fff; width:800px; height:300px; margin:0 auto;">
+</div>
+        <!--
+        { "target":"#sinplot", "data":[{"fn":"sin(x)"}], "width":800, "height":300, }
+        -->
+<div class="tangle" id="sinCalc">
+        <!--
+        {
+                "initialize":"function (container){
+                        var rootElement = document.getElementById('sinCalc');
+                        var model = {
+                                initialize: function() {
+                                        this.ampl = 1;
+                                        this.freq = 10;
+                                        this.math = '$ $';
+                                },
+                                update: function() {
+                                        var plotex = this.ampl + '*sin(' + this.freq + '*x)';
+                                        var options = { target : '#sinplot', data : [{ fn : plotex }] };
+//                                        functionPlot(options);
+                                }
+                        };
+                        var tangle=new Tangle(rootElement, model);
+                }"
+        }
+        -->
+        <table>
+        <tr><td>Frecuencia:</td><td class="TKAdjustableNumber" data-var="freq" data-min="0" data-max="1000"></td>
+	    <td>Amplitud:</td><td class="TKAdjustableNumber" data-var="ampl" data-min="0" data-max="10"></td></tr>
+        </table>
+        <p class="post_it" data-var="math" style="text-align: center;" id="sinFormula">$ $</p>
+</div>
+</section>

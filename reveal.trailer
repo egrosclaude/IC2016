@@ -24,7 +24,49 @@
 		theme: 'serif',
 		transition: 'slide', // none/fade/slide/convex/concave/zoom
 
-
+		chart: {
+			defaults: { 
+				global: { 
+					title: { fontColor: "#222" }, 
+					legend: {
+						position: "bottom",
+						labels: { fontColor: "#000", size: "14px" },
+					},
+					tooltips: {
+						labels: { fontColor: "#022", size: "14px" },
+					},
+				}, 
+				scale: { 
+					scaleLabel: { fontColor: "#022" }, 
+					gridLines: { color: "#444", zeroLineColor: "#444" }, 
+					ticks: { fontColor: "#022" }, 
+				} 
+			},
+			line: { borderColor: [ 
+				"rgba(20,220,220,.8)" , 
+				"rgba(220,120,120,.8)", 
+				"rgba(20,120,220,.8)",
+				"rgba(220,20,120,.8)",
+				"rgba(20,20,220,.8)" ]
+			}, 
+			bar: { backgroundColor: [ 
+				"rgba(20,220,220,.8)" , 
+				"rgba(20,120,220,.8)",
+				"rgba(20,20,220,.8)",
+				"rgba(120,20,220,.8)",
+				"rgba(220,120,20,.8)", 
+				"rgba(220,20,20,.8)",
+			 ]
+			}, 
+			pie: { backgroundColor: [ 
+				["rgba(0,0,0,.8)" , 
+				"rgba(220,20,20,.8)", 
+				"rgba(20,220,20,.8)", 
+				"rgba(220,220,20,.8)", 
+				"rgba(20,20,220,.8)"] 
+			]},
+			radar: { borderColor: [ "rgba(20,220,220,.8)" , "rgba(220,120,120,.8)", "rgba(20,120,220,.8)" ]}, 
+		},
 		menu: { // Menu works best with font-awesome installed: sudo apt-get install fonts-font-awesome
 			themes: false,
 			transitions: false,
@@ -33,7 +75,15 @@
 			custom: [
 				// { title: 'Plugins', icon: '<i class="fa fa-external-link"></i>', src: 'toc.html' },
 				// { title: 'About', icon: '<i class="fa fa-info"></i>', content: '<p>Introducción a la Computación</p>' },
-				{ title: 'IC2016', icon: '<i class="fa fa-info"></i>', content: '<p>Introducción a la Computación</p> <ol> <li><a href="Presentación.html">Presentación</a></li> <li><a href="Sistemas de Numeración.html">Sistemas de Numeración</a></li> <li><a href="Unidades de Información.html">Unidades de Información</a></li> <li><a href="Representación Digital de Datos.html">Representación Digital de Datos</a></li> <li><a href="Texto y Multimedia.html">Texto y Multimedia</a></li> <li><a href="Arquitectura.html">Organización de las Computadoras</a></li> </ol>' }
+				{ title: 'IC2016', icon: '<i class="fa fa-info"></i>', content: '\
+					<div class="menucontents"><b>Introducción a la Computación</b> \
+					<ol> <li><a href="Presentación.html">Presentación</a></li>\
+					<li><a href="Sistemas de Numeración.html">Sistemas de Numeración</a></li>\
+					<li><a href="Unidades de Información.html">Unidades de Información</a></li>\
+					<li><a href="Representación Digital de Datos.html">Representación Digital de Datos</a></li>\
+					<li><a href="Texto y Multimedia.html">Texto y Multimedia</a></li>\
+					<li><a href="Arquitectura.html">Organización de las Computadoras</a></li>\
+					</ol></div>' }
 			]
 		},
 		anything: [ 
@@ -124,6 +174,8 @@
 			{ src: 'plugin/function-plot/site/js/vendor/jquery-1.11.2.min.js' },
 			{ src: 'plugin/function-plot/site/js/vendor/d3.js' },
 			{ src: 'plugin/function-plot/dist/function-plot.js' },
+			{ src: 'plugin/chart/Chart.min.js'},
+			{ src: 'plugin/chart/csv2chart.js'},
 			{ src: 'plugin/anything/anything.js' },
 			{ src: 'plugin/chalkboard/chalkboard.js' },
 			{ src: 'plugin/menu/menu.js' },

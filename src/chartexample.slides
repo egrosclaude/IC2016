@@ -1,0 +1,20 @@
+<!-- INCLUDE reveal.header -->
+
+<section>
+<h2>Memorias</h2>
+<canvas class="stretch" data-chart="bar">
+Volts (V), 1, 0.72, 0.6, 0.48
+<!-- This is a comment that will be ignored -->
+Velocidad (MHz), 1, 1.5, 4, 8.01
+<!-- This is a comment that will be ignored -->
+Densidad (Gb), 1, 2, 8, 32
+<!-- 
+{ 
+ "data" : {
+  "labels" : ["DDR (2002)", "DDR2 (2004)", "DDR3 (2007)", "DDR4 (2013)"]
+ }
+}
+-->
+</canvas>
+</section>
+<!-- INCLUDE reveal.trailer -->

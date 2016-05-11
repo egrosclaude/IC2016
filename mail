@@ -1,0 +1,11 @@
+¿Cuántos bits se necesitan para contar las arenas del mar? 
+
+Supongamos que un granito de arena promedio mide un poco menos de 1 mm de diámetro. ¿Con cuántos bits cuento los granitos de arena que hay en un metro, puestos en fila uno al lado del otro? Son un poquito más de 1000 granitos, así que más o menos con 10 bits (que dan 1024 posibilidades) deberíamos poder contar los granitos que caben en un metro lineal. 
+
+Esa fila de 1000 granitos puesta al lado de otra, y al lado de otra, y al lado otra, hasta totalizar más o menos unas 1000 filas, me da un metro cuadrado de granitos de arena. Como necesito numerar las 1000 y pico de filas, necesito 10 bits más para el número de fila. Unidos a los 10 bits anteriores tengo 20 bits para numerar cada uno de los granitos en un metro cuadrado, diciendo cuál es la fila y columna del granito. Con esos 20 bits puedo contar los aproximadamente un millón de granitos en el metro cuadrado de arena.
+
+¿Y cuántos metros cuadrados de arena hay en el mar?  El Mar Argentino tiene 5.000 km de extensión. Supongamos que el ancho promedio de una playa es de 20 m (habrá playas de cien metros de ancho, pero posiblemente también algunos km de acantilados, que son playas de 0 m de ancho). La superficie aproximada de las playas argentinas entonces será de unos 5.000 km x 0.020 km = 100 km². Así que necesito unos 7 bits más (que dan 128 posibilidades) para numerar cada uno de los km cuadrados del Mar Argentino. Unidos a los 20 bits que contabilizan cada metro cuadrado, son 27 bits. 
+
+Si además quiero contar todos los granitos que hay en cada lugar de la playa hasta una profundidad de 1 m, son 10 bits más. Con 37 bits entonces puedo contabilizar todos los granos de arena en una cinta de 20 m de ancho por 1 m de profundidad por 5000 km de longitud. Son apenas unos pocos bits más que los que contiene el formato de representación en punto flotante IEEE754 de precisión simple (aunque no quiere decir que el rango de representación de IEEE754 sea parecido al número de granos de arena del Mar Argentino, primero porque unos pocos bits de diferencia puede ser mucha diferencia; y segundo, porque la forma de representación en punto flotante no tiene nada que ver con la representación sin signo).
+
+

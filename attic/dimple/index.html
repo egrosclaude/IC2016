@@ -1,0 +1,1111 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>Surveillance sismique du CO2</title>
+
+		<meta name="description" content="Soutenance de doctorat">
+		<meta name="author" content="Lorenzo Perozzi">
+
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/black.css" id="theme">
+
+		<!-- <link type="text/css" rel="stylesheet" href="css/default.css" /> -->
+		<!-- <link href="animate.css" rel="stylesheet"> -->
+
+		<!-- Code syntax highlighting -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+		<link rel="stylesheet" href="lib/css/animate.min.css">
+
+		<!-- Code syntax icones-->
+		<link rel="stylesheet" href="lib/css/weather-icons.css">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+
+
+
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+
+	<body>
+
+		<div class="reveal">
+
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+
+			<section data-state="title" data-background="img/title.png"> <!--************   slide title ********************* -->
+					<h1 style="position:relative;top:360px;left:20px;font-weight:600;letter-spacing:-3px;word-spacing:20px;text-align:right;font-size:90px;line-height:80px">Surveillance sismique de l'injection du CO<sub>2</sub></h1>
+					<h4 style="position:relative;top:350px;left:20px;text-align:right;font-size:30px;text-transform:lowercase;">de la modélisation sismique à l'inversion stochastique</h4>
+					<!-- <h5 style="position:relative;">par Lorenzo Perozzi	 </h5> -->
+					<aside class="notes">
+						Je tiens tout d’abord à vous remercier de votre presence et aujourd'hui je vais vous parler des travaux que j'ai effectué pour faire l'évaluation du profilage sismique vertical pour la caractérisation d,un site potentiel d'injection pour le co2. Ma présentaton vas se deroulé en trois étapes: premièrement je vasi presenter les mesures de laboratoire ensuite je vais discuter a propos la faisabilité du PSV comme méthode de surveillance pour finalement aboutir avec la costruction d'un modèle de reservoir equivalent à Bécancour
+					</aside>
+			</section>
+
+			<section> <!-- INTRODUCTION -->
+						<section >
+							<h2 style="position:relative; top:250px;">Introduction</h2>
+							<aside class="notes">
+								Mais avant d'aborder ces points je vais faire un mise au contexte de pourquoi la séquestration du co2 et que est ce que c'est en pratique.
+
+							</aside>
+						</section>
+
+						<section>  <!-- slide -->
+								<p style="position:relative;left:100px;top:60px;;display:block;width:300px">
+									<i class="wi wi-thermometer"></i><br>limiter le réchauffement climatique à 2 &deg;C . . .
+								</p>
+								<p style="position:relative;left:570px;bottom:410px;display:block;width:300px;">
+									<i class="wi wi-barometer"></i></i><br>. . . pour limiter l'ampleur des changements climatiques
+								</p>
+
+								<h3 class="fragment" style="position:relative;left:300px;bottom:350px">AIE, GIEC</h3>
+
+								<aside class="notes">
+        				Un des plus grandes defis des prochaines décennies sera celui de limiter le rechauffement climatique à 2 C pour limiter l'ampleur des changements climatiques . C'est n'est pas mon idée mais plutôt un constat des organisme internationalement recconnu telles que l'Agence internationale de l'Energie et le goupe d'expert intergouvernamentale sur les changement climatiques.
+    						</aside>
+						</section>
+
+						<section>
+							<h4 style="letter-spacing:-1px;word-spacing:15px;">pour les climatoscéptiques...</h4>
+								<div class="stretch" align:="center">
+							<iframe width="100%" height="100%" frameborder="0" scrolling="no" src="https://plot.ly/~lperozzi/882.embed"></iframe>
+						</div>
+						<aside class="notes">
+							C'est quoi la cause du rechauffement climatique. Ce graphique montre les facteur de forçage naturel et d'origine humain sur la variation de temperature . On peux observer par exemple....
+						</aside>
+						</section>
+
+						<!-- <section >
+							<h4 style="letter-spacing:-1px;word-spacing:15px;">Les GES dans l'ère industrielle</h4>
+							<div class="stretch" align:="center">
+									<iframe width="100%" height="100%" frameborder="0" scrolling="no" src="https://plot.ly/~lperozzi/123.embed"></iframe>
+							</div>
+							<aside class="notes">
+								Si on regarde la concentration des principaux GES dans l'atmosphère a partir de la revolution industrielle on peut remarquer une augmentation constante..
+							</aside>
+						</section> -->
+
+						<section  > <!-- slide -->
+							<h4 style="letter-spacing:-1px;word-spacing:15px;">RÉPARTITION DES GES ANTHROPIQUES MONDIAUX</h4>
+							<div class="stretch" align:="center">
+									<iframe width="900" height="800" frameborder="0" scrolling="no" src="https://plot.ly/~lperozzi/678.embed"></iframe>
+							</div>
+
+							<aside class="notes">
+									parmi les GES le CO2 est surment le gaz avec le plus grand taux d'émission dans l'atmosphère.
+							</aside>
+						</section>
+
+						<section  > <!-- slide -->
+							<h4 style="letter-spacing:-1px;word-spacing:15px;">Concentration de CO<sub>​2</sub>​ dans l'atmosphère</h4>
+							<div class="stretch" align:="center">
+									<iframe width="100%" height="100%" frameborder="0" scrolling="no" src="https://plot.ly/~lperozzi/88.embed"></iframe>
+							</div>
+								<aside class="notes">
+										si on regarde ca concentration historique dans l'atmosphère...
+								</aside>
+						</section>
+
+
+						<section  > <!-- slide -->
+							<h4 style="letter-spacing:-1px;word-spacing:5px;">Réduction des émission de CO<sub>2</sub> par technologie</h4>
+								<div class="stretch">
+										<iframe width="100%" height="100%" frameborder="0" scrolling="no" src="https://plot.ly/~lperozzi/337.embed"></iframe>
+								</div>
+								<aside class="notes">
+										donc si on veut respecter les consigne de limiter le rechauffement climatique à 2 degré, il y a plusieurs actions qui faut etreprendre.
+								</aside>
+						</section>
+
+						<section>
+							<h2 style="position:relative; top:250px;">la séquestration géologique du CO<sub>2</sub></h2>
+							<aside class="notes">
+								plusieur rapport d'organisme internationale ont ciblé la sequestration géologiques du CO2 comme une technologie prometteuse pour reduire les concentration de co2 dans l'atmosphère. Mais que est ce que c,est la séquestration géologiqe du CO2 en pratique?
+							</aside>
+						</section>
+
+						<section data-state='graphics' data-background="img/ccs.gif"> <!-- slide -->
+							<h6 style="position:relative;right:40px;top:50px;">source: <a href="http://co2degrees.com/">co2degrees.com</a></h6>
+						</section>
+
+						<section data-background="img/ccs_sample_new.png"> <!-- slide -->
+							<aside class="notes">
+									plus particulierement, le co2 est sequestré à des profondeur souvent au dela du km dans des formation poreuses. Le reservoir requiert qui il existe une roche couverture étanche qui empecherait des eventuelles remontée du CO2 vers la surface
+							</aside>
+						</section>
+
+						<!-- <section>
+							<h2 style="position:relative; top:250px;">la zone à l'étude</h2>
+						</section> -->
+
+						<section >  <!-- slide -->
+							<h4 style="font-size:37px; letter-spacing:-1px;word-spacing:5px;">Émissions de GES des installations d’envergure</h4>
+							<div class="stretch">
+								<iframe width="100%" height="100%" frameborder="0" scrolling="no" src="https://plot.ly/~lperozzi/749.embed"></iframe>
+							</div>
+							<aside class="notes">
+								cette carte montre la distribution des grand emetteur de CO2 au Canada. Parmis les grand emetteur de CO2 on retrouve les installation pour la recuperation d'huile des sables bitumineuse par exemple. Le gouvernement du quebec a financé la recherche sur le CCS. Entre autre cette recehrche a permi d'indentifier en Becancour, une zone potentiellement interessant pour le CCS. En effet on y retrouve des potentielle fournisseure de co2 (ou emetteur).
+							</aside>
+
+						</section>
+
+						<section>
+							<a href="#" style="position:relative;top:10px;"><img src="img/strati.png" alt="" /></a>
+							<aside class="notes">
+								du point de vu géologique le site est aussi potentiellement propice car, on se trouve das la sequence stratigraphique des basses terre du saint laurent.
+							</aside>
+						</section>
+
+						<section>
+							<div class="pricing_table" style="position:relative;top:130px;">
+
+									<ul style="	width:150px;">
+										<li><br></li>
+										<li><br></li>
+										<li style="text-align:left">Lithologie</li>
+										<li style="text-align:left;">Porosité</li>
+										<li style="text-align:left;">Pérmeabilité</li>
+										<li style="text-align:left;">Salinité</li>
+										<li style="text-align:left;">Épaisseur</li>
+									</ul>
+
+									<ul>
+										<li><br></li>
+										<li>Caprock</li>
+										<li>shale</li>
+										<li>4 %</li>
+										<li>.0004 mD</li>
+										<li>n/a</li>
+										<li>&gt;800 m</li>
+									</ul>
+
+									<ul>
+										<li>potsdam group</li>
+										<li>Cairnside</li>
+										<li>sandstone</li>
+										<li>3.35 %</li>
+										<li>0.12 mD</li>
+										<li>242k mg/l</li>
+										<li>68 m</li>
+									</ul>
+
+									<ul>
+										<li>potsdam group</li>
+										<li>Covey Hill</li>
+										<li>sandstone</li>
+										<li>6 %</li>
+										<li>0.24 mD</li>
+										<li>108k mg/l</li>
+										<li>196 m</li>
+									</ul>
+							</div>
+						</section>
+			</section>
+
+			<section > <!-- OBJECTIFS -->
+
+							<section >
+								<h2 style="position:relative; top:250px;">Objectifs</h2>
+								<aside class="notes">
+									Donc on as une technique, la sequestration du co2, mais il faut que cette technique soit acceptée socialment. Il faut surtout demontré que elle est fiable et que on est capable de maitriser les risque associé au co2 injecté. La sismique en géneral à été souvent utilisé avec succes comme méthode de surveillance pour le co2. A becancour on se retrouve avec des perméabilites et de porositées très faible. On sait pas si on vas avoir succes en utilisant la sismique. Pour cette raison, et aussi dans l'eventualité un jour  le CCS se relance (il y a plus d'éspoir avec le nouveua gouvernement); on propose le profilage sismique vertical methode d'analyse pour la caracterisation de Becancour.
+								</aside>
+							</section>
+
+							<section data-background="img/timeline_frame.png">
+								<p style="position:relative;text-align:left;bottom:75px;text-transform:uppercase;font-size:60px;font-weight:600;color:#E74C3C">suivi de l'injection du CO<sub>2</sub>	</p>
+								<p  class="fragment fade-in" style="position:relative; display:block;width:450px;text-align:left;text-transform:uppercase;bottom:80px; right:5px;font-size:30px;color:#004358">À Bécancour, la sismique est capable de détecter le CO<sub>2</sub>?</p>
+								<p  class="fragment fade-in"  style="position:relative; bottom:110px; left:65px;font-size:25px;text-align:right;color:#004358">mesures de laboratoire</p>
+
+								<p  class="fragment fade-in" style="position:relative; display:block;width:450px;text-align:left;text-transform:uppercase;bottom:80px; right:5px;font-size:30px;color:#1F8A70">Le PSV peut caractériser le reservoir de Bécancour?</p>
+								<p   class="fragment fade-in" style="position:relative; bottom:65px; left:65px;font-size:25px;text-align:right;color:#1F8A70">modélisation synthétique</p>
+								<p   class="fragment fade-in" style="position:relative; display:block;width:300px;bottom:55px; left:730px;font-size:25px;text-align:right;color:#1F8A70">caractérisation avant injection</p>
+
+								<p   class="fragment fade-in" style="position:relative; display:block;width:450px;text-align:left;text-transform:uppercase;bottom:60px; right:5px;font-size:30px;color:#3498DB">Le PSV permet de faire le suivi optimal de l’injection?</p>
+								<p   class="fragment fade-in" style="position:relative; display:block;width:300px;bottom:50px; left:730px;font-size:25px;text-align:right;color:#3498DB">caractérisation dans le temps</p>
+
+
+								<aside class="notes">
+									donc on a faite de mesure de labos pour d'abord verifier la sensibilité des nos roches à l'injection du co2. Mais il faut mettre ne perspective que le reservoir est situé à environ 1km, on fait donc de la modélisation sismique pour repondre à cette question.
+
+									la modélisation sismique sers a caracteriser le reservoir avant l'injection du co2.
+								</aside>
+							</section>
+
+
+
+							<!-- <section data-state="even"> <!- slide -->
+									<!-- <h3 style="position:relative; top:10px; right:100px; width:600px;text-align:left; font-size:2em;font-weight:400;letter-spacing:-1px;word-spacing:20px;line-height:65px;"> surveiller le CO<sub>2</sub> injecté</h3>
+									<h3 style="position:relative; top:280px; left:550px; width:500px;text-align:right; font-size:2em;font-weight:400;letter-spacing:-1px;word-spacing:20px;line-height:65px;"> prédire l'étalement du CO<sub>2</sub></h3>
+									<p  class="fragment" style="position:relative; bottom:200px; right:385px;font-weight:200;">mesures de laboratoire</p>
+									<p  class="fragment" style="position:relative; bottom:200px; right:320px;font-weight:200;">modèle géologique hétérogène</p>
+									<p  class="fragment" style="position:relative; bottom:200px; right:360px;font-weight:200;">profilage sismique vertical</p>
+									<p  class="fragment" style="position:relative; bottom:337px; left:550px;font-weight:200;text-align:right;width:500px">modélisation stochastique de reservoir</p> -->
+							<!-- </section> -->
+
+			</section>
+
+			<section> <!-- LABO -->
+
+
+								<section data-background="img/timeline_labo.png">
+									<p style="position:relative;text-align:left;bottom:75px;text-transform:uppercase;font-size:60px;font-weight:600;color:#E74C3C">suivi de l'injection du CO<sub>2</sub>	</p>
+									<p   style="position:relative; display:block;width:450px;text-align:left;text-transform:uppercase;bottom:80px; right:5px;font-size:30px;color:#004358">À Bécancour, la sismique est capable de détecter le CO<sub>2</sub>?</p>
+									<p   style="position:relative; bottom:110px; left:65px;font-size:25px;text-align:right;color:#004358">mesures de laboratoire</p>
+
+									<!-- <p  class="fragment fade-in" style="position:relative; display:block;width:450px;text-align:left;text-transform:uppercase;bottom:80px; right:5px;font-size:30px;color:#1F8A70">Le PSV peut caractériser le reservoir de Bécancour?</p>
+									<p   class="fragment fade-in" style="position:relative; bottom:65px; left:65px;font-size:25px;text-align:right;color:#1F8A70">modélisation synthétique</p>
+									<p   class="fragment fade-in" style="position:relative; display:block;width:300px;bottom:55px; left:730px;font-size:25px;text-align:right;color:#1F8A70">caractérisation avant injection</p>
+
+									<p   class="fragment fade-in" style="position:relative; display:block;width:450px;text-align:left;text-transform:uppercase;bottom:60px; right:5px;font-size:30px;color:#3498DB">Le PSV permet de faire le suivi optimal de l’injection?</p>
+									<p   class="fragment fade-in" style="position:relative; display:block;width:300px;bottom:50px; left:730px;font-size:25px;text-align:right;color:#3498DB">caractérisation dans le temps</p> -->
+
+								</section>
+
+							<!-- <section>
+								<h2 style="position:relative; top:250px;">les mesures de laboratoire</h2>
+							</section> -->
+
+							<section data-background='img/sample2.jpg'>
+								<p  style="position:relative; top:0px; right:20px;text-align:left">grès du Potsdam</p>
+								<p  style="position:relative; top:0px; right:20px;text-align:left">cylindre de 4cm de longueur</p>
+								<p  style="position:relative; top:0px; right:20px;text-align:left">sèche</p>
+								<p  style="position:relative; top:0px; right:20px;text-align:left">transducteurs</p>
+								<p  style="position:relative; top:0px; right:20px;text-align:left">tube de Tygon™</p>
+							</section>
+
+							<section data-background='img/lab_new.jpg'></section>
+
+							<!-- <section data-background='img/sample1.jpg'>
+								<p class="fragment fade-in" style="position:relative; top:0px; right:20px;font-weight:200;text-align:left">grès du Potsdam</p>
+								<p class="fragment fade-in" style="position:relative; top:0px; right:20px;font-weight:200;text-align:left">cylindre de 4cm de longueur</p>
+								<p class="fragment fade-in" style="position:relative; top:0px; right:20px;font-weight:200;text-align:left">sèche</p>
+							</section> -->
+
+
+
+
+
+
+
+							<section>
+								<a href="#"><img src="img/bulk_density_pres_new.png" alt="" /></a>
+								<aside class="notes">
+									voici le graphique qui montre les valeurs de densité theorique en foction de la temperature et de la pression. Par exemple, pour la transition gaz-supercritique, on peu noter comme, pour la phase supercritique, le temparatures augmentent rapidement.
+
+								</aside>
+							</section>
+
+							<section>
+								<h4 style="letter-spacing:-1px;word-spacing:15px;">Les résultats</h4>
+								<div class="stretch" align:="center">
+								<iframe width="100%" height="100%" frameborder="0" scrolling="no" src="https://plot.ly/~lperozzi/937.embed"></iframe>
+								</div>
+								<aside class="notes">
+									assumptions de gassman: taille de pores très petite, pas de connectivité.
+
+								</aside>
+							</section>
+
+							<!-- <section data-background="img/velocity1.jpg">
+							</section>
+
+							<section data-background="img/velocity1b.jpg">
+							</section>
+
+							<section data-background="img/velocity2.jpg">
+							</section>
+
+							<section data-background="img/velocity2b.jpg">
+							</section> -->
+			</section>
+
+			<section> <!--MODELISATION-->
+
+							<section data-background="img/timeline_statique.png">
+								<p style="position:relative;text-align:left;bottom:75px;text-transform:uppercase;font-size:60px;font-weight:600;color:#E74C3C">suivi de l'injection du CO<sub>2</sub>	</p>
+								<p   style="position:relative; display:block;width:450px;text-align:left;text-transform:uppercase;bottom:80px; right:5px;font-size:30px;color:#004358">À Bécancour, la sismique est capable de détecter le CO<sub>2</sub>?</p>
+								<p   style="position:relative; bottom:110px; left:65px;font-size:25px;text-align:right;color:#004358">mesures de laboratoire</p>
+
+								<div  class="fragment fade-in">
+									<i  style="position:relative;bottom:180px;right:100px;font-size:60px;font-weight:600;color:#00D41A" class="fa fa-check"></i>
+								</div>
+
+								<p   class="fragment fade-in" style="position:relative; display:block;width:450px;text-align:left;text-transform:uppercase;bottom:160px; right:5px;font-size:30px;color:#1F8A70">Le PSV peut caractériser le reservoir de Bécancour?</p>
+								<p   class="fragment fade-in" style="position:relative; bottom:145px; left:65px;font-size:25px;text-align:right;color:#1F8A70">modélisation synthétique</p>
+
+								<div  >
+									<i  style="position:relative;bottom:250px;left:450px;font-size:40px;font-weight:600;color:#ECF0F1" class="fa fa-check"></i>
+								</div>
+								<p    style="position:relative; display:block;width:300px;bottom:200px; left:720px;font-size:25px;text-align:right;color:#ECF0F1">caractérisation avant injection</p>
+								<div  >
+									<i  style="position:relative;bottom:330px;left:450px;font-size:40px;font-weight:600;color:#ECF0F1" class="fa fa-check"></i>
+								</div>
+
+								<div  >
+									<i  style="position:relative;bottom:450px;right:100px;font-size:60px;font-weight:600;color:#ECF0F1" class="fa fa-check"></i>
+								</div>
+
+								<p    style="position:relative; display:block;width:450px;text-align:left;text-transform:uppercase;bottom:320px; right:5px;font-size:30px;color:#ECF0F1">Le PSV permet de faire le suivi optimal de l’injection?</p>
+								<p    style="position:relative; display:block;width:300px;bottom:290px; left:730px;font-size:25px;text-align:right;color:#ECF0F1">caractérisation dans le temps</p>
+
+								<div  >
+									<i  style="position:relative;bottom:420px;right:100px;font-size:60px;font-weight:600;color:#ECF0F1" class="fa fa-check"></i>
+								</div>
+
+							</section>
+
+							<!-- <section>
+								<h2 style="position:relative; top:200px;">La simulation sismique</sub></h2>
+							</section> -->
+
+							<section>
+								<div class="sismique" style="position:relative;top:40px;">
+
+									<ul style="	width:260px;">
+										<li><br><br></li>
+										<li style="text-align:left;">K (m. rigidité)</li>
+										<li style="text-align:left">K <small>matrice</small></li>
+										<li style="text-align:left">K <small>solide</small></li>
+										<li style="text-align:left">K <small>fluide</small></li>
+										<li style="text-align:left;">&phi; (porosité)</li>
+										<li style="text-align:left;">&mu; (m. cisaillement)</li>
+										<li style="text-align:left;">&rho; (densité)</li>
+										<li style="text-align:left;">&rho; <small>solide</small></li>
+										<li style="text-align:left;">&rho; <small>fluide</small></li>
+										<li style="text-align:left;">&eta; (viscosité)</li>
+										<li style="text-align:left;">&kappa; (perméabilité)</li>
+										<li style="text-align:left;">&Tau; (tortuosité)</li>
+										<li style="text-align:left;">Q (facteur de qualité)</li>
+										<li style="text-align:left;">f0 (f. de rélaxation)</li>
+									</ul>
+
+									<ul>
+										<li><br>élastique</li>
+										<li ><i class="fa fa-check"></i></li>
+										<li ><i class="fa fa-close" style="color:#E74C3C"></i></li>
+										<li ><i class="fa fa-close" style="color:#E74C3C"></i></li>
+										<li ><i class="fa fa-close" style="color:#E74C3C"></i></li>
+										<li ><i class="fa fa-close" style="color:#E74C3C"></i></li>
+										<li ><i class="fa fa-check"></i></li>
+										<li ><i class="fa fa-check"></i></li>
+										<li ><i class="fa fa-close" style="color:#E74C3C"></i></li>
+										<li ><i class="fa fa-close" style="color:#E74C3C"></i></li>
+										<li ><i class="fa fa-close" style="color:#E74C3C"></i></li>
+										<li ><i class="fa fa-close" style="color:#E74C3C"></i></li>
+										<li ><i class="fa fa-close" style="color:#E74C3C"></i></li>
+										<li ><i class="fa fa-close" style="color:#E74C3C"></i></li>
+										<li ><i class="fa fa-close" style="color:#E74C3C"></i></li>
+									</ul>
+
+									<ul>
+										<li><br>viscoélastique</li>
+										<li ><i class="fa fa-check"></i></li>
+										<li ><i class="fa fa-close" style="color:#E74C3C"></i></li>
+										<li ><i class="fa fa-close" style="color:#E74C3C"></i></li>
+										<li ><i class="fa fa-close" style="color:#E74C3C"></i></li>
+										<li ><i class="fa fa-close" style="color:#E74C3C"></i></li>
+										<li ><i class="fa fa-check"></i></li>
+										<li ><i class="fa fa-check"></i></li>
+										<li ><i class="fa fa-close" style="color:#E74C3C"></i></li>
+										<li ><i class="fa fa-close" style="color:#E74C3C"></i></li>
+										<li ><i class="fa fa-close" style="color:#E74C3C"></i></li>
+										<li ><i class="fa fa-close" style="color:#E74C3C"></i></li>
+										<li ><i class="fa fa-close" style="color:#E74C3C"></i></li>
+										<li ><i class="fa fa-check"></i></li>
+										<li ><i class="fa fa-check"></i></li>
+									</ul>
+
+									<ul>
+										<li>poro <br>viscoélastique</li>
+										<li ><i class="fa fa-close" style="color:#E74C3C"></i></li>
+										<li ><i class="fa fa-check"></i></li>
+										<li ><i class="fa fa-check"></i></li>
+										<li ><i class="fa fa-check"></i></li>
+										<li ><i class="fa fa-check"></i></li>
+										<li ><i class="fa fa-check"></i></li>
+										<li ><i class="fa fa-close" style="color:#E74C3C"></i></li>
+										<li ><i class="fa fa-check"></i></li>
+										<li ><i class="fa fa-check"></i></li>
+										<li ><i class="fa fa-check"></i></li>
+										<li ><i class="fa fa-check"></i></li>
+										<li ><i class="fa fa-check"></i></li>
+										<li ><i class="fa fa-check"></i></li>
+										<li ><i class="fa fa-check"></i></li>
+									</ul>
+								</div>
+							</section >
+
+							<!-- <section data-background="img/vsp_3D.png">
+								<h4 style="font-size=30px;text-align:right;position:relative;bottom:50px;left:60px;letter-spacing:-1px;word-spacing:5px;">Schéma d'une acquisition PSV classique</h4>
+							</section> -->
+
+							<section>
+								<h4 style="letter-spacing:-1px;word-spacing:15px;">les données de départ ...</h4>
+								<div class="stretch" align:="center">
+									<iframe width="100%" height="100%" frameborder="0" scrolling="no" src="https://plot.ly/~lperozzi/456.embed"></iframe>
+								</div>
+								<aside class="notes">
+									log c'est une partie des données. les autres viennet soit des mesures de labos soit de la literature.
+
+								</aside>
+							</section>
+
+							<section data-background="img/mod_ref_vp.png">
+								<h4 style="letter-spacing:-1px;word-spacing:15px;">... le modèle géologique</h4>
+<aside class="notes">
+	on part avec un modele rapresentatif de la geologie de becancour. L'injection se fait au niveau du reservoir (geophones rouges).
+
+</aside>
+							</section>
+
+							<!-- <section data-background="img/mod_ref_vp_tilted.png" data-background-repeat="repeat" data-background-size="490px">
+							</section> -->
+
+
+							<section>
+								<h2 style="position:relative; top:150px;word-spacing:10px">Surveillance du CO<sub>2</sub> injecté après 5, 15 et 50 ans.</h2>
+							</section>
+
+							<section data-background="img/result_sisimique1.png">
+							</section>
+
+							<section data-background="img/result_sisimique2.png">
+							</section>
+
+							<section data-background="img/result_sisimique3.png">
+							</section>
+
+							<!-- <section>
+								<h2 style="position:relative; top:250px;">Conclusions</h2>
+							</section>
+
+							<section>
+								<p style="text-align:left;position:relative;top:100px;"><i style="font-size:50px;color:#099A4D" class="fa fa-check"></i> signature sisimque du Covey Hill   </p>
+								<p class="fragment" style="text-align:left;position:relative;top:100px;"><i style="font-size:50px;color:#E74C3C" class="fa fa-close"></i> modèle de Gassmann   </p>
+								<p class="fragment" style="text-align:left;position:relative;top:100px;"><i style="font-size:50px;color:#099A4D" class="fa fa-check"></i> Le CO<sub>2</sub> est detecté pricipalement en terme de délai en temps.</p>
+
+								<aside class="notes">
+								<ul>
+									<li>les mesures de laboratoire ont confirmé que le Covey Hill répond "mieux" en terme de réponse sismique à l'injection du CO2, le cairnside n'enregistre presque aucune variation. Les hypothèse pourrait être que le covey hill presente une plus grande permeabilité que le cairnside, et ce dernier as une matrice plus rigide (K_dry plus élevée).</li>
+									<li>Le modèle de Gassmann suppose que le réseau de pores soit connecté. Les échantillons du Cairnside et du Covey Hill ont une faible taille de pores qui pourrait empêcher la formation d’un tel réseau et donc limiter l’applicabilité de ce modèle. De plus, Gassmann suppose que la pression au niveau
+									des pores est en équilibre.</li>
+									<li>Le CO<sub>2</sub> est detecté pricipalement en terme de délai en temps.</li>
+								</ul>
+							</aside>
+
+							</section> -->
+
+
+
+
+			</section>
+
+			<section> <!-- CARACTERISATION STATIQUE -->
+
+							<!-- <section data-state="title">
+									<h2 style="position:relative; top:100px;letter-spacing:-1px;word-spacing:15px;">La géostatistique comme outils d'optmisation pour la surveillance du CO<sub>2</sub></h2>
+							</section> -->
+
+							<section data-background="img/timeline_statique.png">
+								<p style="position:relative;text-align:left;bottom:75px;text-transform:uppercase;font-size:60px;font-weight:600;color:#E74C3C">suivi de l'injection du CO<sub>2</sub>	</p>
+								<p   style="position:relative; display:block;width:450px;text-align:left;text-transform:uppercase;bottom:80px; right:5px;font-size:30px;color:#004358">À Bécancour, la sismique est capable de détecter le CO<sub>2</sub>?</p>
+								<p   style="position:relative; bottom:110px; left:65px;font-size:25px;text-align:right;color:#004358">mesures de laboratoire</p>
+
+								<div  >
+									<i  style="position:relative;bottom:180px;right:100px;font-size:60px;font-weight:600;color:#ECF0F1" class="fa fa-check"></i>
+								</div>
+
+								<p    style="position:relative; display:block;width:450px;text-align:left;text-transform:uppercase;bottom:160px; right:5px;font-size:30px;color:#1F8A70">Le PSV peut caractériser le reservoir de Bécancour?</p>
+								<p    style="position:relative; bottom:145px; left:65px;font-size:25px;text-align:right;color:#1F8A70">modélisation synthétique</p>
+
+								<div  class="fragment fade-in">
+									<i  style="position:relative;bottom:250px;left:450px;font-size:40px;font-weight:600;color:#00D41A" class="fa fa-check"></i>
+								</div>
+								<p    class="fragment fade-in" style="position:relative; display:block;width:300px;bottom:200px; left:720px;font-size:25px;text-align:right;color:#1F8A70">caractérisation avant injection</p>
+								<div  >
+									<i  style="position:relative;bottom:330px;left:450px;font-size:40px;font-weight:600;color:#ECF0F1" class="fa fa-check"></i>
+								</div>
+
+								<div  >
+									<i  style="position:relative;bottom:450px;right:100px;font-size:60px;font-weight:600;color:#ECF0F1" class="fa fa-check"></i>
+								</div>
+
+								<p    style="position:relative; display:block;width:450px;text-align:left;text-transform:uppercase;bottom:320px; right:5px;font-size:30px;color:#ECF0F1">Le PSV permet de faire le suivi optimal de l’injection?</p>
+								<p    style="position:relative; display:block;width:300px;bottom:290px; left:730px;font-size:25px;text-align:right;color:#ECF0F1">caractérisation dans le temps</p>
+
+								<div  >
+									<i  style="position:relative;bottom:420px;right:100px;font-size:60px;font-weight:600;color:#ECF0F1" class="fa fa-check"></i>
+								</div>
+<aside class="notes">
+	on vas se servir du PSV et des donnée de diagraphie de BC pour modeliser le proprietes elastiqe (statique) du reservoir de BC
+
+</aside>
+							</section>
+
+							<!-- <section data-state="even">
+									<p style="position:relative; top:200px;">
+										Les données géophysiques sont utilisée en caractérisation de réservoir, pour estimer les propriétés physiques du sous sol.
+									</p>
+							</section> -->
+
+							<section > <!-- slide -->
+										<h2 style="position:relative; top:250px;">l'inversion stochastique</h2>
+									<aside class="notes">
+										Étant un problème inverse non unique, il existe plusieurs methodes d'inversion pour prédire les propriétés des réservoirs.
+										Parmis eux, les methodes par inversion stochastique sont particulièrement indiqueés  car ils permettent d’inférer directement les propriétés géologiques à partir des données sismiques et de puits.
+									</aside>
+							</section>
+
+							<!-- <section >
+									<p style="position:relative; top:200px;">
+										Parmis eux, les methodes par inversion stochastique sont particulièrement indiqueés  car ils permettent d’inférer directement les propriétés géologiques à partir des données sismiques et de puits.
+									</p>
+							</section> -->
+
+							<section >
+								<a href="#" style="position:relative;bottom:50px;"><img src="img/inversion1_new.png" alt="" /></a>
+							</section>
+
+							<!-- <section data-state="even">
+
+								<h2 style="position:relative; top:250px;">Approche en trois étapes</h2>
+
+							</section> -->
+
+							<section >
+								<a href="#" style="position:relative;bottom:50px;"><img src="img/workflow1_new.png" alt="" /></a>
+
+							</section>
+
+							<section >
+								<a href="#" style="position:relative;bottom:50px;"><img src="img/workflow1b_new.png" alt="" /></a>
+							</section>
+
+							<section >
+								<a href="#" style="position:relative;bottom:50px;"><img src="img/workflow1c_new.png" alt="" /></a>
+							</section>
+
+			</section>
+
+			<section>
+
+							<section data-background="img/timeline_dynamique.png">
+								<p style="position:relative;text-align:left;bottom:75px;text-transform:uppercase;font-size:60px;font-weight:600;color:#E74C3C">suivi de l'injection du CO<sub>2</sub>	</p>
+								<p   style="position:relative; display:block;width:450px;text-align:left;text-transform:uppercase;bottom:80px; right:5px;font-size:30px;color:#004358">À Bécancour, la sismique est capable de détecter le CO<sub>2</sub>?</p>
+								<p   style="position:relative; bottom:110px; left:65px;font-size:25px;text-align:right;color:#004358">mesures de laboratoire</p>
+
+								<div  >
+									<i  style="position:relative;bottom:180px;right:100px;font-size:60px;font-weight:600;color:#ECF0F1" class="fa fa-check"></i>
+								</div>
+
+								<p    style="position:relative; display:block;width:450px;text-align:left;text-transform:uppercase;bottom:160px; right:5px;font-size:30px;color:#1F8A70">Le PSV peut caractériser le reservoir de Bécancour?</p>
+								<p    style="position:relative; bottom:145px; left:65px;font-size:25px;text-align:right;color:#1F8A70">modélisation synthétique</p>
+
+								<div  >
+									<i  style="position:relative;bottom:250px;left:450px;font-size:40px;font-weight:600;color:#00D41A" class="fa fa-check"></i>
+								</div>
+								<p     style="position:relative; display:block;width:300px;bottom:200px; left:720px;font-size:25px;text-align:right;color:#1F8A70">caractérisation avant injection</p>
+								<div  class="fragment fade-in">
+									<i  style="position:relative;bottom:330px;left:450px;font-size:40px;font-weight:600;color:#00D41A" class="fa fa-check"></i>
+								</div>
+
+								<div  class="fragment fade-in">
+									<i  style="position:relative;bottom:450px;right:100px;font-size:60px;font-weight:600;color:#00D41A" class="fa fa-check"></i>
+								</div>
+
+								<p    class="fragment fade-in" style="position:relative; display:block;width:450px;text-align:left;text-transform:uppercase;bottom:320px; right:5px;font-size:30px;color:#3498DB">Le PSV permet de faire le suivi optimal de l’injection?</p>
+								<p    class="fragment fade-in" style="position:relative; display:block;width:300px;bottom:290px; left:730px;font-size:25px;text-align:right;color:#3498DB">caractérisation dans le temps</p>
+
+								<div  >
+									<i  style="position:relative;bottom:420px;right:100px;font-size:60px;font-weight:600;color:#ECF0F1" class="fa fa-check"></i>
+								</div>
+
+							</section>
+      <!-- </section>
+			<section> -->
+							<section >
+								<a href="#" style="position:relative;bottom:50px;"><img src="img/workflow2_new.png" alt="" /></a>
+							</section>
+
+							<!-- <section >
+								<a class="animated-gif" style="position:relative;top:120px;"><img alt="img/sat1.png" width="40%" height="40%" src="img/animation_sat.gif"> </a>
+								<a class="animated-gif" style="position:relative;top:120px;"><img alt="img/vp1.png" width="40%" height="40%" src="img/animation_vp.gif"> </a>
+								<img src="img/colorbar.png" alt="" style="position:relative;top:150px;width=40%; height=40%;"/>
+								<p style="position:relative;bottom:290px;right:250px;text-transform:uppercase;">saturation CO<sub>2</sub></p>
+								<p style="position:relative;bottom:370px;left:150px;text-transform:uppercase;">vitesse  P</p>
+								<p style="position:relative;bottom:400px;left:392px;font-size:20px">high</p>
+								<p style="position:relative;bottom:130px;left:392px;font-size:20px">low</p>
+
+							</section> -->
+
+
+							<section >
+								<a href="#" style="position:relative;bottom:50px;"><img src="img/workflow4_new.png" alt="" /></a>
+							</section>
+
+							<section >
+								<h2 style="position:relative; top:250px;">validation des modèles</h2>
+							</section>
+
+							<section >
+								<a class="fragment" href="#" style="position:relative;top:130px;right:50px"><img src="img/validation1.png" alt="" /></a>
+								<a href="#" style="position:relative;top:130px;right:30px"><img src="img/validation2.png" alt="" /></a>
+								<a class="fragment" href="#" style="position:relative;top:130px;"><img src="img/validation3.png" alt="" /></a>
+
+							</section>
+
+							<section >
+								<a href="#" style="position:relative;bottom:50px;"><img src="img/SSIM.png" alt="" /></a>
+
+							</section>
+
+							<!-- <section data-state="even">
+								<h2 style="position:relative; top:250px;">conclusions</h2>
+							</section> -->
+
+							<!-- <section data-background="img/timeline_dynamique.png">
+								<p style="position:relative;text-align:left;bottom:75px;text-transform:uppercase;font-size:60px;font-weight:600;color:#E74C3C">suivi de l'injection du CO<sub>2</sub>	</p>
+								<p   style="position:relative; display:block;width:450px;text-align:left;text-transform:uppercase;bottom:80px; right:5px;font-size:30px;color:#004358">À Bécancour, la sismique est capable de détecter le CO<sub>2</sub>?</p>
+								<p   style="position:relative; bottom:110px; left:65px;font-size:25px;text-align:right;color:#004358">mesures de laboratoire</p>
+
+								<div  >
+									<i  style="position:relative;bottom:180px;right:100px;font-size:60px;font-weight:600;color:#ECF0F1" class="fa fa-check"></i>
+								</div>
+
+								<p   style="position:relative; display:block;width:450px;text-align:left;text-transform:uppercase;bottom:160px; right:5px;font-size:30px;color:#1F8A70">Le PSV peut caractériser le reservoir de Bécancour?</p>
+								<p   style="position:relative; bottom:145px; left:65px;font-size:25px;text-align:right;color:#1F8A70">modélisation synthétique</p>
+
+								<div  >
+									<i  style="position:relative;bottom:250px;left:450px;font-size:40px;font-weight:600;color:#ECF0F1" class="fa fa-check"></i>
+								</div>
+								<p    style="position:relative; display:block;width:300px;bottom:200px; left:720px;font-size:25px;text-align:right;color:#1F8A70">caractérisation avant injection</p>
+								<div  >
+									<i  style="position:relative;bottom:330px;left:450px;font-size:40px;font-weight:600;color:#ECF0F1" class="fa fa-check"></i>
+								</div>
+
+								<div  >
+									<i  style="position:relative;bottom:450px;right:100px;font-size:60px;font-weight:600;color:#ECF0F1" class="fa fa-check"></i>
+								</div>
+
+								<p    style="position:relative; display:block;width:450px;text-align:left;text-transform:uppercase;bottom:320px; right:5px;font-size:30px;color:#3498DB">Le PSV permet de faire le suivi optimal de l’injection?</p>
+								<p    style="position:relative; display:block;width:300px;bottom:290px; left:730px;font-size:25px;text-align:right;color:#3498DB">caractérisation dans le temps</p>
+
+								<div  class="fragment fade-in">
+									<i  style="position:relative;bottom:420px;right:100px;font-size:60px;font-weight:600;color:#00D41A" class="fa fa-check"></i>
+								</div>
+
+							</section> -->
+
+							<!-- <section data-state="even">
+								<p style="text-align:left;position:relative;top:100px;"><i style="font-size:50px;color:#3CE78B" class="fa fa-check"></i> meilleure correspondance sismique avec le modèle de référence  </p>
+								<p class="fragment" style="text-align:left;position:relative;top:100px;"><i style="font-size:50px;color:#3CE78B" class="fa fa-check"></i> distribution du CO<sub>2</sub> fidèle à la réalité</p>
+								<p class="fragment" style="text-align:left;position:relative;top:100px;"><i style="font-size:50px;color:#FF6D5D" class="fa fa-close"></i> difference avec les réalisations initiales</p>
+
+								<aside class="notes">
+									<ul>
+										<li>Les analyses statistiques présentées dans la section précédente montrent que le flux de travail proposé permet d’obtenir un modèle final qui montre la meilleure correspondance sismique avec le modèle de référence</li>
+										<li>De plus, l’intégration de la simulation d’écoulement dans le processus d’optimisation permet d’obtenir le modèle qui présente la distribution du panache de CO2 plus fidèle à la réalité</li>
+										<li>La méthodologie a été appliquée à un cas synthétique où le modèle de référence a été obtenu par cosimulation séquentielle gaussienne des données de forages disponibles dans la zone d’étude et les modèles stochastiques initiaux sont simulés à partir de trois forages hypothétiques du modèle de référence. Ceci implique que le modèle de référence et les simulations stochastiques initiales ont un degré de variabilité limitée, comme il est confirmé par leur corrélation élevé.</li>
+									</ul>
+
+								</aside>
+
+							</section> -->
+
+
+			</section>
+
+			<section> <!-- CONCLUSION -->
+
+							<section >
+								<h2 style="position:relative; top:250px;">Pour terminer ...</h2>
+							</section>
+
+							<section data-background="img/timeline_dynamique.png">
+								<p style="position:relative;text-align:left;bottom:75px;text-transform:uppercase;font-size:60px;font-weight:600;color:#E74C3C">suivi de l'injection du CO<sub>2</sub>	</p>
+								<p   style="position:relative; display:block;width:450px;text-align:left;text-transform:uppercase;bottom:80px; right:5px;font-size:30px;color:#004358">À Bécancour, la sismique est capable de détecter le CO<sub>2</sub>?</p>
+								<p   style="position:relative; bottom:110px; left:65px;font-size:25px;text-align:right;color:#004358">mesures de laboratoire</p>
+
+								<div  class="fragment fade-in">
+									<i  style="position:relative;bottom:180px;right:100px;font-size:60px;font-weight:600;color:#00D41A" class="fa fa-check"></i>
+								</div>
+
+								<p   style="position:relative; display:block;width:450px;text-align:left;text-transform:uppercase;bottom:160px; right:5px;font-size:30px;color:#1F8A70">Le PSV peut caractériser le reservoir de Bécancour?</p>
+								<p   style="position:relative; bottom:145px; left:65px;font-size:25px;text-align:right;color:#1F8A70">modélisation synthétique</p>
+
+								<div  >
+									<i  style="position:relative;bottom:250px;left:450px;font-size:40px;font-weight:600;color:#ECF0F1" class="fa fa-check"></i>
+								</div>
+								<p    style="position:relative; display:block;width:300px;bottom:200px; left:720px;font-size:25px;text-align:right;color:#1F8A70">caractérisation avant injection</p>
+								<div  >
+									<i  style="position:relative;bottom:330px;left:450px;font-size:40px;font-weight:600;color:#ECF0F1" class="fa fa-check"></i>
+								</div>
+
+								<div  class="fragment fade-in">
+									<i  style="position:relative;bottom:450px;right:100px;font-size:60px;font-weight:600;color:#00D41A" class="fa fa-check"></i>
+								</div>
+
+								<p    style="position:relative; display:block;width:450px;text-align:left;text-transform:uppercase;bottom:320px; right:5px;font-size:30px;color:#3498DB">Le PSV permet de faire le suivi optimal de l’injection?</p>
+								<p    style="position:relative; display:block;width:300px;bottom:290px; left:730px;font-size:25px;text-align:right;color:#3498DB">caractérisation dans le temps</p>
+
+								<div  class="fragment fade-in">
+									<i  style="position:relative;bottom:420px;right:100px;font-size:60px;font-weight:600;color:#00D41A" class="fa fa-check"></i>
+								</div>
+
+							</section>
+
+
+							<!-- <section data-state="title">
+								<p>
+									Le travail presenté, propose une approche exhaustive pour la caractérisation sismique de l’injection du CO2, de la
+									modélisation sismique à l’optimisation stochastique des propriétés élastiques du réservoir basée sur les simulations d’écoulement.
+								</p>
+
+								<aside class="notes">
+									Le travail presenté, propose une approche exhaustive pour la caractérisation sismique de l’injection du CO2, de la
+									modélisation sismique à l’optimisation stochastique des propriétés élastiques du réservoir basée sur les simulations d’écoulement.
+								</aside>
+							</section>
+
+
+							<section data-state="title">
+								<p>
+									Au niveau de la modélisation sismique de l’injection du CO<sub>2</sub> les résultats obtenues ont montré que pour un contexte avec des porosités
+									et des perméabilités très faibles, les différences dans la réponse sismique sont minimes et se résument avec un délai dans le temps de l’onde
+								</p>
+
+								<aside class="notes">
+									Les résultats obtenues ont montré que pour un contexte comme celui étudié, c’est-à-dire avec des porosités et des perméabilités très faibles, les différences dans la réponse sismique dues à l’injections du CO2 sont relativement faibles et se résument en un délai dans le temps d’arrivée de l’onde, de l’ordre de 30 ms.
+								</aside>
+							</section>
+
+							<section data-state="title">
+								<p>
+									Du côté de la caractérisation du reservoir, les résultats obtenues ont montré que la l’utilisation des données dynamiques dans la boucle d’optimisation permet d’améliorer la correspondance sismique du modèle de réservoir simulé avec le modèle de référence.
+								</p>
+								<aside class="notes">
+									Du côté de la modélisation stochastique d’un réservoir potentiel pour la séquestration géologique du CO2, une approche en trois-étapes à été proposée pour l’optimisation des modèles de réservoir, basées sur les données statiques (c’est-à-dire les données de forages) et les données dynamiques (c’est-à-dire la simulation d’écoulement de CO2). Les résultats obtenues ont montré que la l’utilisation des données dynamiques dans la boucle d’optimisation
+									permet d’améliorer la correspondance sismique du modèle de réservoir simulé avec le modèle de référence.
+								</aside>
+							</section>
+
+							<section data-state="title">
+								<h2 style="position:relative; top:250px;">Limitations et development futurs</h2>
+								<aside class="notes">
+									Des développements futurs qui permettront d’accroître la portée des méthodes utilisée sont envisageables:
+								</aside>
+							</section>
+
+
+							<section data-state="title">
+									<p class="fragment" style="text-align:left;position:relative;top:100px;"> pression d'injection du CO<sub>2</sub> en laboratoire</p>
+									<p class="fragment" style="text-align:left;position:relative;top:100px;">modèle synthétique</p>
+									<p class="fragment" style="text-align:left;position:relative;top:100px;">scénarios 3D</p>
+								<aside class="notes">
+									<ul>
+										<li>mesurer les effets de la pression dû à l’injection du CO2 en laboratoire et les mettre à l’échelle du réservoir afin de pouvoir les séparer des effet dus à la substitution de fluide;</li>
+										<li>cette approche a été uniquement testé avec un modèle synthétique réaliste. Son application à des données réelles permettrait de valider l’approche</li>
+										<li>adapter cette méthodologie pour des scénarios 3D</li>
+									</ul>
+								</aside>
+							</section> -->
+			</section>
+
+			<section data-state="title" data-background="http://media.giphy.com/media/qd7Wlk9nx8VwI/giphy.gif">  <!-- END -->
+				<h1 style="position:relative; top:250px;right:750px;font-weight:600;letter-spacing:-3px;word-spacing:20px;text-align:right;font-size:90px;line-height:80pxcolor:#ECF0F1">merci!</h1>
+			</section>
+
+
+
+			</div>
+
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.js"></script>
+
+		<script>
+		var items = [
+			{
+				selector : "#chart-frame-1",
+				type : "line",
+				data : {
+					labels: ["January", "February", "March", "April", "May", "June", "July"],
+					datasets: [
+						{
+							label: "My First dataset",
+							fillColor: "rgba(220,220,220,0.2)",
+							strokeColor: "rgba(220,220,220,1)",
+							pointColor: "rgba(220,220,220,1)",
+							pointStrokeColor: "#fff",
+							pointHighlightFill: "#fff",
+							pointHighlightStroke: "rgba(220,220,220,1)",
+							data: [65, 59, 80, 81, 56, 55, 40]
+						},
+						{
+							label: "My Second dataset",
+							fillColor: "rgba(151,187,205,0.2)",
+							strokeColor: "rgba(151,187,205,1)",
+							pointColor: "rgba(151,187,205,1)",
+							pointStrokeColor: "#fff",
+							pointHighlightFill: "#fff",
+							pointHighlightStroke: "rgba(151,187,205,1)",
+							data: [28, 48, 40, 19, 86, 27, 90]
+						}
+					]
+				},
+				options : {
+					responsive:true
+				}
+			},
+			{
+				selector : "#chart-frame-2",
+				type : "bar",
+				data : {
+					labels: ["January", "February", "March", "April", "May", "June", "July"],
+					datasets: [
+						{
+							label: "My First dataset",
+							fillColor: "rgba(220,220,220,0.5)",
+							strokeColor: "rgba(220,220,220,0.8)",
+							highlightFill: "rgba(220,220,220,0.75)",
+							highlightStroke: "rgba(220,220,220,1)",
+							data: [65, 59, 80, 81, 56, 55, 40]
+						},
+						{
+							label: "My Second dataset",
+							fillColor: "rgba(151,187,205,0.5)",
+							strokeColor: "rgba(151,187,205,0.8)",
+							highlightFill: "rgba(151,187,205,0.75)",
+							highlightStroke: "rgba(151,187,205,1)",
+							data: [28, 48, 40, 19, 86, 27, 90]
+						}
+					]
+				},
+				options : {
+					responsive : true
+				}
+			},
+			{
+				selector : "#chart-frame-3",
+				type : "radar",
+				data : {
+					labels: ["Eating", "Drinking", "Sleeping", "Designing", "Coding", "Cycling", "Running"],
+					datasets: [
+						{
+							label: "My First dataset",
+							fillColor: "rgba(220,220,220,0.2)",
+							strokeColor: "rgba(220,220,220,1)",
+							pointColor: "rgba(220,220,220,1)",
+							pointStrokeColor: "#fff",
+							pointHighlightFill: "#fff",
+							pointHighlightStroke: "rgba(220,220,220,1)",
+							data: [65, 59, 90, 81, 56, 55, 40]
+						},
+						{
+							label: "My Second dataset",
+							fillColor: "rgba(151,187,205,0.2)",
+							strokeColor: "rgba(151,187,205,1)",
+							pointColor: "rgba(151,187,205,1)",
+							pointStrokeColor: "#fff",
+							pointHighlightFill: "#fff",
+							pointHighlightStroke: "rgba(151,187,205,1)",
+							data: [28, 48, 40, 19, 96, 27, 100]
+						}
+					]
+				},
+				options :{
+					responsive : true,
+					pointLabelFontSize : 15
+				}
+			},
+			{
+				selector : "#chart-frame-4",
+				type : "polararea",
+				data : [
+					{
+						value: 300,
+						color:"#F7464A",
+						highlight: "#FF5A5E",
+						label: "Red"
+					},
+					{
+						value: 50,
+						color: "#46BFBD",
+						highlight: "#5AD3D1",
+						label: "Green"
+					},
+					{
+						value: 100,
+						color: "#FDB45C",
+						highlight: "#FFC870",
+						label: "Yellow"
+					},
+					{
+						value: 40,
+						color: "#949FB1",
+						highlight: "#A8B3C5",
+						label: "Grey"
+					},
+					{
+						value: 120,
+						color: "#4D5360",
+						highlight: "#616774",
+						label: "Dark Grey"
+					}
+				],
+				options : {
+					responsive : true
+				}
+			},
+			{
+				selector : "#chart-frame-5",
+				type : "pie",
+				data : [
+					{
+						value: 300,
+						color:"#F7464A",
+						highlight: "#FF5A5E",
+						label: "Red"
+					},
+					{
+						value: 50,
+						color: "#46BFBD",
+						highlight: "#5AD3D1",
+						label: "Green"
+					},
+					{
+						value: 100,
+						color: "#FDB45C",
+						highlight: "#FFC870",
+						label: "Yellow"
+					}
+				],
+				options : {
+					responsive : true
+				}
+			},
+			{
+				selector : "#chart-frame-6",
+				type : "doughnut",
+				data : [
+					{
+						value: 90,
+						color:"#662F8F",
+						highlight: "#7F3BB2",
+						label: "CO2"
+					},
+					{
+						value: 9,
+						color: "#B9529E",
+						highlight: "#733362",
+						label: "CH4"
+					},
+					{
+						value: 1,
+						color: "#ED1F79",
+						highlight: "#B2175B",
+						label: "N2O"
+					}
+				],
+				options : {
+					responsive : true
+				}
+			}
+		];
+
+
+			// Full list of configuration options available at:
+			// https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: false,
+				slideNumber : true,
+				// autoSlide: 5000,
+				//previewLinks: true,
+				// Parallax background image
+    		// parallaxBackgroundImage: 'img/milkyway_4_BW.jpg', // e.g. "https://s3.amazonaws.com/hakim-static/reveal-js/reveal-parallax-1.jpg"
+
+    		// Parallax background size
+    		// parallaxBackgroundSize: '1920px 1200px', // CSS syntax, e.g. "2100px 900px" - currently only pixels are supported (don't use % or auto)
+
+    		// Amount of pixels to move the parallax background per slide step,
+    		// a value of 0 disables movement along the given axis
+    		// These are optional, if they aren't specified they'll be calculated automatically
+    		// parallaxBackgroundHorizontal: 50,
+    		// parallaxBackgroundVertical: 50,
+
+				transition: 'slide', // none/fade/slide/convex/concave/zoom
+
+				chart : {
+					items : items
+				},
+				// Optional reveal.js plugins
+				dependencies: [
+					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/highlight/highlight.js', async: true, condition: function() { return !!document.querySelector( 'pre code' ); }, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: 'plugin/zoom-js/zoom.js', async: true },
+					{ src: 'plugin/notes/notes.js', async: true },
+					{ src: 'http://code.jquery.com/jquery-1.10.2.js'}
+				]
+			});
+
+			$(function () {
+				// on page load  replace all src URLs
+					$('.animated-gif').each(function (i, e) {
+						disableGif(e)
+					});
+				});
+				Reveal.addEventListener('slidechanged', initAnimatedGifs);
+				Reveal.addEventListener('ready', initAnimatedGifs);
+
+				function initAnimatedGifs(event) {
+					$('.animated-gif', event.currentSlide).each(function (i, e) {
+						enableGif(e)
+					});
+
+					if (event.previousSlide)
+						$('.animated-gif', event.previousSlide).each(function (i, e) {
+							disableGif(e)
+						});
+				}
+
+				function enableGif(e) {
+					var src = $(e).attr("src")
+					$(e).attr('src', src.replace('-image.gif', '.gif'));
+
+
+				}
+				function disableGif(e) {
+					var src = $(e).attr("src")
+					$(e).attr('src', src.replace('.gif', '-image.gif'));
+
+				}
+		</script>
+
+	</body>
+</html>

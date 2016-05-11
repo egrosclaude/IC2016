@@ -691,7 +691,7 @@ El lenguaje de máquina de cualquier CPU, y su lenguaje ensamblador (o *Assemble
 <table style="font-size: 30px;">
 <tr><th colspan="2">Mnemónico</th><th colspan="2">Instrucción</th></tr>
 <tr><td><b>LD</b></td><td>Load (cargar)</td><td>010</td><td>Mem &rarr; Ac</td></tr>
-<tr><td><b>ST</b></td><td>Store(almacenar)</td><td>011</td><td>Ac &rarr; Mem</td></tr>
+<tr><td><b>ST</b></td><td>Store (almacenar)</td><td>011</td><td>Ac &rarr; Mem</td></tr>
 <tr><td><b>ADD</b></td><td>Add (sumar)</td><td>100</td><td>Ac &larr; Ac + Mem</td></tr>
 <tr><td><b>SUB</b></td><td>Subtract (restar)</td><td>101</td><td>Ac &larr; Ac - Mem</td></tr>
 <tr><td><b>JMP</b></td><td>Jump (saltar)</td><td>110</td><td>PC &larr; PC + despl</td></tr>
