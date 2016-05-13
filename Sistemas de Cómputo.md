@@ -109,18 +109,36 @@ El PDP-1 fue uno de los primeros computadores que pudieron ser accedidos masivam
 
 ## Tercera Generación
 
-A mediados de los 60 se desarrollaron los **circuitos integrados, IC o microchips**, que eran el resultado de un proceso de fabricación completamente nuevo llamado **fotomicrolitografía**. Los ingenieros preparaban un diagrama del circuito deseado, con sus transistores, conexiones y demás componentes, y el diagrama se reducía por medios ópticos hasta un tamaño microscópico. La imagen resultante se grababa sobre un sustrato de silicio. Repitiendo el procedimiento con sucesivas capas de materiales semiconductores se lograba la miniaturización de un circuito completo con miles de transistores en un espacio muy reducido. 
-
-Aparecieron computadoras más baratas que llegaron a empresas y establecimientos educativos más pequeños, popularizándose el uso de la computación. También aparecieron las primeras **supercomputadoras**, como el Cray-1, en 1976, que ejecutaba 160 millones de instrucciones por segundo y tenía 8 MiB de memoria principal.
+A mediados de los 60 se desarrollaron los **circuitos integrados o microchips**, que empaquetaban una gran cantidad de transistores en un solo componente, con importantes mejoras en el aspecto funcional y en la economía de la producción de computadoras. Aparecieron computadoras más baratas que llegaron a empresas y establecimientos educativos más pequeños, popularizándose el uso de la computación. 
 
 Los fabricantes comenzaron a producir familias de computadoras **compatibles**, comenzando con el System/360 de IBM. Los productos de la misma familia utilizaban el mismo lenguaje ensamblador, lo que permitía la portabilidad de los programas entre diferentes computadoras. El usuario podía hacer crecer su infraestructura de cómputo sin perder la inversión hecha en software.
 
-El microprocesador desarrollado por Intel reunió la mayor parte de las funciones de las computadoras en un solo **chip**. La existencia del microprocesador favoreció la creación de una industria de las computadoras personales. En 1982 IBM propuso el PC (Personal Computer), del cual descienden la mayoría de las computadoras domésticas y de oficina que se usan hoy. Al contrario que las computadoras de hasta entonces, construidas con procedimientos y componentes propios del fabricante, y a veces secretos, la arquitectura del PC estaba públicamente documentada, de manera que otras empresas podían libremente fabricar componentes para esta computadora. 
+También aparecieron las primeras **supercomputadoras**, como el Cray-1, en 1976, que ejecutaba 160 millones de instrucciones por segundo y tenía 8 MiB de memoria principal.
+
+El **microprocesador** desarrollado por Intel reunió la mayor parte de las funciones de las computadoras en un solo microchip. La existencia del microprocesador favoreció la creación de una industria de las computadoras personales. En 1982 IBM propuso el PC (Personal Computer), del cual descienden la mayoría de las computadoras domésticas y de oficina que se usan hoy. Al contrario que las computadoras de hasta entonces, construidas con procedimientos y componentes propios del fabricante, y a veces secretos, la **arquitectura abierta** del PC estaba públicamente documentada, de manera que otras empresas podían libremente fabricar componentes compatibles con esta computadora. 
 
 
 ## Circuitos Integrados
 
+Los **circuitos integrados** fueron el resultado de un proceso de fabricación completamente nuevo llamado **fotomicrolitografía**. Los ingenieros preparaban un diagrama del circuito deseado, con sus transistores, conexiones y demás componentes, y el diagrama se reducía por medios ópticos hasta un tamaño casi microscópico. La imagen resultante se grababa sobre un sustrato de silicio.
+
+Repitiendo el procedimiento con diferentes diagramas, sobre sucesivas capas de materiales semiconductores y aislantes, se lograba la miniaturización de un circuito completo con miles de transistores en un espacio muy reducido. Los modernos circuitos integrados reúnen miles de millones de transistores en menos de un centímetro cúbico de volumen.
+
+
 ## El microprocesador
+
+Un programador utiliza un microprocesador a través de su **conjunto de instrucciones** (aritméticas, de transferencia, de salto, etc.). Por otro lado, el microprocesador tiene un cierto funcionamiento, que el programador debe conocer, respecto de qué papeles cumplen sus registros, qué efecto tienen las instrucciones sobre esos registros, qué modos de acceder a los datos son posibles, etc. Este comportamiento puede llamarse un **modelo de programación** del microprocesador.
+
+Este conjunto de instrucciones y ese modelo de programación, reunidos, son la **arquitectura del conjunto de instrucciones** del microprocesador, abreviadas **ISA** por **Instruction Set Architecture**. 
+
+Este ISA ha sido implementado de alguna forma en el microprocesador, es decir, los ingenieros han definido un cierto circuito formado por transistores, compuertas y otros componentes, que hace que el microprocesador funcione de esta manera. Pero a medida que avanzan las tecnologías disponibles para la fabricación de los procesadores, aparecen nuevas formas de implementar ese funcionamiento. Un nuevo modelo de microprocesador podría tener mayores capacidades, sin cambiar el ISA. Por ejemplo, podría tener más de una ALU para realizar los cómputos más rápidamente, en forma paralela; pero manteniendo el mismo conjunto de instrucciones y el mismo modelo de programación de antes. 
+
+Es conveniente que estos cambios queden invisibles al programador, porque él seguirá programando de la misma manera y seguirá corriendo sus programas sin necesidad de modificarlos.  
+
+La forma de implementar una arquitectura es llamada la **microarquitectura** del microprocesador. Una familia de microprocesadores puede evolucionar con cambios invisibles, cambiando su microarquitectura, sin cambiar la **arquitectura** y sin romper la compatibilidad con los productos anteriores. 
+
+Una familia de microprocesadores también puede ampliar su conjunto de instrucciones, pero manteniendo intactas todas las de los productos anteriores. Esta forma de compatibilidad se llama a veces retrocompatibilidad.  
+
 
 ## Intel I7
 
