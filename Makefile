@@ -4,7 +4,7 @@ comp: src/Sistemas\ de\ Cómputo.slides
 	./macro "src/Sistemas de Cómputo.slides" > "Sistemas de Cómputo.html"
 	./asides.pl "src/Sistemas de Cómputo.slides" > "Sistemas de Cómputo.md"
 	pandoc "Sistemas de Cómputo.md" -o "Sistemas de Cómputo.pdf"
-	atril "Sistemas de Cómputo.pdf"
+#	atril "Sistemas de Cómputo.pdf"
 
 pres: src/Presentación.slides
 	./macro "src/Presentación.slides" > "Presentación.html" 

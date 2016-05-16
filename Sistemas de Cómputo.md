@@ -1,4 +1,6 @@
 
+## Esta presentación contiene notas
+
 ## Sistemas de Cómputo
 
 Un sistema de cómputo es un conjunto de elementos electrónicos organizados para permitir el procesamiento de información. A lo largo del tiempo los sistemas de cómputo han evolucionado notablemente, y en este material vamos a ver las cosas más importantes que han ocurrido durante esta evolución.
@@ -75,6 +77,11 @@ Presentado en 1946, **ENIAC** es reconocido como el primer computador digital, c
 El ENIAC fue propuesto para cómputos de trayectoria de proyectiles, aplicación en la que logró reducir el tiempo de cómputo de una tabla de datos, de 20 horas a 30 segundos. Sin embargo, la guerra terminó antes de que pudiera ser realmente aplicado, por lo que se lo destinó a otros usos. Por este hecho, llamó la atención sobre la capacidad de las computadoras de ser destinadas a propósitos generales, en lugar de las máquinas de programa cableado que existían hasta entonces y que eran preparadas específicamente para una única tarea.
 
 
+## ENIAC-on-a-Chip
+
+Pero más notable todavía es que cincuenta años y varias generaciones de computadoras después, en 1997, el proyecto **ENIAC-on-a-chip** construyó un circuito integrado completamente equivalente al ENIAC... del tamaño de una moneda (y habrían cabido muchos más en el mismo espacio).
+
+
 ## Clementina
 
 ¿Qué pasaba en nuestro país durante estas épocas? La actividad de la computación aquí no había comenzado. Recién a principios de los años 60 la universidad argentina decidió hacer una importante inversión, que fue la compra de una computadora de primera generación, bautizada aquí **Clementina**. El video adjunto cuenta interesantes detalles técnicos de la computadora, muestra cómo eran las personalidades involucradas por ese entonces en el proyecto científico y tecnológico argentino, y explica el contexto histórico en el que fue iniciado (y, lamentablemente, truncado) ese proyecto.
@@ -95,9 +102,9 @@ El **transistor** consiste en tres pequeñas piezas, puestas en contacto entre s
 
 Si se contamina, en forma controlada, un núcleo principal de germanio o silicio, con una pequeña proporción de impurezas de boro, aluminio, arsénico, o galio, el material resultante tiene propiedades de conductividad especiales. 
 
-Según la combinación de los elementos, el material será de tipo **P** (atrae electrones de materiales cercanos) o de tipo **N** (emite electrones a los materiales cercanos). Disponiendo en capas alternadas tres pequeños bloques de materiales de tipos P y N se construyen dispositivos de tipo **PNP** o de tipo **NPN**. La capa central (llamada la **base** del transistor) actúa como la grilla de las válvulas: controla el paso de corriente a través de las otras dos capas (llamadas **colector** y **emisor** del transistor). El transistor resulta así un reemplazo eficaz de las antiguas válvulas termoiónicas. 
+Según la combinación de los elementos, el material será de tipo **P** (atrae electrones de materiales cercanos) o de tipo **N** (emite electrones a los materiales cercanos). Disponiendo en capas alternadas tres pequeños bloques de materiales de tipos P y N se construyen dispositivos de tipo **PNP** o de tipo **NPN**. La capa central (llamada la **base** del transistor) actúa como la grilla de las válvulas: controla el paso de corriente a través de las otras dos capas (llamadas **colector** y **emisor** del transistor). 
 
-Gracias a estas propiedades el transistor funciona como un interruptor, con el cual se pueden implementar todas las funciones lógicas necesarias en los circuitos de la CPU y otros componentes de las computadoras. 
+Gracias a estas propiedades el transistor funciona como un interruptor, con el cual se pueden implementar todas las funciones lógicas necesarias en los circuitos de la CPU y otros componentes de las computadoras.  El transistor resulta así un reemplazo eficaz de las antiguas válvulas termoiónicas. 
 
 
 ## PDP-1
@@ -115,7 +122,7 @@ Los fabricantes comenzaron a producir familias de computadoras **compatibles**, 
 
 También aparecieron las primeras **supercomputadoras**, como el Cray-1, en 1976, que ejecutaba 160 millones de instrucciones por segundo y tenía 8 MiB de memoria principal.
 
-El **microprocesador** desarrollado por Intel reunió la mayor parte de las funciones de las computadoras en un solo microchip. La existencia del microprocesador favoreció la creación de una industria de las computadoras personales. En 1982 IBM propuso el PC (Personal Computer), del cual descienden la mayoría de las computadoras domésticas y de oficina que se usan hoy. Al contrario que las computadoras de hasta entonces, construidas con procedimientos y componentes propios del fabricante, y a veces secretos, la **arquitectura abierta** del PC estaba públicamente documentada, de manera que otras empresas podían libremente fabricar componentes compatibles con esta computadora. 
+El **microprocesador** desarrollado por Intel reunió la mayor parte de las funciones de las computadoras en un solo microchip. La existencia del microprocesador favoreció la creación de una industria de las computadoras personales. En 1982 IBM propuso el PC (Personal Computer), un **computador personal o microcomputador** del cual descienden la mayoría de las computadoras domésticas y de oficina que se usan hoy. Al contrario que las computadoras de hasta entonces, construidas con procedimientos y componentes propios del fabricante, y a veces secretos, la **arquitectura abierta** del PC utilizaba componentes existentes y conocidos, y estaba públicamente documentada; de manera que otras empresas podían libremente fabricar componentes compatibles con esta computadora. 
 
 
 ## Circuitos Integrados
@@ -127,30 +134,65 @@ Repitiendo el procedimiento con diferentes diagramas, sobre sucesivas capas de m
 
 ## El microprocesador
 
-Un programador utiliza un microprocesador a través de su **conjunto de instrucciones** (aritméticas, de transferencia, de salto, etc.). Por otro lado, el microprocesador tiene un cierto funcionamiento, que el programador debe conocer, respecto de qué papeles cumplen sus registros, qué efecto tienen las instrucciones sobre esos registros, qué modos de acceder a los datos son posibles, etc. Este comportamiento puede llamarse un **modelo de programación** del microprocesador.
+Un programador utiliza un microprocesador a través de su **conjunto de instrucciones** (aritméticas, de transferencia, de salto, etc.). Por otro lado, el microprocesador tiene un cierto comportamiento, que el programador necesita conocer: qué papeles cumplen sus registros, qué efecto tienen las instrucciones sobre esos registros, qué modos de acceder a los datos son posibles, etc. Este comportamiento puede llamarse un **modelo de programación** del microprocesador.
 
 Este conjunto de instrucciones y ese modelo de programación, reunidos, son la **arquitectura del conjunto de instrucciones** del microprocesador, abreviadas **ISA** por **Instruction Set Architecture**. 
 
 Este ISA ha sido implementado de alguna forma en el microprocesador, es decir, los ingenieros han definido un cierto circuito formado por transistores, compuertas y otros componentes, que hace que el microprocesador funcione de esta manera. Pero a medida que avanzan las tecnologías disponibles para la fabricación de los procesadores, aparecen nuevas formas de implementar ese funcionamiento. Un nuevo modelo de microprocesador podría tener mayores capacidades, sin cambiar el ISA. Por ejemplo, podría tener más de una ALU para realizar los cómputos más rápidamente, en forma paralela; pero manteniendo el mismo conjunto de instrucciones y el mismo modelo de programación de antes. 
 
-Es conveniente que estos cambios queden invisibles al programador, porque él seguirá programando de la misma manera y seguirá corriendo sus programas sin necesidad de modificarlos.  
+Es conveniente que estos cambios queden invisibles al programador, porque así él seguirá programando de la misma manera y seguirá corriendo sus programas sin necesidad de modificarlos.  
 
 La forma de implementar una arquitectura es llamada la **microarquitectura** del microprocesador. Una familia de microprocesadores puede evolucionar con cambios invisibles, cambiando su microarquitectura, sin cambiar la **arquitectura** y sin romper la compatibilidad con los productos anteriores. 
 
-Una familia de microprocesadores también puede ampliar su conjunto de instrucciones, pero manteniendo intactas todas las de los productos anteriores. Esta forma de compatibilidad se llama a veces retrocompatibilidad.  
+Una familia de microprocesadores también puede ampliar su conjunto de instrucciones, pero manteniendo intactas todas las de los productos anteriores. Esta forma de compatibilidad se llama a veces retrocompatibilidad o **compatibilidad hacia atrás**.  
+
+
+## Cuarta Generación y siguientes
+
+Gracias a nuevos procesos de fabricación de circuitos integrados, se logró cada vez mayor miniaturización de componentes. 
+
+* SSI: de 10 a 100 componentes por chip
+* MSI: de 100 a 1.000
+* LSI: de 1.000 a 10.000 
+* VLSI: de 10.000 a 100.000
+* ULSI: más de 100.000 (típicamente, millones de componentes por chip)
+
+Ya en 1965, Gordon Moore había enunciado la observación de que, cada año y medio, los fabricantes de computadoras ponían el doble de transistores en un procesador que en el modelo anterior. Unido a que las velocidades de reloj aumentaban casi en la misma proporción, este hecho daba una curva de poder de procesamiento claramente creciente año tras año. 
+
+Esta mejora en el procesamiento era lo que mantenía en crecimiento a la industria del hardware, al generar constantemente nueva demanda del mercado. Renovando su equipamiento cada tres años, un usuario duplicaba su capacidad de procesamiento. Esta tendencia continuó hasta entrado el siglo XXI. Sin embargo, los procesadores pronto encontraron obstáculos que forzaron a un cambio de paso.
+
+* Los componentes se acercaban entre sí cada vez más
+* Las señales eléctricas entre los componentes cada vez tardaban menos en llegar
+* Los ciclos de reloj debían acortarse para reaccionar a tiempo ante la llegada de las señales
+* Más ciclos de reloj por segundo implicaban mayor consumo de energía
+* Debido a la mayor energía consumida, el calor disipado era cada vez mayor, agravado por el hecho de que los componentes estaban cada vez más cerca
+* Los diseñadores debieron enfrentar este problema desde múltiples ángulos: disminuyendo la velocidad de reloj; dividiendo los circuitos en **núcleos** o **cores** que pueden funcionar independientemente, y agregando a los microchips funciones de monitoreo capaces de desactivar partes de la circuitería
+* Esta nueva etapa de los sistemas de cómputo suele llamarse la **Era del Multicore**.
+
+Una consecuencia importante de la Era del Multicore es que la mejora en velocidad de ejecución ya no se logra simplemente comprando hardware nuevo; sino que los programas deben ser especialmente escritos para aprovechar las características de **procesamiento paralelo** de los procesadores multicore.
 
 
 ## Intel I7
 
-El microprocesador I7 es actualmente el procesador más avanzado para computadoras personales de la firma Intel. 
+El microprocesador I7 es actualmente el procesador más avanzado para computadoras personales de la firma Intel. Es retrocompatible con toda la línea de procesadores de la **arquitectura x86** desarrollada por esa firma. La cronología siguiente muestra algunos significativos cambios de microarquitectura. 
 
-
-- Su microarquitectura es sumamente compleja: tiene un modelo de memoria segmentado e instrucciones de longitud variable.
+* 1979: 8086, 8088, primeros microprocesadores de arquitectura x86
+* 1980: 8087, **coprocesador numérico**
+* 1982: 80286, multitarea, **modo protegido**
+* 1985: 80386, procesador **de 32 bits**
+* 1989: 80486, coprocesador numérico en el mismo circuito integrado
+* 1993: Pentium, procesador **superescalar**
+* 1995: Pentium Pro, procesador con **ejecución fuera de orden** y **ejecución especulativa**
+* 1997: Pentium II, procesador que incorpora **instrucciones vectoriales MMX**
+* 1999: Pentium III, incorpora **instrucciones vectoriales SSE**
+* 2000: Pentium IV, mejoras en las instrucciones SSE
+* 2006: Core 2, nueva microarquitectura, reducción del consumo, múltiples núcleos, **virtualización** en hardware, menores velocidades de reloj
+* 2010: Core i3, i5, i7, procesadores con varias microarquitecturas en evolución; presentan desde 2 hasta 12 núcleos, velocidad de reloj variable
 
 
 ## Intel I7
 
-- Pertenece a una generación de procesadores donde, para enfrentar los problemas derivados de la microminiaturización, los diseñadores optaron por **replicar**, es decir, incorporar múltiples instancias de, las unidades de cómputo o **núcleos**.
+- El i7 pertenece a una generación de procesadores donde, para enfrentar los problemas derivados de la microminiaturización, los diseñadores optaron por **replicar**, es decir, incorporar múltiples instancias de, las unidades de cómputo o **núcleos**.
 - Cada uno de los núcleos, a su vez, puede ejecutar dos secuencias de programa independientes (dos **threads** o **hilos**). 
 - Cada núcleo tiene su memoria cache privada, dividida en cache de datos y de instrucciones, y además existe un segundo nivel de cache privada para datos e instrucciones a la vez.
 
@@ -161,6 +203,9 @@ El microprocesador I7 es actualmente el procesador más avanzado para computador
 
 
 ## Intel I7
+
+- El procesador integra unidades para controlar la consistencia de la memoria interna, y para regular las diferentes actividades dentro del microchip a fin de mantener controlados el uso de energía y la generación de calor.
+
 
 ## Intel I7
 
