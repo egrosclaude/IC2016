@@ -126,7 +126,7 @@ Más cerca de nuestros días, se crearon artefactos parecidos a las calculadoras
 <aside data-markdown class="notes">
 Entre estos proto-sistemas de computación es especialmente notable, por varios motivos, la máquina de Hollerith. Herman Hollerith trabajaba para la Oficina de Inmigración de EEUU hacia fines del siglo XIX, en momentos en que se formó una gran corriente inmigratoria desde Europa. La gran cantidad de personas que llegaban a radicarse, nunca vista antes, hizo desbordar el sistema de información nacional. Los responsables del censo poblacional se encontraban con un gran problema.
 
-Mucho antes de Hollerith, un tapicero francés, Jacquard, había ideado un telar que se configuraba usando tarjetas perforadas. Alimentado con estas tarjetas, el telar creaba automáticamente el dibujo deseado. Inspirado en el telar de Jacquard, Hollerith creó un sistema de cómputo automático basado en tarjetas perforadas. Cada tarjeta representaba a un individuo. La tarjeta se dividía en campos que representaban los atributos o características personales del individuo (nacionalidad, fecha de nacimiento, sexo, estado civil, etc). Al llegar un individuo, el oficial de inmigración le presentaba un cuestionario y codificaba sus respuestas con una perforación en cierto lugar de cada campo.
+Mucho antes de Hollerith, un tapicero francés, Jacquard, había ideado un telar que se configuraba usando tarjetas perforadas. Alimentado con estas tarjetas, el telar creaba automáticamente el dibujo deseado. Inspirado en el telar de Jacquard, Hollerith creó un sistema de cómputo automático **electromecánico** basado en tarjetas perforadas. Cada tarjeta representaba a un individuo. La tarjeta se dividía en campos que representaban los atributos o características personales del individuo (nacionalidad, fecha de nacimiento, sexo, estado civil, etc). Al llegar un individuo, el oficial de inmigración le presentaba un cuestionario y codificaba sus respuestas con una perforación en cierto lugar de cada campo.
 
 La Tabuladora de Hollerith era un dispositivo que contabilizaba perforaciones en esas tarjetas. Podía ser programada para contar la cantidad de individuos por nacionalidad, por edad, por sexo, etc., o por varios de estos atributos simultáneamente. De esa manera el censo nacional pudo lograrse en muchísimo menos tiempo que con los anteriores métodos manuales.
 
@@ -359,10 +359,10 @@ Esta mejora en el procesamiento era lo que mantenía en crecimiento a la industr
 * Los ciclos de reloj debían acortarse para reaccionar a tiempo ante la llegada de las señales
 * Más ciclos de reloj por segundo implicaban mayor consumo de energía
 * Debido a la mayor energía consumida, el calor disipado era cada vez mayor, agravado por el hecho de que los componentes estaban cada vez más cerca
-* Los diseñadores debieron enfrentar este problema desde múltiples ángulos: disminuyendo la velocidad de reloj; dividiendo los circuitos en **núcleos** o **cores** que pueden funcionar independientemente, y agregando a los microchips funciones de monitoreo capaces de desactivar partes de la circuitería
+* Los diseñadores debieron enfrentar este problema desde múltiples ángulos: disminuyendo la velocidad de reloj; dividiendo los circuitos en **núcleos** o **cores** que pueden funcionar independientemente, y agregando a los microchips funciones de monitoreo capaces de desactivar parte de los circuitos mientras no se utilizaban
 * Esta nueva etapa de los sistemas de cómputo suele llamarse la **Era del Multicore**.
 
-Una consecuencia importante de la Era del Multicore es que la mejora en velocidad de ejecución ya no se logra simplemente comprando hardware nuevo; sino que los programas deben ser especialmente escritos para aprovechar las características de **procesamiento paralelo** de los procesadores multicore.
+Una consecuencia importante de la Era del Multicore es que la mejora en velocidad de ejecución ya no se logra simplemente comprando hardware nuevo; sino que los programas deben ser especialmente escritos para aprovechar las características de **procesamiento paralelo** de los procesadores multicore. La Ley de Moore se sigue cumpliendo, sólo que ahora los transistores se distribuyen en varios núcleos en lugar de concentrarse en un único procesador.
 </aside>
 </section>
 
@@ -606,7 +606,10 @@ La consecuencia es que la mayoría de las computadoras actuales son máquinas pa
 			]
 		},
 		anything: [ 
-			{className: "rand",  defaults: {min: 0, max: 9}, initialize: (function(container, options){ container.innerHTML = Math.trunc( options.min + Math.random()*(options.max-options.min + 1) ); }) },
+			{className: "rand",  defaults: {min: 0, max: 9}, 
+				initialize: (function(container, options){ 
+					container.innerHTML = Math.trunc( options.min + Math.random()*(options.max-options.min + 1) ); 
+			}) },
 			{className: "chart",  initialize: (function(container, options){ container.chart = new Chart(container.getContext("2d"), options);  }) },
 			{className: "animate",  
 				initialize: (function(container, options){ 
@@ -644,14 +647,15 @@ La consecuencia es que la mayoría de las computadoras actuales son máquinas pa
 			}) },
 			{className: "tangle", initialize: (function(container, options) { if(options && options.initialize) {options.initialize(container)} }) },
 			{className: "anything",  initialize: (function(container, options){ if (options && options.initialize) { options.initialize(container)} }) },
-			{className: "plot",  defaults: {width:800, height: 400, grid:true}, initialize: (function(container, options){ options.target = "#"+container.id; functionPlot(options) }) },
+			{className: "plot",  defaults: {width:800, height: 400, grid:true}, 
+				initialize: (function(container, options){ options.target = "#"+container.id; functionPlot(options) }) },
 		],
 
 
 		// -------- Math plugin ----------
 		math: {
-			 	mathjax: 'https://cdn.mathjax.org/mathjax/latest/MathJax.js',
-		//	mathjax: '../MathJax-master/MathJax.js',
+			mathjax: 'https://cdn.mathjax.org/mathjax/latest/MathJax.js',
+			//	mathjax: '../MathJax-master/MathJax.js',
 			config: 'TeX-AMS_HTML-full'
 		},
 
@@ -676,9 +680,9 @@ La consecuencia es que la mayoría de las computadoras actuales son máquinas pa
 			46: function() { RevealChalkboard.clear() },    // clear chalkboard when 'DEL' is pressed
 			 8: function() { RevealChalkboard.reset() },    // reset chalkboard data on current slide when 'BACKSPACE' is pressed
 			68: function() { RevealChalkboard.download() }, // downlad recorded chalkboard drawing when 'd' is pressed
-        82: function() { Recorder.toggleRecording(); }, // press 'r' to start/stop recording
-        90: function() { Recorder.downloadZip(); },     // press 'z' to download zip containing audio files
-        84: function() { Recorder.fetchTTS(); }     // press 't' to fetch TTS audio files
+			82: function() { Recorder.toggleRecording(); }, // press 'r' to start/stop recording
+			90: function() { Recorder.downloadZip(); },     // press 'z' to download zip containing audio files
+			84: function() { Recorder.fetchTTS(); }     // press 't' to fetch TTS audio files
 		},
 
 		// -------- Dependencies ---------

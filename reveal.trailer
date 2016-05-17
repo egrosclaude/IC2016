@@ -87,7 +87,10 @@
 			]
 		},
 		anything: [ 
-			{className: "rand",  defaults: {min: 0, max: 9}, initialize: (function(container, options){ container.innerHTML = Math.trunc( options.min + Math.random()*(options.max-options.min + 1) ); }) },
+			{className: "rand",  defaults: {min: 0, max: 9}, 
+				initialize: (function(container, options){ 
+					container.innerHTML = Math.trunc( options.min + Math.random()*(options.max-options.min + 1) ); 
+			}) },
 			{className: "chart",  initialize: (function(container, options){ container.chart = new Chart(container.getContext("2d"), options);  }) },
 			{className: "animate",  
 				initialize: (function(container, options){ 
@@ -125,14 +128,15 @@
 			}) },
 			{className: "tangle", initialize: (function(container, options) { if(options && options.initialize) {options.initialize(container)} }) },
 			{className: "anything",  initialize: (function(container, options){ if (options && options.initialize) { options.initialize(container)} }) },
-			{className: "plot",  defaults: {width:800, height: 400, grid:true}, initialize: (function(container, options){ options.target = "#"+container.id; functionPlot(options) }) },
+			{className: "plot",  defaults: {width:800, height: 400, grid:true}, 
+				initialize: (function(container, options){ options.target = "#"+container.id; functionPlot(options) }) },
 		],
 
 
 		// -------- Math plugin ----------
 		math: {
-			 	mathjax: 'https://cdn.mathjax.org/mathjax/latest/MathJax.js',
-		//	mathjax: '../MathJax-master/MathJax.js',
+			mathjax: 'https://cdn.mathjax.org/mathjax/latest/MathJax.js',
+			//	mathjax: '../MathJax-master/MathJax.js',
 			config: 'TeX-AMS_HTML-full'
 		},
 
@@ -157,9 +161,9 @@
 			46: function() { RevealChalkboard.clear() },    // clear chalkboard when 'DEL' is pressed
 			 8: function() { RevealChalkboard.reset() },    // reset chalkboard data on current slide when 'BACKSPACE' is pressed
 			68: function() { RevealChalkboard.download() }, // downlad recorded chalkboard drawing when 'd' is pressed
-        82: function() { Recorder.toggleRecording(); }, // press 'r' to start/stop recording
-        90: function() { Recorder.downloadZip(); },     // press 'z' to download zip containing audio files
-        84: function() { Recorder.fetchTTS(); }     // press 't' to fetch TTS audio files
+			82: function() { Recorder.toggleRecording(); }, // press 'r' to start/stop recording
+			90: function() { Recorder.downloadZip(); },     // press 'z' to download zip containing audio files
+			84: function() { Recorder.fetchTTS(); }     // press 't' to fetch TTS audio files
 		},
 
 		// -------- Dependencies ---------
