@@ -3,11 +3,13 @@
 
 ## Esta presentación contiene notas
 
-¿Hay estudiantes con disminución o carencia visual en la clase? ¿Por qué no? 
+¿Hay estudiantes con disminución o carencia visual en la clase? ¿Por qué no?
 
 ¿Por qué es importante contar con audio en las presentaciones? Porque ellos necesitan material accesible. Si les ofrecemos esta presentación en forma de audio, ellos podrán estudiar, repasar en sus casas, en condiciones menos desventajosas.
 
-¿Qué sería más fortalecedor de esos estudiantes y del grupo de compañeros en sí, que tener una versión de las clases con el audio hecho por sus propios compañeros? ¿No hay voluntarios?
+Sí, hay programas que "leen texto en voz alta", pero su voz electrónica es casi tan irritante como la del profe. ¿Qué sería más fortalecedor de esos estudiantes, y del grupo, que tener una versión de las clases con el audio hecho por sus propios compañeros? 
+
+¿No hay voluntarios?
 
 
 ## Sistemas de Cómputo
