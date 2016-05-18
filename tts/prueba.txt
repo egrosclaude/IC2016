@@ -1,0 +1,14 @@
+
+<h1>Evolución de los Sistemas de Cómputo</h1>
+
+Un sistema de cómputo     es un conjunto de elementos electrónicos organizados para permitir el procesamiento de información. A lo largo del tiempo, los sistemas de cómputo han evolucionado notablemente, y en este material vamos a ver las cosas más importantes que han ocurrido durante esta evolución.
+
+Los sistemas de cómputo constituyen una industria, y como en toda industria, existe la competencia entre los fabricantes, que buscan obtener más mercado mejorando las características de sus productos. En ninguna otra industria como en la computación es tan notable el crecimiento de las capacidades de los sistemas de cómputo y, simultáneamente, la reducción de costos y tamaños físicos de los componentes.
+
+Las sucesivas generaciones de sistemas de cómputo han ido creciendo en la velocidad de procesamiento y capacidad de memoria, así como en las capacidades de los discos y otras unidades de almacenamiento.
+
+Al mismo tiempo, se ha reducido notablemente el tamaño del sistema como un todo. Esto último se ha logrado a través de sucesivos avances en la integración de los componentes. 
+
+La mayor integración ha facilitado la economía de escala, manteniendo o reduciendo en general los costos de producción. 
+
+Sin embargo, los diferentes componentes se producen con procesos de fabricación diferentes y que incorporan avances cada uno a su ritmo, por lo cual no siempre más rápido o más pequeño es mejor, sino que lo más importante es que las partes del sistema funcionen en armonía. De lo contrario, pueden presentarse desbalances que impidan que el sistema funcione en forma óptima.

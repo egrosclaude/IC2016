@@ -1,6 +1,15 @@
 
 ## Esta presentación contiene notas
 
+## Esta presentación contiene notas
+
+¿Hay estudiantes con disminución o carencia visual en la clase? ¿Por qué no? 
+
+¿Por qué es importante contar con audio en las presentaciones? Porque ellos necesitan material accesible. Si les ofrecemos esta presentación en forma de audio, ellos podrán estudiar, repasar en sus casas, en condiciones menos desventajosas.
+
+¿Qué sería más fortalecedor de esos estudiantes y del grupo de compañeros en sí, que tener una versión de las clases con el audio hecho por sus propios compañeros? ¿No hay voluntarios?
+
+
 ## Sistemas de Cómputo
 
 Un sistema de cómputo es un conjunto de elementos electrónicos organizados para permitir el procesamiento de información. A lo largo del tiempo los sistemas de cómputo han evolucionado notablemente, y en este material vamos a ver las cosas más importantes que han ocurrido durante esta evolución.
