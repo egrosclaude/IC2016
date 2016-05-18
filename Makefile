@@ -1,5 +1,16 @@
 all: comp pres siste uni repre texto arqui
 
+
+
+
+DEPS = reveal.header reveal.trailer
+
+
+so: SistemasOperativos.html
+
+%.html: src/%.slides $(DEPS)
+	./macro $< > $*.html
+	
 comp: src/Sistemas\ de\ Cómputo.slides
 	./macro "src/Sistemas de Cómputo.slides" > "Sistemas de Cómputo.html"
 	./asides.pl "src/Sistemas de Cómputo.slides" > "Sistemas de Cómputo.md"
