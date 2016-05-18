@@ -1,4 +1,6 @@
 
+
+
 ## Unidad II
 
 ¿Cómo **definimos** una computadora? ¿Cuándo un dispositivo es una computadora y cuándo decimos que no lo es? En esta unidad, vemos estos temas y estudiamos los diferentes componentes que tienen las computadoras. 
@@ -47,14 +49,39 @@ Estas máquinas ejecutan las instrucciones almacenadas en memoria secuencialment
 
 ## Arquitectura de Von Neumann
 
-En una **máquina de Von Neumann**, entonces, aparecen dos componentes básicos fundamentales que son la CPU y la memoria, la primera conteniendo una **Unidad de Control, o UC**, para realizar el **ciclo de instrucción**, y una **Unidad Lógico-Aritmética, o ALU**, para el cómputo. 
+En una **máquina de Von Neumann**, entonces, aparecen dos componentes básicos fundamentales que son la CPU y la memoria,  
 
-En la máquina existen diferentes clases de buses para interconectar los componentes: **buses internos** de la CPU para comunicar la UC y la ALU, **buses de sistema** que relacionan la CPU y la memoria, y otros **buses de Entrada/Salida** para comunicar todo el sistema con los dispositivos de entrada o de salida.
+
+## Arquitectura de Von Neumann
+
+la primera conteniendo una **Unidad de Control, o UC**, para realizar el **ciclo de instrucción**,
+
+
+## Arquitectura de Von Neumann
+
+y una **Unidad Lógico-Aritmética, o ALU**, para el cómputo. 
+
+
+## Arquitectura de Von Neumann
+
+En la máquina existen diferentes clases de buses para interconectar los componentes: **buses internos** de la CPU para comunicar la UC y la ALU,
+
+
+## Arquitectura de Von Neumann
+
+**buses de sistema** que relacionan la CPU y la memoria, 
+
+
+## Arquitectura de Von Neumann
+
+y otros **buses de Entrada/Salida** para comunicar todo el sistema con los dispositivos de entrada o de salida.
 
 ¿En qué momento se utilizará cada clase de bus? Cuando la UC disponga que se debe ejecutar una instrucción, tal como una suma, enviará los datos de partida, y la instrucción, a la ALU a través de un bus interno. Si la ALU necesita más datos, los obtendrá de la memoria a través de un bus de sistema. Si la CPU encuentra instrucciones que ordenan presentar el resultado del cómputo al usuario, usará un bus de Entrada/Salida para emitir ese resultado por pantalla o por impresora.
 
 
-## Modelo Computacional Binario Elemental (MCBE)
+## Modelo Computacional Binario Elemental
+
+## (MCBE)
 
 Para comprender desde lo más básico cómo opera la computadora, recurrimos al **MCBE o Modelo Computacional Binario Elemental**, que es una máquina teórica. El MCBE es una computadora extremadamente simple, pero que podría ser implementada físicamente, y funcionaría como la mayoría de las computadoras actuales. Bueno, con muchas menos capacidades, claro, pero manteniendo lo esencial de las computadoras de programa almacenado.
 
@@ -195,6 +222,24 @@ Para cada instrucción que se ejecute usaremos un renglón de la planilla.
 En la traza solamente escribiremos los elementos del estado **que se modifiquen** en cada paso. En la columna de MEMORIA anotaremos cuándo hay una operación de escritura en memoria,  en la columna de SALIDA anotaremos cuando haya un contenido que se escriba en pantalla, etc.
 
 
+## Traza de ejecución
+
+Este programa en particular presenta la traza que veremos a continuación. 
+
+Queda como ejercicio seguir la traza e interpretar qué está ocurriendo en cada momento con cada uno de los registros y las posiciones de memoria.
+
+### Ayuda
+
+- 000 No operación
+- 001 Parada
+- 010 Mem &rarr; Ac
+- 011 Ac &rarr; Mem
+- 100 Sumar al Ac
+- 101 Restar al Ac
+- 110 Salto 
+- 111 Salto cond
+
+
 
 ## Traza de ejecución
 
@@ -214,26 +259,15 @@ Queda como ejercicio seguir la traza e interpretar qué está ocurriendo en cada
 - 111 Salto cond
 
 
-## Preguntas
-
-1. El MCBE, ¿puede encontrar una instrucción que no sea capaz de decodificar? 
-
-2.  Supongamos que hemos almacenado en la posición 14 un dato numérico que representa la edad de una persona. ¿Qué pasa si en algún momento de la ejecución el PC contiene el número 14? ¿Qué pasa si esa persona tiene 33 años?
-
-3. ¿Podría aumentarse la capacidad de memoria del MCBE? ¿Esto requeriría algún cambio adicional a la máquina?  
-
-
+Preguntas
 ## Bestiario
 
 Proponemos como ejercicio **examinar** las siguientes frases, tomadas de exámenes de la materia, a ver si descubrimos qué está mal en cada una de ellas.
 
-* El primer paso del ciclo de instrucción es cargar el IR en el PC.
-* Lo que hacen las instrucciones de salto es cambiar el efecto de las instrucciones en los registros del MCBE.
-* Las instrucciones de salto sirven como desplazamiento de instrucciones y cambian el orden de los registros.
-* La instrucción de salto incondicional es un desplazamiento sin signo, la de salto condicional es un desplazamiento con signo.
-* Las instrucciones de salto copian el contenido de la dirección en el acumulador.
 
 ## Lenguajes de Bajo Nivel
+
+## Lenguajes de bajo nivel
 
 Hemos visto un conjunto de instrucciones y convenciones sobre cómo se utilizan los datos en el MCBE, que es el llamado **lenguaje de máquina** del MCBE.  Por supuesto, escribir un programa para el MCBE y **depurarlo**, es decir, identificar y corregir sus errores, es una tarea muy dificultosa, porque los códigos de operación, las direcciones y los datos, fácilmente terminan confundiéndonos.  Para facilitar la programación, se ha definido un lenguaje alternativo llamado el **ensamblador** del MCBE. 
 
@@ -252,7 +286,6 @@ El lenguaje de máquina de cualquier CPU, y su lenguaje ensamblador (o *Assemble
 ## Lenguaje Ensamblador
 
 Los **mnemónicos** o nombres simbólicos de las instrucciones se basan en los nombres en inglés de las operaciones correspondientes. Disponemos de los mnemónicos:
-
 * LD para la operación de cargar el Acumulador con un contenido de memoria, y ST para la operación inversa.
 * ADD para la operación de suma y SUB para la resta.
 * JMP y JZ para los saltos incondicional y condicional, respectivamente.
@@ -268,17 +301,12 @@ Cuando necesitamos hacer referencia a una dirección, como en las operaciones de
 En este ejemplo, SIGUE, FIN, UNO y CANT son rótulos. El rótulo CANT, por ejemplo, nos permite referirnos en la primera instrucción, LD CANT, a un dato declarado más adelante con ese nombre. Del mismo modo, cuando la instrucción es de salto, podemos hacer referencia a la posición de memoria donde se hará el salto usando un rótulo, como en la quinta instrucción, JMP SIGUE. 
 
 Los rótulos IN y OUT vienen predefinidos en el lenguaje ensamblador de MCBE y corresponden a las posiciones de memoria 30 (para entrada) y 31 (para salida) respectivamente.
-
-
+ 
 Es importante recordar que, de todas maneras, en la traducción de ensamblador a lenguaje de máquina **para las instrucciones de salto**, el rótulo se sustituye por un **desplazamiento**, y no por una dirección.
 
 
 ## Referencias
 
-Apunte de cátedra: Modelo Computacional http://pedco.uncoma.edu.ar/mod/resource/view.php?id=148556
 
-https://es.wikipedia.org/wiki/Arquitectura_de_von_Neumann
 
-https://es.wikipedia.org/wiki/Unidad_central_de_procesamiento
-
-https://es.wikipedia.org/wiki/Memoria_(informática)
+<!-- INCLUDE reveal.trailer -->

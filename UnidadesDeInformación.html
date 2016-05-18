@@ -47,259 +47,174 @@
 <!------------------------------------------------------------------>
 
 				
-<section data-markdown>
-##Introducción 
-##a la Computación 
-##2016
-### Eduardo Grosclaude
-</section>
+<section data-markdown> 
+ <script type="text/template">
+##Unidad I 
+###Representación de la Información 
 
-
-<section 
-	data-background="img/logounc.png"  
-	data-background-size="50%" 
-	data-background-transition="slide"
-	class="transparent_bg">
-<h2>Universidad Nacional</h2>
-<h2>del Comahue</h2>
-<a href="http://www.uncoma.edu.ar">http://www.uncoma.edu.ar</a>
-</section>
-
-<section>
-<h3>Facultades</h3>
-Ciencias Agrarias, Ciencias y Tecnologías de los Alimentos, Ciencias del Ambiente y de la Salud, Ciencias de la Educación, Derecho y Ciencias Sociales, Economía y Administración, Humanidades, <span class="fragment highlight-blue"><b>Informática</b></span>, Ingeniería, Lenguas, Turismo, Ciencias Médicas
-</section>
-
-
-<section 
-	data-background="img/logofai.png"  
-	data-background-size="60%" 
-	data-background-transition="slide"
-	class="transparent_bg">
-<h2>Facultad de Informática</h2>
-<a href="http://faiweb.uncoma.edu.ar">http://faiweb.uncoma.edu.ar</a>
-</section>
-
-
-<section>
-<h2>Carreras dictadas por la FI</h2>
-<ul>
-<span class="fragment"><li>Profesorado en Informática</li></span>
-<span class="fragment">
-<li>Licenciaturas</li>
-<ul>
-	<li>en Cs. de la Computación</li>
-	<li>en Sistemas de Información</li>
-	<li>en Informática <span class="fragment"><span class="post_it">(en preparación)</span></span></li>
-</ul>
-</span>
-<span class="fragment">
-<li>Tecnicaturas Universitarias</li>
-<ul>
-<li>en Administración de Sistemas y Software Libre</li>
-<li>en Desarrollo Web</li>
-</ul>
-</span>
-</ul>
-</section>
-
-
-<section>
-<h2>Departamentos de la FI</h2>
-<ul>
-<span class="fragment">
-<li>Teoría de la Computación</li>
-</span>
-<span class="fragment">
-<li>Programación</li>
-</span>
-<span class="fragment">
-<li>Ingeniería de Sistemas</li>
-</span>
-<span class="fragment">
-<li>Computación Aplicada</li>
-</span>
-<span class="fragment">
-<li>Ingeniería de Computadoras</li>
-</span>
-<span class="fragment">
-<div class="post_it">
-&#8680; Áreas
-  	<ul>
-		<li>Arquitectura de Computadoras</li>
-		<li>Sistemas Operativos</li>
-		<li>Redes</li>
-	</ul>
-</div>
-
-</ul>
-</section>
-    
-
-<section data-markdown>
-##Ingeniería de Computadoras
-Algunas materias que dicta
-- Introducción a la Computación
-- Arquitectura y Organización de Computadoras
-- Sistemas Operativos
-- Seguridad Informática
-- Redes de Computadoras 
-- Sistemas Paralelos
-</section>
-
-
-<section>
-<h2>Roles de los licenciados</h2>
-<div style="font-style: italic;" class="post_it">"Planificar, dirigir, auditar, proyectos<br> de desarrollo de software de cualquier escala"</div>
-<ul>
-<li>Análisis y diseño de sistemas</li>
-<li>Programación de aplicaciones</li>
-<li>Administración de sistemas, de servidores, de redes</li>
-<li>Y muchísimas cosas más</li>
-</ul>
-</ul>
-</section>
-
-<section data-background="#3c53b5" data-background-transition="zoom">
-<h1>¿Preguntas?</h1>
+1. Sistemas de Numeración 
+1. Unidades de Información<!-- .element: class="post_it" -->
+1. Representación Digital de Datos 
+ </script>
 </section>
 
 
 <section data-markdown>
-#Introducción a la Computación 2016
+##Unidades de Información
 </section>
 
+
+
+
 <section data-markdown>
-##Equipo de Cátedra
-* Eduardo Grosclaude: oso@fi.uncoma.edu.ar
-* Guillermo Torres: guillermo.torres@fi.uncoma.edu.ar
-* Rodrigo Cañibano: rcanibano@fi.uncoma.edu.ar
+##*Bit* (*binary digit*)
+- La mínima unidad de información
+ * Teoría de la Información, Claude Shannon, 1948
+ * Un **bit** es la respuesta a la pregunta más simple posible
+   * Dos valores posibles
+   * Representados por V/F, Sí/No, 1/0, etc.
+- Abreviado **b**
+- Equivalente a un dígito binario
 </section>
 
 <section>
-<h2>Qué contiene esta materia</h2>
-<ol>
-<li>Representación de la información</li>
-<small>Sistemas de Numeración, Unidades de Información, Representación Digital de Datos</small>
-<li>Organización de las Computadoras</li>
-<small>Componentes y Arquitectura de una computadora, CPU, Memoria, Dispositivos, Ejecución de Programas</small>
-<li>Software</li>
-<small>Sistemas Operativos, Lenguajes de Programación</small> 
-<li>Redes</li>
-</ol>				
-</section>
-
-<section data-markdown>
-##PEDCO 
-* Plataforma web educativa de la UNC
-* http://pedco.fi.uncoma.edu.ar
-* Material, prácticos, apuntes, novedades, foros
-* Obtener una cuenta de usuario
+	<!--
+	<section  data-background="img/Beacons.gif" data-menu-title="El viaje de un bit">
+	</section>
+	->>
+	<!--
+	<section data-background="black">
+	<video id="beacons" width="800" height="400" class="stretch" preload controls>
+		<source data-src="/home/oso/Dropbox/Public/Charla Arquitectura de Computadoras/Beacons.webm" type='video/webm; codecs="vp8, vorbis"' />
+	</section>
+	-->
+	
+	<section data-background="black" data-menu-title="El viaje de un bit (Youtube)">
+	<iframe data-autoplay width="100%" height="100%" class="stretch" 
+		src="https://www.youtube.com/embed/sIhnYFRu4ao?wmode=opaque&rel=0" frameborder="0" allowfullscreen>
+	</iframe>    
+	</section>
 </section>
 
 
 <section data-markdown>
-##Metodología
-* Clases teóricas y prácticas
-* Dos exámenes parciales con sus recuperatorios
- * 60% &#8680; Aprobado
- * 70% &#8680; Promocionado
+##*Byte* (*binary term*)
+- Conjunto de 8 bits
+* Con un **byte** puedo representar:
+  - Números del 0 al 255
+  - Caracteres como letras u otros símbolos
+  - 256 posibilidades diferentes
+- Abreviado **B**
 </section>
 
+<section>
+<h2>Representando datos con bytes</h2>
+<table>
+<tr><td>00110000</td><td>0</td></tr>
+<tr><td>00110001</td><td>1</td></tr>
+<tr><td>00110010</td><td>2</td></tr>
+<tr><td colspan="2" align="center">...</td></tr>
+<tr><td>01000001</td><td>A</td></tr>
+<tr><td>01000010</td><td>B</td></tr>
+<tr><td>01000011</td><td>C</td></tr>
+<tr><td colspan="2" align="center">...</td></tr>
+</table>
+</section>
+
+<section>
+<h2>Representando datos con bytes</h2>
+<table>
+<tr><td>I</td><td>01001001</td></tr>
+<tr><td>C</td><td>01000011</td></tr>
+<tr><td> </td><td>00100000</td></tr>
+<tr><td>2</td><td>00110010</td></tr>
+<tr><td>0</td><td>00110000</td></tr>
+<tr><td>1</td><td>00110001</td></tr>
+<tr><td>6</td><td>00110110</td></tr>
+</table>
+</section>
+
+<section data-markdown>
+##Múltiplos del bit y del byte
+* Sistema Internacional
+ * Unidades son potencias de 10
+ * Prefijos **kilo, mega, giga, tera...**
+* Sistema de Prefijos Binarios
+ * Unidades son potencias de 2
+ * Prefijos **kibi, mebi, gibi, tebi...**
+</section>
 
 
 <section>
-<h2>Acreditación</h2>
-<ul>
-<li>Cursado de una materia</li>
-	<span class="fragment"><ul><li>Aprobación de los exámenes parciales</li></ul></span>
-<li>Aprobación de la materia</li>
-	<span class="fragment"><ul>
-	<li>Cursada con promoción</li>
-	<li>Cursada y aprobar examen final</li>
-	<li>Rendir examen libre</li>
-	</ul></span>
-</ul>
+<h3>Sistema Internacional</h3>
+<table>
+<tr><td>Kilobyte</td><td>1.000 bytes</td><td>$10^3$ bytes</td><td>kB</td></tr>
+<tr><td>Megabyte</td><td>1.000.000 bytes</td><td>$10^6$ bytes</td><td>MB</td></tr>
+<tr><td>Gigabyte</td><td>1.000.000.000 bytes</td><td>$10^9$ bytes</td><td>GB</td></tr>
+<tr><td>Terabyte</td><td>1.000.000.000.000 bytes</td><td>$10^{12}$ bytes</td><td>TB</td></tr>
+<tr><td>Petabyte</td><td></td><td>$10^{15}$ bytes</td><td>PB</td></tr>
+<tr><td>Exabyte</td><td></td><td>$10^{18}$ bytes</td><td>EB</td></tr>
+<tr><td>Zettabyte</td><td></td><td>$10^{21}$ bytes</td><td>ZB</td></tr>
+<tr><td>Yottabyte</td><td></td><td>$10^{24}$ bytes</td><td>YB</td></tr>
+</table>
 </section>
 
-<!--
-			<section>
-				<h3>Acreditación</h3>
-
-						<object class="stretch" data="diagrama.svg" width="100%" height="100%" type="image/svg+xml" preload>
-						</object>
-			</section>
--->
-<!--					
-			<svg>
-						<circle opacity="0" cx="75" cy="145" r="10" style="stroke-width:2;stroke:#000000" fill="#ff0000">
-
-							<animate class="fragment" data-reverse="reverse0" begin="indefinite" attributeName="opacity" from="0" to="1" dur="0.1s" fill="freeze" repeatCount="1" />     
-
-							<animate id="reverse0" begin="indefinite" attributeName="opacity" to="0" from="1" dur="0.1s" fill="freeze" repeatCount="1" />     
-
-							<animateTransform class="fragment" data-reverse="reverse1" attributeName="transform" begin="indefinite" dur="1.15s" 
-																										type="translate" from="0 0" to="115 0" fill="freeze" />
-
-							<animateTransform id="reverse1" attributeName="transform" begin="indefinite" dur="0.01s" 
-																										type="translate" from="115 0" to="0 0" fill="freeze" />
-
-							<animateTransform id="step2" class="fragment" data-reverse="reverse2" attributeName="transform" begin="indefinite" dur="1.35s" 
-																										type="translate" from="115 0" to="250 0" fill="freeze" />
-
-							<animateTransform id="step2b" attributeName="transform" begin="step2.end" dur="0.8s" 
-																										type="translate" from="250 0" to="250 -80" fill="freeze" />
-
-							<animateTransform attributeName="transform" begin="step2b.end" dur="1.65s" type="translate" from="250 -80" to="415 -80" fill="freeze" />
-
-							<animateTransform id="reverse2" attributeName="transform" begin="indefinite" dur="0.01s" 
-																										type="translate" from="415 -80" to="115 0" fill="freeze" />
-
-							<animateTransform id="step3" class="fragment" data-reverse="reverse3" attributeName="transform" begin="indefinite" dur="1.6s" 
-																										type="translate" from="415 -80" to="575 -80" fill="freeze" />
-
-							<animateTransform id="step3b" attributeName="transform" begin="step3.end" dur="0.8s" 
-																										type="translate" from="575 -80" to="575 0" fill="freeze" />
-							<animateTransform attributeName="transform" begin="step3b.end" dur="0.9s" type="translate" from="575 0" to="665 0" fill="freeze" />
-
-							<animateTransform id="reverse3" attributeName="transform" begin="indefinite" dur="0.01s" 
-																										type="translate" from="665 0" to="415 -80" fill="freeze" />
-
-							<animate class="fragment" data-reverse="reverse4" begin="indefinite" attributeName="opacity" from="1" to="0" dur="0.1s" fill="freeze" repeatCount="1" />     
-							<animate id="reverse4" begin="indefinite" attributeName="opacity" to="1" from="0" dur="0.01s" fill="freeze" repeatCount="1" />     
-
-						</circle>
-					</svg>
-				</div>
--->			
-
- 
-<section data-transition="slide" >
-<h2>Horarios</h2>
-<ul><li>Módulo I</li>
-<ul>
-<li>Martes 12:00 a 14:00 Aula 16</li>
-<li>Viernes 12:00 a 14:00 Aula 105</li>
-</ul>
-<li>Módulo II</li>
-<ul>
-<li>Viernes 13:00 a 15:00 Aula 19</li>
-<li>Viernes 18:00 a 20:00 Aula 101</li>
-</ul>
-</ul>
+<section>
+<h3>Prefijos Binarios</h3>
+<table>
+<tr><td>Kibibyte</td><td>1.024 bytes</td><td>$2^{10}$ bytes</td><td>KiB</td></tr>
+<tr><td>Mebibyte</td><td>1.048.576 bytes</td><td>$2^{20}$ bytes</td><td>MiB</td></tr>
+<tr><td>Gibibyte</td><td>1.073.741.824 bytes</td><td>$2^{30}$ bytes</td><td>GiB</td></tr>
+<tr><td>Tebibyte</td><td>1.099.511.627.776 bytes</td><td>$2^{40}$ bytes</td><td>TiB</td></tr>
+<tr><td>Pebibyte</td><td></td><td>$2^{50}$ bytes</td><td>PiB</td></tr>
+<tr><td>Exbibyte</td><td></td><td>$2^{60}$ bytes</td><td>EiB</td></tr>
+<tr><td>Zebibyte</td><td></td><td>$2^{70}$ bytes</td><td>ZiB</td></tr>
+<tr><td>Yobibyte</td><td></td><td>$2^{80}$ bytes</td><td>YiB</td></tr>
+</table>
 </section>
 
- 
-<section 
-	data-transition="none" 
-	data-background="https://dl.dropboxusercontent.com/u/85477257/faiweb/fai/MapaAulas.png" 
-	data-background-transition="fade" 
-	data-background-size="90%">
+<section>
+<h2>Los prefijos, comparados</h2>
+<table>
+<tr><td>k &rarr;</td><td>$1000$</td><td>$1024$</td><td>&larr; Ki</td></tr>
+<tr><td>M &rarr;</td><td>$1000^2$</td><td>$1024^2$</td><td>&larr; Mi</td></tr>
+<tr><td>G &rarr;</td><td>$1000^3$</td><td>$1024^3$</td><td>&larr; Gi</td></tr>
+<tr><td>T &rarr;</td><td>$1000^4$</td><td>$1024^4$</td><td>&larr; Ti</td></tr>
+<tr><td colspan="4" align="center">...</td></tr>
+</table>
 </section>
 
 
-<section data-background="#3c53b5" data-background-transition="zoom">
-<h1>¿Más preguntas?</h1>
+<section>
+<h2>Cantidad de información</h2>
+<table>
+<tr><td>Un carácter</td><td>1 B = 8 b</td></tr>
+<tr><td>Un SMS, un tweet</td><td>140 B, 160 B</td></tr>
+<tr><td>Una foto de 10 megapíxeles</td><td>5 MB</td></tr>
+<tr><td>Una canción</td><td>3 a 10 MB</td></tr>
+<tr><td>Una película de 1h 30m </td><td>750 MB a 4 GB</td></tr>
+<tr><td>Un pendrive, una tarjeta micro-SD</td><td>16 GiB</td></tr>
+<tr><td>Un disco rígido</td><td>1 TiB</td></tr>
+</table>
+</section>
+
+<section>
+<h3>Un disco rígido de 5 MB... en 1956</h3>
+<img src="img/5MBharddisk.jpg" class="stretch">
+</section>
+
+<section data-markdown data-background="#3c53b5" data-background-transition="zoom">
+#Preguntas
+* ¿A cuántos KiB equivalen 512 B, 2048 B, 5 MiB?
+* ¿A cuántos discos rígidos de 1956 equivale un celular de 4 GiB de memoria?
+* ¿Cuántas canciones de, en promedio, 4 MB, caben en un pendrive?
+* Si un pixel se pudiera representar en 1 bit, ¿cuánto espacio ocuparía una foto de 1024 x 1000 pixels?
+* Si tengo una conexión de 3 Mb/s, ¿cuánto tiempo tardará la transferencia de un archivo de 10 MB?
+</section>
+
+<section>
+<h2>Humor para nerds</h3>
+<img src="img/terapeuta.jpg" class="stretch">
 </section>
 
 <!-- INCLUDE reveal.trailer -->
