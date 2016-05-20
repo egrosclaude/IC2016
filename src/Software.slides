@@ -1,0 +1,80 @@
+<!-- INCLUDE reveal.header -->
+
+
+<section data-transition="slide-in fade-out">
+<h2>Nivel</h2>
+<img src="img/lenguajes-0.png" class="stretch plain">
+</section>
+
+<section data-transition="slide-out fade-in">
+<h2>Nivel</h2>
+<img src="img/lenguajes-1.png" class="stretch plain">
+</section>
+
+<section>
+<h2>Lenguajes de alto nivel</h2>
+<ul>
+	<span class="fragment">
+	<li>Lenguaje de alto nivel</li>
+	<ul>
+		<li>SALDO = DEUDA - PAGO</li>
+	</ul>
+	</span>
+	<span class="fragment">
+	<li>Ensamblador</li>
+	<ul>
+		<li>LD DEUDA; SUB PAGO; ST DEUDA</li>
+	</ul>
+	</span>
+	<span class="fragment">
+	<li>Código de máquina</li>
+	<ul>
+		<li>01001010; 01101011; 10101010</li>
+	</ul>
+	</span>
+</ul>
+</section>
+
+<section>
+<h2>Terminología</h2>
+<ul>
+	<li>Programa traductor</li>
+	<ul>
+		<li>Compilador</li>
+		<li>Intérprete</li>
+	</ul>
+	<li>Archivo fuente</li>
+	<li>Archivo objeto</li>
+	<li>Bibliotecas</li>
+	<li>Programa ejecutable</li>
+</section>
+
+<section>
+<h2>Traductores de alto nivel</h2>
+<div class="double">
+	<div>
+	<ul>
+		<li class="fragment">Compiladores</li>
+		<span class="fragment">
+			<ul>
+				<li>Traducen un archivo fuente en un ejecutable en código máquina</li> 
+				<li>La ejecución queda diferida para un momento posterior</li> 
+			</ul>
+		</span>
+	</ul>
+	</div>
+	<div>
+	<ul>
+		<li class="fragment">Intérpretes</li>
+		<span class="fragment">
+			<ul>
+				<li>Traducen y ejecutan línea por línea un archivo fuente</li> 
+				<li>Traducción y ejecución son inmediatas</li> 
+			</ul>
+		</span>
+	</ul>
+	</div>
+</div>
+</section>
+
+<!-- INCLUDE reveal.trailer -->

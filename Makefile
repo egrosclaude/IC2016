@@ -1,7 +1,8 @@
 DEPS = reveal.header reveal.trailer
 
-all: so comp pres siste uni repre texto arqui
+all: so comp pres siste uni repre texto arqui soft
 
+soft: Software.html
 so: SistemasOperativos.html
 comp: SistemasDeCómputo.html
 pres: Presentación.html

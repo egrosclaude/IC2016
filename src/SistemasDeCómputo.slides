@@ -167,7 +167,7 @@ El ENIAC fue propuesto para cómputos de trayectoria de proyectiles, aplicación
 
 <section>
 <h2>ENIAC-on-a-Chip</h2>
-<img src="img/EniacChipPackaged.jpg" class="plain stretch">
+<img src="img/EniacChipPackaged.jpg" class="stretch plain">
 <aside data-markdown class="notes">
 Pero más notable todavía es que cincuenta años y varias generaciones de computadoras después, en 1997, el proyecto **ENIAC-on-a-chip** construyó un circuito integrado completamente equivalente al ENIAC... del tamaño de una moneda (y habrían cabido muchos más en el mismo espacio).
 </aside>
