@@ -203,7 +203,8 @@ El microprocesador I7 es actualmente el procesador más avanzado para computador
 
 ## Intel I7
 
-- El i7 pertenece a una generación de procesadores donde, para enfrentar los problemas derivados de la microminiaturización, los diseñadores optaron por **replicar**, es decir, incorporar múltiples instancias de, las unidades de cómputo o **núcleos**.
+El i7 pertenece a una generación de procesadores donde, para enfrentar los problemas derivados de la microminiaturización, los diseñadores optaron por **replicar**, es decir, incorporar múltiples instancias de, las unidades de cómputo o **núcleos**.
+
 - Cada uno de los núcleos, a su vez, puede ejecutar dos secuencias de programa independientes (dos **threads** o **hilos**). 
 - Cada núcleo tiene su memoria cache privada, dividida en cache de datos y de instrucciones, y además existe un segundo nivel de cache privada para datos e instrucciones a la vez.
 
@@ -220,7 +221,7 @@ El microprocesador I7 es actualmente el procesador más avanzado para computador
 
 ## Intel I7
 
-- En la misma "pastilla" o unidad física del microprocesador se encuentra una unidad procesadora de gráficos o GPU. Este es un procesador especializado con una arquitectura especial, destinado a la generación de gráficos avanzados, pero que además puede utilizarse para cómputos paralelos de propósito general.
+- En la misma "pastilla" o unidad física del microprocesador se encuentra una unidad procesadora de gráficos o GPU. Esta GPU es un procesador con una arquitectura especial, dedicado a la generación de gráficos avanzados, pero que además puede utilizarse para cómputos paralelos de propósito general.
 
 
 ## Tiempo para acceder a un dato

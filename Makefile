@@ -11,8 +11,9 @@ repre: RepresentaciónDigitalDeDatos.html
 texto: TextoYMultimedia.html
 arqui: Arquitectura.html
 
-%.html: src/%.slides $(DEPS)
+%.html: src/%.slides $(DEPS) 
 	./macro $< > $*.html
 	./asides.pl $< > $*.md
 	pandoc $*.md -o $*.pdf
+	pandoc $*-ok.md -o $*.pdf
 
