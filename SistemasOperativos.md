@@ -1,7 +1,7 @@
 
 ## Prueba
 
-Este emulador de Linux construido en Javascript nos permite practicar los comandos dentro de una *máquina virtual* y desde el navegador, sin necesidad de una instalación completa en nuestro equipo.
+Este emulador de PC construido en Javascript nos permite practicar los comandos del shell dentro de una *máquina virtual* Linux y desde el navegador, sin necesidad de una instalación completa en nuestro equipo.
 
 * Para retroceder en el terminal
   - Teclas Ctrl-Up, Ctrl-Down, Ctrl-PageUp y Ctrl-PageDown.

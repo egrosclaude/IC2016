@@ -1,6 +1,20 @@
 <!-- INCLUDE reveal.header -->
 
 <section>
+<h3>Esta presentación es audiovisual</h3>
+<small>
+<ul>
+<li>Para controlar el sonido utilice la barra de control de audio al pie de la pantalla</li>
+<li>Para acceder a las notas de la presentación pulse la tecla "s"</li>
+</ul>
+</small>
+<img src="img/dog_headphones.jpg" class="plain stretch">
+<center><small>¡Agradecemos por el audio de esta presentación a <b>Ulises Jaramillo</b>,</br>estudiante de Introducción a la Computación 2016!</small></center>
+<aside data-markdown class="notes">
+</aside>
+</section>
+<!--
+<section>
 <h2>Esta presentación contiene notas</h2>
 <ul>
 <li>Pulse "s" para acceder a las notas de la presentación</li>
@@ -23,8 +37,11 @@ Sí, hay programas que "leen texto en voz alta", pero su voz electrónica es cas
 ¿No hay voluntarios?
 </aside>
 </section>
+-->
 
-<section data-background="#00CCFF">
+
+<section data-background="#00CCFF" 
+	data-audio-src="audio/SistemasDeCómputo/01.mp3">
 <h2>Sistemas de Cómputo</h2>
 <aside data-markdown class="notes">
 Un sistema de cómputo es un conjunto de elementos electrónicos organizados para permitir el procesamiento de información. A lo largo del tiempo los sistemas de cómputo han evolucionado notablemente, y en este material vamos a ver las cosas más importantes que han ocurrido durante esta evolución.
@@ -32,7 +49,8 @@ Un sistema de cómputo es un conjunto de elementos electrónicos organizados par
 </section>
 
 
-<section>
+<section 
+	data-audio-src="audio/SistemasDeCómputo/02.mp3">
 <h2>Evolución de los Sistemas de Cómputo</h2>
 <ul>
 	<li>Tendencias crecientes</li>
@@ -57,7 +75,8 @@ Sin embargo, los diferentes componentes se producen con procesos de fabricación
 </section>
 
 
-<section data-background="img/Pascaline.png" data-background-size="80%" data-background-transition="zoom" class="transparent_bg">
+<section data-background="img/Pascaline.png" data-background-size="80%" data-background-transition="zoom" class="transparent_bg"
+	data-audio-src="audio/SistemasDeCómputo/03.mp3">
 <h2>Antecedentes históricos</h2>
 <ul>
 	<li>Desde A.C. hasta siglo XX </li>
@@ -86,7 +105,8 @@ Más cerca de nuestros días, se crearon artefactos parecidos a las calculadoras
 <img src="img/Pascaline.png" class="plain stretch">
 </section>
 
-<section data-transition="convex">
+<section data-transition="convex"
+	data-audio-src="audio/SistemasDeCómputo/04.mp3">
 <h2>La Tabuladora de Hollerith</h2>
 <img src="img/Hollerith_card.png" class="plain stretch">
 <aside data-markdown class="notes">
@@ -100,7 +120,8 @@ La máquina de Hollerith es especialmente interesante porque sienta las bases de
 </aside>
 </section>
 
-<section data-background="img/vacuum.png" data-background-size="80%" data-background-transition="zoom" class="transparent_bg">
+<section data-background="img/vacuum.png" data-background-size="80%" data-background-transition="zoom" class="transparent_bg"
+	data-audio-src="audio/SistemasDeCómputo/05.mp3">
 <h2>Primera Generación </h2>
 <ul>
 <li>Tubos de vacío, 1945-1955</li>
@@ -125,7 +146,8 @@ El ENIAC no era una máquina de Von Neumann porque su programa no residía en me
 </aside>
 </section>
 
-<section>
+<section
+	data-audio-src="audio/SistemasDeCómputo/06.mp3">
 <h2>El tubo de vacío</h2>
 <img src="img/vacuum.png" class="plain stretch">
 <aside data-markdown class="notes">
@@ -138,6 +160,7 @@ La grilla de las válvulas necesita alcanzar una alta temperatura para poder gob
 </section>
 
 <section data-transition="fade-out slide-in">
+	data-audio-src="audio/SistemasDeCómputo/07.mp3">
 <h2>Memoria de núcleos</h2>
 <h3>1960, 1Kib</h3>
 <img src="img/KL_CoreMemory.png" class="plain stretch">
@@ -146,7 +169,8 @@ Las primeras implementaciones de la memoria principal (memorias de núcleos o **
 </aside>
 </section>
 
-<section data-transition="fade-in slide-out">
+<section data-transition="fade-in slide-out"
+	data-audio-src="audio/SistemasDeCómputo/08.mp3">
 <h2>Memoria Micro-SD</h2>
 <h3>2010, 32 GiB</h3>
 <img src="img/KL_CoreMemory-2.png" class="plain stretch">
@@ -155,7 +179,8 @@ La tecnología de las memorias ha evolucionado espectacularmente desde la creaci
 </aside>
 </section>
 
-<section>
+<section
+	data-audio-src="audio/SistemasDeCómputo/09.mp3">
 <h2>ENIAC</h2>
 <img src="img/Eniac01.png" class="plain stretch">
 <aside data-markdown class="notes">
@@ -165,7 +190,8 @@ El ENIAC fue propuesto para cómputos de trayectoria de proyectiles, aplicación
 </aside>
 </section>
 
-<section>
+<section
+	data-audio-src="audio/SistemasDeCómputo/10.mp3">
 <h2>ENIAC-on-a-Chip</h2>
 <img src="img/EniacChipPackaged.jpg" class="stretch plain">
 <aside data-markdown class="notes">
@@ -173,7 +199,8 @@ Pero más notable todavía es que cincuenta años y varias generaciones de compu
 </aside>
 </section>
 
-<section data-background="black">
+<section data-background="black"
+	data-audio-src="audio/SistemasDeCómputo/11.mp3">
 <h2>Clementina</h2>
 	<iframe width="100%" height="100%" class="stretch" 
 		src="https://www.youtube.com/embed/JTzf5wEsSb8?wmode=opaque&rel=0" frameborder="0" allowfullscreen>
@@ -183,7 +210,8 @@ Pero más notable todavía es que cincuenta años y varias generaciones de compu
 </aside>
 </section>
 
-<section data-background="img/transistor-1.png" data-background-size="80%" data-background-transition="zoom" class="transparent_bg">
+<section data-background="img/transistor-1.png" data-background-size="80%" data-background-transition="zoom" class="transparent_bg"
+	data-audio-src="audio/SistemasDeCómputo/12.mp3">
 <h2>Segunda Generación</h2>
 <ul>
 <li>Transistores, 1955 a 1965</li>
@@ -204,7 +232,8 @@ Decimos que esta segunda generación de computadoras fue construida con disposit
 </aside>
 </section>
 
-<section>
+<section
+	data-audio-src="audio/SistemasDeCómputo/13.mp3">
 <h2>El transistor</h2>
 <img src="img/transistor-1.png" class="plain stretch">
 <aside data-markdown class="notes">
@@ -218,7 +247,8 @@ Gracias a estas propiedades el transistor funciona como un interruptor, con el c
 </aside>
 </section>
 
-<section>
+<section
+	data-audio-src="audio/SistemasDeCómputo/14.mp3">
 <h2>PDP-1</h2>
 <img src="img/PDP-1.png" class="plain stretch">
 <aside data-markdown class="notes">
@@ -228,7 +258,8 @@ El PDP-1 fue uno de los primeros computadores que pudieron ser accedidos masivam
 </aside>
 </section>
 
-<section>
+<section
+	data-audio-src="audio/SistemasDeCómputo/15.mp3">
 <h2>Tercera Generación</h2>
 <ul>
 	<li>Circuitos integrados, 1965 a 1980</li>
@@ -255,7 +286,8 @@ El **microprocesador** desarrollado por Intel reunió la mayor parte de las func
 </section>
 
 
-<section>
+<section
+	data-audio-src="audio/SistemasDeCómputo/16.mp3">
 <h2>Circuitos Integrados</h2>
 <img src="img/Integrated-Circuit.jpg" class="plain stretch">
 <aside data-markdown class="notes">
@@ -265,7 +297,8 @@ Repitiendo el procedimiento con diferentes diagramas, sobre sucesivas capas de m
 </aside>
 </section>
 
-<section>
+<section
+	data-audio-src="audio/SistemasDeCómputo/17.mp3">
 <h2>El microprocesador</h2>
 <ul>
 <li>Arquitectura o ISA, Instruction Set Architecture</li>
@@ -295,7 +328,8 @@ Una familia de microprocesadores también puede ampliar su conjunto de instrucci
 </section>
 
 
-<section>
+<section
+	data-audio-src="audio/SistemasDeCómputo/18.mp3">
 <h2>Cuarta Generación y siguientes</h2>
 <ul>
 <li>Integración en gran escala, muy gran escala, ultra gran escala (LSI, VLSI, ULSI)</li>
@@ -335,7 +369,8 @@ Una consecuencia importante de la Era del Multicore es que la mejora en velocida
 
 
 <section>
-<section data-transition="slide-in fade-out">
+<section data-transition="slide-in fade-out"
+	data-audio-src="audio/SistemasDeCómputo/19-a.mp3">
 <h2>Intel I7</h2>
 <img src="img/i7.jpg" class="plain stretch">
 <aside data-markdown  class="notes">
@@ -356,7 +391,8 @@ El microprocesador I7 es actualmente el procesador más avanzado para computador
 </aside>
 </section>
 
-<section data-transition="fade-in fade-out">
+<section data-transition="fade-in fade-out"
+	data-audio-src="audio/SistemasDeCómputo/19-b.mp3">
 <h2>Intel I7</h2>
 <img src="img/i7-2-0.png" class="plain stretch">
 <aside data-markdown  class="notes">
@@ -367,7 +403,8 @@ El i7 pertenece a una generación de procesadores donde, para enfrentar los prob
 </aside>
 </section>
 
-<section data-transition="fade-in fade-out">
+<section data-transition="fade-in fade-out"
+	data-audio-src="audio/SistemasDeCómputo/19-c.mp3">
 <h2>Intel I7</h2>
 <img src="img/i7-2-1.png" class="plain stretch">
 <aside data-markdown  class="notes">
@@ -375,7 +412,8 @@ El i7 pertenece a una generación de procesadores donde, para enfrentar los prob
 </aside>
 </section>
 
-<section data-transition="fade-in fade-out">
+<section data-transition="fade-in fade-out"
+	data-audio-src="audio/SistemasDeCómputo/19-d.mp3">
 <h2>Intel I7</h2>
 <img src="img/i7-2-2.png" class="plain stretch">
 <aside data-markdown class="notes">
@@ -383,7 +421,8 @@ El i7 pertenece a una generación de procesadores donde, para enfrentar los prob
 </aside>
 </section>
 
-<section data-transition="fade-in fade-out">
+<section data-transition="fade-in fade-out"
+	data-audio-src="audio/SistemasDeCómputo/19-e.mp3">
 <h2>Intel I7</h2>
 <img src="img/i7-2-3.png" class="plain stretch">
 <aside data-markdown  class="notes">
@@ -392,7 +431,8 @@ El i7 pertenece a una generación de procesadores donde, para enfrentar los prob
 </section>
 </section>
 
-<section>
+<section
+	data-audio-src="audio/SistemasDeCómputo/20.mp3">
 <h2>Tiempo para acceder a un dato</h2>
 <table>
 <tr><th>Evento</th><th>Latencia</th><th>Escalado</th></tr>

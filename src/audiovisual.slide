@@ -1,0 +1,10 @@
+<section>
+<h3>Esta presentación es audiovisual</h3>
+<ul>
+<li>Para controlar el sonido utilice la barra de control de audio al pie de la pantalla</li>
+<li>Para acceder a las notas de la presentación pulse la tecla "s"</li>
+</ul>
+<img src="img/dog_headphones.jpg" class="plain stretch">
+<aside data-markdown class="notes">
+</aside>
+</section>
