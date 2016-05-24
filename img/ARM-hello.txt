@@ -1,0 +1,12 @@
+.global	_start
+	_start:
+		adr r1, hola
+		b test
+	loop:	ldr r12, =0x16000000
+		str r0, [r12]
+	test:	ldrb r0, [r1], #1
+		cmp r0, #0
+		bne loop
+	forever:
+		b forever
+hola:	.asciz "Hola, mundo!\n"

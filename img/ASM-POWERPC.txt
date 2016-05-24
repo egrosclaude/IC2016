@@ -1,0 +1,18 @@
+.data			  # seccion de variables
+msg:
+	.string "Hola, mundo!\n"
+	len = . - msg	  # longitud de cadena
+.text			  # seccion de codigo
+	.global _start
+_start:
+	li 	0,4 	   # syscall sys_write
+	li 	3,1	   # 1er arg: desc archivo (stdout)
+			   # 2do arg: puntero a mensaje
+	lis 	4,msg@ha   # carga 16b mas altos de &msg
+	addi 	4,4, msg@l # carga 16b mas bajos de &msg
+	li 	5,len	   # 3er arg: longitud de mensaje
+	sc		   # llamada al kernel
+# 
+	li 	0,1	   # syscall sys_exit
+	li 	3,1	   # 1er arg: exit code
+	sc		   # llamada al kernel

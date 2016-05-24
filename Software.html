@@ -46,20 +46,138 @@
 <!------------------------------------------------------------------>
 
 
-
-<section data-transition="slide-in fade-out">
-<h2>Nivel</h2>
-<img src="img/lenguajes-0.png" class="stretch plain">
-</section>
-
-<section data-transition="slide-out fade-in">
-<h2>Nivel</h2>
-<img src="img/lenguajes-1.png" class="stretch plain">
+<section>
+<h2>Esta presentación contiene notas</h2>
+<ul>
+<li>Pulse "s" para acceder a las notas de la presentación</li>
+</ul>
 </section>
 
 <section>
-<h2>Lenguajes de alto nivel</h2>
+<h2>Esta presentación contiene notas</h2>
+<img src="img/audiocat.png" class="plain stretch">
 <ul>
+<li>Pulse "s" para acceder a las notas de la presentación</li>
+</ul>
+<aside data-markdown class="notes">
+¿Hay estudiantes con disminución o carencia visual en la clase? ¿Por qué no?
+
+¿Por qué es importante contar con audio en las presentaciones? Porque ellos necesitan material accesible. Si les ofrecemos esta presentación en forma de audio, ellos podrán estudiar, repasar en sus casas, en condiciones menos desventajosas.
+
+Sí, hay programas que "leen texto en voz alta", pero su voz electrónica es casi tan irritante como la del profe. ¿Qué sería más fortalecedor de esos estudiantes, y del grupo, que tener una versión de las clases con el audio hecho por sus propios compañeros? 
+
+¿No hay voluntarios?
+</aside>
+</section>
+
+<section data-background="#00CCFF">
+<h2>El Software</h2>
+</section>
+
+
+<section>
+<h2>Traductores</h2>
+<ul>
+    <li>Un programa</li>
+	<ul>
+	<li>Recibe datos, opera con ellos y genera un resultado o salida</li>
+	</ul>
+</ul>
+<img src="img/prog0.png" class="plain">
+</section>
+<section>
+<h2>Traductores</h2>
+<ul>
+    <li>Un programa <b>traductor</b></li>
+	<ul>
+	<li>Recibe datos que son a su vez un programa en algún lenguaje de programación</li>
+	<li>Su resultado o salida es a su vez un programa en algún otro lenguaje de programación</li>
+	</ul>
+</ul>
+<img src="img/prog1.png" class="plain">
+</section>
+
+<section data-transition="slide-in fade-out">
+<h2>Ensamblador x86</h2>
+	<div><pre class="stretch"><code>
+.globl  _start
+.text
+_start:
+        movl    $len, %edx
+        movl    $msg, %ecx
+        movl    $1, %ebx
+        movl    $4, %eax
+        int     $0x80
+
+        movl    $0, %ebx
+        movl    $1, %eax
+        int     $0x80
+.data
+msg:
+        .ascii  "Hola, mundo!\n"
+        len =   . - msg
+	</code></pre></div>
+</section>
+<section data-transition="fade-in slide-out">
+<h2>Procesador x86</h2>
+<div><img src="img/ASM-intel.jpg" class="plain stretch"></div>
+</section>
+
+<section data-transition="slide-in fade-out">
+<h2>Ensamblador ARM</h2>
+	<div><pre class="stretch"><code>
+.global	_start
+	_start:
+		adr r1, hola
+		b test
+	loop:	ldr r12, =0x16000000
+		str r0, [r12]
+	test:	ldrb r0, [r1], #1
+		cmp r0, #0
+		bne loop
+	forever:
+		b forever
+hola:	.asciz "Hola, mundo!\n"
+	</code></pre></div>
+</section>
+<section data-transition="fade-in slide-out">
+<h2>Procesador ARM</h2>
+<div><img src="img/ARM-IPad_3.png" class="plain stretch"></div>
+</section>
+
+<section data-transition="slide-in fade-out">
+<h2>Ensamblador PowerPC</h2>
+<div><pre class="stretch"><code>
+.data			  # seccion de variables
+msg:
+	.string "Hola, mundo!\n"
+	len = . - msg	  # longitud de cadena
+.text			  # seccion de codigo
+	.global _start
+_start:
+	li 	0,4 	   # syscall sys_write
+	li 	3,1	   # 1er arg: desc archivo (stdout)
+			   # 2do arg: puntero a mensaje
+	lis 	4,msg@ha   # carga 16b mas altos de &msg
+	addi 	4,4, msg@l # carga 16b mas bajos de &msg
+	li 	5,len	   # 3er arg: longitud de mensaje
+	sc		   # llamada al kernel
+# 
+	li 	0,1	   # syscall sys_exit
+	li 	3,1	   # 1er arg: exit code
+	sc		   # llamada al kernel
+</code></pre></div>
+</section>
+<section data-transition="fade-in slide-out">
+<h2>Procesador PowerPC</h2>
+<div><img src="img/ASM-POWERPC-PS3.jpg" class="plain stretch"></div>
+</section>
+
+
+<section>
+<h2>Lenguajes de programación</h2>
+<ul>
+	<li>Orientación a la máquina o al problema</li>
 	<span class="fragment">
 	<li>Lenguaje de alto nivel</li>
 	<ul>
@@ -80,6 +198,15 @@
 	</span>
 </ul>
 </section>
+<section data-transition="slide-in fade-out">
+<h2>Lenguajes y niveles</h2>
+<img src="img/lenguajes-0.png" class="stretch plain">
+</section>
+<section data-transition="slide-out fade-in">
+<h2>Lenguajes y niveles</h2>
+<img src="img/lenguajes-1.png" class="stretch plain">
+</section>
+
 
 <section>
 <h2>Terminología</h2>
@@ -93,17 +220,19 @@
 	<li>Archivo objeto</li>
 	<li>Bibliotecas</li>
 	<li>Programa ejecutable</li>
+</ul>
 </section>
 
+
 <section>
-<h2>Traductores de alto nivel</h2>
+<h2>Traductores</h2>
 <div class="double">
 	<div>
 	<ul>
-		<li class="fragment">Compiladores</li>
+		<li>Compiladores</li>
 		<span class="fragment">
 			<ul>
-				<li>Traducen un archivo fuente en un ejecutable en código máquina</li> 
+				<li>Traducen un programa fuente en un ejecutable en código máquina</li> 
 				<li>La ejecución queda diferida para un momento posterior</li> 
 			</ul>
 		</span>
@@ -111,17 +240,140 @@
 	</div>
 	<div>
 	<ul>
-		<li class="fragment">Intérpretes</li>
+		<li>Intérpretes</li>
 		<span class="fragment">
 			<ul>
-				<li>Traducen y ejecutan línea por línea un archivo fuente</li> 
-				<li>Traducción y ejecución son inmediatas</li> 
+				<li>Traducen y ejecutan línea por línea un programa fuente</li> 
+				<li>Traducción y ejecución son concurrentes</li> 
 			</ul>
 		</span>
 	</ul>
 	</div>
 </div>
 </section>
+
+<section data-transition="slide-in fade-out">
+<h2>Ciclo de compilación</h2>
+<img src="img/ciclo1.png" class="stretch plain">
+</section>
+<section data-transition="fade-out fade-in">
+<h2>Ciclo de compilación</h2>
+<img src="img/ciclo2.png" class="stretch plain">
+</section>
+<section data-transition="fade-out fade-in">
+<h2>Ciclo de compilación</h2>
+<img src="img/ciclo3.png" class="stretch plain">
+</section>
+<!--
+<section data-transition="fade-out fade-in">
+<h2>Ciclo de compilación</h2>
+<img src="img/fases-0.png" class="stretch plain">
+</section>
+-->
+<section data-transition="fade-out fade-in">
+<h2>Ciclo de compilación</h2>
+<img src="img/fases-1.png" class="stretch plain">
+</section>
+
+<section data-transition="fade-out fade-in">
+<h2>Ciclo de compilación</h2>
+<img src="img/fases-2.png" class="stretch plain">
+</section>
+
+<section data-transition="fade-out fade-in">
+<h2>Ciclo de compilación</h2>
+<img src="img/fases-3.png" class="stretch plain">
+</section>
+
+<section data-transition="fade-out fade-in">
+<h2>Ciclo de compilación</h2>
+<img src="img/fases-4.png" class="stretch plain">
+</section>
+
+
+
+
+
+<section>
+<h2>Paradigmas de lenguajes de programación</h2>
+<ol>
+	<li>Imperativo</li>
+	<ul>
+		<li>Seguir una lista de órdenes o comandos</li>
+	</ul>
+	<li>Lógico o declarativo</li>
+	<ul>
+		<li>Responder una pregunta buscando una solución</li>
+	</ul>
+	<li>Funcional</li>
+	<ul>
+		<li>Evaluar una expresión y utilizar el resultado</li>
+	</ul>
+	<li>Orientación a objetos</li>
+	<ul>
+		<li>Comunicar mensajes entre objetos simulando una parte del mundo real</li>
+	</ul>
+</ol>
+</section>
+
+<section data-transition="convex">
+<h2>1. Paradigma imperativo</h2>
+<h3>Lenguaje C</h3>
+<pre class="stretch"><code>
+int factorial(int n)
+{
+	int f = 1;
+	while (n > 1) {
+		f *= n;
+		n--;
+	}
+	return f;
+}
+
+</code></pre>
+</section>
+
+<section data-transition="convex">
+<h2>2. Paradigma lógico</h2>
+<h3>Lenguaje Prolog</h3>
+<pre class="stretch"><code>
+factorial(0,X):- X=1.
+factorial(N,X):- N1=N-1, factorial(N1,X1), X=X1*N.
+factorial(N):- factorial(N,X), write(X).
+
+</code></pre>
+</section>
+
+<section data-transition="convex">
+<h2>3. Paradigma funcional</h2>
+<h3>Lenguaje Lisp</h3>
+<pre class="stretch"><code>
+(defun factorial (n)
+  (if (= n 0)
+      1
+      (* n (factorial (- n 1))) ) )
+</code></pre>
+</section>
+
+<section data-transition="convex">
+<h2>4. Paradigma orientado a objetos</h2>
+<h3>Lenguaje Python</h3>
+<pre class="stretch"><code>
+class Combinatoria():
+    def factorial(self,n): 
+        num = 1
+        while n > 1:
+            num = num * n
+            n = n - 1
+        return num
+
+c = Combinatoria()
+a = c.factorial(3)
+print a
+</code></pre>
+</section>
+
+
 
 <!------------------------------------------------------------------>
 
