@@ -1,4 +1,4 @@
-<!-- INCLUDE reveal.header -->
+<!-- INCLUDE src/reveal.header -->
 
 <section>
 <h2>Dummy slide</h2>
@@ -137,4 +137,4 @@
 
 
 
-<!-- INCLUDE reveal.trailer -->
+<!-- INCLUDE src/reveal.trailer -->

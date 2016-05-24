@@ -16,5 +16,5 @@ arqui: Arquitectura.html
 	./macro $< > $*.html
 	./asides.pl $< > $*.md
 	pandoc $*.md -o $*.pdf
-	pandoc $*-ok.md -o $*.pdf
+#	pandoc $*-ok.md -o $*.pdf
 

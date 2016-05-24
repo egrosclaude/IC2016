@@ -1,4 +1,4 @@
-<!-- INCLUDE reveal.header -->
+<!-- INCLUDE src/reveal.header -->
 				
 <section data-markdown> 
  <script type="text/template">
@@ -170,4 +170,4 @@
 <img src="img/terapeuta.jpg" class="stretch">
 </section>
 
-<!-- INCLUDE reveal.trailer -->
+<!-- INCLUDE src/reveal.trailer -->

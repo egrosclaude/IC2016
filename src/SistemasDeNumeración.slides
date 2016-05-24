@@ -1,4 +1,4 @@
-<!-- INCLUDE reveal.header -->
+<!-- INCLUDE src/reveal.header -->
 				
 <section data-markdown> 
  <script type="text/template">
@@ -419,4 +419,4 @@ $1100010_{(2} = 001100010_{(2} = 142_{(8}$
 </ol>
 </section>
 
-<!-- INCLUDE reveal.trailer -->
+<!-- INCLUDE src/reveal.trailer -->

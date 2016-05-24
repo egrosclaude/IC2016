@@ -1,4 +1,4 @@
-<!-- INCLUDE reveal.header -->
+<!-- INCLUDE src/reveal.header -->
 
 
 
@@ -771,4 +771,4 @@ Es importante recordar que, de todas maneras, en la traducción de ensamblador a
 <aside data-markdown class="notes"> </aside></section>
 
 
-<!-- INCLUDE reveal.trailer -->
+<!-- INCLUDE src/reveal.trailer -->

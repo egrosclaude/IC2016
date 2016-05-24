@@ -1,4 +1,4 @@
-<!-- INCLUDE reveal.header -->
+<!-- INCLUDE src/reveal.header -->
 
 <section data-markdown> 
  <script type="text/template">
@@ -1012,4 +1012,4 @@ https://es.wikipedia.org/wiki/IEEE_coma_flotante
 </ul>
 </section>
 
-<!-- INCLUDE reveal.trailer -->
+<!-- INCLUDE src/reveal.trailer -->

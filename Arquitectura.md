@@ -309,4 +309,4 @@ Es importante recordar que, de todas maneras, en la traducción de ensamblador a
 
 
 
-<!-- INCLUDE reveal.trailer -->
+<!-- INCLUDE src/reveal.trailer -->

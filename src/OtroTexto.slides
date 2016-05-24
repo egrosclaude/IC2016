@@ -1,4 +1,4 @@
-<!-- INCLUDE reveal.header -->
+<!-- INCLUDE src/reveal.header -->
 <section data-markdown> 
  <script type="text/template">
 ##Unidad I 
@@ -333,4 +333,4 @@ $ hexdump -C Texto\ y\ Multimedia.html | head -8
 <!-- INCLUDE plotslide.slide -->
 
 
-<!-- INCLUDE reveal.trailer -->
+<!-- INCLUDE src/reveal.trailer -->

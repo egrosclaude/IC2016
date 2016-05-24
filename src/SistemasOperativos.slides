@@ -1,4 +1,4 @@
-<!-- INCLUDE reveal.header -->
+<!-- INCLUDE src/reveal.header -->
 
 <section>
 <h2>Prueba</h2>
@@ -22,5 +22,5 @@ Este emulador de PC construido en Javascript nos permite practicar los comandos 
   - Seleccionar el texto en la caja **clipboard** y copiarlo a alguna otra aplicación en nuestro equipo, tal como un editor.
 </aside>
 </section>
-<!-- INCLUDE reveal.trailer -->
+<!-- INCLUDE src/reveal.trailer -->
 

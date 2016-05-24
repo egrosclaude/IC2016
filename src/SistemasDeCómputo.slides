@@ -1,4 +1,4 @@
-<!-- INCLUDE reveal.header -->
+<!-- INCLUDE src/reveal.header -->
 
 <section>
 <h3>Esta presentación es audiovisual</h3>
@@ -523,4 +523,4 @@ La consecuencia es que la mayoría de las computadoras actuales son máquinas pa
 * [Más sobre Clementina](http://cda.gob.ar/serie/294/clementina)
 </section>
 
-<!-- INCLUDE reveal.trailer -->
+<!-- INCLUDE src/reveal.trailer -->
