@@ -46,12 +46,162 @@
 <!------------------------------------------------------------------>
 
 
-<section>
-<h2>Prueba</h2>
+<section data-background="#00CCFF">
+<h2>Sistemas Operativos</h2>
 </section>
+
+<section data-transition="slide-in fade-out">
+<h2>Sistemas de cómputo</h2>
+<img src="img/sistcomp-0.png" class="stretch plain">
+</section>
+<section data-transition="slide-out fade-in">
+<h2>Sistemas de cómputo</h2>
+<img src="img/sistcomp-1.png" class="stretch plain">
+</section>
+
+<!-- HISTORIA 
+<section>
+<h2>Software de los sistemas de cómputo</h2>
+<ul>
+	<li><i>Open Shop</i></li>
+	<li>Sistemas de procesamiento <i>batch</i> o por lotes</li>
+	<li>Sistemas multiprogramados</li>
+	<li>Sistemas de tiempo compartido</li>
+	<li>Computación personal</li>
+</ul>
+</section>
+-->
+<section>
+<h2>Evolución del software de base</h2>
+<table>
+<tr class="fragment"><td><i>Open Shop</i></td><td>Carga manual de una aplicación</td></tr>
+<tr class="fragment"><td>Procesamiento <i>batch</i></td><td>Automatización de trabajos en lotes</td></tr>
+<tr class="fragment"><td>Multiprogramación</td><td>Usuarios que compiten</td></tr>
+<tr class="fragment"><td>Tiempo compartido</td><td>Sistema interactivo</td></tr>
+<tr class="fragment"><td>Computación personal</td><td>Inicialmente sencillo pero en evolución</td></tr>
+</table>
+</section>
+
+
+<section>
+<h2>Componentes del SO</h2>
+<ul>
+	<li><i>Kernel</i></li>
+	<li>Software de sistema</li>
+</ul>
+</section>
+
+<section>
+<h2>Kernel</h2>
+<ul>
+	<li>Componente fundamental del sistema operativo</li>
+	<li>Conjunto de rutinas residentes en memoria</li>
+	<li>Controla el <b>hardware</b> y los <b>recursos lógicos</b></li>
+	<li>Corre en <b>modo privilegiado</b> del procesador</li>
+	<li>Ofrece los servicios mediante <b>llamadas al sistema o system calls</b></li>
+</ul>
+</section>
+
+<section>
+<h2>Software de sistema</h2>
+<div class="double">
+<div>
+<ul>	
+	<li>Interfaces de usuario</li>
+	<ul>
+		<li><b>Shell</b> o procesador de comandos</li>
+		<li>Opcionalmente, entornos gráficos</li>
+	</ul>
+	<li>Editores, navegador de archivos</li>
+	<li>Monitores de sistema, registros de eventos</li>
+</ul>
+</div>
+<div>
+<ul>
+	<li>Programas de comunicaciones</li>
+	<ul>
+		<li>Navegador, transferencia de archivos</li>
+		<li>Mail, mensajería</li>
+	</ul>
+	<li>Soporte de programación</li>
+	<ul>
+		<li>Compiladores</li>
+		<li>Bibliotecas</li>
+	</ul>
+</ul>
+</div>
+</section>
+
+<section data-transition="slide-in fade-out">
+<h2>Aplicaciones</h2>
+<img src="img/so-0.png" class="stretch plain">
+</section>
+<section data-transition="fade-in fade-out">
+<h2>Bibliotecas</h2>
+<img src="img/so-1.png" class="stretch plain">
+</section>
+<section data-transition="fade-in fade-out">
+<h2>Kernel</h2>
+<img src="img/so-2.png" class="stretch plain">
+</section>
+<section data-transition="fade-in slide-out">
+<h2>Llamadas al sistema</h2>
+<img src="img/so-3.png" class="stretch plain">
+</section>
+
+<section>
+<h2>Servicios del SO</h2>
+<ul>
+	<li>Múltiples usuarios y tareas</li>
+	<ul>
+		<li>Ejecución de programas</li>
+		<li>Gestión de archivos</li>
+		<li>Operaciones de Entrada/Salida</li>
+		<li>Gestión de memoria</li>
+		<li>Protección</li>
+	</ul>
+</ul>
+</section>
+
+
+<section>
+<h2>Ejecución de programas</h2>
+<ul>
+	<li>Interfaz de usuario, <i>shell</i></li>
+	<li><b>Proceso</b></li>
+	<ul>
+		<li>Un programa en ejecución</i></li>
+	</ul>
+	<li>Planificación, o <b>scheduling</b> &rarr; prioridades</li>
+	<li><b>Estados</b> de los procesos</li>
+	<li>Concurrencia y Paralelismo</li>
+</ul>
+</section>
+
+
+<section>
+<h2>Gestión de archivos</h2>
+<ul>
+	<li><b>Archivos</b></li>
+	<ul>
+		<li>Datos almacenados en un medio persistente</li>
+	</ul>
+	<li><b>Sistema de archivos</b> o <b>file system</b></li>
+	<ul>
+		<li>Un componente del kernel que organiza los archivos</li>
+	</ul>
+	<li><b>Metadatos</b></li>
+	<ul>
+		<li>Datos acerca de los datos (tamaño del archivo, fecha de creación, atributos, permisos)</li>
+	</ul>
+	<li>Estructura jerárquica de <b>directorios</b></li>
+</ul>
+</section>
+
+
 <section>
 <h3>Usemos Linux</h3>
-<a href="http://bellard.org/jslinux/index.html">Un emulador de PC corriendo Linux</a>
+<a href="http://bellard.org/jslinux/index.html">Un emulador de PC en Javascript, corriendo Linux</a>
 <aside data-markdown class="notes">
 Este emulador de PC construido en Javascript nos permite practicar los comandos del shell dentro de una *máquina virtual* Linux y desde el navegador, sin necesidad de una instalación completa en nuestro equipo.
 

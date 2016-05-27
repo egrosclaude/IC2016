@@ -101,21 +101,21 @@ Sí, hay programas que "leen texto en voz alta", pero su voz electrónica es cas
 <h2>Ensamblador x86</h2>
 	<div><pre class="stretch"><code>
 .globl  _start
-.text
+.text				# seccion de codigo
 _start:
-        movl    $len, %edx
-        movl    $msg, %ecx
-        movl    $1, %ebx
-        movl    $4, %eax
-        int     $0x80
+        movl    $len, %edx	# carga parametros longitud
+        movl    $msg, %ecx	# y direccion del mensaje
+        movl    $1, %ebx        # parametro 1: stdout
+        movl    $4, %eax        # servicio 4: write
+        int     $0x80		# syscall
 
-        movl    $0, %ebx
-        movl    $1, %eax
-        int     $0x80
-.data
+        movl    $0, %ebx        # retorna 0
+        movl    $1, %eax        # servicio 1: retorno de llamada
+        int     $0x80		# syscall
+.data				# seccion de datos
 msg:
         .ascii  "Hola, mundo!\n"
-        len =   . - msg
+        len =   . - msg		# longitud del mensaje
 	</code></pre></div>
 </section>
 <section data-transition="fade-in slide-out">
@@ -126,18 +126,21 @@ msg:
 <section data-transition="slide-in fade-out">
 <h2>Ensamblador ARM</h2>
 	<div><pre class="stretch"><code>
-.global	_start
-	_start:
-		adr r1, hola
-		b test
-	loop:	ldr r12, =0x16000000
-		str r0, [r12]
-	test:	ldrb r0, [r1], #1
-		cmp r0, #0
-		bne loop
-	forever:
-		b forever
-hola:	.asciz "Hola, mundo!\n"
+.global main  
+main:  
+    @ Guarda la direccion de retorno lr 
+    @ mas 8 bytes para alineacion
+    push    {ip, lr}  
+    @ Carga la direccion de la cadena y llama syscall
+    ldr     r0, =hola
+    bl      printf  
+    @ Retorna 0
+    mov     r0, #0 
+    @ Desapila el registro ip y guarda
+    @ el siguiente valor desapilado en el pc 
+    pop     {ip, pc}  
+hola:  
+    .asciz "Hello, world.\n"  
 	</code></pre></div>
 </section>
 <section data-transition="fade-in slide-out">

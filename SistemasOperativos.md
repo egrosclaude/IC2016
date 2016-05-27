@@ -1,5 +1,33 @@
 
-## Prueba
+## Sistemas Operativos
+
+## Sistemas de cómputo
+
+## Sistemas de cómputo
+
+## Software de los sistemas de cómputo
+
+## Evolución del software de base
+
+## Componentes del SO
+
+## Kernel
+
+## Software de sistema
+
+## Aplicaciones
+
+## Bibliotecas
+
+## Kernel
+
+## Llamadas al sistema
+
+## Servicios del SO
+
+## Ejecución de programas
+
+## Gestión de archivos
 
 Este emulador de PC construido en Javascript nos permite practicar los comandos del shell dentro de una *máquina virtual* Linux y desde el navegador, sin necesidad de una instalación completa en nuestro equipo.
 
