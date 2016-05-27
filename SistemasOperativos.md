@@ -11,9 +11,9 @@
 
 ## Componentes del SO
 
-## Kernel
+## Software relacionado
 
-## Software de sistema
+## Kernel
 
 ## Aplicaciones
 
