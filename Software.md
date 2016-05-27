@@ -27,6 +27,8 @@
 
 ## Traductores
 
+## Traductores
+
 ## Ciclo de compilación
 
 ## Ciclo de compilación

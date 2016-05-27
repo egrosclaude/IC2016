@@ -40,15 +40,16 @@
 <section>
 <h2>Componentes del SO</h2>
 <ul>
-	<li><b>Shell</b>, interfaz de usuario o procesador de comandos</li>
+	<li><b>Kernel</b> o <b>núcleo</b></li>
 	<li>Programas utilitarios o <b>software de sistema</b></li>
-	<li><b>Kernel</b></li>
+	<li><b>Shell</b>, interfaz de usuario o procesador de comandos</li>
 </ul>
+<img src="img/shell.png" class="stretch plain">
 </section>
 
 
 <section>
-<h2>Software relacionado</h2>
+<h2>Software involucrado</h2>
 <div class="double">
 <div>
 <ul>	
@@ -57,6 +58,7 @@
 		<li><b>Shell</b> o procesador de comandos</li>
 		<li>Opcionalmente, entorno gráfico</li>
 	</ul>
+	<li>Programas de administración</li>
 	<li>Editores, navegador de archivos</li>
 	<li>Monitores de sistema, registros de eventos</li>
 </ul>
@@ -65,20 +67,18 @@
 <ul>
 	<li>Programas de comunicaciones</li>
 	<ul>
-		<li>Navegador, transferencia de archivos</li>
-		<li>Mail, mensajería</li>
+		<li>Navegador, transferencia de archivos, mail, mensajería</li>
 	</ul>
 	<li>Soporte de programación</li>
 	<ul>
-		<li>Compiladores, bibliotecas</li>
+		<li>Compiladores, intérpretes, bibliotecas</li>
 	</ul>
-	<li>Otras aplicaciones</li>
 </ul>
 </div>
 </section>
 
 <section>
-<h2>Kernel</h2>
+<h2>Kernel o núcleo</h2>
 <ul>
 	<li>Componente fundamental del sistema operativo</li>
 	<li>Conjunto de rutinas residentes en memoria</li>
@@ -104,6 +104,11 @@
 <section data-transition="fade-in slide-out">
 <h2>Llamadas al sistema</h2>
 <img src="img/so-3.png" class="stretch plain">
+</section>
+
+<section>
+<h2>Cronología</h2>
+<img src="img/so-crono.png" class="stretch plain">
 </section>
 
 <section>

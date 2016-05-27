@@ -140,6 +140,34 @@
 </div>
 </section>
 
+<section>
+<h2>Traductores</h2>
+<div class="double">
+  <div>
+  <ul>
+	<li>Compiladores</li>
+	<span class="fragment">
+	<ul>
+		<li>La ejecución de un programa compilado es tan rápida como es posible</li> 
+		<li>El programa queda compilado para una única arquitectura</li> 
+	</ul>
+	</span>
+  </ul>
+  </div>
+  <div>
+  <ul>
+	<li>Intérpretes</li>
+	<span class="fragment">
+	<ul>
+		<li>La ejecución del programa comparte la CPU con la traducción del fuente</li> 
+		<li>El mismo programa fuente puede correr sin modificaciones en varias arquitecturas</li> 
+	</ul>
+	</span>
+</ul>
+</div>
+</div>
+</section>
+
 <section data-transition="slide-in fade-out">
 <h2>Ciclo de compilación</h2>
 <img src="img/ciclo1.png" class="stretch plain">

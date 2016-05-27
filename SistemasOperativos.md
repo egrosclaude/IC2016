@@ -11,9 +11,9 @@
 
 ## Componentes del SO
 
-## Software relacionado
+## Software involucrado
 
-## Kernel
+## Kernel o núcleo
 
 ## Aplicaciones
 
@@ -22,6 +22,8 @@
 ## Kernel
 
 ## Llamadas al sistema
+
+## Cronología
 
 ## Servicios del SO
 
