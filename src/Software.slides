@@ -1,8 +1,12 @@
 <!-- INCLUDE src/reveal.header -->
+<!-- INCLUDE src/peticion.slides -->
 
 
 <section data-background="#00CCFF">
 <h2>El Software</h2>
+<aside data-markdown class="notes">
+En esta unidad, **El Software**, nos interesa conocer el proceso de desarrollo de software, desde el punto de vista de la organización de computadoras. Explicaremos cómo se llega desde un programa, en un lenguaje de alto o bajo nivel, a obtener una sucesión de instrucciones de máquina para un procesador. 
+</aside>
 </section>
 
 
@@ -16,7 +20,7 @@
 </ul>
 <img src="img/prog0.png" class="plain">
 <aside data-markdown class="notes">
-Uno puede pensar en un programa cualquiera como si se tratara de una máquina, cuyo funcionamiento es, en principio, desconocido. Todo lo que vemos es que, si introducimos ciertos datos, de alguna forma esta máquina devolverá un resultado.
+Uno puede pensar en un programa cualquiera como si se tratara de una máquina, cuyo funcionamiento es, en principio, desconocido. Todo lo que vemos es que, si introducimos ciertos datos, de alguna forma esta "máquina" devolverá un resultado.
 </aside>
 </section>
 
@@ -34,7 +38,7 @@ Uno puede pensar en un programa cualquiera como si se tratara de una máquina, c
 <aside data-markdown class="notes">
 Si pensamos en una clase especial de estos programas, donde los datos que ingresan son a su vez un programa, y donde la salida devuelta por la máquina es, a su vez, un programa, entonces esa clase especial de programas son los **traductores**. 
 
-Cuando vimos el lenguaje ensamblador del MCBE lo propusimos simplemente como una forma de abreviar las instrucciones de máquina, o como una forma de facilitar la escritura, porque los mnemónicos eran más fáciles de memorizar que las instrucciones con unos y ceros. Sin embargo, un programa escrito en ensamblador del MCBE podría ser traducido automáticamente, por un traductor, a código de máquina MCBE, ahorrándonos mucho trabajo y errores.
+Como hemos dicho anteriormente, una CPU como el MCBE sólo sabe ejecutar instrucciones de código máquina expresadas con unos y ceros. Cuando vimos el lenguaje ensamblador del MCBE lo propusimos simplemente como una forma de abreviar las instrucciones de máquina, o como una forma de facilitar la escritura, porque los mnemónicos eran más fáciles de memorizar que las instrucciones con unos y ceros. Sin embargo, un programa escrito en ensamblador del MCBE podría ser traducido automáticamente, por un traductor, a código de máquina MCBE, ahorrándonos mucho trabajo y errores.
 
 Esta clase de traductores, que reciben un programa en lenguaje ensamblador y devuelven un programa en código de máquina, son los llamados ensambladores.
 </aside>
@@ -45,12 +49,17 @@ Esta clase de traductores, que reciben un programa en lenguaje ensamblador y dev
 	<div><pre class="stretch"><code>
 	<!-- INCLUDE img/ASM-hello.s -->
 	</code></pre></div>
+<aside data-markdown class="notes">
+Cada CPU tiene su propio lenguaje ensamblador, y existen programas traductores (ensambladores) para cada una de ellas. Por ejemplo, la familia de procesadores de Intel para computadoras personales comparte el mismo ISA, o arquitectura y conjunto de instrucciones. Cualquiera de estos procesadores puede ser programado usando un ensamblador para la familia **x86**.
+
+Según la tradición, el primer programa que uno debe intentar escribir cuando comienza a aprender un lenguaje de programación nuevo es "Hola mundo". Es un programa que simplemente escribe esas palabras por pantalla. Aquí mostramos el clásico ejemplo de "Hola mundo" en el lenguaje ensamblador de la familia x86.
+</aside>
 </section>
 <section data-transition="fade-in slide-out">
 <h2>Procesador x86</h2>
 <div><img src="img/ASM-intel.jpg" class="plain stretch"></div>
 <aside data-markdown class="notes">
-Cada CPU tiene su propio lenguaje ensamblador, y existen programas traductores (ensambladores) para cada una de ellas. Por ejemplo, la familia de procesadores de Intel para computadoras personales comparte el mismo ISA, o arquitectura y conjunto de instrucciones. Cualquiera de estos procesadores puede ser programado usando un ensamblador para la familia **x86**.
+Los procesadores de la familia x86 se encuentran en casi todas las computadoras personales y notebooks.
 </aside>
 </section>
 
@@ -62,14 +71,15 @@ Cada CPU tiene su propio lenguaje ensamblador, y existen programas traductores (
 <aside data-markdown class="notes">
 Por supuesto, los procesadores de familias diferentes tienen conjuntos de instrucciones diferentes. Así, un lenguaje y un programa ensamblador están ligado a un procesador determinado. El código máquina producido por un ensamblador no puede ser trasladado sin cambios a otro procesador que no sea aquel para el cual fue ensamblado. Las instrucciones de máquina tendrán sentidos completamente diferentes para uno y otro. 
 
-El procesador ARM, por ejemplo, es un procesador que suele encontrarse en plataformas móviles como *tablets* o teléfonos celulares, porque ha sido diseñado para minimizar el consumo de energía, una característica que lo hace ideal para construir esos productos portátiles. Su arquitectura, y por lo tanto, su conjunto de instrucciones, están basados en esos principios de diseño. 
-
-Por eso, el código máquina producido por un ensamblador para x86 no puede ser trasladado directamente a una computadora basada en ARM, sino que el programa original, en ensamblador, debería ser **portado** o traducido al ensamblador propio de ARM, por un programador, y luego ensamblado con un ensamblador para ARM. 
+Por eso, el código máquina producido por un ensamblador para x86 no puede ser trasladado directamente a una computadora basada en un procesador como, por ejemplo, ARM; sino que el programa original, en ensamblador, debería ser **portado** o traducido al ensamblador propio de ARM, por un programador, y luego ensamblado con un ensamblador para ARM. 
 </aside>
 </section>
 <section data-transition="fade-in slide-out">
 <h2>Procesador ARM</h2>
 <div><img src="img/ARM-IPad_3.png" class="plain stretch"></div>
+<aside data-markdown class="notes">
+El ARM es un procesador que suele encontrarse en plataformas móviles como *tablets* o teléfonos celulares, porque ha sido diseñado para minimizar el consumo de energía, una característica que lo hace ideal para construir esos productos portátiles. Su arquitectura, y por lo tanto, su conjunto de instrucciones, están basados en esos principios de diseño. 
+</aside>
 </section>
 
 <section data-transition="slide-in fade-out">
@@ -190,6 +200,9 @@ El proceso de **vinculación**, que es posterior a la traducción, debe buscar e
 	</div>
 </div>
 <aside data-markdown class="notes">
+Los traductores pueden funcionar de dos maneras: o bien producen una versión en código máquina del programa fuente (**compiladores**) o bien analizan instrucción por instrucción del programa fuente y además de generar una traducción a código máquina de cada línea, la ejecutan (**intérpretes**).
+
+Luego de la compilación, el programa en código máquina obtenido puede ser ejecutado muchas veces. En cambio, el programa interpretado debe ser traducido cada vez que se ejecute.
 </aside>
 </section>
 
@@ -220,6 +233,9 @@ El proceso de **vinculación**, que es posterior a la traducción, debe buscar e
 </div>
 </div>
 <aside data-markdown class="notes">
+Una ventaja comparativa de la compilación respecto de la interpretación es la mayor velocidad de ejecución. Al separar las fases de traducción y ejecución, un compilador alcanza la máxima velocidad de ejecución posible en un procesador dado. Por el contrario, un intérprete alterna las fases de traducción y ejecución, por lo cual la ejecución completa del mismo programa tardará algo más de tiempo.
+
+Inversamente, el código interpretado presenta la ventaja de ser directamente portable. Dos plataformas diferentes podrán ejecutar el mismo programa interpretable, siempre que cuenten con intérpretes para el mismo lenguaje. Por el contrario, un programa compilado está en código máquina para alguna arquitectura específica, así que no será compatible con otras.
 </aside>
 </section>
 
@@ -227,18 +243,21 @@ El proceso de **vinculación**, que es posterior a la traducción, debe buscar e
 <h2>Ciclo de compilación</h2>
 <img src="img/ciclo1.png" class="stretch plain">
 <aside data-markdown class="notes">
+El desarrollador que necesita producir un archivo ejecutable utilizará varios programas de sistema como editores, traductores, vinculadores, etc.
 </aside>
 </section>
 <section data-transition="fade-out fade-in">
 <h2>Ciclo de compilación</h2>
 <img src="img/ciclo2.png" class="stretch plain">
 <aside data-markdown class="notes">
+En algún momento anterior, alguien habrá creado una biblioteca de funciones para uso futuro. Esa biblioteca consiste en versiones objeto de varias funciones, compiladas, y reunidas con un programa bibliotecario, en un archivo. 
 </aside>
 </section>
 <section data-transition="fade-out fade-in">
 <h2>Ciclo de compilación</h2>
 <img src="img/ciclo3.png" class="stretch plain">
 <aside data-markdown class="notes">
+Esa biblioteca es consultada por el vinculador para completar las referencias pendientes del archivo objeto.
 </aside>
 </section>
 <!--
@@ -253,6 +272,7 @@ El proceso de **vinculación**, que es posterior a la traducción, debe buscar e
 <h2>Ciclo de compilación</h2>
 <img src="img/fases-1.png" class="stretch plain">
 <aside data-markdown class="notes">
+En resumen, la primera fase del ciclo de compilación es necesariamente la edición del programa fuente.
 </aside>
 </section>
 
@@ -260,6 +280,7 @@ El proceso de **vinculación**, que es posterior a la traducción, debe buscar e
 <h2>Ciclo de compilación</h2>
 <img src="img/fases-2.png" class="stretch plain">
 <aside data-markdown class="notes">
+Luego, la traducción para generar un objeto con referencias pendientes.
 </aside>
 </section>
 
@@ -267,6 +288,7 @@ El proceso de **vinculación**, que es posterior a la traducción, debe buscar e
 <h2>Ciclo de compilación</h2>
 <img src="img/fases-3.png" class="stretch plain">
 <aside data-markdown class="notes">
+Luego, la vinculación con bibliotecas para resolver esas referencias pendientes.
 </aside>
 </section>
 
@@ -275,6 +297,7 @@ El proceso de **vinculación**, que es posterior a la traducción, debe buscar e
 <h2>Ciclo de compilación</h2>
 <img src="img/fases-4.png" class="stretch plain">
 <aside data-markdown class="notes">
+El resultado final del ciclo de compilación es un ejecutable.
 </aside>
 </section>
 
@@ -283,6 +306,7 @@ El proceso de **vinculación**, que es posterior a la traducción, debe buscar e
 <h3>Entorno integrado de desarrollo (IDE)</h3>
 <img src="img/eclipse.png" class="stretch plain">
 <aside data-markdown class="notes">
+Muchos desarrolladores utilizan algún **ambiente integrado de desarrollo (IDE)**, que es un programa que actúa como intermediario entre el usuario y los componentes del ciclo de compilación (compilador, vinculador, bibliotecas). Sin embargo, aunque el ambiente integrado lo oculte, el sistema de desarrollo sigue trabajando como se ha descrito, con pasos separados para edición, traducción, vinculación y ejecución.
 </aside>
 </section>
 
@@ -330,8 +354,8 @@ int factorial(int n)
 
 </code></pre>
 <aside data-markdown class="notes">
-</aside>
 Bajo el paradigma imperativo, los programas consisten en una sucesión de instrucciones o comandos, como si el programador diera órdenes a alguien que las cumpliera. El ejemplo en lenguaje **C** explica cuáles son las órdenes que deben ejecutarse, una por una. 
+</aside>
 </section>
 
 <section data-transition="convex">
@@ -360,7 +384,7 @@ El usuario de este programa puede usarlo de dos maneras. Podría preguntar el va
       (* n (factorial (- n 1))) ) )
 </code></pre>
 <aside data-markdown class="notes">
-En el lenguaje Lisp, perteneciente al paradigma funcional, una función es un enunciado entre paréntesis que puede contener a otras funciones. En particular la definición de **factorial** que presentamos aquí contiene a su vez una invocación de la misma función, volviéndola una función **recursiva**.
+En el lenguaje Lisp, perteneciente al paradigma funcional, una función es un enunciado entre paréntesis que puede contener a otras funciones. En particular la definición de **factorial** presentada aquí contiene a su vez una invocación de la misma función, volviéndola una función **recursiva**.
 
 El lenguaje Lisp utiliza notación prefija para los operadores. 
 </aside>
@@ -385,7 +409,7 @@ print a
 <aside data-markdown class="notes">
 En un lenguaje **orientado a objetos**, definimos una **clase** que funciona como un molde para crear múltiples instancias de objetos que se parecen entre sí, ya que tienen los mismos datos que los componen y la misma funcionalidad. 
 
-En el ejemplo de programación orientada a objetos en Python, definimos una clase **Combinatoria** que producirá objetos con la conducta **factorial**. El programa crea un objeto, instancia de Combinatoria, llamado **c**, al cual se le envía el mensaje **factorial**, que dispara la conducta correspondiente especificada en el método del mismo nombre. Finalmente se imprime su valor.
+En el ejemplo de programación orientada a objetos en Python, definimos una clase **Combinatoria** que producirá objetos con la conducta **factorial**. El programa crea un objeto, instancia de la clase Combinatoria, llamado **c**, al cual se le envía el mensaje **factorial**, que dispara la conducta correspondiente especificada en el método del mismo nombre. Finalmente se imprime su valor.
 </aside>
 </section>
 

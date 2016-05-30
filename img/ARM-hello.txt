@@ -12,4 +12,4 @@ main:
     @ el siguiente valor desapilado en el pc 
     pop     {ip, pc}  
 hola:  
-    .asciz "Hello, world.\n"  
+    .asciz "Hola, mundo!\n"  
