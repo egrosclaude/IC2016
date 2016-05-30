@@ -30,8 +30,8 @@
 <table>
 <tr class="fragment"><td><i>Open Shop</i></td><td>Carga manual de una aplicación</td></tr>
 <tr class="fragment"><td>Procesamiento <i>batch</i></td><td>Automatización de trabajos en lotes</td></tr>
-<tr class="fragment"><td>Multiprogramación</td><td>Usuarios que compiten</td></tr>
-<tr class="fragment"><td>Tiempo compartido</td><td>Sistema interactivo</td></tr>
+<tr class="fragment"><td>Multiprogramación</td><td>Programas que compiten por recursos</td></tr>
+<tr class="fragment"><td>Tiempo compartido</td><td>Sistema multiusuario interactivo</td></tr>
 <tr class="fragment"><td>Computación personal</td><td>Inicialmente sencillo pero en evolución</td></tr>
 </table>
 </section>
@@ -88,6 +88,42 @@
 </ul>
 </section>
 
+<section data-transition="slide-in fade-out">
+<h2>Modo de ejecución dual</h2>
+<img src="img/modos-0.png" class="stretch plain">
+<aside data-markdown class="notes">
+Los modernos procesadores funcionan en lo que llamamos **modo dual** de ejecución, donde el ISA se divide en dos grupos de instrucciones. Ciertas instrucciones que controlan el modo de operación de la CPU, el acceso a memoria, o a las unidades de Entrada/Salida, pertenecen al grupo de instrucciones del **modo privilegiado**. Un proceso de usuario funciona en modo **no privilegiado**, donde tiene acceso a la mayoría de las instrucciones del ISA, pero no a las instrucciones del modo privilegiado. 
+
+El proceso, durante su vida, ejecutará instrucciones en modo no privilegiado hasta que necesite un servicio del sistema operativo, como el acceso a un recurso físico o lógico.
+</aside>
+</section>
+<section data-transition="fade-in fade-out">
+<h2>Modo de ejecución dual</h2>
+<img src="img/modos-1.png" class="stretch plain">
+<aside data-markdown class="notes">
+Para requerir este servicio, el proceso ejecuta una instrucción de **llamada al sistema** o **system call**, que es la única instrucción del conjunto no privilegiado que permite a la CPU conmutar al modo privilegiado.
+</aside>
+</section>
+<section data-transition="fade-in fade-out">
+<h2>Modo de ejecución dual</h2>
+<img src="img/modos-2.png" class="stretch plain">
+<aside data-markdown class="notes">
+La llamada al sistema conmuta el modo de la CPU a modo privilegiado **y además** fuerza el salto a una cierta dirección fija de memoria donde existe código del kernel. En esa dirección de memoria existe una rutina de atención de llamadas al sistema, que determina, por el contenido de los registros de la CPU, qué es lo que está solicitando el proceso. 
+
+Con estos datos, esa rutina de atención de llamadas al sistema dirigirá el pedido al subsistema del kernel correspondiente, ejecutando siempre en modo privilegiado, y por lo tanto, con completo acceso a los recursos.
+</section>
+<section data-transition="fade-in slide-out">
+<h2>Modo de ejecución dual</h2>
+<img src="img/modos-3.png" class="stretch plain">
+<aside data-markdown class="notes">
+El subsistema que corresponda hará las verificaciones necesarias para cumplir el servicio: 
+
+* El usuario dueño del proceso, ¿tiene los permisos necesarios?
+* El recurso, ¿está disponible o está siendo usado por otro proceso?, etc.
+
+Cuando se cumplan todos los requisitos, se ejecutará el servicio pedido y luego se volverá a modo usuario, a continuar con la ejecución del proceso.  
+</aside>
+</section>
 
 <section data-transition="slide-in fade-out">
 <h2>Aplicaciones</h2>
@@ -106,9 +142,21 @@
 <img src="img/so-3.png" class="stretch plain">
 </section>
 
-<section>
+<section data-transition="slide-in fade-out">
 <h2>Cronología</h2>
-<img src="img/so-crono.png" class="stretch plain">
+<img src="img/so-crono-0.png" class="stretch plain">
+</section>
+<section data-transition="fade-in fade-out">
+<h2>Cronología</h2>
+<img src="img/so-crono-1.png" class="stretch plain">
+</section>
+<section data-transition="fade-in fade-out">
+<h2>Cronología</h2>
+<img src="img/so-crono-2.png" class="stretch plain">
+</section>
+<section data-transition="fade-in slide-out">
+<h2>Cronología</h2>
+<img src="img/so-crono-3.png" class="stretch plain">
 </section>
 
 <section>
@@ -136,8 +184,87 @@
 	</ul>
 	<li>Planificación, o <b>scheduling</b> &rarr; prioridades</li>
 	<li><b>Estados</b> de los procesos</li>
-	<li>Concurrencia y Paralelismo</li>
+	<li><b>Concurrencia</b> y <b>paralelismo</b></li>
 </ul>
+</section>
+
+<section data-transition="slide-in fade-out">
+<h2>Estados de los procesos</h2>
+<h3>Sistema de multiprogramación</h3>
+<img src="img/procesos-0.png" class="plain stretch">
+<aside data-markdown class="notes">
+</aside>
+</section>
+<section data-transition="fade-in fade-out">
+<h2>Estados de los procesos</h2>
+<h3>Sistema de multiprogramación</h3>
+<img src="img/procesos-1.png" class="plain stretch">
+<aside data-markdown class="notes">
+</aside>
+</section>
+<section data-transition="fade-in fade-out">
+<h2>Estados de los procesos</h2>
+<h3>Sistema de multiprogramación</h3>
+<img src="img/procesos-2.png" class="plain stretch">
+<aside data-markdown class="notes">
+</aside>
+</section>
+
+<section data-transition="slide-out fade-in">
+<h2>Estados de los procesos</h2>
+<h3>Tiempo compartido o <i>time sharing</i></h3>
+<img src="img/procesos-3.png" class="plain stretch">
+<aside data-markdown class="notes">
+</aside>
+</section>
+
+<section data-transition="slide-in fade-out">
+<h2>Procesos concurrentes</h2>
+<img src="img/estados-0.png" class="plain stretch">
+<aside data-markdown class="notes">
+</aside>
+</section>
+<section data-transition="fade-in fade-out">
+<h2>Procesos concurrentes</h2>
+<img src="img/estados-1.png" class="plain stretch">
+<aside data-markdown class="notes">
+</aside>
+</section>
+<section data-transition="fade-in fade-out">
+<h2>Procesos concurrentes</h2>
+<img src="img/estados-2.png" class="plain stretch">
+<aside data-markdown class="notes">
+</aside>
+</section>
+<section data-transition="fade-in fade-out">
+<h2>Procesos concurrentes</h2>
+<img src="img/estados-3.png" class="plain stretch">
+<aside data-markdown class="notes">
+</aside>
+</section>
+<section data-transition="fade-in fade-out">
+<h2>Procesos concurrentes</h2>
+<img src="img/estados-4.png" class="plain stretch">
+<aside data-markdown class="notes">
+</aside>
+</section>
+<section data-transition="fade-in fade-out">
+<h2>Procesos concurrentes</h2>
+<img src="img/estados-5.png" class="plain stretch">
+<aside data-markdown class="notes">
+</aside>
+</section>
+<section data-transition="fade-in fade-out">
+<h2>Procesos concurrentes</h2>
+<img src="img/estados-6.png" class="plain stretch">
+<aside data-markdown class="notes">
+</aside>
+</section>
+<section data-transition="fade-in slide-out">
+<h2>Procesos concurrentes</h2>
+<img src="img/estados-anim.gif" class="plain stretch">
+<aside data-markdown class="notes">
+</aside>
 </section>
 
 
@@ -159,6 +286,47 @@
 	<li>Estructura jerárquica de <b>directorios</b></li>
 </ul>
 </section>
+
+
+<section>
+<h2>Operaciones de Entrada/Salida</h2>
+<ul>
+	<li></li>
+	<li></li>
+	<li></li>
+	<li></li>
+	<ul>
+	</ul>
+</ul>
+</section>
+
+<section>
+<h2>Gestión de memoria</h2>
+<ul>
+	<li></li>
+	<li></li>
+	<li></li>
+	<li></li>
+	<ul>
+	</ul>
+</ul>
+</section>
+
+
+
+<section>
+<h2>Protección</h2>
+<ul>
+	<li></li>
+	<li></li>
+	<li></li>
+	<li></li>
+	<ul>
+	</ul>
+</ul>
+</section>
+
+
 
 
 <section>
