@@ -115,6 +115,10 @@ Cuando se cumplan todos los requisitos, se ejecutará el servicio pedido y luego
 
 
 
+## Procesos paralelos
+
+
+
 ## Gestión de archivos
 
 ## Operaciones de Entrada/Salida

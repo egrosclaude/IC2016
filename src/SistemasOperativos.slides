@@ -182,8 +182,8 @@ Cuando se cumplan todos los requisitos, se ejecutará el servicio pedido y luego
 	<ul>
 		<li>Un programa en ejecución</i></li>
 	</ul>
-	<li>Planificación, o <b>scheduling</b> &rarr; prioridades</li>
 	<li><b>Estados</b> de los procesos</li>
+	<li>Planificación, o <b>scheduling</b> &rarr; prioridades</li>
 	<li><b>Concurrencia</b> y <b>paralelismo</b></li>
 </ul>
 </section>
@@ -267,6 +267,12 @@ Cuando se cumplan todos los requisitos, se ejecutará el servicio pedido y luego
 </aside>
 </section>
 
+<section>
+<h2>Procesos paralelos</h2>
+<img src="img/estados-ts-anim.gif" class="plain stretch">
+<aside data-markdown class="notes">
+</aside>
+</section>
 
 <section>
 <h2>Gestión de archivos</h2>
