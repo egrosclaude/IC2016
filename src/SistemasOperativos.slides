@@ -415,7 +415,7 @@ Cuando se cumplan todos los requisitos, se ejecutará el servicio pedido y luego
 <!------------------------>
 <section data-transition="slide-in slide-out">
 <h2>Directorio</h2>
-<img src="img/directorio.png" class="plain stretch">
+<img src="img/directorio.svg" class="plain stretch">
 <aside data-markdown class="notes">
 </aside>
 </section>
