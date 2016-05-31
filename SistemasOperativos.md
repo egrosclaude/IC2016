@@ -67,9 +67,9 @@ Cuando se cumplan todos los requisitos, se ejecutará el servicio pedido y luego
 
 ## Ejecución de programas
 
-## Procesos
 
-## Procesos
+
+## Ejecución de programas
 
 ## Estados de los procesos
 
@@ -123,7 +123,59 @@ Cuando se cumplan todos los requisitos, se ejecutará el servicio pedido y luego
 
 
 
+## Procesos
+
+## Procesos
+
+## Comandos de procesos
+
+
+
 ## Gestión de archivos
+
+
+
+## Gestión de archivos
+
+## Árbol de directorios
+
+
+
+## Sistema de archivos
+
+
+
+## Sistema de archivos
+
+
+
+## Inodos
+
+
+
+## Punteros directos a bloques
+
+
+
+## Punteros indirectos
+
+
+
+## Punteros doble-indirectos
+
+
+
+## Directorio
+
+
+
+## Comandos de archivos
+
+
+
+## Comandos de directorios
+
+
 
 ## Operaciones de Entrada/Salida
 
@@ -144,4 +196,8 @@ Este emulador de PC construido en Javascript nos permite practicar los comandos 
   - Invertir el procedimiento anterior: 
         cat mi_archivo > /dev/clipboard
   - Seleccionar el texto en la caja **clipboard** y copiarlo a alguna otra aplicación en nuestro equipo, tal como un editor.
+
+
+## Referencias
+
 

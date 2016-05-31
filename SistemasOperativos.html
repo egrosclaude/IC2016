@@ -219,6 +219,11 @@ Cuando se cumplan todos los requisitos, se ejecutará el servicio pedido y luego
 </ul>
 </section>
 
+<section data-background="#00CCFF">
+<h2>Ejecución de programas</h2>
+<aside data-markdown class="notes">
+</aside>
+</section>
 
 <section>
 <h2>Ejecución de programas</h2>
@@ -229,19 +234,11 @@ Cuando se cumplan todos los requisitos, se ejecutará el servicio pedido y luego
 		<li>Un programa en ejecución</i></li>
 	</ul>
 	<li><b>Estados</b> de los procesos</li>
-	<li>Planificación, o <b>scheduling</b> &rarr; prioridades</li>
+	<li>Planificación, o <b>scheduling</b></li>
 	<li><b>Concurrencia</b> y <b>paralelismo</b></li>
 </ul>
 </section>
 
-<section data-transition="fade-out slide-in">
-<h2>Procesos</h2>
-<img src="img/top.png" class="stretch plain">
-</section>
-<section data-transition="fade-in slide-out">
-<h2>Procesos</h2>
-<img src="img/top2.png" class="stretch plain">
-</section>
 
 
 
@@ -333,6 +330,36 @@ Cuando se cumplan todos los requisitos, se ejecutará el servicio pedido y luego
 </aside>
 </section>
 
+<!------------------------>
+<section data-transition="fade-out slide-in">
+<h2>Procesos</h2>
+<img src="img/top.png" class="stretch plain">
+</section>
+<section data-transition="fade-in slide-out">
+<h2>Procesos</h2>
+<img src="img/top2.png" class="stretch plain">
+</section>
+
+<section data-transition="slide-in slide-out">
+<h2>Comandos de procesos</h2>
+<table>
+<tr><td>ps</td><td>-f, -a, -x</td><td>Lista procesos</td></tr>
+<tr><td>pstree</td><td></td><td>Jerarquía de procesos</td></tr>
+<tr><td>top</td><td></td><td>Monitor de procesos</td></tr>
+<tr><td>nice</td><td></td><td>Cambia prioridad</td></tr>
+<tr><td>kill</td><td></td><td>Envía una señal</td></tr>
+</table>
+<aside data-markdown class="notes">
+</aside>
+</section>
+<!------------------------>
+
+<section data-background="#00CCFF">
+<h2>Gestión de archivos</h2>
+<aside data-markdown class="notes">
+</aside>
+</section>
+
 <!-- -------------- -->
 <section>
 <h2>Gestión de archivos</h2>
@@ -354,6 +381,126 @@ Cuando se cumplan todos los requisitos, se ejecutará el servicio pedido y luego
 </section>
 
 
+<!------------------------>
+<section data-transition="slide-in slide-out">
+<h2>Árbol de directorios</h2>
+<img src="img/tree.png" class="plain stretch">
+<aside data-markdown class="notes">
+</aside>
+</section>
+<!------------------------>
+<!------------------------>
+<section data-transition="slide-in slide-out">
+<h2>Sistema de archivos</h2>
+<ul>
+	<li>Particiones</li>
+	<li>Bloques</li>
+	<li>Superblock</li>
+	<li>Inodos</li>
+</ul>
+<aside data-markdown class="notes">
+</aside>
+</section>
+
+<!------------------------>
+<section data-transition="slide-in slide-out">
+<h2>Sistema de archivos</h2>
+<img src="img/filesystem.png" class="plain stretch">
+<aside data-markdown class="notes">
+</aside>
+</section>
+<!------------------------>
+
+<!------------------------>
+<section data-transition="slide-in slide-out">
+<h2>Inodos</h2>
+<ul>
+	<li>Tamaño del archivo</li>
+	<li>Dueño, grupo</li>
+	<li>Tipo de archivo</li>
+	<ul><small>
+		<li>Archivo regular, directorio</li>
+		<li>Dispositivo de caracteres o de bloques</li>
+		<li>Socket, tubería, otros</li>
+	</ul></small>
+	<li>Modo o permisos de acceso</li>
+	<ul><small>
+		<li>Lectura, escritura, ejecución</li>
+		<li>Dueño, grupo, resto del mundo</li>
+	</ul></small>
+	<li>Tiempos de modificación y de acceso</li>
+	<li>Cuenta de <i>links</i></li>
+	<li>Punteros a bloques</li>
+</ul>
+<aside data-markdown class="notes">
+</aside>
+</section>
+<!------------------------>
+
+<!------------------------>
+<section data-transition="slide-in fade-out">
+<h2>Punteros directos a bloques</h2>
+<img src="img/inodos-0.png" class="plain stretch">
+<aside data-markdown class="notes">
+</aside>
+</section>
+<section data-transition="fade-in fade-out">
+<h2>Punteros indirectos</h2>
+<img src="img/inodos-1.png" class="plain stretch">
+<aside data-markdown class="notes">
+</aside>
+</section>
+<section data-transition="fade-in slide-out">
+<h2>Punteros doble-indirectos</h2>
+<img src="img/inodos-2.png" class="plain stretch">
+<aside data-markdown class="notes">
+</aside>
+</section>
+
+
+<!------------------------>
+<section data-transition="slide-in slide-out">
+<h2>Directorio</h2>
+<img src="img/directorio.png" class="plain stretch">
+<aside data-markdown class="notes">
+</aside>
+</section>
+<!------------------------>
+<!------------------------>
+<section data-transition="slide-in slide-out">
+<h2>Comandos de archivos</h2>
+<table>
+<tr><td>ls</td><td>-a, -l, -R, -t</td><td>Lista archivos</td></tr>
+<tr><td>cat</td><td></td><td>Muestra contenido</td></tr>
+<tr><td>cp</td><td></td><td>Copia</td></tr>
+<tr><td>mv</td><td></td><td>Renombra o mueve</td></tr>
+<tr><td>rm</td><td></td><td>Borra</td></tr>
+</table>
+<aside data-markdown class="notes">
+</aside>
+</section>
+<!------------------------>
+<!------------------------>
+<section data-transition="slide-in slide-out">
+<h2>Comandos de directorios</h2>
+<table>
+<tr><td>ls</td><td>-a, -l, -R, -t</td><td>Lista archivos</td></tr>
+<tr><td>mkdir</td><td></td><td>Crea</td></tr>
+<tr><td>rmdir</td><td></td><td>Borra</td></tr>
+<tr><td>mv</td><td></td><td>Renombra o mueve</td></tr>
+<tr><td>cd</td><td></td><td>Cambia al directorio</td></tr>
+</table>
+<aside data-markdown class="notes">
+</aside>
+</section>
+<!------------------------>
+
+
+
+
+<!------------------------>
+<!------------------------>
+<!------------------------
 <section>
 <h2>Operaciones de Entrada/Salida</h2>
 <ul>
@@ -378,8 +525,6 @@ Cuando se cumplan todos los requisitos, se ejecutará el servicio pedido y luego
 </ul>
 </section>
 
-
-
 <section>
 <h2>Protección</h2>
 <ul>
@@ -392,11 +537,12 @@ Cuando se cumplan todos los requisitos, se ejecutará el servicio pedido y luego
 </ul>
 </section>
 
+------------------------>
 
 
 
 <section>
-<h3>Usemos Linux</h3>
+<h3>Usando Linux</h3>
 <a href="http://bellard.org/jslinux/index.html">Un emulador de PC en Javascript, corriendo Linux</a>
 <aside data-markdown class="notes">
 Este emulador de PC construido en Javascript nos permite practicar los comandos del shell dentro de una *máquina virtual* Linux y desde el navegador, sin necesidad de una instalación completa en nuestro equipo.
@@ -414,6 +560,21 @@ Este emulador de PC construido en Javascript nos permite practicar los comandos 
   - Seleccionar el texto en la caja **clipboard** y copiarlo a alguna otra aplicación en nuestro equipo, tal como un editor.
 </aside>
 </section>
+
+
+<!------------------------>
+<section data-transition="slide-in slide-out">
+<h2>Referencias</h2>
+<ul>
+	<li><a href="https://es.wikipedia.org/wiki/Unix">Unix</a></li>
+	<li><a href="https://es.wikipedia.org/wiki/Proceso_(informática)">Procesos</a></li>
+	<li><a href="https://es.wikipedia.org/wiki/Filesystem_Hierarchy_Standard">Jerarquía del sistema de archivos en Linux</a></li>
+</ul>
+<aside data-markdown class="notes">
+</aside>
+</section>
+<!------------------------>
+
 <!------------------------------------------------------------------>
 
    </div>
