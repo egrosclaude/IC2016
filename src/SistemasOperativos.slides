@@ -359,7 +359,7 @@ Cuando se cumplan todos los requisitos, se ejecutará el servicio pedido y luego
 <!------------------------>
 <section data-transition="slide-in slide-out">
 <h2>Sistema de archivos</h2>
-<img src="img/filesystem.png" class="plain stretch">
+<img src="img/filesystem.svg" class="plain stretch">
 <aside data-markdown class="notes">
 </aside>
 </section>
