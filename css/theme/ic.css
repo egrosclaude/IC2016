@@ -100,16 +100,24 @@ body {
   list-style-type: square; }
 
 .reveal ul ul {
-  list-style-type: disc; }
+  list-style-type: disc; 
+  }
 
 .reveal ul ul ul {
-  list-style-type: circle; }
+  list-style-type: circle; 
+}
+
+.reveal ol ol ol,
+.reveal ul ul ul {
+  font-size: 0.60em;
+}
 
 .reveal ul ul,
 .reveal ul ol,
 .reveal ol ol,
 .reveal ol ul {
   display: block;
+  font-size: 0.80em;
   margin-left: 40px; }
 
 .reveal dt {

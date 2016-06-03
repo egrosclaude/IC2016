@@ -189,6 +189,22 @@ Cuando se cumplan todos los requisitos, se ejecutará el servicio pedido y luego
 
 
 
+## Búsqueda de un archivo
+
+
+
+## Búsqueda de un archivo
+
+
+
+## Búsqueda de un archivo
+
+
+
+## Búsqueda de un archivo
+
+
+
 ## Comandos de archivos
 
 
@@ -197,11 +213,39 @@ Cuando se cumplan todos los requisitos, se ejecutará el servicio pedido y luego
 
 
 
-## Continuará
-
 ## Operaciones de Entrada/Salida
 
 ## Gestión de memoria
+
+
+
+## Gestión de memoria
+
+## Memoria contigua
+
+
+
+## Segmentación
+
+
+
+## Segmentación
+
+
+
+## MMU, Memory Management Unit
+
+
+
+## Segmentación y protección
+
+
+
+## Segmentación y protección
+
+
+
+## Continuará
 
 ## Protección
 
