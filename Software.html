@@ -45,32 +45,22 @@
 
 <!------------------------------------------------------------------>
 
-<section>
-<h2>Esta presentación contiene notas</h2>
-<ul>
-<li>Pulse "s" para acceder a las notas de la presentación</li>
-</ul>
-</section>
 
 <section>
-<h2>Esta presentación contiene notas</h2>
-<img src="img/audiocat.png" class="plain stretch">
+<h3>Esta presentación es audiovisual</h3>
+<small>
 <ul>
-<li>Pulse "s" para acceder a las notas de la presentación</li>
+<li>Para controlar el sonido utilice la barra de control de audio al pie de la pantalla</li>
+<li>Para acceder a las notas de la presentación pulse la tecla "s"</li>
 </ul>
+</small>
+<img src="img/dog_headphones.jpg" class="plain stretch">
+<center><small>¡Agradecemos por el audio de esta presentación a <b>Ulises Jaramillo</b>,</br>estudiante de Introducción a la Computación 2016!</small></center>
 <aside data-markdown class="notes">
-¿Hay estudiantes con disminución o carencia visual en la clase? ¿Por qué no?
-
-¿Por qué es importante contar con audio en las presentaciones? Porque ellos necesitan material accesible. Si les ofrecemos esta presentación en forma de audio, ellos podrán estudiar, repasar en sus casas, en condiciones menos desventajosas.
-
-Sí, hay programas que "leen texto en voz alta", pero su voz electrónica es casi tan irritante como la del profe. ¿Qué sería más fortalecedor de esos estudiantes, y del grupo, que tener una versión de las clases con el audio hecho por sus propios compañeros? 
-
-¿No hay voluntarios?
 </aside>
 </section>
 
-
-<section data-background="#00CCFF">
+<section data-background="#00CCFF" data-audio-src="audio/Software/01.mp3">
 <h2>El Software</h2>
 <aside data-markdown class="notes">
 En esta unidad, **El Software**, nos interesa conocer el proceso de desarrollo de software, desde el punto de vista de la organización de computadoras. Explicaremos cómo se llega desde un programa, en un lenguaje de alto o bajo nivel, a obtener una sucesión de instrucciones de máquina para un procesador. 
@@ -78,7 +68,7 @@ En esta unidad, **El Software**, nos interesa conocer el proceso de desarrollo d
 </section>
 
 
-<section>
+<section data-audio-src="audio/Software/02.mp3">
 <h2>Traductores</h2>
 <ul>
     <li>Un programa</li>
@@ -93,7 +83,7 @@ Uno puede pensar en un programa cualquiera como si se tratara de una máquina, c
 </section>
 
 
-<section>
+<section data-audio-src="audio/Software/03.mp3">
 <h2>Traductores</h2>
 <ul>
     <li>Un programa <b>traductor</b></li>
@@ -108,11 +98,11 @@ Si pensamos en una clase especial de estos programas, donde los datos que ingres
 
 Como hemos dicho anteriormente, una CPU como el MCBE sólo sabe ejecutar instrucciones de código máquina expresadas con unos y ceros. Cuando vimos el lenguaje ensamblador del MCBE lo propusimos simplemente como una forma de abreviar las instrucciones de máquina, o como una forma de facilitar la escritura, porque los mnemónicos eran más fáciles de memorizar que las instrucciones con unos y ceros. Sin embargo, un programa escrito en ensamblador del MCBE podría ser traducido automáticamente, por un traductor, a código de máquina MCBE, ahorrándonos mucho trabajo y errores.
 
-Esta clase de traductores, que reciben un programa en lenguaje ensamblador y devuelven un programa en código de máquina, son los llamados ensambladores.
+Esta clase de traductores, que reciben un programa en lenguaje ensamblador y devuelven un programa en código de máquina, son los llamados **ensambladores**.
 </aside>
 </section>
 
-<section data-transition="slide-in fade-out">
+<section data-transition="slide-in fade-out" data-audio-src="audio/Software/04.mp3">
 <h2>Ensamblador x86</h2>
 	<div><pre class="stretch"><code>
 .globl  _start
@@ -138,7 +128,7 @@ Cada CPU tiene su propio lenguaje ensamblador, y existen programas traductores (
 Según la tradición, el primer programa que uno debe intentar escribir cuando comienza a aprender un lenguaje de programación nuevo es "Hola mundo". Es un programa que simplemente escribe esas palabras por pantalla. Aquí mostramos el clásico ejemplo de "Hola mundo" en el lenguaje ensamblador de la familia x86.
 </aside>
 </section>
-<section data-transition="fade-in slide-out">
+<section data-transition="fade-in slide-out" data-audio-src="audio/Software/05.mp3">
 <h2>Procesador x86</h2>
 <div><img src="img/ASM-intel.jpg" class="plain stretch"></div>
 <aside data-markdown class="notes">
@@ -146,7 +136,7 @@ Los procesadores de la familia x86 se encuentran en casi todas las computadoras 
 </aside>
 </section>
 
-<section data-transition="slide-in fade-out">
+<section data-transition="slide-in fade-out" data-audio-src="audio/Software/06.mp3">
 <h2>Ensamblador ARM</h2>
 	<div><pre class="stretch"><code>
 .global main  
@@ -166,12 +156,12 @@ hola:
     .asciz "Hola, mundo!\n"  
 	</code></pre></div>
 <aside data-markdown class="notes">
-Por supuesto, los procesadores de familias diferentes tienen conjuntos de instrucciones diferentes. Así, un lenguaje y un programa ensamblador están ligado a un procesador determinado. El código máquina producido por un ensamblador no puede ser trasladado sin cambios a otro procesador que no sea aquel para el cual fue ensamblado. Las instrucciones de máquina tendrán sentidos completamente diferentes para uno y otro. 
+Por supuesto, los procesadores de familias diferentes tienen conjuntos de instrucciones diferentes. Así, un lenguaje y un programa ensamblador están ligados a un procesador determinado. El código máquina producido por un ensamblador no puede ser trasladado sin cambios a otro procesador que no sea aquel para el cual fue ensamblado. Las instrucciones de máquina tendrán sentidos completamente diferentes para uno y otro. 
 
 Por eso, el código máquina producido por un ensamblador para x86 no puede ser trasladado directamente a una computadora basada en un procesador como, por ejemplo, ARM; sino que el programa original, en ensamblador, debería ser **portado** o traducido al ensamblador propio de ARM, por un programador, y luego ensamblado con un ensamblador para ARM. 
 </aside>
 </section>
-<section data-transition="fade-in slide-out">
+<section data-transition="fade-in slide-out" data-audio-src="audio/Software/07.mp3">
 <h2>Procesador ARM</h2>
 <div><img src="img/ARM-IPad_3.png" class="plain stretch"></div>
 <aside data-markdown class="notes">
@@ -179,7 +169,7 @@ El ARM es un procesador que suele encontrarse en plataformas móviles como *tabl
 </aside>
 </section>
 
-<section data-transition="slide-in fade-out">
+<section data-transition="slide-in fade-out" data-audio-src="audio/Software/08.mp3">
 <h2>Ensamblador PowerPC</h2>
 <div><pre class="stretch"><code>
 .data			  # seccion de variables
@@ -205,29 +195,30 @@ _start:
 Lo mismo ocurre con otras familias de procesadores como el Power PC, un procesador que fue utilizado para algunas generaciones de consolas de juegos, como la PlayStation 3. 
 </aside>
 </section>
-<section data-transition="fade-in slide-out">
+
+<section data-transition="fade-in slide-out" data-audio-src="audio/Software/00.mp3">
 <h2>Procesador PowerPC</h2>
 <div><img src="img/ASM-POWERPC-PS3.jpg" class="plain stretch"></div>
 </section>
 
 
-<section>
+<section data-audio-src="audio/Software/00.mp3">
 <h2>Lenguajes de programación</h2>
 <ul>
 	<li>Orientación a la máquina o al problema</li>
-	<span class="fragment">
+	<span class="fragment" data-audio-src="audio/Software/09.mp3">
 	<li>Lenguaje de alto nivel</li>
 	<ul>
 		<li>SALDO = DEUDA - PAGO</li>
 	</ul>
 	</span>
-	<span class="fragment">
+	<span class="fragment" data-audio-src="audio/Software/00.mp3">
 	<li>Ensamblador</li>
 	<ul>
 		<li>LD DEUDA; SUB PAGO; ST DEUDA</li>
 	</ul>
 	</span>
-	<span class="fragment">
+	<span class="fragment" data-audio-src="audio/Software/00.mp3">
 	<li>Código de máquina</li>
 	<ul>
 		<li>01001010; 01101011; 10101010</li>
@@ -244,14 +235,14 @@ Otros lenguajes son más **orientados al problema**, lo que quiere decir que nos
 
 
 
-<section data-transition="slide-in fade-out">
+<section data-transition="slide-in fade-out" data-audio-src="audio/Software/10.mp3">
 <h2>Lenguajes y niveles</h2>
 <img src="img/lenguajes-0.png" class="stretch plain">
 <aside data-markdown class="notes">
 Se han diseñado muchísimos lenguajes de programación, que podemos organizar en una jerarquía de lenguajes, de acuerdo a su orientación. 
 </aside>
 </section>
-<section data-transition="slide-out fade-in">
+<section data-transition="slide-out fade-in" data-audio-src="audio/Software/11.mp3">
 <h2>Lenguajes y niveles</h2>
 <img src="img/lenguajes-1.png" class="stretch plain">
 <aside data-markdown class="notes">
@@ -260,7 +251,7 @@ Entre estos lenguajes encontramos los de *bajo nivel* u orientados a la máquina
 </section>
 
 
-<section>
+<section data-audio-src="audio/Software/12.mp3">
 <h2>Terminología</h2>
 <ul>
 	<li>Programa traductor</li>
@@ -287,13 +278,13 @@ El proceso de **vinculación**, que es posterior a la traducción, debe buscar e
 </section>
 
 
-<section>
+<section data-audio-src="audio/Software/13.mp3">
 <h2>Traductores</h2>
 <div class="double">
 	<div>
 	<ul>
 		<li>Compiladores</li>
-		<span class="fragment">
+		<span class="fragment" data-audio-src="audio/Software/00.mp3">
 			<ul>
 				<li>Traducen un programa fuente en un ejecutable en código máquina</li> 
 				<li>La ejecución queda diferida para un momento posterior</li> 
@@ -303,7 +294,7 @@ El proceso de **vinculación**, que es posterior a la traducción, debe buscar e
 	</div>
 	<div>
 	<ul>
-		<li>Intérpretes</li>
+		<li data-audio-src="audio/Software/00.mp3">Intérpretes</li>
 		<span class="fragment">
 			<ul>
 				<li>Traducen y ejecutan línea por línea un programa fuente</li> 
@@ -320,13 +311,13 @@ Luego de la compilación, el programa en código máquina obtenido puede ser eje
 </aside>
 </section>
 
-<section>
+<section> 
 <h2>Traductores</h2>
 <div class="double">
   <div>
   <ul>
 	<li>Compiladores</li>
-	<span class="fragment">
+	<span class="fragment" data-audio-src="audio/Software/14.mp3">
 	<ul>
 		<li>La ejecución de un programa compilado es tan rápida como es posible</li> 
 		<li>El programa queda compilado para una única arquitectura</li> 
@@ -337,7 +328,7 @@ Luego de la compilación, el programa en código máquina obtenido puede ser eje
   <div>
   <ul>
 	<li>Intérpretes</li>
-	<span class="fragment">
+	<span class="fragment" data-audio-src="audio/Software/14b.mp3">
 	<ul>
 		<li>La ejecución del programa comparte la CPU con la traducción del fuente</li> 
 		<li>El mismo programa fuente puede correr sin modificaciones en varias arquitecturas</li> 
@@ -353,36 +344,29 @@ Inversamente, el código interpretado presenta la ventaja de ser directamente po
 </aside>
 </section>
 
-<section data-transition="slide-in fade-out">
+<section data-transition="slide-in fade-out" data-audio-src="audio/Software/15.mp3">
 <h2>Ciclo de compilación</h2>
 <img src="img/ciclo1.png" class="stretch plain">
 <aside data-markdown class="notes">
 El desarrollador que necesita producir un archivo ejecutable utilizará varios programas de sistema como editores, traductores, vinculadores, etc.
 </aside>
 </section>
-<section data-transition="fade-out fade-in">
+<section data-transition="fade-out fade-in" data-audio-src="audio/Software/16.mp3">
 <h2>Ciclo de compilación</h2>
 <img src="img/ciclo2.png" class="stretch plain">
 <aside data-markdown class="notes">
 En algún momento anterior, alguien habrá creado una biblioteca de funciones para uso futuro. Esa biblioteca consiste en versiones objeto de varias funciones, compiladas, y reunidas con un programa bibliotecario, en un archivo. 
 </aside>
 </section>
-<section data-transition="fade-out fade-in">
+<section data-transition="fade-out fade-in" data-audio-src="audio/Software/17.mp3">
 <h2>Ciclo de compilación</h2>
 <img src="img/ciclo3.png" class="stretch plain">
 <aside data-markdown class="notes">
 Esa biblioteca es consultada por el vinculador para completar las referencias pendientes del archivo objeto.
 </aside>
 </section>
-<!--
-<section data-transition="fade-out fade-in">
-<h2>Ciclo de compilación</h2>
-<img src="img/fases-0.png" class="stretch plain">
-<aside data-markdown class="notes">
-</aside>
-</section>
--->
-<section data-transition="fade-out fade-in">
+
+<section data-transition="fade-out fade-in" data-audio-src="audio/Software/18.mp3">
 <h2>Ciclo de compilación</h2>
 <img src="img/fases-1.png" class="stretch plain">
 <aside data-markdown class="notes">
@@ -390,7 +374,7 @@ En resumen, la primera fase del ciclo de compilación es necesariamente la edici
 </aside>
 </section>
 
-<section data-transition="fade-out fade-in">
+<section data-transition="fade-out fade-in" data-audio-src="audio/Software/19.mp3">
 <h2>Ciclo de compilación</h2>
 <img src="img/fases-2.png" class="stretch plain">
 <aside data-markdown class="notes">
@@ -398,7 +382,7 @@ Luego, la traducción para generar un objeto con referencias pendientes.
 </aside>
 </section>
 
-<section data-transition="fade-out fade-in">
+<section data-transition="fade-out fade-in" data-audio-src="audio/Software/20.mp3">
 <h2>Ciclo de compilación</h2>
 <img src="img/fases-3.png" class="stretch plain">
 <aside data-markdown class="notes">
@@ -407,7 +391,7 @@ Luego, la vinculación con bibliotecas para resolver esas referencias pendientes
 </section>
 
 
-<section data-transition="fade-out fade-in">
+<section data-transition="fade-out fade-in" data-audio-src="audio/Software/21.mp3">
 <h2>Ciclo de compilación</h2>
 <img src="img/fases-4.png" class="stretch plain">
 <aside data-markdown class="notes">
@@ -416,7 +400,7 @@ El resultado final del ciclo de compilación es un ejecutable.
 </section>
 
 
-<section data-transition="slide-out fade-in">
+<section data-transition="slide-out fade-in" data-audio-src="audio/Software/22.mp3">
 <h3>Entorno integrado de desarrollo (IDE)</h3>
 <img src="img/eclipse.png" class="stretch plain">
 <aside data-markdown class="notes">
@@ -425,7 +409,7 @@ Muchos desarrolladores utilizan algún **ambiente integrado de desarrollo (IDE)*
 </section>
 
 
-<section>
+<section data-audio-src="audio/Software/23.mp3">
 <h2>Paradigmas de lenguajes de programación</h2>
 <ol>
 	<li>Imperativo</li>
@@ -452,7 +436,7 @@ Hay al menos cuatro paradigmas reconocidos, que son, aproximadamente en orden hi
 </aside>
 </section>
 
-<section data-transition="convex">
+<section data-transition="convex" data-audio-src="audio/Software/24.mp3">
 <h2>1. Paradigma imperativo</h2>
 <h3>Lenguaje C</h3>
 <pre class="stretch"><code>
@@ -472,7 +456,7 @@ Bajo el paradigma imperativo, los programas consisten en una sucesión de instru
 </aside>
 </section>
 
-<section data-transition="convex">
+<section data-transition="convex" data-audio-src="audio/Software/25.mp3">
 <h2>2. Paradigma lógico</h2>
 <h3>Lenguaje Prolog</h3>
 <pre class="stretch"><code>
@@ -488,7 +472,7 @@ El usuario de este programa puede usarlo de dos maneras. Podría preguntar el va
 </aside>
 </section>
 
-<section data-transition="convex">
+<section data-transition="convex" data-audio-src="audio/Software/26.mp3">
 <h2>3. Paradigma funcional</h2>
 <h3>Lenguaje Lisp</h3>
 <pre class="stretch"><code>
@@ -504,7 +488,7 @@ El lenguaje Lisp utiliza notación prefija para los operadores.
 </aside>
 </section>
 
-<section data-transition="convex">
+<section data-transition="convex" data-audio-src="audio/Software/27.mp3">
 <h2>4. Paradigma orientado a objetos</h2>
 <h3>Lenguaje Python</h3>
 <pre class="stretch"><code>
