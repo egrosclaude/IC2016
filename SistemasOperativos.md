@@ -219,17 +219,29 @@ Cuando se cumplan todos los requisitos, se ejecutará el servicio pedido y luego
 
 
 
-## Gestión de memoria
-
 ## Memoria contigua
 
 
 
-## Segmentación
+## Asignación de memoria contigua
+
+## Fragmentación externa
+
+
+
+## Fragmentación externa
+
+
+
+## Fragmentación externa
 
 
 
 ## Segmentación
+
+
+
+## Asignación de segmentos
 
 
 
@@ -237,15 +249,105 @@ Cuando se cumplan todos los requisitos, se ejecutará el servicio pedido y luego
 
 
 
-## Segmentación y protección
+## Traducción de direcciones
 
 
 
-## Segmentación y protección
+## Paginación
 
 
 
-## Continuará
+## Paginación
+
+
+
+## Tabla de páginas de un proceso
+
+
+
+## Tabla de páginas de un proceso
+
+
+
+## Tabla de páginas de un proceso
+
+
+
+## Traducción de direcciones
+
+
+
+## Espacio virtual de un proceso
+
+
+
+## Espacio virtual de un proceso
+
+
+
+## Memoria virtual
+
+
+
+## Memoria virtual
+
+
+
+## Memoria virtual
+
+
+
+## Memoria virtual
+
+
+
+## Swapping o intercambio
+
+
+
+## Swapping o intercambio
+
+
+
+## Swapping o intercambio
+
+
+
+## Swapping o intercambio
+
+
+
+## Swapping o intercambio
+
+
+
+## Swapping o intercambio
+
+
+
+## Swapping o intercambio
+
+
+
+## Swapping o intercambio
+
+
+
+## Swapping o intercambio
+
+
+
+## Memoria y protección
+
+
+
+## Memoria y protección
+
+
+
+## Memoria y protección
+
+
 
 ## Protección
 

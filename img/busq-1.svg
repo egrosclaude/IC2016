@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<svg version="1.2" baseProfile="tiny" width="210.37mm" height="91.4mm" viewBox="2612 2461 21037 9140" preserveAspectRatio="xMidYMid" fill-rule="evenodd" stroke-width="28.222" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg" xmlns:ooo="http://xml.openoffice.org/svg/export" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve">
+<svg version="1.2" baseProfile="tiny" width="210.37mm" height="91.41mm" viewBox="2612 2460 21037 9141" preserveAspectRatio="xMidYMid" fill-rule="evenodd" stroke-width="28.222" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg" xmlns:ooo="http://xml.openoffice.org/svg/export" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve">
  <defs class="ClipPathGroup">
   <clipPath id="presentation_clip_path" clipPathUnits="userSpaceOnUse">
-   <rect x="2612" y="2461" width="21037" height="9140"/>
+   <rect x="2612" y="2460" width="21037" height="9141"/>
   </clipPath>
  </defs>
  <defs>
@@ -100,7 +100,7 @@
   </font>
  </defs>
  <defs class="TextShapeIndex">
-  <g ooo:slide="id1" ooo:id-list="id3 id4 id5 id6 id7 id8 id9 id10 id11 id12 id13"/>
+  <g ooo:slide="id1" ooo:id-list="id3 id4 id5 id6 id7 id8 id9 id10 id11 id12 id13 id14"/>
  </defs>
  <defs class="EmbeddedBulletChars">
   <g id="bullet-char-template(57356)" transform="scale(0.00048828125,-0.00048828125)">
@@ -145,7 +145,7 @@
       <g id="id4">
        <path fill="rgb(255,255,255)" stroke="none" d="M 18590,3337 C 18442,3337 18295,3493 18295,3649 L 18295,7088 C 18295,7244 18442,7400 18590,7400 L 19768,7400 C 19915,7400 20062,7244 20062,7088 L 20062,3649 C 20062,3493 19915,3337 19768,3337 L 18590,3337 Z M 18295,3337 L 18295,3337 Z M 20062,7400 L 20062,7400 Z"/>
        <path fill="none" stroke="rgb(0,0,0)" stroke-width="31" stroke-linejoin="round" d="M 18590,3337 C 18442,3337 18295,3493 18295,3649 L 18295,7088 C 18295,7244 18442,7400 18590,7400 L 19768,7400 C 19915,7400 20062,7244 20062,7088 L 20062,3649 C 20062,3493 19915,3337 19768,3337 L 18590,3337 Z"/>
-       <text class="TextShape"><tspan class="TextParagraph" font-family="Carlito" font-size="254px" font-weight="400"><tspan class="TextPosition" x="18478" y="3727"/><tspan class="TextPosition" x="18478" y="3727"><tspan fill="rgb(0,0,0)" stroke="none">tamaño</tspan></tspan></tspan><tspan class="TextParagraph" font-family="Carlito" font-size="254px" font-weight="400"><tspan class="TextPosition" x="18478" y="3981"/><tspan class="TextPosition" x="18478" y="3981"><tspan fill="rgb(0,0,0)" stroke="none">dueño y grupo</tspan></tspan></tspan><tspan class="TextParagraph" font-family="Carlito" font-size="254px" font-weight="400"><tspan class="TextPosition" x="18478" y="4235"/><tspan class="TextPosition" x="18478" y="4235"><tspan fill="rgb(0,0,0)" stroke="none">tipo</tspan></tspan></tspan><tspan class="TextParagraph" font-family="Carlito" font-size="254px" font-weight="400"><tspan class="TextPosition" x="18478" y="4488"/><tspan class="TextPosition" x="18478" y="4488"><tspan fill="rgb(0,0,0)" stroke="none">permisos</tspan></tspan></tspan><tspan class="TextParagraph" font-family="Carlito" font-size="254px" font-weight="400"><tspan class="TextPosition" x="18478" y="4742"/><tspan class="TextPosition" x="18478" y="4742"><tspan fill="rgb(0,0,0)" stroke="none">tiempos</tspan></tspan></tspan><tspan class="TextParagraph" font-family="Carlito" font-size="254px" font-weight="400"><tspan class="TextPosition" x="18478" y="4996"/><tspan class="TextPosition" x="18478" y="4996"><tspan fill="rgb(0,0,0)" stroke="none">links</tspan></tspan></tspan><tspan class="TextParagraph" font-family="Carlito" font-size="254px" font-weight="400"><tspan class="TextPosition" x="18478" y="5250"/><tspan class="TextPosition" x="18478" y="5250"><tspan fill="rgb(0,0,0)" stroke="none">bloques</tspan></tspan></tspan></text>
+       <text class="TextShape"><tspan class="TextParagraph" font-family="Carlito, sans-serif" font-size="254px" font-weight="400"><tspan class="TextPosition" x="18478" y="3727"/><tspan class="TextPosition" x="18478" y="3727"><tspan fill="rgb(0,0,0)" stroke="none">tamaño</tspan></tspan></tspan><tspan class="TextParagraph" font-family="Carlito, sans-serif" font-size="254px" font-weight="400"><tspan class="TextPosition" x="18478" y="3981"/><tspan class="TextPosition" x="18478" y="3981"><tspan fill="rgb(0,0,0)" stroke="none">dueño y grupo</tspan></tspan></tspan><tspan class="TextParagraph" font-family="Carlito, sans-serif" font-size="254px" font-weight="400"><tspan class="TextPosition" x="18478" y="4235"/><tspan class="TextPosition" x="18478" y="4235"><tspan fill="rgb(0,0,0)" stroke="none">tipo</tspan></tspan></tspan><tspan class="TextParagraph" font-family="Carlito, sans-serif" font-size="254px" font-weight="400"><tspan class="TextPosition" x="18478" y="4488"/><tspan class="TextPosition" x="18478" y="4488"><tspan fill="rgb(0,0,0)" stroke="none">permisos</tspan></tspan></tspan><tspan class="TextParagraph" font-family="Carlito, sans-serif" font-size="254px" font-weight="400"><tspan class="TextPosition" x="18478" y="4742"/><tspan class="TextPosition" x="18478" y="4742"><tspan fill="rgb(0,0,0)" stroke="none">tiempos</tspan></tspan></tspan><tspan class="TextParagraph" font-family="Carlito, sans-serif" font-size="254px" font-weight="400"><tspan class="TextPosition" x="18478" y="4996"/><tspan class="TextPosition" x="18478" y="4996"><tspan fill="rgb(0,0,0)" stroke="none">links</tspan></tspan></tspan><tspan class="TextParagraph" font-family="Carlito, sans-serif" font-size="254px" font-weight="400"><tspan class="TextPosition" x="18478" y="5250"/><tspan class="TextPosition" x="18478" y="5250"><tspan fill="rgb(0,0,0)" stroke="none">bloques</tspan></tspan></tspan></text>
        <path fill="rgb(255,255,255)" stroke="none" d="M 19155,5603 L 18718,5603 18718,5380 19592,5380 19592,5603 19155,5603 Z"/>
        <path fill="none" stroke="rgb(153,153,153)" stroke-width="31" stroke-linejoin="round" d="M 19155,5603 L 18718,5603 18718,5380 19592,5380 19592,5603 19155,5603 Z"/>
        <path fill="rgb(255,255,255)" stroke="none" d="M 19155,5827 L 18718,5827 18718,5604 19592,5604 19592,5827 19155,5827 Z"/>
@@ -164,17 +164,22 @@
        <path fill="none" stroke="rgb(153,153,153)" stroke-width="31" stroke-linejoin="round" d="M 19155,7169 L 18718,7169 18718,6947 19592,6947 19592,7169 19155,7169 Z"/>
       </g>
      </g>
-     <g class="com.sun.star.drawing.CustomShape">
+     <g class="com.sun.star.drawing.ClosedBezierShape">
       <g id="id5">
+       <path fill="rgb(153,204,204)" stroke="none" d="M 3291,11160 C 3291,8747 3291,6333 3291,3920 3291,3735 3291,3549 3291,3364 3347,3364 3403,3364 3459,3364 3551,3063 3642,2761 3733,2460 5022,2460 6310,2460 7599,2460 7690,2761 7781,3063 7873,3364 10370,3364 12868,3364 15366,3364 15366,5963 15366,8561 15366,11160 11341,11160 7316,11160 3291,11160 Z"/>
+      </g>
+     </g>
+     <g class="com.sun.star.drawing.CustomShape">
+      <g id="id6">
        <path fill="rgb(255,255,255)" stroke="none" d="M 9403,10811 L 3800,10811 3800,4240 15005,4240 15005,10811 9403,10811 Z"/>
        <path fill="none" stroke="rgb(153,153,153)" stroke-width="81" stroke-linejoin="round" d="M 9403,10811 L 3800,10811 3800,4240 15005,4240 15005,10811 9403,10811 Z"/>
       </g>
      </g>
      <g class="Graphic">
-      <g id="id6">
+      <g id="id7">
        <path fill="rgb(255,255,255)" stroke="none" d="M 19505,4781 C 19357,4781 19210,4937 19210,5093 L 19210,8532 C 19210,8688 19357,8844 19505,8844 L 20683,8844 C 20830,8844 20977,8688 20977,8532 L 20977,5093 C 20977,4937 20830,4781 20683,4781 L 19505,4781 Z M 19210,4781 L 19210,4781 Z M 20977,8844 L 20977,8844 Z"/>
        <path fill="none" stroke="rgb(0,0,0)" stroke-width="31" stroke-linejoin="round" d="M 19505,4781 C 19357,4781 19210,4937 19210,5093 L 19210,8532 C 19210,8688 19357,8844 19505,8844 L 20683,8844 C 20830,8844 20977,8688 20977,8532 L 20977,5093 C 20977,4937 20830,4781 20683,4781 L 19505,4781 Z"/>
-       <text class="TextShape"><tspan class="TextParagraph" font-family="Carlito" font-size="254px" font-weight="400"><tspan class="TextPosition" x="19393" y="5171"/><tspan class="TextPosition" x="19393" y="5171"><tspan fill="rgb(0,0,0)" stroke="none">tamaño</tspan></tspan></tspan><tspan class="TextParagraph" font-family="Carlito" font-size="254px" font-weight="400"><tspan class="TextPosition" x="19393" y="5425"/><tspan class="TextPosition" x="19393" y="5425"><tspan fill="rgb(0,0,0)" stroke="none">dueño y grupo</tspan></tspan></tspan><tspan class="TextParagraph" font-family="Carlito" font-size="254px" font-weight="400"><tspan class="TextPosition" x="19393" y="5679"/><tspan class="TextPosition" x="19393" y="5679"><tspan fill="rgb(0,0,0)" stroke="none">tipo</tspan></tspan></tspan><tspan class="TextParagraph" font-family="Carlito" font-size="254px" font-weight="400"><tspan class="TextPosition" x="19393" y="5932"/><tspan class="TextPosition" x="19393" y="5932"><tspan fill="rgb(0,0,0)" stroke="none">permisos</tspan></tspan></tspan><tspan class="TextParagraph" font-family="Carlito" font-size="254px" font-weight="400"><tspan class="TextPosition" x="19393" y="6186"/><tspan class="TextPosition" x="19393" y="6186"><tspan fill="rgb(0,0,0)" stroke="none">tiempos</tspan></tspan></tspan><tspan class="TextParagraph" font-family="Carlito" font-size="254px" font-weight="400"><tspan class="TextPosition" x="19393" y="6440"/><tspan class="TextPosition" x="19393" y="6440"><tspan fill="rgb(0,0,0)" stroke="none">links</tspan></tspan></tspan><tspan class="TextParagraph" font-family="Carlito" font-size="254px" font-weight="400"><tspan class="TextPosition" x="19393" y="6694"/><tspan class="TextPosition" x="19393" y="6694"><tspan fill="rgb(0,0,0)" stroke="none">bloques</tspan></tspan></tspan></text>
+       <text class="TextShape"><tspan class="TextParagraph" font-family="Carlito, sans-serif" font-size="254px" font-weight="400"><tspan class="TextPosition" x="19393" y="5171"/><tspan class="TextPosition" x="19393" y="5171"><tspan fill="rgb(0,0,0)" stroke="none">tamaño</tspan></tspan></tspan><tspan class="TextParagraph" font-family="Carlito, sans-serif" font-size="254px" font-weight="400"><tspan class="TextPosition" x="19393" y="5425"/><tspan class="TextPosition" x="19393" y="5425"><tspan fill="rgb(0,0,0)" stroke="none">dueño y grupo</tspan></tspan></tspan><tspan class="TextParagraph" font-family="Carlito, sans-serif" font-size="254px" font-weight="400"><tspan class="TextPosition" x="19393" y="5679"/><tspan class="TextPosition" x="19393" y="5679"><tspan fill="rgb(0,0,0)" stroke="none">tipo</tspan></tspan></tspan><tspan class="TextParagraph" font-family="Carlito, sans-serif" font-size="254px" font-weight="400"><tspan class="TextPosition" x="19393" y="5932"/><tspan class="TextPosition" x="19393" y="5932"><tspan fill="rgb(0,0,0)" stroke="none">permisos</tspan></tspan></tspan><tspan class="TextParagraph" font-family="Carlito, sans-serif" font-size="254px" font-weight="400"><tspan class="TextPosition" x="19393" y="6186"/><tspan class="TextPosition" x="19393" y="6186"><tspan fill="rgb(0,0,0)" stroke="none">tiempos</tspan></tspan></tspan><tspan class="TextParagraph" font-family="Carlito, sans-serif" font-size="254px" font-weight="400"><tspan class="TextPosition" x="19393" y="6440"/><tspan class="TextPosition" x="19393" y="6440"><tspan fill="rgb(0,0,0)" stroke="none">links</tspan></tspan></tspan><tspan class="TextParagraph" font-family="Carlito, sans-serif" font-size="254px" font-weight="400"><tspan class="TextPosition" x="19393" y="6694"/><tspan class="TextPosition" x="19393" y="6694"><tspan fill="rgb(0,0,0)" stroke="none">bloques</tspan></tspan></tspan></text>
        <path fill="rgb(255,255,255)" stroke="none" d="M 20070,7047 L 19633,7047 19633,6824 20507,6824 20507,7047 20070,7047 Z"/>
        <path fill="none" stroke="rgb(153,153,153)" stroke-width="31" stroke-linejoin="round" d="M 20070,7047 L 19633,7047 19633,6824 20507,6824 20507,7047 20070,7047 Z"/>
        <path fill="rgb(255,255,255)" stroke="none" d="M 20070,7271 L 19633,7271 19633,7048 20507,7048 20507,7271 20070,7271 Z"/>
@@ -194,41 +199,41 @@
       </g>
      </g>
      <g class="com.sun.star.drawing.LineShape">
-      <g id="id7">
-       <path fill="none" stroke="rgb(0,0,0)" stroke-width="81" stroke-linejoin="round" d="M 12363,7376 L 18881,5400"/>
-       <path fill="rgb(0,0,0)" stroke="none" d="M 19460,5225 L 18793,5207 18915,5611 19460,5225 Z"/>
+      <g id="id8">
+       <path fill="none" stroke="rgb(0,0,0)" stroke-width="81" stroke-linejoin="round" d="M 14281,7376 L 18901,5457"/>
+       <path fill="rgb(0,0,0)" stroke="none" d="M 19460,5225 L 18794,5273 18956,5663 19460,5225 Z"/>
       </g>
      </g>
      <g class="com.sun.star.drawing.CustomShape">
-      <g id="id8">
+      <g id="id9">
        <path fill="rgb(255,255,102)" stroke="none" d="M 20070,7046 L 19637,7046 19637,6822 20503,6822 20503,7046 20070,7046 Z"/>
        <path fill="none" stroke="rgb(128,128,128)" stroke-width="35" stroke-linejoin="round" d="M 20070,7046 L 19637,7046 19637,6822 20503,6822 20503,7046 20070,7046 Z"/>
       </g>
      </g>
      <g class="com.sun.star.drawing.CustomShape">
-      <g id="id9">
+      <g id="id10">
        <path fill="rgb(255,255,102)" stroke="none" d="M 20070,7270 L 19637,7270 19637,7046 20503,7046 20503,7270 20070,7270 Z"/>
        <path fill="none" stroke="rgb(128,128,128)" stroke-width="35" stroke-linejoin="round" d="M 20070,7270 L 19637,7270 19637,7046 20503,7046 20503,7270 20070,7270 Z"/>
       </g>
      </g>
      <g class="com.sun.star.drawing.CustomShape">
-      <g id="id10">
+      <g id="id11">
        <path fill="rgb(255,255,102)" stroke="none" d="M 20070,7494 L 19637,7494 19637,7270 20503,7270 20503,7494 20070,7494 Z"/>
        <path fill="none" stroke="rgb(128,128,128)" stroke-width="35" stroke-linejoin="round" d="M 20070,7494 L 19637,7494 19637,7270 20503,7270 20503,7494 20070,7494 Z"/>
       </g>
      </g>
      <g class="com.sun.star.drawing.TextShape">
-      <g id="id11">
-       <text class="TextShape"><tspan class="TextParagraph" font-family="Liberation Mono, monospace" font-size="706px" font-weight="400"><tspan class="TextPosition" x="4206" y="5238"/><tspan class="TextPosition" x="4206" y="5238"><tspan fill="rgb(0,0,0)" stroke="none">printcap     </tspan></tspan><tspan class="TextPosition" x="9709" y="5238"><tspan fill="rgb(0,0,0)" stroke="none">266977 </tspan></tspan></tspan><tspan class="TextParagraph" font-family="Liberation Mono, monospace" font-size="706px" font-weight="400"><tspan class="TextPosition" x="4206" y="6038"/><tspan class="TextPosition" x="4206" y="6038"><tspan fill="rgb(0,0,0)" stroke="none">resolv.conf  </tspan></tspan><tspan class="TextPosition" x="9709" y="6038"><tspan fill="rgb(0,0,0)" stroke="none">266107 </tspan></tspan></tspan><tspan class="TextParagraph" font-family="Liberation Mono, monospace" font-size="706px" font-weight="400"><tspan class="TextPosition" x="4206" y="6838"/><tspan class="TextPosition" x="4206" y="6838"><tspan fill="rgb(0,0,0)" stroke="none">fstab        </tspan></tspan><tspan class="TextPosition" x="9709" y="6838"><tspan fill="rgb(0,0,0)" stroke="none">265670 </tspan></tspan></tspan><tspan class="TextParagraph" font-family="Liberation Mono, monospace" font-size="706px" font-weight="400"><tspan class="TextPosition" x="4206" y="7638"/><tspan class="TextPosition" x="4206" y="7638"><tspan fill="rgb(0,0,0)" stroke="none">group        </tspan></tspan><tspan class="TextPosition" x="9709" y="7638"><tspan fill="rgb(0,0,0)" stroke="none">265654</tspan></tspan><tspan class="TextPosition" x="12249" y="7638"><tspan fill="rgb(0,0,0)" stroke="none"> </tspan></tspan></tspan><tspan class="TextParagraph" font-family="Liberation Mono, monospace" font-size="706px" font-weight="400"><tspan class="TextPosition" x="4206" y="8438"/><tspan class="TextPosition" x="4206" y="8438"><tspan fill="rgb(0,0,0)" stroke="none">gshadow      </tspan></tspan><tspan class="TextPosition" x="9709" y="8438"><tspan fill="rgb(0,0,0)" stroke="none">265648 </tspan></tspan></tspan><tspan class="TextParagraph" font-family="Liberation Mono, monospace" font-size="706px" font-weight="400"><tspan class="TextPosition" x="4206" y="9238"/><tspan class="TextPosition" x="4206" y="9238"><tspan fill="rgb(0,0,0)" stroke="none">hosts        </tspan></tspan><tspan class="TextPosition" x="9709" y="9238"><tspan fill="rgb(0,0,0)" stroke="none">265641 </tspan></tspan></tspan><tspan class="TextParagraph" font-family="Liberation Mono, monospace" font-size="706px" font-weight="400"><tspan class="TextPosition" x="4206" y="10038"/><tspan class="TextPosition" x="4206" y="10038"><tspan fill="rgb(0,0,0)" stroke="none">sysctl.conf  </tspan></tspan><tspan class="TextPosition" x="9709" y="10038"><tspan fill="rgb(0,0,0)" stroke="none">265633 </tspan></tspan></tspan></text>
-      </g>
-     </g>
-     <g class="com.sun.star.drawing.TextShape">
       <g id="id12">
-       <text class="TextShape"><tspan class="TextParagraph" font-family="Liberation Mono, monospace" font-size="635px" font-weight="700"><tspan class="TextPosition" x="3995" y="3157"/><tspan class="TextPosition" x="3995" y="3157"><tspan fill="rgb(0,0,0)" stroke="none">etc</tspan></tspan></tspan></text>
+       <text class="TextShape"><tspan class="TextParagraph" font-family="Liberation Mono, monospace" font-size="706px" font-weight="400"><tspan class="TextPosition" x="4206" y="5238"/><tspan class="TextPosition" x="4206" y="5238"><tspan fill="rgb(0,0,0)" stroke="none">printcap     </tspan></tspan><tspan class="TextPosition" x="11826" y="5238"><tspan fill="rgb(0,0,0)" stroke="none">266977 </tspan></tspan></tspan><tspan class="TextParagraph" font-family="Liberation Mono, monospace" font-size="706px" font-weight="400"><tspan class="TextPosition" x="4206" y="6038"/><tspan class="TextPosition" x="4206" y="6038"><tspan fill="rgb(0,0,0)" stroke="none">resolv.conf  </tspan></tspan><tspan class="TextPosition" x="11826" y="6038"><tspan fill="rgb(0,0,0)" stroke="none">266107 </tspan></tspan></tspan><tspan class="TextParagraph" font-family="Liberation Mono, monospace" font-size="706px" font-weight="400"><tspan class="TextPosition" x="4206" y="6838"/><tspan class="TextPosition" x="4206" y="6838"><tspan fill="rgb(0,0,0)" stroke="none">fstab        </tspan></tspan><tspan class="TextPosition" x="11826" y="6838"><tspan fill="rgb(0,0,0)" stroke="none">265670 </tspan></tspan></tspan><tspan class="TextParagraph" font-family="Liberation Mono, monospace" font-size="706px" font-weight="400"><tspan class="TextPosition" x="4206" y="7638"/><tspan class="TextPosition" x="4206" y="7638"><tspan fill="rgb(0,0,0)" stroke="none">group        </tspan></tspan><tspan class="TextPosition" x="11826" y="7638"><tspan fill="rgb(0,0,0)" stroke="none">265654</tspan></tspan><tspan class="TextPosition" x="14366" y="7638"><tspan fill="rgb(0,0,0)" stroke="none"> </tspan></tspan></tspan><tspan class="TextParagraph" font-family="Liberation Mono, monospace" font-size="706px" font-weight="400"><tspan class="TextPosition" x="4206" y="8438"/><tspan class="TextPosition" x="4206" y="8438"><tspan fill="rgb(0,0,0)" stroke="none">gshadow      </tspan></tspan><tspan class="TextPosition" x="11826" y="8438"><tspan fill="rgb(0,0,0)" stroke="none">265648 </tspan></tspan></tspan><tspan class="TextParagraph" font-family="Liberation Mono, monospace" font-size="706px" font-weight="400"><tspan class="TextPosition" x="4206" y="9238"/><tspan class="TextPosition" x="4206" y="9238"><tspan fill="rgb(0,0,0)" stroke="none">hosts        </tspan></tspan><tspan class="TextPosition" x="11826" y="9238"><tspan fill="rgb(0,0,0)" stroke="none">265641 </tspan></tspan></tspan><tspan class="TextParagraph" font-family="Liberation Mono, monospace" font-size="706px" font-weight="400"><tspan class="TextPosition" x="4206" y="10038"/><tspan class="TextPosition" x="4206" y="10038"><tspan fill="rgb(0,0,0)" stroke="none">sysctl.conf  </tspan></tspan><tspan class="TextPosition" x="11826" y="10038"><tspan fill="rgb(0,0,0)" stroke="none">265633 </tspan></tspan></tspan></text>
       </g>
      </g>
      <g class="com.sun.star.drawing.TextShape">
       <g id="id13">
+       <text class="TextShape"><tspan class="TextParagraph" font-family="Liberation Mono, monospace" font-size="635px" font-weight="700"><tspan class="TextPosition" x="3995" y="3157"/><tspan class="TextPosition" x="3995" y="3157"><tspan fill="rgb(0,0,0)" stroke="none">etc</tspan></tspan></tspan></text>
+      </g>
+     </g>
+     <g class="com.sun.star.drawing.TextShape">
+      <g id="id14">
        <text class="TextShape"><tspan class="TextParagraph" font-family="Liberation Sans, sans-serif" font-size="635px" font-weight="400"><tspan class="TextPosition" x="4051" y="4065"/><tspan class="TextPosition" x="4051" y="4065"><tspan fill="rgb(0,0,0)" stroke="none">nombre de archivo    número de inodo</tspan></tspan></tspan></text>
       </g>
      </g>

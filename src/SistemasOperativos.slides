@@ -548,20 +548,6 @@ Cuando se cumplan todos los requisitos, se ejecutará el servicio pedido y luego
 </aside>
 </section>
 
-<section>
-<h2>Gestión de memoria</h2>
-<ul>
-	<li>Asignación de memoria contigua</li>
-	<li>Un proceso &rarr; una región de memoria</li>
-	<li>Particiones de tamaño variable</li>
-	<ul>
-		<li>Fragmentación externa</li>
-		<li>Compactación</li>
-		<li>Sobrecarga</li>
-	</ul>
-</ul>
-</section>
-
 <section data-transition="slide-in slide-out">
 <h2>Memoria contigua</h2>
 <img src="img/mem-contigua.svg" class="plain stretch">
@@ -569,24 +555,46 @@ Cuando se cumplan todos los requisitos, se ejecutará el servicio pedido y luego
 </aside>
 </section>
 
+<section>
+<h2>Asignación de memoria contigua</h2>
+<ul>
+	<li>Un proceso &rarr; una región de memoria</li>
+	<li>Particiones de tamaño variable</li>
+	<ul>
+		<li><b>Fragmentación externa</b></li>
+		<li>Compactación &rarr; Sobrecarga</li>
+	</ul>
+</ul>
+</section>
+
+
 
 <!------------------------>
-<section data-transition="slide-in slide-out">
-<h2>Segmentación</h2>
-<ul>
-	<li>Asignación de segmentos</li>
-	<ul>
-		<li>Modelo de programación segmentado</li>
-		<li>Arquitectura de CPU segmentada</li>
-	</ul>
-	<li>Un proceso &rarr; un conjunto de segmentos</li>
-	<li>Menos fragmentación externa</li>
-	<li>Apoyo del hardware, <b>MMU (Memory Management Unit)</b></li>
-	<li>Protección</li>
-</ul>
+<section data-transition="slide-in fade-out" data-audio-src="audio/PRESENT/xx.mp3">
+<h2>Fragmentación externa</h2>
+<img src="img/fragext-0.svg" class="plain stretch">
 <aside data-markdown class="notes">
 </aside>
 </section>
+<!------------------------>
+<!------------------------>
+<section data-transition="fade-in fade-out" data-audio-src="audio/PRESENT/xx.mp3">
+<h2>Fragmentación externa</h2>
+<img src="img/fragext-1.svg" class="plain stretch">
+<aside data-markdown class="notes">
+</aside>
+</section>
+<!------------------------>
+<!------------------------>
+<section data-transition="slide-out fade-in" data-audio-src="audio/PRESENT/xx.mp3">
+<h2>Fragmentación externa</h2>
+<img src="img/fragext-2.svg" class="plain stretch">
+<aside data-markdown class="notes">
+</aside>
+</section>
+<!------------------------>
+
+
 
 <section data-transition="slide-in slide-out">
 <h2>Segmentación</h2>
@@ -596,22 +604,47 @@ Cuando se cumplan todos los requisitos, se ejecutará el servicio pedido y luego
 </section>
 
 <!------------------------>
+<section data-transition="slide-in slide-out">
+<h2>Asignación de segmentos</h2>
+<ul>
+	<li>Un proceso &rarr; un conjunto de segmentos</li>
+	<ul>
+		<li>Arquitectura de CPU segmentada</li>
+		<li>Modelo de programación segmentado</li>
+		<li>Segmentos de código, de datos, de pila</li>
+	
+	<div class="fragment">
+		<li>Apoyo del hardware &rarr; <b>MMU</b></li>
+	</div class="fragment">
+	<div class="fragment">
+		<li>Se reduce la fragmentación externa</li>
+		<li>Protección</li>
+	</div class="fragment">
+	</ul>
+</ul>
+<aside data-markdown class="notes">
+</aside>
+</section>
+
+
 <!------------------------>
 <section data-transition="slide-in slide-out">
 <h2>MMU, Memory Management Unit</h2>
 <ul>
-	<li>Direcciones lógicas <b>segmento:desplazamiento</b></li>
 	<li>Tabla de segmentos por cada proceso</li>
-	<li>Direcciones lógicas &rarr; físicas</li>
+	<div class="fragment">
+	<li>Traduce direcciones lógicas a físicas</li>
 	<ul>
+		<li>Direcciones lógicas <b>segmento:desplazamiento</b></li>
 		<li>0010:0100 &rarr; 000010100</li>
 	</ul>
+	</div class="fragment">
 </ul>
 	<table>
 	<tr><td>N° segmento</td><td>Límite</td><td>Base</td></tr>
-	<tr><td>0</td><td>0100</td><td>000011000</td></tr>
-	<tr><td>1</td><td>1010</td><td>000000000</td></tr>
-	<tr><td>2</td><td>0111</td><td>000010000</td></tr>
+	<tr><td>0000</td><td>0100</td><td>000011000</td></tr>
+	<tr><td>0001</td><td>1010</td><td>000000000</td></tr>
+	<tr><td>0010</td><td>0111</td><td>000010000</td></tr>
 	</table>
 <aside data-markdown class="notes">
 </aside>
@@ -619,21 +652,243 @@ Cuando se cumplan todos los requisitos, se ejecutará el servicio pedido y luego
 <!------------------------>
 
 <!------------------------>
+<section data-transition="slide-in slide-out">
+<h2>Traducción de direcciones</h2>
+<ul>
+	<li class="fragment">Una instrucción de CPU hace una referencia a la dirección lógica <b>S:D</b> (segmento:desplazamiento)</li>
+	<li class="fragment">Usando S, la MMU consulta la tabla de segmentos del proceso</li>
+	<li class="fragment">Si D es mayor que el límite de ese segmento, provoca una condición que interrumpe el proceso </li>
+	<li class="fragment">Lo mismo si la forma del acceso no corresponde a los permisos del proceso para ese segmento</li>
+	<li class="fragment">En otro caso, traduce <b>S:D</b> a <b>Base(S)+D</b></li>
+</ul>
+<aside data-markdown class="notes">
+</aside>
+</section>
+<!------------------------>
+
+
+
+<!------------------------>
+<section data-transition="slide-in slide-out" data-audio-src="audio/PRESENT/xx.mp3">
+<h2>Paginación</h2>
+<ul>
+	<li>División en trozos de igual tamaño</li>
+	<ul>
+		<li>La memoria se divide en <b>marcos</b></li>
+		<li>Cada proceso se divide en <b>páginas</b></li>
+		<li>A cada página del proceso se le asigna un marco de memoria</li>
+		<li>No existe fragmentación externa</li>
+		<li>Existe poca <b>fragmentación interna</b></li>
+	</ul>
+</ul>
+<aside data-markdown class="notes">
+</aside>
+</section>
+<!------------------------>
+
+
+<!------------------------>
+<section data-transition="slide-in slide-out" data-audio-src="audio/PRESENT/xx.mp3">
+<h2>Paginación</h2>
+<img src="img/mem-paginada.svg" class="plain stretch">
+<aside data-markdown class="notes">
+</aside>
+</section>
+
+
+
+<section data-transition="fade-out slide-in" data-audio-src="audio/PRESENT/xx.mp3">
+<h2>Tabla de páginas de un proceso</h2>
+<img src="img/tabla-paginas.svg" class="plain stretch">
+<aside data-markdown class="notes">
+</aside>
+</section>
+<!------------------------>
+<section data-transition="fade-in fade-out">
+<h2>Tabla de páginas de un proceso</h2>
+	<table>
+	<tr><td>N° página</td><td>Presente</td><td>Modificada</td><td>Marco</td></tr>
+	<tr><td>000</td><td>1</td><td>0</td><td>000</td></tr>
+	<tr><td>001</td><td>1</td><td>0</td><td>001</td></tr>
+	<tr><td>010</td><td>1</td><td>1</td><td>100</td></tr>
+	<tr><td>011</td><td>0</td><td>0</td><td>101</td></tr>
+	<tr><td>100</td><td>0</td><td>0</td><td>011</td></tr>
+	<tr><td>101</td><td>1</td><td>1</td><td>010</td></tr>
+	</table>
+<div class="stretch"></div>
+<aside data-markdown class="notes">
+</aside>
+</section>
+<section data-transition="fade-in slide-out">
+<h2>Tabla de páginas de un proceso</h2>
+	<table>
+	<tr><td>N° página</td><td>Presente</td><td>Modificada</td><td>Marco</td></tr>
+	<tr><td>0</td><td>1</td><td>0</td><td>0</td></tr>
+	<tr><td>1</td><td>1</td><td>0</td><td>1</td></tr>
+	<tr><td>2</td><td>1</td><td>1</td><td>4</td></tr>
+	<tr><td>3</td><td>0</td><td>0</td><td>5</td></tr>
+	<tr><td>4</td><td>0</td><td>0</td><td>3</td></tr>
+	<tr><td>5</td><td>1</td><td>1</td><td>2</td></tr>
+	</table>
+<div class="stretch"></div>
+<aside data-markdown class="notes">
+</aside>
+</section>
+
+
+
+<section data-transition="slide-in slide-out">
+<h2>Traducción de direcciones</h2>
+<ul>
+	<li>La MMU traduce la dirección lógica <b>P,D</b> (página, desplazamiento) a <b>marco(P)+D</b></li>
+	<li><span style="color:blue;">010</span>0101 &rarr; <span style="color:blue;">100</span>0101</li>
+</ul>
+	<table>
+	<tr><td>N° página</td><td>Presente</td><td>Modificada</td><td>Marco</td></tr>
+	<tr><td>000</td><td>1</td><td>0</td><td>000</td></tr>
+	<tr><td>001</td><td>1</td><td>0</td><td>001</td></tr>
+	<tr><td>010</td><td>1</td><td>1</td><td>100</td></tr>
+	<tr><td colspan="4">...</td></tr>
+	</table>
+<aside data-markdown class="notes">
+</aside>
+</section>
+
+<section data-transition="slide-in fade-out" data-audio-src="audio/PRESENT/xx.mp3">
+<h2>Espacio virtual de un proceso</h2>
+<ul>
+	<li>El proceso solicita una cierta porción de su espacio virtual...</li>
+</ul>
+<img src="img/espacio-virtual.svg" class="plain">
+<aside data-markdown class="notes">
+</aside>
+</section>
+<section data-transition="slide-out fade-in" data-audio-src="audio/PRESENT/xx.mp3">
+<h2>Espacio virtual de un proceso</h2>
+<ul>
+	<li>... que, aunque esté asignada, no necesita estar completa en memoria</li>
+</ul>
+<img src="img/espacio-virtual-1.svg" class="plain">
+<aside data-markdown class="notes">
+</aside>
+</section>
+
+<section data-transition="slide-in slide-out">
+<h2>Memoria virtual</h2>
+<ul>
+	<li>Si la página no está asignada al proceso, o si la forma del acceso no corresponde a los permisos del proceso para esa página</li>
+	<ul>
+		<li>Se provoca una condición que interrumpe el proceso</li>
+	</ul>
+	<li>Si la página está asignada pero no está en memoria</li>
+	<ul>
+		<li>Se produce un <b>fallo de página</b> y se trae esa página desde el almacenamiento secundario a un marco libre</li>
+		<li>Si no hay marcos libres &rarr; se elige una <b>página víctima</b> de algún proceso</li>
+		<li>Si la página víctima está modificada &rarr; se la guarda en el área de intercambio, liberando el marco</li>
+	</ul>
+</ul>
+<aside data-markdown class="notes">
+</aside>
+</section>
+
+
+
+<section data-transition="slide-in fade-out" data-audio-src="audio/PRESENT/xx.mp3">
+<h2>Memoria virtual</h2>
+<img src="img/paginacion-0.svg" class="plain stretch">
+<aside data-markdown class="notes">
+</aside>
+</section>
+<!------------------------>
+<section data-transition="fade-in fade-out" data-audio-src="audio/PRESENT/xx.mp3">
+<h2>Memoria virtual</h2>
+<img src="img/paginacion-1.svg" class="plain stretch">
+<aside data-markdown class="notes">
+</aside>
+</section>
+<!------------------------>
+<section data-transition="fade-in slide-out" data-audio-src="audio/PRESENT/xx.mp3">
+<h2>Memoria virtual</h2>
+<img src="img/paginacion-2.svg" class="plain stretch">
+<aside data-markdown class="notes">
+</aside>
+</section>
+<!------------------------>
+
+<section data-transition="fade-out slide-in" data-audio-src="audio/PRESENT/xx.mp3">
+<h2>Swapping o intercambio</h2>
+<img src="img/swapping-0.svg" class="plain stretch">
+<aside data-markdown class="notes">
+</aside>
+</section>
+
+<section data-transition="fade-in fade-out" data-audio-src="audio/PRESENT/xx.mp3">
+<h2>Swapping o intercambio</h2>
+<img src="img/swapping-1.svg" class="plain stretch">
+<aside data-markdown class="notes">
+</aside>
+</section>
+<section data-transition="fade-in fade-out" data-audio-src="audio/PRESENT/xx.mp3">
+<h2>Swapping o intercambio</h2>
+<img src="img/swapping-2.svg" class="plain stretch">
+<aside data-markdown class="notes">
+</aside>
+</section>
+<section data-transition="fade-in fade-out" data-audio-src="audio/PRESENT/xx.mp3">
+<h2>Swapping o intercambio</h2>
+<img src="img/swapping-3.svg" class="plain stretch">
+<aside data-markdown class="notes">
+</aside>
+</section>
+<section data-transition="fade-in fade-out" data-audio-src="audio/PRESENT/xx.mp3">
+<h2>Swapping o intercambio</h2>
+<img src="img/swapping-4.svg" class="plain stretch">
+<aside data-markdown class="notes">
+</aside>
+</section>
+<section data-transition="fade-in fade-out" data-audio-src="audio/PRESENT/xx.mp3">
+<h2>Swapping o intercambio</h2>
+<img src="img/swapping-5.svg" class="plain stretch">
+<aside data-markdown class="notes">
+</aside>
+</section>
+<section data-transition="fade-in fade-out" data-audio-src="audio/PRESENT/xx.mp3">
+<h2>Swapping o intercambio</h2>
+<img src="img/swapping-6.svg" class="plain stretch">
+<aside data-markdown class="notes">
+</aside>
+</section>
+<section data-transition="fade-in fade-out" data-audio-src="audio/PRESENT/xx.mp3">
+<h2>Swapping o intercambio</h2>
+<img src="img/swapping-7.svg" class="plain stretch">
+<aside data-markdown class="notes">
+</aside>
+</section>
+<section data-transition="fade-in slide-out" data-audio-src="audio/PRESENT/xx.mp3">
+<h2>Swapping o intercambio</h2>
+<img src="img/swapping-8.svg" class="plain stretch">
+<aside data-markdown class="notes">
+</aside>
+</section>
+
+
+<!------------------------>
+<!------------------------>
 <section data-transition="slide-in fade-out">
-<h2>Segmentación y protección</h2>
+<h2>Memoria y protección</h2>
 <pre class="stretch"><code data-noescape>
 #include &lt;stdio.h&gt;
 main()
 {
-	int *p;
+	int *p;			# puntero a entero
 	int a = 2;
 
-	p = &a;
-	printf("%p\n",&a);
-	printf("%p\n",p);
+	p = &a;			# p apunta a la variable a
+	printf("%p\n",&a);	# la dirección de a
+	printf("%p\n",p);	# el contenido de p
 
-	*p = 3;
-	printf("%d\n",a);
+	*p = 3;			# un 3 en la dirección apuntada por p
+	printf("%d\n",a);	# imprimir el valor de a
 
 }
 </code></pre>
@@ -643,7 +898,7 @@ main()
 <!------------------------>
 <!------------------------>
 <section data-transition="fade-in slide-out">
-<h2>Segmentación y protección</h2>
+<h2>Memoria y protección</h2>
 <pre class="stretch"><code data-noescape>
 #include &lt;stdio.h&gt;
 main()
@@ -651,7 +906,7 @@ main()
 	int *p;
 	int a = 2;
 
-	p = 0;
+	p = 0;			# ahora p apunta al byte 0 de la memoria
 	printf("%p\n",&a);
 	printf("%p\n",p);
 
@@ -664,13 +919,22 @@ main()
 </aside>
 </section>
 <!------------------------>
-
-
-
-<section data-background="#3c53b5" data-background-transition="zoom">
-<h2>Continuará</h2>
+<section data-transition="fade-in slide-out">
+<h2>Memoria y protección</h2>
+<pre class="stretch"><code data-noescape>
+#include &lt;stdio.h&gt;
+main()
+{
+	char *m = "Hola mundo!";
+	puts(m);
+    	*m = 'B';
+	puts(m);
+}
+</code></pre>
+<aside data-markdown class="notes">
+</aside>
 </section>
-
+<!------------------------>
 <!-----------------------
 <section>
 <h2>Protección</h2>
@@ -716,6 +980,8 @@ Este emulador de PC construido en Javascript nos permite practicar los comandos 
 	<li><a href="https://es.wikipedia.org/wiki/Unix">Unix</a></li>
 	<li><a href="https://es.wikipedia.org/wiki/Proceso_(informática)">Procesos</a></li>
 	<li><a href="https://es.wikipedia.org/wiki/Filesystem_Hierarchy_Standard">Jerarquía del sistema de archivos en Linux</a></li>
+	<li><a href="https://es.wikipedia.org/wiki/Unidad_de_gestión_de_memoria">Unidad de Gestión de Memoria (MMU)</a></li>
+	<li><a href="https://es.wikipedia.org/wiki/Paginación_de_memoria">Paginación de memoria</a></li>
 </ul>
 <aside data-markdown class="notes">
 </aside>
