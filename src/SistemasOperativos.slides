@@ -880,15 +880,15 @@ Cuando se cumplan todos los requisitos, se ejecutará el servicio pedido y luego
 #include &lt;stdio.h&gt;
 main()
 {
-	int *p;			# puntero a entero
+	int *p;			// puntero a entero
 	int a = 2;
 
-	p = &a;			# p apunta a la variable a
-	printf("%p\n",&a);	# la dirección de a
-	printf("%p\n",p);	# el contenido de p
+	p = &a;			// p apunta a la variable a
+	printf("%p\n",&a);	// la dirección de a
+	printf("%p\n",p);	// el contenido de p
 
-	*p = 3;			# un 3 en la dirección apuntada por p
-	printf("%d\n",a);	# imprimir el valor de a
+	*p = 3;			// un 3 en la dirección apuntada por p
+	printf("%d\n",a);	// imprimir el valor de a
 
 }
 </code></pre>
@@ -897,7 +897,7 @@ main()
 </section>
 <!------------------------>
 <!------------------------>
-<section data-transition="fade-in slide-out">
+<section data-transition="fade-in convex-out">
 <h2>Memoria y protección</h2>
 <pre class="stretch"><code data-noescape>
 #include &lt;stdio.h&gt;
@@ -906,7 +906,7 @@ main()
 	int *p;
 	int a = 2;
 
-	p = 0;			# ahora p apunta al byte 0 de la memoria
+	p = 0;			// ahora p apunta al byte 0 de la memoria
 	printf("%p\n",&a);
 	printf("%p\n",p);
 
@@ -919,15 +919,16 @@ main()
 </aside>
 </section>
 <!------------------------>
-<section data-transition="fade-in slide-out">
+<section data-transition="convex-in convex-out">
 <h2>Memoria y protección</h2>
 <pre class="stretch"><code data-noescape>
 #include &lt;stdio.h&gt;
 main()
 {
 	char *m = "Hola mundo!";
-	puts(m);
-    	*m = 'B';
+
+	puts(m);		// imprime el mensaje
+    	*m = 'B';		// primer caracter del mensaje
 	puts(m);
 }
 </code></pre>
