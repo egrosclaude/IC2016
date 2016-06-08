@@ -171,7 +171,7 @@ Cualquier aplicación que funcione en el sistema, ya sean las de sistema o gener
 <h2>Bibliotecas</h2>
 <img src="img/so-1.png" class="stretch plain">
 <aside data-markdown class="notes">
-Todas las aplicaciones, en algún momento, requieren funciones que ya están preparadas para su uso en **bibliotecas** especializadas en algún sentido. La vinculación de los programas de usuario con las bibliotecas puede hacerse al tiempo de compilación o al tiempo de ejecución, cuando las bibliotecas son **de carga dinámica**.
+Todas las aplicaciones, en algún momento, requieren funciones que ya están preparadas para su uso en **bibliotecas** especializadas en algún sentido. La vinculación de los programas de usuario con las bibliotecas puede hacerse al tiempo de compilación o, cuando las bibliotecas son **de carga dinámica**, al tiempo de ejecución.
 </aside>
 </section>
 <section data-transition="fade-in fade-out">
