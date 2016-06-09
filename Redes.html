@@ -54,70 +54,107 @@
 </section>
 
 <!------------------------>
-<section data-transition="slide-in slide-out" data-audio-src="audio/PRESENT/xx.mp3">
+<section data-transition="slide-in fade-out" data-audio-src="audio/PRESENT/xx.mp3" data-background="img/enlaces.svg" data-background-size="50%" class="transparent_bg">
 <h2>Redes de computadoras</h2>
 <ul>
-	<li>Nodos terminales</li>
+	<li class="fragment">Nodos terminales o <b>hosts</b></li>
+	<div class="fragment">
 	<li>Enlaces</li>
-	<li>Nodos intermedios</li>
+	<ul>
+		<li>Compartidos</li>
+		<li>Punto a punto</li>
+	</ul>
+	</div>
+	<li class="fragment">Nodos intermedios</li>
+	<div class="fragment">
 	<li>Software de red</li>
 	<ul>
 		<li>Aplicaciones</li>
 		<li>Protocolos</li>
 	</ul>
+	<div class="fragment">
+	<li>Una clasificación</li>
+	<ul>
+		<li>LAN (Local Area Network)</li>
+		<li>MAN (Metropolitan Area Network)</li>
+		<li>WAN (Wide Area Network)</li>
+	</ul>
+	</div>
 </ul>
 <aside data-markdown class="notes">
 </aside>
 </section>
 <!------------------------>
+<section data-transition="fade-in slide-out" data-audio-src="audio/PRESENT/xx.mp3" data-background="img/enlaces.svg" data-background-size="50%">
+</section>
 
 
-
-<!------------------------>
-<section data-transition="slide-in slide-out" data-audio-src="audio/PRESENT/xx.mp3">
-<h2>Clasificación</h2>
-<ul>
-	<li>LAN (Local Area Network)</li>
-	<li>MAN (Metropolitan Area Network)</li>
-	<li>WAN (Wide Area Network)</li>
-</ul>
-<img src="img/IMAGEN.png" class="plain stretch">
+<section data-transition="slide-in none-out" data-audio-src="audio/PRESENT/xx.mp3">
+<h2>Switches</h2>
+<img src="img/switch.jpg" class="plain stretch">
 <aside data-markdown class="notes">
 </aside>
 </section>
-<!------------------------>
 
+<section data-audio-src="audio/PRESENT/xx.mp3" data-transition="slide-in fade-out"> 
+<h2>Routers</h2>
+<img src="img/mini-end-router.jpg" class="plain stretch">
+<aside data-markdown class="notes">
+</aside>
+</section>
+<section data-audio-src="audio/PRESENT/xx.mp3" data-transition="fade-in fade-out">
+<h2>Routers</h2>
+<img src="img/low-end-router.jpg" class="plain stretch">
+<aside data-markdown class="notes">
+</aside>
+</section>
+
+<section data-transition="fade-in slide-out" data-audio-src="audio/PRESENT/xx.mp3">
+<h2>Routers</h2>
+<img src="img/high-end-router.jpg" class="plain stretch">
+<div><a href="img/high-end-router.jpg" target="_blank"><small>Detalle</small></a></div>
+<aside data-markdown class="notes">
+</aside>
+</section>
 
 <!------------------------>
 <section data-transition="slide-in slide-out" data-audio-src="audio/PRESENT/xx.mp3">
 <h2>Interfaces</h2>
-<ul>
-	<li>Los nodos se conectan a los enlaces a través de interfaces</li>
-</ul>
-<img src="img/IMAGEN.png" class="plain stretch">
+<img src="img/network_card.png" class="plain stretch">
 <aside data-markdown class="notes">
 </aside>
 </section>
 <!------------------------>
+<section data-transition="slide-in none-out" data-audio-src="audio/PRESENT/xx.mp3" data-background="img/enlaces.svg" data-background-size="50%" class="transparent_bg">
+<h2>Enlaces</h2>
+<img src="img/africancables.jpg" class="plain stretch">
+<aside data-markdown class="notes">
+</aside>
+</section>
+
 
 
 <!------------------------>
+
 <section data-transition="slide-in slide-out" data-audio-src="audio/PRESENT/xx.mp3">
 <h2>Enlaces</h2>
 <ul>
 	<li>Velocidad de transmisión $V_{transm}$</li>
+	<span class="fragment">
 	<ul>
 		<li>Cantidad de bits por segundo que una interfaz puede escribir o leer de un enlace</li>
 		<li>Unidades b/s, kb/s, Mb/s, Tb/s</li>
 	</ul>
+	</span>
 	<li>Velocidad de propagación $V_{prop}$</li>
+	<span class="fragment">
 	<ul>
 		<li>Velocidad con la que viaja una señal por un enlace</li>
 		<li>Típicamente cercana a la velocidad de la luz, <i>c</i></li>
 		<li>$c = 3 \times 10^{8}$ m/s</li>
 	</ul>
+	</span>
 </ul>
-<img src="img/IMAGEN.png" class="plain stretch">
 <aside data-markdown class="notes">
 </aside>
 </section>
@@ -127,41 +164,95 @@
 <section data-transition="slide-in slide-out" data-audio-src="audio/PRESENT/xx.mp3">
 <h2>Tiempo de transferencia</h2>
 <ul>
+	<span class="fragment">
 	<li>Tiempo de transmisión de $L$ bits</li>
 	<ul>
 		<li>$T_{transm} = L / V_{transm}$</li>
 	</ul>
+	</span>
+	<span class="fragment">
 	<li>Tiempo de propagación por un enlace de $D$ m</li>
 	<ul>
 		<li>$T_{prop} = D / V_{prop}$</li>
 	</ul>
+	</span>
+	<span class="fragment">
 	<li>Tiempo total de transferencia de $L$ bits por un enlace de $D$ m</li>
 	<ul>
 		<li>$T_{tot} = T_{transm} + T_{prop}$</li>
 	</ul>
+	</span>
 </ul>
-<img src="img/IMAGEN.png" class="plain stretch">
 <aside data-markdown class="notes">
 </aside>
 </section>
 <!------------------------>
 
 
+<!------------------------>
+<section data-transition="slide-in fade-out" data-audio-src="audio/PRESENT/xx.mp3">
+<h2>Transmisión y propagación</h2>
+<img src="img/enlaces-0.svg" class="plain stretch">
+<aside data-markdown class="notes">
+</aside>
+</section>
+<!------------------------>
+<section data-transition="fade-in slide-out" data-audio-src="audio/PRESENT/xx.mp3">
+<h2>Transmisión y propagación</h2>
+<img src="img/enlaces-1.svg" class="plain stretch">
+<aside data-markdown class="notes">
+</aside>
+</section>
+<!------------------------>
 
 <!------------------------>
 <section data-transition="slide-in slide-out" data-audio-src="audio/PRESENT/xx.mp3">
 <h2>Protocolos</h2>
 <ul>
-	<li>Definición del <b>formato</b> y el <b>orden</b> de los <b>mensajes</b> intercambiados entre las <b>entidades</b> que se comunican</li>
-	<li>Definición de las <b>acciones</b> que debe tomar cada entidad frente a un <b>evento</b> como la recepción de un mensaje u otro suceso</li>
+	<li class="fragment">Definición del <b>formato</b> y el <b>orden</b> de los <b>mensajes</b> intercambiados entre las <b>entidades</b> que se comunican</li>
+	<li class="fragment">Definición de las <b>acciones</b> que debe tomar cada entidad frente a un <b>evento</b> como la recepción de un mensaje u otro suceso</li>
 </ul>
-<img src="img/IMAGEN.png" class="plain stretch">
 <aside data-markdown class="notes">
 </aside>
 </section>
 <!------------------------>
 
-TODO panadería
+
+<!------------------------>
+<section data-transition="slide-in slide-out" data-audio-src="audio/PRESENT/xx.mp3">
+<h2>Un protocolo</h2>
+<table>
+<tr><th>Cliente</th><th>Panadero</th></tr>
+<tr class="fragment"><td>Creo que me toca a mí.</td><td>¿Qué número tiene?</td></tr>
+<tr class="fragment"><td>El 22.</td><td>Así es, ¿en qué puedo servirlo?</td></tr>
+<tr class="fragment"><td>Un kilo de pan, por favor.</td><td>Sírvase. ¿Algo más?</td></tr>
+<tr class="fragment"><td>Seis pastelitos.</td><td>Aquí tiene. ¿Algo más?</td></tr>
+<tr class="fragment"><td>Nada más.</td><td>Son cincuenta pesos.</td></tr>
+<tr class="fragment"><td>Sírvase.</td><td>Gracias, hasta pronto.</td></tr>
+</table>
+<aside data-markdown class="notes">
+</aside>
+</section>
+<!------------------------>
+
+
+<!------------------------>
+<section data-transition="slide-in fade-out" data-audio-src="audio/PRESENT/xx.mp3">
+<h2>Autómata del cliente</h2>
+<img src="img/protocolo-cliente.svg" class="plain stretch">
+<aside data-markdown class="notes">
+</aside>
+</section>
+<!------------------------>
+<section data-transition="fade-in slide-out" data-audio-src="audio/PRESENT/xx.mp3">
+<h2>Autómata del servidor</h2>
+<img src="img/protocolo-servidor.svg" class="plain stretch">
+<aside data-markdown class="notes">
+</aside>
+</section>
+<!------------------------>
+
+
 
 
 <!------------------------>
@@ -169,9 +260,8 @@ TODO panadería
 <h2>Direcciones de red</h2>
 <ul>
 	<li>El nombre con que se distinguen las interfaces en la red</li>
-	<li>Un nodo que tiene $n$ interfaces recibe $n$ direcciones</li>
+	<li>Un nodo terminal o un router con $n$ interfaces reciben $n$ direcciones</li>
 </ul>
-<img src="img/IMAGEN.png" class="plain stretch">
 <aside data-markdown class="notes">
 </aside>
 </section>
@@ -187,16 +277,19 @@ TODO panadería
 	<ul>
 		<li>11000000101010000000000000000001</li>
 	</ul>
+<span class="fragment">
 	<li>Pueden verse como cuatro bytes</li>
 	<ul>
 		<li>11000000 10101000 00000000 00000001</li>
 	</ul>
+</span>
+<span class="fragment">
 	<li>Pueden escribirse como cuatro números decimales entre 0 y 255, separados por puntos</li>
 	<ul>
 		<li>192.168.0.1</li>
 	</ul>
+</span>
 </ul>
-<img src="img/IMAGEN.png" class="plain stretch">
 <aside data-markdown class="notes">
 </aside>
 </section>
@@ -204,33 +297,58 @@ TODO panadería
 
 
 <!------------------------>
-<section data-transition="slide-in slide-out" data-audio-src="audio/PRESENT/xx.mp3">
+<section data-transition="slide-in fade-out" data-audio-src="audio/PRESENT/xx.mp3">
 <h2>Paquetes IP</h2>
 <ul>
-	<li>Un flujo de datos entre dos nodos se divide en partes</li>
-	<li>Con cada parte la entidad que envía construye un paquete, con los datos más un encabezado</li>
+	<li>Un flujo de datos entre dos nodos se divide en partes de un tamaño máximo</li>
+</ul>
+<img src="img/paquetes-0.svg" class="plain stretch">
+<aside data-markdown class="notes">
+</aside>
+</section>
+<!------------------------>
+<section data-transition="fade-in fade-out" data-audio-src="audio/PRESENT/xx.mp3">
+<h2>Paquetes IP</h2>
+<ul>
+	<li>La entidad emisora construye con cada parte un paquete, conteniendo los datos más un encabezado</li>
+</ul>
+<img src="img/paquetes-1.svg" class="plain stretch">
+<aside data-markdown class="notes">
+</aside>
+</section>
+<!------------------------>
+<section data-transition="fade-in fade-out" data-audio-src="audio/PRESENT/xx.mp3">
+<h2>Paquetes IP</h2>
+<ul>
 	<li>El encabezado incluye la dirección <b>origen</b> y la dirección <b>destino</b></li>
 </ul>
-<img src="img/IMAGEN.png" class="plain stretch">
+<img src="img/paquetes-2.svg" class="plain stretch">
 <aside data-markdown class="notes">
 </aside>
 </section>
 <!------------------------>
-
-
-
-<!------------------------>
-<section data-transition="slide-in slide-out" data-audio-src="audio/PRESENT/xx.mp3">
+<section data-transition="fade-in fade-out" data-audio-src="audio/PRESENT/xx.mp3">
 <h2>Ruteo IP</h2>
 <ul>
-	<li>Ruteo o encaminamiento, enrutamiento, o <b>routing</b></li>
+	<li>Ruteo, encaminamiento, enrutamiento, o <b>routing</b></li>
 	<ul>
-		<li>Tiene el objetivo de determinar los caminos que tomarán los paquetes para ir desde un nodo origen a un nodo destino</li>
-		<li>Lo realizan los nodos intermedios <b>routers</b></li>
-		<li>Los paquetes son recibidos por un enlace y reenviados por otro</li>
+		<li>Los paquetes son recibidos por un enlace de un router y <b>reenviados</b> por otro</li>
 	</ul>
 </ul>
-<img src="img/IMAGEN.png" class="plain stretch">
+<img src="img/paquetes-3.svg" class="plain stretch">
+<aside data-markdown class="notes">
+</aside>
+</section>
+<!------------------------>
+<section data-transition="fade-in slide-out" data-audio-src="audio/PRESENT/xx.mp3">
+<h2>Ruteo IP</h2>
+<ul>
+	<li>Ruteo, encaminamiento, enrutamiento, o <b>routing</b></li>
+	<ul>
+		<li>Cada router ejecuta los reenvíos basándose en una <b>tabla de reenvío o tabla de ruteo</b></li>
+	</ul>
+	</ul>
+<img src="img/paquetes-4.svg" class="plain stretch">
 <aside data-markdown class="notes">
 </aside>
 </section>
@@ -240,15 +358,19 @@ TODO panadería
 
 <!------------------------>
 <section data-transition="slide-in slide-out" data-audio-src="audio/PRESENT/xx.mp3">
-<h2>Ruteo</h2>
+<h2>Tabla de ruteo</h2>
 <ul>
-	<li>Cada router ejecuta los reenvíos basándose en una </b>tabla de reenvío o tabla de ruteo</b></li>
-	<li>Los routers utilizan un cierto <b>algoritmo de ruteo</b> para determinar los valores de las tablas de reenvío</b></li>
-	<ul>
-		<li></li>
-	</ul>
+	<li>La tabla de ruteo especifica qué dirección destino se alcanza a través de qué interfaz</li>
 </ul>
-<img src="img/IMAGEN.png" class="plain stretch">
+<table>
+<tr><th>Dirección destino</th><th>Interfaz de salida</th></tr>
+<tr><td>00000</td><td>0</td></tr>
+<tr><td>00001</td><td>2</td></tr>
+<tr><td>00010</td><td>0</td></tr>
+<tr><td>00100</td><td>1</td></tr>
+<tr><td>00101</td><td>3</td></tr>
+<tr><td>00110</td><td>1</td></tr>
+</table>
 <aside data-markdown class="notes">
 </aside>
 </section>
@@ -259,22 +381,64 @@ TODO panadería
 <section data-transition="slide-in slide-out" data-audio-src="audio/PRESENT/xx.mp3">
 <h2>Ruteo</h2>
 <ul>
-	<li>En IPv4, direcciones de 32 bits &rarr; $2^{32}$ direcciones</li>
-	<li>Una tabla de ruteo tendría 4 Gi $=~$ 4000000000 de entradas</li>
+	<li>En IPv4, direcciones de 32 bits</li>
+	<li>&rarr; $2^{32} = 2^2 \times 2^{30} = $ 4 Gi direcciones</li>
+	<li class="fragment">Una tabla de ruteo con una ruta por cada dirección tendría $\approx$ 4000000000 de entradas</li>
+	<span class="fragment">
 	<li>Solución: agrupar las direcciones utilizando prefijos</li>
 	<li>Los prefijos se especifican utilizando <b>máscaras</b></li>
 	<ul>
-		<li></li>
+		<li>11000000101010000000000000000001/24 </li>
+		<li><span style="color: blue">11000000 10101000 00000000</span> 00000001</li>
+		<li><span style="color: blue">192.168.0</span>.1/24</li>
 	</ul>
+	</span>
 </ul>
-<img src="img/IMAGEN.png" class="plain stretch">
 <aside data-markdown class="notes">
 </aside>
 </section>
 <!------------------------>
 
+<section data-transition="slide-in slide-out" data-audio-src="audio/PRESENT/xx.mp3">
+<h2>Ruteo por prefijos</h2>
+<ul>
+	<li>El router aplica la operación <b>AND</b> de bits a la dirección destino y a la máscara para obtener la dirección de la red destino</li>
+	<li>La máscara indica cuántos bits de la dirección deben coincidir para aceptar una ruta</li>
+</ul>
+<table>
+<tr><th>Dirección destino</th><th>Máscara</th><th>Interfaz de salida</th></tr>
+<tr><td>00000</td><td>11100</td><td>0</td></tr>
+<tr><td>00100</td><td>11100</td><td>1</td></tr>
+<tr><td>00010</td><td>11110</td><td>2</td></tr>
+</table>
+<aside data-markdown class="notes">
+</aside>
+</section>
  
 <!------------------------>
+<section data-transition="slide-in slide-out" data-audio-src="audio/PRESENT/xx.mp3">
+<h2>Algoritmo de ruteo</h2>
+<ul>
+	<li>Para cada regla en la tabla de ruteo</li>
+	<ul>
+		<li>Si la parte de red de la ruta coincide con la dirección destino del paquete, reenviar el paquete por la interfaz de salida de esa ruta</li>
+	</ul>
+	<li>Si se agotó la tabla pero hay una ruta default</li>
+	<ul>
+		<li>Reenviar el paquete por la ruta default</li>
+	</ul>
+	<li>Si se agotó la tabla sin éxito</li>
+	<ul>
+		<li>Devolver error de <b>red inalcanzable</b></li>
+	</ul>
+	<li>Si hay más de una coincidencia, se elige la ruta más específica (con máscara más larga)</li>
+</ul>
+<aside data-markdown class="notes">
+</aside>
+</section>
+<!------------------------>
+
+
 <section data-transition="slide-in slide-out" data-audio-src="audio/PRESENT/xx.mp3">
 <h2>Nombres de dominio</h2>
 <ul>
@@ -334,13 +498,6 @@ TODO panadería
 <aside data-markdown class="notes">
 </aside>
 </section>
-<section data-transition="slide-in fade-out" data-audio-src="audio/PRESENT/xx.mp3">
-<h2>DNS</h2>
-<img src="img/dns-0,svg" class="plain stretch">
-<aside data-markdown class="notes">
-</aside>
-</section>
-<!------------------------>
 <!------------------------>
 <!------------------------------------------------------------------>
 
