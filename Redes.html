@@ -125,6 +125,31 @@
 </aside>
 </section>
 <!------------------------>
+
+<section data-transition="slide-in none-out" data-audio-src="audio/PRESENT/xx.mp3" data-background="img/enlaces.svg" data-background-size="50%" class="transparent_bg">
+<h2>Enlaces</h2>
+<ul>
+	<li>Cobre</li>
+	<ul>
+		<li>Ethernet</li>
+		<li>Coaxil</li>
+	</ul>
+	<li>Fibra óptica</li>
+	<ul>
+		<li>Man</li>
+		<li>Wan</li>
+	</ul>
+	<li>Inalámbricos</li>
+	<ul>
+		<li>Satelitales</li>
+		<li>Microondas</li>
+		<li>802.11 (WiFi)</li>
+	</ul>
+</ul>
+<aside data-markdown class="notes">
+</aside>
+</section>
+
 <section data-transition="slide-in none-out" data-audio-src="audio/PRESENT/xx.mp3" data-background="img/enlaces.svg" data-background-size="50%" class="transparent_bg">
 <h2>Enlaces</h2>
 <img src="img/africancables.jpg" class="plain stretch">
@@ -133,6 +158,14 @@
 </section>
 
 
+<!------------------------>
+<section data-transition="slide-in slide-out" data-audio-src="audio/PRESENT/xx.mp3">
+<h2>Enlace satelital</h2>
+<img src="img/enlace-satelital.png" class="plain stretch">
+<aside data-markdown class="notes">
+</aside>
+</section>
+<!------------------------>
 
 <!------------------------>
 
@@ -197,9 +230,16 @@
 </aside>
 </section>
 <!------------------------>
-<section data-transition="fade-in slide-out" data-audio-src="audio/PRESENT/xx.mp3">
+<section data-transition="fade-in fade-out" data-audio-src="audio/PRESENT/xx.mp3">
 <h2>Transmisión y propagación</h2>
 <img src="img/enlaces-1.svg" class="plain stretch">
+<aside data-markdown class="notes">
+</aside>
+</section>
+<!------------------------>
+<section data-transition="fade-in slide-out" data-audio-src="audio/PRESENT/xx.mp3">
+<h2>Transmisión y propagación</h2>
+<img src="img/enlaces-2.svg" class="plain stretch">
 <aside data-markdown class="notes">
 </aside>
 </section>
@@ -227,8 +267,8 @@
 <tr class="fragment"><td>El 22.</td><td>Así es, ¿en qué puedo servirlo?</td></tr>
 <tr class="fragment"><td>Un kilo de pan, por favor.</td><td>Sírvase. ¿Algo más?</td></tr>
 <tr class="fragment"><td>Seis pastelitos.</td><td>Aquí tiene. ¿Algo más?</td></tr>
-<tr class="fragment"><td>Nada más.</td><td>Son cincuenta pesos.</td></tr>
-<tr class="fragment"><td>Sírvase.</td><td>Gracias, hasta pronto.</td></tr>
+<tr class="fragment"><td>Nada más.</td><td>Son cien pesos.</td></tr>
+<tr class="fragment"><td>Sírvase. <span class="fragment"><i>(Ladrón...)</i></span></td><td>Gracias, hasta pronto. <span class="fragment"><i>(Bobo...)</i></span></td></tr>
 </table>
 <aside data-markdown class="notes">
 </aside>
@@ -260,7 +300,7 @@
 <h2>Direcciones de red</h2>
 <ul>
 	<li>El nombre con que se distinguen las interfaces en la red</li>
-	<li>Un nodo terminal o un router con $n$ interfaces reciben $n$ direcciones</li>
+	<li>Un nodo terminal o un router con $n$ interfaces recibe $n$ direcciones</li>
 </ul>
 <aside data-markdown class="notes">
 </aside>
@@ -275,18 +315,18 @@
 <ul>
 	<li>Números de 32 bits para identificar cada interfaz</li>
 	<ul>
-		<li>11000000101010000000000000000001</li>
+		<li>11000000101010000000000100000001</li>
 	</ul>
 <span class="fragment">
 	<li>Pueden verse como cuatro bytes</li>
 	<ul>
-		<li>11000000 10101000 00000000 00000001</li>
+		<li>11000000 10101000 00000001 00000001</li>
 	</ul>
 </span>
 <span class="fragment">
 	<li>Pueden escribirse como cuatro números decimales entre 0 y 255, separados por puntos</li>
 	<ul>
-		<li>192.168.0.1</li>
+		<li>192.168.1.1</li>
 	</ul>
 </span>
 </ul>
@@ -360,7 +400,11 @@
 <section data-transition="slide-in slide-out" data-audio-src="audio/PRESENT/xx.mp3">
 <h2>Tabla de ruteo</h2>
 <ul>
-	<li>La tabla de ruteo especifica qué dirección destino se alcanza a través de qué interfaz</li>
+	<li>Contiene reglas llamadas rutas</li>
+	<ul>
+	<li>Especifican qué dirección destino se alcanza a través de qué interfaz</li>
+	</ul>
+	<li class="fragment highlight-red">Pero esta tabla está <b>incompleta</b></i>
 </ul>
 <table>
 <tr><th>Dirección destino</th><th>Interfaz de salida</th></tr>
@@ -381,17 +425,31 @@
 <section data-transition="slide-in slide-out" data-audio-src="audio/PRESENT/xx.mp3">
 <h2>Ruteo</h2>
 <ul>
-	<li>En IPv4, direcciones de 32 bits</li>
-	<li>&rarr; $2^{32} = 2^2 \times 2^{30} = $ 4 Gi direcciones</li>
+	<li>Las direcciones IPv4 son de 32 bits &rarr; $2^{32} = 2^2 \times 2^{30} = $ 4 Gi direcciones posibles</li>
 	<li class="fragment">Una tabla de ruteo con una ruta por cada dirección tendría $\approx$ 4000000000 de entradas</li>
+	<li class="fragment">Y ocuparía 16 GiB de memoria</li>
+	<li class="fragment">Solución: agrupar las direcciones en grupos o <b>subredes</b> y mantener una ruta por cada subred</li>
+</ul>
+<aside data-markdown class="notes">
+</aside>
+</section>
+<!------------------------>
+<section data-transition="slide-in slide-out" data-audio-src="audio/PRESENT/xx.mp3">
+<h2>Máscara de subred</h2>
+<ul>
+	<li>Una subred es un conjunto de direcciones que comparten un prefijo de una cierta longitud</li>
+	<li class="fragment">La longitud de los prefijos se especifica utilizando una <b>máscara</b></li>
 	<span class="fragment">
-	<li>Solución: agrupar las direcciones utilizando prefijos</li>
-	<li>Los prefijos se especifican utilizando <b>máscaras</b></li>
+	<li>¿Qué significa <b>192.168.1.1/24</b>, o <b>192.168.1.1 con máscara 255.255.255.0</b>?</li>
 	<ul>
-		<li>11000000101010000000000000000001/24 </li>
-		<li><span style="color: blue">11000000 10101000 00000000</span> 00000001</li>
-		<li><span style="color: blue">192.168.0</span>.1/24</li>
+		<li>11000000 10101000 00000001 00000001 con máscara 11111111&nbsp;11111111&nbsp;11111111&nbsp;00000000 </li>
+	</span>
+	<span class="fragment">
+		<li><span style="color: blue">11000000 10101000 00000001</span> 00000000</li>
+	</span>
 	</ul>
+	<span class="fragment">
+	<li>192.168.1.1/24 &rarr; dirección de subred <b>192.168.1.0</b></li>
 	</span>
 </ul>
 <aside data-markdown class="notes">
@@ -402,26 +460,50 @@
 <section data-transition="slide-in slide-out" data-audio-src="audio/PRESENT/xx.mp3">
 <h2>Ruteo por prefijos</h2>
 <ul>
-	<li>El router aplica la operación <b>AND</b> de bits a la dirección destino y a la máscara para obtener la dirección de la red destino</li>
-	<li>La máscara indica cuántos bits de la dirección deben coincidir para aceptar una ruta</li>
+	<li>La tabla de ruteo se completa con una máscara para cada ruta</li>
+	<ul>
+		<li>La máscara indica cuántos bits de la dirección destino de un paquete deben coincidir para aceptar la ruta</li>
+	</ul>
 </ul>
-<table>
-<tr><th>Dirección destino</th><th>Máscara</th><th>Interfaz de salida</th></tr>
-<tr><td>00000</td><td>11100</td><td>0</td></tr>
-<tr><td>00100</td><td>11100</td><td>1</td></tr>
-<tr><td>00010</td><td>11110</td><td>2</td></tr>
-</table>
+	<table>
+	<tr><th>Dirección destino</th><th>Máscara</th><th>Interfaz de salida</th></tr>
+	<tr><td>00000</td><td>11100</td><td>0</td></tr>
+	<tr><td>00100</td><td>11100</td><td>1</td></tr>
+	<tr><td>00010</td><td>11110</td><td>2</td></tr>
+	</table>
 <aside data-markdown class="notes">
 </aside>
 </section>
  
+<section data-transition="slide-in slide-out" data-audio-src="audio/PRESENT/xx.mp3">
+<h2>Ruta por defecto o <i>default</i></h2>
+<ul>
+	<li>Es una ruta con máscara de longitud 0</li>
+	<ul>
+		<li>Se consulta en último lugar y siempre coincide</li>
+	</ul>
+</ul>
+	<table>
+	<tr><th>Dirección destino</th><th>Máscara</th><th>Interfaz de salida</th></tr>
+	<tr><td>00000</td><td>11100</td><td>0</td></tr>
+	<tr><td>00100</td><td>11100</td><td>1</td></tr>
+	<tr><td>00010</td><td>11110</td><td>2</td></tr>
+	<tr><td>00000</td><td>00000</td><td>3</td></tr>
+	</table>
+<aside data-markdown class="notes">
+</aside>
+</section>
+ 
+
+
 <!------------------------>
 <section data-transition="slide-in slide-out" data-audio-src="audio/PRESENT/xx.mp3">
 <h2>Algoritmo de ruteo</h2>
 <ul>
 	<li>Para cada regla en la tabla de ruteo</li>
 	<ul>
-		<li>Si la parte de red de la ruta coincide con la dirección destino del paquete, reenviar el paquete por la interfaz de salida de esa ruta</li>
+		<li>Subred destino del paquete = Dirección destino del paquete <b>AND</b> Máscara de la ruta</li>
+		<li>Si subred destino del paquete = subred de la ruta, reenviar el paquete por la interfaz de salida de esa ruta</li>
 	</ul>
 	<li>Si se agotó la tabla pero hay una ruta default</li>
 	<ul>
@@ -438,6 +520,28 @@
 </section>
 <!------------------------>
 
+<!------------------------>
+<section data-transition="slide-in slide-out" data-audio-src="audio/PRESENT/xx.mp3">
+<h2>Selección de ruta</h2>
+<ul>
+	<li>Dirección destino del paquete &rarr; interfaz</li>
+	<ul>
+	<li><b><span class="fragment highlight-blue">000</span>01</b> &rarr; <span class="fragment">interfaz 0</span></li>
+	<li><b><span class="fragment highlight-blue">0001</span>1</b> &rarr; <span class="fragment">interfaz 2 (¿por qué?)</span></li>
+	<li><b>01001</b> &rarr; <span class="fragment">interfaz 2 (ruta default)</span></li>
+	</ul>
+</ul>
+	<table>
+	<tr><th>Dirección destino</th><th>Máscara</th><th>Interfaz de salida</th></tr>
+	<tr><td>00000</td><td>11100</td><td>0</td></tr>
+	<tr><td>00100</td><td>11100</td><td>1</td></tr>
+	<tr><td>00010</td><td>11110</td><td>2</td></tr>
+	<tr><td>00000</td><td>00000</td><td>2</td></tr>
+	</table>
+<aside data-markdown class="notes">
+</aside>
+</section>
+<!------------------------>
 
 <section data-transition="slide-in slide-out" data-audio-src="audio/PRESENT/xx.mp3">
 <h2>Nombres de dominio</h2>
@@ -499,6 +603,15 @@
 </aside>
 </section>
 <!------------------------>
+
+<section data-background="#00CCFF">
+<h2>Referencias</h2>
+<ul>
+	<li><a href="http://pedco.uncoma.edu.ar/pluginfile.php/371865/mod_resource/content/1/IC%20-%20Redes.pdf">Apunte de cátedra: Redes</a></li>
+</ul>
+<aside data-markdown class="notes">
+</aside>
+</section>
 <!------------------------------------------------------------------>
 
    </div>

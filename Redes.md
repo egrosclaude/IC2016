@@ -35,7 +35,19 @@
 
 
 
+## Enlace satelital
+
+
+
+## Enlaces
+
+
+
 ## Tiempo de transferencia
+
+
+
+## Transmisión y propagación
 
 
 
@@ -99,11 +111,21 @@
 
 
 
+## Máscara de subred
+
+
+
 ## Ruteo por prefijos
 
 
 
+
+
 ## Algoritmo de ruteo
+
+
+
+## Selección de ruta
 
 
 
@@ -128,5 +150,9 @@
 
 
 ## DNS
+
+
+
+## Referencias
 
 

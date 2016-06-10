@@ -92,7 +92,7 @@
      </g>
      <g class="com.sun.star.drawing.LineShape">
       <g id="id6">
-       <path fill="none" stroke="rgb(102,255,0)" stroke-width="203" stroke-linejoin="round" d="M 11549,6428 L 11549,7078"/>
+       <path fill="none" stroke="rgb(102,255,0)" stroke-width="203" stroke-linejoin="round" d="M 11549,6428 L 11549,7858"/>
       </g>
      </g>
      <g class="com.sun.star.drawing.TextShape">
@@ -121,8 +121,8 @@
      </g>
      <g class="com.sun.star.drawing.LineShape">
       <g id="id11">
-       <path fill="none" stroke="rgb(102,255,0)" stroke-width="203" stroke-linejoin="round" d="M 18144,9380 L 11549,7078"/>
-       <path fill="rgb(102,255,0)" stroke="none" d="M 18064,9538 L 18180,9206 18998,9678 18064,9538 Z"/>
+       <path fill="none" stroke="rgb(102,255,0)" stroke-width="203" stroke-linejoin="round" d="M 18119,9463 L 11541,7858"/>
+       <path fill="rgb(102,255,0)" stroke="none" d="M 18055,9628 L 18138,9287 18998,9678 18055,9628 Z"/>
       </g>
      </g>
      <g class="com.sun.star.drawing.TextShape">
@@ -218,13 +218,13 @@
      </g>
      <g class="com.sun.star.drawing.LineShape">
       <g id="id18">
-       <path fill="none" stroke="rgb(51,51,255)" stroke-width="203" stroke-linejoin="round" d="M 11449,6428 L 11449,8528"/>
+       <path fill="none" stroke="rgb(51,51,255)" stroke-width="203" stroke-linejoin="round" d="M 18238,10727 L 11414,7350"/>
+       <path fill="rgb(51,51,255)" stroke="none" d="M 18139,10874 L 18295,10559 19049,11128 18139,10874 Z"/>
       </g>
      </g>
      <g class="com.sun.star.drawing.LineShape">
       <g id="id19">
-       <path fill="none" stroke="rgb(51,51,255)" stroke-width="203" stroke-linejoin="round" d="M 18193,10835 L 11449,8528"/>
-       <path fill="rgb(51,51,255)" stroke="none" d="M 18114,10994 L 18228,10662 19049,11128 18114,10994 Z"/>
+       <path fill="none" stroke="rgb(51,51,255)" stroke-width="203" stroke-linejoin="round" d="M 11449,6428 L 11449,7350"/>
       </g>
      </g>
     </g>
