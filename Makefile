@@ -2,6 +2,7 @@ DEPS = src/reveal.header src/reveal.trailer
 
 all: so comp pres siste uni repre texto arqui soft
 
+re: Redes.html
 soft: Software.html
 so: SistemasOperativos.html
 comp: SistemasDeCómputo.html
