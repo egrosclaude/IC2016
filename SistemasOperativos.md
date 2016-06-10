@@ -98,7 +98,7 @@ Cualquier aplicación que funcione en el sistema, ya sean las de sistema o gener
 
 ## Bibliotecas
 
-Todas las aplicaciones, en algún momento, requieren funciones que ya están preparadas para su uso en **bibliotecas** especializadas en algún sentido. La vinculación de los programas de usuario con las bibliotecas puede hacerse al tiempo de compilación o al tiempo de ejecución, cuando las bibliotecas son **de carga dinámica**.
+Todas las aplicaciones, en algún momento, requieren funciones que ya están preparadas para su uso en **bibliotecas** especializadas en algún sentido. La vinculación de los programas de usuario con las bibliotecas puede hacerse al tiempo de compilación o, cuando las bibliotecas son **de carga dinámica**, al tiempo de ejecución.
 
 
 ## Kernel
@@ -291,19 +291,19 @@ La comunicación entre los procesos de usuario y sus bibliotecas, por un lado, y
 
 
 
+## Fragmentación externa
+
+
+
+## Fragmentación externa
+
+
+
+## Fragmentación externa
+
+
+
 ## Asignación de memoria contigua
-
-## Fragmentación externa
-
-
-
-## Fragmentación externa
-
-
-
-## Fragmentación externa
-
-
 
 ## Segmentación
 

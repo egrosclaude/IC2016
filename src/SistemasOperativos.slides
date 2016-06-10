@@ -607,29 +607,14 @@ La comunicación entre los procesos de usuario y sus bibliotecas, por un lado, y
 </aside>
 </section>
 
-<section data-transition="slide-in slide-out">
+<section data-transition="slide-in fade-out">
 <h2>Memoria contigua</h2>
 <img src="img/mem-contigua.svg" class="plain stretch">
 <aside data-markdown class="notes">
 </aside>
 </section>
-
-<section>
-<h2>Asignación de memoria contigua</h2>
-<ul>
-	<li>Un proceso &rarr; una región de memoria</li>
-	<li>Particiones de tamaño variable</li>
-	<ul>
-		<li><b>Fragmentación externa</b></li>
-		<li>Compactación &rarr; Sobrecarga</li>
-	</ul>
-</ul>
-</section>
-
-
-
 <!------------------------>
-<section data-transition="slide-in fade-out" data-audio-src="audio/PRESENT/xx.mp3">
+<section data-transition="fade-in fade-out" data-audio-src="audio/PRESENT/xx.mp3">
 <h2>Fragmentación externa</h2>
 <img src="img/fragext-0.svg" class="plain stretch">
 <aside data-markdown class="notes">
@@ -654,6 +639,17 @@ La comunicación entre los procesos de usuario y sus bibliotecas, por un lado, y
 <!------------------------>
 
 
+<section>
+<h2>Asignación de memoria contigua</h2>
+<ul>
+	<li>Un proceso &rarr; una región de memoria</li>
+	<li>Particiones de tamaño variable</li>
+	<ul>
+		<li><b>Fragmentación externa</b></li>
+		<li>Compactación &rarr; Sobrecarga</li>
+	</ul>
+</ul>
+</section>
 
 <section data-transition="slide-in slide-out">
 <h2>Segmentación</h2>

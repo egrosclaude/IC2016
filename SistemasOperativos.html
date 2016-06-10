@@ -217,7 +217,7 @@ Cualquier aplicación que funcione en el sistema, ya sean las de sistema o gener
 <h2>Bibliotecas</h2>
 <img src="img/so-1.png" class="stretch plain">
 <aside data-markdown class="notes">
-Todas las aplicaciones, en algún momento, requieren funciones que ya están preparadas para su uso en **bibliotecas** especializadas en algún sentido. La vinculación de los programas de usuario con las bibliotecas puede hacerse al tiempo de compilación o al tiempo de ejecución, cuando las bibliotecas son **de carga dinámica**.
+Todas las aplicaciones, en algún momento, requieren funciones que ya están preparadas para su uso en **bibliotecas** especializadas en algún sentido. La vinculación de los programas de usuario con las bibliotecas puede hacerse al tiempo de compilación o, cuando las bibliotecas son **de carga dinámica**, al tiempo de ejecución.
 </aside>
 </section>
 <section data-transition="fade-in fade-out">
@@ -653,29 +653,14 @@ La comunicación entre los procesos de usuario y sus bibliotecas, por un lado, y
 </aside>
 </section>
 
-<section data-transition="slide-in slide-out">
+<section data-transition="slide-in fade-out">
 <h2>Memoria contigua</h2>
 <img src="img/mem-contigua.svg" class="plain stretch">
 <aside data-markdown class="notes">
 </aside>
 </section>
-
-<section>
-<h2>Asignación de memoria contigua</h2>
-<ul>
-	<li>Un proceso &rarr; una región de memoria</li>
-	<li>Particiones de tamaño variable</li>
-	<ul>
-		<li><b>Fragmentación externa</b></li>
-		<li>Compactación &rarr; Sobrecarga</li>
-	</ul>
-</ul>
-</section>
-
-
-
 <!------------------------>
-<section data-transition="slide-in fade-out" data-audio-src="audio/PRESENT/xx.mp3">
+<section data-transition="fade-in fade-out" data-audio-src="audio/PRESENT/xx.mp3">
 <h2>Fragmentación externa</h2>
 <img src="img/fragext-0.svg" class="plain stretch">
 <aside data-markdown class="notes">
@@ -700,6 +685,17 @@ La comunicación entre los procesos de usuario y sus bibliotecas, por un lado, y
 <!------------------------>
 
 
+<section>
+<h2>Asignación de memoria contigua</h2>
+<ul>
+	<li>Un proceso &rarr; una región de memoria</li>
+	<li>Particiones de tamaño variable</li>
+	<ul>
+		<li><b>Fragmentación externa</b></li>
+		<li>Compactación &rarr; Sobrecarga</li>
+	</ul>
+</ul>
+</section>
 
 <section data-transition="slide-in slide-out">
 <h2>Segmentación</h2>
@@ -1182,6 +1178,7 @@ Este emulador de PC construido en Javascript nos permite practicar los comandos 
 					<li><a href="Software.html">El Software</a></li>\
 					<li><a href="SistemasDeCómputo.html">Sistemas de Cómputo</a></li>\
 					<li><a href="SistemasOperativos.html">Sistemas Operativos</a></li>\
+					<li><a href="Redes.html">Redes de Computadoras</a></li>\
 					</ol></div>' }
 			]
 		},
