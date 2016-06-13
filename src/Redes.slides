@@ -563,7 +563,6 @@
 <!------------------------>
 <section data-transition="zoom-in zoom-out" data-audio-src="audio/PRESENT/xx.mp3" data-background="blue">
 <h2>Comando traceroute</h2>
-<!---  <script src="plugin/asciinema/asciinema-player.js"></script> -->
   <div id="player-container" class="asciicast stretch" allowfullscreen>
   </div>
   <script>
