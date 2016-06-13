@@ -1,0 +1,102 @@
+{
+  "version": 1,
+  "width": 80,
+  "height": 24,
+  "duration": 14.058561,
+  "command": "/bin/bash",
+  "title": "",
+  "env": {
+    "TERM": "xterm",
+    "SHELL": "/bin/bash"
+  },
+  "stdout": [
+    [
+      0.094585,
+      "\u001b[01;38moso@betsyrc\u001b[01;34m ~/IC2016/asciinema $\u001b[00m "
+    ],
+    [
+      3.094440,
+      "l"
+    ],
+    [
+      0.076893,
+      "s"
+    ],
+    [
+      0.535494,
+      "\r\n"
+    ],
+    [
+      0.002355,
+      "\u001b[0m\u001b[01;34mapi\u001b[0m           \u001b[01;34mcommands\u001b[0m         \u001b[01;34mGodeps\u001b[0m   main.go   \u001b[01;34mptyx\u001b[0m       \u001b[01;34mutil\u001b[0m\r\n\u001b[01;34masciicast\u001b[0m     CONTRIBUTING.md  \u001b[01;32minstall\u001b[0m  Makefile  README.md  Vagrantfile\r\n"
+    ],
+    [
+      0.000050,
+      "CHANGELOG.md  \u001b[01;34mdoc\u001b[0m              LICENSE  \u001b[01;34mman\u001b[0m       \u001b[01;34mterminal\u001b[0m\r\n"
+    ],
+    [
+      0.000556,
+      "\u001b[01;38moso@betsyrc\u001b[01;34m ~/IC2016/asciinema $\u001b[00m "
+    ],
+    [
+      1.346582,
+      "a"
+    ],
+    [
+      0.117938,
+      "s"
+    ],
+    [
+      0.176984,
+      "c"
+    ],
+    [
+      0.156311,
+      "i"
+    ],
+    [
+      0.257037,
+      "\u0007"
+    ],
+    [
+      0.000065,
+      "i"
+    ],
+    [
+      0.802915,
+      "n"
+    ],
+    [
+      0.132083,
+      "e"
+    ],
+    [
+      0.247829,
+      "ma "
+    ],
+    [
+      0.347048,
+      "\r\n"
+    ],
+    [
+      0.007926,
+      "Usage:\r\n  asciinema rec [-c \u003ccommand\u003e] [-t \u003ctitle\u003e] [-w \u003csec\u003e] [-y] [-q] [\u003cfilename\u003e]\r\n  asciinema play [-w \u003csec\u003e] \u003cfilename\u003e\r\n  asciinema upload \u003cfilename\u003e\r\n  asciinema auth\r\n  asciinema -h | --help\r\n"
+    ],
+    [
+      0.000044,
+      "  asciinema --version\r\n"
+    ],
+    [
+      0.000756,
+      "\u001b[01;38moso@betsyrc\u001b[01;34m ~/IC2016/asciinema $\u001b[00m "
+    ],
+    [
+      6.634018,
+      "exit"
+    ],
+    [
+      0.000040,
+      "\r\n"
+    ]
+  ]
+}

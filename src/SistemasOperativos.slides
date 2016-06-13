@@ -1066,5 +1066,17 @@ Este emulador de PC construido en Javascript nos permite practicar los comandos 
 </section>
 <!------------------------>
 
+
+<!------------------------>
+<section data-transition="slide-in slide-out" data-audio-src="audio/PRESENT/xx.mp3">
+<h2>ASCIICAST</h2>
+<ul>
+<div class="asciicast">
+<script type="text/javascript" src="asciicast/asciinema-player.js" id="pipi" async></script>
+</div>
+<aside data-markdown class="notes">
+</aside>
+</section>
+<!------------------------>
 <!-- INCLUDE src/reveal.trailer -->
 
