@@ -153,6 +153,10 @@
 
 
 
+## Comando ping
+
+
+
 ## Comando traceroute
 
 
