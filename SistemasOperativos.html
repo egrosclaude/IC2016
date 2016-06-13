@@ -17,6 +17,7 @@
 		<link rel="stylesheet" href="css/reveal.css">
 		<link rel="stylesheet" href="css/theme/ic.css" id="theme">
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css"> 
+		<link rel="stylesheet" type="text/css" href="plugin/asciinema/asciinema-player.css" />
 <!--		<link rel="stylesheet" href="font-awesome-4.5.0/css/font-awesome.css">  -->
 
 		<link rel="icon" type="image/png" href="img/favicon-96x96.png" sizes="96x96">
@@ -409,6 +410,22 @@ Otros sistemas operativos han cumplido un ciclo con alguna clase de final, al no
 <section data-transition="fade-in slide-out">
 <h2>Procesos</h2>
 <img src="img/top2.png" class="stretch plain">
+</section>
+
+
+<!------------------------>
+<section data-transition="convex-in convex-out" data-audio-src="audio/PRESENT/xx.mp3">
+<h2>Comando top</h2>
+<ul>
+<!------------------------>
+  <link rel="stylesheet" type="text/css" href="plugin/asciinema/asciinema-player.css" />
+  <script src="plugin/asciinema/asciinema-player.js"></script>
+  <div id="player-container"></div>
+  <script>
+    asciinema.player.js.CreatePlayer('player-container', 'src/top.json');
+  </script>
+<aside data-markdown class="notes">
+</aside>
 </section>
 
 <section data-transition="slide-in slide-out">
@@ -1124,7 +1141,6 @@ Este emulador de PC construido en Javascript nos permite practicar los comandos 
 <script type="text/javascript" src="Tangle/TangleKit/sprintf.js"></script>
 <script type="text/javascript" src="Tangle/TangleKit/BVTouchable.js"></script>
 <script type="text/javascript" src="Tangle/TangleKit/TangleKit.js"></script>
-
 <script src="lib/js/head.min.js"></script>
 <script src="js/reveal.js"></script>
 
@@ -1313,6 +1329,7 @@ Este emulador de PC construido en Javascript nos permite practicar los comandos 
 			{ src: 'plugin/mathsvg/math.js', async: true },
 			{ src: 'plugin/audio-slideshow/slideshow-recorder.js', condition: function( ) { return !!document.body.classList; } },
 			{ src: 'plugin/audio-slideshow/audio-slideshow.js', condition: function( ) { return !!document.body.classList; } },
+			{ src: 'plugin/asciinema/asciinema-player.js', condition: function( ) { return !!document.body.classList; } },
 			// ... 
 		]
 	});
