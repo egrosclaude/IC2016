@@ -561,13 +561,13 @@
 
 
 <!------------------------>
-<section data-transition="slide-in slide-out" data-audio-src="audio/PRESENT/xx.mp3">
+<section data-transition="zoom-in zoom-out" data-background="black" data-audio-src="audio/PRESENT/xx.mp3">
 <h2>Comando traceroute</h2>
 <ul>
 <!------------------------>
   <link rel="stylesheet" type="text/css" href="plugin/asciinema/asciinema-player.css" />
   <script src="plugin/asciinema/asciinema-player.js"></script>
-  <div id="player-container"></div>
+  <div id="player-container" class="stretch"></div>
   <script>
     asciinema.player.js.CreatePlayer('player-container', 'src/traceroute.json');
   </script>
