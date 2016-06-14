@@ -611,7 +611,7 @@
 	"player-container-ping", 
 	"src/ping.json", 
 	{
-		theme: "solarized-dark",
+		theme: "monokai",
 		fontSize: "15px",
 	}
     );
@@ -629,7 +629,7 @@
 	"player-container-traceroute", 
 	"src/traceroute.json", 
 	{
-		theme: "solarized-dark",
+		theme: "monokai",
 		fontSize: "15px",
 	}
     );
