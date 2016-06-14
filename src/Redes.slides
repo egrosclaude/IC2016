@@ -454,20 +454,28 @@
 <section data-transition="slide-in slide-out" data-audio-src="audio/PRESENT/xx.mp3">
 <h2>Algoritmo de ruteo</h2>
 <ul>
+	<span class="fragment">
 	<li>Para cada regla en la tabla de ruteo</li>
 	<ul>
 		<li>Subred destino del paquete = Dirección destino del paquete <b>AND</b> Máscara de la ruta</li>
 		<li>Si subred destino del paquete = subred de la ruta, reenviar el paquete por la interfaz de salida de esa ruta</li>
 	</ul>
+	</span>
+	<span class="fragment">
 	<li>Si se agotó la tabla pero hay una ruta default</li>
 	<ul>
 		<li>Reenviar el paquete por la ruta default</li>
 	</ul>
+	</span>
+	<span class="fragment">
 	<li>Si se agotó la tabla sin éxito</li>
 	<ul>
 		<li>Devolver error de <b>red inalcanzable</b></li>
 	</ul>
+	</span>
+	<span class="fragment">
 	<li>Si hay más de una coincidencia, se elige la ruta más específica (con máscara más larga)</li>
+	</span>
 </ul>
 <aside data-markdown class="notes">
 </aside>
@@ -647,4 +655,19 @@
 <aside data-markdown class="notes">
 </aside>
 </section>
+
+<!------------------------>
+<section
+        data-transition="slide-in slide-out"
+        data-audio-src="audio/PRESENT/xx.mp3"
+        data-background="img/sleepy.gif"
+        data-background-size="70%"
+>
+<h2>Diapositiva 559</h2>
+<h1>Fin de la teoría</h1>
+<aside data-markdown class="notes">
+</aside>
+</section>
+<!------------------------>
+
 <!-- INCLUDE src/reveal.trailer -->
