@@ -606,7 +606,7 @@
 	data-background="red">
 <h2>Comando ping</h2>
 <script src="plugin/asciinema/asciinema-player.js?data-size=medium"></script>
-  <div id="player-container-ping" class="asciicast stretch" allowfullscreen>
+  <div id="player-container-ping" class="asciicast stretch" data-size="big" allowfullscreen>
   </div>
   <script>
     asciinema.player.js.CreatePlayer('player-container-ping', 'src/ping.json');
