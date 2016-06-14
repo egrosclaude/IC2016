@@ -495,8 +495,47 @@
 <aside data-markdown class="notes">
 </aside>
 </section>
+
+
+
+<!------------------------>
+<section data-transition="slide-in fade-out" data-audio-src="audio/PRESENT/xx.mp3">
+<!--<h2>Ruteo</h2>-->
+<img src="img/routing-0.svg" class="plain stretch">
+<aside data-markdown class="notes">
+</aside>
+</section>
+<!------------------------>
+<section data-transition="fade-in fade-out" data-audio-src="audio/PRESENT/xx.mp3">
+<!--<h2>Ruteo</h2>-->
+<img src="img/routing-1.svg" class="plain stretch">
+<aside data-markdown class="notes">
+</aside>
+</section>
+<!------------------------>
+<section data-transition="fade-in fade-out" data-audio-src="audio/PRESENT/xx.mp3">
+<!--<h2>Ruteo</h2>-->
+<img src="img/routing-2.svg" class="plain stretch">
+<aside data-markdown class="notes">
+</aside>
+</section>
+<!------------------------>
+<section data-transition="fade-in fade-out" data-audio-src="audio/PRESENT/xx.mp3">
+<!--<h2>Ruteo</h2>-->
+<img src="img/routing-3.svg" class="plain stretch">
+<aside data-markdown class="notes">
+</aside>
+</section>
+<!------------------------>
+<section data-transition="fade-in slide-out" data-audio-src="audio/PRESENT/xx.mp3">
+<!--<h2>Ruteo</h2>-->
+<img src="img/routing-4.svg" class="plain stretch">
+<aside data-markdown class="notes">
+</aside>
+</section>
 <!------------------------>
 
+<!------------------------>
 <section data-transition="slide-in slide-out" data-audio-src="audio/PRESENT/xx.mp3">
 <h2>Nombres de dominio</h2>
 <ul>
