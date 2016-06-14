@@ -1,5 +1,8 @@
 <!------------------------>
-<section data-transition="slide-in slide-out" data-audio-src="audio/PRESENT/xx.mp3">
+<section 
+	data-transition="slide-in slide-out" 
+	data-audio-src="audio/PRESENT/xx.mp3"
+>
 <h2></h2>
 <ul>
 	<li></li>
@@ -7,7 +10,10 @@
 		<li></li>
 	</ul>
 </ul>
-<img src="img/IMAGEN.png" class="plain stretch">
+<img 
+	src="img/IMAGEN.png" 
+	class="plain stretch"
+>
 <aside data-markdown class="notes">
 </aside>
 </section>
