@@ -17,7 +17,10 @@
 		<link rel="stylesheet" href="css/reveal.css">
 		<link rel="stylesheet" href="css/theme/ic.css" id="theme">
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css"> 
+		
 		<link rel="stylesheet" type="text/css" href="plugin/asciinema/asciinema-player.css" />
+		<script src="plugin/asciinema/asciinema-player.js"></script>
+
 <!--		<link rel="stylesheet" href="font-awesome-4.5.0/css/font-awesome.css">  -->
 
 		<link rel="icon" type="image/png" href="img/favicon-96x96.png" sizes="96x96">

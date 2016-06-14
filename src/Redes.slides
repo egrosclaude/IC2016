@@ -604,11 +604,17 @@
 	data-transition="convex-in convex-out" 
 	data-audio-src="audio/PRESENT/xx.mp3">
 <h2>Comando ping</h2>
-<script src="plugin/asciinema/asciinema-player.js?theme=tango&size=medium" data-theme="tango" data-size="medium"></script>
-  <div id="player-container-ping" class="asciicast stretch" size="medium" theme="tango" data-size="medium" allowfullscreen>
+  <div id="player-container-ping" class="asciicast stretch" allowfullscreen>
   </div>
   <script>
-    asciinema.player.js.CreatePlayer('player-container-ping', 'src/ping.json');
+    asciinema.player.js.CreatePlayer(
+	"player-container-ping", 
+	"src/ping.json", 
+	{
+		theme: "tango",
+		fontSize: "medium",
+	}
+    );
   </script>
 <aside data-markdown class="notes">
 </aside>
@@ -616,11 +622,17 @@
 <!------------------------>
 <section data-transition="convex-in convex-out" data-audio-src="audio/PRESENT/xx.mp3">
 <h2>Comando traceroute</h2>
-<script src="plugin/asciinema/asciinema-player.js" data-size="big"></script>
   <div id="player-container" class="asciicast stretch" allowfullscreen>
   </div>
   <script>
-    asciinema.player.js.CreatePlayer('player-container', 'src/traceroute.json');
+    asciinema.player.js.CreatePlayer(
+	"player-container-ping", 
+	"src/traceroute.json", 
+	{
+		theme: "tango",
+		fontSize: "medium",
+	}
+    );
   </script>
 <aside data-markdown class="notes">
 </aside>
