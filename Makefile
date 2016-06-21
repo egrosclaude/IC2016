@@ -1,8 +1,8 @@
 DEPS = src/reveal.header src/reveal.trailer
 
-all: so comp pres siste uni repre texto arqui soft
+all: re so comp pres siste uni repre texto arqui soft demo
 
-ascii: asciicast.html
+demo: demo.html
 re: Redes.html
 soft: Software.html
 so: SistemasOperativos.html

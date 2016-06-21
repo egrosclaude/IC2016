@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="es">
 
 	<head>
 		<meta charset="utf-8">
@@ -17,6 +17,10 @@
 		<link rel="stylesheet" href="css/reveal.css">
 		<link rel="stylesheet" href="css/theme/ic.css" id="theme">
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css"> 
+		
+		<link rel="stylesheet" type="text/css" href="plugin/asciinema/asciinema-player.css" />
+		<script src="plugin/asciinema/asciinema-player.js"></script>
+
 <!--		<link rel="stylesheet" href="font-awesome-4.5.0/css/font-awesome.css">  -->
 
 		<link rel="icon" type="image/png" href="img/favicon-96x96.png" sizes="96x96">
@@ -46,7 +50,7 @@
 <!------------------------------------------------------------------>
 
 
-<section data-markdown> 
+<section data-markdown data-background="#00CCFF">
  <script type="text/template">
 ##Unidad I 
 ###Representación de la Información 
@@ -61,7 +65,7 @@
 </section>
 
 
-<section data-markdown>
+<section data-markdown data-background="#00CCFF">
 ##Representación 
 ##de datos numéricos
 </section>
@@ -76,7 +80,7 @@
 * Pero las computadoras adoptan algún **sistema de representación** con alguna cantidad fija de bits
 </section>
 
-<section data-markdown data-background="#3cb5c5" data-background-transition="zoom">
+<section data-markdown data-background="#00CCFF" data-background-transition="zoom">
 ##Representación de datos numéricos
 * Enteros
  * Signo-Magnitud
@@ -357,8 +361,10 @@ $\frac{00001001\\+\\00001000}{00010001}$
 <h2>Desafío</h2>
 <ul>
 	<li class="fragment">Adoptemos la notación $x = (x_{n-1}, ... , x_1, x_0)$ para un número en $C^n_2$, es decir, en complemento a 2 sobre $n$ bits</li>
+	<ol>
 	<li class="fragment">Con la notación anterior, comprobar que $x = $ $-1 \times x_{n-1} \times 2^{n-1} + x_{n-2} \times 2^{n-2} +$ $...$ $+ x_1 \times 2 + x_0 =$ $-x_{n-1} \times 2^{n-1}+ \sum_{i=0}^{n-2}({x_i \times 2^i})$</li>
 	<li class="fragment">Con la misma notación, pero si $x$ está en Signo-magnitud, ¿cuál es la expresión de $x$ como función de los dígitos binarios $x_i$?</li>
+	</ol>
 </ul>
 </section>
 
@@ -382,78 +388,78 @@ $\frac{00001001\\+\\00001000}{00010001}$
 <section data-menu-title="Caso sin overflow">
 	<section data-transition="none">
 	<h2>Bits de acarreo o <i>carry</i></h2>
-	<img src="img/no-of0.png" class="plainstretch">
+	<img src="img/no-of0.png" class="plain stretch">
 	</section>
 	<section data-transition="none">
 	<h2>Bits de acarreo o <i>carry</i></h2>
-	<img src="img/no-of1.png" class="plainstretch">
+	<img src="img/no-of1.png" class="plain stretch">
 	</section>
 	<section data-transition="none">
 	<h2>Bits de acarreo o <i>carry</i></h2>
-	<img src="img/no-of2.png" class="plainstretch">
+	<img src="img/no-of2.png" class="plain stretch">
 	</section>
 	<section data-transition="none">
 	<h2>Bits de acarreo o <i>carry</i></h2>
-	<img src="img/no-of3.png" class="plainstretch">
+	<img src="img/no-of3.png" class="plain stretch">
 	</section>
 	<section data-transition="none">
 	<h2>Bits de acarreo o <i>carry</i></h2>
-	<img src="img/no-of4.png" class="plainstretch">
+	<img src="img/no-of4.png" class="plain stretch">
 	</section>
 	<section data-transition="none">
 	<h2>Bits de acarreo o <i>carry</i></h2>
-	<img src="img/no-of5.png" class="plainstretch">
+	<img src="img/no-of5.png" class="plain stretch">
 	</section>
 	<section data-transition="none">
 	<h2>Bits de acarreo o <i>carry</i></h2>
-	<img src="img/no-of6.png" class="plainstretch">
+	<img src="img/no-of6.png" class="plain stretch">
 	</section>
 	<section data-transition="none">
 	<h2>Bits de acarreo o <i>carry</i></h2>
-	<img src="img/no-of7.png" class="plainstretch">
+	<img src="img/no-of7.png" class="plain stretch">
 	</section>
 	<section data-transition="none">
 	<h2>Bits de acarreo o <i>carry</i></h2>
-	<img src="img/no-of8.png" class="plainstretch">
+	<img src="img/no-of8.png" class="plain stretch">
 	</section>
 </section>
 
 <section data-menu-title="Caso con overflow">
 	<section data-transition="none">
 	<h2>Bits de acarreo o <i>carry</i></h2>
-	<img src="img/si-of0.png" class="plainstretch">
+	<img src="img/si-of0.png" class="plain stretch">
 	</section>
 	<section data-transition="none">
 	<h2>Bits de acarreo o <i>carry</i></h2>
-	<img src="img/si-of1.png" class="plainstretch">
+	<img src="img/si-of1.png" class="plain stretch">
 	</section>
 	<section data-transition="none">
 	<h2>Bits de acarreo o <i>carry</i></h2>
-	<img src="img/si-of2.png" class="plainstretch">
+	<img src="img/si-of2.png" class="plain stretch">
 	</section>
 	<section data-transition="none">
 	<h2>Bits de acarreo o <i>carry</i></h2>
-	<img src="img/si-of3.png" class="plainstretch">
+	<img src="img/si-of3.png" class="plain stretch">
 	</section>
 	<section data-transition="none">
 	<h2>Bits de acarreo o <i>carry</i></h2>
-	<img src="img/si-of4.png" class="plainstretch">
+	<img src="img/si-of4.png" class="plain stretch">
 	</section>
 	<section data-transition="none">
 	<h2>Bits de acarreo o <i>carry</i></h2>
-	<img src="img/si-of5.png" class="plainstretch">
+	<img src="img/si-of5.png" class="plain stretch">
 	</section>
 	<section data-transition="none">
 	<h2>Bits de acarreo o <i>carry</i></h2>
-	<img src="img/si-of6.png" class="plainstretch">
+	<img src="img/si-of6.png" class="plain stretch">
 	</section>
 	<section data-transition="none">
 	<h2>Bits de acarreo o <i>carry</i></h2>
-	<img src="img/si-of7.png" class="plainstretch">
+	<img src="img/si-of7.png" class="plain stretch">
 	</section>
 	<section data-transition="none">
 	<h2>Bits de acarreo o <i>carry</i></h2>
-	<img src="img/si-of8.png" class="plainstretch">
+	<img src="img/si-of8.png" class="plain stretch">
 	</section>
 </section>
 
@@ -515,23 +521,23 @@ $a$ &#8680; $0000$, $a + 1$ &#8680; $0001$, ..., $b$ &#8680; $1111$
 
 <section>
 <section data-transition="fade">
-<img src="img/bias-0.png" class="plainstretch">
+<img src="img/bias-0.png" class="plain stretch">
 </section>
 
 <section data-transition="fade">
-<img src="img/bias-0a.png" class="plainstretch">
+<img src="img/bias-0a.png" class="plain stretch">
 </section>
 
 <section data-transition="fade">
-<img src="img/bias-0b.png" class="plainstretch">
+<img src="img/bias-0b.png" class="plain stretch">
 </section>
 
 <section data-transition="fade">
-<img src="img/bias-1.png" class="plainstretch">
+<img src="img/bias-1.png" class="plain stretch">
 </section>
 
 <section data-transition="fade">
-<img src="img/bias-2.png" class="plainstretch">
+<img src="img/bias-2.png" class="plain stretch">
 </section>
 </section>
 
@@ -580,7 +586,7 @@ $a$ &#8680; $0000$, $a + 1$ &#8680; $0001$, ..., $b$ &#8680; $1111$
 	
 
 
-<section data-markdown data-background="#3cb5c5" data-background-transition="zoom">
+<section data-markdown data-background="#00CCFF" data-background-transition="zoom">
 ##Representación de datos numéricos
 * Enteros
  * Signo-Magnitud  &#10004;
@@ -759,7 +765,7 @@ https://es.wikipedia.org/wiki/IEEE_coma_flotante
 	<li class="fragment">Normalización</li>
 	<ul class="fragment">
 		<li>$1 <= coeficiente < base$</li>
-		<li>$0.333 \times 10^{-17} = 3.33 * 10^{-18}$</li>
+		<li>$0.333 \times 10^{-17} = 3.33 \times 10^{-18}$</li>
 	</ul>
 </ul>
 </section>
@@ -788,7 +794,7 @@ https://es.wikipedia.org/wiki/IEEE_coma_flotante
 
 <section>
 <h2>Formato <i>IEEE 754 single precision</i></h2>
-<img class="plainstretch" src="img/ieee754.png">
+<img class="plain stretch" src="img/ieee754.png">
 </section>
 
 
@@ -886,12 +892,12 @@ https://es.wikipedia.org/wiki/IEEE_coma_flotante
 <h2>Ejemplo de Punto Flotante</h2>
 	<div align="center" class="post_it">$n = -5.5$</div>
 	<div align="center"> s = 1, e = 129, m = 011000... </div>
-	<img class="plainstretch" src="img/ejemploFP.png">
+	<img class="plain stretch" src="img/ejemploFP.png">
 </section>
 
 <section>
 <h2>Resultado en hexadecimal</h2>
-	<img class="plainstretch" src="img/ejemploFPhexa.png">
+	<img class="plain stretch" src="img/ejemploFPhexa.png">
 </section>
     
     
@@ -928,7 +934,7 @@ https://es.wikipedia.org/wiki/IEEE_coma_flotante
 </section>
 
 <section data-transition="convex-in convex-out">
- <img src="img/placa1.png" class="plainstretch">
+ <img src="img/placa1.png" class="plain stretch">
 </section> 
 
 <!--
@@ -1031,7 +1037,7 @@ https://es.wikipedia.org/wiki/IEEE_coma_flotante
 </ul>
 </section>
 
-<section data-background="#3cb5c5" data-background-transition="zoom">
+<section data-background="#00CCFF" data-background-transition="zoom">
 <h2>Representación de datos numéricos</h2>
 <ul>
 	<li>Enteros</li>
@@ -1069,7 +1075,6 @@ https://es.wikipedia.org/wiki/IEEE_coma_flotante
 <script type="text/javascript" src="Tangle/TangleKit/sprintf.js"></script>
 <script type="text/javascript" src="Tangle/TangleKit/BVTouchable.js"></script>
 <script type="text/javascript" src="Tangle/TangleKit/TangleKit.js"></script>
-
 <script src="lib/js/head.min.js"></script>
 <script src="js/reveal.js"></script>
 
@@ -1084,6 +1089,7 @@ https://es.wikipedia.org/wiki/IEEE_coma_flotante
 		theme: 'serif',
 		transition: 'slide', // none/fade/slide/convex/concave/zoom
 
+		// ----------------------------------------------------------------------------
 		chart: {
 			defaults: { 
 				global: { 
@@ -1127,28 +1133,37 @@ https://es.wikipedia.org/wiki/IEEE_coma_flotante
 			]},
 			radar: { borderColor: [ "rgba(20,220,220,.8)" , "rgba(220,120,120,.8)", "rgba(20,120,220,.8)" ]}, 
 		},
+		// ----------------------------------------------------------------------------
 		menu: { // Menu works best with font-awesome installed: sudo apt-get install fonts-font-awesome
 			themes: false,
 			transitions: false,
 			markers: true,
 			hideMissingTitles: true,
 			custom: [
-				// { title: 'Plugins', icon: '<i class="fa fa-external-link"></i>', src: 'toc.html' },
-				// { title: 'About', icon: '<i class="fa fa-info"></i>', content: '<p>Introducción a la Computación</p>' },
-				{ title: 'IC2016', icon: '<i class="fa fa-info"></i>', content: '\
-					<div class="menucontents"><b>Introducción a la Computación</b> \
-					<ol> <li><a href="Presentación.html">Presentación</a></li>\
-					<li><a href="SistemasDeNumeración.html">Sistemas de Numeración</a></li>\
-					<li><a href="UnidadesDeInformación.html">Unidades de Información</a></li>\
-					<li><a href="RepresentaciónDigitalDeDatos.html">Representación Digital de Datos</a></li>\
-					<li><a href="TextoYMultimedia.html">Texto y Multimedia</a></li>\
-					<li><a href="Arquitectura.html">Organización de las Computadoras</a></li>\
-					<li><a href="Software.html">El Software</a></li>\
-					<li><a href="SistemasDeCómputo.html">Sistemas de Cómputo</a></li>\
-					<li><a href="SistemasOperativos.html">Sistemas Operativos</a></li>\
-					</ol></div>' }
+// { title: 'Plugins', icon: '<i class="fa fa-external-link"></i>', src: 'toc.html' },
+// { title: 'About', icon: '<i class="fa fa-info"></i>', content: '<p>Introducción a la Computación</p>' },
+{ title: 'IC2016', icon: '<i class="fa fa-bookmark"></i>', content: '\
+<div class="menucontents">\
+<h4>Introducción a la Computación</h4>\
+<ul class="slide-menu-items">\
+<li class="slide-menu-item"><a href="http://pedco.uncoma.edu.ar/course/view.php?id=1553">Página de la materia</a></li>\
+</ul>\
+<p></p>\
+<h4>Material de Clase</h4>\
+<ul class="slide-menu-items"> <li class="slide-menu-item"><a href="Presentación.html">Presentación</a></li>\
+<li class="slide-menu-item"><a href="SistemasDeNumeración.html">Sistemas de Numeración</a></li>\
+<li class="slide-menu-item"><a href="UnidadesDeInformación.html">Unidades de Información</a></li>\
+<li class="slide-menu-item"><a href="RepresentaciónDigitalDeDatos.html">Representación Digital de Datos</a></li>\
+<li class="slide-menu-item"><a href="TextoYMultimedia.html">Texto y Multimedia</a></li>\
+<li class="slide-menu-item"><a href="Arquitectura.html">Organización de las Computadoras</a></li>\
+<li class="slide-menu-item"><a href="Software.html">El Software</a></li>\
+<li class="slide-menu-item"><a href="SistemasDeCómputo.html">Sistemas de Cómputo</a></li>\
+<li class="slide-menu-item"><a href="SistemasOperativos.html">Sistemas Operativos</a></li>\
+<li class="slide-menu-item"><a href="Redes.html">Introducción a Redes</a></li>\
+</ul></div>' },
 			]
 		},
+		// ----------------------------------------------------------------------------
 		anything: [ 
 			{className: "rand",  defaults: {min: 0, max: 9}, 
 				initialize: (function(container, options){ 
@@ -1189,11 +1204,16 @@ https://es.wikipedia.org/wiki/IEEE_coma_flotante
 					xhr.send();
 				}
 			}) },
-			{className: "tangle", initialize: (function(container, options) { if(options && options.initialize) {options.initialize(container)} }) },
-			{className: "anything",  initialize: (function(container, options){ if (options && options.initialize) { options.initialize(container)} }) },
+			{className: "tangle", 
+				initialize: (function(container, options) { if(options && options.initialize) {options.initialize(container)} }) },
+			{className: "anything",  
+				initialize: (function(container, options){ if (options && options.initialize) { options.initialize(container)} }) },
 			{className: "plot",  defaults: {width:800, height: 400, grid:true}, 
 				initialize: (function(container, options){ options.target = "#"+container.id; functionPlot(options) }) },
+			{className: "asciicast",
+				initialize: (function(container, options) { if(options && options.initialize) {options.initialize(container)} }) },
 		],
+		// ----------------------------------------------------------------------------
 
 
 		// -------- Math plugin ----------
@@ -1249,6 +1269,7 @@ https://es.wikipedia.org/wiki/IEEE_coma_flotante
 			{ src: 'plugin/mathsvg/math.js', async: true },
 			{ src: 'plugin/audio-slideshow/slideshow-recorder.js', condition: function( ) { return !!document.body.classList; } },
 			{ src: 'plugin/audio-slideshow/audio-slideshow.js', condition: function( ) { return !!document.body.classList; } },
+			{ src: 'plugin/asciinema/asciinema-player.js', condition: function( ) { return !!document.body.classList; } },
 			// ... 
 		]
 	});

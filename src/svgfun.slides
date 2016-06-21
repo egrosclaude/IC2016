@@ -1,0 +1,40 @@
+.circle {
+  transition: stroke 0.3s, fill 0.3s;
+}
+
+.circle:hover {
+  stroke: #3399cc;
+  fill: #333333;
+}
+
+<!-- INCLUDE src/reveal.header -->
+<section 
+	data-transition="slide-in slide-out" 
+	data-audio-src="audio/PRESENT/xx.mp3"
+>
+<h2>SVG</h2>
+<!--
+<ul>
+	<li></li>
+	<ul>
+		<li></li>
+	</ul>
+</ul>
+-->
+<svg xmlns="http://www.w3.org/2000/svg" width="200" height="100" viewBox="0 0 300 200">
+  <circle class="circle" cx="100" cy="100" r="40" fill="#3399cc" stroke="#333333" stroke-width="5"></circle>
+  <circle class="circle" cx="200" cy="150" r="40" fill="#3399cc" stroke="#333333" stroke-width="5"></circle>
+  <path d="M 0 0 C 50 100, 150 100, 200 75, 120 25, 150  0"/>
+
+</svg>
+<!--
+<img 
+	src="img/IMAGEN.png" 
+	class="plain stretch"
+>
+-->
+<aside data-markdown class="notes">
+</aside>
+</section>
+<!------------------------>
+<!-- INCLUDE src/reveal.trailer -->

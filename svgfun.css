@@ -1,0 +1,8 @@
+.circle {
+  transition: stroke 0.1s, fill 1.5s;
+}
+
+.circle:hover {
+  stroke: #3399cc;
+  fill: #333333;
+}

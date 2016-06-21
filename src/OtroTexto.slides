@@ -196,32 +196,32 @@ $ hexdump -C Texto\ y\ Multimedia.html | head -8
 <section>
 	<section data-transition="slide-in fade-out">
 	<h2>Resolución 8x6</h2>
-	<img src="img/imagen-008x006.jpg" class="plainstretch">
+	<img src="img/imagen-008x006.jpg" class="plain stretch">
 	</section>
 
 	<section data-transition="fade-in fade-out">
 	<h2>Resolución 16x12</h2>
-	<img src="img/imagen-016x012.jpg" class="plainstretch">
+	<img src="img/imagen-016x012.jpg" class="plain stretch">
 	</section>
 
 	<section data-transition="fade-in fade-out">
 	<h2>Resolución 24x18</h2>
-	<img src="img/imagen-024x018.jpg" class="plainstretch">
+	<img src="img/imagen-024x018.jpg" class="plain stretch">
 	</section>
 
 	<section data-transition="fade-in fade-out">
 	<h2>Resolución 32x24</h2>
-	<img src="img/imagen-032x024.jpg" class="plainstretch">
+	<img src="img/imagen-032x024.jpg" class="plain stretch">
 	</section>
 
 	<section data-transition="fade-in fade-out">
 	<h2>Resolución 40x30</h2>
-	<img src="img/imagen-040x030.jpg" class="plainstretch">
+	<img src="img/imagen-040x030.jpg" class="plain stretch">
 	</section>
 
 	<section data-transition="fade-in slide-out">
 	<h2>Resolución 720x540</h2>
-	<img src="img/imagen.jpg" class="plainstretch">
+	<img src="img/imagen.jpg" class="plain stretch">
 	</section>
 </section>
 
@@ -241,7 +241,7 @@ $ hexdump -C Texto\ y\ Multimedia.html | head -8
 
 <section>
 <h2>Color RGB</h2>
-<img src="img/trucha0.png" class="plainstretch">
+<img src="img/trucha0.png" class="plain stretch">
 </section>
 
 
