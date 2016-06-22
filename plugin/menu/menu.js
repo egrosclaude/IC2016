@@ -273,7 +273,7 @@ var RevealMenu = window.RevealMenu || (function(){
 
 			var toolbar = $('<ol class="slide-menu-toolbar"></ol>').prependTo($('.slide-menu'));
 			var buttons = 0;
-			$('<li data-panel="Slides" data-button="' + (buttons++) + '" class="toolbar-panel-button"><span class="slide-menu-toolbar-label">Slides</span><br/><i class="fa fa-list"></i></li>')
+			$('<li data-panel="Slides" data-button="' + (buttons++) + '" class="toolbar-panel-button"><span class="slide-menu-toolbar-label">Contenido</span><br/><i class="fa fa-list"></i></li>')
 				.appendTo(toolbar)
 				.addClass('active-toolbar-button')
 				.click(openPanel);
@@ -296,7 +296,7 @@ var RevealMenu = window.RevealMenu || (function(){
 					.appendTo(toolbar)
 					.click(openPanel);
 			}
-			$('<li id="close"><span class="slide-menu-toolbar-label">Close</span><br/><i class="fa fa-times"></i></li>')
+			$('<li id="close"><span class="slide-menu-toolbar-label">Cerrar</span><br/><i class="fa fa-times"></i></li>')
 				.appendTo(toolbar)
 				.click(closeMenu);
 
