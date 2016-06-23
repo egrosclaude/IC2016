@@ -781,27 +781,9 @@
 			markers: true,
 			hideMissingTitles: true,
 			custom: [
-// { title: 'Plugins', icon: '<i class="fa fa-external-link"></i>', src: 'toc.html' },
-// { title: 'About', icon: '<i class="fa fa-info"></i>', content: '<p>Introducción a la Computación</p>' },
-{ title: 'IC2016', icon: '<i class="fa fa-bookmark"></i>', content: '\
-<div class="menucontents">\
-<h4>Introducción a la Computación</h4>\
-<ul class="slide-menu-items">\
-<li class="slide-menu-item"><a href="http://pedco.uncoma.edu.ar/course/view.php?id=1553">Página de la materia</a></li>\
-</ul>\
-<p></p>\
-<h4>Material de Clase</h4>\
-<ul class="slide-menu-items"> <li class="slide-menu-item"><a href="Presentación.html">Presentación</a></li>\
-<li class="slide-menu-item"><a href="SistemasDeNumeración.html">Sistemas de Numeración</a></li>\
-<li class="slide-menu-item"><a href="UnidadesDeInformación.html">Unidades de Información</a></li>\
-<li class="slide-menu-item"><a href="RepresentaciónDigitalDeDatos.html">Representación Digital de Datos</a></li>\
-<li class="slide-menu-item"><a href="TextoYMultimedia.html">Texto y Multimedia</a></li>\
-<li class="slide-menu-item"><a href="Arquitectura.html">Organización de las Computadoras</a></li>\
-<li class="slide-menu-item"><a href="Software.html">El Software</a></li>\
-<li class="slide-menu-item"><a href="SistemasDeCómputo.html">Sistemas de Cómputo</a></li>\
-<li class="slide-menu-item"><a href="SistemasOperativos.html">Sistemas Operativos</a></li>\
-<li class="slide-menu-item"><a href="Redes.html">Introducción a Redes</a></li>\
-</ul></div>' },
+				// { title: 'Plugins', icon: '<i class="fa fa-external-link"></i>', src: 'toc.html' },
+				// { title: 'About', icon: '<i class="fa fa-info"></i>', content: '<p>Int Comp</p>' },
+				{ title: 'IC2016', icon: '<i class="fa fa-bookmark"></i>', src: 'src/ic.html' },
 			]
 		},
 		// ----------------------------------------------------------------------------
@@ -810,7 +792,11 @@
 				initialize: (function(container, options){ 
 					container.innerHTML = Math.trunc( options.min + Math.random()*(options.max-options.min + 1) ); 
 			}) },
-			{className: "chart",  initialize: (function(container, options){ container.chart = new Chart(container.getContext("2d"), options);  }) },
+			{className: "chart",  
+				initialize: (function(container, options){ 
+					container.chart = new Chart(container.getContext("2d"), options);  
+				}) 
+			},
 			{className: "animate",  
 				initialize: (function(container, options){ 
 				Reveal.addEventListener( 'fragmentshown', function( event ) {

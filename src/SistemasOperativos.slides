@@ -369,14 +369,12 @@ Otros sistemas operativos han cumplido un ciclo con alguna clase de final, al no
 <!------------------------>
 <section data-transition="convex-in convex-out" data-audio-src="audio/PRESENT/xx.mp3">
 <h2>Comando top</h2>
-<ul>
-<!------------------------>
-  <link rel="stylesheet" type="text/css" href="plugin/asciinema/asciinema-player.css" />
-  <script src="plugin/asciinema/asciinema-player.js"></script>
-  <div id="player-container"></div>
-  <script>
-    asciinema.player.js.CreatePlayer('player-container', 'src/top.json');
-  </script>
+<div class="asciicast">
+  	<!--
+	{
+		"URL": "src/top.json"
+	}
+  	-->
 <aside data-markdown class="notes">
 </aside>
 </section>
@@ -1029,20 +1027,19 @@ main()
 </aside>
 </section>
 <!------------------------>
-<!-----------------------
-<section>
-<h2>Protección</h2>
-<ul>
-	<li></li>
-	<li></li>
-	<li></li>
-	<li></li>
-	<ul>
-	</ul>
-</ul>
+<section data-transition="convex-in convex-out">
+<h2>Memoria y protección</h2>
+<div class="asciicast">
+	<!--
+	{
+		"URL": "src/stack.json"
+	}
+	-->
+</div>
+<aside data-markdown class="notes">
+</aside>
 </section>
 
------------------------->
 
 
 

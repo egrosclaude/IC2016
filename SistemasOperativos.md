@@ -444,7 +444,9 @@ Se copia la página que solicitó P3 en el nuevo marco libre, se la marca como p
 
 
 
-## Protección
+## Memoria y protección
+
+
 
 Este emulador de PC construido en Javascript nos permite practicar los comandos del shell dentro de una *máquina virtual* Linux y desde el navegador, sin necesidad de una instalación completa en nuestro equipo.
 
