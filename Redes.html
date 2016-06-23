@@ -19,7 +19,6 @@
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css"> 
 		
 		<link rel="stylesheet" type="text/css" href="plugin/asciinema/asciinema-player.css" />
-		<script src="plugin/asciinema/asciinema-player.js"></script>
 
 <!--		<link rel="stylesheet" href="font-awesome-4.5.0/css/font-awesome.css">  -->
 
@@ -662,36 +661,22 @@
 	data-transition="convex-in convex-out" 
 	data-audio-src="audio/PRESENT/xx.mp3">
 <h2>Comando ping</h2>
-  <div id="player-container-ping" class="asciicast" allowfullscreen>
+  <div class="asciicast">
+	<!--
+	{ "URL": "src/ping.json" }
+	-->
   </div>
-  <script>
-    asciinema.player.js.CreatePlayer(
-	"player-container-ping", 
-	"src/ping.json", 
-	{
-		theme: "monokai",
-		fontSize: "15px",
-	}
-    );
-  </script>
 <aside data-markdown class="notes">
 </aside>
 </section>
 <!------------------------>
 <section data-transition="convex-in convex-out" data-audio-src="audio/PRESENT/xx.mp3">
 <h2>Comando traceroute</h2>
-  <div id="player-container-traceroute" class="asciicast" allowfullscreen>
+  <div class="asciicast">
+	<!--
+	{ "URL": "src/traceroute.json" }
+	-->
   </div>
-  <script>
-    asciinema.player.js.CreatePlayer(
-	"player-container-traceroute", 
-	"src/traceroute.json", 
-	{
-		theme: "monokai",
-		fontSize: "15px",
-	}
-    );
-  </script>
 <aside data-markdown class="notes">
 </aside>
 </section>
@@ -862,12 +847,17 @@
 			}) },
 			{className: "tangle", 
 				initialize: (function(container, options) { if(options && options.initialize) {options.initialize(container)} }) },
-			{className: "anything",  
-				initialize: (function(container, options){ if (options && options.initialize) { options.initialize(container)} }) },
 			{className: "plot",  defaults: {width:800, height: 400, grid:true}, 
 				initialize: (function(container, options){ options.target = "#"+container.id; functionPlot(options) }) },
 			{className: "asciicast",
-				initialize: (function(container, options) { if(options && options.initialize) {options.initialize(container)} }) },
+                                 defaults: { theme: 'monokai', fontSize: '15px' },
+                                 initialize: (function(container, options) {
+                                         asciinema.player.js.CreatePlayer(container, options.URL, options);
+                                 })
+                         },
+			{className: "anything",  
+				initialize: (function(container, options){ if (options && options.initialize) { options.initialize(container)} }) },
+
 		],
 		// ----------------------------------------------------------------------------
 
@@ -919,13 +909,14 @@
 			{ src: 'plugin/function-plot/dist/function-plot.js' },
 			{ src: 'plugin/chart/Chart.min.js'},
 			{ src: 'plugin/chart/csv2chart.js'},
+			{ src: 'plugin/asciinema/asciinema-player.js' },
 			{ src: 'plugin/anything/anything.js' },
 			{ src: 'plugin/chalkboard/chalkboard.js' },
 			{ src: 'plugin/menu/menu.js' },
 			{ src: 'plugin/mathsvg/math.js', async: true },
 			{ src: 'plugin/audio-slideshow/slideshow-recorder.js', condition: function( ) { return !!document.body.classList; } },
 			{ src: 'plugin/audio-slideshow/audio-slideshow.js', condition: function( ) { return !!document.body.classList; } },
-			{ src: 'plugin/asciinema/asciinema-player.js', condition: function( ) { return !!document.body.classList; } },
+			// { src: 'plugin/search/search.js', async: true },
 			// ... 
 		]
 	});

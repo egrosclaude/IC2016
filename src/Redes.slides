@@ -612,36 +612,22 @@
 	data-transition="convex-in convex-out" 
 	data-audio-src="audio/PRESENT/xx.mp3">
 <h2>Comando ping</h2>
-  <div id="player-container-ping" class="asciicast" allowfullscreen>
+  <div class="asciicast">
+	<!--
+	{ "URL": "src/ping.json" }
+	-->
   </div>
-  <script>
-    asciinema.player.js.CreatePlayer(
-	"player-container-ping", 
-	"src/ping.json", 
-	{
-		theme: "monokai",
-		fontSize: "15px",
-	}
-    );
-  </script>
 <aside data-markdown class="notes">
 </aside>
 </section>
 <!------------------------>
 <section data-transition="convex-in convex-out" data-audio-src="audio/PRESENT/xx.mp3">
 <h2>Comando traceroute</h2>
-  <div id="player-container-traceroute" class="asciicast" allowfullscreen>
+  <div class="asciicast">
+	<!--
+	{ "URL": "src/traceroute.json" }
+	-->
   </div>
-  <script>
-    asciinema.player.js.CreatePlayer(
-	"player-container-traceroute", 
-	"src/traceroute.json", 
-	{
-		theme: "monokai",
-		fontSize: "15px",
-	}
-    );
-  </script>
 <aside data-markdown class="notes">
 </aside>
 </section>
