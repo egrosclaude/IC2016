@@ -22,6 +22,7 @@
 		previewLinks: true,
 		theme: 'serif',
 		transition: 'slide', // none/fade/slide/convex/concave/zoom
+		embedded: true,
 
 		// ----------------------------------------------------------------------------
 		chart: {
