@@ -1,0 +1,58 @@
+<!-- INCLUDE src/reveal.header -->
+
+
+<!------------------------>
+<section data-transition="slide-in slide-out" data-audio-src="audio/PRESENT/xx.mp3">
+<h2>Nombres de dominio</h2>
+<ul>
+	<li>Es más fácil recordar nombres simbólicos que direcciones de red</li>
+	<ul>
+		<li><b>pedco.uncoma.edu.ar</b> &rarr; <b>170.210.81.250</b></li>
+	</ul>
+	<li>DNS, Domain Name System</li>
+	<ul>
+		<li>Servidor <b>local</b></li>
+		<li>Servidores <b>raíz</b></li>
+		<li>Servidores <b>TLD</b> &rarr; Top-Level Domain o dominio de máximo nivel</li>
+			<ul>
+				<li>Dominios .com, .edu, .org, .mil, .net...</li>
+				<li>Dominios de países: .ar, .cl, .uy, .fr, .uk...</li>
+			</ul>
+		<li>Servidores de cada <b>dominio y subdominio</b></li>
+			<ul>
+				<li>Subdominios .edu.ar, .com.fr...</li>
+			</ul>
+	</ul>
+</ul>
+<aside data-markdown class="notes">
+</aside>
+</section>
+<!------------------------>
+ 
+
+<!------------------------>
+<section data-transition="slide-in fade-out" data-audio-src="audio/PRESENT/xx.mp3">
+<h2>DNS</h2>
+<span class="fragment">
+<img src="img/routing-0.svg" class="plain stretch">
+</span>
+<span class="fragment">
+<img src="img/routing-1.svg" class="plain stretch">
+</span>
+<span class="fragment">
+<img src="img/routing-2.svg" class="plain stretch">
+</span>
+<span class="fragment">
+<img src="img/routing-3.svg" class="plain stretch">
+</span>
+<span class="fragment">
+<img src="img/routing-4.svg" class="plain stretch">
+</span>
+<aside data-markdown class="notes">
+</aside>
+</section>
+<!------------------------>
+
+
+
+<!-- INCLUDE src/reveal.trailer -->

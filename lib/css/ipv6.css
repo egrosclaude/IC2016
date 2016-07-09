@@ -1,0 +1,225 @@
+
+body { 
+   background: none repeat scroll 0% 0% #077; 
+} 
+
+div { 
+   box-sizing: border-box; 
+} 
+
+a { 
+  color: #f60; 
+  text-decoration: none; 
+} 
+
+.reveal pre { 
+  font-family: monospace; 
+  font-size: 1em;
+  line-height: 1em;
+  border: none; 
+  box-shadow: none; 
+  color: #fff;
+  text-align: center;
+} 
+
+.reveal pre.shortening { 
+  position: absolute; 
+  top: 20px;  
+  left: 0; 
+  width: 100%; 
+  
+} 
+
+.reveal pre strike { 
+  color: #f60; 
+} 
+
+.col-35 { 
+  width: 135%; 
+} 
+.col-40 { 
+  width: 140%; 
+} 
+.col-50 { 
+  width: 150%; 
+} 
+.col-60 { 
+  width: 160%; 
+} 
+.col-65 { 
+  width: 165%; 
+} 
+.col-100 { 
+  width: 300%; 
+  margin: 0 -100% ! important; 
+  padding: 0 90% ! important; 
+} 
+
+.row-5.middle { 
+  height: 5%; 
+  padding-top: 0.5em ! important; 
+} 
+
+.row-10.middle { 
+  height: 10%; 
+  padding-top: 0.5em ! important; 
+} 
+
+.top { 
+  margin-top: -100% ! important; 
+  padding-top: 95% ! important; 
+} 
+
+.bottom { 
+  margin-bottom: -100% ! important; 
+  padding-bottom: 95% ! important; 
+} 
+.row-5 { 
+  height: 105%; 
+}
+.row-10 { 
+  height: 110%; 
+} 
+.row-15 { 
+  height: 115%; 
+}
+.row-20 { 
+  height: 120%; 
+}
+.row-25 { 
+  height: 125%; 
+}
+.row-30 { 
+  height: 130%; 
+}
+.row-35 { 
+  height: 135%; 
+} 
+.row-40.middle  { 
+  height: 40%; 
+} 
+.row-40 { 
+  height: 140%; 
+}
+
+.row-45 { 
+  height: 145%; 
+}
+
+.row-50 { 
+  height: 150%; 
+} 
+
+.row-90 { 
+  height: 190%;
+} 
+
+.row-100 { 
+  height: 300%;
+  margin-top: -100% ! important; 
+  padding-top: 95% ! important; 
+  margin-bottom: -100% ! important; 
+  padding-bottom: 95% ! important; 
+} 
+
+.ipv4.header {
+  background-color: #550; 
+  color: #000; 
+} 
+
+.left.header { 
+  float: left; 
+  margin: 0; 
+  margin-left: -100%; 
+  padding-left: 95%; 
+  position: relative;
+}
+
+.right.header {
+  float: left; 
+  margin: 0; 
+  margin-right: -100%; 
+  padding-right: 95%; 
+  position: relative;
+}
+
+.left.content { 
+  float: left; 
+  margin: 0; 
+  margin-left: -100%; 
+  padding-left: 95%; 
+} 
+
+.right.content {  
+  float: left; 
+  margin: 0; 
+  margin-right: -100%; 
+  padding-right: 95%; 
+} 
+
+.ipv4.content { 
+  background-color:#770; 
+  color: 000; 
+} 
+
+.wrapper { 
+  display: table;
+} 
+
+.wrapper .text-box { 
+  display: table-cell;
+} 
+.wrapper .text-box .pad { 
+  line-height: 30em;  
+} 
+
+.wrapper .text-box ul { 
+  list-style: none; 
+  margin-left: 0; 
+  padding-left -10px; 
+  color: #fff;
+} 
+
+.wrapper .text-box ul li { 
+  line-height: 1em;
+} 
+
+.ipv6.header { 
+  background-color: #055; 
+  color: #000; 
+} 
+
+.ipv6.content { 
+  background-color: #077; 
+} 
+
+.reveal .controls div.navigate-left, 
+.reveal .controls div.navigate-left.enabled {
+   border-right-color: #fff; 
+} 
+.reveal .controls div.navigate-right, 
+.reveal .controls div.navigate-right.enabled {
+   border-left-color: #fff; 
+}
+.reveal .controls div.navigate-down, 
+.reveal .controls div.navigate-down.enabled { 
+   border-top-color: #fff; 
+
+} 
+
+.reveal .controls div.navigate-up, 
+.reveal .controls div.navigate-up.enabled { 
+   border-bottom-color: #fff; 
+} 
+.reveal .controls div.navigate-down.enabled:hover { 
+   border-top-color: #999; 
+} 
+.reveal .controls div.navigate-right.enabled:hover {
+   border-left-color: #999; 
+}  
+.reveal .controls div.navigate-left.enabled:hover { 
+   border-right-color: #999; 
+}
+.reveal .controls div.navigate-up.enabled:hover { 
+   border-bottom-color: #999; 
+} 

@@ -1,4 +1,5 @@
 DEPS = src/reveal.header src/reveal.trailer
+DTAPE=/home/oso/IC2016/decktape
 
 all: re so comp pres siste uni repre texto arqui soft demo
 
@@ -17,6 +18,7 @@ arqui: Arquitectura.html
 %.html: src/%.slides $(DEPS) 
 	./macro $< > $*.html
 	./asides.pl $< > $*.md
-	pandoc $*.md -o $*.pdf
+	pandoc $*.md -o $*-notes.pdf
+	$(DTAPE)/bin/phantomjs $(DTAPE)/decktape.js reveal http://localhost:8000/$*.html $*.pdf
 #	pandoc $*-ok.md -o $*.pdf
 

@@ -1,0 +1,1537 @@
+<!doctype html>
+<html lang="es">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>Introducción a la Computación 2016</title>
+
+		<meta name="description" content="Introducción a la Computación">
+		<meta name="author" content="Eduardo Grosclaude">
+
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/ic.css" id="theme">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css"> 
+		
+		<link rel="stylesheet" type="text/css" href="plugin/asciinema/asciinema-player.css" />
+
+<!--		<link rel="stylesheet" href="font-awesome-4.5.0/css/font-awesome.css">  -->
+
+		<link rel="icon" type="image/png" href="img/favicon-96x96.png" sizes="96x96">
+		<meta name="theme-color" content="#ffffff">
+		<!-- Code syntax highlighting -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+
+	<body>
+	  <div class="reveal">
+		<div class="slides">
+
+
+<!------------------------------------------------------------------>
+
+<section data-transition="fade" data-markdown data-background="#0088AA" data-background-transition="fade">
+# Notación matemática
+</section>
+
+<section id="potencias">
+<h2>Expresión general</h2>
+Todo número $n$ se escribe en base $b$ como
+<p>
+$n = x_k * b^k + \ldots + x_{2} * b^{2} + x_1 * b^1 +x_0 * b^0$
+</p><p>
+Con $0 \le x_i \lt b$
+</p>
+<p class="post_it">
+$2016 = 2 * 1000 + 0 * 100 + 1 * 10 + 6 * 1$
+</p>
+</section>
+
+<section data-background="#3c53b5" data-background-transition="zoom">
+<h2>Desafío</h2>
+<ul>
+	<li class="fragment">Adoptemos la notación $x = (x_{n-1}, ... , x_1, x_0)$ para un número en $C^n_2$, es decir, en complemento a 2 sobre $n$ bits</li>
+	<ol>
+	<li class="fragment">Con la notación anterior, comprobar que $x = $ $-1 \times x_{n-1} \times 2^{n-1} + x_{n-2} \times 2^{n-2} +$ $...$ $+ x_1 \times 2 + x_0 =$ $-x_{n-1} \times 2^{n-1}+ \sum_{i=0}^{n-2}({x_i \times 2^i})$</li>
+	<li class="fragment">Con la misma notación, pero si $x$ está en Signo-magnitud, ¿cuál es la expresión de $x$ como función de los dígitos binarios $x_i$?</li>
+	</ol>
+</ul>
+</section>
+
+<section>
+<h2>Preguntas</h2>
+<p>
+Signo-Magnitud en 8 bits
+</p>
+<ol>
+<li>$9_{(10} = X_{(2} =$ <span class="fragment"> $00001001$</span></li>
+<li>$-9_{(10} = X_{(2} =$ <span class="fragment"> $10001001$</span></li>
+<li>$50_{(10} = X_{(2} =$ <span class="fragment"> $00110010$</span></li>
+<li>$-50_{(10} = X_{(2} =$ <span class="fragment"> $10110010$</span></li>
+<li>$-128_{(10} = X_{(2} =$ <span class="fragment">Imposible</span></li>
+<li>$10000000_{(2} = X_{(10} =$ <span class="fragment">¿Y $00000000_{(2}$?</span></li>
+</ol>
+</section>
+
+<section data-markdown data-background="#0088AA" data-background-transition="zoom">
+# Animación 
+</section>
+
+<section data-menu-title="Caso sin overflow">
+	<section data-transition="none">
+	<h2>Bits de acarreo o <i>carry</i></h2>
+	<img src="img/no-of0.png" class="plain stretch">
+	</section>
+	<section data-transition="none">
+	<h2>Bits de acarreo o <i>carry</i></h2>
+	<img src="img/no-of1.png" class="plain stretch">
+	</section>
+	<section data-transition="none">
+	<h2>Bits de acarreo o <i>carry</i></h2>
+	<img src="img/no-of2.png" class="plain stretch">
+	</section>
+	<section data-transition="none">
+	<h2>Bits de acarreo o <i>carry</i></h2>
+	<img src="img/no-of3.png" class="plain stretch">
+	</section>
+	<section data-transition="none">
+	<h2>Bits de acarreo o <i>carry</i></h2>
+	<img src="img/no-of4.png" class="plain stretch">
+	</section>
+	<section data-transition="none">
+	<h2>Bits de acarreo o <i>carry</i></h2>
+	<img src="img/no-of5.png" class="plain stretch">
+	</section>
+	<section data-transition="none">
+	<h2>Bits de acarreo o <i>carry</i></h2>
+	<img src="img/no-of6.png" class="plain stretch">
+	</section>
+	<section data-transition="none">
+	<h2>Bits de acarreo o <i>carry</i></h2>
+	<img src="img/no-of7.png" class="plain stretch">
+	</section>
+	<section data-transition="none">
+	<h2>Bits de acarreo o <i>carry</i></h2>
+	<img src="img/no-of8.png" class="plain stretch">
+	</section>
+</section>
+<section data-transition="slide-in fade-out" data-audio-src="audio/Arquitectura/14-dele con el von.mp3">
+<h2>Arquitectura de Von Neumann</h2>
+<img src="img/vn-0.svg" class="stretch plain">
+<aside data-markdown class="notes">
+En una **máquina de Von Neumann**, entonces, aparecen dos componentes básicos fundamentales que son la CPU y la memoria,  
+</aside>
+</section>
+
+<section data-transition="fade-in fade-out" data-audio-src="audio/Arquitectura/15- unidad ed control.mp3">
+<h2>Arquitectura de Von Neumann</h2>
+
+<img src="img/vn-1.svg" class="stretch plain">
+<aside data-markdown class="notes">
+la primera conteniendo una **Unidad de Control, o UC**, para realizar el **ciclo de instrucción**,
+</aside>
+</section>
+
+<section data-transition="fade-in fade-out" data-audio-src="audio/Arquitectura/16- ALU.mp3">
+<h2>Arquitectura de Von Neumann</h2>
+<img src="img/vn-2.svg" class="stretch plain">
+<aside data-markdown class="notes">
+y una **Unidad Lógico-Aritmética, o ALU**, para el cómputo. 
+</aside>
+</section>
+
+<section data-transition="fade-in fade-out" data-audio-src="audio/Arquitectura/17- buses.mp3">
+<h2>Arquitectura de Von Neumann</h2>
+<img src="img/vn-3.svg" class="stretch plain">
+<aside data-markdown class="notes">
+En la máquina existen diferentes clases de buses para interconectar los componentes: **buses internos** de la CPU para comunicar la UC y la ALU,
+</aside>
+</section>
+
+<section data-transition="fade-in fade-out" data-audio-src="audio/Arquitectura/18- buses de sistema.mp3">
+<h2>Arquitectura de Von Neumann</h2>
+<img src="img/vn-4.svg" class="stretch plain">
+<aside data-markdown class="notes">
+**buses de sistema** que relacionan la CPU y la memoria, 
+</aside>
+</section>
+
+<section data-transition="fade-in fade-out" data-audio-src="audio/Arquitectura/19- buses de sistema.mp3">
+<h2>Arquitectura de Von Neumann</h2>
+<img src="img/vn-5.svg" class="stretch plain">
+<aside data-markdown class="notes">
+y otros **buses de Entrada/Salida** para comunicar todo el sistema con los dispositivos de entrada o de salida.
+
+¿En qué momento se utilizará cada clase de bus? Cuando la UC disponga que se debe ejecutar una instrucción, tal como una suma, enviará los datos de partida, y la instrucción, a la ALU a través de un bus interno. Si la ALU necesita más datos, los obtendrá de la memoria a través de un bus de sistema. Si la CPU encuentra instrucciones que ordenan presentar el resultado del cómputo al usuario, usará un bus de Entrada/Salida para emitir ese resultado por pantalla o por impresora.
+</aside>
+</section>
+
+
+
+
+<!-- TRAZA 2 --------------------------------------------------------------------------------- -->
+<section data-audio-src="audio/Arquitectura/61-Este programa en particular.mp3">
+<h2>Traza de ejecución</h2>
+
+
+<table class="plaintable" style="width: 100%; font-size: 18px; ">
+<tr><th colspan="2">Búsqueda</th><th colspan="2">Decodificación</th><th colspan="4">Ejecución</th></tr>
+<tr><td>PC</td><td>IR</td><td>Cod</td><td>Operando</td><td>Ac</td><td>Mem</td><td>Salida</td><td>PC</td></tr>
+<tr><td><span class="fragment" data-fragment-index="0">00000000</span></td><td><span class="fragment" data-fragment-index="1">01000110</span></td><td><span class="fragment"  data-fragment-index="2">010</span></td><td><span class="fragment" data-fragment-index="3"><span style="color:#1b91ff;">00110</span></span></td><td><span class="fragment" style="color: red;" data-fragment-index="4">00001100</span></td><td><span class="fragment" data-fragment-index="5">-</span></td><td><span class="fragment" data-fragment-index="6">-</span></td><td><span class="fragment" data-fragment-index="7">00000001</span></td></tr>
+<tr><td><span class="fragment" data-fragment-index="8">00000001</span></td><td><span class="fragment" data-fragment-index="9">10000111</span></td><td><span class="fragment" data-fragment-index="10">100</span></td><td><span class="fragment" data-fragment-index="11">00111</span></td><td><span class="fragment" data-fragment-index="12">00001101</span></td><td><span class="fragment" data-fragment-index="13">-</span></td><td><span class="fragment" data-fragment-index="14">-</span></td><td><span class="fragment" data-fragment-index="15">00000010</span></td></tr>
+<tr><td><span class="fragment" data-fragment-index="16">00000010</span></td><td><span class="fragment" data-fragment-index="17">01101000</span></td><td><span class="fragment" data-fragment-index="18">011</span></td><td><span class="fragment" data-fragment-index="19">01000</span></td><td><span class="fragment" data-fragment-index="20">00001101</span></td><td><span class="fragment" style="color: red;" data-fragment-index="21">8 &larr; 00001101</span></td><td><span class="fragment">-</span></td><td><span class="fragment">00000011</span></td></tr>
+<tr><td><span class="fragment">00000011</span></td><td><span class="fragment">00100000</span></td><td><span class="fragment">001</span></td><td><span class="fragment">00000</span></td><td><span class="fragment">00001101</span></td><td><span class="fragment">-</span></td><td><span class="fragment">-</span></td><td><span class="fragment">00000011</span></td></tr>
+<tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+</table>
+
+<table class="plaintable" style="font-size: 18px;">
+<tr><th>Dirección</th><th>Contenido</th></tr>
+<tr><td>00000</td><td>01000110</td></tr>
+<tr><td>00001</td><td>10000111</td></tr>
+<tr><td>00010</td><td>01101000</td></tr>
+<tr><td>00011</td><td>00100000</td></tr>
+<tr><td>00100</td><td>        </td></tr>
+<tr><td>00101</td><td>        </td></tr>
+<tr><td class="fragment highlight-blue" data-fragment-index="3">00110</td><td class="fragment highlight-red" data-fragment-index="4">00001100</td></tr>
+<tr><td>00111</td><td>00000001</td></tr>
+<tr><td>01000</td><td><span class="fragment" data-fragment-index="21"><span style="color:red;">00001101</span></span></td></tr>
+</table>
+
+
+<aside data-markdown class="notes"> 
+Este programa en particular presenta la traza que veremos a continuación. 
+
+Queda como ejercicio seguir la traza e interpretar qué está ocurriendo en cada momento con cada uno de los registros y las posiciones de memoria.
+
+### Ayuda
+
+- 000 No operación
+- 001 Parada
+- 010 Mem &rarr; Ac
+- 011 Ac &rarr; Mem
+- 100 Sumar al Ac
+- 101 Restar al Ac
+- 110 Salto 
+- 111 Salto cond
+
+</aside>
+</section>
+
+<section>
+<section data-transition="slide-in fade-out"
+	data-audio-src="audio/SistemasDeCómputo/19-a.mp3">
+<h2>Intel I7</h2>
+<img src="img/i7.jpg" class="plain stretch">
+<aside data-markdown  class="notes">
+El microprocesador I7 es actualmente el procesador más avanzado para computadoras personales de la firma Intel. Es retrocompatible con toda la línea de procesadores de la **arquitectura x86** desarrollada por esa firma. La cronología siguiente muestra algunos significativos cambios de microarquitectura. 
+
+* 1979: 8086, 8088, primeros microprocesadores de arquitectura x86
+* 1980: 8087, **coprocesador numérico**
+* 1982: 80286, multitarea, **modo protegido**
+* 1985: 80386, procesador **de 32 bits**
+* 1989: 80486, coprocesador numérico en el mismo circuito integrado
+* 1993: Pentium, procesador **superescalar**
+* 1995: Pentium Pro, procesador con **ejecución fuera de orden** y **ejecución especulativa**
+* 1997: Pentium II, procesador que incorpora **instrucciones vectoriales MMX**
+* 1999: Pentium III, incorpora **instrucciones vectoriales SSE**
+* 2000: Pentium IV, mejoras en las instrucciones SSE
+* 2006: Core 2, nueva microarquitectura, reducción del consumo, múltiples núcleos, **virtualización** en hardware, menores velocidades de reloj
+* 2010: Core i3, i5, i7, procesadores con varias microarquitecturas en evolución; presentan desde 2 hasta 12 núcleos, velocidad de reloj variable
+</aside>
+</section>
+
+<section data-transition="fade-in fade-out"
+	data-audio-src="audio/SistemasDeCómputo/19-b.mp3">
+<h2>Intel I7</h2>
+<img src="img/i7-2-0.png" class="plain stretch">
+<aside data-markdown  class="notes">
+El i7 pertenece a una generación de procesadores donde, para enfrentar los problemas derivados de la microminiaturización, los diseñadores optaron por **replicar**, es decir, incorporar múltiples instancias de, las unidades de cómputo o **núcleos**.
+
+- Cada uno de los núcleos, a su vez, puede ejecutar dos secuencias de programa independientes (dos **threads** o **hilos**). 
+- Cada núcleo tiene su memoria cache privada, dividida en cache de datos y de instrucciones, y además existe un segundo nivel de cache privada para datos e instrucciones a la vez.
+</aside>
+</section>
+
+<section data-transition="fade-in fade-out"
+	data-audio-src="audio/SistemasDeCómputo/19-c.mp3">
+<h2>Intel I7</h2>
+<img src="img/i7-2-1.png" class="plain stretch">
+<aside data-markdown  class="notes">
+- Además existe un tercer nivel de memoria cache compartida, donde se ubican datos que pueden ser necesitados por cualquiera de los núcleos.
+</aside>
+</section>
+
+<section data-transition="fade-in fade-out"
+	data-audio-src="audio/SistemasDeCómputo/19-d.mp3">
+<h2>Intel I7</h2>
+<img src="img/i7-2-2.png" class="plain stretch">
+<aside data-markdown class="notes">
+- El procesador integra unidades para controlar la consistencia de la memoria interna, y para regular las diferentes actividades dentro del microchip a fin de mantener controlados el uso de energía y la generación de calor.
+</aside>
+</section>
+
+<section data-transition="fade-in fade-out"
+	data-audio-src="audio/SistemasDeCómputo/19-e.mp3">
+<h2>Intel I7</h2>
+<img src="img/i7-2-3.png" class="plain stretch">
+<aside data-markdown  class="notes">
+- En la misma "pastilla" o unidad física del microprocesador se encuentra una unidad procesadora de gráficos o GPU. Esta GPU es un procesador con una arquitectura especial, dedicado a la generación de gráficos avanzados, pero que además puede utilizarse para cómputos paralelos de propósito general.
+</aside>
+</section>
+</section>
+
+
+
+<section data-transition="none-out slide-in" data-audio-src="audio/PRESENT/xx.mp3">
+<h2>Swapping o intercambio</h2><!-- 81 -->
+<img src="img/swapping-0.svg" class="plain stretch">
+<aside data-markdown class="notes">
+Supongamos un sistema donde existen dos procesos activos, con algunas páginas en memoria principal, y una zona de intercambio en disco.
+
+El proceso P1 tiene asignadas cuatro páginas (de las cuales sólo la página 2 está presente en memoria principal), y P2, dos páginas (ambas presentes). Hay tres marcos libres (M4, M6 y M7) y la zona de intercambio está vacía.
+</aside>
+</section>
+<section data-transition="none" data-audio-src="audio/PRESENT/xx.mp3">
+<h2>Swapping o intercambio</h2>
+<img src="img/swapping-1.svg" class="plain stretch">
+<aside data-markdown class="notes">
+P1 recibe la CPU y en algún momento ejecuta una instrucción que hace una referencia a una posición dentro de su página 3 (que no está en memoria). 
+</aside>
+</section>
+<section data-transition="none" data-audio-src="audio/PRESENT/xx.mp3">
+<h2>Swapping o intercambio</h2>
+<img src="img/swapping-2.svg" class="plain stretch">
+<aside data-markdown class="notes">
+Ocurre una falta de página que trae del almacenamiento la página 3 de P1 a un marco libre. La página 3 se marca como presente en la tabla de páginas de P1.
+</aside>
+</section>
+<section data-transition="none" data-audio-src="audio/PRESENT/xx.mp3">
+<h2>Swapping o intercambio</h2>
+<img src="img/swapping-3.svg" class="plain stretch">
+<aside data-markdown class="notes">
+Enseguida ingresa P3 al sistema y comienza haciendo una referencia a su página 2. 
+</aside>
+</section>
+<section data-transition="none" data-audio-src="audio/PRESENT/xx.mp3">
+<h2>Swapping o intercambio</h2>
+<img src="img/swapping-4.svg" class="plain stretch">
+<aside data-markdown class="notes">
+Como antes, ocurre una falta de página, se trae la página 2 de P3 del disco, y se copia en un marco libre. Se marca la página 2 como presente y P3 continúa su ejecución haciendo una referencia a una dirección que queda dentro de su página 3.
+</aside>
+</section>
+<section data-transition="none" data-audio-src="audio/PRESENT/xx.mp3">
+<h2>Swapping o intercambio</h2>
+<img src="img/swapping-5.svg" class="plain stretch">
+<aside data-markdown class="notes">
+Se resuelve como siempre la falta de página para la página 3 y P3 hace una nueva referencia a memoria, ahora a la página 4.
+</aside>
+</section>
+<section data-transition="none" data-audio-src="audio/PRESENT/xx.mp3">
+<h2>Swapping o intercambio</h2>
+<img src="img/swapping-6.svg" class="plain stretch">
+<aside data-markdown class="notes">
+Pero ahora la memoria principal ya no tiene marcos libres. Es el momento de elegir una página víctima para desalojarla de la memoria. Si la página menos recientemente usada es la página 2 de P1, es una buena candidata. En caso de que se encuentre modificada desde que fue cargada en memoria, se la copia en la zona de intercambio para no perder esas modificaciones, y se declara libre el marco M2 que ocupaba.
+</aside>
+</section>
+<section data-transition="none" data-audio-src="audio/PRESENT/xx.mp3">
+<h2>Swapping o intercambio</h2>
+<img src="img/swapping-7.svg" class="plain stretch">
+<aside data-markdown class="notes">
+Se marca como <b>no presente</b> la página que acaba de salir de la memoria principal.
+</aside>
+</section>
+<section data-transition="none" data-audio-src="audio/PRESENT/xx.mp3">
+<h2>Swapping o intercambio</h2>
+<img src="img/swapping-8.svg" class="plain stretch">
+<aside data-markdown class="notes">
+Se copia la página que solicitó P3 en el nuevo marco libre, se la marca como presente en la tabla de páginas de P3, y el sistema continúa su operación normalmente.
+</aside>
+</section>
+
+
+
+
+
+
+
+
+<section data-transition="slide-in fade-out">
+<h2>Estados de los procesos</h2>
+<h3>Sistema multiprogramado</h3>
+<img src="img/procesos-0.png" class="plain stretch">
+<aside data-markdown class="notes">
+</aside>
+</section>
+<section data-transition="fade-in fade-out">
+<h2>Estados de los procesos</h2>
+<h3>Sistema multiprogramado</h3>
+<img src="img/procesos-1.png" class="plain stretch">
+<aside data-markdown class="notes">
+</aside>
+</section>
+<section data-transition="fade-in fade-out">
+<h2>Estados de los procesos</h2>
+<h3>Sistema multiprogramado</h3>
+<img src="img/procesos-2.png" class="plain stretch">
+<aside data-markdown class="notes">
+</aside>
+</section>
+<section data-transition="slide-out fade-in">
+<h2>Estados de los procesos</h2>
+<h3>Tiempo compartido o <i>time sharing</i></h3>
+<img src="img/procesos-3.png" class="plain stretch">
+<aside data-markdown class="notes">
+</aside>
+</section>
+
+<section data-transition="convex-in fade-out">
+<h2>Procesos concurrentes</h2>
+<img src="img/estados-0.png" class="plain stretch">
+<aside data-markdown class="notes">
+</aside>
+</section>
+<section data-transition="fade-in fade-out">
+<h2>Procesos concurrentes</h2>
+<img src="img/estados-1.png" class="plain stretch">
+<aside data-markdown class="notes">
+</aside>
+</section>
+<section data-transition="fade-in fade-out">
+<h2>Procesos concurrentes</h2>
+<img src="img/estados-2.png" class="plain stretch">
+<aside data-markdown class="notes">
+</aside>
+</section>
+<section data-transition="fade-in fade-out">
+<h2>Procesos concurrentes</h2>
+<img src="img/estados-3.png" class="plain stretch">
+<aside data-markdown class="notes">
+</aside>
+</section>
+<section data-transition="fade-in fade-out">
+<h2>Procesos concurrentes</h2>
+<img src="img/estados-4.png" class="plain stretch">
+<aside data-markdown class="notes">
+</aside>
+</section>
+<section data-transition="fade-in fade-out">
+<h2>Procesos concurrentes</h2>
+<img src="img/estados-5.png" class="plain stretch">
+<aside data-markdown class="notes">
+</aside>
+</section>
+<section data-transition="fade-in fade-out">
+<h2>Procesos concurrentes</h2>
+<img src="img/estados-6.png" class="plain stretch">
+<aside data-markdown class="notes">
+</aside>
+</section>
+
+
+<!-- -------------- -->
+<section data-transition="convex-in convex-out">
+<h2>Procesos concurrentes</h2>
+<img src="img/estados-anim.gif" class="plain stretch">
+<aside data-markdown class="notes">
+</aside>
+</section>
+
+<section data-transition="convex">
+<h2>Procesos paralelos</h2>
+<img src="img/estados-ts-anim.gif" class="plain stretch">
+<aside data-markdown class="notes">
+</aside>
+</section>
+
+<!------------------------>
+<section data-transition="fade-out slide-in">
+<h2>Procesos</h2>
+<img src="img/top.png" class="stretch plain">
+</section>
+<section data-transition="fade-in slide-out">
+<h2>Procesos</h2>
+<img src="img/top2.png" class="stretch plain">
+</section>
+
+
+<section data-transition="convex-in convex-out" data-audio-src="audio/PRESENT/xx.mp3">
+<h2>Comando top</h2>
+<div class="asciicast"><!-- { "URL": "src/top.json" } --></div>
+<aside data-markdown class="notes">
+</aside>
+</section>
+
+
+
+<section data-transition="fade" data-markdown data-background="img/stock-photo-100057305.jpg" data-background-transition="fade">
+# Interactividad
+</section>
+
+<section>
+<h2>Memorias</h2>
+<canvas class="stretch" data-chart="bar">
+Volts (V), 1, 0.72, 0.6, 0.48
+<!-- This is a comment that will be ignored -->
+Velocidad (MHz), 1, 1.5, 4, 8.01
+<!-- This is a comment that will be ignored -->
+Densidad (Gb), 1, 2, 8, 32
+<!-- 
+{ 
+ "data" : {
+  "labels" : ["DDR (2002)", "DDR2 (2004)", "DDR3 (2007)", "DDR4 (2013)"]
+ }
+}
+-->
+</canvas>
+</section>
+
+
+<section>
+<h2>Composición de color</h2>
+<div class="tangle" id="colorCalc">
+        <!--
+        {
+                "initialize":"function (container){
+                        var rootElement = document.getElementById('colorCalc');
+                        var model = {
+                                initialize: function() {
+                                        this.r = 100;
+                                        this.g = 100;
+					this.b = 100;
+					this.rgb = '';
+                                },
+                                update: function() {
+					this.rgb = 'rgb(' + this.r + ',' + this.g + ',' + this.b + ')';
+					var cell = document.getElementById('colorCell');
+					cell.style.background = this.rgb;
+                                }
+                        };
+                        var tangle=new Tangle(rootElement, model);
+                }"
+        }
+        -->
+	<table>
+	<tr><td>
+		<table>
+		<tr><td>R:</td><td class="TKAdjustableNumber" data-var="r" data-min="0" data-max="255"></td></tr>
+		<tr><td>G:</td><td class="TKAdjustableNumber" data-var="g" data-min="0" data-max="255"></td></tr>
+		<tr><td>B:</td><td class="TKAdjustableNumber" data-var="b" data-min="0" data-max="255"></td></tr>
+		</table>
+	</td><td id="colorCell"></td></tr>
+	</table>
+        <p class="post_it" data-var="rgb" style="text-align: center;" id="colorFormula"></p>
+</div>
+</section>
+
+
+<section>
+<h2>Parámetros de onda</h2>
+<div class="tangle" id="sinCalc">
+        <!--
+        {
+                "initialize":"function (container){
+                        var rootElement = document.getElementById('sinCalc');
+                        var model = {
+                                initialize: function() {
+                                        this.ampl = 1;
+                                        this.freq = 4;
+					this.nSamples = 4;
+                                        this.math = '$ $';
+                                },
+                                update: function() {
+                                        var plotex = this.ampl + '*sin(' + this.freq + '*x)';
+                                        var options = { target : '#sinplot', data : [{ fn : plotex, nSamples : this.nSamples, graphType : 'scatter' }], width : 800, height : 400};
+                                        functionPlot(options);
+
+
+                                }
+                        };
+                        var tangle=new Tangle(rootElement, model);
+                }"
+        }
+        -->
+        <table>
+        <tr><td>Frecuencia:</td><td class="TKAdjustableNumber" data-var="freq" data-min="1" data-max="100"></td>
+	    <td>Amplitud:</td><td class="TKAdjustableNumber" data-var="ampl" data-min="1" data-max="3"></td>
+	    <td>Muestras:</td><td class="TKAdjustableNumber" data-var="nSamples" data-min="1" data-max="500"></td></tr>
+        </table>
+<!--        <p class="post_it" data-var="math" style="text-align: center;" id="sinFormula">$ $</p> -->
+</div>
+<div class="plot" id="sinplot" style="background-color:#000; width:800px; height:400px; margin:0 auto;"></div>
+<!--
+{ "target":"#sinplot", "data":[{"fn":"sin(x)", "nSamples":4, "graphType":"scatter"}], "width":800, "height":400, }
+-->
+</section>
+
+
+ <section>
+ <h2>Cálculo de punto flotante</h2>
+ <div class="tangle" id="ieee754Calc">
+         <script type="text/javascript" src="ieee754.js"></script>
+         <!--
+         {
+                 "initialize":"function(container) {
+                         var rootElement = document.getElementById('ieee754Calc');
+                         var model = {
+                                 initialize: function() {
+                                         this.decimal = 0;
+                                         this.sign = 0;
+                                         this.exponent = 0;
+                                         this.mantissa = 0;
+                                         this.hexa = '00000000';
+                                 },
+                                 update: function() {
+                                         var e = this.decimal;
+                                         var n = parseFloat(e);
+                                         var f = packIEEE754(e, 8, 23);
+                                         this.hexa = hexaString(f);
+                                         this.sign = f[0];
+                                         this.exponent = f.slice(1,9).join('');
+                                         this.mantissa = f.slice(9,32).join('');
+                                         var mstr;
+                                         if (n === 0) {
+                                                 return;
+                                         } else if (n !== n) {
+                                                 mstr = 'NaN';
+                                         } else if (n === Infinity) {
+                                                 mstr = '\\infty';
+                                         } else if (n === -Infinity) {
+                                                 mstr = '- \\infty';
+                                         } else {
+                                                 mstr = mathString(e, this.sign, this.exponent, this.mantissa);
+                                         }
+                                         var mathfield = MathJax.Hub.getAllJax('ieee754Formula')[0];
+                                         MathJax.Hub.Queue(['Text',mathfield,mstr]);
+                                 }
+                         };
+                         var tangle=new Tangle(rootElement, model);
+                   }"
+         }
+         -->
+         <table>
+                 <tr><td>Decimal</td><td class="TKNumberField" data-var="decimal"></td></tr>
+                 <tr><td>Signo</td><td data-var="sign"></td></tr>
+                 <tr><td>Exponente</td><td data-var="exponent"></td></tr>
+                 <tr><td>Mantisa</td><td data-var="mantissa"></td></tr>
+                 <tr><td>Hexa</td><td data-var="hexa"></td></tr>
+         </table>
+         <p class="post_it" data-var="math" style="text-align: center;" id="ieee754Formula">$ $</p>
+ </div>
+ </section>
+ 
+
+<section data-transition="fade" data-markdown data-background="img/stock-photo-110397823.jpg" data-background-transition="fade">
+# Generar programáticamente contenidos
+</section>
+
+<!--- Tabla ASCII -->
+<section><h2>Tabla de códigos ASCII</h2>
+<table style="border-collapse: collapse; border:1px; width: 100%; font-size: 22px; ">
+<tr>
+<td align="right" style="background-color: #EEEEEE;">32</td><td align="center" style="background-color: #EEEEEE;"> </td> <td align="right" style="background-color: #EEEEEE;">44</td><td align="center" style="background-color: #EEEEEE;">,</td> <td align="right" style="background-color: #00EEFF;">56</td><td align="center" style="background-color: #00EEFF;">8</td> <td align="right" style="background-color: #EEFF00;">68</td><td align="center" style="background-color: #EEFF00;">D</td> <td align="right" style="background-color: #EEFF00;">80</td><td align="center" style="background-color: #EEFF00;">P</td> <td align="right" style="background-color: #EEEEEE;">92</td><td align="center" style="background-color: #EEEEEE;">\</td> <td align="right" style="background-color: #FFCC00;">104</td><td align="center" style="background-color: #FFCC00;">h</td> <td align="right" style="background-color: #FFCC00;">116</td><td align="center" style="background-color: #FFCC00;">t</td> </tr>
+
+<tr>
+<td align="right" style="background-color: #EEEEEE;">33</td><td align="center" style="background-color: #EEEEEE;">!</td> <td align="right" style="background-color: #EEEEEE;">45</td><td align="center" style="background-color: #EEEEEE;">-</td> <td align="right" style="background-color: #00EEFF;">57</td><td align="center" style="background-color: #00EEFF;">9</td> <td align="right" style="background-color: #EEFF00;">69</td><td align="center" style="background-color: #EEFF00;">E</td> <td align="right" style="background-color: #EEFF00;">81</td><td align="center" style="background-color: #EEFF00;">Q</td> <td align="right" style="background-color: #EEEEEE;">93</td><td align="center" style="background-color: #EEEEEE;">]</td> <td align="right" style="background-color: #FFCC00;">105</td><td align="center" style="background-color: #FFCC00;">i</td> <td align="right" style="background-color: #FFCC00;">117</td><td align="center" style="background-color: #FFCC00;">u</td> </tr>
+
+<tr>
+<td align="right" style="background-color: #EEEEEE;">34</td><td align="center" style="background-color: #EEEEEE;">"</td> <td align="right" style="background-color: #EEEEEE;">46</td><td align="center" style="background-color: #EEEEEE;">.</td> <td align="right" style="background-color: #EEEEEE;">58</td><td align="center" style="background-color: #EEEEEE;">:</td> <td align="right" style="background-color: #EEFF00;">70</td><td align="center" style="background-color: #EEFF00;">F</td> <td align="right" style="background-color: #EEFF00;">82</td><td align="center" style="background-color: #EEFF00;">R</td> <td align="right" style="background-color: #EEEEEE;">94</td><td align="center" style="background-color: #EEEEEE;">^</td> <td align="right" style="background-color: #FFCC00;">106</td><td align="center" style="background-color: #FFCC00;">j</td> <td align="right" style="background-color: #FFCC00;">118</td><td align="center" style="background-color: #FFCC00;">v</td> </tr>
+
+<tr>
+<td align="right" style="background-color: #EEEEEE;">35</td><td align="center" style="background-color: #EEEEEE;">#</td> <td align="right" style="background-color: #EEEEEE;">47</td><td align="center" style="background-color: #EEEEEE;">/</td> <td align="right" style="background-color: #EEEEEE;">59</td><td align="center" style="background-color: #EEEEEE;">;</td> <td align="right" style="background-color: #EEFF00;">71</td><td align="center" style="background-color: #EEFF00;">G</td> <td align="right" style="background-color: #EEFF00;">83</td><td align="center" style="background-color: #EEFF00;">S</td> <td align="right" style="background-color: #EEEEEE;">95</td><td align="center" style="background-color: #EEEEEE;">_</td> <td align="right" style="background-color: #FFCC00;">107</td><td align="center" style="background-color: #FFCC00;">k</td> <td align="right" style="background-color: #FFCC00;">119</td><td align="center" style="background-color: #FFCC00;">w</td> </tr>
+
+<tr>
+<td align="right" style="background-color: #EEEEEE;">36</td><td align="center" style="background-color: #EEEEEE;">$</td> <td align="right" style="background-color: #00EEFF;">48</td><td align="center" style="background-color: #00EEFF;">0</td> <td align="right" style="background-color: #EEEEEE;">60</td><td align="center" style="background-color: #EEEEEE;"><</td> <td align="right" style="background-color: #EEFF00;">72</td><td align="center" style="background-color: #EEFF00;">H</td> <td align="right" style="background-color: #EEFF00;">84</td><td align="center" style="background-color: #EEFF00;">T</td> <td align="right" style="background-color: #EEEEEE;">96</td><td align="center" style="background-color: #EEEEEE;">`</td> <td align="right" style="background-color: #FFCC00;">108</td><td align="center" style="background-color: #FFCC00;">l</td> <td align="right" style="background-color: #FFCC00;">120</td><td align="center" style="background-color: #FFCC00;">x</td> </tr>
+
+<tr>
+<td align="right" style="background-color: #EEEEEE;">37</td><td align="center" style="background-color: #EEEEEE;">%</td> <td align="right" style="background-color: #00EEFF;">49</td><td align="center" style="background-color: #00EEFF;">1</td> <td align="right" style="background-color: #EEEEEE;">61</td><td align="center" style="background-color: #EEEEEE;">=</td> <td align="right" style="background-color: #EEFF00;">73</td><td align="center" style="background-color: #EEFF00;">I</td> <td align="right" style="background-color: #EEFF00;">85</td><td align="center" style="background-color: #EEFF00;">U</td> <td align="right" style="background-color: #FFCC00;">97</td><td align="center" style="background-color: #FFCC00;">a</td> <td align="right" style="background-color: #FFCC00;">109</td><td align="center" style="background-color: #FFCC00;">m</td> <td align="right" style="background-color: #FFCC00;">121</td><td align="center" style="background-color: #FFCC00;">y</td> </tr>
+
+<tr>
+<td align="right" style="background-color: #EEEEEE;">38</td><td align="center" style="background-color: #EEEEEE;">&</td> <td align="right" style="background-color: #00EEFF;">50</td><td align="center" style="background-color: #00EEFF;">2</td> <td align="right" style="background-color: #EEEEEE;">62</td><td align="center" style="background-color: #EEEEEE;">></td> <td align="right" style="background-color: #EEFF00;">74</td><td align="center" style="background-color: #EEFF00;">J</td> <td align="right" style="background-color: #EEFF00;">86</td><td align="center" style="background-color: #EEFF00;">V</td> <td align="right" style="background-color: #FFCC00;">98</td><td align="center" style="background-color: #FFCC00;">b</td> <td align="right" style="background-color: #FFCC00;">110</td><td align="center" style="background-color: #FFCC00;">n</td> <td align="right" style="background-color: #FFCC00;">122</td><td align="center" style="background-color: #FFCC00;">z</td> </tr>
+
+<tr>
+<td align="right" style="background-color: #EEEEEE;">39</td><td align="center" style="background-color: #EEEEEE;">'</td> <td align="right" style="background-color: #00EEFF;">51</td><td align="center" style="background-color: #00EEFF;">3</td> <td align="right" style="background-color: #EEEEEE;">63</td><td align="center" style="background-color: #EEEEEE;">?</td> <td align="right" style="background-color: #EEFF00;">75</td><td align="center" style="background-color: #EEFF00;">K</td> <td align="right" style="background-color: #EEFF00;">87</td><td align="center" style="background-color: #EEFF00;">W</td> <td align="right" style="background-color: #FFCC00;">99</td><td align="center" style="background-color: #FFCC00;">c</td> <td align="right" style="background-color: #FFCC00;">111</td><td align="center" style="background-color: #FFCC00;">o</td> <td align="right" style="background-color: #EEEEEE;">123</td><td align="center" style="background-color: #EEEEEE;">{</td> </tr>
+
+<tr>
+<td align="right" style="background-color: #EEEEEE;">40</td><td align="center" style="background-color: #EEEEEE;">(</td> <td align="right" style="background-color: #00EEFF;">52</td><td align="center" style="background-color: #00EEFF;">4</td> <td align="right" style="background-color: #EEEEEE;">64</td><td align="center" style="background-color: #EEEEEE;">@</td> <td align="right" style="background-color: #EEFF00;">76</td><td align="center" style="background-color: #EEFF00;">L</td> <td align="right" style="background-color: #EEFF00;">88</td><td align="center" style="background-color: #EEFF00;">X</td> <td align="right" style="background-color: #FFCC00;">100</td><td align="center" style="background-color: #FFCC00;">d</td> <td align="right" style="background-color: #FFCC00;">112</td><td align="center" style="background-color: #FFCC00;">p</td> <td align="right" style="background-color: #EEEEEE;">124</td><td align="center" style="background-color: #EEEEEE;">|</td> </tr>
+
+<tr>
+<td align="right" style="background-color: #EEEEEE;">41</td><td align="center" style="background-color: #EEEEEE;">)</td> <td align="right" style="background-color: #00EEFF;">53</td><td align="center" style="background-color: #00EEFF;">5</td> <td align="right" style="background-color: #EEFF00;">65</td><td align="center" style="background-color: #EEFF00;">A</td> <td align="right" style="background-color: #EEFF00;">77</td><td align="center" style="background-color: #EEFF00;">M</td> <td align="right" style="background-color: #EEFF00;">89</td><td align="center" style="background-color: #EEFF00;">Y</td> <td align="right" style="background-color: #FFCC00;">101</td><td align="center" style="background-color: #FFCC00;">e</td> <td align="right" style="background-color: #FFCC00;">113</td><td align="center" style="background-color: #FFCC00;">q</td> <td align="right" style="background-color: #EEEEEE;">125</td><td align="center" style="background-color: #EEEEEE;">}</td> </tr>
+
+<tr>
+<td align="right" style="background-color: #EEEEEE;">42</td><td align="center" style="background-color: #EEEEEE;">*</td> <td align="right" style="background-color: #00EEFF;">54</td><td align="center" style="background-color: #00EEFF;">6</td> <td align="right" style="background-color: #EEFF00;">66</td><td align="center" style="background-color: #EEFF00;">B</td> <td align="right" style="background-color: #EEFF00;">78</td><td align="center" style="background-color: #EEFF00;">N</td> <td align="right" style="background-color: #EEFF00;">90</td><td align="center" style="background-color: #EEFF00;">Z</td> <td align="right" style="background-color: #FFCC00;">102</td><td align="center" style="background-color: #FFCC00;">f</td> <td align="right" style="background-color: #FFCC00;">114</td><td align="center" style="background-color: #FFCC00;">r</td> <td align="right" style="background-color: #EEEEEE;">126</td><td align="center" style="background-color: #EEEEEE;">~</td> </tr>
+
+<tr>
+<td align="right" style="background-color: #EEEEEE;">43</td><td align="center" style="background-color: #EEEEEE;">+</td> <td align="right" style="background-color: #00EEFF;">55</td><td align="center" style="background-color: #00EEFF;">7</td> <td align="right" style="background-color: #EEFF00;">67</td><td align="center" style="background-color: #EEFF00;">C</td> <td align="right" style="background-color: #EEFF00;">79</td><td align="center" style="background-color: #EEFF00;">O</td> <td align="right" style="background-color: #EEEEEE;">91</td><td align="center" style="background-color: #EEEEEE;">[</td> <td align="right" style="background-color: #FFCC00;">103</td><td align="center" style="background-color: #FFCC00;">g</td> <td align="right" style="background-color: #FFCC00;">115</td><td align="center" style="background-color: #FFCC00;">s</td> <td align="right" style="background-color: #EEEEEE;">127</td><td align="center" style="background-color: #EEEEEE;"</td> </tr>
+
+
+</table>
+</section>
+
+
+
+<section data-transition="slide-in none-out">
+<h2>Datos de la imagen</h2>
+<div class="animate">
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.0//EN" "http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd">
+<svg height="80" width="240" xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+	<g id="s">
+		<g id="g0" transform="translate(0,0)">
+			<rect height="38" id="b0" style="fill: rgb(207,251,245); stroke: rgb(153,153,153)" width="38" x="0" y="0">
+				<animate attributeName="fill-opacity" begin="step0.end" dur="2s" fill="freeze" from="1" to="0" />
+				<animate attributeName="stroke-opacity" begin="step0.end" dur="2s" fill="freeze" from="1" to="0" />
+				<animate attributeName="fill-opacity" begin="rstep0.end" dur="1s" fill="freeze" from="0" to="1" />
+				<animate attributeName="stroke-opacity" begin="rstep0.end" dur="1s" fill="freeze" from="0" to="1" />
+			</rect>
+			<text alignment-baseline="middle" id="t0" style="fill: rgb(0,0,0); font: Lato; font-size: 28; stroke: rgb(0,0,0)" text-anchor="middle" type="span" x="19" y="22">
+				<animate attributeName="letter-spacing" begin="step0.end" dur="2s" fill="freeze" from="1" to="2" />
+				<animate attributeName="letter-spacing" begin="rstep0.end" dur="1s" fill="freeze" from="2" to="1" />10</text>
+			<animateTransform attributeName="transform" begin="indefinite" calcMode="linear" class="fragment" data-reverse="rstep0" dur="0.1s" fill="freeze" id="step0" repeatCount="1" restart="click" type="translate" values="0,0; 0,250;" />
+			<animateTransform attributeName="transform" begin="indefinite" dur="0.01s" fill="freeze" from="0, 250" id="rstep0" to="0, 0" type="translate" />
+		</g>
+		<g id="g1" transform="translate(38,0)">
+			<rect height="38" id="b1" style="fill: rgb(207,251,245); stroke: rgb(153,153,153)" width="38" x="0" y="0">
+				<animate attributeName="fill-opacity" begin="step1.end" dur="2s" fill="freeze" from="1" to="0" />
+				<animate attributeName="stroke-opacity" begin="step1.end" dur="2s" fill="freeze" from="1" to="0" />
+				<animate attributeName="fill-opacity" begin="rstep0.end" dur="1s" fill="freeze" from="0" to="1" />
+				<animate attributeName="stroke-opacity" begin="rstep0.end" dur="1s" fill="freeze" from="0" to="1" />
+			</rect>
+			<text alignment-baseline="middle" id="t1" style="fill: rgb(0,0,0); font: Lato; font-size: 28; stroke: rgb(0,0,0)" text-anchor="middle" type="span" x="19" y="22">
+				<animate attributeName="letter-spacing" begin="step1.end" dur="2s" fill="freeze" from="1" to="2" />
+				<animate attributeName="letter-spacing" begin="rstep0.end" dur="1s" fill="freeze" from="2" to="1" />10</text>
+			<animateTransform attributeName="transform" begin="step0.end" calcMode="linear" class="chained" data-reverse="rstep1" dur="0.1s" fill="freeze" id="step1" repeatCount="1" restart="click" type="translate" values="38,0; 38,250;" />
+			<animateTransform attributeName="transform" begin="rstep0.end" dur="0.01s" fill="freeze" from="38, 250" id="rstep1" to="38, 0" type="translate" />
+		</g>
+		<g id="g2" transform="translate(76,0)">
+			<rect height="38" id="b2" style="fill: rgb(0,107,107); stroke: rgb(153,153,153)" width="38" x="0" y="0">
+				<animate attributeName="fill-opacity" begin="step2.end" dur="2s" fill="freeze" from="1" to="0" />
+				<animate attributeName="stroke-opacity" begin="step2.end" dur="2s" fill="freeze" from="1" to="0" />
+				<animate attributeName="fill-opacity" begin="rstep0.end" dur="1s" fill="freeze" from="0" to="1" />
+				<animate attributeName="stroke-opacity" begin="rstep0.end" dur="1s" fill="freeze" from="0" to="1" />
+			</rect>
+			<text alignment-baseline="middle" id="t2" style="fill: rgb(0,0,0); font: Lato; font-size: 28; stroke: rgb(0,0,0)" text-anchor="middle" type="span" x="19" y="22">
+				<animate attributeName="letter-spacing" begin="step2.end" dur="2s" fill="freeze" from="1" to="2" />
+				<animate attributeName="letter-spacing" begin="rstep0.end" dur="1s" fill="freeze" from="2" to="1" />11</text>
+			<animateTransform attributeName="transform" begin="step1.end" calcMode="linear" class="chained" data-reverse="rstep2" dur="0.1s" fill="freeze" id="step2" repeatCount="1" restart="click" type="translate" values="76,0; 76,250;" />
+			<animateTransform attributeName="transform" begin="rstep0.end" dur="0.01s" fill="freeze" from="76, 250" id="rstep2" to="76, 0" type="translate" />
+		</g>
+		<g id="g3" transform="translate(114,0)">
+			<rect height="38" id="b3" style="fill: rgb(207,251,245); stroke: rgb(153,153,153)" width="38" x="0" y="0">
+				<animate attributeName="fill-opacity" begin="step3.end" dur="2s" fill="freeze" from="1" to="0" />
+				<animate attributeName="stroke-opacity" begin="step3.end" dur="2s" fill="freeze" from="1" to="0" />
+				<animate attributeName="fill-opacity" begin="rstep0.end" dur="1s" fill="freeze" from="0" to="1" />
+				<animate attributeName="stroke-opacity" begin="rstep0.end" dur="1s" fill="freeze" from="0" to="1" />
+			</rect>
+			<text alignment-baseline="middle" id="t3" style="fill: rgb(0,0,0); font: Lato; font-size: 28; stroke: rgb(0,0,0)" text-anchor="middle" type="span" x="19" y="22">
+				<animate attributeName="letter-spacing" begin="step3.end" dur="2s" fill="freeze" from="1" to="2" />
+				<animate attributeName="letter-spacing" begin="rstep0.end" dur="1s" fill="freeze" from="2" to="1" />10</text>
+			<animateTransform attributeName="transform" begin="step2.end" calcMode="linear" class="chained" data-reverse="rstep3" dur="0.1s" fill="freeze" id="step3" repeatCount="1" restart="click" type="translate" values="114,0; 114,250;" />
+			<animateTransform attributeName="transform" begin="rstep0.end" dur="0.01s" fill="freeze" from="114, 250" id="rstep3" to="114, 0" type="translate" />
+		</g>
+		<g id="g4" transform="translate(152,0)">
+			<rect height="38" id="b4" style="fill: rgb(207,251,245); stroke: rgb(153,153,153)" width="38" x="0" y="0">
+				<animate attributeName="fill-opacity" begin="step4.end" dur="2s" fill="freeze" from="1" to="0" />
+				<animate attributeName="stroke-opacity" begin="step4.end" dur="2s" fill="freeze" from="1" to="0" />
+				<animate attributeName="fill-opacity" begin="rstep0.end" dur="1s" fill="freeze" from="0" to="1" />
+				<animate attributeName="stroke-opacity" begin="rstep0.end" dur="1s" fill="freeze" from="0" to="1" />
+			</rect>
+			<text alignment-baseline="middle" id="t4" style="fill: rgb(0,0,0); font: Lato; font-size: 28; stroke: rgb(0,0,0)" text-anchor="middle" type="span" x="19" y="22">
+				<animate attributeName="letter-spacing" begin="step4.end" dur="2s" fill="freeze" from="1" to="2" />
+				<animate attributeName="letter-spacing" begin="rstep0.end" dur="1s" fill="freeze" from="2" to="1" />10</text>
+			<animateTransform attributeName="transform" begin="step3.end" calcMode="linear" class="chained" data-reverse="rstep4" dur="0.1s" fill="freeze" id="step4" repeatCount="1" restart="click" type="translate" values="152,0; 152,250;" />
+			<animateTransform attributeName="transform" begin="rstep0.end" dur="0.01s" fill="freeze" from="152, 250" id="rstep4" to="152, 0" type="translate" />
+		</g>
+		<g id="g5" transform="translate(0,38)">
+			<rect height="38" id="b5" style="fill: rgb(207,251,245); stroke: rgb(153,153,153)" width="38" x="0" y="0">
+				<animate attributeName="fill-opacity" begin="step5.end" dur="2s" fill="freeze" from="1" to="0" />
+				<animate attributeName="stroke-opacity" begin="step5.end" dur="2s" fill="freeze" from="1" to="0" />
+				<animate attributeName="fill-opacity" begin="rstep0.end" dur="1s" fill="freeze" from="0" to="1" />
+				<animate attributeName="stroke-opacity" begin="rstep0.end" dur="1s" fill="freeze" from="0" to="1" />
+			</rect>
+			<text alignment-baseline="middle" id="t5" style="fill: rgb(0,0,0); font: Lato; font-size: 28; stroke: rgb(0,0,0)" text-anchor="middle" type="span" x="19" y="22">
+				<animate attributeName="letter-spacing" begin="step5.end" dur="2s" fill="freeze" from="1" to="2" />
+				<animate attributeName="letter-spacing" begin="rstep0.end" dur="1s" fill="freeze" from="2" to="1" />10</text>
+			<animateTransform attributeName="transform" begin="step4.end" calcMode="linear" class="chained" data-reverse="rstep5" dur="0.1s" fill="freeze" id="step5" repeatCount="1" restart="click" type="translate" values="0,38; 190,250;" />
+			<animateTransform attributeName="transform" begin="rstep0.end" dur="0.01s" fill="freeze" from="190, 250" id="rstep5" to="0, 38" type="translate" />
+		</g>
+		<g id="g6" transform="translate(38,38)">
+			<rect height="38" id="b6" style="fill: rgb(0,107,107); stroke: rgb(153,153,153)" width="38" x="0" y="0">
+				<animate attributeName="fill-opacity" begin="step6.end" dur="2s" fill="freeze" from="1" to="0" />
+				<animate attributeName="stroke-opacity" begin="step6.end" dur="2s" fill="freeze" from="1" to="0" />
+				<animate attributeName="fill-opacity" begin="rstep0.end" dur="1s" fill="freeze" from="0" to="1" />
+				<animate attributeName="stroke-opacity" begin="rstep0.end" dur="1s" fill="freeze" from="0" to="1" />
+			</rect>
+			<text alignment-baseline="middle" id="t6" style="fill: rgb(0,0,0); font: Lato; font-size: 28; stroke: rgb(0,0,0)" text-anchor="middle" type="span" x="19" y="22">
+				<animate attributeName="letter-spacing" begin="step6.end" dur="2s" fill="freeze" from="1" to="2" />
+				<animate attributeName="letter-spacing" begin="rstep0.end" dur="1s" fill="freeze" from="2" to="1" />11</text>
+			<animateTransform attributeName="transform" begin="step5.end" calcMode="linear" class="chained" data-reverse="rstep6" dur="0.1s" fill="freeze" id="step6" repeatCount="1" restart="click" type="translate" values="38,38; 228,250;" />
+			<animateTransform attributeName="transform" begin="rstep0.end" dur="0.01s" fill="freeze" from="228, 250" id="rstep6" to="38, 38" type="translate" />
+		</g>
+		<g id="g7" transform="translate(76,38)">
+			<rect height="38" id="b7" style="fill: rgb(0,107,107); stroke: rgb(153,153,153)" width="38" x="0" y="0">
+				<animate attributeName="fill-opacity" begin="step7.end" dur="2s" fill="freeze" from="1" to="0" />
+				<animate attributeName="stroke-opacity" begin="step7.end" dur="2s" fill="freeze" from="1" to="0" />
+				<animate attributeName="fill-opacity" begin="rstep0.end" dur="1s" fill="freeze" from="0" to="1" />
+				<animate attributeName="stroke-opacity" begin="rstep0.end" dur="1s" fill="freeze" from="0" to="1" />
+			</rect>
+			<text alignment-baseline="middle" id="t7" style="fill: rgb(0,0,0); font: Lato; font-size: 28; stroke: rgb(0,0,0)" text-anchor="middle" type="span" x="19" y="22">
+				<animate attributeName="letter-spacing" begin="step7.end" dur="2s" fill="freeze" from="1" to="2" />
+				<animate attributeName="letter-spacing" begin="rstep0.end" dur="1s" fill="freeze" from="2" to="1" />11</text>
+			<animateTransform attributeName="transform" begin="step6.end" calcMode="linear" class="chained" data-reverse="rstep7" dur="0.1s" fill="freeze" id="step7" repeatCount="1" restart="click" type="translate" values="76,38; 266,250;" />
+			<animateTransform attributeName="transform" begin="rstep0.end" dur="0.01s" fill="freeze" from="266, 250" id="rstep7" to="76, 38" type="translate" />
+		</g>
+		<g id="g8" transform="translate(114,38)">
+			<rect height="38" id="b8" style="fill: rgb(0,107,107); stroke: rgb(153,153,153)" width="38" x="0" y="0">
+				<animate attributeName="fill-opacity" begin="step8.end" dur="2s" fill="freeze" from="1" to="0" />
+				<animate attributeName="stroke-opacity" begin="step8.end" dur="2s" fill="freeze" from="1" to="0" />
+				<animate attributeName="fill-opacity" begin="rstep0.end" dur="1s" fill="freeze" from="0" to="1" />
+				<animate attributeName="stroke-opacity" begin="rstep0.end" dur="1s" fill="freeze" from="0" to="1" />
+			</rect>
+			<text alignment-baseline="middle" id="t8" style="fill: rgb(0,0,0); font: Lato; font-size: 28; stroke: rgb(0,0,0)" text-anchor="middle" type="span" x="19" y="22">
+				<animate attributeName="letter-spacing" begin="step8.end" dur="2s" fill="freeze" from="1" to="2" />
+				<animate attributeName="letter-spacing" begin="rstep0.end" dur="1s" fill="freeze" from="2" to="1" />11</text>
+			<animateTransform attributeName="transform" begin="step7.end" calcMode="linear" class="chained" data-reverse="rstep8" dur="0.1s" fill="freeze" id="step8" repeatCount="1" restart="click" type="translate" values="114,38; 304,250;" />
+			<animateTransform attributeName="transform" begin="rstep0.end" dur="0.01s" fill="freeze" from="304, 250" id="rstep8" to="114, 38" type="translate" />
+		</g>
+		<g id="g9" transform="translate(152,38)">
+			<rect height="38" id="b9" style="fill: rgb(0,107,107); stroke: rgb(153,153,153)" width="38" x="0" y="0">
+				<animate attributeName="fill-opacity" begin="step9.end" dur="2s" fill="freeze" from="1" to="0" />
+				<animate attributeName="stroke-opacity" begin="step9.end" dur="2s" fill="freeze" from="1" to="0" />
+				<animate attributeName="fill-opacity" begin="rstep0.end" dur="1s" fill="freeze" from="0" to="1" />
+				<animate attributeName="stroke-opacity" begin="rstep0.end" dur="1s" fill="freeze" from="0" to="1" />
+			</rect>
+			<text alignment-baseline="middle" id="t9" style="fill: rgb(0,0,0); font: Lato; font-size: 28; stroke: rgb(0,0,0)" text-anchor="middle" type="span" x="19" y="22">
+				<animate attributeName="letter-spacing" begin="step9.end" dur="2s" fill="freeze" from="1" to="2" />
+				<animate attributeName="letter-spacing" begin="rstep0.end" dur="1s" fill="freeze" from="2" to="1" />11</text>
+			<animateTransform attributeName="transform" begin="step8.end" calcMode="linear" class="chained" data-reverse="rstep9" dur="0.1s" fill="freeze" id="step9" repeatCount="1" restart="click" type="translate" values="152,38; 342,250;" />
+			<animateTransform attributeName="transform" begin="rstep0.end" dur="0.01s" fill="freeze" from="342, 250" id="rstep9" to="152, 38" type="translate" />
+		</g>
+		<g id="g10" transform="translate(0,76)">
+			<rect height="38" id="b10" style="fill: rgb(207,251,245); stroke: rgb(153,153,153)" width="38" x="0" y="0">
+				<animate attributeName="fill-opacity" begin="step10.end" dur="2s" fill="freeze" from="1" to="0" />
+				<animate attributeName="stroke-opacity" begin="step10.end" dur="2s" fill="freeze" from="1" to="0" />
+				<animate attributeName="fill-opacity" begin="rstep0.end" dur="1s" fill="freeze" from="0" to="1" />
+				<animate attributeName="stroke-opacity" begin="rstep0.end" dur="1s" fill="freeze" from="0" to="1" />
+			</rect>
+			<text alignment-baseline="middle" id="t10" style="fill: rgb(0,0,0); font: Lato; font-size: 28; stroke: rgb(0,0,0)" text-anchor="middle" type="span" x="19" y="22">
+				<animate attributeName="letter-spacing" begin="step10.end" dur="2s" fill="freeze" from="1" to="2" />
+				<animate attributeName="letter-spacing" begin="rstep0.end" dur="1s" fill="freeze" from="2" to="1" />10</text>
+			<animateTransform attributeName="transform" begin="step9.end" calcMode="linear" class="chained" data-reverse="rstep10" dur="0.1s" fill="freeze" id="step10" repeatCount="1" restart="click" type="translate" values="0,76; 380,250;" />
+			<animateTransform attributeName="transform" begin="rstep0.end" dur="0.01s" fill="freeze" from="380, 250" id="rstep10" to="0, 76" type="translate" />
+		</g>
+		<g id="g11" transform="translate(38,76)">
+			<rect height="38" id="b11" style="fill: rgb(207,251,245); stroke: rgb(153,153,153)" width="38" x="0" y="0">
+				<animate attributeName="fill-opacity" begin="step11.end" dur="2s" fill="freeze" from="1" to="0" />
+				<animate attributeName="stroke-opacity" begin="step11.end" dur="2s" fill="freeze" from="1" to="0" />
+				<animate attributeName="fill-opacity" begin="rstep0.end" dur="1s" fill="freeze" from="0" to="1" />
+				<animate attributeName="stroke-opacity" begin="rstep0.end" dur="1s" fill="freeze" from="0" to="1" />
+			</rect>
+			<text alignment-baseline="middle" id="t11" style="fill: rgb(0,0,0); font: Lato; font-size: 28; stroke: rgb(0,0,0)" text-anchor="middle" type="span" x="19" y="22">
+				<animate attributeName="letter-spacing" begin="step11.end" dur="2s" fill="freeze" from="1" to="2" />
+				<animate attributeName="letter-spacing" begin="rstep0.end" dur="1s" fill="freeze" from="2" to="1" />10</text>
+			<animateTransform attributeName="transform" begin="step10.end" calcMode="linear" class="chained" data-reverse="rstep11" dur="0.1s" fill="freeze" id="step11" repeatCount="1" restart="click" type="translate" values="38,76; 418,250;" />
+			<animateTransform attributeName="transform" begin="rstep0.end" dur="0.01s" fill="freeze" from="418, 250" id="rstep11" to="38, 76" type="translate" />
+		</g>
+		<g id="g12" transform="translate(76,76)">
+			<rect height="38" id="b12" style="fill: rgb(0,107,107); stroke: rgb(153,153,153)" width="38" x="0" y="0">
+				<animate attributeName="fill-opacity" begin="step12.end" dur="2s" fill="freeze" from="1" to="0" />
+				<animate attributeName="stroke-opacity" begin="step12.end" dur="2s" fill="freeze" from="1" to="0" />
+				<animate attributeName="fill-opacity" begin="rstep0.end" dur="1s" fill="freeze" from="0" to="1" />
+				<animate attributeName="stroke-opacity" begin="rstep0.end" dur="1s" fill="freeze" from="0" to="1" />
+			</rect>
+			<text alignment-baseline="middle" id="t12" style="fill: rgb(0,0,0); font: Lato; font-size: 28; stroke: rgb(0,0,0)" text-anchor="middle" type="span" x="19" y="22">
+				<animate attributeName="letter-spacing" begin="step12.end" dur="2s" fill="freeze" from="1" to="2" />
+				<animate attributeName="letter-spacing" begin="rstep0.end" dur="1s" fill="freeze" from="2" to="1" />11</text>
+			<animateTransform attributeName="transform" begin="step11.end" calcMode="linear" class="chained" data-reverse="rstep12" dur="0.1s" fill="freeze" id="step12" repeatCount="1" restart="click" type="translate" values="76,76; 456,250;" />
+			<animateTransform attributeName="transform" begin="rstep0.end" dur="0.01s" fill="freeze" from="456, 250" id="rstep12" to="76, 76" type="translate" />
+		</g>
+		<g id="g13" transform="translate(114,76)">
+			<rect height="38" id="b13" style="fill: rgb(207,251,245); stroke: rgb(153,153,153)" width="38" x="0" y="0">
+				<animate attributeName="fill-opacity" begin="step13.end" dur="2s" fill="freeze" from="1" to="0" />
+				<animate attributeName="stroke-opacity" begin="step13.end" dur="2s" fill="freeze" from="1" to="0" />
+				<animate attributeName="fill-opacity" begin="rstep0.end" dur="1s" fill="freeze" from="0" to="1" />
+				<animate attributeName="stroke-opacity" begin="rstep0.end" dur="1s" fill="freeze" from="0" to="1" />
+			</rect>
+			<text alignment-baseline="middle" id="t13" style="fill: rgb(0,0,0); font: Lato; font-size: 28; stroke: rgb(0,0,0)" text-anchor="middle" type="span" x="19" y="22">
+				<animate attributeName="letter-spacing" begin="step13.end" dur="2s" fill="freeze" from="1" to="2" />
+				<animate attributeName="letter-spacing" begin="rstep0.end" dur="1s" fill="freeze" from="2" to="1" />10</text>
+			<animateTransform attributeName="transform" begin="step12.end" calcMode="linear" class="chained" data-reverse="rstep13" dur="0.1s" fill="freeze" id="step13" repeatCount="1" restart="click" type="translate" values="114,76; 494,250;" />
+			<animateTransform attributeName="transform" begin="rstep0.end" dur="0.01s" fill="freeze" from="494, 250" id="rstep13" to="114, 76" type="translate" />
+		</g>
+		<g id="g14" transform="translate(152,76)">
+			<rect height="38" id="b14" style="fill: rgb(207,251,245); stroke: rgb(153,153,153)" width="38" x="0" y="0">
+				<animate attributeName="fill-opacity" begin="step14.end" dur="2s" fill="freeze" from="1" to="0" />
+				<animate attributeName="stroke-opacity" begin="step14.end" dur="2s" fill="freeze" from="1" to="0" />
+				<animate attributeName="fill-opacity" begin="rstep0.end" dur="1s" fill="freeze" from="0" to="1" />
+				<animate attributeName="stroke-opacity" begin="rstep0.end" dur="1s" fill="freeze" from="0" to="1" />
+			</rect>
+			<text alignment-baseline="middle" id="t14" style="fill: rgb(0,0,0); font: Lato; font-size: 28; stroke: rgb(0,0,0)" text-anchor="middle" type="span" x="19" y="22">
+				<animate attributeName="letter-spacing" begin="step14.end" dur="2s" fill="freeze" from="1" to="2" />
+				<animate attributeName="letter-spacing" begin="rstep0.end" dur="1s" fill="freeze" from="2" to="1" />10</text>
+			<animateTransform attributeName="transform" begin="step13.end" calcMode="linear" class="chained" data-reverse="rstep14" dur="0.1s" fill="freeze" id="step14" repeatCount="1" restart="click" type="translate" values="152,76; 532,250;" />
+			<animateTransform attributeName="transform" begin="rstep0.end" dur="0.01s" fill="freeze" from="532, 250" id="rstep14" to="152, 76" type="translate" />
+		</g>
+		<g id="g15" transform="translate(0,114)">
+			<rect height="38" id="b15" style="fill: rgb(255,255,255); stroke: rgb(153,153,153)" width="38" x="0" y="0">
+				<animate attributeName="fill-opacity" begin="step15.end" dur="2s" fill="freeze" from="1" to="0" />
+				<animate attributeName="stroke-opacity" begin="step15.end" dur="2s" fill="freeze" from="1" to="0" />
+				<animate attributeName="fill-opacity" begin="rstep0.end" dur="1s" fill="freeze" from="0" to="1" />
+				<animate attributeName="stroke-opacity" begin="rstep0.end" dur="1s" fill="freeze" from="0" to="1" />
+			</rect>
+			<text alignment-baseline="middle" id="t15" style="fill: rgb(0,0,0); font: Lato; font-size: 28; stroke: rgb(0,0,0)" text-anchor="middle" type="span" x="19" y="22">
+				<animate attributeName="letter-spacing" begin="step15.end" dur="2s" fill="freeze" from="1" to="2" />
+				<animate attributeName="letter-spacing" begin="rstep0.end" dur="1s" fill="freeze" from="2" to="1" />00</text>
+			<animateTransform attributeName="transform" begin="step14.end" calcMode="linear" class="chained" data-reverse="rstep15" dur="0.1s" fill="freeze" id="step15" repeatCount="1" restart="click" type="translate" values="0,114; 570,250;" />
+			<animateTransform attributeName="transform" begin="rstep0.end" dur="0.01s" fill="freeze" from="570, 250" id="rstep15" to="0, 114" type="translate" />
+		</g>
+		<g id="g16" transform="translate(38,114)">
+			<rect height="38" id="b16" style="fill: rgb(207,251,245); stroke: rgb(153,153,153)" width="38" x="0" y="0">
+				<animate attributeName="fill-opacity" begin="step16.end" dur="2s" fill="freeze" from="1" to="0" />
+				<animate attributeName="stroke-opacity" begin="step16.end" dur="2s" fill="freeze" from="1" to="0" />
+				<animate attributeName="fill-opacity" begin="rstep0.end" dur="1s" fill="freeze" from="0" to="1" />
+				<animate attributeName="stroke-opacity" begin="rstep0.end" dur="1s" fill="freeze" from="0" to="1" />
+			</rect>
+			<text alignment-baseline="middle" id="t16" style="fill: rgb(0,0,0); font: Lato; font-size: 28; stroke: rgb(0,0,0)" text-anchor="middle" type="span" x="19" y="22">
+				<animate attributeName="letter-spacing" begin="step16.end" dur="2s" fill="freeze" from="1" to="2" />
+				<animate attributeName="letter-spacing" begin="rstep0.end" dur="1s" fill="freeze" from="2" to="1" />10</text>
+			<animateTransform attributeName="transform" begin="step15.end" calcMode="linear" class="chained" data-reverse="rstep16" dur="0.1s" fill="freeze" id="step16" repeatCount="1" restart="click" type="translate" values="38,114; 608,250;" />
+			<animateTransform attributeName="transform" begin="rstep0.end" dur="0.01s" fill="freeze" from="608, 250" id="rstep16" to="38, 114" type="translate" />
+		</g>
+		<g id="g17" transform="translate(76,114)">
+			<rect height="38" id="b17" style="fill: rgb(207,251,245); stroke: rgb(153,153,153)" width="38" x="0" y="0">
+				<animate attributeName="fill-opacity" begin="step17.end" dur="2s" fill="freeze" from="1" to="0" />
+				<animate attributeName="stroke-opacity" begin="step17.end" dur="2s" fill="freeze" from="1" to="0" />
+				<animate attributeName="fill-opacity" begin="rstep0.end" dur="1s" fill="freeze" from="0" to="1" />
+				<animate attributeName="stroke-opacity" begin="rstep0.end" dur="1s" fill="freeze" from="0" to="1" />
+			</rect>
+			<text alignment-baseline="middle" id="t17" style="fill: rgb(0,0,0); font: Lato; font-size: 28; stroke: rgb(0,0,0)" text-anchor="middle" type="span" x="19" y="22">
+				<animate attributeName="letter-spacing" begin="step17.end" dur="2s" fill="freeze" from="1" to="2" />
+				<animate attributeName="letter-spacing" begin="rstep0.end" dur="1s" fill="freeze" from="2" to="1" />10</text>
+			<animateTransform attributeName="transform" begin="step16.end" calcMode="linear" class="chained" data-reverse="rstep17" dur="0.1s" fill="freeze" id="step17" repeatCount="1" restart="click" type="translate" values="76,114; 646,250;" />
+			<animateTransform attributeName="transform" begin="rstep0.end" dur="0.01s" fill="freeze" from="646, 250" id="rstep17" to="76, 114" type="translate" />
+		</g>
+		<g id="g18" transform="translate(114,114)">
+			<rect height="38" id="b18" style="fill: rgb(128,0,128); stroke: rgb(153,153,153)" width="38" x="0" y="0">
+				<animate attributeName="fill-opacity" begin="step18.end" dur="2s" fill="freeze" from="1" to="0" />
+				<animate attributeName="stroke-opacity" begin="step18.end" dur="2s" fill="freeze" from="1" to="0" />
+				<animate attributeName="fill-opacity" begin="rstep0.end" dur="1s" fill="freeze" from="0" to="1" />
+				<animate attributeName="stroke-opacity" begin="rstep0.end" dur="1s" fill="freeze" from="0" to="1" />
+			</rect>
+			<text alignment-baseline="middle" id="t18" style="fill: rgb(0,0,0); font: Lato; font-size: 28; stroke: rgb(0,0,0)" text-anchor="middle" type="span" x="19" y="22">
+				<animate attributeName="letter-spacing" begin="step18.end" dur="2s" fill="freeze" from="1" to="2" />
+				<animate attributeName="letter-spacing" begin="rstep0.end" dur="1s" fill="freeze" from="2" to="1" />01</text>
+			<animateTransform attributeName="transform" begin="step17.end" calcMode="linear" class="chained" data-reverse="rstep18" dur="0.1s" fill="freeze" id="step18" repeatCount="1" restart="click" type="translate" values="114,114; 684,250;" />
+			<animateTransform attributeName="transform" begin="rstep0.end" dur="0.01s" fill="freeze" from="684, 250" id="rstep18" to="114, 114" type="translate" />
+		</g>
+		<g id="g19" transform="translate(152,114)">
+			<rect height="38" id="b19" style="fill: rgb(207,251,245); stroke: rgb(153,153,153)" width="38" x="0" y="0">
+				<animate attributeName="fill-opacity" begin="step19.end" dur="2s" fill="freeze" from="1" to="0" />
+				<animate attributeName="stroke-opacity" begin="step19.end" dur="2s" fill="freeze" from="1" to="0" />
+				<animate attributeName="fill-opacity" begin="rstep0.end" dur="1s" fill="freeze" from="0" to="1" />
+				<animate attributeName="stroke-opacity" begin="rstep0.end" dur="1s" fill="freeze" from="0" to="1" />
+			</rect>
+			<text alignment-baseline="middle" id="t19" style="fill: rgb(0,0,0); font: Lato; font-size: 28; stroke: rgb(0,0,0)" text-anchor="middle" type="span" x="19" y="22">
+				<animate attributeName="letter-spacing" begin="step19.end" dur="2s" fill="freeze" from="1" to="2" />
+				<animate attributeName="letter-spacing" begin="rstep0.end" dur="1s" fill="freeze" from="2" to="1" />10</text>
+			<animateTransform attributeName="transform" begin="step18.end" calcMode="linear" class="chained" data-reverse="rstep19" dur="0.1s" fill="freeze" id="step19" repeatCount="1" restart="click" type="translate" values="152,114; 722,250;" />
+			<animateTransform attributeName="transform" begin="rstep0.end" dur="0.01s" fill="freeze" from="722, 250" id="rstep19" to="152, 114" type="translate" />
+		</g>
+		<g id="g20" transform="translate(0,152)">
+			<rect height="38" id="b20" style="fill: rgb(255,255,255); stroke: rgb(153,153,153)" width="38" x="0" y="0">
+				<animate attributeName="fill-opacity" begin="step20.end" dur="2s" fill="freeze" from="1" to="0" />
+				<animate attributeName="stroke-opacity" begin="step20.end" dur="2s" fill="freeze" from="1" to="0" />
+				<animate attributeName="fill-opacity" begin="rstep0.end" dur="1s" fill="freeze" from="0" to="1" />
+				<animate attributeName="stroke-opacity" begin="rstep0.end" dur="1s" fill="freeze" from="0" to="1" />
+			</rect>
+			<text alignment-baseline="middle" id="t20" style="fill: rgb(0,0,0); font: Lato; font-size: 28; stroke: rgb(0,0,0)" text-anchor="middle" type="span" x="19" y="22">
+				<animate attributeName="letter-spacing" begin="step20.end" dur="2s" fill="freeze" from="1" to="2" />
+				<animate attributeName="letter-spacing" begin="rstep0.end" dur="1s" fill="freeze" from="2" to="1" />00</text>
+			<animateTransform attributeName="transform" begin="step19.end" calcMode="linear" class="chained" data-reverse="rstep20" dur="0.1s" fill="freeze" id="step20" repeatCount="1" restart="click" type="translate" values="0,152; 760,250;" />
+			<animateTransform attributeName="transform" begin="rstep0.end" dur="0.01s" fill="freeze" from="760, 250" id="rstep20" to="0, 152" type="translate" />
+		</g>
+		<g id="g21" transform="translate(38,152)">
+			<rect height="38" id="b21" style="fill: rgb(255,255,255); stroke: rgb(153,153,153)" width="38" x="0" y="0">
+				<animate attributeName="fill-opacity" begin="step21.end" dur="2s" fill="freeze" from="1" to="0" />
+				<animate attributeName="stroke-opacity" begin="step21.end" dur="2s" fill="freeze" from="1" to="0" />
+				<animate attributeName="fill-opacity" begin="rstep0.end" dur="1s" fill="freeze" from="0" to="1" />
+				<animate attributeName="stroke-opacity" begin="rstep0.end" dur="1s" fill="freeze" from="0" to="1" />
+			</rect>
+			<text alignment-baseline="middle" id="t21" style="fill: rgb(0,0,0); font: Lato; font-size: 28; stroke: rgb(0,0,0)" text-anchor="middle" type="span" x="19" y="22">
+				<animate attributeName="letter-spacing" begin="step21.end" dur="2s" fill="freeze" from="1" to="2" />
+				<animate attributeName="letter-spacing" begin="rstep0.end" dur="1s" fill="freeze" from="2" to="1" />00</text>
+			<animateTransform attributeName="transform" begin="step20.end" calcMode="linear" class="chained" data-reverse="rstep21" dur="0.1s" fill="freeze" id="step21" repeatCount="1" restart="click" type="translate" values="38,152; 798,250;" />
+			<animateTransform attributeName="transform" begin="rstep0.end" dur="0.01s" fill="freeze" from="798, 250" id="rstep21" to="38, 152" type="translate" />
+		</g>
+		<g id="g22" transform="translate(76,152)">
+			<rect height="38" id="b22" style="fill: rgb(207,251,245); stroke: rgb(153,153,153)" width="38" x="0" y="0">
+				<animate attributeName="fill-opacity" begin="step22.end" dur="2s" fill="freeze" from="1" to="0" />
+				<animate attributeName="stroke-opacity" begin="step22.end" dur="2s" fill="freeze" from="1" to="0" />
+				<animate attributeName="fill-opacity" begin="rstep0.end" dur="1s" fill="freeze" from="0" to="1" />
+				<animate attributeName="stroke-opacity" begin="rstep0.end" dur="1s" fill="freeze" from="0" to="1" />
+			</rect>
+			<text alignment-baseline="middle" id="t22" style="fill: rgb(0,0,0); font: Lato; font-size: 28; stroke: rgb(0,0,0)" text-anchor="middle" type="span" x="19" y="22">
+				<animate attributeName="letter-spacing" begin="step22.end" dur="2s" fill="freeze" from="1" to="2" />
+				<animate attributeName="letter-spacing" begin="rstep0.end" dur="1s" fill="freeze" from="2" to="1" />10</text>
+			<animateTransform attributeName="transform" begin="step21.end" calcMode="linear" class="chained" data-reverse="rstep22" dur="0.1s" fill="freeze" id="step22" repeatCount="1" restart="click" type="translate" values="76,152; 836,250;" />
+			<animateTransform attributeName="transform" begin="rstep0.end" dur="0.01s" fill="freeze" from="836, 250" id="rstep22" to="76, 152" type="translate" />
+		</g>
+		<g id="g23" transform="translate(114,152)">
+			<rect height="38" id="b23" style="fill: rgb(207,251,245); stroke: rgb(153,153,153)" width="38" x="0" y="0">
+				<animate attributeName="fill-opacity" begin="step23.end" dur="2s" fill="freeze" from="1" to="0" />
+				<animate attributeName="stroke-opacity" begin="step23.end" dur="2s" fill="freeze" from="1" to="0" />
+				<animate attributeName="fill-opacity" begin="rstep0.end" dur="1s" fill="freeze" from="0" to="1" />
+				<animate attributeName="stroke-opacity" begin="rstep0.end" dur="1s" fill="freeze" from="0" to="1" />
+			</rect>
+			<text alignment-baseline="middle" id="t23" style="fill: rgb(0,0,0); font: Lato; font-size: 28; stroke: rgb(0,0,0)" text-anchor="middle" type="span" x="19" y="22">
+				<animate attributeName="letter-spacing" begin="step23.end" dur="2s" fill="freeze" from="1" to="2" />
+				<animate attributeName="letter-spacing" begin="rstep0.end" dur="1s" fill="freeze" from="2" to="1" />10</text>
+			<animateTransform attributeName="transform" begin="step22.end" calcMode="linear" class="chained" data-reverse="rstep23" dur="0.1s" fill="freeze" id="step23" repeatCount="1" restart="click" type="translate" values="114,152; 874,250;" />
+			<animateTransform attributeName="transform" begin="rstep0.end" dur="0.01s" fill="freeze" from="874, 250" id="rstep23" to="114, 152" type="translate" />
+		</g>
+		<g id="g24" transform="translate(152,152)">
+			<rect height="38" id="b24" style="fill: rgb(207,251,245); stroke: rgb(153,153,153)" width="38" x="0" y="0">
+				<animate attributeName="fill-opacity" begin="step24.end" dur="2s" fill="freeze" from="1" to="0" />
+				<animate attributeName="stroke-opacity" begin="step24.end" dur="2s" fill="freeze" from="1" to="0" />
+				<animate attributeName="fill-opacity" begin="rstep0.end" dur="1s" fill="freeze" from="0" to="1" />
+				<animate attributeName="stroke-opacity" begin="rstep0.end" dur="1s" fill="freeze" from="0" to="1" />
+			</rect>
+			<text alignment-baseline="middle" id="t24" style="fill: rgb(0,0,0); font: Lato; font-size: 28; stroke: rgb(0,0,0)" text-anchor="middle" type="span" x="19" y="22">
+				<animate attributeName="letter-spacing" begin="step24.end" dur="2s" fill="freeze" from="1" to="2" />
+				<animate attributeName="letter-spacing" begin="rstep0.end" dur="1s" fill="freeze" from="2" to="1" />10</text>
+			<animateTransform attributeName="transform" begin="step23.end" calcMode="linear" class="chained" data-reverse="rstep24" dur="0.1s" fill="freeze" id="step24" repeatCount="1" restart="click" type="translate" values="152,152; 912,250;" />
+			<animateTransform attributeName="transform" begin="rstep0.end" dur="0.01s" fill="freeze" from="912, 250" id="rstep24" to="152, 152" type="translate" />
+		</g>
+	</g>
+	<!-- 
+	Generated using the Perl SVG Module V2.64
+	by Ronan Oger
+	Info: http://www.roitsystems.com/
+ -->
+</svg></div>
+<ul>
+<li class="fragment">¿Cómo comunicar esta imagen a otro programa u otra computadora?</li>
+<li class="fragment">¿Qué falta especificar para poder reconstruir esta imagen?</li>
+</ul>
+</section>
+
+<section data-transition="slide-out none-in">
+<h2>Datos de la imagen</h2>
+<div class="animate stretch">
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.0//EN" "http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd">
+<svg height="80" width="240" xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+	<g id="s">
+		<g id="g0" transform="translate(0,250)">
+			<text alignment-baseline="middle" id="t0" letter-spacing="2" style="fill: rgb(0,0,0); font: Lato; font-size: 28; stroke: rgb(0,0,0)" text-anchor="middle" type="span" x="19" y="22">10</text>
+			<animateTransform attributeName="transform" begin="indefinite" calcMode="linear" class="fragment" data-reverse="rstep0" dur="0.5s" fill="freeze" id="step0" repeatCount="1" restart="click" type="translate" values="0,250; 686,0;" />
+			<animateTransform attributeName="transform" begin="indefinite" dur="0.01s" fill="freeze" from="686, 0" id="rstep0" repeatCount="1" to="0, 250" type="translate" />
+		</g>
+		<rect height="38" id="nb0" style="fill: rgb(207,231,245); fill-opacity: 0; stroke: rgb(153,153,153); stroke-opacity: 1" width="57" x="686" y="0" />
+		<g id="g1" transform="translate(38,250)">
+			<text alignment-baseline="middle" id="t1" letter-spacing="2" style="fill: rgb(0,0,0); font: Lato; font-size: 28; stroke: rgb(0,0,0)" text-anchor="middle" type="span" x="19" y="22">10</text>
+			<animateTransform attributeName="transform" begin="indefinite" calcMode="linear" class="fragment" data-reverse="rstep1" dur="0.5s" fill="freeze" id="step1" repeatCount="1" restart="click" type="translate" values="38,250; 724,0;" />
+			<animateTransform attributeName="transform" begin="indefinite" dur="0.01s" fill="freeze" from="724, 0" id="rstep1" repeatCount="1" to="38, 250" type="translate" />
+		</g>
+		<rect height="38" id="nb1" style="fill: rgb(207,231,245); fill-opacity: 0; stroke: rgb(153,153,153); stroke-opacity: 1" width="57" x="743" y="0" />
+		<g id="g2" transform="translate(76,250)">
+			<text alignment-baseline="middle" id="t2" letter-spacing="2" style="fill: rgb(0,0,0); font: Lato; font-size: 28; stroke: rgb(0,0,0)" text-anchor="middle" type="span" x="19" y="22">11</text>
+			<animateTransform attributeName="transform" begin="indefinite" calcMode="linear" class="fragment" data-reverse="rstep2" dur="0.5s" fill="freeze" id="step2" repeatCount="1" restart="click" type="translate" values="76,250; 762,0;" />
+			<animateTransform attributeName="transform" begin="indefinite" dur="0.01s" fill="freeze" from="762, 0" id="rstep2" repeatCount="1" to="76, 250" type="translate" />
+		</g>
+		<rect height="38" id="nb2" style="fill: rgb(0,107,107); fill-opacity: 0; stroke: rgb(153,153,153); stroke-opacity: 1" width="57" x="686" y="0" />
+		<g id="g3" transform="translate(114,250)">
+			<text alignment-baseline="middle" id="t3" letter-spacing="2" style="fill: rgb(0,0,0); font: Lato; font-size: 28; stroke: rgb(0,0,0)" text-anchor="middle" type="span" x="19" y="22">10</text>
+			<animateTransform attributeName="transform" begin="indefinite" calcMode="linear" class="fragment" data-reverse="rstep3" dur="0.5s" fill="freeze" id="step3" repeatCount="1" restart="click" type="translate" values="114,250; 686,38;" />
+			<animateTransform attributeName="transform" begin="indefinite" dur="0.01s" fill="freeze" from="686, 38" id="rstep3" repeatCount="1" to="114, 250" type="translate" />
+		</g>
+		<rect height="38" id="nb3" style="fill: rgb(207,231,245); fill-opacity: 0; stroke: rgb(153,153,153); stroke-opacity: 1" width="57" x="743" y="38" />
+		<g id="g4" transform="translate(152,250)">
+			<text alignment-baseline="middle" id="t4" letter-spacing="2" style="fill: rgb(0,0,0); font: Lato; font-size: 28; stroke: rgb(0,0,0)" text-anchor="middle" type="span" x="19" y="22">10</text>
+			<animateTransform attributeName="transform" begin="indefinite" calcMode="linear" class="fragment" data-reverse="rstep4" dur="0.5s" fill="freeze" id="step4" repeatCount="1" restart="click" type="translate" values="152,250; 724,38;" />
+			<animateTransform attributeName="transform" begin="indefinite" dur="0.01s" fill="freeze" from="724, 38" id="rstep4" repeatCount="1" to="152, 250" type="translate" />
+		</g>
+		<rect height="38" id="nb4" style="fill: rgb(207,231,245); fill-opacity: 0; stroke: rgb(153,153,153); stroke-opacity: 1" width="57" x="686" y="38" />
+		<g id="g5" transform="translate(190,250)">
+			<text alignment-baseline="middle" id="t5" letter-spacing="2" style="fill: rgb(0,0,0); font: Lato; font-size: 28; stroke: rgb(0,0,0)" text-anchor="middle" type="span" x="19" y="22">10</text>
+			<animateTransform attributeName="transform" begin="indefinite" calcMode="linear" class="fragment" data-reverse="rstep5" dur="0.5s" fill="freeze" id="step5" repeatCount="1" restart="click" type="translate" values="190,250; 762,38;" />
+			<animateTransform attributeName="transform" begin="indefinite" dur="0.01s" fill="freeze" from="762, 38" id="rstep5" repeatCount="1" to="190, 250" type="translate" />
+		</g>
+		<rect height="38" id="nb5" style="fill: rgb(207,231,245); fill-opacity: 0; stroke: rgb(153,153,153); stroke-opacity: 1" width="57" x="743" y="38" />
+		<g id="g6" transform="translate(228,250)">
+			<text alignment-baseline="middle" id="t6" letter-spacing="2" style="fill: rgb(0,0,0); font: Lato; font-size: 28; stroke: rgb(0,0,0)" text-anchor="middle" type="span" x="19" y="22">11</text>
+			<animateTransform attributeName="transform" begin="indefinite" calcMode="linear" class="fragment" data-reverse="rstep6" dur="0.5s" fill="freeze" id="step6" repeatCount="1" restart="click" type="translate" values="228,250; 686,76;" />
+			<animateTransform attributeName="transform" begin="indefinite" dur="0.01s" fill="freeze" from="686, 76" id="rstep6" repeatCount="1" to="228, 250" type="translate" />
+		</g>
+		<rect height="38" id="nb6" style="fill: rgb(0,107,107); fill-opacity: 0; stroke: rgb(153,153,153); stroke-opacity: 1" width="57" x="686" y="76" />
+		<g id="g7" transform="translate(266,250)">
+			<text alignment-baseline="middle" id="t7" letter-spacing="2" style="fill: rgb(0,0,0); font: Lato; font-size: 28; stroke: rgb(0,0,0)" text-anchor="middle" type="span" x="19" y="22">11</text>
+			<animateTransform attributeName="transform" begin="indefinite" calcMode="linear" class="fragment" data-reverse="rstep7" dur="0.5s" fill="freeze" id="step7" repeatCount="1" restart="click" type="translate" values="266,250; 724,76;" />
+			<animateTransform attributeName="transform" begin="indefinite" dur="0.01s" fill="freeze" from="724, 76" id="rstep7" repeatCount="1" to="266, 250" type="translate" />
+		</g>
+		<rect height="38" id="nb7" style="fill: rgb(0,107,107); fill-opacity: 0; stroke: rgb(153,153,153); stroke-opacity: 1" width="57" x="743" y="76" />
+		<g id="g8" transform="translate(304,250)">
+			<text alignment-baseline="middle" id="t8" letter-spacing="2" style="fill: rgb(0,0,0); font: Lato; font-size: 28; stroke: rgb(0,0,0)" text-anchor="middle" type="span" x="19" y="22">11</text>
+			<animateTransform attributeName="transform" begin="indefinite" calcMode="linear" class="fragment" data-reverse="rstep8" dur="0.5s" fill="freeze" id="step8" repeatCount="1" restart="click" type="translate" values="304,250; 762,76;" />
+			<animateTransform attributeName="transform" begin="indefinite" dur="0.01s" fill="freeze" from="762, 76" id="rstep8" repeatCount="1" to="304, 250" type="translate" />
+		</g>
+		<rect height="38" id="nb8" style="fill: rgb(0,107,107); fill-opacity: 0; stroke: rgb(153,153,153); stroke-opacity: 1" width="57" x="686" y="76" />
+		<g id="g9" transform="translate(342,250)">
+			<text alignment-baseline="middle" id="t9" letter-spacing="2" style="fill: rgb(0,0,0); font: Lato; font-size: 28; stroke: rgb(0,0,0)" text-anchor="middle" type="span" x="19" y="22">11</text>
+			<animateTransform attributeName="transform" begin="indefinite" calcMode="linear" class="fragment" data-reverse="rstep9" dur="0.5s" fill="freeze" id="step9" repeatCount="1" restart="click" type="translate" values="342,250; 686,114;" />
+			<animateTransform attributeName="transform" begin="indefinite" dur="0.01s" fill="freeze" from="686, 114" id="rstep9" repeatCount="1" to="342, 250" type="translate" />
+		</g>
+		<rect height="38" id="nb9" style="fill: rgb(0,107,107); fill-opacity: 0; stroke: rgb(153,153,153); stroke-opacity: 1" width="57" x="743" y="114" />
+		<g id="g10" transform="translate(380,250)">
+			<text alignment-baseline="middle" id="t10" letter-spacing="2" style="fill: rgb(0,0,0); font: Lato; font-size: 28; stroke: rgb(0,0,0)" text-anchor="middle" type="span" x="19" y="22">10</text>
+			<animateTransform attributeName="transform" begin="indefinite" calcMode="linear" class="fragment" data-reverse="rstep10" dur="0.5s" fill="freeze" id="step10" repeatCount="1" restart="click" type="translate" values="380,250; 724,114;" />
+			<animateTransform attributeName="transform" begin="indefinite" dur="0.01s" fill="freeze" from="724, 114" id="rstep10" repeatCount="1" to="380, 250" type="translate" />
+		</g>
+		<rect height="38" id="nb10" style="fill: rgb(207,231,245); fill-opacity: 0; stroke: rgb(153,153,153); stroke-opacity: 1" width="57" x="686" y="114" />
+		<g id="g11" transform="translate(418,250)">
+			<text alignment-baseline="middle" id="t11" letter-spacing="2" style="fill: rgb(0,0,0); font: Lato; font-size: 28; stroke: rgb(0,0,0)" text-anchor="middle" type="span" x="19" y="22">10</text>
+			<animateTransform attributeName="transform" begin="indefinite" calcMode="linear" class="fragment" data-reverse="rstep11" dur="0.5s" fill="freeze" id="step11" repeatCount="1" restart="click" type="translate" values="418,250; 762,114;" />
+			<animateTransform attributeName="transform" begin="indefinite" dur="0.01s" fill="freeze" from="762, 114" id="rstep11" repeatCount="1" to="418, 250" type="translate" />
+		</g>
+		<rect height="38" id="nb11" style="fill: rgb(207,231,245); fill-opacity: 0; stroke: rgb(153,153,153); stroke-opacity: 1" width="57" x="743" y="114" />
+		<g id="g12" transform="translate(456,250)">
+			<text alignment-baseline="middle" id="t12" letter-spacing="2" style="fill: rgb(0,0,0); font: Lato; font-size: 28; stroke: rgb(0,0,0)" text-anchor="middle" type="span" x="19" y="22">11</text>
+			<animateTransform attributeName="transform" begin="indefinite" calcMode="linear" class="fragment" data-reverse="rstep12" dur="0.5s" fill="freeze" id="step12" repeatCount="1" restart="click" type="translate" values="456,250; 686,152;" />
+			<animateTransform attributeName="transform" begin="indefinite" dur="0.01s" fill="freeze" from="686, 152" id="rstep12" repeatCount="1" to="456, 250" type="translate" />
+		</g>
+		<rect height="38" id="nb12" style="fill: rgb(0,107,107); fill-opacity: 0; stroke: rgb(153,153,153); stroke-opacity: 1" width="57" x="686" y="152" />
+		<g id="g13" transform="translate(494,250)">
+			<text alignment-baseline="middle" id="t13" letter-spacing="2" style="fill: rgb(0,0,0); font: Lato; font-size: 28; stroke: rgb(0,0,0)" text-anchor="middle" type="span" x="19" y="22">10</text>
+			<animateTransform attributeName="transform" begin="indefinite" calcMode="linear" class="fragment" data-reverse="rstep13" dur="0.5s" fill="freeze" id="step13" repeatCount="1" restart="click" type="translate" values="494,250; 724,152;" />
+			<animateTransform attributeName="transform" begin="indefinite" dur="0.01s" fill="freeze" from="724, 152" id="rstep13" repeatCount="1" to="494, 250" type="translate" />
+		</g>
+		<rect height="38" id="nb13" style="fill: rgb(207,231,245); fill-opacity: 0; stroke: rgb(153,153,153); stroke-opacity: 1" width="57" x="743" y="152" />
+		<g id="g14" transform="translate(532,250)">
+			<text alignment-baseline="middle" id="t14" letter-spacing="2" style="fill: rgb(0,0,0); font: Lato; font-size: 28; stroke: rgb(0,0,0)" text-anchor="middle" type="span" x="19" y="22">10</text>
+			<animateTransform attributeName="transform" begin="indefinite" calcMode="linear" class="fragment" data-reverse="rstep14" dur="0.5s" fill="freeze" id="step14" repeatCount="1" restart="click" type="translate" values="532,250; 762,152;" />
+			<animateTransform attributeName="transform" begin="indefinite" dur="0.01s" fill="freeze" from="762, 152" id="rstep14" repeatCount="1" to="532, 250" type="translate" />
+		</g>
+		<rect height="38" id="nb14" style="fill: rgb(207,231,245); fill-opacity: 0; stroke: rgb(153,153,153); stroke-opacity: 1" width="57" x="686" y="152" />
+		<g id="g15" transform="translate(570,250)">
+			<text alignment-baseline="middle" id="t15" letter-spacing="2" style="fill: rgb(0,0,0); font: Lato; font-size: 28; stroke: rgb(0,0,0)" text-anchor="middle" type="span" x="19" y="22">00</text>
+			<animateTransform attributeName="transform" begin="indefinite" calcMode="linear" class="fragment" data-reverse="rstep15" dur="0.5s" fill="freeze" id="step15" repeatCount="1" restart="click" type="translate" values="570,250; 686,190;" />
+			<animateTransform attributeName="transform" begin="indefinite" dur="0.01s" fill="freeze" from="686, 190" id="rstep15" repeatCount="1" to="570, 250" type="translate" />
+		</g>
+		<rect height="38" id="nb15" style="fill: rgb(255,255,255); fill-opacity: 0; stroke: rgb(153,153,153); stroke-opacity: 1" width="57" x="743" y="190" />
+		<g id="g16" transform="translate(608,250)">
+			<text alignment-baseline="middle" id="t16" letter-spacing="2" style="fill: rgb(0,0,0); font: Lato; font-size: 28; stroke: rgb(0,0,0)" text-anchor="middle" type="span" x="19" y="22">10</text>
+			<animateTransform attributeName="transform" begin="indefinite" calcMode="linear" class="fragment" data-reverse="rstep16" dur="0.5s" fill="freeze" id="step16" repeatCount="1" restart="click" type="translate" values="608,250; 724,190;" />
+			<animateTransform attributeName="transform" begin="indefinite" dur="0.01s" fill="freeze" from="724, 190" id="rstep16" repeatCount="1" to="608, 250" type="translate" />
+		</g>
+		<rect height="38" id="nb16" style="fill: rgb(207,231,245); fill-opacity: 0; stroke: rgb(153,153,153); stroke-opacity: 1" width="57" x="686" y="190" />
+		<g id="g17" transform="translate(646,250)">
+			<text alignment-baseline="middle" id="t17" letter-spacing="2" style="fill: rgb(0,0,0); font: Lato; font-size: 28; stroke: rgb(0,0,0)" text-anchor="middle" type="span" x="19" y="22">10</text>
+			<animateTransform attributeName="transform" begin="indefinite" calcMode="linear" class="fragment" data-reverse="rstep17" dur="0.5s" fill="freeze" id="step17" repeatCount="1" restart="click" type="translate" values="646,250; 762,190;" />
+			<animateTransform attributeName="transform" begin="indefinite" dur="0.01s" fill="freeze" from="762, 190" id="rstep17" repeatCount="1" to="646, 250" type="translate" />
+		</g>
+		<rect height="38" id="nb17" style="fill: rgb(207,231,245); fill-opacity: 0; stroke: rgb(153,153,153); stroke-opacity: 1" width="57" x="743" y="190" />
+		<g id="g18" transform="translate(684,250)">
+			<text alignment-baseline="middle" id="t18" letter-spacing="2" style="fill: rgb(0,0,0); font: Lato; font-size: 28; stroke: rgb(0,0,0)" text-anchor="middle" type="span" x="19" y="22">01</text>
+		</g>
+		<g id="g19" transform="translate(722,250)">
+			<text alignment-baseline="middle" id="t19" letter-spacing="2" style="fill: rgb(0,0,0); font: Lato; font-size: 28; stroke: rgb(0,0,0)" text-anchor="middle" type="span" x="19" y="22">10</text>
+		</g>
+		<g id="g20" transform="translate(760,250)">
+			<text alignment-baseline="middle" id="t20" letter-spacing="2" style="fill: rgb(0,0,0); font: Lato; font-size: 28; stroke: rgb(0,0,0)" text-anchor="middle" type="span" x="19" y="22">00</text>
+		</g>
+		<g id="g21" transform="translate(798,250)">
+			<text alignment-baseline="middle" id="t21" letter-spacing="2" style="fill: rgb(0,0,0); font: Lato; font-size: 28; stroke: rgb(0,0,0)" text-anchor="middle" type="span" x="19" y="22">00</text>
+		</g>
+		<g id="g22" transform="translate(836,250)">
+			<text alignment-baseline="middle" id="t22" letter-spacing="2" style="fill: rgb(0,0,0); font: Lato; font-size: 28; stroke: rgb(0,0,0)" text-anchor="middle" type="span" x="19" y="22">10</text>
+		</g>
+		<g id="g23" transform="translate(874,250)">
+			<text alignment-baseline="middle" id="t23" letter-spacing="2" style="fill: rgb(0,0,0); font: Lato; font-size: 28; stroke: rgb(0,0,0)" text-anchor="middle" type="span" x="19" y="22">10</text>
+		</g>
+		<g id="g24" transform="translate(912,250)">
+			<text alignment-baseline="middle" id="t24" letter-spacing="2" style="fill: rgb(0,0,0); font: Lato; font-size: 28; stroke: rgb(0,0,0)" text-anchor="middle" type="span" x="19" y="22">10</text>
+		</g>
+	</g>
+	<!-- 
+	Generated using the Perl SVG Module V2.64
+	by Ronan Oger
+	Info: http://www.roitsystems.com/
+ -->
+</svg></div>
+<ul>
+<li class="fragment">¿En cuántos bits se expresa la paleta? ¿Cuáles son el ancho y el alto?</li>
+<li class="fragment">Definir un formato con dimensiones y resolución de la imagen</li>
+</ul>
+</section>
+
+
+
+<section>
+	<h3>Acreditación</h3>
+	<object class="stretch" data="img/diagrama.svg" width="100%" height="100%" type="image/svg+xml" preload>
+	</object>
+</section>
+
+<section data-transition="fade-in slide-out" data-audio-src="audio/PRESENT/xx.mp3">
+<h2>Routers</h2>
+<img src="img/high-end-router.jpg" class="plain stretch">
+<div><a href="img/high-end-router.jpg" target="_blank"><small>Detalle</small></a></div>
+<aside data-markdown class="notes">
+</aside>
+</section>
+
+
+
+
+ 
+<section data-markdown data-background="#0088AA" data-background-transition="zoom">
+# Videos
+</section>
+
+
+<section data-background="black"
+	data-audio-src="audio/SistemasDeCómputo/11.mp3">
+<h2>Clementina</h2>
+	<iframe width="100%" height="100%" class="stretch" 
+		src="https://www.youtube.com/embed/JTzf5wEsSb8?wmode=opaque&rel=0" frameborder="0" allowfullscreen>
+	</iframe>  
+<aside data-markdown class="notes">
+¿Qué pasaba en nuestro país durante estas épocas? La actividad de la computación aquí no había comenzado. Recién a principios de los años 60 la universidad argentina decidió hacer una importante inversión, que fue la compra de una computadora de primera generación, bautizada aquí **Clementina**. El video adjunto cuenta interesantes detalles técnicos de la computadora, muestra cómo eran las personalidades involucradas por ese entonces en el proyecto científico y tecnológico argentino, y explica el contexto histórico en el que fue iniciado (y, lamentablemente, truncado) ese proyecto.
+</aside>
+</section>
+
+
+
+<section data-markdown data-background="#0088AA" data-background-transition="zoom">
+# Layout
+</section>
+
+<section> 
+<h2>Traductores</h2>
+<div class="double">
+  <div>
+  <ul>
+	<li>Compiladores</li>
+	<span class="fragment" data-audio-src="audio/Software/14.mp3">
+	<ul>
+		<li>La ejecución de un programa compilado es tan rápida como es posible</li> 
+		<li>El programa queda compilado para una única arquitectura</li> 
+	</ul>
+	</span>
+  </ul>
+  </div>
+  <div>
+  <ul>
+	<li>Intérpretes</li>
+	<span class="fragment" data-audio-src="audio/Software/14b.mp3">
+	<ul>
+		<li>La ejecución del programa comparte la CPU con la traducción del fuente</li> 
+		<li>El mismo programa fuente puede correr sin modificaciones en varias arquitecturas</li> 
+	</ul>
+	</span>
+</ul>
+</div>
+</div>
+<aside data-markdown class="notes">
+Una ventaja comparativa de la compilación respecto de la interpretación es la mayor velocidad de ejecución. Al separar las fases de traducción y ejecución, un compilador alcanza la máxima velocidad de ejecución posible en un procesador dado. Por el contrario, un intérprete alterna las fases de traducción y ejecución, por lo cual la ejecución completa del mismo programa tardará algo más de tiempo.
+
+Inversamente, el código interpretado presenta la ventaja de ser directamente portable. Dos plataformas diferentes podrán ejecutar el mismo programa interpretable, siempre que cuenten con intérpretes para el mismo lenguaje. Por el contrario, un programa compilado está en código máquina para alguna arquitectura específica, así que no será compatible con otras.
+</aside>
+</section>
+
+
+<section data-markdown data-background="#0088AA" data-background-transition="zoom">
+# Links 
+</section>
+
+<!------------------------>
+<section data-transition="slide-in slide-out">
+<h2>Referencias</h2>
+<ul>
+	<li><a href="https://es.m.wikipedia.org/wiki/Unix">Unix</a></li>
+	<li><a href="https://es.m.wikipedia.org/wiki/Proceso_(informática)">Procesos</a></li>
+	<li><a href="https://es.m.wikipedia.org/wiki/Filesystem_Hierarchy_Standard">Jerarquía del sistema de archivos en Linux</a></li>
+	<li><a href="https://es.m.wikipedia.org/wiki/Unidad_de_gestión_de_memoria">Unidad de Gestión de Memoria (MMU)</a></li>
+	<li><a href="https://es.m.wikipedia.org/wiki/Paginación_de_memoria">Paginación de memoria</a></li>
+</ul>
+<aside data-markdown class="notes">
+</aside>
+</section>
+<!------------------------>
+
+<section>
+<h3>Usando Linux</h3>
+<a href="http://bellard.org/jslinux/index.html">Un emulador de PC en Javascript, corriendo Linux</a>
+<aside data-markdown class="notes">
+Este emulador de PC construido en Javascript nos permite practicar los comandos del shell dentro de una *máquina virtual* Linux y desde el navegador, sin necesidad de una instalación completa en nuestro equipo.
+
+* Para retroceder en el terminal
+  - Teclas Ctrl-Up, Ctrl-Down, Ctrl-PageUp y Ctrl-PageDown.
+* Para copiar datos a la máquina virtual
+  - Copiar el texto a la caja o **clipboard** a la derecha.
+  - En el shell de la máquina virtual escribir:
+        cat < /dev/clipboard > /tmp/archivo
+  - Ahora tenemos ese mismo texto en el archivo /tmp/archivo.
+* Para extraer datos de la máquina virtual
+  - Invertir el procedimiento anterior: 
+        cat mi_archivo > /dev/clipboard
+  - Seleccionar el texto en la caja **clipboard** y copiarlo a alguna otra aplicación en nuestro equipo, tal como un editor.
+</aside>
+</section>
+
+
+
+<!------------------------>
+<section
+        data-transition="slide-in slide-out"
+        data-audio-src="audio/PRESENT/xx.mp3"
+        data-background="img/sleepy.gif"
+        data-background-size="70%"
+>
+<h2>Diapositiva 559</h2>
+<h1>Fin de la teoría</h1>
+<aside data-markdown class="notes">
+</aside>
+</section>
+<!------------------------>
+
+<section data-markdown data-background="#0088AA" data-background-transition="zoom">
+# PDF
+</section>
+
+<!------------------------>
+<section 
+	data-transition="slide-in slide-out" 
+	data-audio-src="audio/PRESENT/xx.mp3"
+>
+<h2>Generación de PDF</h2>
+<ul>
+	<li><a href="demo.html?print-pdf">Imprimiendo desde Chrome</a></li>
+	<li><a href="demo-ok.pdf">Creando PDF con <code>decktape</code></a></li>
+</ul>
+<aside data-markdown class="notes">
+</aside>
+</section>
+<!------------------------>
+<!------------------------------------------------------------------>
+
+   </div>
+</div>
+
+<link rel="stylesheet" href="Tangle/TangleKit/TangleKit.css" type="text/css">
+<script type="text/javascript" src="Tangle/Tangle.js"></script>
+<script type="text/javascript" src="Tangle/TangleKit/mootools.js"></script>
+<script type="text/javascript" src="Tangle/TangleKit/sprintf.js"></script>
+<script type="text/javascript" src="Tangle/TangleKit/BVTouchable.js"></script>
+<script type="text/javascript" src="Tangle/TangleKit/TangleKit.js"></script>
+<script src="lib/js/head.min.js"></script>
+<script src="js/reveal.js"></script>
+
+<script>
+
+	Reveal.initialize({
+		controls: true,
+		progress: true,
+		history: true,
+		center: true,
+		previewLinks: true,
+		theme: 'serif',
+		transition: 'slide', // none/fade/slide/convex/concave/zoom
+
+		// ----------------------------------------------------------------------------
+		chart: {
+			defaults: { 
+				global: { 
+					title: { fontColor: "#222" }, 
+					legend: {
+						position: "bottom",
+						labels: { fontColor: "#000", size: "14px" },
+					},
+					tooltips: {
+						labels: { fontColor: "#022", size: "14px" },
+					},
+				}, 
+				scale: { 
+					scaleLabel: { fontColor: "#022" }, 
+					gridLines: { color: "#444", zeroLineColor: "#444" }, 
+					ticks: { fontColor: "#022" }, 
+				} 
+			},
+			line: { borderColor: [ 
+				"rgba(20,220,220,.8)" , 
+				"rgba(220,120,120,.8)", 
+				"rgba(20,120,220,.8)",
+				"rgba(220,20,120,.8)",
+				"rgba(20,20,220,.8)" ]
+			}, 
+			bar: { backgroundColor: [ 
+				"rgba(20,220,220,.8)" , 
+				"rgba(20,120,220,.8)",
+				"rgba(20,20,220,.8)",
+				"rgba(120,20,220,.8)",
+				"rgba(220,120,20,.8)", 
+				"rgba(220,20,20,.8)",
+			 ]
+			}, 
+			pie: { backgroundColor: [ 
+				["rgba(0,0,0,.8)" , 
+				"rgba(220,20,20,.8)", 
+				"rgba(20,220,20,.8)", 
+				"rgba(220,220,20,.8)", 
+				"rgba(20,20,220,.8)"] 
+			]},
+			radar: { borderColor: [ "rgba(20,220,220,.8)" , "rgba(220,120,120,.8)", "rgba(20,120,220,.8)" ]}, 
+		},
+		// ----------------------------------------------------------------------------
+		menu: { // Menu works best with font-awesome installed: sudo apt-get install fonts-font-awesome
+			themes: false,
+			transitions: false,
+			markers: true,
+			hideMissingTitles: true,
+			custom: [
+				// { title: 'Plugins', icon: '<i class="fa fa-external-link"></i>', src: 'toc.html' },
+				// { title: 'About', icon: '<i class="fa fa-info"></i>', content: '<p>Int Comp</p>' },
+				{ title: 'IC2016', icon: '<i class="fa fa-bookmark"></i>', src: 'src/ic.html' },
+			]
+		},
+		// ----------------------------------------------------------------------------
+		anything: [ 
+			{className: "rand",  defaults: {min: 0, max: 9}, 
+				initialize: (function(container, options){ 
+					container.innerHTML = Math.trunc( options.min + Math.random()*(options.max-options.min + 1) ); 
+			}) },
+			{className: "chart",  
+				initialize: (function(container, options){ 
+					container.chart = new Chart(container.getContext("2d"), options);  
+				}) 
+			},
+			{className: "animate",  
+				initialize: (function(container, options){ 
+				Reveal.addEventListener( 'fragmentshown', function( event ) {
+					if (typeof event.fragment.beginElement === "function" ) { 
+						event.fragment.beginElement(); 	
+					}
+				});
+				Reveal.addEventListener( 'fragmenthidden', function( event ) {
+					if (event.fragment.hasAttribute('data-reverse') ) { 
+						var reverse = event.fragment.parentElement.querySelector('[id=\"' + event.fragment.getAttribute('data-reverse') + '\"]');
+						if ( reverse && typeof reverse.beginElement === "function" ) { 
+							reverse.beginElement(); 	
+						}										 	
+					}
+				});
+				if ( container.getAttribute("data-svg-src") ) { 
+					var xhr = new XMLHttpRequest(); 
+					xhr.onload = function() { 
+						if (xhr.readyState === 4) { 
+							var svg = container.querySelector('svg');
+							container.removeChild( svg );
+							container.innerHTML = xhr.responseText + container.innerHTML;
+							if ( svg ) {
+								container.querySelector('svg').innerHTML = container.querySelector('svg').innerHTML + svg.innerHTML;
+							}
+						} 
+						else { 
+							console.warn( "Failed to get file. ReadyState: " + xhr.readyState + ", Status: " + xhr.status); 
+						}
+					}; 
+					xhr.open( 'GET', container.getAttribute("data-svg-src"), true ); 
+					xhr.send();
+				}
+			}) },
+			{className: "tangle", 
+				initialize: (function(container, options) { if(options && options.initialize) {options.initialize(container)} }) },
+			{className: "plot",  defaults: {width:800, height: 400, grid:true}, 
+				initialize: (function(container, options){ options.target = "#"+container.id; functionPlot(options) }) },
+			{className: "asciicast",
+                                 defaults: { theme: 'monokai', fontSize: '15px' },
+                                 initialize: (function(container, options) {
+                                         asciinema.player.js.CreatePlayer(container, options.URL, options);
+                                 })
+                         },
+			{className: "anything",  
+				initialize: (function(container, options){ if (options && options.initialize) { options.initialize(container)} }) },
+
+		],
+		// ----------------------------------------------------------------------------
+
+
+		// -------- Math plugin ----------
+		math: {
+			mathjax: 'https://cdn.mathjax.org/mathjax/latest/MathJax.js',
+			//	mathjax: '../MathJax-master/MathJax.js',
+			config: 'TeX-AMS_HTML-full'
+		},
+
+
+		// -------- Chalkboard -----------
+		chalkboard: { 
+			// optionally load pre-recorded chalkboard drawing from file
+			// src: "chalkboard.json",
+			//readOnly: undefined, 
+			toggleChalkboardButton: { left: "80px" },
+			toggleNotesButton: { left: "130px" },
+			//transition: 800,
+			//theme: "whiteboard",
+			// configuration options for notes canvas and chalkboard
+			//color: [ 'rgba(0,0,255,1)', 'rgba(255,255,255,0.5)' ],
+			//background: [ 'rgba(127,127,127,.1)' , 'plugin/chalkboard/img/blackboard.png' ],
+			//pen:  [ 'reveal.js-plugins/chalkboard/img/boardmarker.png', 'reveal.js-plugins/chalkboard/img/chalk.png' ],
+		},
+		keyboard: {
+			67: function() { RevealChalkboard.toggleNotesCanvas() },    // toggle notes canvas when 'c' is pressed
+			66: function() { RevealChalkboard.toggleChalkboard() }, // toggle chalkboard when 'b' is pressed
+			46: function() { RevealChalkboard.clear() },    // clear chalkboard when 'DEL' is pressed
+			 8: function() { RevealChalkboard.reset() },    // reset chalkboard data on current slide when 'BACKSPACE' is pressed
+			68: function() { RevealChalkboard.download() }, // downlad recorded chalkboard drawing when 'd' is pressed
+			82: function() { Recorder.toggleRecording(); }, // press 'r' to start/stop recording
+			90: function() { Recorder.downloadZip(); },     // press 'z' to download zip containing audio files
+			84: function() { Recorder.fetchTTS(); }     // press 't' to fetch TTS audio files
+		},
+
+		// -------- Dependencies ---------
+		dependencies: [
+			{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+			{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+			{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+			{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+			{ src: 'plugin/zoom-js/zoom.js', async: true },
+			// { src: 'plugin/notes/notes.js', async: true },
+			{ src: 'plugin/explain/explain.js', async: true },
+			{ src: 'plugin/function-plot/site/js/vendor/jquery-1.11.2.min.js' },
+			{ src: 'plugin/function-plot/site/js/vendor/d3.js' },
+			{ src: 'plugin/function-plot/dist/function-plot.js' },
+			{ src: 'plugin/chart/Chart.min.js'},
+			{ src: 'plugin/chart/csv2chart.js'},
+			{ src: 'plugin/asciinema/asciinema-player.js' },
+			{ src: 'plugin/anything/anything.js' },
+			{ src: 'plugin/chalkboard/chalkboard.js' },
+			{ src: 'plugin/menu/menu.js' },
+			{ src: 'plugin/mathsvg/math.js', async: true },
+			{ src: 'plugin/audio-slideshow/slideshow-recorder.js', condition: function( ) { return !!document.body.classList; } },
+			{ src: 'plugin/audio-slideshow/audio-slideshow.js', condition: function( ) { return !!document.body.classList; } },
+			// ... 
+		]
+	});
+
+</script>
+
+</body>
+</html>
