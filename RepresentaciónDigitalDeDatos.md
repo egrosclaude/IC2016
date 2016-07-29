@@ -17,7 +17,7 @@
 
 ## Operación de complemento a 2
 
-## Complemento a 2 en 8 bits
+## Representar en C2
 
 ## C2 en 8 bits &rarr; decimal
 

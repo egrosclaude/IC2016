@@ -109,9 +109,9 @@
 	</ul>
    <li> &#8680; Rango de representación <span class="post_it">$[0, 2^n-1]$</span></li>
 	<ul>
-	   <li>Con 8 bits: $[0, 2^8-1] = [0, 255]$</li>
-	   <li>Con 16 bits: $[0, 2^{16}-1] = [0, 65.535]$</li>
-	   <li>Con 32 bits: $[0, 2^{32}-1] = [0, 4.294.967.295]$</li>
+	   <li class="fragment">Con 8 bits: $[0, 2^8-1] = [0, 255]$</li>
+	   <li class="fragment">Con 16 bits: $[0, 2^{16}-1] = [0, 65.535]$</li>
+	   <li class="fragment">Con 32 bits: $[0, 2^{32}-1] = [0, 4.294.967.295]$</li>
 	</ul>
 </ul>
 </section>
@@ -144,8 +144,8 @@
 <ul>
    <li>El primer bit a la izquierda representa el signo</li>
 	<ul>
-	<li>0 &#8680; positivo</li>
-	<li>1 &#8680; negativo</li>
+	<li>0 &rarr; positivo</li>
+	<li>1 &rarr; negativo</li>
 	</ul>
    <li>Los restantes bits, el valor absoluto o magnitud</li>
 </ul>
@@ -154,9 +154,13 @@
 <section>
 <h2>Signo-Magnitud en 8 bits</h2>
 <ul>
-	<li>$7_{(10} = 00000111_{(2}$</li>
-	<li>$-7_{(10} = 10000111_{(2}$</li>
-	<li>RR:<span class="fragment"> $[-127, 127]$</span></li>
+   <li>Positivos</li>
+	$7_{(10} = 00000111_{(2}$
+   <span class="fragment">
+   <li>Negativos</li>
+	$-7_{(10} = 10000111_{(2}$
+   </span>
+   <li class="fragment">¿Rango de representación?</li>
 </ul>
 </section>
 
@@ -165,15 +169,11 @@
 <ul>
    <li>Hay $n$ bits pero uno es para el signo</li>
 	<p class="post_it">
-   		&#8680; El valor absoluto se expresa en $n-1$ bits
+   		&rarr; El valor absoluto se expresa en $n-1$ bits
 	</p>
-   <li>Rango de representación</li>
-	<ul>
-	<ul>
-	<li>Como el RR Sin Signo en $n-1$ bits es $[0, 2^{n-1}-1]$...</li>
-	<li>...el RR de Signo-Magnitud en $n$ bits es
-	<span class="post_it">$[-(2^{n-1}-1), 2^{n-1}-1]$</span></li>
-	</ul>
+   <li>Como el RR Sin Signo en $n-1$ bits es $[0, 2^{n-1}-1]$...</li>
+   <li>...el RR de Signo-Magnitud en $n$ bits es
+   <span class="post_it">$[-(2^{n-1}-1), 2^{n-1}-1]$</span></li>
 </ul>
 </section>
 
@@ -224,7 +224,7 @@ Signo-Magnitud en 8 bits
 	<li>Se suma 1</li>
 	</ol>
 </div>
-	<li>Ejemplo: $111010$ &#8680; $000110$</li>
+	<li>Ejemplo: $111010$ &rarr; $000110$</li>
 	<ul>
 		<li>¿Son opuestos?</li>
 	</ul>
@@ -232,16 +232,19 @@ Signo-Magnitud en 8 bits
 </section>
 
 <section>
-<h2>Complemento a 2 en 8 bits</h2>
+<h2>Representar en C2</h2>
 <table>
 <tr><th>Procedimiento</th><th>Ejemplo</th></tr>
 <tr><td><li>Positivos o cero</li></td>			<td align="right">$17_{(10}$</td></tr>
 <tr><td>&nbsp;&nbsp;Se representan como en S-M</td>	<td align="right">$00010001_{(2}$</td></tr>
-
+</table>
+<div class="fragment">
+<table>
 <tr><td><li>Negativos</li></td>			<td align="right">$-17_{(10}$</td></tr>
 <tr><td>&nbsp;&nbsp;1. Se expresa su valor absoluto</td><td align="right">$00010001_{(2}$</td></tr>
 <tr><td>&nbsp;&nbsp;2. Se invierten todos los bits</td><td align="right">$11101110_{(2}$</td></tr>
 <tr><td>&nbsp;&nbsp;3. Se suma 1</td>		<td align="right">$11101111_{(2}$</td></tr>
+</div>
 </table>
 </section>
 
@@ -1142,6 +1145,7 @@ https://es.wikipedia.org/wiki/IEEE_coma_flotante
 				// { title: 'Plugins', icon: '<i class="fa fa-external-link"></i>', src: 'toc.html' },
 				// { title: 'About', icon: '<i class="fa fa-info"></i>', content: '<p>Int Comp</p>' },
 				{ title: 'IC2016', icon: '<i class="fa fa-bookmark"></i>', src: 'src/ic.html' },
+				{ title: 'Imprimir', icon: '<i class="fa fa-print"></i>', src: 'src/print.html' },
 			]
 		},
 		// ----------------------------------------------------------------------------
@@ -1260,7 +1264,6 @@ https://es.wikipedia.org/wiki/IEEE_coma_flotante
 			{ src: 'plugin/mathsvg/math.js', async: true },
 			{ src: 'plugin/audio-slideshow/slideshow-recorder.js', condition: function( ) { return !!document.body.classList; } },
 			{ src: 'plugin/audio-slideshow/audio-slideshow.js', condition: function( ) { return !!document.body.classList; } },
-			// { src: 'plugin/search/search.js', async: true },
 			// ... 
 		]
 	});

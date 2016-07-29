@@ -1,0 +1,37 @@
+<!------------------------>
+<section 
+	data-transition="slide-in slide-out" 
+	data-audio-src="audio/PRESENT/xx.mp3"
+>
+<h2>Contando con los dedos</h2>
+<ul>
+	<li>Cero</li>
+</ul>
+
+ <div class="svgsnap"><!-- { "src": "src/draw.json" } --></div>
+
+<aside data-markdown class="notes">
+</aside>
+</section>
+<!------------------------>
+<!------------------------>
+<section 
+	data-transition="slide-in slide-out" 
+	data-audio-src="audio/PRESENT/xx.mp3"
+>
+<h2></h2>
+<ul>
+	<li></li>
+	<ul>
+		<li></li>
+	</ul>
+</ul>
+<img 
+	src="img/IMAGEN.png" 
+	class="plain stretch"
+>
+<aside data-markdown class="notes">
+</aside>
+</section>
+<!------------------------>
+

@@ -1316,6 +1316,7 @@ $ hexdump -C Texto\ y\ Multimedia.html | head -8
 				// { title: 'Plugins', icon: '<i class="fa fa-external-link"></i>', src: 'toc.html' },
 				// { title: 'About', icon: '<i class="fa fa-info"></i>', content: '<p>Int Comp</p>' },
 				{ title: 'IC2016', icon: '<i class="fa fa-bookmark"></i>', src: 'src/ic.html' },
+				{ title: 'Imprimir', icon: '<i class="fa fa-print"></i>', src: 'src/print.html' },
 			]
 		},
 		// ----------------------------------------------------------------------------
@@ -1434,7 +1435,6 @@ $ hexdump -C Texto\ y\ Multimedia.html | head -8
 			{ src: 'plugin/mathsvg/math.js', async: true },
 			{ src: 'plugin/audio-slideshow/slideshow-recorder.js', condition: function( ) { return !!document.body.classList; } },
 			{ src: 'plugin/audio-slideshow/audio-slideshow.js', condition: function( ) { return !!document.body.classList; } },
-			// { src: 'plugin/search/search.js', async: true },
 			// ... 
 		]
 	});

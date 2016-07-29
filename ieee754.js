@@ -41,7 +41,7 @@
 
     function mathString(n, s, e, m) {
         var exponent = parseInt(e, 2);
-        var texSign = "-1^" + s;
+        var texSign = "(-1)^" + s;
         //var texExponent = "2^{" + exponent + "-127=" + (exponent - 127) + "}";
         var texExponent = "2^{" + (exponent - 127) + "}";
 
