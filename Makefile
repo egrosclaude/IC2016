@@ -22,3 +22,5 @@ arqui: Arquitectura.html
 #	$(DTAPE)/bin/phantomjs $(DTAPE)/decktape.js reveal http://localhost:8000/$*.html $*.pdf
 #	pandoc $*-ok.md -o $*.pdf
 
+clean: 
+	mv demo.html Redes.html Software.html SistemasOperativos.html SistemasDeCómputo.html SistemasDeNumeración.html UnidadesDeInformación.html RepresentaciónDigitalDeDatos.html TextoYMultimedia.html Arquitectura.html attic

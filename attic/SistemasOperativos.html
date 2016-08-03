@@ -1,0 +1,1327 @@
+<!doctype html>
+<html lang="es">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>Introducción a la Computación 2016</title>
+
+		<meta name="description" content="Introducción a la Computación">
+		<meta name="author" content="Eduardo Grosclaude">
+
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/ic.css" id="theme">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css"> 
+		
+		<link rel="stylesheet" type="text/css" href="plugin/asciinema/asciinema-player.css" />
+
+<!--		<link rel="stylesheet" href="font-awesome-4.5.0/css/font-awesome.css">  -->
+
+		<link rel="icon" type="image/png" href="img/favicon-96x96.png" sizes="96x96">
+		<meta name="theme-color" content="#ffffff">
+		<!-- Code syntax highlighting -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+
+	<body>
+	  <div class="reveal">
+		<div class="slides">
+
+
+<!------------------------------------------------------------------>
+
+
+<section data-background="#00CCFF">
+<h2>Sistemas Operativos</h2>
+</section>
+
+<section data-transition="slide-in fade-out">
+<h2>Sistemas de cómputo</h2>
+<img src="img/sistcomp-0.png" class="stretch plain">
+<aside data-markdown class="notes">
+Hemos visto la evolución de los sistemas de cómputo desde el punto de vista del hardware, y cómo llegaron a soportar varios usuarios corriendo varias aplicaciones, todo sobre un mismo equipamiento.
+</aside>
+</section>
+
+<section data-transition="slide-out fade-in">
+<h2>Sistemas de cómputo</h2>
+<img src="img/sistcomp-1.png" class="stretch plain">
+<aside data-markdown class="notes">
+Ahora veremos de qué manera evolucionó el software asociado a esos sistemas de cómputo para permitir que esos diferentes usuarios y esas diferentes aplicaciones pudieran compartir el hardware sin ocasionarse problemas unos a otros, y obteniendo el máximo rendimiento posible del equipamiento. 
+
+La pieza que falta en este complejo mecanismo es el <b>sistema operativo</b>, un software básico cuya función principal es la de ser intermediario entre los usuarios y el hardware del sistema de cómputo.
+</aside>
+</section>
+
+<section>
+<h2>Evolución del software de base</h2>
+<table>
+<tr class="fragment"><td><i>Open Shop</i></td><td>Carga manual de una aplicación</td></tr>
+<tr class="fragment"><td>Procesamiento <i>batch</i></td><td>Automatización de trabajos en lotes</td></tr>
+<tr class="fragment"><td>Multiprogramación</td><td>Programas que compiten por recursos</td></tr>
+<tr class="fragment"><td>Tiempo compartido</td><td>Sistema multiusuario interactivo</td></tr>
+<tr class="fragment"><td>Computación personal</td><td>Inicialmente sencillo pero en evolución</td></tr>
+</table>
+<aside data-markdown class="notes">
+Las primeras computadoras estaban dedicadas a una única tarea, perteneciente a un único usuario. Podían ser utilizadas por diferentes usuarios, pero cada uno debía esperar su turno para reprogramarlas manualmente, lo cual era laborioso y se llevaba gran parte del tiempo por el cual esos usuarios pagaban.
+
+Una vez que se popularizaron las máquinas de programa almacenado, se pudo minimizar el tiempo ocioso adoptando esquemas de carga automática de trabajos. 
+Un trabajo típico consistía en la compilación y ejecución de un programa, o la carga de un programa compilado más un lote de datos de entrada, y la impresión de un cierto resultado de salida del programa. 
+Estos trabajos estaban definidos por lotes de tarjetas perforadas, de ahí su nombre de trabajos **por lotes** o, en inglés, **batch**. 
+
+Más adelante, conforme las tecnologías permitían ir aumentando la velocidad de procesamiento, se notó que los procesadores quedaban desaprovechados gran parte del tiempo debido a la inevitable actividad de entrada/salida. Así se idearon sistemas que optimizaban la utilización de la CPU, al poderse cargar más de un programa en la memoria y poder conmutar el uso del procesador entre ellos. Éstos fueron los primeros **sistemas multiprogramados**.
+
+Una vez que llegó la posibilidad de tener varios programas coexistiendo simultáneamente en la memoria, se logró que la conmutación del uso del procesador fuera tan rápida, que pareciera que cada programa funcionaba sin interrupciones. Aunque el sistema era de **tiempo compartido**, el usuario utilizaba la computadora como si estuviera dedicada exclusivamente a correr su programa. Así los sistemas multiprogramados se volvieron interactivos.
+
+Todas éstas fueron innovaciones de software, y fueron estableciendo principios y técnicas que serían adoptadas en lo sucesivo. Con la llegada de la computación personal, los sistemas de cómputo eran de capacidades modestas. Los **sistemas operativos** que permitían la ejecución de aplicaciones de los usuarios en estos sistemas de cómputo comenzaron pudiendo correr una sola aplicación por vez y de un solo usuario; es decir, se trataba de sistemas **monotarea** y **monousuario**. 
+
+Sin embargo, con la industria de las computadoras personales y la del software para computadoras personales traccionándose una a la otra, aparecieron sistemas operativos **multiusuario** y **multitarea**, sumamente complejos, que se convirtieron en un nuevo terreno para ensayar y mejorar las tecnologías de software y hardware.
+</aside>
+</section>
+
+
+<section>
+<h2>Componentes del SO</h2>
+<ul>
+	<li><b>Kernel</b> o <b>núcleo</b></li>
+	<li>Programas utilitarios o <b>software de sistema</b></li>
+	<li><b>Shell</b>, interfaz de usuario o procesador de comandos</li>
+</ul>
+<img src="img/shell.png" class="stretch plain">
+<aside data-markdown class="notes">
+Los modernos sistemas operativos tienen varios componentes bien diferenciados. El componente que constituye el sistema operativo propiamente dicho es el llamado **núcleo** o **kernel**. 
+Junto al kernel es habitual encontrar un conjunto de **programas utilitarios o software de sistema**, que no es parte del sistema operativo, estrictamente hablando, pero que en general es indispensable para la administración y mantenimiento del sistema. 
+También se encuentra junto a este software del sistema alguna forma de **interfaz de usuario**, que puede ser gráfica o de caracteres. Esta interfaz de usuario se llama en general **shell**, especialmente cuando la interfaz es un procesador de comandos, basado en caracteres, y los comandos se tipean.
+
+Hay algunas excepciones a esta estructura de componentes, por ejemplo, en los sistemas operativos **empotrados**, que están ligados a un dispositivo especial y muy específico, como es el caso de algunos robots, instrumental médico, routers, electrodomésticos avanzados, etc. 
+Estos sistemas operativos constan de un kernel que tiene la misión de hacer funcionar cierto hardware, pero no necesariamente incluyen una interfaz de usuario (porque el usuario no necesita en realidad comunicarse con ellos) o no incluyen software de sistema porque sus usuarios no son quienes se encargan de su mantenimiento.
+Pero los sistemas operativos de propósito general integran una **distribución** que normalmente contiene a estos tres componentes.
+</aside>
+</section>
+
+
+<section>
+<h2>Software involucrado</h2>
+<div class="double">
+<div>
+<ul>	
+	<li>Interfaces de usuario</li>
+	<ul>
+		<li><b>Shell</b> o procesador de comandos</li>
+		<li>Opcionalmente, entorno gráfico</li>
+	</ul>
+	<li>Programas de administración</li>
+	<li>Editores, navegador de archivos</li>
+	<li>Monitores de sistema, registros de eventos</li>
+</ul>
+</div>
+<div>
+<ul>
+	<li>Programas de comunicaciones</li>
+	<ul>
+		<li>Navegador, transferencia de archivos, mail, mensajería</li>
+	</ul>
+	<li>Soporte de programación</li>
+	<ul>
+		<li>Compiladores, intérpretes, bibliotecas</li>
+	</ul>
+</ul>
+</div>
+<aside data-markdown class="notes">
+Un típico sistema operativo multipropósito, actual, debe dar soporte entonces a la actividad de una gan variedad de aplicaciones. No solamente a la interfaz de usuario o procesador de comandos, más el software de sistema incluido, sino también a toda la gama de aplicaciones que desee ejecutar el usuario, como programas de comunicaciones (navegadores, programas de transferencia de archivos, de mensajería); aplicaciones de desarrollo de programas (compiladores, intérpretes de diferentes lenguajes).
+</aside>
+</section>
+
+<section>
+<h2>Kernel o núcleo</h2>
+<ul>
+	<li>Componente fundamental del sistema operativo</li>
+	<li>Conjunto de rutinas residentes en memoria</li>
+	<li>Controla el <b>hardware</b> y los <b>recursos lógicos</b></li>
+	<li>Corre en <b>modo privilegiado</b> del procesador</li>
+	<li>Ofrece los servicios a los <b>procesos</b> mediante <b>llamadas al sistema o system calls</b></li>
+</ul>
+<aside data-markdown class="notes">
+El **kernel** o núcleo es esencialmente un conjunto de rutinas que permanecen siempre residentes en memoria mientras la computadora está operando. Estas rutinas intervienen en todas las acciones que tengan que ver con la operación del hardware. 
+
+El kernel funciona no solamente como un mecanismo de administración y control del hardware o conjunto de recursos físicos, sino también de ciertos recursos del sistema que son lógicos, como los archivos. Además tiene la capacidad de poner en ejecución a los programas que se encuentran en el sistema. Cuando un programa está en ejecución, lo llamamos un **proceso**. El sistema operativo controla la creación, ejecución y finalización de los procesos.
+
+El kernel ofrece su capacidad de control de todos los recursos a los procesos o programas en ejecución, quienes le solicitan determinadas operaciones sobre esos recursos. Por ejemplo, un proceso que necesita utilizar un dispositivo de entrada/salida, o un recurso lógico como un archivo, hace una petición o llamada al sistema solicitando un servicio al sistema operativo. El servicio puede tratarse de una operación de lectura, escritura, creación, borrado, etc. El sistema operativo centraliza y coordina estas peticiones de forma que los procesos no interfieran entre sí.
+
+Si los procesos de usuario pudieran utilizar los recursos en cualquier momento y sin coordinación, los resultados podrían ser desastrosos. Por ejemplo, si dos o más programas quisieran usar la impresora al mismo tiempo, en el papel impreso se vería una mezcla de las salidas de los programas que no serviría a ninguno de ellos.
+
+Como el sistema operativo debe coordinar el acceso de los diferentes procesos a esos recursos, resulta necesario que cuente con alguna forma de imponer conductas y límites a esos usuarios y programas, para evitar que ellos tomen control del sistema en perjuicio de los demás. Para garantizarle este poder por sobre los usuarios, el sistema operativo requiere apoyo del hardware: su código se ejecuta en un modo especial, el **modo privilegiado** del procesador.
+</aside>
+</section>
+
+<section data-transition="slide-in fade-out">
+<h2>Modo de ejecución dual</h2>
+<img src="img/modos-0.png" class="stretch plain">
+<aside data-markdown class="notes">
+Los modernos procesadores funcionan en lo que llamamos **modo dual** de ejecución, donde el ISA se divide en dos grupos de instrucciones. Ciertas instrucciones que controlan el modo de operación de la CPU, el acceso a memoria, o a las unidades de Entrada/Salida, pertenecen al grupo de instrucciones del **modo privilegiado**. Un programa de usuario que se está ejecutando funciona en modo **no privilegiado**, donde tiene acceso a la mayoría de las instrucciones del ISA, pero no a las instrucciones del modo privilegiado. 
+
+El programa en ejecución ejecutará instrucciones en modo no privilegiado hasta que necesite un servicio del sistema operativo, como el acceso a un recurso físico o lógico.
+</aside>
+</section>
+<section data-transition="fade-in fade-out">
+<h2>Modo de ejecución dual</h2>
+<img src="img/modos-1.png" class="stretch plain">
+<aside data-markdown class="notes">
+Para requerir este servicio, el programa ejecuta una instrucción de **llamada al sistema** o **system call**, que es la única instrucción del conjunto no privilegiado que permite a la CPU conmutar al modo privilegiado.
+</aside>
+</section>
+<section data-transition="fade-in fade-out">
+<h2>Modo de ejecución dual</h2>
+<img src="img/modos-2.png" class="stretch plain">
+<aside data-markdown class="notes">
+La llamada al sistema conmuta el modo de la CPU a modo privilegiado **y además** fuerza el salto a una cierta dirección fija de memoria donde existe código del kernel. En esa dirección de memoria existe una rutina de atención de llamadas al sistema, que determina, por el contenido de los registros de la CPU, qué es lo que está solicitando el proceso. 
+
+Con estos datos, esa rutina de atención de llamadas al sistema dirigirá el pedido al subsistema del kernel correspondiente, ejecutando siempre en modo privilegiado, y por lo tanto, con completo acceso a los recursos.
+</section>
+<section data-transition="fade-in slide-out">
+<h2>Modo de ejecución dual</h2>
+<img src="img/modos-3.png" class="stretch plain">
+<aside data-markdown class="notes">
+El subsistema que corresponda hará las verificaciones necesarias para cumplir el servicio: 
+
+* El usuario dueño del proceso, ¿tiene los permisos necesarios?
+* El recurso, ¿está disponible o está siendo usado por otro proceso?, etc.
+
+Cuando se cumplan todos los requisitos, se ejecutará el servicio pedido y luego se volverá a modo usuario, a continuar con la ejecución del proceso.  
+</aside>
+</section>
+
+<section data-transition="slide-in fade-out">
+<h2>Aplicaciones</h2>
+<img src="img/so-0.png" class="stretch plain">
+<aside data-markdown class="notes">
+Cualquier aplicación que funcione en el sistema, ya sean las de sistema o generadas por el usuario, se ubica en igualdad de condiciones con las demás.
+</aside>
+</section>
+<section data-transition="fade-in fade-out">
+<h2>Bibliotecas</h2>
+<img src="img/so-1.png" class="stretch plain">
+<aside data-markdown class="notes">
+Todas las aplicaciones, en algún momento, requieren funciones que ya están preparadas para su uso en **bibliotecas** especializadas en algún sentido. La vinculación de los programas de usuario con las bibliotecas puede hacerse al tiempo de compilación o, cuando las bibliotecas son **de carga dinámica**, al tiempo de ejecución.
+</aside>
+</section>
+<section data-transition="fade-in fade-out">
+<h2>Kernel</h2>
+<img src="img/so-2.png" class="stretch plain">
+<aside data-markdown class="notes">
+Al ejecutarse los procesos, las bibliotecas, para completar su funcionamiento, normalmente necesitan recurrir a servicios del kernel. Los diferentes subsistemas del kernel se ocupan de cada clase de servicios y de manejar diferentes clases de recursos.
+</aside>
+</section>
+<section data-transition="fade-in slide-out">
+<h2>Llamadas al sistema</h2>
+<img src="img/so-3.png" class="stretch plain">
+<aside data-markdown class="notes">
+La comunicación entre los procesos de usuario y sus bibliotecas, por un lado, y el kernel y sus subsistemas, por otro, se produce cuando ocurre una llamada al sistema o system call. Es en este momento cuando se cruza el límite entre modo usuario y modo privilegiado, o espacio de usuario y espacio del kernel.
+</aside>
+</section>
+
+<section data-transition="slide-in fade-out">
+<h2>Cronología</h2>
+<img src="img/so-crono-0.png" class="stretch plain">
+<aside data-markdown class="notes">
+Entre la década de 1960 y principios del siglo XXI surgieron gran cantidad de innovaciones tecnológicas en el área de sistemas operativos. Muchas de ellas han tenido éxito más allá de los fines experimentales y han sido adoptadas por sistemas operativos con gran cantidad de usuarios. Diferentes sistemas operativos han influido en el diseño de otros posteriores, creándose así líneas genealógicas de sistemas operativos.
+
+Es interesante seguir el rastro de lo que ocurrió con algunos sistemas importantes a lo largo del tiempo, y ver cómo han ido reconvirtiéndose unos sistemas en otros. 
+</aside>
+</section>
+<section data-transition="fade-in fade-out">
+<h2>Cronología</h2>
+<img src="img/so-crono-1.png" class="stretch plain">
+<aside data-markdown class="notes">
+Por ejemplo, el sistema de archivos diseñado para el sistema operativo CP/M de Digital, en los años 70, fue adaptado para el MS-DOS de Microsoft, cuya evolución final fue **Windows**. Los diseñadores de Windows NT fueron los mismos que construyeron el VMS de los equipos VAX, también de Digital, y aportaron su experiencia. De hecho, muchas características de la gestión de procesos y de entrada/salida de ambos sistemas son idénticas.
+</aside>
+</section>
+<section data-transition="fade-in fade-out">
+<h2>Cronología</h2>
+<img src="img/so-crono-2.png" class="stretch plain">
+<aside data-markdown class="notes">
+Otra importante línea genealógica es la que relaciona el antiguo Multics, por un lado, con **Unix** y con Linux; y más recientemente, con el sistema para plataformas móviles Android. Unix fue el primer sistema operativo escrito casi totalmente en un lenguaje de alto nivel, el **C**, lo cual permitió portarlo a diferentes arquitecturas. Esto le dio un gran impulso y la comunidad científica lo adoptó como el modelo de referencia de los sistemas operativos de tiempo compartido.
+
+En 1991 **Linus Torvalds** lanzó un proyecto de código abierto dedicado a la construcción de un sistema operativo compatible con Unix pero sin hacer uso de ningún código anteriormente escrito, lo que le permitió liberarlo bajo una licencia libre. La consecuencia es que Linux, su sistema operativo, rápidamente atrajo la atención de centenares de desarrolladores de todo el mundo, que sumaron sus esfuerzos para crear un sistema completo y libremente disponible. 
+
+Linux puede ser estudiado a fondo porque sus fuentes no son secretos, como en el caso de los sistemas operativos propietarios. Esto lo hace ideal, entre otras cosas, para la enseñanza de las Ciencias de la Computación. Esta cualidad de sistema abierto permitió que otras compañías lo emplearan en muchos otros proyectos.
+</aside>
+</section>
+<section data-transition="fade-in slide-out">
+<h2>Cronología</h2>
+<img src="img/so-crono-3.png" class="stretch plain">
+<aside data-markdown class="notes">
+De la misma manera, otra empresa de productos de computación de notable trayectoria, **Apple**, produjo un sistema operativo para su línea de computadoras personales Macintosh. Su sistema MacOS estaba influenciado por desarrollos de interfaces de usuario gráficas realizadas por otra compañía, Xerox, y también derivó en la creación de un sistema operativo para dispositivos móviles. 
+
+Otros sistemas operativos han cumplido un ciclo con alguna clase de final, al no superar la etapa experimental, haberse transformado definitivamente en otros sistemas, desaparecer del mercado o quedar confinados a cierto nicho de aplicaciones. Algunos, por sus objetivos de diseño, son menos visibles, porque están destinados a un uso que no es masivo, como es el caso del sistema de tiempo real **QNX**. 
+</aside>
+</section>
+
+<section>
+<h2>Servicios del SO</h2>
+<ul>
+	<li>Múltiples usuarios y tareas</li>
+	<ul>
+		<li>Ejecución de programas</li>
+		<li>Gestión de archivos</li>
+		<li>Operaciones de Entrada/Salida</li>
+		<li>Gestión de memoria</li>
+		<li>Protección</li>
+	</ul>
+</ul>
+<aside data-markdown class="notes">
+</aside>
+</section>
+
+<section data-background="#00CCFF">
+<h2>Ejecución de programas</h2>
+<aside data-markdown class="notes">
+</aside>
+</section>
+
+<section>
+<h2>Ejecución de programas</h2>
+<ul>
+	<li>Interfaz de usuario o <b>shell</b></li>
+	<li><b>Proceso</b></li>
+	<ul>
+		<li>Un programa en ejecución</i></li>
+	</ul>
+	<li><b>Estados</b> de los procesos</li>
+	<li>Planificación, o <b>scheduling</b></li>
+	<li><b>Concurrencia</b> y <b>paralelismo</b></li>
+</ul>
+<aside data-markdown class="notes">
+</aside>
+</section>
+
+
+
+
+<section data-transition="slide-in fade-out">
+<h2>Estados de los procesos</h2>
+<h3>Sistema multiprogramado</h3>
+<img src="img/procesos-0.png" class="plain stretch">
+<aside data-markdown class="notes">
+</aside>
+</section>
+<section data-transition="fade-in fade-out">
+<h2>Estados de los procesos</h2>
+<h3>Sistema multiprogramado</h3>
+<img src="img/procesos-1.png" class="plain stretch">
+<aside data-markdown class="notes">
+</aside>
+</section>
+<section data-transition="fade-in fade-out">
+<h2>Estados de los procesos</h2>
+<h3>Sistema multiprogramado</h3>
+<img src="img/procesos-2.png" class="plain stretch">
+<aside data-markdown class="notes">
+</aside>
+</section>
+<section data-transition="slide-out fade-in">
+<h2>Estados de los procesos</h2>
+<h3>Tiempo compartido o <i>time sharing</i></h3>
+<img src="img/procesos-3.png" class="plain stretch">
+<aside data-markdown class="notes">
+</aside>
+</section>
+
+<section data-transition="convex-in fade-out">
+<h2>Procesos concurrentes</h2>
+<img src="img/estados-0.png" class="plain stretch">
+<aside data-markdown class="notes">
+</aside>
+</section>
+<section data-transition="fade-in fade-out">
+<h2>Procesos concurrentes</h2>
+<img src="img/estados-1.png" class="plain stretch">
+<aside data-markdown class="notes">
+</aside>
+</section>
+<section data-transition="fade-in fade-out">
+<h2>Procesos concurrentes</h2>
+<img src="img/estados-2.png" class="plain stretch">
+<aside data-markdown class="notes">
+</aside>
+</section>
+<section data-transition="fade-in fade-out">
+<h2>Procesos concurrentes</h2>
+<img src="img/estados-3.png" class="plain stretch">
+<aside data-markdown class="notes">
+</aside>
+</section>
+<section data-transition="fade-in fade-out">
+<h2>Procesos concurrentes</h2>
+<img src="img/estados-4.png" class="plain stretch">
+<aside data-markdown class="notes">
+</aside>
+</section>
+<section data-transition="fade-in fade-out">
+<h2>Procesos concurrentes</h2>
+<img src="img/estados-5.png" class="plain stretch">
+<aside data-markdown class="notes">
+</aside>
+</section>
+<section data-transition="fade-in fade-out">
+<h2>Procesos concurrentes</h2>
+<img src="img/estados-6.png" class="plain stretch">
+<aside data-markdown class="notes">
+</aside>
+</section>
+
+
+<!-- -------------- -->
+<section data-transition="convex-in convex-out">
+<h2>Procesos concurrentes</h2>
+<img src="img/estados-anim.gif" class="plain stretch">
+<aside data-markdown class="notes">
+</aside>
+</section>
+
+<section data-transition="convex">
+<h2>Procesos paralelos</h2>
+<img src="img/estados-ts-anim.gif" class="plain stretch">
+<aside data-markdown class="notes">
+</aside>
+</section>
+
+<!------------------------>
+<section data-transition="fade-out slide-in">
+<h2>Procesos</h2>
+<img src="img/top.png" class="stretch plain">
+</section>
+<section data-transition="fade-in slide-out">
+<h2>Procesos</h2>
+<img src="img/top2.png" class="stretch plain">
+</section>
+
+
+<!------------------------>
+<section data-transition="convex-in convex-out" data-audio-src="audio/PRESENT/xx.mp3">
+<h2>Comando top</h2>
+<div class="asciicast"><!-- { "URL": "src/top.json" } --></div>
+<aside data-markdown class="notes">
+</aside>
+</section>
+
+<section data-transition="slide-in slide-out">
+<h2>Comandos de procesos</h2>
+<table>
+<tr><td>ps</td><td>-f, -a, -x</td><td>Lista procesos</td></tr>
+<tr><td>pstree</td><td></td><td>Jerarquía de procesos</td></tr>
+<tr><td>top</td><td></td><td>Monitor de procesos</td></tr>
+<tr><td>nice</td><td></td><td>Cambia prioridad</td></tr>
+<tr><td>kill</td><td></td><td>Envía una señal</td></tr>
+</table>
+<aside data-markdown class="notes">
+</aside>
+</section>
+<!------------------------>
+
+<section data-background="#00CCFF">
+<h2>Gestión de archivos</h2>
+<aside data-markdown class="notes">
+</aside>
+</section>
+
+<!-- -------------- -->
+<section>
+<h2>Gestión de archivos</h2>
+<ul>
+	<li><b>Archivos</b></li>
+	<ul>
+		<li>Datos almacenados en un medio persistente</li>
+	</ul>
+	<li><b>Sistema de archivos</b> o <b>file system</b></li>
+	<ul>
+		<li>Un componente del kernel que organiza los archivos</li>
+	</ul>
+	<li><b>Metadatos</b></li>
+	<ul>
+		<li>Datos acerca de los datos (tamaño del archivo, fecha de creación, atributos, permisos)</li>
+	</ul>
+	<li>Estructura jerárquica de <b>directorios</b></li>
+</ul>
+</section>
+
+
+<!------------------------>
+<section data-transition="slide-in slide-out">
+<h2>Árbol de directorios</h2>
+<img src="img/tree.png" class="plain stretch">
+<aside data-markdown class="notes">
+</aside>
+</section>
+<!------------------------>
+<!------------------------>
+<section data-transition="slide-in slide-out">
+<h2>Sistema de archivos</h2>
+<ul>
+	<li>Particiones</li>
+	<li>Bloques</li>
+	<li>Superblock</li>
+	<li>Inodos</li>
+</ul>
+<aside data-markdown class="notes">
+</aside>
+</section>
+
+<!------------------------>
+<section data-transition="slide-in fade-out">
+<h2>Sistema de archivos</h2>
+<div style="text-align: left">Particiones</div>
+<img src="img/disk-layout-0.svg" class="plain stretch">
+<aside data-markdown class="notes">
+</aside>
+</section>
+<section data-transition="fade-in fade-out" data-transition-speed="slow">
+<h2>Sistema de archivos</h2>
+<div style="text-align: left">Bloques</div>
+<img src="img/disk-layout-0b.svg" class="plain stretch">
+<aside data-markdown class="notes">
+</aside>
+</section>
+<!------------------------>
+<section data-transition="fade-in fade-out">
+<h2>Sistema de archivos</h2>
+<div style="text-align: left">Superblock</div>
+<img src="img/disk-layout-1.svg" class="plain stretch">
+<aside data-markdown class="notes">
+</aside>
+</section>
+<!------------------------>
+<section data-transition="fade-in fade-out">
+<h2>Sistema de archivos</h2>
+<div style="text-align: left">Tabla de inodos</div>
+<img src="img/disk-layout-2.svg" class="plain stretch">
+<aside data-markdown class="notes">
+</aside>
+</section>
+<!------------------------>
+<section data-transition="fade-out fade-in">
+<h2>Sistema de archivos</h2>
+<div style="text-align: left">Metadatos</div>
+<img src="img/disk-layout-3.svg" class="plain stretch">
+<aside data-markdown class="notes">
+</aside>
+</section>
+<!------------------------>
+<section data-transition="slide-out fade-in">
+<h2>Sistema de archivos</h2>
+<div style="text-align: left">Bloques de datos</div>
+<img src="img/disk-layout-4.svg" class="plain stretch">
+<aside data-markdown class="notes">
+</aside>
+</section>
+<!------------------------>
+
+<!------------------------>
+<section data-transition="slide-in slide-out">
+<h2>Inodos</h2>
+<ul>
+	<li>Tamaño del archivo</li>
+	<li>Dueño, grupo</li>
+	<li>Tipo de archivo</li>
+	<ul><small>
+		<li>Archivo regular, directorio</li>
+		<li>Dispositivo de caracteres o de bloques</li>
+		<li>Socket, tubería, otros</li>
+	</ul></small>
+	<li>Modo o permisos de acceso</li>
+	<ul><small>
+		<li>Lectura, escritura, ejecución</li>
+		<li>Dueño, grupo, resto del mundo</li>
+	</ul></small>
+	<li>Tiempos de modificación y de acceso</li>
+	<li>Cuenta de <i>links</i></li>
+	<li>Punteros a bloques</li>
+</ul>
+<aside data-markdown class="notes">
+</aside>
+</section>
+<!------------------------>
+
+<!------------------------>
+<section data-transition="slide-in fade-out">
+<h2>Punteros directos a bloques</h2>
+<img src="img/inodos-0.svg" class="plain stretch">
+<aside data-markdown class="notes">
+</aside>
+</section>
+<section data-transition="fade-in fade-out">
+<h2>Punteros indirectos</h2>
+<img src="img/inodos-1.svg" class="plain stretch">
+<aside data-markdown class="notes">
+</aside>
+</section>
+<section data-transition="fade-in slide-out">
+<h2>Punteros doble-indirectos</h2>
+<img src="img/inodos-2.svg" class="plain stretch">
+<aside data-markdown class="notes">
+</aside>
+</section>
+
+
+<!------------------------>
+<section data-transition="slide-in slide-out">
+<h2>Directorio</h2>
+<img src="img/directorio.svg" class="plain stretch">
+<aside data-markdown class="notes">
+</aside>
+</section>
+<!------------------------>
+<section data-transition="slide-in fade-out">
+<h2>Búsqueda de un archivo</h2>
+<div>
+<ul><li><code>cat /etc/group</code></li></ul>
+</div>
+<img src="img/busq-root.svg" class="plain stretch">
+<aside data-markdown class="notes">
+</aside>
+</section>
+<section data-transition="fade-in fade-out">
+<h2>Búsqueda de un archivo</h2>
+<div>
+<ul><li><code>cat /etc/group</code></li></ul>
+</div>
+<img src="img/busq-0.svg" class="plain stretch">
+<aside data-markdown class="notes">
+</aside>
+</section>
+<section data-transition="fade-in fade-out">
+<h2>Búsqueda de un archivo</h2>
+<div>
+<ul><li><code>cat /etc/group</code></li></ul>
+</div>
+<img src="img/busq-1.svg" class="plain stretch">
+<aside data-markdown class="notes">
+</aside>
+</section>
+<section data-transition="fade-in slide-out">
+<h2>Búsqueda de un archivo</h2>
+<div>
+<ul><li><code>cat /etc/group</code></li></ul>
+</div>
+<img src="img/busq-2.svg" class="plain stretch">
+<aside data-markdown class="notes">
+</aside>
+</section>
+<!------------------------>
+<section data-transition="slide-in slide-out">
+<h2>Comandos de archivos</h2>
+<table>
+<tr><td>ls</td><td>-a, -l, -R, -t</td><td>Lista archivos</td></tr>
+<tr><td>cat</td><td></td><td>Muestra contenido</td></tr>
+<tr><td>cp</td><td></td><td>Copia</td></tr>
+<tr><td>mv</td><td></td><td>Renombra o mueve</td></tr>
+<tr><td>rm</td><td></td><td>Borra</td></tr>
+</table>
+<aside data-markdown class="notes">
+</aside>
+</section>
+<!------------------------>
+<!------------------------>
+<section data-transition="slide-in slide-out">
+<h2>Comandos de directorios</h2>
+<table>
+<tr><td>ls</td><td>-a, -l, -R, -t</td><td>Lista archivos</td></tr>
+<tr><td>mkdir</td><td></td><td>Crea</td></tr>
+<tr><td>rmdir</td><td></td><td>Borra</td></tr>
+<tr><td>mv</td><td></td><td>Renombra o mueve</td></tr>
+<tr><td>cd</td><td></td><td>Cambia al directorio</td></tr>
+</table>
+<aside data-markdown class="notes">
+</aside>
+</section>
+<!------------------------>
+
+
+
+<!------------------------>
+<!------------------------
+<section>
+<h2>Operaciones de Entrada/Salida</h2>
+<ul>
+	<li></li>
+	<li></li>
+	<li></li>
+	<li></li>
+	<ul>
+	</ul>
+</ul>
+</section>
+------------------------>
+
+<section data-background="#00CCFF">
+<h2>Gestión de memoria</h2>
+<aside data-markdown class="notes">
+</aside>
+</section>
+
+<section data-transition="slide-in fade-out">
+<h2>Memoria contigua</h2>
+<img src="img/mem-contigua.svg" class="plain stretch">
+<aside data-markdown class="notes">
+</aside>
+</section>
+<!------------------------>
+<section data-transition="fade-in fade-out" data-audio-src="audio/PRESENT/xx.mp3">
+<h2>Fragmentación externa</h2>
+<img src="img/fragext-0.svg" class="plain stretch">
+<aside data-markdown class="notes">
+</aside>
+</section>
+<!------------------------>
+<!------------------------>
+<section data-transition="fade-in fade-out" data-audio-src="audio/PRESENT/xx.mp3">
+<h2>Fragmentación externa</h2>
+<img src="img/fragext-1.svg" class="plain stretch">
+<aside data-markdown class="notes">
+</aside>
+</section>
+<!------------------------>
+<!------------------------>
+<section data-transition="slide-out fade-in" data-audio-src="audio/PRESENT/xx.mp3">
+<h2>Fragmentación externa</h2>
+<img src="img/fragext-2.svg" class="plain stretch">
+<aside data-markdown class="notes">
+</aside>
+</section>
+<!------------------------>
+
+
+<section>
+<h2>Asignación de memoria contigua</h2>
+<ul>
+	<li>Un proceso &rarr; una región de memoria</li>
+	<li>Particiones de tamaño variable</li>
+	<ul>
+		<li><b>Fragmentación externa</b></li>
+		<li>Compactación &rarr; Sobrecarga</li>
+	</ul>
+</ul>
+</section>
+
+<section data-transition="slide-in slide-out">
+<h2>Segmentación</h2>
+<img src="img/mem-segmentos.svg" class="plain stretch">
+<aside data-markdown class="notes">
+</aside>
+</section>
+
+<!------------------------>
+<section data-transition="slide-in slide-out">
+<h2>Asignación de segmentos</h2>
+<ul>
+	<li>Un proceso &rarr; un conjunto de segmentos</li>
+	<ul>
+		<li>Arquitectura de CPU segmentada</li>
+		<li>Modelo de programación segmentado</li>
+		<li>Segmentos de código, de datos, de pila</li>
+	
+	<div class="fragment">
+		<li>Apoyo del hardware &rarr; <b>MMU</b></li>
+	</div class="fragment">
+	<div class="fragment">
+		<li>Se reduce la fragmentación externa</li>
+		<li>Protección</li>
+	</div class="fragment">
+	</ul>
+</ul>
+<aside data-markdown class="notes">
+</aside>
+</section>
+
+
+<!------------------------>
+<section data-transition="slide-in slide-out">
+<h2>MMU, Memory Management Unit</h2>
+<ul>
+	<li>Tabla de segmentos por cada proceso</li>
+	<div class="fragment">
+	<li>Traduce direcciones lógicas a físicas</li>
+	<ul>
+		<li>Direcciones lógicas <b>segmento:desplazamiento</b></li>
+		<li>0010:0100 &rarr; 000010100</li>
+	</ul>
+	</div class="fragment">
+</ul>
+	<table>
+	<tr><td>N° segmento</td><td>Límite</td><td>Base</td></tr>
+	<tr><td>0000</td><td>0100</td><td>000011000</td></tr>
+	<tr><td>0001</td><td>1010</td><td>000000000</td></tr>
+	<tr><td>0010</td><td>0111</td><td>000010000</td></tr>
+	</table>
+<aside data-markdown class="notes">
+</aside>
+</section>
+<!------------------------>
+
+<!------------------------>
+<section data-transition="slide-in slide-out">
+<h2>Traducción de direcciones</h2>
+<ul>
+	<li class="fragment">Una instrucción de CPU hace una referencia a la dirección lógica <b>S:D</b> (segmento:desplazamiento)</li>
+	<li class="fragment">Usando S, la MMU consulta la tabla de segmentos del proceso</li>
+	<li class="fragment">Si D es mayor que el límite de ese segmento, provoca una condición que interrumpe el proceso </li>
+	<li class="fragment">Lo mismo si la forma del acceso no corresponde a los permisos del proceso para ese segmento</li>
+	<li class="fragment">En otro caso, traduce <b>S:D</b> a <b>Base(S)+D</b></li>
+</ul>
+<aside data-markdown class="notes">
+</aside>
+</section>
+<!------------------------>
+
+
+
+<!------------------------>
+<section data-transition="slide-in slide-out" data-audio-src="audio/PRESENT/xx.mp3">
+<h2>Paginación</h2>
+<ul>
+	<li>División en trozos de igual tamaño</li>
+	<ul>
+		<li>La memoria se divide en <b>marcos</b></li>
+		<li>Cada proceso se divide en <b>páginas</b></li>
+		<li>A cada página del proceso se le asigna un marco de memoria</li>
+		<li>No existe fragmentación externa</li>
+		<li>Existe poca <b>fragmentación interna</b></li>
+	</ul>
+</ul>
+<aside data-markdown class="notes">
+</aside>
+</section>
+<!------------------------>
+
+
+<!------------------------>
+<section data-transition="slide-in slide-out" data-audio-src="audio/PRESENT/xx.mp3">
+<h2>Paginación</h2>
+<img src="img/mem-paginada.svg" class="plain stretch">
+<aside data-markdown class="notes">
+</aside>
+</section>
+
+
+
+<section data-transition="fade-out slide-in" data-audio-src="audio/PRESENT/xx.mp3">
+<h2>Tabla de páginas de un proceso</h2>
+<img src="img/tabla-paginas.svg" class="plain stretch">
+<aside data-markdown class="notes">
+</aside>
+</section>
+<!------------------------>
+<section data-transition="fade-in fade-out">
+<h2>Tabla de páginas de un proceso</h2>
+	<table>
+	<tr><td>N° página</td><td>Presente</td><td>Modificada</td><td>Marco</td></tr>
+	<tr><td>000</td><td>1</td><td>0</td><td>000</td></tr>
+	<tr><td>001</td><td>1</td><td>0</td><td>001</td></tr>
+	<tr><td>010</td><td>1</td><td>1</td><td>100</td></tr>
+	<tr><td>011</td><td>0</td><td>0</td><td>101</td></tr>
+	<tr><td>100</td><td>0</td><td>0</td><td>011</td></tr>
+	<tr><td>101</td><td>1</td><td>1</td><td>010</td></tr>
+	</table>
+<div class="stretch"></div>
+<aside data-markdown class="notes">
+</aside>
+</section>
+<section data-transition="fade-in slide-out">
+<h2>Tabla de páginas de un proceso</h2>
+	<table>
+	<tr><td>N° página</td><td>Presente</td><td>Modificada</td><td>Marco</td></tr>
+	<tr><td>0</td><td>1</td><td>0</td><td>0</td></tr>
+	<tr><td>1</td><td>1</td><td>0</td><td>1</td></tr>
+	<tr><td>2</td><td>1</td><td>1</td><td>4</td></tr>
+	<tr><td>3</td><td>0</td><td>0</td><td>5</td></tr>
+	<tr><td>4</td><td>0</td><td>0</td><td>3</td></tr>
+	<tr><td>5</td><td>1</td><td>1</td><td>2</td></tr>
+	</table>
+<div class="stretch"></div>
+<aside data-markdown class="notes">
+</aside>
+</section>
+
+
+
+<section data-transition="slide-in slide-out">
+<h2>Traducción de direcciones</h2>
+<ul>
+	<li>La MMU traduce la dirección lógica <b>P,D</b> (página, desplazamiento) a <b>marco(P)+D</b></li>
+	<li><span style="color:blue;">010</span>0101 &rarr; <span style="color:blue;">100</span>0101</li>
+</ul>
+	<table>
+	<tr><td>N° página</td><td>Presente</td><td>Modificada</td><td>Marco</td></tr>
+	<tr><td>000</td><td>1</td><td>0</td><td>000</td></tr>
+	<tr><td>001</td><td>1</td><td>0</td><td>001</td></tr>
+	<tr><td>010</td><td>1</td><td>1</td><td>100</td></tr>
+	<tr><td colspan="4">...</td></tr>
+	</table>
+<aside data-markdown class="notes">
+</aside>
+</section>
+
+<section data-transition="slide-in fade-out" data-audio-src="audio/PRESENT/xx.mp3">
+<h2>Espacio virtual de un proceso</h2>
+<ul>
+	<li>El proceso solicita una cierta porción de su espacio virtual...</li>
+</ul>
+<img src="img/espacio-virtual.svg" class="plain">
+<aside data-markdown class="notes">
+</aside>
+</section>
+<section data-transition="slide-out fade-in" data-audio-src="audio/PRESENT/xx.mp3">
+<h2>Espacio virtual de un proceso</h2>
+<ul>
+	<li>... que, aunque esté asignada, no necesita estar completa en memoria</li>
+</ul>
+<img src="img/espacio-virtual-1.svg" class="plain">
+<aside data-markdown class="notes">
+</aside>
+</section>
+
+<section data-transition="slide-in slide-out">
+<h2>Memoria virtual</h2>
+<ul>
+	<li>Si la página no está asignada al proceso, o si la forma del acceso no corresponde a los permisos del proceso para esa página</li>
+	<ul>
+		<li>Se provoca una condición que interrumpe el proceso</li>
+	</ul>
+	<li>Si la página está asignada pero no está en memoria</li>
+	<ul>
+		<li>Se produce un <b>fallo de página</b> y se trae esa página desde el almacenamiento secundario a un marco libre</li>
+		<li>Si no hay marcos libres &rarr; se elige una <b>página víctima</b> de algún proceso</li>
+		<li>Si la página víctima está modificada &rarr; se la guarda en el área de intercambio, liberando el marco</li>
+	</ul>
+</ul>
+<aside data-markdown class="notes">
+</aside>
+</section>
+
+
+
+<section data-transition="slide-in fade-out" data-audio-src="audio/PRESENT/xx.mp3">
+<h2>Memoria virtual</h2>
+<img src="img/paginacion-0.svg" class="plain stretch">
+<aside data-markdown class="notes">
+</aside>
+</section>
+<!------------------------>
+<section data-transition="fade-in fade-out" data-audio-src="audio/PRESENT/xx.mp3">
+<h2>Memoria virtual</h2>
+<img src="img/paginacion-1.svg" class="plain stretch">
+<aside data-markdown class="notes">
+</aside>
+</section>
+<!------------------------>
+<section data-transition="fade-in slide-out" data-audio-src="audio/PRESENT/xx.mp3">
+<h2>Memoria virtual</h2>
+<img src="img/paginacion-2.svg" class="plain stretch">
+<aside data-markdown class="notes">
+</aside>
+</section>
+<!------------------------>
+
+<section data-transition="fade-out slide-in" data-audio-src="audio/PRESENT/xx.mp3">
+<h2>Swapping o intercambio</h2><!-- 81 -->
+<img src="img/swapping-0.svg" class="plain stretch">
+<aside data-markdown class="notes">
+Supongamos un sistema donde existen dos procesos activos, con algunas páginas en memoria principal, y una zona de intercambio en disco.
+
+El proceso P1 tiene asignadas cuatro páginas (de las cuales sólo la página 2 está presente en memoria principal), y P2, dos páginas (ambas presentes). Hay tres marcos libres (M4, M6 y M7) y la zona de intercambio está vacía.
+</aside>
+</section>
+<section data-transition="fade-in fade-out" data-audio-src="audio/PRESENT/xx.mp3">
+<h2>Swapping o intercambio</h2>
+<img src="img/swapping-1.svg" class="plain stretch">
+<aside data-markdown class="notes">
+P1 recibe la CPU y en algún momento ejecuta una instrucción que hace una referencia a una posición dentro de su página 3 (que no está en memoria). 
+</aside>
+</section>
+<section data-transition="fade-in fade-out" data-audio-src="audio/PRESENT/xx.mp3">
+<h2>Swapping o intercambio</h2>
+<img src="img/swapping-2.svg" class="plain stretch">
+<aside data-markdown class="notes">
+Ocurre una falta de página que trae del almacenamiento la página 3 de P1 a un marco libre. La página 3 se marca como presente en la tabla de páginas de P1.
+</aside>
+</section>
+<section data-transition="fade-in fade-out" data-audio-src="audio/PRESENT/xx.mp3">
+<h2>Swapping o intercambio</h2>
+<img src="img/swapping-3.svg" class="plain stretch">
+<aside data-markdown class="notes">
+Enseguida ingresa P3 al sistema y comienza haciendo una referencia a su página 2. 
+</aside>
+</section>
+<section data-transition="fade-in fade-out" data-audio-src="audio/PRESENT/xx.mp3">
+<h2>Swapping o intercambio</h2>
+<img src="img/swapping-4.svg" class="plain stretch">
+<aside data-markdown class="notes">
+Como antes, ocurre una falta de página, se trae la página 2 de P3 del disco, y se copia en un marco libre. Se marca la página 2 como presente y P3 continúa su ejecución haciendo una referencia a una dirección que queda dentro de su página 3.
+</aside>
+</section>
+<section data-transition="fade-in fade-out" data-audio-src="audio/PRESENT/xx.mp3">
+<h2>Swapping o intercambio</h2>
+<img src="img/swapping-5.svg" class="plain stretch">
+<aside data-markdown class="notes">
+Se resuelve como siempre la falta de página para la página 3 y P3 hace una nueva referencia a memoria, ahora a la página 4.
+</aside>
+</section>
+<section data-transition="fade-in fade-out" data-audio-src="audio/PRESENT/xx.mp3">
+<h2>Swapping o intercambio</h2>
+<img src="img/swapping-6.svg" class="plain stretch">
+<aside data-markdown class="notes">
+Pero ahora la memoria principal ya no tiene marcos libres. Es el momento de elegir una página víctima para desalojarla de la memoria. Si la página menos recientemente usada es la página 2 de P1, es una buena candidata. En caso de que se encuentre modificada desde que fue cargada en memoria, se la copia en la zona de intercambio para no perder esas modificaciones, y se declara libre el marco M2 que ocupaba.
+</aside>
+</section>
+<section data-transition="fade-in fade-out" data-audio-src="audio/PRESENT/xx.mp3">
+<h2>Swapping o intercambio</h2>
+<img src="img/swapping-7.svg" class="plain stretch">
+<aside data-markdown class="notes">
+Se marca como <b>no presente</b> la página que acaba de salir de la memoria principal.
+</aside>
+</section>
+<section data-transition="fade-in slide-out" data-audio-src="audio/PRESENT/xx.mp3">
+<h2>Swapping o intercambio</h2>
+<img src="img/swapping-8.svg" class="plain stretch">
+<aside data-markdown class="notes">
+Se copia la página que solicitó P3 en el nuevo marco libre, se la marca como presente en la tabla de páginas de P3, y el sistema continúa su operación normalmente.
+</aside>
+</section>
+
+
+<!------------------------>
+<!------------------------>
+<section data-transition="slide-in fade-out">
+<h2>Memoria y protección</h2>
+<pre class="stretch"><code data-noescape>
+#include &lt;stdio.h&gt;
+main()
+{
+	int *p;			// puntero a entero
+	int a = 2;
+
+	p = &a;			// p apunta a la variable a
+	printf("%p\n",&a);	// la dirección de a
+	printf("%p\n",p);	// el contenido de p
+
+	*p = 3;			// un 3 en la dirección apuntada por p
+	printf("%d\n",a);	// imprimir el valor de a
+
+}
+</code></pre>
+<aside data-markdown class="notes">
+</aside>
+</section>
+<!------------------------>
+<!------------------------>
+<section data-transition="fade-in convex-out">
+<h2>Memoria y protección</h2>
+<pre class="stretch"><code data-noescape>
+#include &lt;stdio.h&gt;
+main()
+{
+	int *p;
+	int a = 2;
+
+	p = 0;			// ahora p apunta al byte 0 de la memoria
+	printf("%p\n",&a);
+	printf("%p\n",p);
+
+	*p = 3;
+	printf("%d\n",a);
+
+}
+</code></pre>
+<aside data-markdown class="notes">
+</aside>
+</section>
+<!------------------------>
+<section data-transition="convex-in convex-out">
+<h2>Memoria y protección</h2>
+<pre class="stretch"><code data-noescape>
+#include &lt;stdio.h&gt;
+main()
+{
+	char *m = "Hola mundo!";
+
+	puts(m);		// imprime el mensaje
+    	*m = 'B';		// primer caracter del mensaje
+	puts(m);
+}
+</code></pre>
+<aside data-markdown class="notes">
+</aside>
+</section>
+<!------------------------>
+<section data-transition="convex-in convex-out">
+<h2>Memoria y protección</h2>
+<div class="asciicast"><!-- { "URL": "src/stack.json" } --></div>
+<aside data-markdown class="notes">
+</aside>
+</section>
+
+
+
+
+<section>
+<h3>Usando Linux</h3>
+<a href="http://bellard.org/jslinux/index.html">Un emulador de PC en Javascript, corriendo Linux</a>
+<aside data-markdown class="notes">
+Este emulador de PC construido en Javascript nos permite practicar los comandos del shell dentro de una *máquina virtual* Linux y desde el navegador, sin necesidad de una instalación completa en nuestro equipo.
+
+* Para retroceder en el terminal
+  - Teclas Ctrl-Up, Ctrl-Down, Ctrl-PageUp y Ctrl-PageDown.
+* Para copiar datos a la máquina virtual
+  - Copiar el texto a la caja o **clipboard** a la derecha.
+  - En el shell de la máquina virtual escribir:
+        cat < /dev/clipboard > /tmp/archivo
+  - Ahora tenemos ese mismo texto en el archivo /tmp/archivo.
+* Para extraer datos de la máquina virtual
+  - Invertir el procedimiento anterior: 
+        cat mi_archivo > /dev/clipboard
+  - Seleccionar el texto en la caja **clipboard** y copiarlo a alguna otra aplicación en nuestro equipo, tal como un editor.
+</aside>
+</section>
+
+
+<!------------------------>
+<section data-transition="slide-in slide-out">
+<h2>Referencias</h2>
+<ul>
+	<li><a href="https://es.wikipedia.org/wiki/Unix">Unix</a></li>
+	<li><a href="https://es.wikipedia.org/wiki/Proceso_(informática)">Procesos</a></li>
+	<li><a href="https://es.wikipedia.org/wiki/Filesystem_Hierarchy_Standard">Jerarquía del sistema de archivos en Linux</a></li>
+	<li><a href="https://es.wikipedia.org/wiki/Unidad_de_gestión_de_memoria">Unidad de Gestión de Memoria (MMU)</a></li>
+	<li><a href="https://es.wikipedia.org/wiki/Paginación_de_memoria">Paginación de memoria</a></li>
+</ul>
+<aside data-markdown class="notes">
+</aside>
+</section>
+<!------------------------>
+
+
+<!------------------------------------------------------------------>
+
+   </div>
+</div>
+
+<link rel="stylesheet" href="Tangle/TangleKit/TangleKit.css" type="text/css">
+<script type="text/javascript" src="Tangle/Tangle.js"></script>
+<script type="text/javascript" src="Tangle/TangleKit/mootools.js"></script>
+<script type="text/javascript" src="Tangle/TangleKit/sprintf.js"></script>
+<script type="text/javascript" src="Tangle/TangleKit/BVTouchable.js"></script>
+<script type="text/javascript" src="Tangle/TangleKit/TangleKit.js"></script>
+<script src="lib/js/head.min.js"></script>
+<script src="js/reveal.js"></script>
+
+<script>
+
+	Reveal.initialize({
+		controls: true,
+		progress: true,
+		history: true,
+		center: true,
+		previewLinks: true,
+		theme: 'serif',
+		transition: 'slide', // none/fade/slide/convex/concave/zoom
+
+		// ----------------------------------------------------------------------------
+		chart: {
+			defaults: { 
+				global: { 
+					title: { fontColor: "#222" }, 
+					legend: {
+						position: "bottom",
+						labels: { fontColor: "#000", size: "14px" },
+					},
+					tooltips: {
+						labels: { fontColor: "#022", size: "14px" },
+					},
+				}, 
+				scale: { 
+					scaleLabel: { fontColor: "#022" }, 
+					gridLines: { color: "#444", zeroLineColor: "#444" }, 
+					ticks: { fontColor: "#022" }, 
+				} 
+			},
+			line: { borderColor: [ 
+				"rgba(20,220,220,.8)" , 
+				"rgba(220,120,120,.8)", 
+				"rgba(20,120,220,.8)",
+				"rgba(220,20,120,.8)",
+				"rgba(20,20,220,.8)" ]
+			}, 
+			bar: { backgroundColor: [ 
+				"rgba(20,220,220,.8)" , 
+				"rgba(20,120,220,.8)",
+				"rgba(20,20,220,.8)",
+				"rgba(120,20,220,.8)",
+				"rgba(220,120,20,.8)", 
+				"rgba(220,20,20,.8)",
+			 ]
+			}, 
+			pie: { backgroundColor: [ 
+				["rgba(0,0,0,.8)" , 
+				"rgba(220,20,20,.8)", 
+				"rgba(20,220,20,.8)", 
+				"rgba(220,220,20,.8)", 
+				"rgba(20,20,220,.8)"] 
+			]},
+			radar: { borderColor: [ "rgba(20,220,220,.8)" , "rgba(220,120,120,.8)", "rgba(20,120,220,.8)" ]}, 
+		},
+		// ----------------------------------------------------------------------------
+		menu: { // Menu works best with font-awesome installed: sudo apt-get install fonts-font-awesome
+			themes: false,
+			transitions: false,
+			markers: true,
+			hideMissingTitles: true,
+			custom: [
+				// { title: 'Plugins', icon: '<i class="fa fa-external-link"></i>', src: 'toc.html' },
+				// { title: 'About', icon: '<i class="fa fa-info"></i>', content: '<p>Int Comp</p>' },
+				{ title: 'IC2016', icon: '<i class="fa fa-bookmark"></i>', src: 'src/ic.html' },
+				{ title: 'Imprimir', icon: '<i class="fa fa-print"></i>', src: 'src/print.html' },
+			]
+		},
+		// ----------------------------------------------------------------------------
+		anything: [ 
+			{className: "rand",  defaults: {min: 0, max: 9}, 
+				initialize: (function(container, options){ 
+					container.innerHTML = Math.trunc( options.min + Math.random()*(options.max-options.min + 1) ); 
+			}) },
+			{className: "chart",  
+				initialize: (function(container, options){ 
+					container.chart = new Chart(container.getContext("2d"), options);  
+				}) 
+			},
+			{className: "animate",  
+				initialize: (function(container, options){ 
+				Reveal.addEventListener( 'fragmentshown', function( event ) {
+					if (typeof event.fragment.beginElement === "function" ) { 
+						event.fragment.beginElement(); 	
+					}
+				});
+				Reveal.addEventListener( 'fragmenthidden', function( event ) {
+					if (event.fragment.hasAttribute('data-reverse') ) { 
+						var reverse = event.fragment.parentElement.querySelector('[id=\"' + event.fragment.getAttribute('data-reverse') + '\"]');
+						if ( reverse && typeof reverse.beginElement === "function" ) { 
+							reverse.beginElement(); 	
+						}										 	
+					}
+				});
+				if ( container.getAttribute("data-svg-src") ) { 
+					var xhr = new XMLHttpRequest(); 
+					xhr.onload = function() { 
+						if (xhr.readyState === 4) { 
+							var svg = container.querySelector('svg');
+							container.removeChild( svg );
+							container.innerHTML = xhr.responseText + container.innerHTML;
+							if ( svg ) {
+								container.querySelector('svg').innerHTML = container.querySelector('svg').innerHTML + svg.innerHTML;
+							}
+						} 
+						else { 
+							console.warn( "Failed to get file. ReadyState: " + xhr.readyState + ", Status: " + xhr.status); 
+						}
+					}; 
+					xhr.open( 'GET', container.getAttribute("data-svg-src"), true ); 
+					xhr.send();
+				}
+			}) },
+			{className: "tangle", 
+				initialize: (function(container, options) { if(options && options.initialize) {options.initialize(container)} }) },
+			{className: "plot",  defaults: {width:800, height: 400, grid:true}, 
+				initialize: (function(container, options){ options.target = "#"+container.id; functionPlot(options) }) },
+			{className: "asciicast",
+                                 defaults: { theme: 'monokai', fontSize: '15px' },
+                                 initialize: (function(container, options) {
+                                         asciinema.player.js.CreatePlayer(container, options.URL, options);
+                                 })
+                         },
+			{className: "anything",  
+				initialize: (function(container, options){ if (options && options.initialize) { options.initialize(container)} }) },
+
+		],
+		// ----------------------------------------------------------------------------
+
+
+		// -------- Math plugin ----------
+		math: {
+			mathjax: 'https://cdn.mathjax.org/mathjax/latest/MathJax.js',
+			//	mathjax: '../MathJax-master/MathJax.js',
+			config: 'TeX-AMS_HTML-full'
+		},
+
+
+		// -------- Chalkboard -----------
+		chalkboard: { 
+			// optionally load pre-recorded chalkboard drawing from file
+			// src: "chalkboard.json",
+			//readOnly: undefined, 
+			toggleChalkboardButton: { left: "80px" },
+			toggleNotesButton: { left: "130px" },
+			//transition: 800,
+			//theme: "whiteboard",
+			// configuration options for notes canvas and chalkboard
+			//color: [ 'rgba(0,0,255,1)', 'rgba(255,255,255,0.5)' ],
+			//background: [ 'rgba(127,127,127,.1)' , 'plugin/chalkboard/img/blackboard.png' ],
+			//pen:  [ 'reveal.js-plugins/chalkboard/img/boardmarker.png', 'reveal.js-plugins/chalkboard/img/chalk.png' ],
+		},
+		keyboard: {
+			67: function() { RevealChalkboard.toggleNotesCanvas() },    // toggle notes canvas when 'c' is pressed
+			66: function() { RevealChalkboard.toggleChalkboard() }, // toggle chalkboard when 'b' is pressed
+			46: function() { RevealChalkboard.clear() },    // clear chalkboard when 'DEL' is pressed
+			 8: function() { RevealChalkboard.reset() },    // reset chalkboard data on current slide when 'BACKSPACE' is pressed
+			68: function() { RevealChalkboard.download() }, // downlad recorded chalkboard drawing when 'd' is pressed
+			82: function() { Recorder.toggleRecording(); }, // press 'r' to start/stop recording
+			90: function() { Recorder.downloadZip(); },     // press 'z' to download zip containing audio files
+			84: function() { Recorder.fetchTTS(); }     // press 't' to fetch TTS audio files
+		},
+
+		// -------- Dependencies ---------
+		dependencies: [
+			{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+			{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+			{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+			{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+			{ src: 'plugin/zoom-js/zoom.js', async: true },
+			// { src: 'plugin/notes/notes.js', async: true },
+			{ src: 'plugin/explain/explain.js', async: true },
+			{ src: 'plugin/function-plot/site/js/vendor/jquery-1.11.2.min.js' },
+			{ src: 'plugin/function-plot/site/js/vendor/d3.js' },
+			{ src: 'plugin/function-plot/dist/function-plot.js' },
+			{ src: 'plugin/chart/Chart.min.js'},
+			{ src: 'plugin/chart/csv2chart.js'},
+			{ src: 'plugin/asciinema/asciinema-player.js' },
+			{ src: 'plugin/anything/anything.js' },
+			{ src: 'plugin/chalkboard/chalkboard.js' },
+			{ src: 'plugin/menu/menu.js' },
+			{ src: 'plugin/mathsvg/math.js', async: true },
+			{ src: 'plugin/audio-slideshow/slideshow-recorder.js', condition: function( ) { return !!document.body.classList; } },
+			{ src: 'plugin/audio-slideshow/audio-slideshow.js', condition: function( ) { return !!document.body.classList; } },
+			// ... 
+		]
+	});
+
+</script>
+
+</body>
+</html>
+

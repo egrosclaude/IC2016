@@ -1,0 +1,1274 @@
+<!doctype html>
+<html lang="es">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>Introducción a la Computación 2016</title>
+
+		<meta name="description" content="Introducción a la Computación">
+		<meta name="author" content="Eduardo Grosclaude">
+
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/ic.css" id="theme">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css"> 
+		
+		<link rel="stylesheet" type="text/css" href="plugin/asciinema/asciinema-player.css" />
+
+<!--		<link rel="stylesheet" href="font-awesome-4.5.0/css/font-awesome.css">  -->
+
+		<link rel="icon" type="image/png" href="img/favicon-96x96.png" sizes="96x96">
+		<meta name="theme-color" content="#ffffff">
+		<!-- Code syntax highlighting -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+
+	<body>
+	  <div class="reveal">
+		<div class="slides">
+
+
+<!------------------------------------------------------------------>
+
+
+<section data-markdown data-background="#00CCFF">
+ <script type="text/template">
+##Unidad I 
+###Representación de la Información 
+
+1. Sistemas de Numeración 
+1. Unidades de Información
+1. Representación Digital de Datos <!-- .element: class="post_it" -->
+ 1. Datos Numéricos
+ 1. Texto
+ 1. Multimedia
+ </script>
+</section>
+
+
+<section data-markdown data-background="#00CCFF">
+##Representación 
+##de datos numéricos
+</section>
+
+<section data-markdown>
+##Vimos hasta ahora
+* Sistemas de numeración decimal, hexadecimal, octal, binario
+* Simplificaciones
+  * Siempre hemos representado **enteros**
+  * Siempre **no negativos**
+  * Suponíamos **infinitos dígitos**
+* Pero las computadoras adoptan algún **sistema de representación** con alguna cantidad fija de bits
+</section>
+
+<section data-markdown data-background="#00CCFF" data-background-transition="zoom">
+##Representación de datos numéricos
+* Enteros
+ * Signo-Magnitud
+ * Complemento a 2 
+ * Exceso a $2^{n-1}$
+* Fraccionarios
+ * Punto fijo
+ * Punto flotante
+</section>
+
+<section data-markdown>
+##Rango de representación (RR)
+* Intervalo de números representables
+* Depende:
+ * De la forma como funciona el sistema de representación 
+ * De la cantidad de dígitos del sistema de representación
+* Notación $[a, b]$
+</section>
+
+<section>
+<h2>Representación sin signo</h2>
+<ul>
+   <li>Sólo puede expresar números <b>no negativos</b></li>
+   <li>Con $n$ bits, tengo $2^n$ posibilidades</li>
+	<ul>
+	   <li>Dos para el primer bit; por cada una de éstas, dos para el segundo; por cada una...($2 \times 2 \times 2 ... = 2^n$)</li>
+	</ul>
+   <li> &#8680; Rango de representación <span class="post_it">$[0, 2^n-1]$</span></li>
+	<ul>
+	   <li class="fragment">Con 8 bits: $[0, 2^8-1] = [0, 255]$</li>
+	   <li class="fragment">Con 16 bits: $[0, 2^{16}-1] = [0, 65.535]$</li>
+	   <li class="fragment">Con 32 bits: $[0, 2^{32}-1] = [0, 4.294.967.295]$</li>
+	</ul>
+</ul>
+</section>
+
+<section>
+<h2>Representación con signo</h2>
+<ul>
+<li>Permite representar <b>negativos y no negativos</b></li>
+<li><strong>Varias técnicas</strong></li>
+	<ul>
+		<li>Signo-magnitud (<strong>S-M</strong>)</li>
+		<li>Complemento a 2 (<strong>C2</strong>)</li>
+		<li>En exceso a $2^n-1$</li>
+	</ul>
+</ul>
+</section>
+
+<section data-background="#3c53b5" data-background-transition="zoom">
+<h2>Preguntas</h2>
+<ol>
+	<li class="fragment">¿Cuáles son los límites del rango de representación de un sistema de representación numérica?</li>
+	<li class="fragment">Un número escrito en un sistema de representación <b>con signo</b>, ¿es siempre negativo?</li>
+	<li class="fragment">¿Para qué querríamos escribir un número positivo en un sistema de representación con signo?</li>
+</ol>
+</section>
+
+
+<section>
+<h2>Sistema de Signo-magnitud</h2>
+<ul>
+   <li>El primer bit a la izquierda representa el signo</li>
+	<ul>
+	<li>0 &rarr; positivo</li>
+	<li>1 &rarr; negativo</li>
+	</ul>
+   <li>Los restantes bits, el valor absoluto o magnitud</li>
+</ul>
+</section>
+
+<section>
+<h2>Signo-Magnitud en 8 bits</h2>
+<ul>
+   <li>Positivos</li>
+	$7_{(10} = 00000111_{(2}$
+   <span class="fragment">
+   <li>Negativos</li>
+	$-7_{(10} = 10000111_{(2}$
+   </span>
+   <li class="fragment">¿Rango de representación?</li>
+</ul>
+</section>
+
+<section>
+<h2>RR de Signo-Magnitud con n bits</h2>
+<ul>
+   <li>Hay $n$ bits pero uno es para el signo</li>
+	<p class="post_it">
+   		&rarr; El valor absoluto se expresa en $n-1$ bits
+	</p>
+   <li>Como el RR Sin Signo en $n-1$ bits es $[0, 2^{n-1}-1]$...</li>
+   <li>...el RR de Signo-Magnitud en $n$ bits es
+   <span class="post_it">$[-(2^{n-1}-1), 2^{n-1}-1]$</span></li>
+</ul>
+</section>
+
+<section data-background="#3c53b5" data-background-transition="zoom">
+<h2>Preguntas</h2>
+<p>
+Signo-Magnitud en 8 bits
+</p>
+<ol>
+<li>$9_{(10} = X_{(2} =$ <span class="fragment"> $00001001$</span></li>
+<li>$-9_{(10} = X_{(2} =$ <span class="fragment"> $10001001$</span></li>
+<li>$50_{(10} = X_{(2} =$ <span class="fragment"> $00110010$</span></li>
+<li>$-50_{(10} = X_{(2} =$ <span class="fragment"> $10110010$</span></li>
+<li>$-128_{(10} = X_{(2} =$ <span class="fragment">Imposible</span></li>
+<li>$10000000_{(2} = X_{(10} =$ <span class="fragment">¿Y $00000000_{(2}$?</span></li>
+</ol>
+</section>
+
+<section data-background="#b53c53" data-background-transition="zoom">
+<img src="img/sm.jpg" class="stretch">
+</section>
+
+
+<section>
+<h2>Sistema de Complemento a 2</h2>
+<ul>
+<li>Complemento a 2 corrige los problemas de Signo-magnitud</li>
+	<ul>
+	<li>Signo-magnitud no utiliza eficientemente el espacio de representación</li>
+	<li>No es conveniente para la aritmética</li>
+	</ul>
+<li>La forma de representación en $C2$ es diferente</li>
+</ul>
+</section>
+
+<section>
+<h2>Operación de complemento a 2</h2>
+<ul>
+	<li>Devuelve el opuesto <i>("el negativo")</i> de un número</li>
+	<ul>
+	<li>Si $a > 0, -a < 0$
+	<li>Si $a < 0, -a > 0$
+	</ul>
+<div class="post_it">
+	<li>Procedimiento</li>
+	<ol>
+	<li>Se invierten todos los bits</li>
+	<li>Se suma 1</li>
+	</ol>
+</div>
+	<li>Ejemplo: $111010$ &rarr; $000110$</li>
+	<ul>
+		<li>¿Son opuestos?</li>
+	</ul>
+</ul>
+</section>
+
+<section>
+<h2>Representar en C2</h2>
+<table>
+<tr><th>Procedimiento</th><th>Ejemplo</th></tr>
+<tr><td><li>Positivos o cero</li></td>			<td align="right">$17_{(10}$</td></tr>
+<tr><td>&nbsp;&nbsp;Se representan como en S-M</td>	<td align="right">$00010001_{(2}$</td></tr>
+</table>
+<div class="fragment">
+<table>
+<tr><td><li>Negativos</li></td>			<td align="right">$-17_{(10}$</td></tr>
+<tr><td>&nbsp;&nbsp;1. Se expresa su valor absoluto</td><td align="right">$00010001_{(2}$</td></tr>
+<tr><td>&nbsp;&nbsp;2. Se invierten todos los bits</td><td align="right">$11101110_{(2}$</td></tr>
+<tr><td>&nbsp;&nbsp;3. Se suma 1</td>		<td align="right">$11101111_{(2}$</td></tr>
+</div>
+</table>
+</section>
+
+<section>
+<h2>C2 en 8 bits &rarr; decimal</h2>
+<ul>
+	<li>Lo primero es determinar el signo</li>
+	<li>$00010001$ es positivo</li>
+	<ul>
+	<li>$00010001_{(2} = 17_{(10}$</li>
+	</ul>
+	<li>$11101111$ es negativo</li>
+	<ol>
+		<li>Invirtiendo, $1101111_{(2} = 0010000_{(2}$</li>
+		<li>$0010000_{(2} + 00000001_{(2} = 0010001_{(2} = 17_{(10}$</li>
+		<li>$-1 \times 17 = -17$</li>
+	</ol>
+</ul>
+</section>
+
+    
+<section data-background="#3c53b5" data-background-transition="zoom">
+<h2>Preguntas</h2>
+<p>
+Complemento a 2 en 8 bits
+</p>
+   <ol>
+	<li>$9_{(10} =$ <span class="fragment">$00001001_{(2}$</span></li>
+	<li>$-9_{(10} =$ <span class="fragment">$11110111_{(2}$</span></li>
+	<li>$50_{(10} =$ <span class="fragment">$00110010_{(2}$</span></li>
+	<li>$-50_{(10} =$ <span class="fragment">$11001110_{(2}$</span></li>
+	<li>$-128_{(10} =$ <span class="fragment">$10000000_{(2}$</span></li>
+   </ol>
+</section>
+
+    
+<section>
+<h2>RR de C2 con $n$ bits</h2>
+<ul>
+<li>$-128 = -2^{n-1}$ &#8680; ¡era imposible en S-M!
+<li>RR S-M $n$ bits: $[-(2^{n-1}-1), 2^{n-1}-1]$
+<li>RR C2 n bits: $[-(2^{n-1}), 2^{n-1}-1]$
+<li><span class="post_it">El RR de C2 tiene un valor más que el de S-M</span>
+</ul>
+</section>
+   
+<section>
+<h2>Ventajas de C2 sobre S-M</h2>
+<ul>
+    	<li>Un valor más en el RR</li>
+	<li>El <strong>cero</strong> tiene una única representación</li>
+	<li>Las cuentas se hacen bit a bit</li>
+	<li>Mecanismo de cálculo eficiente </li>
+	<li>Fácil implementación computacional</li>
+</ul>
+</section>
+
+<section>
+<h2>Rangos de Representación</h2>
+<img src="img/sistemas.png" class="stretch">
+</section>
+
+<section>
+<h2>Aritmética en C2</h2>
+<ul>
+    <li><strong>$A + B$</strong></li>
+	<ul>
+		<li>Las cuentas se hacen bit a bit
+	</ul>
+	<li><strong>$A - B$</strong></li>
+	<ul>
+		<li>$A - B = A + (-B)$</li>
+		<li>Se complementa $B$ y se suman bit a bit </li>
+	</ul>
+</ul>
+</section>
+
+<section>
+<h2>Aritmética en C2</h2>
+<ul>
+<li>Sumar $9 + 8$ en C2, 8 bits</li>
+<ul class="post_it">
+$\frac{00001001\\+\\00001000}{00010001}$
+</ul>
+</ul>
+</section>
+
+<section>
+<h2>Aritmética en C2</h2>
+<ul>
+<li>Restar $9 - 8$ en C2, 8 bits</li>
+	<ul>
+	<li>$9 - 8 = 9 + (-8)$</li>
+	<li>Complementamos a 2 el positivo 8</li>
+	<li>$-8 = C2(00001000) = 11111000$</li>
+	</ul>
+	<li>Hacemos la suma</li>
+	<ul class="post_it">
+		$\frac{00001001\\+\\11111000}{00000001}$
+	</ul>
+</ul>
+</section>
+
+<section data-background="#3c53b5" data-background-transition="zoom">
+<h2>Preguntas</h2>
+<ol>
+	<li class="fragment">El complemento a 2 de un número, es decir, $C2(x)$, ¿es siempre un número negativo?</li>
+	<li class="fragment">¿Quién es $C2(0)$?</li>
+	<li class="fragment">¿Cuánto vale $C2(C2(x))$? Es decir, ¿qué pasa si complemento a 2 el complemento a 2 de $x$?</li>
+	<li class="fragment">¿Cuánto vale $x + C2(x)$? Es decir, ¿qué pasa si sumo a $x$ su propio complemento a 2?</li>
+	<li class="fragment">¿Cómo puedo verificar si calculé correctamente un complemento a 2?</li>
+</ol>
+</section>
+
+<section data-background="#3c53b5" data-background-transition="zoom">
+<h2>Desafío</h2>
+<ul>
+	<li class="fragment">Adoptemos la notación $x = (x_{n-1}, ... , x_1, x_0)$ para un número en $C^n_2$, es decir, en complemento a 2 sobre $n$ bits</li>
+	<ol>
+	<li class="fragment">Con la notación anterior, comprobar que $x = $ $-1 \times x_{n-1} \times 2^{n-1} + x_{n-2} \times 2^{n-2} +$ $...$ $+ x_1 \times 2 + x_0 =$ $-x_{n-1} \times 2^{n-1}+ \sum_{i=0}^{n-2}({x_i \times 2^i})$</li>
+	<li class="fragment">Con la misma notación, pero si $x$ está en Signo-magnitud, ¿cuál es la expresión de $x$ como función de los dígitos binarios $x_i$?</li>
+	</ol>
+</ul>
+</section>
+
+<section>
+<h2>Overflow o desbordamiento en C2</h2>
+    <ul>		
+	<li>Cuando el resultado de una operación excede la cantidad de dígitos del sistema, el resultado es inválido</li>
+    	<li>Puede ocurrir tanto al sumar dos números positivos como dos negativos</li>
+	<li>Condición sobre los dos últimos bits de <strong>carry</strong> o acarreo</li>
+    <ul>		
+	<li>Diferentes &#8680; hay <i>overflow</i></li>
+	<li>Iguales &#8680; no hay <i>overflow</i></li>
+    </ul>
+    </ul>
+</section>
+
+
+
+
+
+<section data-menu-title="Caso sin overflow">
+	<section data-transition="none">
+	<h2>Bits de acarreo o <i>carry</i></h2>
+	<img src="img/no-of0.png" class="plain stretch">
+	</section>
+	<section data-transition="none">
+	<h2>Bits de acarreo o <i>carry</i></h2>
+	<img src="img/no-of1.png" class="plain stretch">
+	</section>
+	<section data-transition="none">
+	<h2>Bits de acarreo o <i>carry</i></h2>
+	<img src="img/no-of2.png" class="plain stretch">
+	</section>
+	<section data-transition="none">
+	<h2>Bits de acarreo o <i>carry</i></h2>
+	<img src="img/no-of3.png" class="plain stretch">
+	</section>
+	<section data-transition="none">
+	<h2>Bits de acarreo o <i>carry</i></h2>
+	<img src="img/no-of4.png" class="plain stretch">
+	</section>
+	<section data-transition="none">
+	<h2>Bits de acarreo o <i>carry</i></h2>
+	<img src="img/no-of5.png" class="plain stretch">
+	</section>
+	<section data-transition="none">
+	<h2>Bits de acarreo o <i>carry</i></h2>
+	<img src="img/no-of6.png" class="plain stretch">
+	</section>
+	<section data-transition="none">
+	<h2>Bits de acarreo o <i>carry</i></h2>
+	<img src="img/no-of7.png" class="plain stretch">
+	</section>
+	<section data-transition="none">
+	<h2>Bits de acarreo o <i>carry</i></h2>
+	<img src="img/no-of8.png" class="plain stretch">
+	</section>
+</section>
+
+<section data-menu-title="Caso con overflow">
+	<section data-transition="none">
+	<h2>Bits de acarreo o <i>carry</i></h2>
+	<img src="img/si-of0.png" class="plain stretch">
+	</section>
+	<section data-transition="none">
+	<h2>Bits de acarreo o <i>carry</i></h2>
+	<img src="img/si-of1.png" class="plain stretch">
+	</section>
+	<section data-transition="none">
+	<h2>Bits de acarreo o <i>carry</i></h2>
+	<img src="img/si-of2.png" class="plain stretch">
+	</section>
+	<section data-transition="none">
+	<h2>Bits de acarreo o <i>carry</i></h2>
+	<img src="img/si-of3.png" class="plain stretch">
+	</section>
+	<section data-transition="none">
+	<h2>Bits de acarreo o <i>carry</i></h2>
+	<img src="img/si-of4.png" class="plain stretch">
+	</section>
+	<section data-transition="none">
+	<h2>Bits de acarreo o <i>carry</i></h2>
+	<img src="img/si-of5.png" class="plain stretch">
+	</section>
+	<section data-transition="none">
+	<h2>Bits de acarreo o <i>carry</i></h2>
+	<img src="img/si-of6.png" class="plain stretch">
+	</section>
+	<section data-transition="none">
+	<h2>Bits de acarreo o <i>carry</i></h2>
+	<img src="img/si-of7.png" class="plain stretch">
+	</section>
+	<section data-transition="none">
+	<h2>Bits de acarreo o <i>carry</i></h2>
+	<img src="img/si-of8.png" class="plain stretch">
+	</section>
+</section>
+
+
+<section data-background="#3c53b5" data-background-transition="zoom">
+<h2>Preguntas</h2>
+<ol>
+	<li class="fragment">¿Qué condición sobre los bits de carry permite asegurar que <b>no</b> habrá <i>overflow</i>?</li>
+	<li class="fragment">¿Para qué sistemas de representación numérica usamos la condición de detección de <i>overflow</i>?</li>
+	<li class="fragment">¿Puede existir <i>overflow</i> al sumar dos números de diferente signo?</li>
+	<li class="fragment">¿Qué condición sobre los bits <b>de signo</b> de los operandos permite asegurar que <b>no</b> habrá <i>overflow</i>?</li>
+	<li class="fragment">¿Puede haber casos de <i>overflow</i> al sumar dos números negativos?</li>
+	<li class="fragment">¿Puede haber casos de <i>overflow</i> al restar dos números?</li>
+</ol>
+</section>
+
+
+<section>
+<h2>Extensión de signo en C2</h2>
+    <ul>		
+	<li>Dos operandos en C2 deben tener la misma cantidad de bits</li>
+    	<li>Si uno fuera más corto que el otro, se necesita extenderlo por la izquierda</li>
+    <ul>		
+	<li>Positivo &#8680; se completa con ceros</li>
+	<li>Negativo &#8680; se completa con unos</li>
+    </ul>
+    </ul>
+</section>
+
+<section>
+<h2>Extensión de signo en C2</h2>
+    <ul>		
+	<li>$A + B = 00101011_{(2} + 00101_{(2}$</li>
+	<li>A está en $C^8_2$ y B en $C^5_2$</li>
+    <ul>		
+    	<li>Se completa B (positivo) como $00000101_{(2}$</li>
+    </ul>
+	<li>$A + B = 1010_{(2} + 0110100_{(2}$</li>
+	<li>A está en $C^4_2$ y B en $C^7_2$</li>
+    <ul>		
+	<li>Se completa A (negativo) como $1111010_{(2}$</li>
+    </ul>
+    </ul>
+</section>
+
+<section>
+<h2>Notación en exceso o <i>Bias</i></h2>
+<ul>
+<li>Utiliza un sistema sin signo en $n$ bits</li>
+<li>Representa un intervalo $[a, b]$ de $2^n$ enteros</li>
+<ul>
+	<li>Este intervalo contiene $b - a + 1$ enteros</li>
+	<li>Para $[-5, 10]$ es $10 - (-5) + 1 = 16$ &#8680;  necesitamos 4 bits</li>
+	<li>Para $[-128, 127]$ es $127 - (-128) + 1$ $= 256$ &#8680;  necesitamos 8 bits</li>
+</ul>
+<li>Asigna los binarios en orden</li>
+$a$ &#8680; $0000$, $a + 1$ &#8680; $0001$, ..., $b$ &#8680; $1111$ 
+</section>
+
+<section>
+<section data-transition="fade">
+<img src="img/bias-0.png" class="plain stretch">
+</section>
+
+<section data-transition="fade">
+<img src="img/bias-0a.png" class="plain stretch">
+</section>
+
+<section data-transition="fade">
+<img src="img/bias-0b.png" class="plain stretch">
+</section>
+
+<section data-transition="fade">
+<img src="img/bias-1.png" class="plain stretch">
+</section>
+
+<section data-transition="fade">
+<img src="img/bias-2.png" class="plain stretch">
+</section>
+</section>
+
+<section>
+<h3>Exceso para $[-5, 10]$, $n = 4$</h3>
+<table>
+<tr><td>-5</td><td>&#8680;</td><td>0000</td>  <td>&nbsp;</td>  <td>&nbsp;</td>    <td>3</td><td>&#8680;</td><td>1000</td></tr>
+<tr><td>-4</td><td>&#8680;</td><td>0001</td>  <td>&nbsp;</td>  <td>&nbsp;</td>    <td>4</td><td>&#8680;</td><td>1001</td></tr>
+<tr><td>-3</td><td>&#8680;</td><td>0010</td>  <td>&nbsp;</td>  <td>&nbsp;</td>    <td>5</td><td>&#8680;</td><td>1010</td></tr>
+<tr><td>-2</td><td>&#8680;</td><td>0011</td>  <td>&nbsp;</td>  <td>&nbsp;</td>    <td>6</td><td>&#8680;</td><td>1011</td></tr>
+<tr><td>-1</td><td>&#8680;</td><td>0100</td>  <td>&nbsp;</td>  <td>&nbsp;</td>    <td>7</td><td>&#8680;</td><td>1100</td></tr>
+<tr><td> 0</td><td>&#8680;</td><td>0101</td>  <td>&nbsp;</td>  <td>&nbsp;</td>    <td>8</td><td>&#8680;</td><td>1101</td></tr>
+<tr><td>1</td><td>&#8680;</td><td>0110</td>  <td>&nbsp;</td>   <td>&nbsp;</td>    <td>9</td><td>&#8680;</td><td>1110</td></tr>
+<tr><td>2</td><td>&#8680;</td><td>0111</td>  <td>&nbsp;</td>   <td>&nbsp;</td>    <td>10</td><td>&#8680;</td><td>1111</td></tr>
+</table>
+</section>
+
+
+
+<section>
+<h2>Notación en exceso o <i>Bias</i></h2>
+<ul>
+<li>El valor representado es el valor sin signo del binario, más el límite inferior del intervalo</li>
+<li>Se puede representar un intervalo simétrico o no</li>
+<li>Dados A y B es fácil compararlos
+<ul>
+	<li>Es decir, determinar si A > B o B > A</li>
+	<li>Al contrario que en C2</li>
+</ul>
+<li>La aritmética, sin embargo, es dificultosa</li>
+<li>Usado en representación en punto flotante</li>
+</ul>
+</section>
+
+<section data-background="#3c53b5" data-background-transition="zoom">
+<h2>Preguntas</h2>
+<div align="center">Sobre Notación en Exceso</div>
+<ol>
+	<li class="fragment">Dado un valor decimal a representar, ¿cómo calculamos el binario?</li>
+	<li class="fragment">Dado un binario, ¿cómo calculamos el valor decimal representado?</li>
+	<li class="fragment">El sistema en exceso ¿destina un bit para representar el signo?</li>
+	<li class="fragment">¿Se puede representar un intervalo que no contenga el cero?</li>
+	<li class="fragment">¿Cómo se comparan dos números en exceso para saber cuál es el mayor?</li>
+</ol>
+</section>
+	
+
+
+<section data-markdown data-background="#00CCFF" data-background-transition="zoom">
+##Representación de datos numéricos
+* Enteros
+ * Signo-Magnitud  &#10004;
+ * Complemento a 2  &#10004;
+ * Exceso a $2^{n-1}$  &#10004;
+* Fraccionarios
+ * Punto fijo
+ * Punto flotante
+</section>
+
+<section class="preguntas">
+<h2>Coma o punto fraccionario</h2>
+<ul>
+<li>En los enteros, está a la derecha de los dígitos y no se escribe</li>
+<li>Marca el lugar donde los exponentes de la base se hacen negativos</li>
+</ul>
+<div class="post_it" align="center">$3.14 = 3 \times 10^0 + 1 \times  10^{-1} + 4 \times  10^{-2}$</div>
+</section>
+
+
+
+<section>
+<h2>Fraccionario en base 2 &rarr; decimal</h2>
+<p>$11.101_{(2}  = $</p>
+<p>$1 \times 2^1 + 1 \times 2^0 +$ <span class="fragment"> $1 \times 2^{-1} + 0 \times 2^{-2} + 1 \times 2^{-3} =$</span></p>
+<p class="fragment">$2 + 1 + 0.5 + 0 + 0.125 = $</p>
+<p class="fragment">$3.625$</p>
+</section>
+    
+<section>
+<h2>Fraccionario en base 2 &rarr; decimal</h2>
+<h3>Otra manera</h3>
+<p>Notar que $11.101_{(2} =$<span class="fragment"> $ 11101_{(2} / 8$:</span></p>
+<p>$1 \times 2^1 + 1 \times 2^0 + 1 \times 2^{-1} + 0 \times 2^{-2} + 1 \times 2^{-3} = $</p>
+<p class="fragment">$\frac{1 \times 2^4 + 1 \times 2^3 + 1 \times 2^2 + 0 \times 2^1 + 1 \times 2^0}{2^3} = $ $\frac{16 + 8 + 4 + 0 + 1}{8} = $</p>
+<p class="fragment">$29 / 8 = 3.625$</p>
+</section>
+    
+<section data-markdown id="decfrac">
+## Decimal fraccionario &rarr; base 2
+* Se separan la parte entera (PE) y la parte fraccionaria (PF)
+* Se convierte la PE a base 2 separadamente
+* La PF se multiplica por 2 y se toma la PE del resultado
+ * Este dígito binario se agrega al resultado
+* Se repite el paso anterior hasta llegar a 0, o hasta lograr la precisión deseada
+</section>
+
+<section>
+<h2>Decimal fraccionario &rarr; base 2</h2>
+<ul>
+<li>$3.625 = 3 + 0.625 = PE + PF$</li>
+<li class="fragment">$PE = 3_{(10} = 11_{(2}$</li>
+<li class="fragment">$PF = 0.625_{(10}$ <span class="fragment">$= ?_{(2}$</span></li>
+</ul>
+</section>
+
+
+<section>
+<h2>Decimal fraccionario &rarr; base 2, PF</h2>
+<ul>
+<li>$PF \times 2 = 0.625 \times 2 = 1.25$ <span class="fragment">&#8680; <span class="post_it">$0.25$</span>$ + 1$</span></li>
+<li class="fragment">$PF' \times 2 =$ <span class="post_it">$0.25$</span> $\times 2 = 0.5$ <span class="fragment">&#8680; $0.5 + 0$</span></li>
+<li class="fragment">$PF'' \times 2 = 0.5 \times 2 = 1.0$ <span class="fragment">&#8680; $0.0 + 1$</span></li>
+<li class="fragment">$PF''' \times 2 = 0.0 \times 2 = 0.0$ <span class="fragment">&#8680; Fin</span></li>
+<li class="fragment">$PF = 0.625$ <span class="fragment">&#8680; $0.101_{(2}$</span></li>
+<li class="fragment">$3.625 = 3 + 0.625 = 11_{(2} + 0.101_{(2} = 11.101_{(2}$</li>
+</ul>
+</section>
+
+
+<section data-markdown>
+##Representación de punto fijo
+* Parte entera y fraccionaria son campos de un *ancho* determinado
+	* $PF(n,k) = $"Punto fijo en $n$ dígitos binarios con $k$ fraccionarios"
+* El punto no se almacena pero se asume
+	* $00011101 \equiv 00011.101_{(2} = 3.625$
+	* El software opera con enteros de $n$ dígitos
+	* Sólo imprime el punto del resultado final
+</section>
+
+<section data-markdown>
+##Operaciones en punto fijo
+* Los operandos tienen el mismo tamaño de PE y PF
+* Se ignora el punto y se tratan los números como en C2
+* Los puntos fraccionarios se encolumnan automáticamente
+* El resultado debe conservar el *ancho* de PE y PF
+</section>
+
+<section data-markdown>
+##Punto fijo con signo
+###Decimal fraccionario &rarr; binario
+* Caso positivo
+  * Se expresan la PE y PF en binario
+  * $2.25 = 00010.010$
+* Caso negativo
+   * Se expresa su valor absoluto como en el caso positivo y se complementa, ignorando la posición del punto
+   * $-2.25 = C2(00010.010) = 11101.110$ 
+</section>
+
+<section data-markdown>
+##Punto fijo con signo
+###Binario fraccionario &rarr; decimal
+ * Positivo
+	- Se aplica la expresión general con exponentes negativos
+	- O bien, se trata como entero y se divide por $2^k$
+ * Negativo
+	- Se complementa y se trata como en el caso positivo
+	- Se restituye el signo $-$
+</section>
+
+
+<section data-background="#3c53b5" data-background-transition="zoom">
+<h2>Preguntas</h2>
+<ol>
+<li>¿A qué número decimal corresponde...</li>
+	<ol>
+	<li>$0011.0000$?</li>
+	<li>$0001.1000$?</li>
+	<li>$0000.1100$?</li>
+	</ol>
+<li>Representación en $PF(8,4)$ de:</li>
+	<ol>
+	<li>$0.5$</li>
+	<li>$-7.5$</li>
+	</ol>
+<li>¿Cuál es el RR de $PF(8,1)$? ¿Y de $PF(8,k)$?</li>
+</ol>
+</section>
+
+<section data-markdown>
+##Representación de punto fijo
+* Adecuada para problemas con datos de magnitudes y precisiones similares
+* Aplicada en
+   * Sistemas **de tiempo real** 
+   * Sistemas donde es importante la velocidad de cómputo, como juegos
+   * Sistemas **embebidos** con procesadores de recursos limitados
+   * Matemática financiera
+</section>
+   
+<!-- 
+https://es.wikipedia.org/wiki/IEEE_coma_flotante
+-->
+    
+<section>
+<h2>Variables muy diferentes</h2>
+<ul>	
+<li>"Tiempo en que la luz recorre una millonésima de milímetro"</li>
+<ul>	
+	<li>$t = e / v$</li>
+	<li>$e = 1\ nm = 0,000000001\ m$</li>
+	<li>$v = 300.000\ km/s = 300.000.000\ m/s$</li>
+</ul>
+</ul>
+</section>
+    
+<section>
+<h2>Notación científica</h2>
+<ul>	
+<li>$e = 0.000000001\ m$ <span class="fragment">$ = 1 \times 10^{-9}\ m$</span></li>
+<li>$v = 300000000\ m/s$ <span class="fragment">$ = 3 \times 10^8\ m/s$</span></li>
+<li>$t = e/v = 0.00000000000000000333\ s$</li>
+<li class="fragment">$t = e / v = (1 \times 10^{-9}\ m) / (3 \times 10^8\ m/s)$</li>
+<li class="fragment">$t = e / v = \frac{(1 \times 10^{-9}\ m)}{(3 \times 10^8\ m/s)}$ <span class="fragment"> $ = \frac{1}{3} \times \frac{10^{-9}\ m}{10^8\ m/s}$</span></li>
+<li class="fragment">$t = 1 / 3 \times 10^{-9-8}\ s \Longrightarrow t = 0.333 \times 10^{-17}\ s$</li>
+</ul>
+</section>
+
+<section>
+<h2>Notación científica</h2>
+<ul>	
+	<li>$t = 0.333 \times 10^{-17}\ s$</li>
+	<ul>
+		<li>Coeficiente = $0.333$</li>
+		<li>Exponente = $-17$</li>
+	</ul>
+	<li class="fragment">Normalización</li>
+	<ul class="fragment">
+		<li>$1 <= coeficiente < base$</li>
+		<li>$0.333 \times 10^{-17} = 3.33 \times 10^{-18}$</li>
+	</ul>
+</ul>
+</section>
+
+
+<section>
+<h2>Representación en punto flotante</h2>
+<ul>	
+	<li>Formato <i>IEEE 754 single precision</i>, 32 bits</li>
+	<ul>
+		<li>1 bit de <strong>signo</strong></li>
+		<li>8 bits para el <strong>exponente</strong> (en exceso 127)</li>
+		<li>23 bits para la <strong>mantisa</strong></li>
+	</ul>
+	<span class="fragment">
+	<li>Formato <i>IEEE 754 double precision</i>, 64 bits</li>
+	<ul>
+		<li>1 bit de <strong>signo</strong></li>
+		<li>11 bits para el <strong>exponente</strong> (en exceso 1023)</li>
+		<li>52 bits para la <strong>mantisa</strong></li>
+	</ul>
+	</span>
+</ul>
+</section>
+
+
+<section>
+<h2>Formato <i>IEEE 754 single precision</i></h2>
+<img class="plain stretch" src="img/ieee754.png">
+</section>
+
+
+<section> 
+  <section data-transition="convex" data-transition-speed="slow">
+  <h2>Decimal a punto flotante</h2>
+  <ol>	
+	<li>Separar el signo y escribir el valor absoluto en base 2</li>
+	<li>Convertirlo a notación científica en base 2 <b>normalizada</b></li>
+	<li>Expresar el exponente en notación <b>en exceso</b></li>
+	<li>Guardar el coeficiente <b>sin parte entera</b> en la mantisa</li>
+  </ol>
+  </section>
+
+  <section data-transition="convex" data-transition-speed="slow">
+  <h2>Decimal a punto flotante</h2>
+  <h3>1. Escribir el valor absoluto en base 2</h3>
+  <ul>
+	<li>Lo vimos al convertir un <a href="#decfrac" target="_blank">decimal fraccionario a base 2</a></li>
+	<li>Separo y guardo el signo</li>
+  </ul>
+  </section>
+
+  <section data-transition="convex" data-transition-speed="slow">
+  <h2>Decimal a punto flotante</h2>
+  <h3>2. Convertir a notación científica base 2</h3>
+  <ul>
+	 <li>Desplazo el punto fraccionario hasta dejar un 1 en la parte entera</li>
+	 <li>Compenso la multiplicación o división por $2^k$ que hice</li>
+	 <ul>
+		 <li>$101.11 = 1.0111 \times 2^2$</li>
+		 <li>$0.0011111 = 1.1111 \times 2^{-3}$</li>
+	 </ul>
+	<li>Obtuve coeficiente y exponente</li>
+  </section>
+
+  <section data-transition="convex" data-transition-speed="slow">
+  <h2>Decimal a punto flotante</h2>
+   <h3>3. Expresar el exponente</h3>
+    <ul>	
+	<li>El exponente puede ser positivo o negativo</li>
+	<li>Se representa <strong>en exceso a 127</strong></li>
+	<li>&rarr; Se le suma 127 para obtener un número no negativo </li>
+    </ul>
+</section>
+
+  <section data-transition="convex" data-transition-speed="slow">
+  <h2>Decimal a punto flotante</h2>
+    <h3>4. Guardar la mantisa</h3>
+    <ul>	
+	<li>El primer dígito del coeficiente es siempre 1</li>
+	<li>&rarr; no hace falta almacenarlo</li>
+	<li>Se guarda $coeficiente - 1$,  completando con ceros</li>
+    </ul>
+</section>
+</section>
+
+<!--
+<section>
+<h2>Ejemplo de Punto Flotante</h2>
+    <div align="center" class="post_it">$n = -5.5$</div>
+    <ol>	
+	<li class="fragment"><span class="post_it">$s = 1$</span><span class="fragment">; $|n| = 5.5_{(10} = 101.1_{(2}$</span></li>
+	<li class="fragment">$101.1 = 1.011 \times  2^2$</li>
+	<li class="fragment post_it">$e = 2 + 127 = 129$</li>
+	<li class="fragment">$1.011 - 1 = .011$ <span class="fragment post_it">&rarr; $m = 011000...$</span></li>
+    </ol>
+</section>
+--> 
+
+<section id="experimento">
+<h2>Ejemplo Punto Flotante $n = -5.5$</h2>
+    <ol>	
+	<li>Separar el signo y escribir el valor absoluto en base 2</li>
+	    <ul>	
+	<li class="fragment"><span class="post_it">$s = 1$</li>
+	<li class="fragment">$|n| = 5.5_{(10} = 101.1_{(2}$</li>
+		</ul>
+	<li>Convertirlo a notación científica en base 2 <b>normalizada</b></li>
+	    <ul>	
+	<li class="fragment">$101.1 = 1.011 \times  2^2$</li>
+		</ul>
+	<li>Expresar el exponente en notación <b>en exceso</b></li>
+	    <ul>	
+	<li class="fragment post_it">$e = 2 + 127 = 129$</li>
+		</ul>
+	<li>Guardar el coeficiente <b>sin parte entera</b> en la mantisa</li>
+	    <ul>	
+	<li class="fragment">$1.011 - 1 = .011$ <span class="fragment post_it">&rarr; $m = 011000...$</span></li>
+		</ul>
+    </ol>
+</section>
+
+<section>
+<h2>Ejemplo de Punto Flotante</h2>
+	<div align="center" class="post_it">$n = -5.5$</div>
+	<div align="center"> s = 1, e = 129, m = 011000... </div>
+	<img class="plain stretch" src="img/ejemploFP.png">
+</section>
+
+<section>
+<h2>Resultado en hexadecimal</h2>
+	<img class="plain stretch" src="img/ejemploFPhexa.png">
+</section>
+    
+    
+<section>
+<h2>Punto Flotante &rarr; decimal</h2>
+<ul>	
+	<li>Usando $s$, $e$ y $m$:</li>
+<div class="post_it" align="center">$n = (-1)^s \times 2^{(e-127)} \times (1 + m)$</div>
+	<li class="fragment">$s = 1   \Longrightarrow       (-1)^s = -1$</li>
+	<li class="fragment">$e = 129      \Longrightarrow                   2^{(e-127)} = 2^2$</li>
+	<li class="fragment">$m = 011000...      \Longrightarrow            1.m = 1.011000...$</li>
+	<li class="fragment">Resulta $n = (-1) \times 2^2 \times 1.011000..._{(2} =$ $(-1) \times 101.1000..._{(2} =$ $(-1) \times 5.5 = -5.5$</li>
+</ul>
+</section>
+
+<section>
+<h2>Error de aproximación</h2>
+<pre><code>
+  $ python
+  Python 2.7.9 (default, Mar  1 2015, 12:57:24) 
+  [GCC 4.9.2] on linux2
+  Type "help", "copyright", "credits" or "license" for more information.
+  >>> a = 0.1
+  >>> b = 0.2
+  >>> c = a + b
+  >>> c == a + b
+  True
+  >>> c == 0.3
+  False
+  >>> c
+  0.30000000000000004
+
+</code></pre>
+</section>
+
+<section data-transition="convex-in convex-out">
+ <img src="img/placa1.png" class="plain stretch">
+</section> 
+
+<!--
+<section>
+<h2>Cálculo de punto flotante</h2>
+<span id="ieee754Calc">
+<table>
+<tr><td>Decimal</td><td class="TKNumberField" data-var="decimal"></td></tr>
+<tr><td>Signo</td><td data-var="sign"></td></tr>
+<tr><td>Exponente</td><td data-var="exponent"></td></tr>
+<tr><td>Mantisa</td><td data-var="mantissa"></td></tr>
+<tr><td>Hexa</td><td data-var="hexa"></td></tr>
+</table>        
+    <p class="post_it" data-var="math" style="text-align: center;" id="ieee754Formula">$ $</p>  
+</span>
+</section>
+-->
+
+ <section>
+ <h2>Cálculo de punto flotante</h2>
+ <div class="tangle" id="ieee754Calc">
+         <script type="text/javascript" src="ieee754.js"></script>
+         <!--
+         {
+                 "initialize":"function(container) {
+                         var rootElement = document.getElementById('ieee754Calc');
+                         var model = {
+                                 initialize: function() {
+                                         this.decimal = 0;
+                                         this.sign = 0;
+                                         this.exponent = 0;
+                                         this.mantissa = 0;
+                                         this.hexa = '00000000';
+                                 },
+                                 update: function() {
+                                         var e = this.decimal;
+                                         var n = parseFloat(e);
+                                         var f = packIEEE754(e, 8, 23);
+                                         this.hexa = hexaString(f);
+                                         this.sign = f[0];
+                                         this.exponent = f.slice(1,9).join('');
+                                         this.mantissa = f.slice(9,32).join('');
+                                         var mstr;
+                                         if (n === 0) {
+                                                 return;
+                                         } else if (n !== n) {
+                                                 mstr = 'NaN';
+                                         } else if (n === Infinity) {
+                                                 mstr = '\\infty';
+                                         } else if (n === -Infinity) {
+                                                 mstr = '- \\infty';
+                                         } else {
+                                                 mstr = mathString(e, this.sign, this.exponent, this.mantissa);
+                                         }
+                                         var mathfield = MathJax.Hub.getAllJax('ieee754Formula')[0];
+                                         MathJax.Hub.Queue(['Text',mathfield,mstr]);
+                                 }
+                         };
+                         var tangle=new Tangle(rootElement, model);
+                   }"
+         }
+         -->
+         <table>
+                 <tr><td>Decimal</td><td class="TKNumberField" data-var="decimal"></td></tr>
+                 <tr><td>Signo</td><td data-var="sign"></td></tr>
+                 <tr><td>Exponente</td><td data-var="exponent"></td></tr>
+                 <tr><td>Mantisa</td><td data-var="mantissa"></td></tr>
+                 <tr><td>Hexa</td><td data-var="hexa"></td></tr>
+         </table>
+         <p class="post_it" data-var="math" style="text-align: center;" id="ieee754Formula">$ $</p>
+ </div>
+ </section>
+ 
+
+ 
+
+<section>
+<h2>Punto flotante, casos especiales</h2>
+
+<table>
+<tr><th>Clase de números</th><th>Exponente</th><th>Mantisa</th><th>Signo</th></tr>
+<tr><td>Ceros</td><td align="center">$0$</td><td align="center">$0$</td><td>$+/-$</td></tr>
+<tr><td>Desnormalizados</td><td align="center">$0$</td><td align="center">$\neq 0$</td><td>$+/-$</td></tr>
+<tr><td>Normalizados</td><td align="center">$\neq 0$</td><td align="center">Cualquiera</td><td>$+/-$</td></tr>
+<tr><td>Infinito</td><td align="center">$1...1$</td><td align="center">$0$</td><td>$+/-$</td></tr>
+<tr><td>NaN (Not a Number)</td><td align="center">$1...1$</td><td align="center">$\neq 0$</td><td>$+/-$</td></tr>
+</table>
+</section>
+
+<section data-background="#3c53b5" data-background-transition="zoom">
+<h2>Preguntas</h2>
+<ul>
+	<li>¿Cuál es el RR de IEEE754, precisión simple?</li>
+	<li>Usando el calculador de IEEE754 contenido en este material, o cualquier otro:</li>
+	<ol>
+		<li class="fragment">¿Qué pasa con el resultado a medida que agregamos <b>muchos</b> decimales?</li>
+		<li class="fragment">¿Qué pasa con el resultado si ingresamos números <b>enormes</b> como 1e30 (que significa $1 \times 10^{30}$), 1e35, etc.?</li>
+		<li class="fragment">Si ingresamos el dato $0.1$, ¿qué resultado da $(-1)^s \times 2^{e-127} \times (1+m)$? ¿Se reconstruye exactamente el valor $0.1$? ¿Cuál es el error en este caso?</li>
+	</ol>
+</ul>
+</section>
+
+<section data-background="#00CCFF" data-background-transition="zoom">
+<h2>Representación de datos numéricos</h2>
+<ul>
+	<li>Enteros</li>
+	<ul>
+		<li>Signo-Magnitud &#10004;</li>
+		<li>Complemento a 2 &#10004;</li>
+		<li>Exceso a $2^{n-1}$ &#10004; </li>
+	</ul>
+	<li class="fragment">Fraccionarios</li>
+	<ul>
+		<li class="fragment">Punto fijo &#10004;</li>
+		<li class="fragment">Punto flotante &#10004;</li>
+	</ul>
+</ul>
+</section>
+
+<section>
+<h2>Referencias</h2>
+<ul>
+<li><a href="http://pedco.fi.uncoma.edu.ar/mod/resource/view.php?id=145680" target="_blank">Apunte de Cátedra: Representación de Datos Numéricos</a></li>
+<li><a href="https://es.wikipedia.org/wiki/Complemento_a_dos" target="_blank">Wikipedia: Complemento a dos</a></li>
+<li><a href="https://es.wikipedia.org/wiki/Representaci%C3%B3n_de_n%C3%BAmeros_con_signo" target="_blank">Wikipedia: Representación de números con signo</li>
+<li><a href="http://perso.ens-lyon.fr/jean-michel.muller/goldberg.pdf" target="_blank">What Every Computer Scientist Should Know About Floating-Point Arithmetic</a>, David Goldberg, Xerox PARC, 1991</li>
+</ul>
+</section>
+
+<!------------------------------------------------------------------>
+
+   </div>
+</div>
+
+<link rel="stylesheet" href="Tangle/TangleKit/TangleKit.css" type="text/css">
+<script type="text/javascript" src="Tangle/Tangle.js"></script>
+<script type="text/javascript" src="Tangle/TangleKit/mootools.js"></script>
+<script type="text/javascript" src="Tangle/TangleKit/sprintf.js"></script>
+<script type="text/javascript" src="Tangle/TangleKit/BVTouchable.js"></script>
+<script type="text/javascript" src="Tangle/TangleKit/TangleKit.js"></script>
+<script src="lib/js/head.min.js"></script>
+<script src="js/reveal.js"></script>
+
+<script>
+
+	Reveal.initialize({
+		controls: true,
+		progress: true,
+		history: true,
+		center: true,
+		previewLinks: true,
+		theme: 'serif',
+		transition: 'slide', // none/fade/slide/convex/concave/zoom
+
+		// ----------------------------------------------------------------------------
+		chart: {
+			defaults: { 
+				global: { 
+					title: { fontColor: "#222" }, 
+					legend: {
+						position: "bottom",
+						labels: { fontColor: "#000", size: "14px" },
+					},
+					tooltips: {
+						labels: { fontColor: "#022", size: "14px" },
+					},
+				}, 
+				scale: { 
+					scaleLabel: { fontColor: "#022" }, 
+					gridLines: { color: "#444", zeroLineColor: "#444" }, 
+					ticks: { fontColor: "#022" }, 
+				} 
+			},
+			line: { borderColor: [ 
+				"rgba(20,220,220,.8)" , 
+				"rgba(220,120,120,.8)", 
+				"rgba(20,120,220,.8)",
+				"rgba(220,20,120,.8)",
+				"rgba(20,20,220,.8)" ]
+			}, 
+			bar: { backgroundColor: [ 
+				"rgba(20,220,220,.8)" , 
+				"rgba(20,120,220,.8)",
+				"rgba(20,20,220,.8)",
+				"rgba(120,20,220,.8)",
+				"rgba(220,120,20,.8)", 
+				"rgba(220,20,20,.8)",
+			 ]
+			}, 
+			pie: { backgroundColor: [ 
+				["rgba(0,0,0,.8)" , 
+				"rgba(220,20,20,.8)", 
+				"rgba(20,220,20,.8)", 
+				"rgba(220,220,20,.8)", 
+				"rgba(20,20,220,.8)"] 
+			]},
+			radar: { borderColor: [ "rgba(20,220,220,.8)" , "rgba(220,120,120,.8)", "rgba(20,120,220,.8)" ]}, 
+		},
+		// ----------------------------------------------------------------------------
+		menu: { // Menu works best with font-awesome installed: sudo apt-get install fonts-font-awesome
+			themes: false,
+			transitions: false,
+			markers: true,
+			hideMissingTitles: true,
+			custom: [
+				// { title: 'Plugins', icon: '<i class="fa fa-external-link"></i>', src: 'toc.html' },
+				// { title: 'About', icon: '<i class="fa fa-info"></i>', content: '<p>Int Comp</p>' },
+				{ title: 'IC2016', icon: '<i class="fa fa-bookmark"></i>', src: 'src/ic.html' },
+				{ title: 'Imprimir', icon: '<i class="fa fa-print"></i>', src: 'src/print.html' },
+			]
+		},
+		// ----------------------------------------------------------------------------
+		anything: [ 
+			{className: "rand",  defaults: {min: 0, max: 9}, 
+				initialize: (function(container, options){ 
+					container.innerHTML = Math.trunc( options.min + Math.random()*(options.max-options.min + 1) ); 
+			}) },
+			{className: "chart",  
+				initialize: (function(container, options){ 
+					container.chart = new Chart(container.getContext("2d"), options);  
+				}) 
+			},
+			{className: "animate",  
+				initialize: (function(container, options){ 
+				Reveal.addEventListener( 'fragmentshown', function( event ) {
+					if (typeof event.fragment.beginElement === "function" ) { 
+						event.fragment.beginElement(); 	
+					}
+				});
+				Reveal.addEventListener( 'fragmenthidden', function( event ) {
+					if (event.fragment.hasAttribute('data-reverse') ) { 
+						var reverse = event.fragment.parentElement.querySelector('[id=\"' + event.fragment.getAttribute('data-reverse') + '\"]');
+						if ( reverse && typeof reverse.beginElement === "function" ) { 
+							reverse.beginElement(); 	
+						}										 	
+					}
+				});
+				if ( container.getAttribute("data-svg-src") ) { 
+					var xhr = new XMLHttpRequest(); 
+					xhr.onload = function() { 
+						if (xhr.readyState === 4) { 
+							var svg = container.querySelector('svg');
+							container.removeChild( svg );
+							container.innerHTML = xhr.responseText + container.innerHTML;
+							if ( svg ) {
+								container.querySelector('svg').innerHTML = container.querySelector('svg').innerHTML + svg.innerHTML;
+							}
+						} 
+						else { 
+							console.warn( "Failed to get file. ReadyState: " + xhr.readyState + ", Status: " + xhr.status); 
+						}
+					}; 
+					xhr.open( 'GET', container.getAttribute("data-svg-src"), true ); 
+					xhr.send();
+				}
+			}) },
+			{className: "tangle", 
+				initialize: (function(container, options) { if(options && options.initialize) {options.initialize(container)} }) },
+			{className: "plot",  defaults: {width:800, height: 400, grid:true}, 
+				initialize: (function(container, options){ options.target = "#"+container.id; functionPlot(options) }) },
+			{className: "asciicast",
+                                 defaults: { theme: 'monokai', fontSize: '15px' },
+                                 initialize: (function(container, options) {
+                                         asciinema.player.js.CreatePlayer(container, options.URL, options);
+                                 })
+                         },
+			{className: "anything",  
+				initialize: (function(container, options){ if (options && options.initialize) { options.initialize(container)} }) },
+
+		],
+		// ----------------------------------------------------------------------------
+
+
+		// -------- Math plugin ----------
+		math: {
+			mathjax: 'https://cdn.mathjax.org/mathjax/latest/MathJax.js',
+			//	mathjax: '../MathJax-master/MathJax.js',
+			config: 'TeX-AMS_HTML-full'
+		},
+
+
+		// -------- Chalkboard -----------
+		chalkboard: { 
+			// optionally load pre-recorded chalkboard drawing from file
+			// src: "chalkboard.json",
+			//readOnly: undefined, 
+			toggleChalkboardButton: { left: "80px" },
+			toggleNotesButton: { left: "130px" },
+			//transition: 800,
+			//theme: "whiteboard",
+			// configuration options for notes canvas and chalkboard
+			//color: [ 'rgba(0,0,255,1)', 'rgba(255,255,255,0.5)' ],
+			//background: [ 'rgba(127,127,127,.1)' , 'plugin/chalkboard/img/blackboard.png' ],
+			//pen:  [ 'reveal.js-plugins/chalkboard/img/boardmarker.png', 'reveal.js-plugins/chalkboard/img/chalk.png' ],
+		},
+		keyboard: {
+			67: function() { RevealChalkboard.toggleNotesCanvas() },    // toggle notes canvas when 'c' is pressed
+			66: function() { RevealChalkboard.toggleChalkboard() }, // toggle chalkboard when 'b' is pressed
+			46: function() { RevealChalkboard.clear() },    // clear chalkboard when 'DEL' is pressed
+			 8: function() { RevealChalkboard.reset() },    // reset chalkboard data on current slide when 'BACKSPACE' is pressed
+			68: function() { RevealChalkboard.download() }, // downlad recorded chalkboard drawing when 'd' is pressed
+			82: function() { Recorder.toggleRecording(); }, // press 'r' to start/stop recording
+			90: function() { Recorder.downloadZip(); },     // press 'z' to download zip containing audio files
+			84: function() { Recorder.fetchTTS(); }     // press 't' to fetch TTS audio files
+		},
+
+		// -------- Dependencies ---------
+		dependencies: [
+			{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+			{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+			{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+			{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+			{ src: 'plugin/zoom-js/zoom.js', async: true },
+			// { src: 'plugin/notes/notes.js', async: true },
+			{ src: 'plugin/explain/explain.js', async: true },
+			{ src: 'plugin/function-plot/site/js/vendor/jquery-1.11.2.min.js' },
+			{ src: 'plugin/function-plot/site/js/vendor/d3.js' },
+			{ src: 'plugin/function-plot/dist/function-plot.js' },
+			{ src: 'plugin/chart/Chart.min.js'},
+			{ src: 'plugin/chart/csv2chart.js'},
+			{ src: 'plugin/asciinema/asciinema-player.js' },
+			{ src: 'plugin/anything/anything.js' },
+			{ src: 'plugin/chalkboard/chalkboard.js' },
+			{ src: 'plugin/menu/menu.js' },
+			{ src: 'plugin/mathsvg/math.js', async: true },
+			{ src: 'plugin/audio-slideshow/slideshow-recorder.js', condition: function( ) { return !!document.body.classList; } },
+			{ src: 'plugin/audio-slideshow/audio-slideshow.js', condition: function( ) { return !!document.body.classList; } },
+			// ... 
+		]
+	});
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,1034 @@
+<!doctype html>
+<html lang="es">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>Introducción a la Computación 2016</title>
+
+		<meta name="description" content="Introducción a la Computación">
+		<meta name="author" content="Eduardo Grosclaude">
+
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/ic.css" id="theme">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css"> 
+		
+		<link rel="stylesheet" type="text/css" href="plugin/asciinema/asciinema-player.css" />
+
+<!--		<link rel="stylesheet" href="font-awesome-4.5.0/css/font-awesome.css">  -->
+
+		<link rel="icon" type="image/png" href="img/favicon-96x96.png" sizes="96x96">
+		<meta name="theme-color" content="#ffffff">
+		<!-- Code syntax highlighting -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+
+	<body>
+	  <div class="reveal">
+		<div class="slides">
+
+
+<!------------------------------------------------------------------>
+
+
+
+
+<section>
+<h3>Esta presentación es audiovisual</h3>
+<small>
+<ul>
+<li>Para controlar el sonido utilice la barra de control de audio al pie de la pantalla</li>
+<li>Para acceder a las notas de la presentación pulse la tecla "s"</li>
+</ul>
+</small>
+<img src="img/dog_headphones.jpg" class="plain stretch">
+<!-- <center><small>¡Agradecemos por el audio de esta presentación a <b>Ulises Jaramillo</b>,</br>estudiante de Introducción a la Computación 2016!</small></center> -->
+<aside data-markdown class="notes">
+</aside>
+</section>
+
+
+
+
+<section data-background="#00CCFF" data-audio-src="audio/Arquitectura/1- componentes de una computadora simple.mp3">
+<h2>Unidad II</h2>
+<h3>Organización de las Computadoras</h3>
+<ul>
+<li>Componentes de la arquitectura de Von Neumann</li>
+<li>Modelo Computacional Binario Elemental (MCBE)</li>
+<li>Lenguajes de bajo nivel</li>
+<aside data-markdown class="notes">
+¿Cómo **definimos** una computadora? ¿Cuándo un dispositivo es una computadora y cuándo decimos que no lo es? En esta unidad, vemos estos temas y estudiamos los diferentes componentes que tienen las computadoras. 
+</aside>
+</ul>
+</section>
+
+
+
+
+<section data-audio-src="audio/Arquitectura/2- Memoria principal.mp3">
+<h2>Componentes de una computadora simple</h2>
+<ul>
+<li><b>Memoria</b> principal</li>
+<li class="fragment" data-audio-src="audio/Arquitectura/3- Cpu.mp3">Unidad Central de Procesamiento <b>(CPU)</b> </li>
+<li class="fragment" data-audio-src="audio/Arquitectura/4- Dispositivos.mp3">Dispositivos de <b>Entrada y Salida (E/S)</b></li>
+<li class="fragment" data-audio-src="audio/Arquitectura/Audio 5.mp3">Interconectados mediante <b>buses</b></li>
+</ul>
+<aside data-markdown class="notes">
+En primer lugar, una **memoria principal**, que es donde se almacenan todos los datos y las instrucciones de programa. Todo lo que puede hacer la computadora, lo hace únicamente con contenidos que estén en la memoria. Para poder procesar un dato, primero hay que hacerlo llegar a la memoria principal, no importa de dónde venga. Un conjunto de datos puede estar en disco, en un pendrive, o ser introducido por el teclado, pero sólo cuando llega a la memoria principal es que puede ser procesado por la CPU.
+
+La **CPU, o Unidad Central de Procesamiento**, es el componente que realmente lleva a cabo los cómputos. Trabaja leyendo instrucciones y datos de la memoria; y ejecuta esas instrucciones que operan sobre esos datos. Vamos a hablar mucho más sobre la CPU en esta unidad.
+
+Los **dispositivos de Entrada y Salida** son todos aquellos dispositivos que conectamos a la computadora para hacer que el conjunto CPU + Memoria se comunique con el ambiente. Con dispositivos como el teclado, mouse, o tableta digitalizadora, podemos introducir datos. Son dispositivos de **entrada**. Con dispositivos como pantalla o impresora, podemos hacer que la computadora presente los resultados de los cómputos y los entregue al usuario. Son dispositivos de **salida**. Algunos dispositivos son de entrada y salida a la vez, como la tarjeta de red.
+
+Todos estos componentes, y muchos otros que pueden estar o no presentes, dependiendo de la **arquitectura**, o modo de construcción, de la computadora, están conectados entre sí mediante **buses** o líneas de interconexión. 
+</aside>
+</section>
+
+
+
+<section data-audio-src="audio/Arquitectura/5- Memoria.mp3">
+<h2>Memoria</h2>
+<ul>
+	<li>Normalmente implementada con circuitos <b>biestables</b></li>
+	<span class ="fragment" data-audio-src="audio/Arquitectura/6- M1.mp3">
+		<li>Los biestables almacenan un bit y están agrupados de a ocho, formando un byte</li>
+		<li>Un bloque de memoria es un conjunto de posiciones de un byte, numeradas de $0$ a $n-1$, típicamente millones</li>
+		<li>Pueden contener <strong>datos</strong> o <strong>instrucciones</strong></li>
+	</span>
+	<li class ="fragment" data-audio-src="audio/Arquitectura/7- M2.mp3">El número de posición se denomina su <strong>dirección</strong></li>
+</ul>
+<aside data-markdown class="notes">
+La memoria es un componente fundamental de la computadora. Está implementada con circuitos que pueden estar en uno de dos estados eléctricos, y por esto los llamamos **biestables**. 
+
+Cada circuito biestable puede almacenar la información correspondiente a un **bit**. Los bits están agrupados de a ocho formando los **bytes**. Estos circuitos, con las tecnologías de hoy, están super miniaturizados y contienen muchos millones de posiciones donde se pueden almacenar temporariamente los datos y las instrucciones de programa. 
+
+Para poder utilizar la memoria es imprescindible conocer el número, o **dirección**, de la posición de memoria donde está el dato o instrucción que se necesita acceder. Con esta dirección podemos **recuperar**, es decir, **leer**, el valor que está alojado en ese byte de la memoria, o escribir sobre ese byte un contenido de ocho bits.
+</aside>
+</section>
+
+
+
+
+
+
+<section data-audio-src="audio/Arquitectura/8- Cpu.mp3">
+<h2>Central Processing Unit, CPU</h2>
+<ul>
+	<li>Circuito <b>secuencial</b>, contiene <b>registros</b></li>
+	<span class ="fragment" data-audio-src="audio/Arquitectura/9- cpu.mp3">
+	<li>Interpreta y ejecuta un conjunto de instrucciones</b></li>
+	<li>Capaz de ejecutar un <b>programa</b> compuesto por instrucciones almacenadas en la memoria</li>
+	</span> 
+	<span class ="fragment" data-audio-src="audio/Arquitectura/10- cpu.mp3">
+	<li>Contiene otras unidades funcionales</li>
+	<ul>
+		<li>Unidad de Control, realiza el <b>ciclo de instrucción</b></li>
+		<li>Unidad Lógico-Aritmética, implementa el <b>cómputo</b></li>
+	</ul>
+	</span>
+</ul>
+<aside data-markdown class="notes">
+La CPU está implementada como un circuito sumamente complejo que contiene **registros**. Éstos son lugares de almacenamiento temporario de datos e instrucciones que se utilizan durante el cómputo. Si, en un momento dado, sacamos una foto instantánea de una CPU, sus registros tendrán un cierto conjunto de valores. Ese conjunto de valores se llama el **estado** de la CPU. La CPU, mientras opera, va cambiando de estado, es decir, paso a paso va modificando los valores de sus registros hasta llegar a un resultado de cada instrucción. Por atravesar esta sucesión de cambios de estado, se dice que una CPU es un circuito **secuencial**. Los cambios de estado son disparados por un **reloj**, que es un circuito auxiliar que produce pulsos o impulsos eléctricos que hacen marchar a la CPU.
+
+La CPU puede interpretar un conjunto determinado de instrucciones. Estas instrucciones han sido definidas en su arquitectura; y son las únicas que puede ejecutar. El funcionamiento de la CPU está limitado a estas instrucciones, que son muy básicas, como sumar dos datos, o leer el dato que está en una determinada dirección de la memoria. Sin embargo, cuando escribimos una secuencia de instrucciones en la memoria, es decir, un **programa**, podemos hacer que la CPU desarrolle otras tareas que no estaban previstas en su arquitectura. Por ejemplo, podemos tener una CPU que no sepa multiplicar o dividir, pero si cuenta con un programa con las instrucciones adecuadas, puede ejecutar operaciones de multiplicación o división de datos.  
+
+La CPU está constituida por varios circuitos componentes o unidades funcionales, como la **Unidad de Control** y la **Unidad Lógico-Aritmética**. 
+
+* La Unidad de Control es la que contiene la lógica necesaria para **leer** cada instrucción del programa que está en memoria, **ejecutarla**, y pasar a la **siguiente** instrucción. Esta lógica se llama el **ciclo de instrucción** y se repite **continuamente** mientras la CPU está funcionando. 
+* La Unidad Lógico-Aritmética es la que efectivamente realiza los cómputos con los datos.
+</aside>
+</section>
+
+
+
+
+
+
+
+
+
+
+<section data-audio-src="audio/Arquitectura/11- maquina de vonneuman.mp3">
+<h2>Máquina de Von Neumann</h2>
+<ul>
+	<li>Máquina de <b>programa almacenado</b></li>
+	<span class="fragment" data-audio-src="audio/Arquitectura/12- maq.mp3">
+	<li><b>Instrucciones y datos</b> se almacenan en una memoria común; se usan de forma diferente pero se acceden de la misma forma.</li>
+	</span>
+	<span class="fragment" data-audio-src="audio/Arquitectura/13- maq.mp3">
+	<li>La ejecución de un programa es secuencial (hacia direcciones ascendentes) salvo que aparezcan instrucciones de <b>transferencia de control</b></li>
+	</span>
+</ul>
+<aside data-markdown class="notes">
+Por supuesto, además de todos esos componentes que hemos nombrado, hay muchas otras cosas que físicamente forman parte de la computadora; pero la descripción de la computadora que hemos hecho hasta el momento dice, por lo menos en líneas generales, los componentes fundamentales que tiene cualquier computadora actual. Esta descripción puede resumirse diciendo que la computadora es una **máquina de Von Neumann o máquina de programa almacenado**. 
+
+En esta clase de máquinas, existe una memoria; que contiene instrucciones y datos; que como contenidos de esa memoria, no se diferencian, salvo por la forma como son utilizados. 
+
+Estas máquinas ejecutan las instrucciones almacenadas en memoria secuencialmente, es decir, procediendo desde las direcciones inferiores de la memoria hacia las superiores, leyendo y ejecutando cada instrucción y pasando a la siguiente. 
+</aside>
+</section>
+
+
+
+
+
+
+<section data-transition="slide-in fade-out" data-audio-src="audio/Arquitectura/14-dele con el von.mp3">
+<h2>Arquitectura de Von Neumann</h2>
+<img src="img/vn-0.svg" class="stretch plain">
+<aside data-markdown class="notes">
+En una **máquina de Von Neumann**, entonces, aparecen dos componentes básicos fundamentales que son la CPU y la memoria,  
+</aside>
+</section>
+
+<section data-transition="fade-in fade-out" data-audio-src="audio/Arquitectura/15- unidad ed control.mp3">
+<h2>Arquitectura de Von Neumann</h2>
+
+<img src="img/vn-1.svg" class="stretch plain">
+<aside data-markdown class="notes">
+la primera conteniendo una **Unidad de Control, o UC**, para realizar el **ciclo de instrucción**,
+</aside>
+</section>
+
+<section data-transition="fade-in fade-out" data-audio-src="audio/Arquitectura/16- ALU.mp3">
+<h2>Arquitectura de Von Neumann</h2>
+<img src="img/vn-2.svg" class="stretch plain">
+<aside data-markdown class="notes">
+y una **Unidad Lógico-Aritmética, o ALU**, para el cómputo. 
+</aside>
+</section>
+
+<section data-transition="fade-in fade-out" data-audio-src="audio/Arquitectura/17- buses.mp3">
+<h2>Arquitectura de Von Neumann</h2>
+<img src="img/vn-3.svg" class="stretch plain">
+<aside data-markdown class="notes">
+En la máquina existen diferentes clases de buses para interconectar los componentes: **buses internos** de la CPU para comunicar la UC y la ALU,
+</aside>
+</section>
+
+<section data-transition="fade-in fade-out" data-audio-src="audio/Arquitectura/18- buses de sistema.mp3">
+<h2>Arquitectura de Von Neumann</h2>
+<img src="img/vn-4.svg" class="stretch plain">
+<aside data-markdown class="notes">
+**buses de sistema** que relacionan la CPU y la memoria, 
+</aside>
+</section>
+
+<section data-transition="fade-in fade-out" data-audio-src="audio/Arquitectura/19- buses de sistema.mp3">
+<h2>Arquitectura de Von Neumann</h2>
+<img src="img/vn-5.svg" class="stretch plain">
+<aside data-markdown class="notes">
+y otros **buses de Entrada/Salida** para comunicar todo el sistema con los dispositivos de entrada o de salida.
+
+¿En qué momento se utilizará cada clase de bus? Cuando la UC disponga que se debe ejecutar una instrucción, tal como una suma, enviará los datos de partida, y la instrucción, a la ALU a través de un bus interno. Si la ALU necesita más datos, los obtendrá de la memoria a través de un bus de sistema. Si la CPU encuentra instrucciones que ordenan presentar el resultado del cómputo al usuario, usará un bus de Entrada/Salida para emitir ese resultado por pantalla o por impresora.
+</aside>
+</section>
+
+
+<section data-background="#00CCFF" data-audio-src="audio/Arquitectura/20- modelo computacional binario elemental watson.mp3">
+<h2>Modelo Computacional Binario Elemental</h2>
+<h2>(MCBE)</h2>
+<aside data-markdown class="notes">
+Para comprender desde lo más básico cómo opera la computadora, recurrimos al **MCBE o Modelo Computacional Binario Elemental**, que es una máquina teórica. El MCBE es una computadora extremadamente simple, pero que podría ser implementada físicamente, y funcionaría como la mayoría de las computadoras actuales. Bueno, con muchas menos capacidades, claro, pero manteniendo lo esencial de las computadoras de programa almacenado.
+</aside>
+</section>
+
+
+<section data-transition="zoom-in slide-out" data-audio-src="audio/Arquitectura/21- MCBE.mp3">
+<h2>Esquema del MCBE</h2>
+<img src="img/MCBE.svg" class="stretch plain"> 
+<aside data-markdown class="notes">
+En este esquema del MCBE vemos los tres registros de la CPU: el **PC o contador de programa**, el **IR o registro de instrucción**, situados en la Unidad de Control, y el **Acumulador**, situado en la Unidad Lógico-aritmética. Los tres son registros de ocho bits. 
+
+Además se representa **la memoria**, compuesta por 32 bytes de ocho bits. Las direcciones de los bytes van, entonces, **de 0 a 31**. Aquí hemos descompuesto la memoria en trozos solamente para poder representarla completa en el esquema, pero conviene pensar en la memoria como una única sucesión de bytes, numerados de 0 a 31. Es costumbre, al representar los diagramas de memoria, ubicar las posiciones con direcciones menores en la parte inferior del diagrama, y las direcciones mayores arriba; como si la memoria fuera una escalera con posiciones numeradas a partir de 0 y ascendiendo. 
+
+Cada combinación posible de ceros y unos en los bits de cualquiera de los registros o posiciones de memoria representa un **estado** de la máquina, porque define los valores de la memoria y de los registros en un momento dado. Es decir, el estado de la máquina en cada momento es el conjunto de valores de los tres registros y de los 32 bytes de la memoria. 
+
+El estado de la máquina en cada momento define cuál será el estado siguiente. Ninguna otra cosa interviene en el comportamiento de la máquina. En particular, la máquina no tiene voluntad ni toma decisiones propias: solamente cumple el ciclo de instrucción, que la hace ejecutar las instrucciones del programa que tenga almacenado.
+</aside>
+</section>
+
+
+
+<section data-transition="slide" data-audio-src="audio/Arquitectura/22-Las 32 posiciones.mp3">
+<h2>Memoria del MCBE</h2>
+<ul>
+<li>Consta de 32 posiciones de 8 bits</li>
+<li>Las direcciones 0 a 29 corresponden a la memoria principal</li>
+<span class="fragment" data-audio-src="audio/Arquitectura/23-La posicion 30.mp3">
+	<li>Dirección 30</li>
+	<ul>
+		<li>Sólo de lectura</li>
+		<li>Permite leer datos del dispositivo de entrada</li>
+	</ul>
+</span>
+<span class="fragment" data-audio-src="audio/Arquitectura/24-La posicion 31.mp3">
+	<li>Dirección 31</li>
+	<ul>
+		<li>Sólo de escritura</li>
+		<li>Permite escribir datos en el dispositivo de salida</li>
+	</ul>
+</span>
+</ul>
+<aside data-markdown class="notes">
+Las 32 posiciones de memoria, cada una de 8 bits, son casi todas iguales, con dos excepciones. 
+
+La posición 30 (casi al final de la memoria) está reservada para comunicación con dispositivos de entrada. Es sólo de lectura, es decir, no se pueden escribir contenidos en esa dirección.  Cuando leemos esa posición de memoria, la máquina detiene su programa y espera que el usuario introduzca un dato. Una vez que el usuario ha terminado de escribirlo, el MCBE continúa la operación del programa con el dato recién leído.
+
+La posición 31 es solamente de escritura. Al escribir un dato en la dirección 31, hacemos que el MCBE escriba ese valor por pantalla, y solamente así podemos saber el resultado de un cómputo. 
+</aside>
+</section>
+
+
+<section data-audio-src="audio/Arquitectura/25-Como hemos dicho.mp3">
+<h2>Registros</h2>
+<ul>
+<li>Lugares de almacenamiento para usos generales</li>
+<li>Funcionamiento similar al de la memoria pero mayor velocidad de acceso</li>
+<li>El MCBE cuenta con tres registros de 8 bits</li>
+<ul>
+<li class="fragment" data-audio-src="audio/Arquitectura/26-Los registros del MCBE.mp3"><b>PC</b>: Contador de programa, contiene la dirección de la próxima instrucción a ejecutar</li>
+<li class="fragment" data-audio-src="audio/Arquitectura/27-Antes de ejecutar.mp3"><b>IR</b>: Registro de instrucción, contiene la instrucción que está siendo ejecutada</li>
+<li class="fragment" data-audio-src="audio/Arquitectura/28-El registro acumulador.mp3"><b>Ac</b>: Acumulador, registro de propósito general</li>
+</ul>
+</ul>
+<aside data-markdown class="notes">
+Como hemos dicho, los registros son lugares de almacenamiento temporario para varios usos. Los registros funcionan en forma parecida a la memoria, en el sentido de que se pueden leer o escribir datos en ellos, pero normalmente en una computadora física su velocidad de acceso es mayor. 
+
+Los registros del MCBE tienen diferentes funciones. El registro **PC, o contador de programa,** contiene en cada momento la dirección de la próxima instrucción que se va a ejecutar; es decir, contiene un número que es la dirección de la posición de memoria donde está almacenada la instrucción que está por ejecutar el MCBE.
+
+Antes de ejecutar cada instrucción, la CPU va a **copiarla** en el registro **IR, o registro de instrucción**; y mientras está almacenada allí la instrucción, va a ser decodificada, es decir, la CPU va a interpretar de qué instrucción se trata, y la va a ejecutar.
+
+El registro **acumulador**, que pertenece a la ALU, es un registro que interviene en casi todas las operaciones del MCBE; sobre todo para las operaciones aritméticas.
+</aside>
+</section>
+
+
+
+<section data-audio-src="audio/Arquitectura/29-Entonces la CPU del MCBE.mp3">
+<h2>CPU del MCBE</h2>
+<ul>
+<li>UC con registros IR y PC</li>
+<li>ALU con registro Ac (acumulador)</li>
+<span class="fragment" data-audio-src="audio/Arquitectura/30-Esta CPU va a ser.mp3">
+<li>Solamente ejecuta operaciones de suma y resta en complemento a 2 con 8 bits</li>
+<li>No ejecuta operaciones en Punto Flotante</li>
+</ul>
+</span>
+<aside data-markdown class="notes">
+Entonces la CPU del MCBE queda definida como el conjunto de **Unidad de Control** con dos registros **PC e IR**, más **Unidad lógico-aritmética** con un registro **acumulador**. 
+
+Esta CPU va a ser muy limitada y solamente va a ejecutar operaciones de suma y resta en complemento a 2, con ocho bits. No va a ejecutar **multiplicaciones**, ni **divisiones**, ni operaciones en **punto flotante**.
+</aside>
+</section>
+
+
+
+
+
+
+<section data-audio-src="audio/Arquitectura/31-Las instrucciones del MCBE.mp3">
+<h3>Formato de instrucciones del MCBE</h3>
+<img src="img/formatoMCBE.png" class="plain">
+<ul>
+	<li>Tres bits para el <b>código de instrucción</b></li>
+	<span class="fragment" data-audio-src="audio/Arquitectura/32-Los cinco bits restantes.mp3" data-fragment-index="0">
+		<li>Cinco bits para el <b>argumento u operando</b></li>
+	</span>
+	<li class="fragment" data-audio-src="audio/Arquitectura/33-Por otro lado los operandos.mp3" data-fragment-index="1">Operandos</li>
+	<ul>
+		<li class="fragment" data-audio-src="audio/Arquitectura/34-Cuando el operando es una direccion.mp3" data-fragment-index="2"><b>Direcciones</b>: cinco bits sin signo <span class=" fragment post_it" data-audio-src="audio/Arquitectura/36-Notemos que con 5 bits.mp3" data-fragment-index="4"> &rarr; RR [0,31] </span></li>
+		<li class="fragment" data-audio-src="audio/Arquitectura/35-Cuando es un desplazamiento.mp3" data-fragment-index="3"><b>Desplazamientos</b>: cinco bits en C2 <span class="fragment post_it" data-audio-src="audio/Arquitectura/37-Para los desplazamientos.mp3" data-fragment-index="5"> &rarr; RR [-16,15] </span></li>
+	</ul>
+</ul>
+<aside data-markdown class="notes">
+Las instrucciones del MCBE se codifican en ocho bits y por lo tanto pueden ser almacenadas en un byte de la memoria, o en el registro IR. Cada instrucción se divide en dos partes: los tres bits de más a la izquierda se destinan a representar el **código de instrucción**. 
+
+Los cinco bits restantes representan el **argumento u operando** de esa instrucción, es decir, el dato con el cual tiene que operar esa instrucción. 
+
+Por otro lado, los operandos pueden ser de dos clases: o bien **direcciones**, o bien **desplazamientos**. Si el operando es una dirección, es porque la CPU necesita conocer la dirección de un dato. Si es un desplazamiento, ese desplazamiento es **una cantidad de posiciones** que hay que trasladarse en la memoria, para encontrar la siguiente instrucción que hay que procesar.
+
+Cuando el operando es una dirección, los cinco bits del operando representan una cantidad sin signo (porque no pueden existir direcciones negativas). 
+
+Cuando es un desplazamiento, esos cinco bits son **con signo**, y más precisamente, en complemento a 2; porque el desplazamiento puede ser **negativo**, indicando que hay que **volver hacia atrás, a una cierta dirección de la memoria** a ejecutar una instrucción que tal vez ya fue ejecutada. 
+
+Notemos que al representar las direcciones con cinco bits, sin signo, tenemos un rango de representación de 0 a 31, justo lo que necesitamos para alcanzar todas las posiciones de memoria. 
+
+Para los desplazamientos, como estamos usando un sistema con signo, tenemos un rango de -16 a 15. Lo que quiere decir que al trasladarnos de un lugar a otro de la memoria, vamos a poder hacerlo en saltos de a lo sumo 16 bytes hacia atrás o 15 bytes hacia adelante.
+</aside></section>
+
+
+
+
+
+
+
+
+
+
+<section data-audio-src="audio/Arquitectura/38-Las instrucciones del MCBE.mp3">
+<h2>Instrucciones del MCBE</h2>
+<ol>
+<li>Instrucciones de transferencia de datos</li>
+<li class="fragment" data-audio-src="audio/Arquitectura/39-Las aritmeticas son las que operan.mp3">Instrucciones aritméticas</li>
+<li class="fragment" data-audio-src="audio/Arquitectura/40-Las de salto o transferencia.mp3">Instrucciones de salto o transferencia de control</li>
+<li class="fragment" data-audio-src="audio/Arquitectura/41-Y las de control.mp3">Instrucciones de control</li>
+</ol>
+<aside data-markdown class="notes">
+Las instrucciones del MCBE se dividen en cuatro grupos. 
+
+* Las instrucciones de transferencia de datos son las que leen o escriben datos en la memoria.  
+* Las aritméticas son las que operan entre esos datos de la memoria y el valor presente en el registro acumulador.  
+* Las de salto o transferencia de control, las que desvían, derivan o trasladan la ejecución a otra posición de memoria.  
+* Y las de control, completan el funcionamiento de la máquina, por ejemplo controlando cuándo va a detenerse el programa.
+
+Notemos que, como tenemos un campo de **tres bits** para definir el código de instrucción, no vamos a poder tener más que **ocho instrucciones**. Precisamente hay dos instrucciones en cada grupo de estos cuatro que hemos definido.
+</aside>
+</section>
+
+
+
+
+<section data-audio-src="audio/Arquitectura/42-Las instrucciones de transferencia de datos.mp3">
+<h2>Instrucciones de transferencia</h2>
+<table>
+<tr><th>Código</th><th>Operando</th><th>Descripción</th><th>PC</th></tr>
+<tr><td>010</td><td>Dirección</td><td><b>Mem &rarr; Ac</b>: Copia un byte desde la dirección de memoria al acumulador</td><td>Se incrementa en 1</td></tr>
+<tr class="fragment" data-audio-src="audio/Arquitectura/43-El codigo 011.mp3"><td>011</td><td>Dirección</td><td><b>Ac &rarr; Mem</b>: Copia el contenido del acumulador en esa dirección de memoria</td><td>Se incrementa en 1</td></tr>
+</table>
+<aside data-markdown class="notes">
+Las instrucciones de transferencia de datos son dos. El código 010 copia un byte de la memoria hacia el acumulador. Para esto se necesita la **dirección** de ese byte, y esa dirección es precisamente el argumento u operando de la instrucción, y por lo tanto esa dirección está codificada en los cinco bits de operando de la instrucción. 
+
+El código 011 es la operación inversa, es decir, copia el contenido del registro acumulador en una posición de memoria. La dirección de esa posición está, también, determinada por los cinco bits de operando.
+
+En cualquiera de los dos casos, luego de ejecutarse la instrucción, el valor del PC queda valiendo 1 más de lo que valía antes, es decir, se incrementa en 1. Esto permite que el ciclo de instrucción pase a la instrucción siguiente.  
+
+El efecto sobre el estado de la máquina es exactamente lo que se describe aquí: cambia el valor del acumulador, en el caso de la instrucción 010, o el valor de una posición de memoria, en el caso del código 011, y el valor del PC se incrementa en 1. No ocurre ningún otro cambio en el estado de la máquina, ni en los registros ni en la memoria.
+</aside></section>
+
+<section data-audio-src="audio/Arquitectura/44-Las instrucciones aritmeticas.mp3">
+<h2>Instrucciones aritméticas</h2>
+<table>
+<tr><th>Código</th><th>Operando</th><th>Descripción</th><th>PC</th></tr>
+<tr><td>100</td><td>Dirección</td><td><b>Suma</b>: El contenido de la dirección se suma al Ac, y el resultado se almacena en el Ac</td><td>Se incrementa en 1</td></tr>
+<tr class="fragment" data-audio-src="audio/Arquitectura/45-Si el codigo es 101.mp3"><td>101</td><td>Dirección</td><td><b>Resta</b>: El contenido de la dirección se resta al Ac, y el resultado se almacena en el Ac</td><td>Se incrementa en 1</td></tr>
+</table>
+<aside data-markdown class="notes">
+Las instrucciones aritméticas también son dos. Si el código es 100, la CPU va a buscar el valor contenido en la dirección dada por el operando, y lo suma al acumulador. Es decir, se suman el valor que tuviera anteriormente el acumulador, con el valor que proviene de esa posición de memoria. El resultado queda en el acumulador. El valor de la posición de memoria no varía. 
+
+Si el código es 101, la operación es una resta, que como sabemos consiste en complementar a 2 el operando y luego sumar. El resultado, igual que en la instrucción de suma, queda en el acumulador, y la posición de memoria queda sin cambios. Como en las instrucciones de transferencia de datos, el registro PC se incrementa en 1. Decimos que el PC **queda apuntando** a la siguiente instrucción.
+</aside></section>
+
+
+
+
+
+
+<section data-audio-src="audio/Arquitectura/46-Las dos instrucciones de salto.mp3">
+<h2>Instrucciones de salto</h2>
+<table>
+<tr><th>Código</th><th>Operando</th><th>Descripción</th><th>PC</th></tr>
+<tr><td>110</td><td>Desplazamiento</td><td><b>Salto incondicional</b></td><td>Se incrementa en <i>desplazamiento</i></td></tr>
+<tr class="fragment" data-audio-src="audio/Arquitectura/47-El codigo 110.mp3"><td>111</td><td>Desplazamiento</td><td><b>Salto condicional</b></td><td>Si $Ac == 0$, se incrementa en <i>desplazamiento</i>. Si $Ac <> 0$, se incrementa en 1</td></tr>
+</table>
+<aside data-markdown class="notes">
+Las dos instrucciones **de salto, o de transferencia de control**, tienen un efecto diferente. Funcionan modificando exclusivamente el valor del registro PC. En ambos casos, el operando es un valor con signo a cinco bits. En el caso del código 110, ese valor se suma algebraicamente al valor que tuviera hasta el momento el registro PC. Con lo cual el PC queda apuntando a alguna posición de memoria por delante o por detrás de donde estaba antes. Así, el ciclo de instrucción siguiente va a leer la instrucción ubicada en esa nueva dirección que ahora está contenida en el PC. 
+
+El código 110 es una instrucción de salto **incondicional**, es decir, **siempre** provoca un **salto** en la ejecución. En el caso del código 111, el salto es **condicional, y depende del valor del registro acumulador**. Si el acumulador **tiene un valor 0**, se produce el salto, sumando el valor del desplazamiento al registro PC. Pero si el acumulador no vale cero, simplemente se incrementa el PC en 1 como en el resto de las instrucciones; y el control sigue secuencialmente como es normal.  
+</aside></section>
+
+
+
+
+
+<section data-audio-src="audio/Arquitectura/48-Hasta el momento.mp3">
+<h2>Otras instrucciones</h2>
+<table>
+<tr><th>Código</th><th>Operando</th><th>Descripción</th><th>PC</th></tr>
+<tr><td>001</td><td>Sin uso</td><td><b>Parada</b>: Detiene la máquina. Los registros y la memoria quedan con el último valor que recibieron</td><td>No varía</td></tr>
+<tr class="fragment" data-audio-src="audio/Arquitectura/49-La operacion 000.mp3"><td>000</td><td>Sin uso</td><td><b>No operación</b>: No tiene ningún efecto sobre Ac ni memoria</td><td>Se incrementa en 1</td></tr>
+</table>
+<aside data-markdown class="notes">
+Hasta el momento no hemos explicado cómo se detiene la máquina. El ciclo de instrucción continuamente va a ejecutar la instrucción siguiente, sin parar nunca. Para terminar la ejecución usamos la instrucción 001. El programa se detiene, y el estado final de la máquina queda con los valores que recibieron por última vez los registros y la memoria. El valor del PC no cambia.
+
+La operación 000 no tiene ningún efecto sobre el estado del MCBE, salvo incrementar el PC. Ningún otro registro ni posición de memoria cambia su valor.  
+</aside></section>
+
+
+
+
+
+<section data-audio-src="audio/Arquitectura/50-Ahora podemos definir.mp3">
+<h2>Ciclo de instrucción</h2>
+<ol>
+<li class="fragment" data-audio-src="audio/Arquitectura/51-Uno- copia en el registro IR.mp3">Se carga en el IR la instrucción cuya dirección está en el PC (<i>fetch</i>)</li>
+<li class="fragment" data-audio-src="audio/Arquitectura/52-Dos- decodifica la instruccion.mp3">Se decodifica (<i>decode</i>) la instrucción, para lo cual:
+<ul>
+	<li>Los tres primeros bits del IR determinan de qué instrucción se trata</li>
+	<li>Los cinco bits restantes se utilizan como argumento de la instrucción</li>
+</ul>
+<li class="fragment" data-audio-src="audio/Arquitectura/53-Tres- se ejecuta la instruccion.mp3">Se ejecuta (<i>execute</i>) la instrucción, con sus efectos sobre los registros o la memoria</li>
+<li class="fragment" data-audio-src="audio/Arquitectura/54-Cuatro- una vez ejecutada.mp3">Se pasa a la siguiente instrucción, dada por el valor que haya quedado en el PC</li>
+</ol>
+<aside data-markdown class="notes">
+Ahora podemos definir con más rigurosidad lo que se entiende por **ciclo de instrucción**. El MCBE inicia su operación con todos los contenidos de la memoria y registros en 0, y se pone a ejecutar continuamente el ciclo de instrucción. Para esto repite continuamente las fases siguientes.
+
+Uno: Copia en el registro IR la instrucción cuya dirección está en el PC. Como el PC comienza con un valor 0, esto significa copiar la instrucción almacenada en la dirección 0 hacia el IR.
+
+Dos: Decodifica la instrucción, lo que significa separar la instrucción en sus dos componentes, que son el código de operación, de tres bits, y el operando o argumento, de cinco bits. 
+
+Tres: Se ejecuta la instrucción, lo que significa que va a haber algún efecto sobre el estado de la máquina. Si es una instrucción de transferencia de datos, cambiará el registro acumulador o alguna posición de memoria; si es una instrucción aritmética, cambiará el valor del registro acumulador; si es de transferencia de control, cambiará el valor del PC, etc.
+
+Cuatro: Una vez ejecutada la instrucción, se vuelve a repetir el ciclo, leyendo la siguiente instrucción que haya que ejecutar, que será aquella cuya dirección esté contenida en el PC.
+</aside>
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<section data-audio-src="audio/Arquitectura/55-Como es entonces un programa.mp3">
+<h2>Un programa MCBE</h2>
+<table class="plaintable" style="font-size: 28px; ">
+<tr><th>Dirección</th><th>Contenido</th></tr>
+<tr><td>00000</td><td><span class="fragment" data-fragment-index="0" data-audio-src="audio/Arquitectura/56-En este programa en particular.mp3">01000110</span></td></tr>
+<tr><td>00001</td><td><span class="fragment" data-fragment-index="1" data-audio-src="audio/Arquitectura/57-La segunda instruccion es.mp3">10000111</span></td></tr>
+<tr><td>00010</td><td><span class="fragment" data-fragment-index="2" data-audio-src="audio/Arquitectura/58-La tercera instruccion es.mp3">01101000</span></td></tr>
+<tr><td>00011</td><td><span class="fragment" data-fragment-index="3" data-audio-src="audio/Arquitectura/59-Y la cuarta instruccion.mp3">00100000</span></td></tr>
+<tr><td>00100</td><td>        </td></tr>
+<tr><td>00101</td><td>        </td></tr>
+<tr><td>00110</td><td><span class="fragment" data-fragment-index="4" data-audio-src="audio/Arquitectura/60-Todas estas eran.mp3">00001100</span></td></tr>
+<tr><td>00111</td><td><span class="fragment" data-fragment-index="4">00000001</span></td></tr>
+<tr><td>01000</td><td>        </td></tr>
+</table>
+<aside data-markdown class="notes">
+¿Cómo es, entonces, un programa para esta máquina teórica? Es una sucesión de bytes, que representan instrucciones y datos, contenidos en la memoria a partir de la dirección 0, y donde cada byte va a ser interpretado como instrucción o como dato según lo diga el programa. Como el estado inicial de la máquina es **con todos los valores en 0**, lo único que puede decirse con seguridad es que **la primera posición de la memoria contiene una instrucción**. Pero a partir de allí, el desarrollo de la ejecución va a ser dado por las instrucciones particulares que contenga el programa.
+
+En este programa en particular, la primera instrucción es 010 00110, que es una instrucción de transferencia de datos de la posición 6 al acumulador.
+
+La segunda instrucción es 100 00111, que es una suma del valor que haya en la posición 7 al acumulador.
+
+La tercera instrucción es 011 01000, que significa transferir el valor que haya en el acumulador a la posición 8.
+
+Y la cuarta instrucción es 001 00000, que es la instrucción de parada, con lo cual termina el programa. 
+
+Todas éstas eran las instrucciones del programa. En las posiciones 6 y 7 de la memoria tenemos datos almacenados en complemento a 2 sobre ocho bits. Estos datos son el número 12, en la posición 6,  y el número 1 en la posición 7.
+
+En las restantes posiciones de memoria hay contenidos nulos, o sea, todos los bits en 0, y no los escribimos para no complicar más el diagrama.
+</aside></section>
+
+
+<section data-audio-src="audio/Arquitectura/61-Que es realmente lo que hace.mp3">
+<h2>Traza de ejecución</h2>
+<table class="plaintable" style="width: 100%; font-size: 18px; ">
+<tr><th colspan="2">Búsqueda</th><th colspan="2">Decodificación</th><th colspan="4">Ejecución</th></tr>
+<tr><td>PC</td><td>IR</td><td>Cod</td><td>Operando</td><td>Ac</td><td>Mem</td><td>Salida</td><td>PC</td></tr>
+<tr><td>&nbsp;</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td>&nbsp;</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td>&nbsp;</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td>&nbsp;</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+</table>
+<aside data-markdown class="notes">
+¿Qué es realmente lo que hace este programa, y cuál es el resultado de ejecutarlo? Para poder saberlo, lo más conveniente es hacer una **traza del programa**. Una traza es un diagrama o planilla donde preparamos **columnas** con los nombres de los **registros, la memoria y la salida**, para poder ir simulando manualmente la ejecución, e ir anotando qué valores toman esos registros; es decir, cuáles son los sucesivos estados del MCBE. 
+
+Para cada instrucción que se ejecute usaremos un renglón de la planilla.
+
+En la traza solamente escribiremos los elementos del estado **que se modifiquen** en cada paso. En la columna de MEMORIA anotaremos cuándo hay una operación de escritura en memoria,  en la columna de SALIDA anotaremos cuando haya un contenido que se escriba en pantalla, etc.
+</aside>
+</section>
+
+
+
+<!-- TRAZA 1 --------------------------------------------------------------------------------- -->
+<!--
+<section data-audio-src="audio/Arquitectura/61-Este programa en particular.mp3">
+<h2>Traza de ejecución</h2>
+
+<table style="width: 100%;"><tr><td>
+
+<table class="plaintable" style="font-size: 18px; ">
+<tr><th>Dirección</th><th>Contenido</th></tr>
+<tr><td>00000</td><td>01000110</td></tr>
+<tr><td>00001</td><td>10000111</td></tr>
+<tr><td>00010</td><td>01101000</td></tr>
+<tr><td>00011</td><td>00100000</td></tr>
+<tr><td>00100</td><td>        </td></tr>
+<tr><td>00101</td><td>        </td></tr>
+<tr><td class="fragment highlight-blue" data-fragment-index="3">00110</td><td class="fragment highlight-red" data-fragment-index="4">00001100</td></tr>
+<tr><td>00111</td><td>00000001</td></tr>
+<tr><td>01000</td><td style="color: red;"><span class="fragment" data-fragment-index="21">00001101</span></td></tr>
+</table>
+
+</td></tr><tr><td>
+
+<table class="plaintable" style="width: 100%; font-size: 18px; ">
+<tr><th colspan="2">Búsqueda</th><th colspan="2">Decodificación</th><th colspan="4">Ejecución</th></tr>
+<tr><td>PC</td><td>IR</td><td>Cod</td><td>Operando</td><td>Ac</td><td>Mem</td><td>Salida</td><td>PC</td></tr>
+<tr><td><span class="fragment" data-fragment-index="0">00000000</span></td><td><span class="fragment" data-fragment-index="1">01000110</span></td><td><span class="fragment"  data-fragment-index="2">010</span></td><td style="color: #1b91ff"><span class="fragment" data-fragment-index="3">00110</span></td><td style="color: red"><span class="fragment" data-fragment-index="4">00001100</span></td><td><span class="fragment" data-fragment-index="5">-</span></td><td><span class="fragment" data-fragment-index="6">-</span></td><td><span class="fragment" data-fragment-index="7">00000001</span></td></tr>
+<tr><td><span class="fragment" data-fragment-index="8">00000001</span></td><td><span class="fragment" data-fragment-index="9">10000111</span></td><td><span class="fragment" data-fragment-index="10">100</span></td><td><span class="fragment" data-fragment-index="11">00111</span></td><td><span class="fragment" data-fragment-index="12">00001101</span></td><td><span class="fragment" data-fragment-index="13">-</span></td><td><span class="fragment" data-fragment-index="14">-</span></td><td><span class="fragment" data-fragment-index="15">00000010</span></td></tr>
+<tr><td><span class="fragment" data-fragment-index="16">00000010</span></td><td><span class="fragment" data-fragment-index="17">01101000</span></td><td><span class="fragment" data-fragment-index="18">011</span></td><td><span class="fragment" data-fragment-index="19">01000</span></td><td><span class="fragment" data-fragment-index="20">00001101</span></td><td style="color: red;"><span class="fragment" data-fragment-index="21">8 &larr; 00001101</span></td><td><span class="fragment">-</span></td><td><span class="fragment">00000011</span></td></tr>
+<tr><td><span class="fragment">00000011</span></td><td><span class="fragment">00100000</span></td><td><span class="fragment">001</span></td><td><span class="fragment">00000</span></td><td><span class="fragment">00001101</span></td><td><span class="fragment">-</span></td><td><span class="fragment">-</span></td><td><span class="fragment">00000011</span></td></tr>
+<tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+</table>
+
+</td></tr></table>
+
+<aside data-markdown class="notes"> 
+Este programa en particular presenta la traza que veremos a continuación. 
+
+Queda como ejercicio seguir la traza e interpretar qué está ocurriendo en cada momento con cada uno de los registros y las posiciones de memoria.
+
+### Ayuda
+
+- 000 No operación
+- 001 Parada
+- 010 Mem &rarr; Ac
+- 011 Ac &rarr; Mem
+- 100 Sumar al Ac
+- 101 Restar al Ac
+- 110 Salto 
+- 111 Salto cond
+
+</aside>
+</section>
+-->
+
+<!-- TRAZA 1 --------------------------------------------------------------------------------- -->
+
+<!-- TRAZA 2 --------------------------------------------------------------------------------- -->
+<section data-audio-src="audio/Arquitectura/61-Este programa en particular.mp3">
+<h2>Traza de ejecución</h2>
+
+
+<table class="plaintable" style="width: 100%; font-size: 18px; ">
+<tr><th colspan="2">Búsqueda</th><th colspan="2">Decodificación</th><th colspan="4">Ejecución</th></tr>
+<tr><td>PC</td><td>IR</td><td>Cod</td><td>Operando</td><td>Ac</td><td>Mem</td><td>Salida</td><td>PC</td></tr>
+<tr><td><span class="fragment" data-fragment-index="0">00000000</span></td><td><span class="fragment" data-fragment-index="1">01000110</span></td><td><span class="fragment"  data-fragment-index="2">010</span></td><td><span class="fragment" data-fragment-index="3"><span style="color:#1b91ff;">00110</span></span></td><td><span class="fragment" style="color: red;" data-fragment-index="4">00001100</span></td><td><span class="fragment" data-fragment-index="5">-</span></td><td><span class="fragment" data-fragment-index="6">-</span></td><td><span class="fragment" data-fragment-index="7">00000001</span></td></tr>
+<tr><td><span class="fragment" data-fragment-index="8">00000001</span></td><td><span class="fragment" data-fragment-index="9">10000111</span></td><td><span class="fragment" data-fragment-index="10">100</span></td><td><span class="fragment" data-fragment-index="11">00111</span></td><td><span class="fragment" data-fragment-index="12">00001101</span></td><td><span class="fragment" data-fragment-index="13">-</span></td><td><span class="fragment" data-fragment-index="14">-</span></td><td><span class="fragment" data-fragment-index="15">00000010</span></td></tr>
+<tr><td><span class="fragment" data-fragment-index="16">00000010</span></td><td><span class="fragment" data-fragment-index="17">01101000</span></td><td><span class="fragment" data-fragment-index="18">011</span></td><td><span class="fragment" data-fragment-index="19">01000</span></td><td><span class="fragment" data-fragment-index="20">00001101</span></td><td><span class="fragment" style="color: red;" data-fragment-index="21">8 &larr; 00001101</span></td><td><span class="fragment">-</span></td><td><span class="fragment">00000011</span></td></tr>
+<tr><td><span class="fragment">00000011</span></td><td><span class="fragment">00100000</span></td><td><span class="fragment">001</span></td><td><span class="fragment">00000</span></td><td><span class="fragment">00001101</span></td><td><span class="fragment">-</span></td><td><span class="fragment">-</span></td><td><span class="fragment">00000011</span></td></tr>
+<tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+</table>
+
+<table class="plaintable" style="font-size: 18px;">
+<tr><th>Dirección</th><th>Contenido</th></tr>
+<tr><td>00000</td><td>01000110</td></tr>
+<tr><td>00001</td><td>10000111</td></tr>
+<tr><td>00010</td><td>01101000</td></tr>
+<tr><td>00011</td><td>00100000</td></tr>
+<tr><td>00100</td><td>        </td></tr>
+<tr><td>00101</td><td>        </td></tr>
+<tr><td class="fragment highlight-blue" data-fragment-index="3">00110</td><td class="fragment highlight-red" data-fragment-index="4">00001100</td></tr>
+<tr><td>00111</td><td>00000001</td></tr>
+<tr><td>01000</td><td><span class="fragment" data-fragment-index="21"><span style="color:red;">00001101</span></span></td></tr>
+</table>
+
+
+<aside data-markdown class="notes"> 
+Este programa en particular presenta la traza que veremos a continuación. 
+
+Queda como ejercicio seguir la traza e interpretar qué está ocurriendo en cada momento con cada uno de los registros y las posiciones de memoria.
+
+### Ayuda
+
+- 000 No operación
+- 001 Parada
+- 010 Mem &rarr; Ac
+- 011 Ac &rarr; Mem
+- 100 Sumar al Ac
+- 101 Restar al Ac
+- 110 Salto 
+- 111 Salto cond
+
+</aside>
+</section>
+<!-- TRAZA 2 --------------------------------------------------------------------------------- -->
+
+
+<section data-markdown data-background="#3c53b5" data-background-transition="zoom">
+## Preguntas
+1. El MCBE, ¿puede encontrar una instrucción que no sea capaz de decodificar?
+1.  Supongamos que hemos almacenado en la posición 14 un dato numérico que representa la edad de una persona. ¿Qué pasa si en algún momento de la ejecución el PC contiene el número 14? ¿Qué pasa si esa persona tiene 33 años?
+1. ¿Podría aumentarse la capacidad de memoria del MCBE? ¿Esto requeriría algún cambio adicional a la máquina?
+</section>
+
+
+
+<section class="preguntas" data-audio-src="audio/Arquitectura/62-Proponemos como ejercicio.mp3">
+<h2>Bestiario</h2>
+<ul>
+<li class="fragment" data-audio-src="audio/Arquitectura/63-El primer paso del ciclo.mp3">El primer paso del ciclo de instrucción es cargar el IR en el PC.</li>
+<li class="fragment" data-audio-src="audio/Arquitectura/64-Lo que hacen las instruc.mp3">Lo que hacen las instrucciones de salto es cambiar el efecto de las instrucciones en los registros del MCBE.</li>
+<li class="fragment" data-audio-src="audio/Arquitectura/65-Las instrucciones de salto.mp3">Las instrucciones de salto sirven como desplazamiento de instrucciones y cambian el orden de los registros.</li>
+<li class="fragment" data-audio-src="audio/Arquitectura/66-La instruccion de salto.mp3">La instrucción de salto incondicional es un desplazamiento sin signo, la de salto condicional es un desplazamiento con signo.</li>
+<li class="fragment" data-audio-src="audio/Arquitectura/67-Las instrucciones de salto.mp3">Las instrucciones de salto copian el contenido de la dirección en el acumulador.</li>
+</ul>
+<aside data-markdown class="notes">
+Proponemos como ejercicio **examinar** las siguientes frases, tomadas de exámenes de la materia, a ver si descubrimos qué está mal en cada una de ellas.
+</aside></section>
+
+
+<section data-background="#00CCFF">
+<h2>Lenguajes de Bajo Nivel</h2>
+</section>
+
+
+<section>
+<h2>Lenguajes de bajo nivel</h2>
+<ul class="double">
+<li>Lenguaje de máquina</li>
+	<ul>
+		<li>Códigos binarios de instrucciones y datos</li>
+		<li>Direcciones de los datos en cinco bits</li>
+		<li>Desplazamientos de saltos en forma numérica</li>
+	</ul>
+<br/>
+<li>Lenguaje ensamblador o <i>Assembler</i></li>
+	<ul>
+		<li>Mnemónicos en lugar de códigos binarios</li>
+		<li>Rótulos o etiquetas como referencia de las direcciones</li>
+		<li>Rótulos o etiquetas como referencia de los saltos</li>
+	</ul>
+</ul>
+<aside data-markdown class="notes"> 
+Hemos visto un conjunto de instrucciones y convenciones sobre cómo se utilizan los datos en el MCBE, que es el llamado **lenguaje de máquina** del MCBE.  Por supuesto, escribir un programa para el MCBE y **depurarlo**, es decir, identificar y corregir sus errores, es una tarea muy dificultosa, porque los códigos de operación, las direcciones y los datos, fácilmente terminan confundiéndonos.  Para facilitar la programación, se ha definido un lenguaje alternativo llamado el **ensamblador** del MCBE. 
+
+
+En  el lenguaje ensamblador del MCBE: 
+
+* En lugar de códigos de tres bits usamos unas abreviaturas un poco más significativas (*mnemónicos* de instrucciones).
+* En lugar de direcciones de cinco bits, usamos unos nombres simbólicos (*rótulos o etiquetas*) que hacen referencia a esas direcciones.
+* Para las instrucciones de salto, en lugar de desplazamientos, también usamos rótulos o etiquetas para marcar la instrucción del programa adonde deseamos saltar.
+
+Cada CPU del mundo real tiene su propio lenguaje de máquina, y aunque mucho más poderosos y de instrucciones más complejas, se parecen bastante, en líneas generales, al lenguaje de máquina del MCBE. Igual que ocurre con el lenguaje de máquina, cada CPU del mundo real tiene su propio lenguaje ensamblador, basado en los mismos principios que el que mostramos aquí. 
+
+El lenguaje de máquina de cualquier CPU, y su lenguaje ensamblador (o *Assembler*), son llamados en general **lenguajes de bajo nivel**. Otros lenguajes, los de alto nivel, ocultan al usuario los detalles de la arquitectura de las computadoras y le facilitan la programación de problemas de software complejos.
+</aside>
+</section>
+
+<section>
+<h2>Lenguaje Ensamblador</h2>
+<table style="font-size: 30px;">
+<tr><th colspan="2">Mnemónico</th><th colspan="2">Instrucción</th></tr>
+<tr><td><b>LD</b></td><td>Load (cargar)</td><td>010</td><td>Mem &rarr; Ac</td></tr>
+<tr><td><b>ST</b></td><td>Store (almacenar)</td><td>011</td><td>Ac &rarr; Mem</td></tr>
+<tr><td><b>ADD</b></td><td>Add (sumar)</td><td>100</td><td>Ac &larr; Ac + Mem</td></tr>
+<tr><td><b>SUB</b></td><td>Subtract (restar)</td><td>101</td><td>Ac &larr; Ac - Mem</td></tr>
+<tr><td><b>JMP</b></td><td>Jump (saltar)</td><td>110</td><td>PC &larr; PC + despl</td></tr>
+<tr><td><b>JZ</b></td><td>Jump if Zero (saltar si cero)</td><td>111</td><td>Ac == 0 &rArr; PC &larr; PC + despl</td></tr>
+<tr><td><b>HLT</b></td><td>Halt (detener)</td><td>001</td><td>Parada</td></tr>
+<tr><td><b>NOP</b></td><td>No Operation</td><td>000</td><td>No operación</td></tr>
+</tr>
+</table>
+<aside data-markdown class="notes">
+Los **mnemónicos** o nombres simbólicos de las instrucciones se basan en los nombres en inglés de las operaciones correspondientes. Disponemos de los mnemónicos:
+* LD para la operación de cargar el Acumulador con un contenido de memoria, y ST para la operación inversa.
+* ADD para la operación de suma y SUB para la resta.
+* JMP y JZ para los saltos incondicional y condicional, respectivamente.
+* HLT para la instrucción de parada y NOP para la operación nula o no operación.
+</aside>
+</section>
+
+<section>
+<h2>Mnemónicos y rótulos</h2>
+
+<table>
+<tr><td>
+
+<table style="font-size: 24px;">
+<tr><th colspan="2">Lenguaje de máquina</th></tr>
+<tr><th>Dirección</th><th>Instrucción</th></tr>
+<tr><td>00000</td><td>01000111</td></tr>
+<tr><td>00001</td><td>11100100</td></tr>
+<tr><td>00010</td><td>01111111</td></tr>
+<tr><td>00011</td><td>10100110</td></tr>
+<tr><td>00100</td><td>11011101</td></tr>
+<tr><td>00101</td><td>00100000</td></tr>
+<tr><td>00110</td><td>00000001</td></tr>
+<tr><td>00111</td><td>00000011</td></tr>
+</table>
+
+</td><td>
+
+
+<table style="font-size: 24px;">
+<tr><th colspan="4">Lenguaje ensamblador</th></tr>
+<tr></th><th>Dirección</th><th>Rótulo</th><th>Mnemónico</th><th>Argumento</th></tr>
+<tr><td>00000</td><td>      </td><td>LD</td><td>CANT</td></tr>
+<tr><td>00001</td><td>SIGUE:</td><td>JZ</td><td>FIN</td></tr>
+<tr><td>00010</td><td>      </td><td>ST</td><td>OUT</td></tr>
+<tr><td>00011</td><td>      </td><td>SUB</td><td>UNO</td></tr>
+<tr><td>00100</td><td>      </td><td>JMP</td><td>SIGUE</td></tr>
+<tr><td>00101</td><td>FIN:</td><td>HLT</td><td></td></tr>
+<tr><td>00110</td><td>UNO:</td><td>1</td><td></td></tr>
+<tr><td>00111</td><td>CANT:</td><td>3</td><td></td></tr>
+</table>
+
+</td></tr>
+</table>
+<aside data-markdown class="notes">
+Cuando escribimos un programa en el lenguaje **ensamblador** del MCBE, las instrucciones se corresponden una a una con las del programa en lenguaje de máquina.
+
+Cuando necesitamos hacer referencia a una dirección, como en las operaciones de transferencia o en las aritméticas, el ensamblador nos permite independizarnos del valor de esa dirección y simplemente indicar un nombre simbólico o rótulo para esa dirección. Sin embargo, para que el programa quede completo, ese nombre simbólico debe aparecer en algún lugar del programa, al principio de la instrucción, y separado por un carácter ":" del resto de la línea. 
+
+En este ejemplo, SIGUE, FIN, UNO y CANT son rótulos. El rótulo CANT, por ejemplo, nos permite referirnos en la primera instrucción, LD CANT, a un dato declarado más adelante con ese nombre. Del mismo modo, cuando la instrucción es de salto, podemos hacer referencia a la posición de memoria donde se hará el salto usando un rótulo, como en la quinta instrucción, JMP SIGUE. 
+
+Los rótulos IN y OUT vienen predefinidos en el lenguaje ensamblador de MCBE y corresponden a las posiciones de memoria 30 (para entrada) y 31 (para salida) respectivamente.
+ 
+Es importante recordar que, de todas maneras, en la traducción de ensamblador a lenguaje de máquina **para las instrucciones de salto**, el rótulo se sustituye por un **desplazamiento**, y no por una dirección.
+</aside>
+</section>
+
+
+<section>
+<h2>Referencias</h2>
+<ul>
+<li><a href="http://pedco.uncoma.edu.ar/mod/resource/view.php?id=148556">Apunte de cátedra: Modelo Computacional</a></li>
+<li><a href="https://es.wikipedia.org/wiki/Arquitectura_de_von_Neumann">Arquitectura de Von Neumann</a></li>
+<li><a href="https://es.wikipedia.org/wiki/Unidad_central_de_procesamiento">Unidad Central de Procesamiento, CPU</a></li>
+<li><a href="https://es.wikipedia.org/wiki/Memoria_(inform%C3%A1tica)">Memoria</a></li>
+</ul>
+<aside data-markdown class="notes"> </aside></section>
+
+
+<!------------------------------------------------------------------>
+
+   </div>
+</div>
+
+<link rel="stylesheet" href="Tangle/TangleKit/TangleKit.css" type="text/css">
+<script type="text/javascript" src="Tangle/Tangle.js"></script>
+<script type="text/javascript" src="Tangle/TangleKit/mootools.js"></script>
+<script type="text/javascript" src="Tangle/TangleKit/sprintf.js"></script>
+<script type="text/javascript" src="Tangle/TangleKit/BVTouchable.js"></script>
+<script type="text/javascript" src="Tangle/TangleKit/TangleKit.js"></script>
+<script src="lib/js/head.min.js"></script>
+<script src="js/reveal.js"></script>
+
+<script>
+
+	Reveal.initialize({
+		controls: true,
+		progress: true,
+		history: true,
+		center: true,
+		previewLinks: true,
+		theme: 'serif',
+		transition: 'slide', // none/fade/slide/convex/concave/zoom
+
+		// ----------------------------------------------------------------------------
+		chart: {
+			defaults: { 
+				global: { 
+					title: { fontColor: "#222" }, 
+					legend: {
+						position: "bottom",
+						labels: { fontColor: "#000", size: "14px" },
+					},
+					tooltips: {
+						labels: { fontColor: "#022", size: "14px" },
+					},
+				}, 
+				scale: { 
+					scaleLabel: { fontColor: "#022" }, 
+					gridLines: { color: "#444", zeroLineColor: "#444" }, 
+					ticks: { fontColor: "#022" }, 
+				} 
+			},
+			line: { borderColor: [ 
+				"rgba(20,220,220,.8)" , 
+				"rgba(220,120,120,.8)", 
+				"rgba(20,120,220,.8)",
+				"rgba(220,20,120,.8)",
+				"rgba(20,20,220,.8)" ]
+			}, 
+			bar: { backgroundColor: [ 
+				"rgba(20,220,220,.8)" , 
+				"rgba(20,120,220,.8)",
+				"rgba(20,20,220,.8)",
+				"rgba(120,20,220,.8)",
+				"rgba(220,120,20,.8)", 
+				"rgba(220,20,20,.8)",
+			 ]
+			}, 
+			pie: { backgroundColor: [ 
+				["rgba(0,0,0,.8)" , 
+				"rgba(220,20,20,.8)", 
+				"rgba(20,220,20,.8)", 
+				"rgba(220,220,20,.8)", 
+				"rgba(20,20,220,.8)"] 
+			]},
+			radar: { borderColor: [ "rgba(20,220,220,.8)" , "rgba(220,120,120,.8)", "rgba(20,120,220,.8)" ]}, 
+		},
+		// ----------------------------------------------------------------------------
+		menu: { // Menu works best with font-awesome installed: sudo apt-get install fonts-font-awesome
+			themes: false,
+			transitions: false,
+			markers: true,
+			hideMissingTitles: true,
+			custom: [
+				// { title: 'Plugins', icon: '<i class="fa fa-external-link"></i>', src: 'toc.html' },
+				// { title: 'About', icon: '<i class="fa fa-info"></i>', content: '<p>Int Comp</p>' },
+				{ title: 'IC2016', icon: '<i class="fa fa-bookmark"></i>', src: 'src/ic.html' },
+				{ title: 'Imprimir', icon: '<i class="fa fa-print"></i>', src: 'src/print.html' },
+			]
+		},
+		// ----------------------------------------------------------------------------
+		anything: [ 
+			{className: "rand",  defaults: {min: 0, max: 9}, 
+				initialize: (function(container, options){ 
+					container.innerHTML = Math.trunc( options.min + Math.random()*(options.max-options.min + 1) ); 
+			}) },
+			{className: "chart",  
+				initialize: (function(container, options){ 
+					container.chart = new Chart(container.getContext("2d"), options);  
+				}) 
+			},
+			{className: "animate",  
+				initialize: (function(container, options){ 
+				Reveal.addEventListener( 'fragmentshown', function( event ) {
+					if (typeof event.fragment.beginElement === "function" ) { 
+						event.fragment.beginElement(); 	
+					}
+				});
+				Reveal.addEventListener( 'fragmenthidden', function( event ) {
+					if (event.fragment.hasAttribute('data-reverse') ) { 
+						var reverse = event.fragment.parentElement.querySelector('[id=\"' + event.fragment.getAttribute('data-reverse') + '\"]');
+						if ( reverse && typeof reverse.beginElement === "function" ) { 
+							reverse.beginElement(); 	
+						}										 	
+					}
+				});
+				if ( container.getAttribute("data-svg-src") ) { 
+					var xhr = new XMLHttpRequest(); 
+					xhr.onload = function() { 
+						if (xhr.readyState === 4) { 
+							var svg = container.querySelector('svg');
+							container.removeChild( svg );
+							container.innerHTML = xhr.responseText + container.innerHTML;
+							if ( svg ) {
+								container.querySelector('svg').innerHTML = container.querySelector('svg').innerHTML + svg.innerHTML;
+							}
+						} 
+						else { 
+							console.warn( "Failed to get file. ReadyState: " + xhr.readyState + ", Status: " + xhr.status); 
+						}
+					}; 
+					xhr.open( 'GET', container.getAttribute("data-svg-src"), true ); 
+					xhr.send();
+				}
+			}) },
+			{className: "tangle", 
+				initialize: (function(container, options) { if(options && options.initialize) {options.initialize(container)} }) },
+			{className: "plot",  defaults: {width:800, height: 400, grid:true}, 
+				initialize: (function(container, options){ options.target = "#"+container.id; functionPlot(options) }) },
+			{className: "asciicast",
+                                 defaults: { theme: 'monokai', fontSize: '15px' },
+                                 initialize: (function(container, options) {
+                                         asciinema.player.js.CreatePlayer(container, options.URL, options);
+                                 })
+                         },
+			{className: "anything",  
+				initialize: (function(container, options){ if (options && options.initialize) { options.initialize(container)} }) },
+
+		],
+		// ----------------------------------------------------------------------------
+
+
+		// -------- Math plugin ----------
+		math: {
+			mathjax: 'https://cdn.mathjax.org/mathjax/latest/MathJax.js',
+			//	mathjax: '../MathJax-master/MathJax.js',
+			config: 'TeX-AMS_HTML-full'
+		},
+
+
+		// -------- Chalkboard -----------
+		chalkboard: { 
+			// optionally load pre-recorded chalkboard drawing from file
+			// src: "chalkboard.json",
+			//readOnly: undefined, 
+			toggleChalkboardButton: { left: "80px" },
+			toggleNotesButton: { left: "130px" },
+			//transition: 800,
+			//theme: "whiteboard",
+			// configuration options for notes canvas and chalkboard
+			//color: [ 'rgba(0,0,255,1)', 'rgba(255,255,255,0.5)' ],
+			//background: [ 'rgba(127,127,127,.1)' , 'plugin/chalkboard/img/blackboard.png' ],
+			//pen:  [ 'reveal.js-plugins/chalkboard/img/boardmarker.png', 'reveal.js-plugins/chalkboard/img/chalk.png' ],
+		},
+		keyboard: {
+			67: function() { RevealChalkboard.toggleNotesCanvas() },    // toggle notes canvas when 'c' is pressed
+			66: function() { RevealChalkboard.toggleChalkboard() }, // toggle chalkboard when 'b' is pressed
+			46: function() { RevealChalkboard.clear() },    // clear chalkboard when 'DEL' is pressed
+			 8: function() { RevealChalkboard.reset() },    // reset chalkboard data on current slide when 'BACKSPACE' is pressed
+			68: function() { RevealChalkboard.download() }, // downlad recorded chalkboard drawing when 'd' is pressed
+			82: function() { Recorder.toggleRecording(); }, // press 'r' to start/stop recording
+			90: function() { Recorder.downloadZip(); },     // press 'z' to download zip containing audio files
+			84: function() { Recorder.fetchTTS(); }     // press 't' to fetch TTS audio files
+		},
+
+		// -------- Dependencies ---------
+		dependencies: [
+			{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+			{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+			{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+			{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+			{ src: 'plugin/zoom-js/zoom.js', async: true },
+			// { src: 'plugin/notes/notes.js', async: true },
+			{ src: 'plugin/explain/explain.js', async: true },
+			{ src: 'plugin/function-plot/site/js/vendor/jquery-1.11.2.min.js' },
+			{ src: 'plugin/function-plot/site/js/vendor/d3.js' },
+			{ src: 'plugin/function-plot/dist/function-plot.js' },
+			{ src: 'plugin/chart/Chart.min.js'},
+			{ src: 'plugin/chart/csv2chart.js'},
+			{ src: 'plugin/asciinema/asciinema-player.js' },
+			{ src: 'plugin/anything/anything.js' },
+			{ src: 'plugin/chalkboard/chalkboard.js' },
+			{ src: 'plugin/menu/menu.js' },
+			{ src: 'plugin/mathsvg/math.js', async: true },
+			{ src: 'plugin/audio-slideshow/slideshow-recorder.js', condition: function( ) { return !!document.body.classList; } },
+			{ src: 'plugin/audio-slideshow/audio-slideshow.js', condition: function( ) { return !!document.body.classList; } },
+			// ... 
+		]
+	});
+
+</script>
+
+</body>
+</html>
